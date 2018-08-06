@@ -1,15 +1,10 @@
 {
   "pages": [
-    "pages/mine/mine",    
-    "pages/index/newwork/newwork",    
-    "pages/index/index",    
-    "pages/index/companyrequest/companyrequest",    
-    "pages/index/companyrequest/companydetail/companydetail",    
-    "pages/msg/msg",
-    "pages/index/parttime/parttime",
-    "pages/index/selfintro/selfintro",
-    "pages/index/prog/prog",
-    "pages/index/ability/ability"
+    
+    "page/tabBar/msg/index",
+    "page/tabBar/index/index",
+    "page/tabBar/my/index"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,21 +21,42 @@
       {
         "selectedIconPath": "image/tabbar/zhiwei2.png",
         "iconPath": "image/tabbar/zhiwei1.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "page/tabBar/index/index",
         "text": "首页"
       },
       {
         "selectedIconPath": "image/tabbar/msg.png",
         "iconPath": "image/tabbar/msg1.png",
-        "pagePath": "pages/msg/msg",
+        "pagePath": "page/tabBar/msg/index",
         "text": "信息"
       },
       {
         "selectedIconPath": "image/tabbar/mine.png",
         "iconPath": "image/tabbar/mine1.png",
-        "pagePath": "pages/mine/mine",
+        "pagePath": "page/tabBar/my/index",
         "text": "我的"
       }
     ]
-  }
+  },
+  "subPackages": [
+    {
+      "root": "page/msg/",
+      "pages": [
+        "pages/msg/msg"
+      ]
+    },
+    {
+      "root": "page/index/",
+      "pages": [
+        "pages/index1/index1"
+      ]
+    }
+  ],
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
 }
