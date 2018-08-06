@@ -4,8 +4,151 @@ page{
 }
 .header{
   height: 192rpx;
-  background: #fff
+  background: #fff;
+  margin-bottom: 16rpx;
 }
-.header image{
-  
+.header .header-cont{
+    display: flex;
+    position: relative
+}
+.header .company-pic{
+  width: 113rpx;
+  height: 113rpx;
+  background: red;
+  margin-left: 29rpx;
+  margin-top: 40rpx;
+  border-radius: 50%  
+}
+.header-intro {
+  margin-left: 33rpx;
+}
+.header-intro>text{
+  display: block;
+}
+.header-intro .name{
+  font-size: 32rpx;
+  color: #353535;
+  margin-top: 54rpx;
+  margin-bottom: 25rpx;
+}
+.header-intro .intro-cont{
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.header-intro .intro{
+  font-size: 26rpx;
+  color: #868686;
+  line-height: 26rpx;  
+  display: inline-block;  
+}
+.header-intro .intro.detail{
+  width: 379rpx;
+  height: 26rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+.tonext{
+  width: 18rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -16rpx;
+  right:24rpx;
+}
+/* 中间内容区 */
+.box{
+  height: 80rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24rpx 0 28rpx;
+}
+.box .left,
+.box .right{
+  display: flex;
+}
+.box .left image{
+  width: 35rpx;
+  height: 31rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+  padding-top: 25rpx;  
+}
+.box .left text{
+  color: #6B6B6B;
+  font-size: 28rpx;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.box .right image{
+  width: 18rpx;
+  height: 32rpx;
+  display: inline-block;
+  margin-left: 36rpx;
+  padding-top: 25rpx;
+}
+.box .right text{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #9B9B9B;
+  font-size: 24rpx;
+  display: inline-block  
+}
+.first{
+  margin-bottom: 1rpx;
+}
+.sec{
+  margin-bottom: 11rpx;
+}
+.box.sec .left image{
+  width: 29rpx;
+  height: 34rpx;
+  margin-right: 36rpx;
+}
+.box.third .left image{
+  width: 29rpx;
+  height: 41rpx;
+  margin-right: 36rpx;
+  padding-top: 20rpx;
+}
+.third{
+  margin-bottom: 12rpx;
+}
+.box.forth .left image{
+  width: 39rpx;
+  height: 35rpx;
+  margin-right: 26rpx;
+  padding-top: 23rpx;
+}
+.forth{
+  margin-bottom: 11rpx;
+}
+.fifth{
+  margin-bottom: 2rpx;
+}
+.box.fifth .left image{
+  width: 35rpx;
+  height: 33rpx;
+  margin-right: 30rpx;
+  padding-top: 24rpx;
+}
+.box.last .left image{
+  width: 38rpx;
+  height: 37rpx;
+  margin-right: 27rpx;
+  padding-top: 21rpx;
+}
+.last{
+  margin-bottom: 30rpx;
+}
+
+.btn{
+  height: 100rpx;
+  background:linear-gradient(to right,rgba(105,100,253,1),rgba(56,48,235,1));
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx
 }
