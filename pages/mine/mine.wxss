@@ -1,0 +1,11 @@
+/* pages/mine/mine.wxss */
+page{
+  background: #F6F6F6
+}
+.header{
+  height: 192rpx;
+  background: #fff
+}
+.header image{
+  
+}

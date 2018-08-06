@@ -1,0 +1,6 @@
+<!--pages/mine/mine.wxml-->
+<view class='header'>
+  <view class='header-cont'>
+    <image class='company-pic' src=''></image>
+  </view>
+</view>

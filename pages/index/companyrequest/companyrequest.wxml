@@ -1,0 +1,132 @@
+<!--pages/index/companyrequest/companyrequest.wxml-->
+<view class='tit'>
+  <view class='tit-name'>
+    <text class='work-name'>UI设计师</text>
+    <text class='work-price'>7K-9K</text>
+  </view>
+  <view class='tit-request'>
+    <view class='request-item'>
+      <image class='img1' src='../../../image/index/express.png'></image>
+      <text>1-3年</text>
+    </view>
+    <view class='request-item'>
+      <image class='img2' src='../../../image/index/xueli.png'></image>
+      <text>本科</text>
+    </view>
+    <view class='request-item'>
+      <image class='img3' src='../../../image/index/age.png'></image>
+      <text>23~25岁</text>
+    </view>
+    <view class='request-item'>
+      <image class='img4' src='../../../image/index/sex.png'></image>
+      <text>性别不限</text>
+    </view>
+    <view class='request-item'>
+      <image class='img5' src='../../../image/index/cont.png'></image>
+      <text>10人</text>
+    </view>
+    <view class='request-item'>
+      <image class='img6' src='../../../image/index/height.png'></image>
+      <text>165cm以上</text>
+    </view>
+  </view>
+  <view class='tit-treatment'>
+    <text>福利待遇: </text>
+    <text>五险一金,带薪年假,交通补助,节日礼金;</text>
+  </view>
+  <view class='tit-adreess'>
+    <navigator>
+      <image src='../../../image/index/area.png'></image>
+      <text>重庆市渝北区金开大道永固金鼎时代</text>
+    </navigator>
+  </view>
+</view>
+
+<!--职位描述  -->
+<view class='discript'>
+  <view class='dis-tit'>
+    <image src='../../../image/index/duty.png'></image>
+    <text>职位描述</text>
+  </view>
+  <view class='dis-detail'>
+    <view class='dis-duty'>
+      <text class='duty-tit'>岗位职责</text>
+      <view>
+        <text class='duty-detail'>1.负责手机APP、WEB产品界面的UI/UE创意设计工作;</text>
+        <text class='duty-detail'>2.对设计过程有深入的理解，优质、独立高效完成设计工作;</text>
+      </view>
+    </view>
+    <view class='dis-requst'>
+      <text class='duty-tit'>职位要求</text>
+      <view>
+        <text class='duty-detail'>1.为公司新产品与新功能提供创意及设计方案;</text>
+        <text class='duty-detail'>2.持续关注设计趋势，分享设计经验，提高团队的设计能力;</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='dis-tip'>
+  此岗位为招聘外包职位.
+</view>
+
+<view class='to-company' bindtap='toCompany'>
+  <view>
+    <image src='../../../image/index/comp-bg.png'></image>
+    <view class='company-detail'>
+      <text class='company-name'>重庆渐臻科技有限公司</text>
+      <text>50人以上/民营/互联网/软件开发</text>
+    </view>
+  </view>
+  <image class='next' src='../../../image/index/next.png'></image>
+</view>
+
+<view class='footer'>
+  <view class='footer-item first'>
+
+
+    <view hidden='{{collectType}}' class='footer-item-box' bindtap='collect'>
+      <image src='../../../image/index/collect.png'></image>
+      <text>收藏</text>
+    </view> 
+    <view hidden='{{!collectType}}' class='footer-item-box' bindtap='collectYet'>
+      <image src='../../../image/index/collect1.png'></image>
+      <text>收藏</text>
+    </view> 
+
+
+    <view class='footer-item-box' data-id='2' bindtap='call'>
+      <image src='../../../image/index/phone.png'></image>
+      <text>电话</text>
+    </view>
+  </view>
+  <view class='footer-item rest' data-id='0' bindtap='send'>
+    <image class='send' src='../../../image/index/send.png'></image>
+    <text>发送简历</text>
+  </view>
+  <view data-id='1' class='footer-item rest' bindtap='chat'>
+    <image class='chat' src='../../../image/index/chat.png'></image>
+    <text>和Ta聊天</text>
+  </view>
+</view>
+
+<!-- 打电话发简历模态框 -->
+<view class='modal' hidden='{{modalShow}}' bindtap='hidemodal'>
+  <view hidden='{{modalData[0]}}' class='modal-cont'>
+    <view class='modal-tit'>您尚未创建简历!</view>
+    <view class='modal-btn'>
+      <view class='not'>暂时不用</view>
+      <view class='create'>去创建</view>
+    </view>
+  </view>
+  <view hidden='{{modalData[1]}}' data-id='1' bindtap='showdetail' class="send-msg">
+    <text class='send-intro'>恭喜你,简历发送成功!</text>
+  </view>
+  <view class='call' data-id='2' bindtap='showdetail' hidden='{{modalData[2]}}'>
+    <view class='call-number'>187236245589!</view>
+    <view class='call-btn'>
+      <view class='not'>取消</view>
+      <view class='call-out' bindtap='callnumber'>确认拨出</view>
+    </view>
+  </view>
+</view>
