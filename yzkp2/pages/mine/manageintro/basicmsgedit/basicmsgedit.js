@@ -1,4 +1,4 @@
-// pages/mine/set/set.js
+// pages/mine/manageintro/basicmsgedit/basicmsgedit.js
 Page({
 
   /**

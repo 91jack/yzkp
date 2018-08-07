@@ -1,6 +1,6 @@
 // pages/index/newwork/newwork.js
-var bigData = require('../common.js')
-var industry
+
+
 Page({
 
   /**
@@ -11,8 +11,7 @@ Page({
     currentTab: [true, true, true, true],
     selectData: ['公司', '职位'],
     navBarData: ['推荐', '地区', '职位', '要求'],
-    index: 0,//选择的下拉列表下标
-    work_year: bigData.work_year,
+    index: 0//选择的下拉列表下标
   },
 
   /**

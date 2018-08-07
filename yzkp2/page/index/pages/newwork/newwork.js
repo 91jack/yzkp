@@ -1,48 +1,23 @@
-// pages/index/index.js
+// pages/index/newwork/newwork.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
-    currentTab: [true, true, true, true],//控制nav-bar的显示
-    selectData: ['公司', '职位'],//下拉列表的数据
-    index: 0,//选择的下拉列表下标，
-    selectBar:[
-      {
-        url:'newwork/newwork',
-        src:'../../image/index/zhiwei.png',
-        text:'最新职位'
-      },
-      {
-        url: 'parttime/parttime',        
-        src:'../../image/index/time.png',
-        text:'兼职职位'
-      },
-      {
-        url: '../mine/manageintro/manageintro',        
-        src:'../../image/index/resume.png',
-        text:'简历管理'
-      },
-      {
-        url: 'prog/prog',        
-        src:'../../image/index/pro.png',
-        text:'应聘进度'
-      },
-      {
-        url: 'ability/ability',        
-        src:'../../image/index/train.png',
-        text:'能力提升'
-      }
-    ],
-    navBarData:['推荐','地区','职位','要求'],
-    navbarShow:false
+    show: false,
+    currentTab: [true, true, true, true],
+    selectData: ['公司', '职位'],
+    navBarData: ['推荐', '地区', '职位', '要求'],
+    index: 0//选择的下拉列表下标
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  onLoad: function (options) {
+    
+  },
   selectTap() {
     this.setData({
       show: !this.data.show
@@ -56,11 +31,9 @@ Page({
       show: !this.data.show
     });
   },
-
-  onLoad: function (options) {
-  
-  },
-// navbar的展开
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
   navbarTap: function (e) {
     var i = e.currentTarget.dataset.idx;
     var index = this.data.currentTab[i];
@@ -82,7 +55,6 @@ Page({
       })
     }
   },
-// navbar的收起
   hideBar: function (e) {
     var i = Number(e.currentTarget.dataset.idx);
     console.log(typeof i)
@@ -92,16 +64,6 @@ Page({
       [hid]: true
     })
   },
-
-  //招聘信息页面跳转
-  toCompanyDetail: function(e){
-    wx.navigateTo({
-      url: 'companyrequest/companyrequest',
-    })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
   
   },

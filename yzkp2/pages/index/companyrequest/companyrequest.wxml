@@ -35,7 +35,7 @@
     <text>五险一金,带薪年假,交通补助,节日礼金;</text>
   </view>
   <view class='tit-adreess'>
-    <navigator>
+    <navigator hover-class='none'>
       <image src='../../../image/index/area.png'></image>
       <text>重庆市渝北区金开大道永固金鼎时代</text>
     </navigator>

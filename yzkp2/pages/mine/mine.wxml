@@ -78,18 +78,3 @@
   </view>
 </navigator>
 
-<navigator hover-class='none' url='set/set'>
-  <view class='box last'>
-    <view class='left'>
-      <image src='../../image/mine/set.png'></image>
-      <text>设置</text>
-    </view>
-    <view class='right'>
-      <image src='../../image/mine/next.png'></image>
-    </view>
-  </view>
-</navigator>
-
-<view class='btn'>
-  登录成为员工
-</view>
