@@ -1,4 +1,5 @@
 <view class='box'>
-
+  <text>姓名</text>
+  <input placeholder='请输入姓名'></input>
 </view>
 

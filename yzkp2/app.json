@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/mine/manageintro/basicmsgedit/basicmsgedit",    
+    "pages/index/index",    
     "pages/mine/manageintro/manageintro",
-    "pages/index/index",
     "page/index/index",
     "page/msg/index",
     "page/my/index",
@@ -15,7 +15,6 @@
     "pages/index/companyrequest/companydetail/companydetail",
     "pages/msg/msg",
     "pages/index/parttime/parttime",
-    "pages/index/selfintro/selfintro",
     "pages/index/prog/prog",
     "pages/index/ability/ability",
     "pages/mine/sendrecode/sendrecode"

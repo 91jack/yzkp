@@ -1,48 +1,10 @@
-<!--pages/index/newwork/newwork.wxml-->
-<view class='top'>
-  <view class='serach'>
-    <view class='company' catchtap='selectTap'>
-        <text class='select_text'>{{selectData[index]}}</text>
-        <image class='select_img {{show&&"select_img_rotate"}}' src='../../../image/index/return.png'></image>         
-    </view>
-    <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*70):0}}rpx;'>  
-        <view class='jiao-cont'>
-          <view class='jiao'></view>
-        </view>      
-        <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
-    </view>
-
-
-    <view class='inp'>
-      <input placeholder='搜索公司/职位'></input>
-    </view>
-    <view class='serach-icon'>
-      <image src='../../../image/index/serach.png'></image>
-    </view>
-  </view>
-  <view class='mine'>
-    <navigator hover-class='none'>
-      搜索
-    </navigator>
-  </view>
-</view>
-
-
-
-
-
-
-
 <!--nav-bar-->
 <view class='nav-bar'>
   <view wx:for="{{navBarData}}" class='nav-item' wx:key="unique" data-idx="{{index}}" bindtap='navbarTap'>
     <text class='select_font {{!currentTab[index]&&"select_font_yellow"}}'>{{item}}</text>
     <image class='select_img {{!currentTab[index]&&"select_img_rotate"}}' src='../../../image/index/return1.png'></image>
   </view>
-
-
 <!--nav-bar内容区-->
-   
   <view class='bar'>
     <!--推荐-->  
      <view hidden="{{currentTab[0]}}">

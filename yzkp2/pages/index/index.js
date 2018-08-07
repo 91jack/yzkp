@@ -5,11 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
     currentTab: [true, true, true, true],//控制nav-bar的显示
-    selectData: ['公司', '职位'],//下拉列表的数据
     index: 0,//选择的下拉列表下标，
-    selectBar:[
+    selectBar1:[
       {
         url:'newwork/newwork',
         src:'../../image/index/zhiwei.png',
@@ -36,6 +34,38 @@ Page({
         text:'能力提升'
       }
     ],
+    selectBar2: [
+      {
+        url: 'newwork/newwork',
+        src: '../../image/index/zhiwei.png',
+        text: '全职发布'
+      },
+      {
+        url: 'parttime/parttime',
+        src: '../../image/index/time.png',
+        text: '兼职发布'
+      },
+      {
+        url: '../mine/manageintro/manageintro',
+        src: '../../image/index/resume.png',
+        text: '简历搜索'
+      },
+      {
+        url: 'prog/prog',
+        src: '../../image/index/pro.png',
+        text: '招聘外包'
+      },
+      {
+        url: 'ability/ability',
+        src: '../../image/index/train.png',
+        text: '劳务派遣'
+      },
+      {
+        url: 'ability/ability',
+        src: '../../image/index/train.png',
+        text: '灵活用工'
+      }
+    ],
     navBarData:['推荐','地区','职位','要求'],
     navbarShow:false
   },
@@ -43,22 +73,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  selectTap() {
-    this.setData({
-      show: !this.data.show
-    });
-  },
   // 点击下拉列表
-  optionTap(e) {
-    let Index = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
-    this.setData({
-      index: Index,
-      show: !this.data.show
-    });
-  },
 
   onLoad: function (options) {
   
+  },
+  // 搜索职位
+  serachoffices:function(){
+    wx.showToast({
+      title: '111111',
+    })
   },
 // navbar的展开
   navbarTap: function (e) {

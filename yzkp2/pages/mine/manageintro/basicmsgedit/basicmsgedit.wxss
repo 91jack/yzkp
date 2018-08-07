@@ -1,4 +1,29 @@
 .box{
   height: 104rpx;
-  border-bottom: 1rpx solid #E8E8E8
+  border-bottom: 1rpx solid #E8E8E8;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 22rpx 0 27rpx;
+}
+.box>text{
+  line-height: 104rpx;
+  font-size: 28rpx;
+  color: #868686;  
+}
+.box>input{
+  text-align: right;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  height: 104rpx;
+  width: 60%;
+  background: red;
+}
+:-moz-placeholder{
+  color: #D7D7D7
+}
+::-moz-placeholder{
+  color: #D7D7D7  
+}
+:-ms-input-placeholder{
+  color: #D7D7D7  
 }

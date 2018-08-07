@@ -25,20 +25,17 @@ page{
   line-height: 78rpx;
   justify-content: space-around
 }
-.serach .company{
-  width: 96rpx;
-  font-size: 28rpx;
-  color: #3830EB;
-  position: relative
-}
-.serach .company image{
-  width: 28rpx;
-  height: 17rpx;
-  margin-top: 30rpx;
-  margin-left: 10rpx;
-}
 .serach .inp{
-  width: 60%;
+  width: 100%;
+  position: relative;
+}
+.serach .inp image{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 47rpx;
+  top: 50%;
+  margin-top: -16rpx
 }
 .serach view input{
   display: block;
@@ -46,6 +43,7 @@ page{
   line-height: 78rpx;
   text-align: center;
   height: 78rpx;
+  width: 100%;
 }
 ::-moz-placeholder{
   color: #D7D7D7;
@@ -61,57 +59,6 @@ serach-icon{
   width: 32rpx;
   height: 32rpx;
 }
-
-/*selsect下拉框  */
-.select_img_rotate{
-  transform:rotate(180deg); 
-}
-.option_box{
-  position: absolute;
-  top: 128rpx;
-  left: 55rpx;
-  width: 109rpx;
-  box-sizing: border-box;
-  height: 0;
-  overflow-y: auto;    
-  border-top: 0;
-  background: #fff;
-  transition: height 0.3s;
-  text-align: center;
-  border-radius: 4rpx;
-}
-.option{
-  display: block;
-  line-height: 40rpx;
-  font-size: 30rpx;
-  padding: 10rpx;
-  height: 40rpx;
-  color: #868686;
-  border-radius: 4rpx;
-}
-.option:hover{
-  color: #000000
-}
-.option:last-child{
-  padding-bottom: 10rpx;
-}
-.jiao-cont{
-  height: 16rpx;
-  width: 100%;
-  background: #3830EB;
-  position: relative
-}
-.jiao{
-  width: 20rpx;
-  height: 20rpx;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  background: #fff;
-  position: absolute;
-  top: 8rpx;
-  left: 10rpx;
-}
-
 ::-webkit-scrollbar{
 width: 0;
 height: 0;
@@ -185,7 +132,9 @@ color: transparent;
   width: 185rpx;
   position: relative
 }
-.nav-bar .nav-item::after{
+.nav-bar .nav-item:first-of-type::after,
+.nav-bar .nav-item:nth-of-type(2)::after,
+.nav-bar .nav-item:nth-of-type(3)::after{
   content: '';
   position: absolute;
   top: 50%;
@@ -194,9 +143,6 @@ color: transparent;
   width: 1px;
   background: #BFBFBF;
   margin-top: -13rpx;
-}
-.nav-bar .nav-item:last-child::after{
-  height: 0
 }
 .nav-bar .nav-item text{
   font-size: 28rpx;

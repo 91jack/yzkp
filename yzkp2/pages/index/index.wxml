@@ -1,22 +1,8 @@
 <!--pages/index/index.wxml-->
 <view class='top'>
   <view class='serach'>
-    <view class='company' catchtap='selectTap'>
-        <text class='select_text'>{{selectData[index]}}</text>
-        <image class='select_img {{show&&"select_img_rotate"}}' src='../../image/index/return.png'></image>         
-    </view>
-    <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*70):0}}rpx;'>  
-        <view class='jiao-cont'>
-          <view class='jiao'></view>
-        </view>      
-        <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
-    </view>
-
-
     <view class='inp'>
-      <input placeholder='搜索公司/职位'></input>
-    </view>
-    <view class='serach-icon'>
+      <input placeholder='搜索职位' bindconfirm='serachoffices' confirm-type="search"></input>
       <image src='../../image/index/serach.png'></image>
     </view>
   </view>
@@ -28,6 +14,15 @@
   </view>
 </view>
 
+<view class='top'>
+  <view class='serach'>
+    <view class='inp'>
+      <input placeholder='搜索职位' bindconfirm='serachoffices' confirm-type="search"></input>
+      <image src='../../image/index/serach.png'></image>
+    </view>
+  </view>
+</view>
+
 
 <view class='banner'>
   <image src='../../image/index/banner.png'></image>
@@ -35,7 +30,16 @@
 
 
 <view class='select-bar'>
-  <view class='item' wx:for="{{selectBar}}">
+  <view class='item' wx:for="{{selectBar1}}">
+    <navigator hover-class="none" url='{{item.url}}'>
+      <image src='{{item.src}}'></image>
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+</view>
+
+<view class='select-bar'>
+  <view class='item' wx:for="{{selectBar2}}">
     <navigator hover-class="none" url='{{item.url}}'>
       <image src='{{item.src}}'></image>
       <text>{{item.text}}</text>
