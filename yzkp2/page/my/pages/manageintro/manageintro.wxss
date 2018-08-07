@@ -1,0 +1,137 @@
+page{
+  background: #fff
+}
+.header{
+  height: 192rpx;
+  background: #fff;
+  border-bottom: 16rpx solid #F6F6F6;
+}
+.header .header-cont{
+    display: flex;
+    position: relative
+}
+.header .company-pic{
+  width: 113rpx;
+  height: 113rpx;
+  background: red;
+  margin-left: 29rpx;
+  margin-top: 40rpx;
+  border-radius: 50%
+}
+.header-intro {
+  margin-left: 33rpx;
+}
+.header-intro>text{
+  display: block;
+}
+.header-intro .name{
+  font-size: 32rpx;
+  color: #353535;
+  margin-top: 54rpx;
+  margin-bottom: 25rpx;
+}
+.header-intro .intro-cont{
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.header-intro .intro{
+  font-size: 26rpx;
+  color: #868686;
+  line-height: 26rpx;  
+  display: inline-block;  
+}
+.header-intro .intro.detail{
+  width: 379rpx;
+  height: 26rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+.tonext{
+  width: 18rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -16rpx;
+  right:24rpx;
+}
+
+/* 导航栏 */
+.nav-bar{
+  width: 100%;
+  height: 75rpx;
+  display: flex;
+}
+.nav-bar .nav-bar-item{
+  width: 187rpx;
+  height: 75rpx;
+  border-right:1rpx solid #E8E8E8;
+  background: #fff;
+  color: #868686;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 75rpx;
+}
+.nav-bar .nav-bar-item:last-of-type{
+  border-right: none
+}
+.nav-bar .nav-bar-item.active{
+  background: #F39800;
+  color: #fff
+}
+/*              nav-cont内容区 */
+/* 简历编辑 */
+.edit{
+  width: 702rpx;
+  border-radius: 10rpx;
+  background:  rgba(56,48,235,0.05);
+  margin: auto
+}
+.edit .box{
+  width: 702rpx;
+  box-sizing: border-box;
+  padding: 0 26rpx 0 25rpx;
+}
+.add-basicmsg .nav-cont-tit{
+  display: flex;
+  height: 70rpx;
+  border-bottom: 1px solid #868686;
+  justify-content: space-between
+}
+.add-basicmsg .nav-cont-tit .left image{
+  width: 29rpx;
+  height: 26rpx;
+  margin-right: 8rpx;
+}
+.add-basicmsg .nav-cont-tit .left text{
+  font-size: 24rpx;
+  color: #353535;
+  line-height: 70rpx;
+  vertical-align: middle
+}
+.add-basicmsg .nav-cont-tit .right image{
+  width: 20rpx;
+  height: 22rpx;
+  margin-right: 7rpx;
+}
+.add-basicmsg .nav-cont-tit .right text{
+  font-size: 22rpx;
+  color: #F39800;
+  line-height: 70rpx;  
+  vertical-align: middle  
+}
+.add-basicmsg .nav-cont-add{
+  height: 156rpx;
+}
+.add-basicmsg .nav-cont-add image{
+  width: 37rpx;
+  height: 37rpx;
+  display: inline-block
+}
+.add-basicmsg .nav-cont-add text{
+  color: #868686;
+  font-size: 28rpx;
+  display: inline-block;
+  height: 28rpx;
+  line-height: 28rpx;
+}

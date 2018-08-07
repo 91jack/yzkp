@@ -1,0 +1,48 @@
+page{
+  background: #fff;
+}
+.cont{
+  margin-top: 90rpx;
+}
+textarea{
+  width:703rpx;
+  height:461rpx;
+  background:rgba(245,244,254,1);
+  border-radius:6rpx;
+  margin: auto;
+  font-size: 28rpx;
+  line-height: 35rpx;
+  padding: 27rpx 28rpx; 
+  box-sizing: border-box
+}
+::-moz-placeholder{
+  color: #AEAEAE;
+}
+:-ms-input-placeholder{
+  color: #AEAEAE;
+}
+::-webkit-input-placeholder{
+  color: #AEAEAE;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 117rpx;
+  width: 100%;
+}
+.btn view{
+  width: 375rpx;
+  height: 100%;
+  float: left;
+  color: #FFF;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 117rpx;
+}
+.btn .no{
+  background: #B9B9B9;
+}
+.btn .yes{
+  background: #F39800;
+}
