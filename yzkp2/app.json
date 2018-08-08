@@ -1,32 +1,9 @@
 {
   "pages": [
-<<<<<<< HEAD
-    "pages/mine/manageintro/manageintro",    
-    "pages/index/index",    
-    "page/msg/index",    
-    "pages/msg/msg",    
-    "pages/index/ability/abilitydetail/signup/signup",
-    "pages/index/ability/abilitydetail/abilitydetail",
-    "pages/index/ability/ability",
-    "pages/mine/mine",
-    "pages/mine/manageintro/basicmsgedit/basicmsgedit",
-    "page/index/index",
-    "page/my/index",
-    "pages/mine/askhelp/askhelp",
-    "pages/mine/complaints/complaints",
-    "pages/index/newwork/newwork",
-    "pages/index/companyrequest/companyrequest",
-    "pages/index/companyrequest/companydetail/companydetail",
-    "pages/index/parttime/parttime",
-    "pages/index/prog/prog",
-    "pages/mine/sendrecode/sendrecode"
-=======
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index",
-    
     "page/common/city/city"
->>>>>>> 3484a6ef9d6604ae3d14770906c6979e01c8bbfe
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -62,9 +39,8 @@
   },
   "subPackages": [
     {
-      "root": "page/index/",
+      "root": "page/tabBar/index/",
       "pages": [
-        
         "pages/ability/abilitydetail/abilitydetail",
         "pages/ability/ability",
         "pages/newwork/newwork",
@@ -75,7 +51,7 @@
       ]
     },
     {
-      "root": "page/my",
+      "root": "page/tabBar/my/",
       "pages": [
         "pages/manageintro/manageintro",
         "pages/opinion/opinion",
