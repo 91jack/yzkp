@@ -19,7 +19,8 @@ Page({
   // 公司详情页面跳转
   toCompany:function(){
     wx.navigateTo({
-      url: 'companydetail/companydetail',
+      url: './companydetail/companydetail',
+
     })
   },
   //收藏

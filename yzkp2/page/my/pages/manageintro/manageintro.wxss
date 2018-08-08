@@ -122,16 +122,42 @@ page{
 }
 .add-basicmsg .nav-cont-add{
   height: 156rpx;
+  line-height: 156rpx;
+  display: flex
+}
+.add-basicmsg .nav-cont-add.active{
+  display: none
 }
 .add-basicmsg .nav-cont-add image{
   width: 37rpx;
   height: 37rpx;
-  display: inline-block
+  display: inline-block;
+  margin: 57rpx 12rpx 0 235rpx;
 }
 .add-basicmsg .nav-cont-add text{
   color: #868686;
   font-size: 28rpx;
   display: inline-block;
-  height: 28rpx;
-  line-height: 28rpx;
+  height: 156rpx;
+  line-height: 156rpx;
+}
+.nav-cont-basicmsgdetail>text{
+  display: block
+}
+.nav-cont-basicmsgdetail{
+  color: #353535;
+  font-size: 28rpx;
+  margin: 26rpx 0 17rpx 0;
+}
+.basicmsgdetail-info{
+  color: #868686;
+  font-size: 24rpx;
+}
+.basicmsgdetail-item image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.basicmsgdetail-item text{
+  font-size: 24rpx;
+  color: #868686
 }

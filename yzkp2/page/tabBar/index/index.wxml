@@ -1,0 +1,117 @@
+<!--page/tabBar/index/index.wxml-->
+<view class='top'>
+  <view class='serach'>
+    <view class='inp'>
+      <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
+      <image src='/image/index/serach.png'></image>
+      <image class='clear' src='/image/index/clear.png'></image>
+    </view>
+  </view>
+</view>
+
+
+<view class='banner'>
+  <image src='/image/index/banner.png'></image>
+</view>
+
+<!-- 求职者 -->
+<view class='select-bar'>
+  <view class='item' wx:for="{{selectBar1}}">
+    <navigator hover-class="none" url='{{item.url}}'>
+      <image src='{{item.src}}'></image>
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+</view>
+<!-- 员工 -->
+<view class='select-bar'>
+  <view class='item' wx:for="{{selectBar2}}">
+    <navigator hover-class="none" url='{{item.url}}'>
+      <image src='{{item.src}}'></image>
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+</view>
+<!-- 企业 -->
+<view class='select-bar'>
+  <view class='item' wx:for="{{selectBar3}}">
+    <navigator hover-class="none" url='{{item.url}}'>
+      <image src='{{item.src}}'></image>
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+</view>
+
+<!--nav-bar-->
+<view class='nav-bar'>
+  <view wx:for="{{navBarData}}" class='nav-item' data-idx="{{index}}" bindtap='navbarTap'>
+    <text>{{item}}</text>
+    <image src='/image/index/return1.png'></image>
+  </view>
+
+
+<!--nav-bar内容区-->
+
+   <view class='bar'>
+    <view hidden="{{currentTab[0]}}">
+      <view class='bar-item'>
+        <checkbox>推荐</checkbox>
+        <checkbox>最新</checkbox>
+      </view>
+    </view>
+    
+    <view hidden="{{currentTab[1]}}" data-idx="1" bindtap='hideBar'>
+      tab_02
+    </view>
+    
+    <view hidden="{{currentTab[2]}}" data-idx="2" bindtap='hideBar'>
+      tab_03
+    </view>
+
+    <view hidden="{{currentTab[3]}}" data-idx="3" bindtap='hideBar'>
+      tab_04
+    </view>
+  </view> 
+</view>
+
+
+
+
+
+<!--职位展示  -->
+<view class='cont'>
+  <view class='cont-item' bindtap='toCompanyDetail'>
+    <view class='cont-tit'>
+      <text class='title'>高级程序员</text>
+      <text class='time'>1天前</text>
+    </view>
+    <view class='cont-detail'>
+      <view class='det-left'>
+        <view class='left-item'>
+          <image src='/image/index/area.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/work.png'></image>
+          <text>1-3年</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/xueli.png'></image>
+          <text>本科</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/height.png'></image>
+          <text>165cm以上</text>
+        </view>
+      </view>
+      <view class='det-right'>7K-9K</view>
+    </view>
+    <view class='cont-company'>
+      <image src='/image/index/company.png'></image>
+      <view class='company-info'>
+        <view class='company-name'>渐臻科技</view>
+        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
+      </view>
+    </view>
+  </view>
+</view>

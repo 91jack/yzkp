@@ -27,7 +27,7 @@
     </view>
     <view class='company-intro'>
       <view class='company-name'>
-        <image src='../../../../image/index/companyintro.png'></image>
+        <image src='/image/index/companyintro.png'></image>
         <text>公司介绍</text>
       </view>
       <view class='company-introdetail'>
@@ -49,19 +49,19 @@
       <view class='cont-detail'>
         <view class='det-left'>
           <view class='left-item'>
-            <image src='../../../../image/index/area.png'></image>
+            <image src='/image/index/area.png'></image>
             <text>重庆</text>
           </view>
           <view class='left-item'>
-            <image src='../../../../image/index/work.png'></image>
+            <image src='/image/index/work.png'></image>
             <text>1-3年</text>
           </view>
           <view class='left-item'>
-            <image src='../../../../image/index/xueli.png'></image>
+            <image src='/image/index/xueli.png'></image>
             <text>本科</text>
           </view>
           <view class='left-item'>
-            <image src='../../../../image/index/height.png'></image>
+            <image src='/image/index/height.png'></image>
             <text>165cm以上</text>
           </view>
         </view>
@@ -76,19 +76,19 @@
       <view class='cont-detail'>
         <view class='det-left'>
           <view class='left-item'>
-            <image src='../../../../image/index/area.png'></image>
+            <image src='/image/index/area.png'></image>
             <text>重庆</text>
           </view>
           <view class='left-item'>
-            <image src='../../../../image/index/work.png'></image>
+            <image src='/image/index/work.png'></image>
             <text>1-3年</text>
           </view>
           <view class='left-item'>
-            <image src='../../../../image/index/xueli.png'></image>
+            <image src='/image/index/xueli.png'></image>
             <text>本科</text>
           </view>
           <view class='left-item'>
-            <image src='../../../../image/index/height.png'></image>
+            <image src='/image/index/height.png'></image>
             <text>165cm以上</text>
           </view>
         </view>
