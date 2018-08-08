@@ -33,7 +33,16 @@
 <view class='nav-cont'>
 <!-- 简历编辑 -->
   <view class='edit'>
+<<<<<<< HEAD
     <view class='box add-basicmsg'>
+=======
+<<<<<<< HEAD
+  <!-- 基本信息 -->
+    <view class='boxcont add-basicmsg'>
+=======
+    <view class='box add-basicmsg'>
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
       <view class='nav-cont-tit'>
         <view class='left'>
           <image src='../../../image/mine/selfmsg.png'></image>
@@ -44,11 +53,21 @@
           <text>编辑</text>
         </view>
       </view>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <view class='nav-cont-basicmsgdetail' hidden='true'>
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
       <view class='nav-cont-add active'>
         <image src='../../../image/mine/add.png'></image>
         <text>添加基本信息</text>
       </view>
       <view class='nav-cont-basicmsgdetail'>
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
         <text class='basicmsgdetail-name'>张澜澜</text>
         <text class='basicmsgdetail-info'>重庆-渝北 |  2年 | 女 | 22岁 </text>
         <view class='basicmsgdetail-item'>
@@ -66,10 +85,87 @@
       </view>
     </view>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <!-- 求职意向 -->
+    <view class='boxcont add-basicmsg'>
+      <view class='nav-cont-tit'>
+        <view class='left'>
+          <image src='../../../image/mine/selfmsg.png'></image>
+          <text>基本信息</text> 
+        </view>
+        <view class='right' hidden='true'>
+          <image src='../../../image/mine/edit.png'></image>
+          <text>编辑</text>
+        </view>
+      </view>
+      <view class='nav-cont-basicmsgdetail' hidden='true'>
+        <text class='basicmsgdetail-info'>UI设计师 | 渝北区 | 8K-10K</text>      
+      </view>
+    </view>
+    <!-- 工作经验 -->
+    <view class='boxcont add-express'>
+      <view class='nav-cont-tit'>
+        <view class='left'>
+          <image src='../../../image/mine/selfmsg.png'></image>
+          <text>基本信息</text> 
+        </view>
+        <view class='right' hidden='true'>
+          <image src='../../../image/mine/edit.png'></image>
+          <text>编辑</text>
+        </view>
+      </view>
+      <view class='nav-content'>
+        <view class='nav-content-item'>
+          <image src='../../../../image/mine/checkon.png'></image>
+          <view class='nav-content-item-detail'>
+            <text>2017-2~2017-9</text>
+            <text>重庆渐臻科技有限公司</text>
+            <text>设计部 | UI设计师</text>
+          </view>
+        </view>
+        <view class='nav-content-item'>
+          
+        </view>
+      </view>
+    </view>
+    <!-- 教育经验 -->
+    <view class='boxcont add-education'>
+      <view class='nav-cont-tit'>
+        <view class='left'>
+          <image src='../../../image/mine/selfmsg.png'></image>
+          <text>基本信息</text> 
+        </view>
+        <view class='right' hidden='true'>
+          <image src='../../../image/mine/edit.png'></image>
+          <text>编辑</text>
+        </view>
+      </view>
+    </view>
+    <!-- 项目经验 -->
+    <view class='boxcont add-progrom'>
+      <view class='nav-cont-tit'>
+        <view class='left'>
+          <image src='../../../image/mine/selfmsg.png'></image>
+          <text>基本信息</text> 
+        </view>
+        <view class='right' hidden='true'>
+          <image src='../../../image/mine/edit.png'></image>
+          <text>编辑</text>
+        </view>
+      </view>
+    </view>
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
     <view class='box add-opinion'></view>
     <view class='box add-express'></view>
     <view class='box add-education'></view>
     <view class='box add-progrom'></view>
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
   </view>
 <!-- 简历设置 -->
   <view class='set'>

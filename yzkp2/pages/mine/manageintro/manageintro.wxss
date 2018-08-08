@@ -85,6 +85,23 @@ page{
   width: 702rpx;
   border-radius: 10rpx;
   background:  rgba(56,48,235,0.05);
+<<<<<<< HEAD
+  margin: auto
+=======
+<<<<<<< HEAD
+  margin: auto;
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+}
+.edit .box{
+  width: 702rpx;
+  box-sizing: border-box;
+  padding: 0 26rpx 0 25rpx;
+}
+<<<<<<< HEAD
+.add-basicmsg .nav-cont-tit{
+=======
+.boxcont .nav-cont-tit{
+=======
   margin: auto
 }
 .edit .box{
@@ -93,33 +110,73 @@ page{
   padding: 0 26rpx 0 25rpx;
 }
 .add-basicmsg .nav-cont-tit{
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
   display: flex;
   height: 70rpx;
   border-bottom: 1px solid #868686;
   justify-content: space-between
 }
+<<<<<<< HEAD
 .add-basicmsg .nav-cont-tit .left image{
+=======
+<<<<<<< HEAD
+.boxcont .nav-cont-tit .left image{
+=======
+.add-basicmsg .nav-cont-tit .left image{
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
   width: 29rpx;
   height: 26rpx;
   margin-right: 8rpx;
 }
+<<<<<<< HEAD
 .add-basicmsg .nav-cont-tit .left text{
+=======
+<<<<<<< HEAD
+.boxcont .nav-cont-tit .left text{
+=======
+.add-basicmsg .nav-cont-tit .left text{
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
   font-size: 24rpx;
   color: #353535;
   line-height: 70rpx;
   vertical-align: middle
 }
+<<<<<<< HEAD
 .add-basicmsg .nav-cont-tit .right image{
+=======
+<<<<<<< HEAD
+.boxcont .nav-cont-tit .right image{
+=======
+.add-basicmsg .nav-cont-tit .right image{
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
   width: 20rpx;
   height: 22rpx;
   margin-right: 7rpx;
 }
+<<<<<<< HEAD
 .add-basicmsg .nav-cont-tit .right text{
+=======
+<<<<<<< HEAD
+.boxcont .nav-cont-tit .right text{
+=======
+.add-basicmsg .nav-cont-tit .right text{
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
   font-size: 22rpx;
   color: #F39800;
   line-height: 70rpx;  
   vertical-align: middle  
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 .add-basicmsg .nav-cont-add{
   height: 156rpx;
   line-height: 156rpx;
@@ -141,17 +198,50 @@ page{
   height: 156rpx;
   line-height: 156rpx;
 }
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 .nav-cont-basicmsgdetail>text{
   display: block
 }
 .nav-cont-basicmsgdetail{
   color: #353535;
   font-size: 28rpx;
+<<<<<<< HEAD
   margin: 26rpx 0 17rpx 0;
+=======
+<<<<<<< HEAD
+  margin-top: 26rpx;
+}
+.basicmsgdetail-name{
+  font-size: 28rpx;
+  color: #353535;
+  height: 28rpx;
+  line-height: 28rpx;
+=======
+  margin: 26rpx 0 17rpx 0;
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 }
 .basicmsgdetail-info{
   color: #868686;
   font-size: 24rpx;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  height: 24rpx;
+  line-height: 24rpx;
+  margin: 17rpx 0 24rpx; 
+}
+.basicmsgdetail-item{
+  margin-bottom: 20rpx;
+}
+.basicmsgdetail-item:last-of-type{
+  margin-bottom: 0
+=======
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 }
 .basicmsgdetail-item image{
   width: 25rpx;
@@ -160,4 +250,32 @@ page{
 .basicmsgdetail-item text{
   font-size: 24rpx;
   color: #868686
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+}
+.nav-content .nav-content-item{
+  height: 159rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  box-sizing: border-box;
+  padding-top: 30rpx;
+}
+.nav-content .nav-content-item:last-of-type{
+  border-bottom: none
+}
+.nav-content .nav-content-item image{
+  width: 22rpx;
+  height: 22rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+  vertical-align: top
+}
+.nav-content .nav-content-item .nav-content-item-detail{
+  display: inline-block
+}
+.nav-content .nav-content-item .nav-content-item-detail text{
+  display: block
+=======
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 }
