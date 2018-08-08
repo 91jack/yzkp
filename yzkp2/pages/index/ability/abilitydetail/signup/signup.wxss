@@ -1,7 +1,0 @@
-/* pages/index/ability/abilitydetail/signup/signup.wxss */
-page{
-  background: #F6F6F6
-}
-.box{
-  background: #fff
-}

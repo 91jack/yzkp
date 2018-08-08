@@ -87,14 +87,27 @@ page{
   background:  rgba(56,48,235,0.05);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  margin: auto
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
   margin: auto;
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+  margin: auto
+>>>>>>> parent of 3484a6e... 1
 }
-.edit .boxcont{
+.edit .box{
   width: 702rpx;
   box-sizing: border-box;
-  padding: 0 26rpx 38rpx 25rpx;
-  border-bottom: 12rpx solid #fff;
+  padding: 0 26rpx 0 25rpx;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+.add-basicmsg .nav-cont-tit{
+=======
 .boxcont .nav-cont-tit{
 =======
 =======
@@ -111,6 +124,10 @@ page{
 >>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+.add-basicmsg .nav-cont-tit{
+>>>>>>> parent of 3484a6e... 1
   display: flex;
   height: 70rpx;
   border-bottom: 1px solid #868686;
@@ -118,10 +135,20 @@ page{
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.add-basicmsg .nav-cont-tit .left image{
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 .boxcont .nav-cont-tit .left image{
 =======
 .add-basicmsg .nav-cont-tit .left image{
 >>>>>>> parent of 3484a6e... 1
+<<<<<<< HEAD
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 .add-basicmsg .nav-cont-tit .left image{
 >>>>>>> parent of 3484a6e... 1
@@ -131,10 +158,20 @@ page{
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.add-basicmsg .nav-cont-tit .left text{
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 .boxcont .nav-cont-tit .left text{
 =======
 .add-basicmsg .nav-cont-tit .left text{
 >>>>>>> parent of 3484a6e... 1
+<<<<<<< HEAD
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 .add-basicmsg .nav-cont-tit .left text{
 >>>>>>> parent of 3484a6e... 1
@@ -145,10 +182,20 @@ page{
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.add-basicmsg .nav-cont-tit .right image{
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 .boxcont .nav-cont-tit .right image{
 =======
 .add-basicmsg .nav-cont-tit .right image{
 >>>>>>> parent of 3484a6e... 1
+<<<<<<< HEAD
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 .add-basicmsg .nav-cont-tit .right image{
 >>>>>>> parent of 3484a6e... 1
@@ -158,10 +205,20 @@ page{
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.add-basicmsg .nav-cont-tit .right text{
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 .boxcont .nav-cont-tit .right text{
 =======
 .add-basicmsg .nav-cont-tit .right text{
 >>>>>>> parent of 3484a6e... 1
+<<<<<<< HEAD
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 .add-basicmsg .nav-cont-tit .right text{
 >>>>>>> parent of 3484a6e... 1
@@ -172,8 +229,16 @@ page{
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 >>>>>>> parent of 3484a6e... 1
 .add-basicmsg .nav-cont-add{
@@ -198,7 +263,14 @@ page{
   line-height: 156rpx;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 3484a6e... 1
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3484a6e... 1
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 >>>>>>> parent of 3484a6e... 1
 .nav-cont-basicmsgdetail>text{
@@ -209,6 +281,12 @@ page{
   font-size: 28rpx;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  margin: 26rpx 0 17rpx 0;
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
   margin-top: 26rpx;
 }
 .basicmsgdetail-name{
@@ -219,6 +297,10 @@ page{
 =======
   margin: 26rpx 0 17rpx 0;
 >>>>>>> parent of 3484a6e... 1
+<<<<<<< HEAD
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
   margin: 26rpx 0 17rpx 0;
 >>>>>>> parent of 3484a6e... 1
@@ -228,6 +310,11 @@ page{
   font-size: 24rpx;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
   height: 24rpx;
   line-height: 24rpx;
   margin: 17rpx 0 24rpx; 
@@ -239,6 +326,10 @@ page{
   margin-bottom: 0
 =======
 >>>>>>> parent of 3484a6e... 1
+<<<<<<< HEAD
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 >>>>>>> parent of 3484a6e... 1
 }
@@ -251,6 +342,11 @@ page{
   color: #868686
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 }
 .nav-content .nav-content-item{
   height: 159rpx;
@@ -275,6 +371,10 @@ page{
   display: block
 =======
 >>>>>>> parent of 3484a6e... 1
+<<<<<<< HEAD
+=======
+>>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+>>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 >>>>>>> parent of 3484a6e... 1
 }
