@@ -1,5 +1,13 @@
 {
   "pages": [
+<<<<<<< HEAD
+=======
+    "pages/mine/manageintro/manageintro",    
+    "pages/index/index",    
+    "page/msg/index",    
+    "pages/msg/msg",    
+    "pages/index/ability/abilitydetail/signup/signup",
+>>>>>>> parent of 35bf471... 111
     "pages/index/ability/abilitydetail/abilitydetail",
     "pages/index/ability/ability",
     "pages/mine/mine",

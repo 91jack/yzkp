@@ -1,4 +1,3 @@
-<!--pages/index/ability/abilitydetail/abilitydetail.wxml-->
 <view class='ability-cont'>
   <view class='ability-cont-item'>
     <image></image>
@@ -14,7 +13,28 @@
 
 <view class='ability-company-connect'>
   <view class='ability-company-item'>
-    <text>联系方式</text>
-    <text>13113113111</text>
+    <text class='connect-style'>联系方式</text>
+    <text class='connect-detail'>13113113111</text>
+  </view>
+  <view class='ability-company-item'>
+    <text class='connect-style'>培训地址</text>
+    <text class='connect-detail'>重庆渝北区金华大道永固金鼎时代</text>
   </view>
 </view>
+
+<view class='company-intro'>
+  <view class='company-name'>
+    <image src='../../../../image/index/lesson.png'></image>
+    <text>公司介绍</text>
+  </view>
+  <view class='company-introdetail'>
+    <view class='intro-cont'>
+      <text>有限公司是一家以提供行业解决方案为主的  新锐高科技公司，公司总部位于辽宁省沈阳市，在重庆、 西安、 青岛都设有分公司或者研发基地。我们专注于软件开发与技术创新,以“客户至上、技术创新”为宗旨，通过信息技术推动客户以及社会 的可持续发展。???德帆科技提供行业解决方案和产品工程解决方案以及相关软件产品、平台及服务。行业解决方案涵盖领域包括  中国移动等电信运营商、金融、政府、制造业、医疗卫  、教育与文化、交通、移动互联网环保等。在服务领域，德帆科技提供  括应用开发和维护、 ERP实施与咨询服务、软件全球化与本地化服 务、业务流程外包（BPO）、IT教育培训等.在服务领域，德帆科技提供  括应用开发和维护、 ERP实施与咨询服务、软件全球化与本地化服 务、业务流程外包（BPO）、IT教育培训等.
+      </text>
+    </view>
+  </view>
+</view>
+
+<navigator hover-class='none' url='signup/signup'>
+  <view class='btn'>立即报名</view>
+</navigator>
