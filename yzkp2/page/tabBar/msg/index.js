@@ -1,4 +1,4 @@
-// page/index/index.js
+// page/tabBar/msg/index.js
 Page({
 
   /**

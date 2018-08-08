@@ -122,14 +122,7 @@ color: transparent;
   margin-bottom: 14rpx;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
-=======
->>>>>>> parent of 3484a6e... 1
+
 /* 公司详细介绍 */
 
 .company-intro{
@@ -172,13 +165,7 @@ color: transparent;
   height: 540rpx;
   overflow: auto
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 3484a6e... 1
-=======
->>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
-=======
->>>>>>> parent of 3484a6e... 1
+
 /*-----------------------------在招职位  */
 .work{
   height: 100%;

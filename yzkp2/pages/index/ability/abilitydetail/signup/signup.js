@@ -1,4 +1,4 @@
-// pages/mine/manageintro/manageintro.js
+// pages/index/ability/abilitydetail/signup/signup.js
 Page({
 
   /**

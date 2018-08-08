@@ -1,56 +1,8 @@
 {
   "pages": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 35bf471... 111
-    "pages/mine/manageintro/manageintro",    
-    "pages/index/index",    
-    "page/msg/index",    
-    "pages/msg/msg",    
-    "pages/index/ability/abilitydetail/signup/signup",
->>>>>>> parent of 35bf471... 111
-=======
->>>>>>> parent of 3484a6e... 1
-=======
->>>>>>> parent of 3484a6e... 1
-    "pages/index/ability/abilitydetail/abilitydetail",
-    "pages/index/ability/ability",
-    "pages/mine/mine",
-    "pages/index/index",
-    "pages/mine/manageintro/basicmsgedit/basicmsgedit",
-    "pages/mine/manageintro/manageintro",
-    "page/index/index",
-    "page/msg/index",
-    "page/my/index",
-    "pages/mine/askhelp/askhelp",
-    "pages/mine/complaints/complaints",
-    "pages/index/newwork/newwork",
-    "pages/index/companyrequest/companyrequest",
-    "pages/index/companyrequest/companydetail/companydetail",
-    "pages/msg/msg",
-    "pages/index/parttime/parttime",
-    "pages/index/prog/prog",
-    "pages/mine/sendrecode/sendrecode"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     "page/tabBar/index/index",
     "page/tabBar/my/index",
-    "page/tabBar/msg/index",
-    "page/common/city/city"
->>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
-=======
->>>>>>> parent of 35bf471... 111
-=======
->>>>>>> parent of 3484a6e... 1
-=======
->>>>>>> parent of 3484a6e... 1
+    "page/tabBar/msg/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -67,59 +19,26 @@
       {
         "selectedIconPath": "image/tabbar/zhiwei2.png",
         "iconPath": "image/tabbar/zhiwei1.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "page/tabBar/index/index",
         "text": "首页"
       },
       {
         "selectedIconPath": "image/tabbar/msg.png",
         "iconPath": "image/tabbar/msg1.png",
-        "pagePath": "page/msg/index",
+        "pagePath": "page/tabBar/msg/index",
         "text": "信息"
       },
       {
         "selectedIconPath": "image/tabbar/mine.png",
         "iconPath": "image/tabbar/mine1.png",
-        "pagePath": "pages/mine/mine",
+        "pagePath": "page/tabBar/my/index",
         "text": "我的"
       }
     ]
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
   "subPackages": [
-    {
-      "root": "page/tabBar/index/",
-      "pages": [
-        "pages/ability/abilitydetail/abilitydetail",
-        "pages/ability/ability",
-        "pages/newwork/newwork",
-        "pages/companyrequest/companyrequest",
-        "pages/companyrequest/companydetail/companydetail",
-        "pages/parttime/parttime",
-        "pages/prog/prog"
-      ]
-    },
-    {
-      "root": "page/tabBar/my/",
-      "pages": [
-        "pages/manageintro/manageintro",
-        "pages/opinion/opinion",
-        "pages/complaints/complaints",
-        "pages/sendrecode/sendrecode"
-      ]
-    }
+  
   ],
-=======
->>>>>>> parent of 35bf471... 111
-=======
->>>>>>> parent of 3484a6e... 1
-=======
->>>>>>> parent of 3484a6e... 1
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,

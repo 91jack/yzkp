@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// page/tabBar/my/index.js
 Page({
 
   /**
