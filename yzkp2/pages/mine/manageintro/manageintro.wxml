@@ -36,6 +36,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <view class='box add-basicmsg'>
 =======
@@ -53,6 +54,9 @@
 =======
     <view class='box add-basicmsg'>
 >>>>>>> parent of 3484a6e... 1
+=======
+    <view class='box add-basicmsg'>
+>>>>>>> parent of 3484a6e... 1
       <view class='nav-cont-tit'>
         <view class='left'>
           <image src='../../../image/mine/selfmsg.png'></image>
@@ -66,6 +70,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <view class='nav-cont-basicmsgdetail' hidden='true'>
 =======
 =======
@@ -75,6 +80,8 @@
 =======
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
       <view class='nav-cont-add active'>
@@ -84,6 +91,7 @@
       <view class='nav-cont-basicmsgdetail'>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 3484a6e... 1
 =======
 <<<<<<< HEAD
@@ -91,6 +99,8 @@
 >>>>>>> parent of 3484a6e... 1
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
         <text class='basicmsgdetail-name'>张澜澜</text>
@@ -110,6 +120,7 @@
       </view>
     </view>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -192,10 +203,13 @@
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 >>>>>>> parent of 3484a6e... 1
+=======
+>>>>>>> parent of 3484a6e... 1
     <view class='box add-opinion'></view>
     <view class='box add-express'></view>
     <view class='box add-education'></view>
     <view class='box add-progrom'></view>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 3484a6e... 1
@@ -205,6 +219,8 @@
 >>>>>>> parent of 3484a6e... 1
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
   </view>

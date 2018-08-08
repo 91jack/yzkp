@@ -88,6 +88,7 @@ page{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   margin: auto
 =======
@@ -112,6 +113,8 @@ page{
 =======
 =======
 >>>>>>> parent of 3484a6e... 1
+=======
+>>>>>>> parent of 3484a6e... 1
   margin: auto
 }
 .edit .box{
@@ -121,6 +124,7 @@ page{
 }
 .add-basicmsg .nav-cont-tit{
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
@@ -128,11 +132,14 @@ page{
 =======
 .add-basicmsg .nav-cont-tit{
 >>>>>>> parent of 3484a6e... 1
+=======
+>>>>>>> parent of 3484a6e... 1
   display: flex;
   height: 70rpx;
   border-bottom: 1px solid #868686;
   justify-content: space-between
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -152,10 +159,14 @@ page{
 =======
 .add-basicmsg .nav-cont-tit .left image{
 >>>>>>> parent of 3484a6e... 1
+=======
+.add-basicmsg .nav-cont-tit .left image{
+>>>>>>> parent of 3484a6e... 1
   width: 29rpx;
   height: 26rpx;
   margin-right: 8rpx;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,11 +186,15 @@ page{
 =======
 .add-basicmsg .nav-cont-tit .left text{
 >>>>>>> parent of 3484a6e... 1
+=======
+.add-basicmsg .nav-cont-tit .left text{
+>>>>>>> parent of 3484a6e... 1
   font-size: 24rpx;
   color: #353535;
   line-height: 70rpx;
   vertical-align: middle
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -199,10 +214,14 @@ page{
 =======
 .add-basicmsg .nav-cont-tit .right image{
 >>>>>>> parent of 3484a6e... 1
+=======
+.add-basicmsg .nav-cont-tit .right image{
+>>>>>>> parent of 3484a6e... 1
   width: 20rpx;
   height: 22rpx;
   margin-right: 7rpx;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,11 +241,15 @@ page{
 =======
 .add-basicmsg .nav-cont-tit .right text{
 >>>>>>> parent of 3484a6e... 1
+=======
+.add-basicmsg .nav-cont-tit .right text{
+>>>>>>> parent of 3484a6e... 1
   font-size: 22rpx;
   color: #F39800;
   line-height: 70rpx;  
   vertical-align: middle  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -239,6 +262,8 @@ page{
 =======
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
 .add-basicmsg .nav-cont-add{
@@ -264,6 +289,7 @@ page{
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 3484a6e... 1
 =======
 <<<<<<< HEAD
@@ -273,12 +299,15 @@ page{
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 >>>>>>> parent of 3484a6e... 1
+=======
+>>>>>>> parent of 3484a6e... 1
 .nav-cont-basicmsgdetail>text{
   display: block
 }
 .nav-cont-basicmsgdetail{
   color: #353535;
   font-size: 28rpx;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -304,10 +333,14 @@ page{
 =======
   margin: 26rpx 0 17rpx 0;
 >>>>>>> parent of 3484a6e... 1
+=======
+  margin: 26rpx 0 17rpx 0;
+>>>>>>> parent of 3484a6e... 1
 }
 .basicmsgdetail-info{
   color: #868686;
   font-size: 24rpx;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -332,6 +365,8 @@ page{
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
 =======
 >>>>>>> parent of 3484a6e... 1
+=======
+>>>>>>> parent of 3484a6e... 1
 }
 .basicmsgdetail-item image{
   width: 25rpx;
@@ -340,6 +375,7 @@ page{
 .basicmsgdetail-item text{
   font-size: 24rpx;
   color: #868686
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -375,6 +411,8 @@ page{
 =======
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 >>>>>>> 1144a0238420dbc0039da638c44c73749f25de26
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
 }

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 35bf471... 111
@@ -13,6 +14,8 @@
     "pages/msg/msg",    
     "pages/index/ability/abilitydetail/signup/signup",
 >>>>>>> parent of 35bf471... 111
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
     "pages/index/ability/abilitydetail/abilitydetail",
@@ -35,6 +38,7 @@
     "pages/mine/sendrecode/sendrecode"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "page/tabBar/index/index",
     "page/tabBar/my/index",
@@ -43,6 +47,8 @@
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
 =======
 >>>>>>> parent of 35bf471... 111
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
   ],
@@ -79,6 +85,7 @@
     ]
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
@@ -109,6 +116,8 @@
   ],
 =======
 >>>>>>> parent of 35bf471... 111
+=======
+>>>>>>> parent of 3484a6e... 1
 =======
 >>>>>>> parent of 3484a6e... 1
   "networkTimeout": {
