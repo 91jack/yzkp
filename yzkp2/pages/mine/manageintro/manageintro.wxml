@@ -34,6 +34,7 @@
 <!-- 简历编辑 -->
   <view class='edit'>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <view class='box add-basicmsg'>
 =======
 <<<<<<< HEAD
@@ -43,6 +44,9 @@
     <view class='box add-basicmsg'>
 >>>>>>> parent of 3484a6e... 1
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+    <view class='box add-basicmsg'>
+>>>>>>> parent of 3484a6e... 1
       <view class='nav-cont-tit'>
         <view class='left'>
           <image src='../../../image/mine/selfmsg.png'></image>
@@ -54,20 +58,26 @@
         </view>
       </view>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
       <view class='nav-cont-basicmsgdetail' hidden='true'>
 =======
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+>>>>>>> parent of 3484a6e... 1
       <view class='nav-cont-add active'>
         <image src='../../../image/mine/add.png'></image>
         <text>添加基本信息</text>
       </view>
       <view class='nav-cont-basicmsgdetail'>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3484a6e... 1
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+>>>>>>> parent of 3484a6e... 1
         <text class='basicmsgdetail-name'>张澜澜</text>
         <text class='basicmsgdetail-info'>重庆-渝北 |  2年 | 女 | 22岁 </text>
         <view class='basicmsgdetail-item'>
@@ -85,6 +95,7 @@
       </view>
     </view>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -158,14 +169,19 @@
     </view>
 =======
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+>>>>>>> parent of 3484a6e... 1
     <view class='box add-opinion'></view>
     <view class='box add-express'></view>
     <view class='box add-education'></view>
     <view class='box add-progrom'></view>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3484a6e... 1
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+>>>>>>> parent of 3484a6e... 1
   </view>
 <!-- 简历设置 -->
   <view class='set'>
