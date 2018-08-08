@@ -6,27 +6,27 @@
   </view>
   <view class='tit-request'>
     <view class='request-item'>
-      <image class='img1' src='/image/index/express.png'></image>
+      <image class='img1' src='../../../image/index/express.png'></image>
       <text>1-3年</text>
     </view>
     <view class='request-item'>
-      <image class='img2' src='/image/index/xueli.png'></image>
+      <image class='img2' src='../../../image/index/xueli.png'></image>
       <text>本科</text>
     </view>
     <view class='request-item'>
-      <image class='img3' src='/image/index/age.png'></image>
+      <image class='img3' src='../../../image/index/age.png'></image>
       <text>23~25岁</text>
     </view>
     <view class='request-item'>
-      <image class='img4' src='/image/index/sex.png'></image>
+      <image class='img4' src='../../../image/index/sex.png'></image>
       <text>性别不限</text>
     </view>
     <view class='request-item'>
-      <image class='img5' src='/image/index/cont.png'></image>
+      <image class='img5' src='../../../image/index/cont.png'></image>
       <text>10人</text>
     </view>
     <view class='request-item'>
-      <image class='img6' src='/image/index/height.png'></image>
+      <image class='img6' src='../../../image/index/height.png'></image>
       <text>165cm以上</text>
     </view>
   </view>
@@ -35,8 +35,8 @@
     <text>五险一金,带薪年假,交通补助,节日礼金;</text>
   </view>
   <view class='tit-adreess'>
-    <navigator hover-class='none'>
-      <image src='/image/index/area.png'></image>
+    <navigator>
+      <image src='../../../image/index/area.png'></image>
       <text>重庆市渝北区金开大道永固金鼎时代</text>
     </navigator>
   </view>
@@ -45,7 +45,7 @@
 <!--职位描述  -->
 <view class='discript'>
   <view class='dis-tit'>
-    <image src='/image/index/duty.png'></image>
+    <image src='../../../image/index/duty.png'></image>
     <text>职位描述</text>
   </view>
   <view class='dis-detail'>
@@ -72,13 +72,13 @@
 
 <view class='to-company' bindtap='toCompany'>
   <view>
-    <image src='/image/index/comp-bg.png'></image>
+    <image src='../../../image/index/comp-bg.png'></image>
     <view class='company-detail'>
       <text class='company-name'>重庆渐臻科技有限公司</text>
       <text>50人以上/民营/互联网/软件开发</text>
     </view>
   </view>
-  <image class='next' src='/image/index/next.png'></image>
+  <image class='next' src='../../../image/index/next.png'></image>
 </view>
 
 <view class='footer'>
@@ -86,26 +86,26 @@
 
 
     <view hidden='{{collectType}}' class='footer-item-box' bindtap='collect'>
-      <image src='/image/index/collect.png'></image>
+      <image src='../../../image/index/collect.png'></image>
       <text>收藏</text>
     </view> 
     <view hidden='{{!collectType}}' class='footer-item-box' bindtap='collectYet'>
-      <image src='/image/index/collect1.png'></image>
+      <image src='../../../image/index/collect1.png'></image>
       <text>收藏</text>
     </view> 
 
 
     <view class='footer-item-box' data-id='2' bindtap='call'>
-      <image src='/image/index/phone.png'></image>
+      <image src='../../../image/index/phone.png'></image>
       <text>电话</text>
     </view>
   </view>
   <view class='footer-item rest' data-id='0' bindtap='send'>
-    <image class='send' src='/image/index/send.png'></image>
+    <image class='send' src='../../../image/index/send.png'></image>
     <text>发送简历</text>
   </view>
   <view data-id='1' class='footer-item rest' bindtap='chat'>
-    <image class='chat' src='/image/index/chat.png'></image>
+    <image class='chat' src='../../../image/index/chat.png'></image>
     <text>和Ta聊天</text>
   </view>
 </view>

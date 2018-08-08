@@ -1,13 +1,13 @@
 // pages/index/newwork/newwork.js
-
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    show: false,
     currentTab: [true, true, true, true],
+    selectData: ['公司', '职位'],
     navBarData: ['推荐', '地区', '职位', '要求'],
     index: 0//选择的下拉列表下标
   },
@@ -17,6 +17,19 @@ Page({
    */
   onLoad: function (options) {
     
+  },
+  selectTap() {
+    this.setData({
+      show: !this.data.show
+    });
+  },
+  // 点击下拉列表
+  optionTap(e) {
+    let Index = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
+    this.setData({
+      index: Index,
+      show: !this.data.show
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -49,12 +62,6 @@ Page({
     var hid = "currentTab[" + i + "]";
     this.setData({
       [hid]: true
-    })
-  },
-  // 前往公司
-  toCompanyDetail:function(){
-    wx.navigateTo({
-      url: '../companyrequest/companyrequest',
     })
   },
   onReady: function () {

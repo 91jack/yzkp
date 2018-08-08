@@ -39,29 +39,22 @@
           <image src='../../../image/mine/selfmsg.png'></image>
           <text>基本信息</text> 
         </view>
-        <view class='right' hidden='true'>
-          <image src='../../../image/mine/edit.png'></image>
-          <text>编辑</text>
-        </view>
       </view>
-      <view class='nav-cont-add active'>
+      <view class='nav-cont-add'>
         <image src='../../../image/mine/add.png'></image>
         <text>添加基本信息</text>
       </view>
-      <view class='nav-cont-basicmsgdetail'>
-        <text class='basicmsgdetail-name'>张澜澜</text>
-        <text class='basicmsgdetail-info'>重庆-渝北 |  2年 | 女 | 22岁 </text>
-        <view class='basicmsgdetail-item'>
-          <image src='../../../image/mine/cellphone.png'></image>
-          <text>18723627888</text>
+    </view>
+
+    <view class='box add-basicmsg' hidden='true'>
+      <view class='nav-cont-tit'>
+        <view class='left'>
+          <image src='../../../image/mine/selfmsg.png'></image>
+          <text>基本信息</text> 
         </view>
-        <view class='basicmsgdetail-item'>
-          <image src='../../../image/mine/email.png'></image>
-          <text>18723627888</text>
-        </view>
-        <view class='basicmsgdetail-item'>
-          <image src='../../../image/mine/gata.png'></image>
-          <text>18723627888</text>
+        <view class='right'>
+          <image src='../../../image/mine/edit.png'></image>
+          <text>编辑</text>
         </view>
       </view>
     </view>

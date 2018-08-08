@@ -1,6 +1,6 @@
 <!--pages/mine/complaints/complaints.wxml-->
 <view class='cont'>
-  <textarea placeholder='请输入想要反馈的内容'>
+  <textarea placeholder='请输入想要维权的内容'>
 
   </textarea>
 </view>

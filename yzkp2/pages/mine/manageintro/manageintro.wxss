@@ -85,6 +85,7 @@ page{
   width: 702rpx;
   border-radius: 10rpx;
   background:  rgba(56,48,235,0.05);
+<<<<<<< HEAD
   margin: auto;
 }
 .edit .boxcont{
@@ -94,40 +95,91 @@ page{
   border-bottom: 12rpx solid #fff;
 }
 .boxcont .nav-cont-tit{
+=======
+  margin: auto
+}
+.edit .box{
+  width: 702rpx;
+  box-sizing: border-box;
+  padding: 0 26rpx 0 25rpx;
+}
+.add-basicmsg .nav-cont-tit{
+>>>>>>> parent of 3484a6e... 1
   display: flex;
   height: 70rpx;
   border-bottom: 1px solid #868686;
   justify-content: space-between
 }
+<<<<<<< HEAD
 .boxcont .nav-cont-tit .left image{
+=======
+.add-basicmsg .nav-cont-tit .left image{
+>>>>>>> parent of 3484a6e... 1
   width: 29rpx;
   height: 26rpx;
   margin-right: 8rpx;
 }
+<<<<<<< HEAD
 .boxcont .nav-cont-tit .left text{
+=======
+.add-basicmsg .nav-cont-tit .left text{
+>>>>>>> parent of 3484a6e... 1
   font-size: 24rpx;
   color: #353535;
   line-height: 70rpx;
   vertical-align: middle
 }
+<<<<<<< HEAD
 .boxcont .nav-cont-tit .right image{
+=======
+.add-basicmsg .nav-cont-tit .right image{
+>>>>>>> parent of 3484a6e... 1
   width: 20rpx;
   height: 22rpx;
   margin-right: 7rpx;
 }
+<<<<<<< HEAD
 .boxcont .nav-cont-tit .right text{
+=======
+.add-basicmsg .nav-cont-tit .right text{
+>>>>>>> parent of 3484a6e... 1
   font-size: 22rpx;
   color: #F39800;
   line-height: 70rpx;  
   vertical-align: middle  
 }
+<<<<<<< HEAD
 
+=======
+.add-basicmsg .nav-cont-add{
+  height: 156rpx;
+  line-height: 156rpx;
+  display: flex
+}
+.add-basicmsg .nav-cont-add.active{
+  display: none
+}
+.add-basicmsg .nav-cont-add image{
+  width: 37rpx;
+  height: 37rpx;
+  display: inline-block;
+  margin: 57rpx 12rpx 0 235rpx;
+}
+.add-basicmsg .nav-cont-add text{
+  color: #868686;
+  font-size: 28rpx;
+  display: inline-block;
+  height: 156rpx;
+  line-height: 156rpx;
+}
+>>>>>>> parent of 3484a6e... 1
 .nav-cont-basicmsgdetail>text{
   display: block
 }
 .nav-cont-basicmsgdetail{
   color: #353535;
   font-size: 28rpx;
+<<<<<<< HEAD
   margin-top: 26rpx;
 }
 .basicmsgdetail-name{
@@ -135,10 +187,14 @@ page{
   color: #353535;
   height: 28rpx;
   line-height: 28rpx;
+=======
+  margin: 26rpx 0 17rpx 0;
+>>>>>>> parent of 3484a6e... 1
 }
 .basicmsgdetail-info{
   color: #868686;
   font-size: 24rpx;
+<<<<<<< HEAD
   height: 24rpx;
   line-height: 24rpx;
   margin: 17rpx 0 24rpx; 
@@ -148,6 +204,8 @@ page{
 }
 .basicmsgdetail-item:last-of-type{
   margin-bottom: 0
+=======
+>>>>>>> parent of 3484a6e... 1
 }
 .basicmsgdetail-item image{
   width: 25rpx;
@@ -156,6 +214,7 @@ page{
 .basicmsgdetail-item text{
   font-size: 24rpx;
   color: #868686
+<<<<<<< HEAD
 }
 .nav-content .nav-content-item{
   height: 159rpx;
@@ -178,4 +237,6 @@ page{
 }
 .nav-content .nav-content-item .nav-content-item-detail text{
   display: block
+=======
+>>>>>>> parent of 3484a6e... 1
 }

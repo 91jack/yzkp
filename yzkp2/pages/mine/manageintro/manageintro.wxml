@@ -33,8 +33,12 @@
 <view class='nav-cont'>
 <!-- 简历编辑 -->
   <view class='edit'>
+<<<<<<< HEAD
   <!-- 基本信息 -->
     <view class='boxcont add-basicmsg'>
+=======
+    <view class='box add-basicmsg'>
+>>>>>>> parent of 3484a6e... 1
       <view class='nav-cont-tit'>
         <view class='left'>
           <image src='../../../image/mine/selfmsg.png'></image>
@@ -45,7 +49,15 @@
           <text>编辑</text>
         </view>
       </view>
+<<<<<<< HEAD
       <view class='nav-cont-basicmsgdetail' hidden='true'>
+=======
+      <view class='nav-cont-add active'>
+        <image src='../../../image/mine/add.png'></image>
+        <text>添加基本信息</text>
+      </view>
+      <view class='nav-cont-basicmsgdetail'>
+>>>>>>> parent of 3484a6e... 1
         <text class='basicmsgdetail-name'>张澜澜</text>
         <text class='basicmsgdetail-info'>重庆-渝北 |  2年 | 女 | 22岁 </text>
         <view class='basicmsgdetail-item'>
@@ -63,6 +75,7 @@
       </view>
     </view>
 
+<<<<<<< HEAD
     <!-- 求职意向 -->
     <view class='boxcont add-basicmsg'>
       <view class='nav-cont-tit'>
@@ -131,6 +144,12 @@
         </view>
       </view>
     </view>
+=======
+    <view class='box add-opinion'></view>
+    <view class='box add-express'></view>
+    <view class='box add-education'></view>
+    <view class='box add-progrom'></view>
+>>>>>>> parent of 3484a6e... 1
   </view>
 <!-- 简历设置 -->
   <view class='set'>
