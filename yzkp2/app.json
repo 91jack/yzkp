@@ -2,7 +2,10 @@
   "pages": [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 35bf471... 111
     "pages/mine/manageintro/manageintro",    
     "pages/index/index",    
     "page/msg/index",    
@@ -27,12 +30,15 @@
     "pages/index/parttime/parttime",
     "pages/index/prog/prog",
     "pages/mine/sendrecode/sendrecode"
+<<<<<<< HEAD
 =======
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index",
     "page/common/city/city"
 >>>>>>> 22afa87cd12a5a761d8d2ce8eb61a1f9def920fd
+=======
+>>>>>>> parent of 35bf471... 111
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -49,23 +55,24 @@
       {
         "selectedIconPath": "image/tabbar/zhiwei2.png",
         "iconPath": "image/tabbar/zhiwei1.png",
-        "pagePath": "page/tabBar/index/index",
+        "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
         "selectedIconPath": "image/tabbar/msg.png",
         "iconPath": "image/tabbar/msg1.png",
-        "pagePath": "page/tabBar/msg/index",
-        "text": "消息"
+        "pagePath": "page/msg/index",
+        "text": "信息"
       },
       {
         "selectedIconPath": "image/tabbar/mine.png",
         "iconPath": "image/tabbar/mine1.png",
-        "pagePath": "page/tabBar/my/index",
+        "pagePath": "pages/mine/mine",
         "text": "我的"
       }
     ]
   },
+<<<<<<< HEAD
   "subPackages": [
     {
       "root": "page/tabBar/index/",
@@ -89,6 +96,8 @@
       ]
     }
   ],
+=======
+>>>>>>> parent of 35bf471... 111
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
