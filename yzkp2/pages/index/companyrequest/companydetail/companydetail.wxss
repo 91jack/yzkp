@@ -122,6 +122,51 @@ color: transparent;
   margin-bottom: 14rpx;
 }
 
+<<<<<<< HEAD
+=======
+/* 公司详细介绍 */
+
+.company-intro{
+  background: #fff;
+  padding-left: 26rpx;
+}
+.company-intro .company-name{
+  display: flex;
+  align-items: flex-end;
+  height: 77rpx;
+  line-height: 77rpx;
+  padding-bottom: 24rpx;
+  box-sizing: border-box
+}
+.company-intro .company-name image{
+  width: 34rpx;
+  height: 30rpx;
+  display: inline-block;
+  vertical-align: middle
+}
+.company-intro .company-name text{
+  color: #353535;
+  font-size: 28rpx;
+  display: inline-block;
+  height: 28rpx;
+  line-height: 28rpx;
+  vertical-align: middle;
+  margin-left: 5rpx;
+}
+.company-intro .intro-cont{
+  width: 703rpx;
+  margin-left: 1rpx;
+  border-top: 1rpx solid #E8E8E8
+}
+.company-intro .intro-cont text{
+  font-size: 26rpx;
+  color: #868686;
+  display: block;
+  padding-top: 27rpx;
+  height: 540rpx;
+  overflow: auto
+}
+>>>>>>> parent of 3484a6e... 1
 /*-----------------------------在招职位  */
 .work{
   height: 100%;
