@@ -6,81 +6,21 @@
 page{
   background: #F5F5F5
 }
-.top{
-  height: 158rpx;
-  background: #3830EB;
-  display: flex;
-  box-sizing: border-box;
-  padding-top: 47rpx;
-  justify-content: space-around
-}
 
-/*输入框 */
-.serach{
-  height: 78rpx;
-  width: 606rpx;
-  background: #fff;
-  border-radius: 10rpx;
-  display: flex;
-  line-height: 78rpx;
-  justify-content: space-around
-}
-.serach .inp{
-  width: 100%;
-  position: relative;
-}
-.serach .inp image{
-  width: 32rpx;
-  height: 32rpx;
-  position: absolute;
-  right: 47rpx;
-  top: 50%;
-  margin-top: -16rpx
-}
-.serach view input{
-  display: block;
-  font-size: 28rpx;
-  line-height: 78rpx;
-  text-align: center;
-  height: 78rpx;
-  width: 100%;
-}
 ::-moz-placeholder{
   color: #D7D7D7;
 }
 ::-webkit-input-placeholder{
   color: #D7D7D7;  
 }
-serach-icon{
-  width: 32rpx;
-  height: 32rpx;
-}
-.serach-icon image{
-  width: 32rpx;
-  height: 32rpx;
-}
+
 ::-webkit-scrollbar{
 width: 0;
 height: 0;
 color: transparent;
 }
 
-/*招聘按钮*/
-.top .mine{
-  height: 78rpx;
-}
-.mine-icon{
-  width: 40rpx;
-  height: 48rpx;
-  display: block;
-}
-.find{
-  font-size: 20rpx;
-  color: #fff;
-  line-height: 20rpx;
-  display: block;
-  margin-top: 8rpx;
-}
+
 
 
 /*banner图*/

@@ -20,3 +20,92 @@ page {
   clear:both;
 
 }
+
+/* 顶部输入框 */
+.top{
+  height: 158rpx;
+  background: #3830EB;
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 47rpx;
+  justify-content: space-around
+}
+
+/*输入框 */
+.serach{
+  height: 78rpx;
+  width: 708rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  line-height: 78rpx;
+  justify-content: space-around
+}
+.serach .inp{
+  width: 100%;
+  position: relative;
+}
+.serach .inp image{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 47rpx;
+  top: 50%;
+  margin-top: -16rpx
+}
+.serach .inp .clear{
+  width: 35rpx;
+  height: 35rpx;
+  right: 106rpx;
+  margin-top: -17rpx;
+}
+.serach view input{
+  display: block;
+  font-size: 28rpx;
+  line-height: 78rpx;
+  text-align: left;
+  height: 78rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 87rpx;
+}
+
+/* 能力提升部分 */
+.ability-cont .ability-cont-item{
+  height: 260rpx;
+  display: flex;
+  border-bottom: 1rpx solid #F6F6F6
+}
+.ability-cont .ability-cont-item image{
+  display: inline-block;
+  width: 173rpx;
+  height: 165rpx;
+  background: red;
+  margin: 37rpx 33rpx 0 27rpx;
+}
+.ability-cont .ability-cont-item view{
+  display: inline-block
+}
+.ability-cont .ability-cont-item view text{
+  display: block;
+  font-size: 24rpx;
+  color: #868686;
+  margin-bottom: 15rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.ability-cont .ability-cont-item view .ability-cont-item-tit{
+  font-size: 28rpx;
+  color: #353535;
+  margin-bottom: 21rpx;
+  margin-top: 31rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+.ability-cont .ability-cont-item view .ability-cont-item-price{
+  color: #F39800;
+  font-size: 26rpx;
+  margin-bottom: 11rpx;
+  height: 26rp;
+  line-height: 26rpx;
+}

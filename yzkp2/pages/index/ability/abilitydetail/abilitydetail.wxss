@@ -1,0 +1,6 @@
+/* pages/index/ability/abilitydetail/abilitydetail.wxss */
+.ability-cont{
+  background: #fff;
+  margin-top: 24rpx;
+  margin-bottom: 10rpx;
+}

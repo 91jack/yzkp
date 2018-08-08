@@ -2,23 +2,9 @@
 <view class='top'>
   <view class='serach'>
     <view class='inp'>
-      <input placeholder='搜索职位' bindconfirm='serachoffices' confirm-type="search"></input>
+      <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
       <image src='../../image/index/serach.png'></image>
-    </view>
-  </view>
-  <view class='mine'>
-    <navigator hover-class="none">
-      <image src='../../image/index/find.png' class='mine-icon'></image>
-      <text class='find'>招聘</text>
-    </navigator>
-  </view>
-</view>
-
-<view class='top'>
-  <view class='serach'>
-    <view class='inp'>
-      <input placeholder='搜索职位' bindconfirm='serachoffices' confirm-type="search"></input>
-      <image src='../../image/index/serach.png'></image>
+      <image class='clear' src='../../image/index/clear.png'></image>
     </view>
   </view>
 </view>
@@ -28,7 +14,7 @@
   <image src='../../image/index/banner.png'></image>
 </view>
 
-
+<!-- 求职者 -->
 <view class='select-bar'>
   <view class='item' wx:for="{{selectBar1}}">
     <navigator hover-class="none" url='{{item.url}}'>
@@ -37,9 +23,18 @@
     </navigator>
   </view>
 </view>
-
+<!-- 员工 -->
 <view class='select-bar'>
   <view class='item' wx:for="{{selectBar2}}">
+    <navigator hover-class="none" url='{{item.url}}'>
+      <image src='{{item.src}}'></image>
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+</view>
+<!-- 企业 -->
+<view class='select-bar'>
+  <view class='item' wx:for="{{selectBar3}}">
     <navigator hover-class="none" url='{{item.url}}'>
       <image src='{{item.src}}'></image>
       <text>{{item.text}}</text>

@@ -1,22 +1,22 @@
 {
   "pages": [
-    "pages/mine/manageintro/basicmsgedit/basicmsgedit",    
-    "pages/index/index",    
+    "pages/index/ability/abilitydetail/abilitydetail",
+    "pages/index/ability/ability",
+    "pages/mine/mine",
+    "pages/index/index",
+    "pages/mine/manageintro/basicmsgedit/basicmsgedit",
     "pages/mine/manageintro/manageintro",
     "page/index/index",
     "page/msg/index",
     "page/my/index",
     "pages/mine/askhelp/askhelp",
-    "pages/mine/opinion/opinion",
     "pages/mine/complaints/complaints",
-    "pages/mine/mine",
     "pages/index/newwork/newwork",
     "pages/index/companyrequest/companyrequest",
     "pages/index/companyrequest/companydetail/companydetail",
     "pages/msg/msg",
     "pages/index/parttime/parttime",
     "pages/index/prog/prog",
-    "pages/index/ability/ability",
     "pages/mine/sendrecode/sendrecode"
   ],
   "window": {

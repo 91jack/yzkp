@@ -1,0 +1,20 @@
+<!--pages/index/ability/abilitydetail/abilitydetail.wxml-->
+<view class='ability-cont'>
+  <view class='ability-cont-item'>
+    <image></image>
+    <view>
+      <text class='ability-cont-item-tit'>技能提升</text>
+      <text class='ability-cont-item-price'>学费1200元/12节课</text>
+      <text>招生对象:公司员工</text>
+      <text>开课时间:2018-09-12</text>
+      <text>报名截止时间: 2018-09-11 0:00</text>
+    </view>
+  </view>
+</view>
+
+<view class='ability-company-connect'>
+  <view class='ability-company-item'>
+    <text>联系方式</text>
+    <text>13113113111</text>
+  </view>
+</view>

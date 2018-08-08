@@ -33,7 +33,7 @@ Page({
         src:'../../image/index/train.png',
         text:'能力提升'
       }
-    ],
+    ], //求职者
     selectBar2: [
       {
         url: 'newwork/newwork',
@@ -48,7 +48,34 @@ Page({
       {
         url: '../mine/manageintro/manageintro',
         src: '../../image/index/resume.png',
-        text: '简历搜索'
+        text: '合同管理'
+      },
+      {
+        url: 'prog/prog',
+        src: '../../image/index/pro.png',
+        text: '薪酬管理'
+      },
+      {
+        url: 'ability/ability',
+        src: '../../image/index/train.png',
+        text: '灵活用工'
+      }
+    ], //员工
+    selectBar3: [
+      {
+        url: 'newwork/newwork',
+        src: '../../image/index/zhiwei.png',
+        text: '全职发布'
+      },
+      {
+        url: 'parttime/parttime',
+        src: '../../image/index/time.png',
+        text: '兼职发布'
+      },
+      {
+        url: '../mine/manageintro/manageintro',
+        src: '../../image/index/resume.png',
+        text: '职位管理'
       },
       {
         url: 'prog/prog',
@@ -65,7 +92,7 @@ Page({
         src: '../../image/index/train.png',
         text: '灵活用工'
       }
-    ],
+    ], //企业
     navBarData:['推荐','地区','职位','要求'],
     navbarShow:false
   },

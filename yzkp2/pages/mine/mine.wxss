@@ -108,15 +108,15 @@ page{
   margin-right: 36rpx;
 }
 .box.third .left image{
-  width: 29rpx;
-  height: 41rpx;
-  margin-right: 36rpx;
+  width: 39rpx;
+  height: 40rpx;
+  margin-right: 26rpx;
   padding-top: 20rpx;
 }
 .third{
   margin-bottom: 12rpx;
 }
-.box.forth .left image{
+.box .left image.wantyou{
   width: 39rpx;
   height: 35rpx;
   margin-right: 26rpx;
