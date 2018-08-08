@@ -1,0 +1,99 @@
+<!--pages/index/companyrequest/companydetail/companydetail.wxml-->
+<view class='nav'>
+  <view class='nav-bar{{barShow[1]?" active":""}}' data-id='0' bindtap='choosebar'>公司简介</view>
+  <view class='nav-bar{{barShow[0]?" active":""}}' data-id='1' bindtap='choosebar'>在招职位</view>
+</view>
+
+<view hidden='{{barShow[0]}}' class='company'>
+  <view>
+    <view class='info'>
+      <text class='simple-name'>渐臻科技</text>
+      <text class='total-name'>重庆渐臻科技有限公司</text>
+      <text class='cont'>规模: 50-100人</text>
+      <text class='type'>性质: 私有企业</text>
+      <text class='industry'>行业: 互联网</text>
+      <image></image>
+    </view>
+    <view class='welfare'>
+      <text class='welfare-tit'>福利: </text>
+      <view class='welfare-detail'>
+        <view class='welfare-item'>五险一金</view>
+        <view class='welfare-item'>带薪年假</view>
+        <view class='welfare-item'>交通补助</view>
+        <view class='welfare-item'>节日礼金</view>
+        <view class='welfare-item'>定期体检</view>
+        <view class='welfare-item'>年底分红</view>
+      </view>
+    </view>
+    <view class='company-intro'>
+      <view class='company-name'>
+        <image src='/image/index/companyintro.png'></image>
+        <text>公司介绍</text>
+      </view>
+      <view class='company-introdetail'>
+        <view class='intro-cont'>
+          <text>有限公司是一家以提供行业解决方案为主的  新锐高科技公司，公司总部位于辽宁省沈阳市，在重庆、 西安、 青岛都设有分公司或者研发基地。我们专注于软件开发与技术创新,以“客户至上、技术创新”为宗旨，通过信息技术推动客户以及社会 的可持续发展。???德帆科技提供行业解决方案和产品工程解决方案以及相关软件产品、平台及服务。行业解决方案涵盖领域包括  中国移动等电信运营商、金融、政府、制造业、医疗卫  、教育与文化、交通、移动互联网环保等。在服务领域，德帆科技提供  括应用开发和维护、 ERP实施与咨询服务、软件全球化与本地化服 务、业务流程外包（BPO）、IT教育培训等.在服务领域，德帆科技提供  括应用开发和维护、 ERP实施与咨询服务、软件全球化与本地化服 务、业务流程外包（BPO）、IT教育培训等.
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='work' hidden='{{barShow[1]}}'>
+  <view class='cont'>
+    <view class='cont-item' bindtap='toCompanyDetail'>
+      <view class='cont-tit'>
+        <text class='title'>高级程序员</text>
+        <text class='time'>1天前</text>
+      </view>
+      <view class='cont-detail'>
+        <view class='det-left'>
+          <view class='left-item'>
+            <image src='/image/index/area.png'></image>
+            <text>重庆</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/work.png'></image>
+            <text>1-3年</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/xueli.png'></image>
+            <text>本科</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/height.png'></image>
+            <text>165cm以上</text>
+          </view>
+        </view>
+        <view class='det-right'>7K-9K</view>
+      </view>
+    </view>
+    <view class='cont-item' bindtap='toCompanyDetail'>
+      <view class='cont-tit'>
+        <text class='title'>高级程序员</text>
+        <text class='time'>1天前</text>
+      </view>
+      <view class='cont-detail'>
+        <view class='det-left'>
+          <view class='left-item'>
+            <image src='/image/index/area.png'></image>
+            <text>重庆</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/work.png'></image>
+            <text>1-3年</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/xueli.png'></image>
+            <text>本科</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/height.png'></image>
+            <text>165cm以上</text>
+          </view>
+        </view>
+        <view class='det-right'>7K-9K</view>
+      </view>
+    </view>
+  </view>
+</view>
