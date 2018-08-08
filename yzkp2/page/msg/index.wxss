@@ -1,0 +1,129 @@
+/* page/tabBar/msg/index.wxss */
+/* tab切换 */
+
+.tab-select-title {
+  height: 92rpx;
+  background:#fff;
+}
+
+.tab-select-title .tab-select-item {
+  width: 50%;
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 30rpx;
+  color: #353535;
+  text-align: center;
+  position: relative;
+}
+.tab-select-title  .tab-select-item:first-child {
+   border-right: 1rpx solid #E8E8E8;
+   margin-left: -1rpx;
+}
+
+.chat-record-num {
+  width: 27rpx;
+  height: 27rpx;
+  line-height: 27rpx;
+  font-size: 20rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: #F39800;
+  color:#fff;
+  position: absolute;
+  top:17rpx;
+  right:86rpx;
+}
+
+.chats-list {
+  margin: 9rpx auto;
+}
+.chat-item {
+  height: 84rpx;
+  padding: 35rpx 28rpx;
+  background: #fff;
+  border-bottom:1rpx solid #E8E8E8;
+}
+.chat-item .avatar {
+  width: 85rpx;
+  height:85rpx;
+}
+.chat-item .avatar image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.chat-item-info {
+  width: 500rpx;
+  margin-left: 25rpx;
+}
+.chat-item-info .cell {
+  line-height: 40rpx;
+}
+.chat-item-info .cell view {
+  float:left;
+  margin-right: 30rpx;
+}
+
+.chat-other {
+  font-size: 28rpx;
+  color: #353535;
+  font-weight: bold;
+}
+.company {
+  font-size: 24rpx;
+  color: #6B6B6B;
+}
+.last-time {
+  font-size: 24rpx;
+  color:#929292;
+  position: absolute;
+  right:0;
+}
+.msg-status {
+  width: 76rpx;
+  /* height: 30rpx; */
+  /* line-height: 30rpx; */
+  background: #E8E8E8;
+  text-align: center;
+  font-size: 22rpx;
+}
+.last-msg {
+  font-size: 26rpx;
+  color:#929292;
+}
+
+
+
+
+/* 消息通知 */
+.notices-list {
+  width: 702rpx;
+  margin: 9rpx auto;
+  display: none;
+}
+.notice-item {
+  min-height: 70rpx;
+  padding: 28rpx;
+  width: 646rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+.cell {
+  line-height: 1.5;
+}
+.notice-item-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.notice-item-time {
+  font-size: 24rpx;
+  color:#929292;
+}
+.notice-item-intro {
+  clear: both;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: #868686;
+}
