@@ -85,73 +85,69 @@ page{
   width: 702rpx;
   border-radius: 10rpx;
   background:  rgba(56,48,235,0.05);
-  margin: auto
+  margin: auto;
 }
-.edit .box{
+.edit .boxcont{
   width: 702rpx;
   box-sizing: border-box;
-  padding: 0 26rpx 0 25rpx;
+  padding: 0 26rpx 38rpx 25rpx;
+  border-bottom: 12rpx solid #fff;
 }
-.add-basicmsg .nav-cont-tit{
+.boxcont .nav-cont-tit{
   display: flex;
   height: 70rpx;
   border-bottom: 1px solid #868686;
   justify-content: space-between
 }
-.add-basicmsg .nav-cont-tit .left image{
+.boxcont .nav-cont-tit .left image{
   width: 29rpx;
   height: 26rpx;
   margin-right: 8rpx;
 }
-.add-basicmsg .nav-cont-tit .left text{
+.boxcont .nav-cont-tit .left text{
   font-size: 24rpx;
   color: #353535;
   line-height: 70rpx;
   vertical-align: middle
 }
-.add-basicmsg .nav-cont-tit .right image{
+.boxcont .nav-cont-tit .right image{
   width: 20rpx;
   height: 22rpx;
   margin-right: 7rpx;
 }
-.add-basicmsg .nav-cont-tit .right text{
+.boxcont .nav-cont-tit .right text{
   font-size: 22rpx;
   color: #F39800;
   line-height: 70rpx;  
   vertical-align: middle  
 }
-.add-basicmsg .nav-cont-add{
-  height: 156rpx;
-  line-height: 156rpx;
-  display: flex
-}
-.add-basicmsg .nav-cont-add.active{
-  display: none
-}
-.add-basicmsg .nav-cont-add image{
-  width: 37rpx;
-  height: 37rpx;
-  display: inline-block;
-  margin: 57rpx 12rpx 0 235rpx;
-}
-.add-basicmsg .nav-cont-add text{
-  color: #868686;
-  font-size: 28rpx;
-  display: inline-block;
-  height: 156rpx;
-  line-height: 156rpx;
-}
+
 .nav-cont-basicmsgdetail>text{
   display: block
 }
 .nav-cont-basicmsgdetail{
   color: #353535;
   font-size: 28rpx;
-  margin: 26rpx 0 17rpx 0;
+  margin-top: 26rpx;
+}
+.basicmsgdetail-name{
+  font-size: 28rpx;
+  color: #353535;
+  height: 28rpx;
+  line-height: 28rpx;
 }
 .basicmsgdetail-info{
   color: #868686;
   font-size: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  margin: 17rpx 0 24rpx; 
+}
+.basicmsgdetail-item{
+  margin-bottom: 20rpx;
+}
+.basicmsgdetail-item:last-of-type{
+  margin-bottom: 0
 }
 .basicmsgdetail-item image{
   width: 25rpx;
@@ -160,4 +156,26 @@ page{
 .basicmsgdetail-item text{
   font-size: 24rpx;
   color: #868686
+}
+.nav-content .nav-content-item{
+  height: 159rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  box-sizing: border-box;
+  padding-top: 30rpx;
+}
+.nav-content .nav-content-item:last-of-type{
+  border-bottom: none
+}
+.nav-content .nav-content-item image{
+  width: 22rpx;
+  height: 22rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+  vertical-align: top
+}
+.nav-content .nav-content-item .nav-content-item-detail{
+  display: inline-block
+}
+.nav-content .nav-content-item .nav-content-item-detail text{
+  display: block
 }

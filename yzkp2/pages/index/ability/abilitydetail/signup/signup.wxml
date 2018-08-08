@@ -1,0 +1,14 @@
+<!--pages/index/ability/abilitydetail/signup/signup.wxml-->
+<view class='box'>
+  <text>姓名</text>
+  <input placeholder='请输入姓名' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='box'>
+  <text>手机</text>
+  <input placeholder='请输入手机号码' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='box'>
+  <text>微信</text>
+  <input placeholder='请输入电话号码' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='btn'>现在报名</view>

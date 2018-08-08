@@ -4,3 +4,24 @@
   margin-top: 24rpx;
   margin-bottom: 10rpx;
 }
+.ability-company-connect .ability-company-item{
+  height: 90rpx;
+  border-bottom: 1rpx solid #E8E8E8;
+  background: #fff;
+  line-height: 90rpx;
+}
+.ability-company-connect .ability-company-item:last-of-type{
+  border-bottom: none
+}
+.connect-style{
+  font-size: 28rpx;
+  color: #868686;
+  padding: 0 44rpx 0 28rpx;
+}
+.connect-detail{
+  font-size: 28rpx;
+  color: #353535
+}
+.company-intro{
+  margin-top: 10rpx;
+}

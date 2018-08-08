@@ -1,4 +1,4 @@
-// pages/mine/complaints/complaints.js
+// pages/index/ability/abilitydetail/signup/signup.js
 Page({
 
   /**
