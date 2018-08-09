@@ -133,7 +133,7 @@
     <view class='box third'>
       <view class='left'>
         <image class='wantyou' src='/image/mine/find.png'></image>
-        <text>我的招聘</text>
+        <text>我要招聘</text>
       </view>
       <view class='right'>
         <image src='/image/mine/next.png'></image>
@@ -141,7 +141,7 @@
     </view>
   </navigator>
 
-  <navigator hover-class='none' url='/page/my/pages/opinion/opinion'>
+  <navigator hover-class='none' url='/page/my/opinion/opinion'>
     <view class='box fifth'>
       <view class='left'>
         <image src='/image/mine/retro.png'></image>
