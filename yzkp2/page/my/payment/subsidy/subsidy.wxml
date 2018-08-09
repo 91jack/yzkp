@@ -6,7 +6,8 @@
   </view>
   <view class='price-cont'>
     <view class='price-item'>
-      <view class='price-item-tit'></view>
+      <view class='price-item-tit'>奖励名称</view>
+      <view class='price-item-tit'>奖励金额(元)</view>
     </view>
   </view>
 </view>

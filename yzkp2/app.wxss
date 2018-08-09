@@ -307,7 +307,8 @@ page {
 /* 奖励详情 */
 .price-cont{
   width: 700rpx;
-  border:1rpx solid #E8E8E8
+  border:1rpx solid #FFCC78;
+  margin: auto;  
 }
 .price-cont .price-item{
   display: flex;
