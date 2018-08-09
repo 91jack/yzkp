@@ -41,6 +41,7 @@
     <view class='payment-date-item'>近半年</view>
     <view class='payment-date-item'>近一年</view>
   </view>
+
   <view class='payment-cont'>
     <view class='payment-cont-item'>
       <view class='item-top'>
@@ -72,7 +73,9 @@
       </view>
     </view>
   </view>
-  <view class='payment-cont-item'>
+  
+  <view class='payment-cont'>
+    <view class='payment-cont-item'>
       <view class='item-top'>
         <view class='item-top-item'>
           <text class='item-top-item-tit'>基本工资</text>
