@@ -3,6 +3,7 @@
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -70,6 +71,7 @@
       "pages": [
         "course/courselist/courselist",
         "course/coursedetails/coursedetails",
+        "course/enroll/enroll",
         "waibao/waibao",
         "linghuo/linghuo",
         "laowu/laowu"
