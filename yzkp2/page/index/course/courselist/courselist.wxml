@@ -1,0 +1,48 @@
+<!--page/index/course/courselist/courselist.wxml-->
+<view class='top'>
+  <view class='serach'>
+    <view class='inp'>
+      <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
+      <image src='/image/index/serach.png'></image>
+      <image class='clear' src='/image/index/clear.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='ability-nav'>
+  <view class='ability-left'>
+    <text>地区</text>
+    <image src='/image/index/return.png'></image>
+  </view>
+  <view class='ability-right'>
+    
+    <!-- <scroll-view scroll-x style="width: 450rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"> -->
+      <view class='ability-right-item active'>
+        技能提升
+      </view>
+      <view class='ability-right-item'>
+        考研培训
+      </view>
+      <view class='ability-right-item'>
+        考证培训
+      </view>
+    <!-- </scroll-view> -->
+      <image src='/image/index/next.png'></image>
+  </view>
+</view>
+
+<view class='ability-cont'>
+  <navigator hover-class='none' url='../coursedetails/coursedetails'>
+    <view class='ability-cont-item'>
+      <image></image>
+      <view>
+        <text class='ability-cont-item-tit'>技能提升</text>
+        <text class='ability-cont-item-price'>学费1200元/12节课</text>
+        <text>招生对象:公司员工</text>
+        <text>开课时间:2018-09-12</text>
+        <text>报名截止时间: 2018-09-11 0:00</text>
+      </view>
+    </view>
+  </navigator>
+</view>
+

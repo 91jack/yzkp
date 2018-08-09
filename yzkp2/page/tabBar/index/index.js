@@ -9,17 +9,17 @@ Page({
     index: 0,//选择的下拉列表下标，
     selectBar1:[
       {
-        url:'newwork/newwork',
+        url:'/page/job/joblist/joblist',
         src:'/image/index/zhiwei.png',
         text:'最新职位'
       },
       {
-        url: 'parttime/parttime',        
+        url: '/page/job/joblist/joblist',        
         src:'/image/index/time.png',
         text:'兼职职位'
       },
       {
-        url: '../mine/manageintro/manageintro',        
+        url: '/page/my/resume/index/index',        
         src:'/image/index/resume.png',
         text:'简历管理'
       },
@@ -29,66 +29,66 @@ Page({
         text:'应聘进度'
       },
       {
-        url: 'ability/ability',        
+        url: '/page/index/course/courselist/courselist',        
         src:'/image/index/train.png',
         text:'能力提升'
       }
     ], //求职者
     selectBar2: [
       {
-        url: 'newwork/newwork',
+        url: '/page/job/postfulltime/postfulltime',
         src: '/image/index/zhiwei.png',
         text: '全职发布'
       },
       {
-        url: 'parttime/parttime',
+        url: '/page/job/postparttime/postparttime',
         src: '/image/index/time.png',
         text: '兼职发布'
       },
       {
-        url: '../mine/manageintro/manageintro',
+        url: '/page/my/contract/step1/step1',
         src: '/image/index/resume.png',
         text: '合同管理'
       },
       {
-        url: 'prog/prog',
+        url: '/page/my/payment/index/index',
         src: '/image/index/pro.png',
         text: '薪酬管理'
       },
       {
-        url: 'ability/ability',
+        url: '/page/index/linghuo/linghuo',
         src: '/image/index/train.png',
         text: '灵活用工'
       }
     ], //员工
     selectBar3: [
       {
-        url: 'newwork/newwork',
+        url: '/page/job/postfulltime/postfulltime',
         src: '/image/index/zhiwei.png',
         text: '全职发布'
       },
       {
-        url: 'parttime/parttime',
+        url: '/page/job/postparttime/postparttime',
         src: '/image/index/time.png',
         text: '兼职发布'
       },
       {
-        url: '../mine/manageintro/manageintro',
+        url: '/page/job/jobmanage/jobmanage',
         src: '/image/index/resume.png',
         text: '职位管理'
       },
       {
-        url: 'prog/prog',
+        url: '/page/index/waibao/waibao',
         src: '/image/index/pro.png',
         text: '招聘外包'
       },
       {
-        url: 'ability/ability',
+        url: '/page/index/laowu/laowu',
         src: '/image/index/train.png',
         text: '劳务派遣'
       },
       {
-        url: 'ability/ability',
+        url: '/page/index/linghuo/linghuo',
         src: '/image/index/train.png',
         text: '灵活用工'
       }
@@ -147,7 +147,7 @@ Page({
   //招聘信息页面跳转
   toCompanyDetail: function(e){
     wx.navigateTo({
-      url: 'companyrequest/companyrequest',
+      url: '/page/job/jobdetails/jobdetails',
     })
   },
   /**

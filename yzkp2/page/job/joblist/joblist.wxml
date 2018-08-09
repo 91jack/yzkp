@@ -1,0 +1,100 @@
+<!--page/index/pages/newwork/joblist/joblist.wxml-->
+<!--nav-bar-->
+<view class='nav-bar'>
+  <view wx:for="{{navBarData}}" class='nav-item' wx:key="unique" data-idx="{{index}}" bindtap='navbarTap'>
+    <text class='select_font {{!currentTab[index]&&"select_font_yellow"}}'>{{item}}</text>
+    <image class='select_img {{!currentTab[index]&&"select_img_rotate"}}' src='/image/index/return1.png'></image>
+  </view>
+<!--nav-bar内容区-->
+  <view class='bar'>
+    <!--推荐-->  
+     <view hidden="{{currentTab[0]}}">
+      <view class='bar-cont'>
+        <view>
+          <text>推荐</text>
+        </view>
+        <view>
+          <text>最新</text>          
+        </view>
+      </view>
+      <view class='cover'></view>
+    </view> 
+
+    <!--地区--> 
+     <view hidden="{{currentTab[1]}}" data-idx="1" bindtap='hideBar'>
+      <view class='bar2'>
+        <view class='left' >
+          <scroll-view scroll-y style="height: 624rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"  scroll-top="100">
+            <view class="scroll-view-item box">当前城市</view>
+            <view class="scroll-view-item box">热门城市</view>
+          </scroll-view>
+        </view>
+        <view class='right' >
+          <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"  scroll-top="100">
+            <view class="scroll-view-item box">222</view>
+          </scroll-view>
+        </view>
+      </view>
+    </view> 
+    
+    <!--职位  -->
+    <view hidden="{{currentTab[2]}}" data-idx="2" bindtap='hideBar'>
+      tab_03
+    </view> 
+
+    <!--要求  -->
+    <view hidden="{{currentTab[3]}}" data-idx="3" bindtap='hideBar'>
+      <view class='bar-request'>
+        <view class='bar-request-item'>
+          <view class='bar-request-tit'>学历要求</view>
+          <view class='bar-request-detail'>
+            <view class='detail-box'></view>
+          </view>          
+        </view>
+      </view>
+    </view> 
+  </view>
+</view>
+
+
+
+
+
+<!--职位展示  -->
+<view class='cont'>
+  <view class='cont-item' bindtap='toCompanyDetail'>
+    <view class='cont-tit'>
+      <text class='title'>高级程序员</text>
+      <text class='time'>1天前</text>
+    </view>
+    <view class='cont-detail'>
+      <view class='det-left'>
+        <view class='left-item'>
+          <image src='/image/index/area.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/work.png'></image>
+          <text>1-3年</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/xueli.png'></image>
+          <text>本科</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/height.png'></image>
+          <text>165cm以上</text>
+        </view>
+      </view>
+      <view class='det-right'>7K-9K</view>
+    </view>
+    <view class='cont-company'>
+      <image src='/image/index/company.png'></image>
+      <view class='company-info'>
+        <view class='company-name'>渐臻科技</view>
+        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
+      </view>
+    </view>
+  </view>
+</view>
+

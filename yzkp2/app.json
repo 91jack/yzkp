@@ -37,7 +37,50 @@
     ]
   },
   "subPackages": [
-  
+    {
+      "root": "page/job/",
+      "pages": [
+        "joblist/joblist",
+        "jobdetails/jobdetails",
+        "companydetail/companydetail",
+        "postfulltime/postfulltime",
+        "postparttime/postparttime",
+        "jobmanage/jobmanage"
+      ]
+    },
+    {
+      "root": "page/my/",
+      "pages": [
+        "contract/step1/step1",
+        "contract/step2/step2",
+        "contract/step3/step3",
+        "contract/step4/step4",
+        "contract/step5/step5",
+        "contract/step6/step6",
+        "payment/index/index",
+        "payment/award/award",
+        "payment/deduct/deduct",
+        "payment/subsidy/subsidy",
+        "resume/index/index",
+        "opinion/opinion"
+      ]
+    },
+    {
+      "root": "page/index/",
+      "pages": [
+        "course/courselist/courselist",
+        "course/coursedetails/coursedetails",
+        "waibao/waibao",
+        "linghuo/linghuo",
+        "laowu/laowu"
+      ]
+    },
+    {
+      "root": "page/common/",
+      "pages": [
+        "city/city"
+      ]
+    }
   ],
   "networkTimeout": {
     "request": 10000,

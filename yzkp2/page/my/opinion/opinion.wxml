@@ -1,0 +1,10 @@
+
+<view class='cont'>
+  <textarea placeholder='请输入你的问题'></textarea>
+</view>
+
+<view class='btn'>
+  <view class='no'>取消</view>
+  <view class='yes'>提交</view>
+</view>
+
