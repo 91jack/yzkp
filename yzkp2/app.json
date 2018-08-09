@@ -2,7 +2,8 @@
   "pages": [
     "page/tabBar/index/index",
     "page/tabBar/my/index",
-    "page/tabBar/msg/index"
+    "page/tabBar/msg/index",
+    "city/city"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,9 +37,7 @@
       }
     ]
   },
-  "subPackages": [
-  
-  ],
+  "subPackages": [],
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
