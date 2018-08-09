@@ -1,1 +1,11 @@
-/* page/common/city/city.wxss */
+.city-cont{
+  display: flex;
+}
+.city-cont .city-list{
+  width: 211rpx;
+}
+.city-cont .city-list .city-list-item{
+  width: 211rpx;
+  height: 91rpx;
+  margin-bottom: 1rpx;
+}

@@ -1,8 +1,10 @@
 <!--pages/index/index.wxml-->
 <view class='top'>
   <view class='loc'>
-    <image src='/image/index/indxloc.png'></image>
-    <text>重庆</text>
+    <navigator hover-class='none' url='/page/common/city/city'>
+      <image src='/image/index/indxloc.png'></image>
+      <text>重庆</text>
+    </navigator>
   </view>
   <view class='serach'>
     <view class='inp'>
