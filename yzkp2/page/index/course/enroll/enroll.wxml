@@ -11,3 +11,7 @@
   <text>微信</text>
   <input placeholder='请输入微信号' placeholder-style="color:#D7D7D7"></input>
 </view>
+
+<navigator hover-class='none' url='/page/index/course/enroll/enroll'>
+  <view class='btn'>提交报名</view>
+</navigator>
