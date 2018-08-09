@@ -3,7 +3,6 @@
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -95,6 +94,7 @@
       "root": "page/common/",
       "pages": [
         "city/city"
+       
       ]
     }
   ],

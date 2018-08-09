@@ -1,0 +1,10 @@
+<!--page/common/jz-select-navbar/jz-select-navbar.wxml-->
+<view class="jz-select-navbar">
+  <view class="nav-bar">
+    <view>推荐</view>
+    <view>行业</view>
+    <view>要求</view>
+  </view>
+
+  <slot></slot>
+</view>

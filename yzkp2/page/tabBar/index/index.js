@@ -24,7 +24,7 @@ Page({
         text:'简历管理'
       },
       {
-        url: 'prog/prog',        
+        url: '/page/my/resume/apply/apply',        
         src:'/image/index/pro.png',
         text:'应聘进度'
       },
