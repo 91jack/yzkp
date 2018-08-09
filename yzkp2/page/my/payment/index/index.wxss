@@ -58,26 +58,7 @@ text{
 .payment {
   background: #fff
 }
-.payment .payment-tit{
-  height: 105rpx;
-  position: relative;
-}
-.payment .payment-tit image{
-  position: absolute;
-  width: 9rpx;
-  height: 29rpx;
-  background: #F39800;
-  left: 27rpx;
-  top: 50%;
-  margin-top: -15rpx;
-}
-.payment .payment-tit text{
-  color: #353535;
-  font-size: 28rpx;
-  font-weight: bold;
-  line-height: 105rpx;
-  margin-left: 44rpx;
-}
+
 .payment-date{
   height: 75rpx;
   display: flex;
@@ -120,6 +101,9 @@ text{
   border-bottom: 1rpx solid #EEEEEE;
   display: flex;
   flex-direction: column
+}
+.item-top-item.active .item-top-item-tit{
+  text-decoration: underline;
 }
 .payment-cont .payment-cont-item .item-top .item-top-item:last-of-type{
   border-right:none;
