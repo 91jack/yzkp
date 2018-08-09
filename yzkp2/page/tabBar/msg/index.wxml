@@ -1,2 +1,75 @@
 <!--page/tabBar/msg/index.wxml-->
-<text>page/tabBar/msg/index.wxml</text>
+<view class="tab-select">
+  <view class="tab-select-title">
+    <view class="fl tab-select-item active" data-tab="0" bindtap="tabClick">
+      <text>聊天记录</text>
+      <view class="chat-record-num">2</view>
+    </view>
+    <view class="fr tab-select-item" data-tab="1" bindtap="tabClick">消息通知</view>
+  </view>
+
+  <view class="tab-select-content">
+    <!-- 聊天记录 -->
+    <view class="chats-list">
+      <view class="chat-item">
+        <view class="avatar fl">
+          <image src="/image/index/company.png"></image>
+        </view>
+        <view class="chat-item-info fl">
+          <view class="cell">
+            <view class="chat-other">张伟</view>
+            <view class="company">渐臻科技</view>
+            <view class="last-time">07-12 9:00</view>
+          </view>
+          <view class="cell">
+            <view class="msg-status">未读</view>
+            <view class="last-msg">请把个人照片发过来</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="chat-item">
+        <view class="avatar fl">
+          <image src="/image/index/company.png"></image>
+        </view>
+        <view class="chat-item-info fl">
+          <view class="cell">
+            <view class="chat-other">张伟</view>
+            <view class="company">渐臻科技</view>
+            <view class="last-time fr">07-12 9:00</view>
+          </view>
+          <view class="cell">
+            <view class="msg-status">已读</view>
+            <view class="last-msg">请把个人照片发过来</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 消息通知 -->
+    <view class="notices-list">
+      
+      <view class="notice-item" >
+        <view class="cell">
+          <view class="notice-item-title fl">您的简历一被婉拒</view>
+          <view class="notice-item-time fr">07-12 9:00</view>
+        </view>
+        <view class="notice-item-intro">请把送至我的邮箱请把简历发送至我的邮箱请把简历发送至我的邮箱请把简历发送至我的邮箱</view>
+      </view>
+
+       <view class="notice-item" >
+        <view class="cell">
+          <view class="notice-item-title fl">您的简历一被婉拒</view>
+          <view class="notice-item-time fr">07-12 9:00</view>
+        </view>
+        <view class="notice-item-intro">我的邮箱请把简历发送至我的邮箱</view>
+      </view>
+      
+    </view>
+
+  </view>
+
+  
+</view>
+
+
