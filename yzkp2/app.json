@@ -2,7 +2,8 @@
   "pages": [
     "page/tabBar/index/index",
     "page/tabBar/my/index",
-    "page/tabBar/msg/index"
+    "page/tabBar/msg/index",
+    "city/city"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,6 +37,7 @@
       }
     ]
   },
+<<<<<<< HEAD
   "subPackages": [
     {
       "root": "page/job/",
@@ -82,6 +84,9 @@
       ]
     }
   ],
+=======
+  "subPackages": [],
+>>>>>>> 310ffb17307ee9f811eafdb2f4fe0621db69aaae
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
