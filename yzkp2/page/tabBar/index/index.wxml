@@ -1,5 +1,9 @@
 <!--pages/index/index.wxml-->
 <view class='top'>
+  <view class='loc'>
+    <image src='/image/index/indxloc.png'></image>
+    <text>重庆</text>
+  </view>
   <view class='serach'>
     <view class='inp'>
       <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
