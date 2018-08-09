@@ -1,8 +1,7 @@
-<!--page/my/payment/subsidy/subsidy.wxml-->
 <view class='payment'>
   <view class='payment-tit'>
     <image></image>
-    <text>奖励工资详情</text>
+    <text>补贴工资详情</text>
   </view>
   <view class='price-cont'>
     <view class='price-item'>
@@ -14,4 +13,5 @@
       <view class='price-basic-tit'>1K</view>
     </view>
   </view>
+  <text class='connect'>如有疑问,请到人事咨询!</text>
 </view>

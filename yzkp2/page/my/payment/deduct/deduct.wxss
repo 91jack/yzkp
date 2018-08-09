@@ -1,1 +1,4 @@
 /* page/my/payment/deduct/deduct.wxss */
+.payment{
+  border-top:11rpx solid #e8e8e8
+}
