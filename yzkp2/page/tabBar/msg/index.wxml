@@ -1,13 +1,5 @@
 <!--page/tabBar/msg/index.wxml-->
 <view class="tab-select">
-  <view class="tab-select-title">
-    <view class="fl tab-select-item active" data-tab="0" bindtap="tabClick">
-      <text>聊天记录</text>
-      <view class="chat-record-num">2</view>
-    </view>
-    <view class="fr tab-select-item" data-tab="1" bindtap="tabClick">消息通知</view>
-  </view>
-
   <view class="tab-select-content">
     <!-- 聊天记录 -->
     <view class="chats-list">

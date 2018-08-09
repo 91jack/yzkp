@@ -1,2 +1,13 @@
 <!--page/index/course/enroll/enroll.wxml-->
-<text>page/index/course/enroll/enroll.wxml</text>
+<view class='box'>
+  <text>姓名</text>
+  <input placeholder='请输入姓名' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='box'>
+  <text>电话</text>
+  <input placeholder='请输入电话号码' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='box'>
+  <text>微信</text>
+  <input placeholder='请输入微信号' placeholder-style="color:#D7D7D7"></input>
+</view>

@@ -1,2 +1,105 @@
 <!--page/my/payment/index/index.wxml-->
-<text>page/my/payment/index/index.wxml</text>
+<view class='user'>
+  <view class='user-pic'>
+    <image src=''></image>
+  </view>
+  <view class='user-detail'>
+    <view class='user-detail-item-left'>
+      <text class='user-detail-item-tit'>姓名:</text>
+      <text>张三丰</text>
+    </view>
+    <view class='user-detail-item-right'>
+      <text class='user-detail-item-tit'>性别:</text>
+      <text>男</text>
+    </view>
+    <view class='user-detail-item-left'>
+      <text class='user-detail-item-tit'>职位:</text>
+      <text>javascript工程师</text>
+    </view>
+    <view class='user-detail-item-right'>
+      <text class='user-detail-item-tit'>职级:</text>
+      <text>小职员</text>
+    </view>
+    <view class='user-detail-idcard'>
+      <text class='user-detail-item-tit'>身份证号码:</text>
+      <text>500132548965745528</text>
+    </view>
+    <view class='user-detail-idcard'>
+      <text class='user-detail-item-tit'>入职时间:</text>
+      <text>2019-09-09</text>
+    </view>
+  </view>
+</view>
+
+<view class='payment'>
+  <view class='payment-tit'>
+    <image></image>
+    <text>我的工资条</text>
+  </view>
+  <view class='payment-date'>
+    <view class='payment-date-item active'>本月</view>
+    <view class='payment-date-item'>近半年</view>
+    <view class='payment-date-item'>近一年</view>
+  </view>
+  <view class='payment-cont'>
+    <view class='payment-cont-item'>
+      <view class='item-top'>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>基本工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>绩效工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>补贴工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>奖励工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>扣除工资</text>
+          <text>8888.88</text>
+        </view>
+      </view>
+      <view class='item-footer'>
+        <view class='item-footer-item'>应发:8K</view>
+        <view class='item-footer-item'>实发:8K</view>
+        <view class='item-footer-item'>已签收</view>
+      </view>
+    </view>
+  </view>
+  <view class='payment-cont-item'>
+      <view class='item-top'>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>基本工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>绩效工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>补贴工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>奖励工资</text>
+          <text>8888.88</text>
+        </view>
+        <view class='item-top-item'>
+          <text class='item-top-item-tit'>扣除工资</text>
+          <text>8888.88</text>
+        </view>
+      </view>
+      <view class='item-footer'>
+        <view class='item-footer-item'>应发:8K</view>
+        <view class='item-footer-item'>实发:8K</view>
+        <view class='item-footer-item'>已签收</view>
+      </view>
+    </view>
+  </view>
+</view>

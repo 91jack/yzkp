@@ -109,3 +109,177 @@ page {
   height: 26rp;
   line-height: 26rpx;
 }
+/* 公司详情 */
+.company-intro{
+  background: #fff;
+  padding-left: 26rpx;
+}
+.company-intro .company-name{
+  display: flex;
+  align-items: flex-end;
+  height: 77rpx;
+  line-height: 77rpx;
+  padding-bottom: 24rpx;
+  box-sizing: border-box
+}
+.company-intro .company-name image{
+  width: 34rpx;
+  height: 30rpx;
+  display: inline-block;
+  vertical-align: middle
+}
+.company-intro .company-name text{
+  color: #353535;
+  font-size: 28rpx;
+  display: inline-block;
+  height: 28rpx;
+  line-height: 28rpx;
+  vertical-align: middle;
+  margin-left: 5rpx;
+}
+.company-intro .intro-cont{
+  width: 703rpx;
+  margin-left: 1rpx;
+  border-top: 1rpx solid #E8E8E8
+}
+.company-intro .intro-cont text{
+  font-size: 26rpx;
+  color: #868686;
+  display: block;
+  padding-top: 27rpx;
+  height: 540rpx;
+  overflow: auto
+}
+
+/* 底部按钮 */
+.btn{
+  width: 100%;
+  height: 117rpx;
+  background: #F39800;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 117rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0
+}
+.blue-btn{
+  width: 100%;
+  height: 117rpx;
+  background:linear-gradient(to right,rgba(105,100,253,1),rgba(56,48,235,1));
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.blue-btn image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 17rpx;
+  display: inline-block;
+  margin-top: 42rpx;
+  margin-left: 252rpx;
+}
+.blue-btn text{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #fff;
+  height: 117rpx;
+  line-height: 117rpx;
+}
+
+
+/* from表单输入框、picker */
+.box{
+  height: 104rpx;
+  border-bottom: 1rpx solid #E8E8E8;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 22rpx 0 27rpx;
+}
+.box picker{
+  width: 400rpx;
+  text-align: right
+}
+.box>text{
+  line-height: 104rpx;
+  font-size: 28rpx;
+  color: #868686;  
+}
+.box>input{
+  text-align: right;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  display: inline-block;
+  height: 104rpx;
+  width: 500rpx;
+}
+.box .right{
+  display: inline-block;
+  height: 100%;
+  line-height: 104rpx;
+}
+.box .right>text,
+.box .right>image{
+  display: inline-block;
+  vertical-align: middle;  
+}
+.box .right>text{
+  color: #868686;
+  font-size: 24rpx;
+}
+.box .right>text.active{
+  color: #F39800
+}
+.box .right>image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+}
+.box .right .next{
+  width: 13rpx;
+  height: 24rpx;
+  margin-left: 24rpx;
+}
+.box .right .choose{
+  font-size: 28rpx;
+  color: #868686
+}
+.box .oncheck{
+  margin-left: 39rpx;
+}
+/* 灵活用工、劳务派遣、招聘外包 */
+.public-tit{
+  margin-top: 19rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #353535;
+  text-align: center
+}
+.public-cont{
+  width: 631rpx;
+  height: 706rpx;
+  border:16rpx solid #fff;
+  border-radius: 10rpx;
+  box-shadow:0px 20rpx 16rpx rgba(0,0,0,0.05);
+  margin: auto;
+  padding: 27rpx 30rpx 0 25rpx;
+}
+.public-cont .cont-item{
+  margin-bottom: 33rpx;
+}
+.public-cont .cont-item text{
+  font-size: 28rpx;
+  color: #6B6B6B;
+  line-height: 45rpx;
+}
+.public-cont .cont-item .cont-item-name{
+  color: #353535;
+  font-weight: bold;
+}
