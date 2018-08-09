@@ -323,3 +323,13 @@ page {
   line-height: 90rpx;
   height:90rpx;
 }
+.price-cont .price-item .price-basic-tit{
+  font-size: 26rpx;
+  color: #6B6B6B;
+  text-align: center;
+  line-height: 90rpx;
+  height: 90rpx;
+  width: 264rpx;
+  border-bottom: 1rpx solid #E8E8E8;
+  border-right: 1rpx solid #E8E8E8;
+}

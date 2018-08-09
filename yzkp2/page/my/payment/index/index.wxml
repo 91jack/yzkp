@@ -53,13 +53,11 @@
           <text class='item-top-item-tit'>绩效工资</text>
           <text>8888.88</text>
         </view>
-<<<<<<< HEAD
         <view class='item-top-item active'>
           <navigator hover-class='none' url='/page/my/payment/subsidy/subsidy'>
             <text class='item-top-item-tit'>补贴工资</text>
             <text>8888.88</text>
           </navigator>
-=======
         <view class='item-top-item'>
           <text class='item-top-item-tit'>补贴工资</text>
           <text>8888.88</text>
@@ -95,7 +93,6 @@
         <view class='item-top-item'>
           <text class='item-top-item-tit'>补贴工资</text>
           <text>8888.88</text>
->>>>>>> 156515598d20949f36f01bbc77549c437d700bb1
         </view>
         <view class='item-top-item active'>
          <navigator hover-class='none' url='/page/my/payment/award/award'>

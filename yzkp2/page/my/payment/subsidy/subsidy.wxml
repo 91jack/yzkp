@@ -9,5 +9,9 @@
       <view class='price-item-tit'>奖励名称</view>
       <view class='price-item-tit'>奖励金额(元)</view>
     </view>
+    <view class='price-item'>
+      <view class='price-basic-tit'>全勤奖励</view>
+      <view class='price-basic-tit'>1K</view>
+    </view>
   </view>
 </view>
