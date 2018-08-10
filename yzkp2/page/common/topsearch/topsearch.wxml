@@ -1,0 +1,16 @@
+<!--page/common/topsearch/topsearch.wxml-->
+<template name="msgItem">
+  <view class='top'>
+    <view class='loc'>
+      <image src='/image/index/locye.png'></image>
+      <text>重庆打理谈</text>
+    </view>
+    <view class='serach'>
+      <view class='inp'>
+        <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
+        <image src='/image/index/serach.png'></image>
+        <!-- <image class='clear' src='/image/index/clear.png'></image> -->
+      </view>
+    </view>
+  </view>
+</template>
