@@ -1,10 +1,31 @@
 <!--page/common/jz-select-navbar/jz-select-navbar.wxml-->
 <view class="jz-select-navbar">
-  <view class="nav-bar">
-    <view>推荐</view>
-    <view>行业</view>
-    <view>要求</view>
-  </view>
+  
+  <view class='nav-bar'>
+    <view wx:for="{{navBarData}}" class='nav-item' data-idx="{{index}}" bindtap='navbarTap'>
+      <text>{{item}}</text>
+      <image src='/image/index/return1.png'></image>
+    </view>
 
+
+  <!--nav-bar内容区-->
+
+    <view class='bar'>
+      <view hidden="{{currentTab[0]}}">
+        <view class='bar-item'>
+          <checkbox>推荐</checkbox>
+          <checkbox>最新</checkbox>
+        </view>
+      </view>
+      
+      <view hidden="{{currentTab[1]}}" data-idx="1" bindtap='hideBar'>
+        tab_02
+      </view>
+      
+      <view hidden="{{currentTab[2]}}" data-idx="2" bindtap='hideBar'>
+        tab_03
+      </view>
+    </view> 
+  </view>
   <slot></slot>
 </view>

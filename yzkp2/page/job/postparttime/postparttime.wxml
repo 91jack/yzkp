@@ -1,2 +1,115 @@
 <!--page/job/postparttime/postparttime.wxml-->
-<text>page/job/postparttime/postparttime.wxml</text>
+<view class="post-job">
+  <view class='post-job-header parttime'>
+    <view class='header-item'>
+      <input placeholder='职位名称' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <input placeholder='请输入招聘人数' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <picker>
+        <text>性别要求</text>
+        <image src='/image/index/return.png'></image>
+      </picker>
+    </view>
+    <view class='header-item'>
+      <picker>
+        <text>身高要求</text>
+        <image src='/image/index/return.png'></image>        
+      </picker>
+    </view>
+    <view class='header-item'>
+      <picker>
+        <text>请输入薪资</text>
+        <image src='/image/index/return.png'></image>        
+      </picker>
+    </view>
+    <view class='header-item'>
+      <picker>
+        <text>薪资结算方式</text>
+        <image src='/image/index/return.png'></image>        
+      </picker>
+    </view>
+    <view class='header-item'>
+      <input placeholder='招聘人姓名' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <input placeholder='招聘人联系电话' placeholder-style='color:#AEAEAE'></input>
+    </view>
+  </view>
+
+  <view class='post-job-type'>
+    <view class='post-job-type-item'>
+      <text>职位属性:</text>
+    </view>
+    <view class='post-job-type-item'>
+      <image src='/image/mine/checkon.png'></image>
+      <text>普通职位</text>
+    </view>
+    <view class='post-job-type-item'>
+      <image src='/image/mine/uncheck.png'></image>
+      <text>招聘外包</text>
+    </view>
+    <view class='post-job-type-item'>
+      <image src='/image/mine/uncheck.png'></image>
+      <text>劳务派遣</text>
+    </view>
+  </view>
+
+  <view class='post-job-week'>
+    <text>工作周期:</text>
+    <view class='week-cont'>
+      <picker>
+        <view class='post-job-choosetime'>
+          <image src='/image/index/return.png'></image>
+        </view>
+      </picker>
+      <view class='xian'></view>
+      <picker>
+        <view class='post-job-choosetime'>
+          <image src='/image/index/return.png'></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class='post-job-area'>
+    <view class='choose-place'>
+      <text>详细时间:</text>
+      <view class='choose-region'>
+        <picker>
+          <view class='choose-region-item'>
+            <text>省</text>
+            <image src='/image/index/return.png'></image>
+          </view>
+        </picker>
+        <picker>
+          <view class='choose-region-item'>
+            <text>市</text>
+            <image src='/image/index/return.png'></image>
+          </view>
+        </picker>
+        <picker>
+          <view class='choose-region-item'>
+            <text>区</text>
+            <image src='/image/index/return.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class='detail-place'>
+    <input placeholder-style='color:#AEAEAE' placeholder='请输入详细时间'></input>
+  </view>
+  <view class='choose-place'>
+    <text>职位描述:</text>
+    <textarea placeholder='请输入岗位职责:' placeholder-style='color:#AEAEAE'></textarea>
+    <textarea placeholder='请输入职位要求:' placeholder-style='color:#AEAEAE'></textarea>
+  </view>
+</view>
+
+<view class='post-job-btn'></view>
+<view class='btn'>立即发布</view>
+
+

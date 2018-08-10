@@ -1,1 +1,4 @@
 /* page/job/postfulltime/postfulltime.wxss */
+page{
+  background: #fff;
+}

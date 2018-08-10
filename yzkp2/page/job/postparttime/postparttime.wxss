@@ -1,1 +1,38 @@
 /* page/job/postparttime/postparttime.wxss */
+page{
+  background: #fff;
+}
+.post-job-week{
+  width: 703rpx;
+  height: 124rpx;
+}
+.post-job-week>text{
+  display: block;
+  height: 26rpx;
+  font-size: 26rpx;
+  color: #868686;
+  margin-bottom: 18rpx;
+}
+.post-job-choosetime{
+  position: relative;
+  width: 288rpx;
+  height: 80rpx;
+  background: #F5F4FE;
+}
+.post-job-choosetime image{
+  width: 24rpx;
+  height: 13rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -6rpx;
+  right: 20rpx;
+}
+.xian{
+  width: 79rpx;
+  height: 39rpx;
+  border-bottom:1rpx solid #868686
+}
+.week-cont{
+  display: flex;
+  justify-content: space-between;
+}

@@ -5,22 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab: [true, true, true, true],//控制nav-bar的显示
     index: 0,//选择的下拉列表下标，
     selectBar1:[
       {
         url:'/page/job/joblist/joblist',
-        src:'/image/index/zhiwei.png',
+        src:'/image/index/office.png',
         text:'最新职位'
       },
       {
         url: '/page/job/joblist/joblist',        
-        src:'/image/index/time.png',
+        src:'/image/index/datetime.png',
         text:'兼职职位'
       },
       {
         url: '/page/my/resume/index/index',        
-        src:'/image/index/resume.png',
+        src:'/image/index/manageintro.png',
         text:'简历管理'
       },
       {
@@ -37,64 +36,62 @@ Page({
     selectBar2: [
       {
         url: '/page/job/postfulltime/postfulltime',
-        src: '/image/index/zhiwei.png',
+        src: '/image/index/office.png',
         text: '全职发布'
       },
       {
         url: '/page/job/postparttime/postparttime',
-        src: '/image/index/time.png',
+        src: '/image/index/datetime.png',
         text: '兼职发布'
       },
       {
         url: '/page/my/contract/step1/step1',
-        src: '/image/index/resume.png',
+        src: '/image/index/discuss.png',
         text: '合同管理'
       },
       {
         url: '/page/my/payment/index/index',
-        src: '/image/index/pro.png',
+        src: '/image/index/price.png',
         text: '薪酬管理'
       },
       {
         url: '/page/index/linghuo/linghuo',
         src: '/image/index/train.png',
-        text: '灵活用工'
+        text: '能力提升'
       }
     ], //员工
     selectBar3: [
       {
         url: '/page/job/postfulltime/postfulltime',
-        src: '/image/index/zhiwei.png',
+        src: '/image/index/office.png',
         text: '全职发布'
       },
       {
         url: '/page/job/postparttime/postparttime',
-        src: '/image/index/time.png',
+        src: '/image/index/datetime.png',
         text: '兼职发布'
       },
       {
         url: '/page/job/jobmanage/jobmanage',
-        src: '/image/index/resume.png',
+        src: '/image/index/serachintro.png',
         text: '职位管理'
       },
       {
         url: '/page/index/waibao/waibao',
-        src: '/image/index/pro.png',
+        src: '/image/index/other.png',
         text: '招聘外包'
       },
       {
         url: '/page/index/laowu/laowu',
-        src: '/image/index/train.png',
+        src: '/image/index/goout.png',
         text: '劳务派遣'
       },
       {
         url: '/page/index/linghuo/linghuo',
-        src: '/image/index/train.png',
+        src: '/image/index/change.png',
         text: '灵活用工'
       }
-    ], //企业
-    navBarData:['推荐','地区','职位','要求'],
-    navbarShow:false
+    ] //企业
   },
 
   /**
@@ -111,38 +108,7 @@ Page({
       title: '111111',
     })
   },
-// navbar的展开
-  navbarTap: function (e) {
-    var i = e.currentTarget.dataset.idx;
-    var index = this.data.currentTab[i];
-    var hid = "currentTab[" + i + "]";
-    console.log(index);
-    for (var j = 0; j < this.data.currentTab.length; j++) {
-      var act = "currentTab[" + j + "]"
-      this.setData({
-        [act]: true
-      })
-    }
-    if (index) {
-      this.setData({
-        [hid]: false
-      })
-    } else {
-      this.setData({
-        [hid]: true
-      })
-    }
-  },
-// navbar的收起
-  hideBar: function (e) {
-    var i = Number(e.currentTarget.dataset.idx);
-    console.log(typeof i)
-    var index = this.data.currentTab[i];
-    var hid = "currentTab[" + i + "]";
-    this.setData({
-      [hid]: true
-    })
-  },
+
 
   //招聘信息页面跳转
   toCompanyDetail: function(e){

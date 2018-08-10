@@ -31,10 +31,13 @@ page {
   justify-content: space-around
 }
 .top .loc{
-  width: 182rpx;
   height: 78rpx;
   display: flex;
-  background: red
+  background: red;
+  margin-right: 40rpx;
+  padding-right: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 8rpx;
 }
 .top .loc image{
   width: 28rpx;
@@ -42,26 +45,25 @@ page {
   display: inline-block;
   margin-right: 12rpx;
   margin-left: 20rpx;
-  margin-top: 22rpx;
+  /* margin-top: 22rpx; */
 }
 .top .loc text{
   color: #fff;
   font-size: 30rpx;
-  display: inline-block;  
-  height: 78rpx;
   line-height: 78rpx;
-  width: 122rpx;
+  display: inline-block;  
 }
 /*输入框 */
 .serach{
   height: 78rpx;
-  width: 512rpx;
+  /* width: 512rpx; */
   background: #fff;
   border-radius: 10rpx;
   display: flex;
   line-height: 78rpx;
   justify-content: space-around;
   margin-right: 20rpx;
+  flex: 1;
 }
 
 .serach .inp{
@@ -366,4 +368,160 @@ page {
   margin-left: 27rpx;
   color: #6B6B6B;
   margin-top: 29rpx;
+}
+
+/*----------------------------------------------------- 发布职位 */
+.post-job{
+  border-top: 12rpx solid #E8E8E8;
+  background: #fff;
+  padding: 38rpx 20rpx 0 29rpx;  
+}
+.post-job-header{
+  display: flex;
+  flex-wrap: wrap;
+  height: 434rpx;
+}
+.post-job-header.parttime{
+  height: 344rpx;
+}
+.post-job-header .header-item{
+  width: 346rpx;
+  height: 80rpx;
+  background: #F5F4FE
+}
+.post-job-header .header-item:nth-of-type(2n){
+  margin-left: 9rpx;
+}
+.post-job-header .header-item picker{
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+}
+.post-job-header .header-item picker image{
+  width: 24rpx;
+  height: 13rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -6rpx;
+  right: 15rpx;
+}
+.post-job-header .header-item picker text{
+  margin-left: 25rpx;
+  color: #AEAEAE;
+  font-size:28rpx;
+}
+.post-job-header .header-item input{
+  box-sizing: border-box;
+  padding: 20rpx 0 20rpx 25rpx;
+  line-height: 80rpx;
+  font-size: 28rpxrpx;
+  display: block;
+  height: 80rpx;
+  color: #AEAEAE;
+}
+.post-job-type{
+  height: 111rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.post-job-type-item{
+  display: flex
+}
+.post-job-type-item image{
+  width: 28rpx;
+  height: 28rpx;
+  margin: 41rpx 8rpx 0 0;
+}
+.post-job-type-item text{
+  font-size: 26rpx;
+  color: #868686;
+  display: inline-block;
+  height: 111rpx;
+  line-height: 111rpx;
+}
+.post-job-wealf-cont{
+  display: flex;
+  flex-wrap: wrap;
+  height: 136rpx;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.post-job-wealf-item{
+  display: flex;
+  justify-content: space-between;
+}
+checkbox{
+  border-color: #817CFB;
+  height: 26rpx;
+  width: 162rpx;
+  font-size: 26rpx;
+  color: #6B6B6B
+}
+.post-job-area{
+  margin-top: 10rpx;
+}
+.choose-place>text{
+  font-size: 26rpx;
+  color: #868686;
+  padding-bottom: 17rpx;
+  display: block;
+}
+.choose-place>textarea{
+  width: 701rpx;
+  height: 213rpx;
+  background: rgba(56,48,235,0.05);
+  margin-top: 7rpx;
+  padding: 26rpx 0 0 34rpx;
+  box-sizing: border-box;
+}
+.choose-place>textarea:first-of-type{
+  margin-top: 13rpx;
+}
+.choose-region{
+  display: flex;
+  justify-content: space-between;
+}
+.choose-region-item{
+  width: 225rpx;
+  height: 80rpx;
+  background: #F5F4FE;
+  position: relative;
+}
+.choose-region-item text{
+  font-size: 28rpx;
+  color: #AEAEAE;
+  line-height: 80rpx;
+  margin-left: 26rpx;
+}
+.choose-region-item image{
+  position: absolute;
+  width: 24rpx;
+  height: 13rpx;
+  top: 50%;
+  margin-top: -6rpx;
+  right:20rpx;
+}
+.detail-place{
+  width: 705rpx;
+  height: 120rpx;
+  background: #F5F4FE;
+  margin-top: 10rpx;
+  margin-bottom: 44rpx;
+}
+.detail-place input{
+  font-size: 28rpx;
+  padding-left: 26rpx;
+  color: #AEAEAE;
+}
+.post-job-btn{
+  margin:auto;
+  width: 186rpx;
+  height: 64rpx;
+  border-radius:32rpx;
+  margin-top: 50rpx; 
+  margin-bottom: 141rpx;
+  text-align: center;
+  line-height: 64rpx;
+  color: #fff;
 }
