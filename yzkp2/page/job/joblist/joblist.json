@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "职位列表"
+  "navigationBarTitleText": "职位列表",
+  "usingComponents": {
+    "jz-select-navbar": "/components/jz-select-navbar/jz-select-navbar"
+  }
 }

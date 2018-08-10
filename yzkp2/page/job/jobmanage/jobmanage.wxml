@@ -1,2 +1,127 @@
 <!--page/job/jobmanage/jobmanage.wxml-->
-<text>page/job/jobmanage/jobmanage.wxml</text>
+<view class='jobmanage-tit'>
+  <view class='intro-manage'>简历管理</view>
+  <view class='job-manage active'>职位管理</view>
+</view>
+
+
+
+<!-- 简历管理 -->
+<view class='manageintro-cont'>
+  <view class='manage-intro-nav'>
+    <view class='manage-intro-nav-item'>
+      111
+    </view>
+    <view class='manage-intro-nav-item'>
+      111
+    </view>
+    <view class='manage-intro-nav-item'>
+      111
+    </view>
+    <view class='manage-intro-nav-item'>
+      111
+    </view>
+  </view>
+
+
+  <view class='manage-intro-cont'>
+
+  </view>
+</view>
+<!-- 职位管理 -->
+
+
+<view class='managejob-cont'>
+  <view class='cont-item' bindtap='toCompanyDetail'>
+    <view class='cont-tit'>
+      <text class='title'>高级程序员</text>
+      <text class='time'>1天前</text>
+    </view>
+    <view class='cont-detail'>
+      <view class='det-left'>
+        <view class='left-item'>
+          <image src='/image/index/area.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/work.png'></image>
+          <text>1-3年</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/xueli.png'></image>
+          <text>本科</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/height.png'></image>
+          <text>165cm以上</text>
+        </view>
+      </view>
+      <view class='det-right'>7K-9K</view>
+    </view>
+    <view class='cont-company'>
+      <image src='/image/index/company.png'></image>
+      <view class='company-info'>
+        <view class='company-name'>渐臻科技</view>
+        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
+      </view>
+    </view>
+    <view class='company-btn'>
+      <view class='company-btn-item'>
+        <image src='/image/index/refresh.png'></image>
+        <text>刷新</text>
+      </view>
+      <view class='company-btn-item'>
+        <image src='/image/index/delete.png'></image>  
+        <text>删除</text>              
+      </view>
+    </view>
+  </view>
+  <view class='cont-item' bindtap='toCompanyDetail'>
+    <view class='cont-tit'>
+      <text class='title'>高级程序员</text>
+      <text class='time'>1天前</text>
+    </view>
+    <view class='cont-detail'>
+      <view class='det-left'>
+        <view class='left-item'>
+          <image src='/image/index/area.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/work.png'></image>
+          <text>1-3年</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/xueli.png'></image>
+          <text>本科</text>
+        </view>
+        <view class='left-item'>
+          <image src='/image/index/height.png'></image>
+          <text>165cm以上</text>
+        </view>
+      </view>
+      <view class='det-right'>7K-9K</view>
+    </view>
+    <view class='cont-company'>
+      <image src='/image/index/company.png'></image>
+      <view class='company-info'>
+        <view class='company-name'>渐臻科技</view>
+        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
+      </view>
+    </view>
+    <view class='company-btn'>
+      <view class='company-btn-item'>
+        <image src='/image/index/refresh.png'></image>
+        <text>刷新</text>
+      </view>
+      <view class='company-btn-item'>
+        <image src='/image/index/delete.png'></image>  
+        <text>删除</text>              
+      </view>
+    </view>
+  </view>
+  <view class='manage-job-btn'>
+    <image src='/image/mine/add.png'></image>
+    <text>发布职位</text>
+  </view>
+</view>

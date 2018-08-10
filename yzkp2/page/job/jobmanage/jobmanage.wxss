@@ -1,1 +1,104 @@
 /* page/job/jobmanage/jobmanage.wxss */
+page{
+  background: #fff;
+}
+.jobmanage-tit{
+  height: 92rpx;
+  width: 100%;
+  border-bottom: 10rpx solid #e8e8e8;
+  display: flex;
+}
+.jobmanage-tit>view{
+  width: 50%;
+  font-size: 30rpx;
+  color: #353535;
+  text-align: center;
+  line-height: 92rpx;
+}
+.jobmanage-tit>view.active{
+  color: #fff;
+  background: #F39800
+}
+/* 简历管理 */
+.manageintro-cont .manage-intro-nav{
+  height: 84rpx;
+  border-bottom: 1rpx solid #E8E8E8;
+  display: flex;
+}
+.manageintro-cont .manage-intro-nav-item{
+  width: 186rpx;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  line-height: 84rpx;
+  color: #6B6B6B;
+}
+.manageintro-cont .manage-intro-nav-item:first-of-type::after,
+.manageintro-cont .manage-intro-nav-item:nth-of-type(2)::after,
+.manageintro-cont .manage-intro-nav-item:nth-of-type(3)::after{
+  content: '';
+  position: absolute;  
+  width:2rpx;
+  height: 26rpx;
+  background: #BFBFBF;
+  top: 50%;
+  margin-top: -13rpx;
+  right: 0;
+}
+
+
+/* 职位管理 */
+.managejob-cont{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 34rpx 24rpx 0;
+  background: #fff;
+}
+.cont-item{
+  background: rgba(56,48,235,0.05);
+  margin-bottom: 11rpx;
+}
+.company-btn{
+  display: flex;
+  height: 93rpx;
+  line-height: 93rpx;
+}
+.company-btn-item:first-of-type{
+  margin-left: 457rpx;
+}
+.company-btn-item:last-of-type{
+  margin-left: 39rpx;
+}
+.company-btn-item:first-of-type text{
+  color: #F39800;
+}
+.company-btn-item:last-of-type text{
+  color: #FF1E1E;
+}
+.company-btn-item image{
+  width: 21rpx;
+  height: 21rpx;
+  margin-right: 5rpx;
+}
+.company-btn-item text{
+  font-size: 22rpx;
+}
+.manage-job-btn{
+  width: 701rpx;
+  height: 108rpx;
+  margin: auto;
+  background:rgba(56,48,235,0.1);
+  border-radius:6rpx;
+  display: flex;
+  margin-top: 24rpx;
+}
+.manage-job-btn image{
+  width: 37rpx;
+  height: 37rpx;
+  margin: 36rpx 12rpx 0 290rpx;
+}
+.manage-job-btn text{
+  font-size: 28rpx;
+  color: #868686;
+  line-height: 108rpx;
+}
