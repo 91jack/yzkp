@@ -1,4 +1,6 @@
 // pages/index/index.js
+const testLoginUrl = require('../../../config').testLoginUrl;
+
 Page({
 
   /**
@@ -121,7 +123,20 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    wx.request({
+      url: testLoginUrl,
+      data: {
+       openId:'1001'
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded', // 默认值
+       
+      },
+      success: function (res) {
+        console.log(res)
+       
+      }
+    })
   },
 
   /**
