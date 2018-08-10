@@ -1,1 +1,39 @@
 /* page/common/sign/sign.wxss */
+
+.content {
+  width: 100%;
+  height: 1000rpx;
+  background-color: #f6f6f6;
+}
+
+.firstCanvas {
+  background-color: #fff;
+  width: 705rpx;
+  height: 1019rpx;
+  margin: 23rpx;
+}
+
+.footer-btn {
+  width: 100%;
+  height: 117rpx;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-btn .signbtn {
+  display: block;
+  width: 50%;
+  height: 117rpx;
+  line-height: 117rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.footer-btn .signbtn:first-child {
+  background: #b9b9b9;
+}
+
+.footer-btn .signbtn:last-child {
+  background: #f39800;
+}

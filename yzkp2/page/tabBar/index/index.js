@@ -18,7 +18,8 @@ Page({
         text:'兼职职位'
       },
       {
-        url: '/page/my/resume/index/index',        
+        //url: '/page/my/resume/index/index',  
+        url: '/page/common/sign/sign',        
         src:'/image/index/manageintro.png',
         text:'简历管理'
       },

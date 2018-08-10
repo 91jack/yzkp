@@ -1,87 +1,119 @@
 // page/common/sign/sign.js
-Page({
+var content = null;
+var touchs = [];
+var canvasw = 0;
+var canvash = 0;
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
+//获取系统信息
+wx.getSystemInfo({
+  success: function (res) {
+    canvasw = res.windowWidth;
+    canvash = canvasw * 9 / 6;
   },
+}),
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
+  Page({
+    /**
+    * 页面的初始数据
+    */
+    data: {
+      signImage: '',
+    },
+    // 画布的触摸移动开始手势响应
+    start: function (event) {
+      // console.log("触摸开始" + event.changedTouches[0].x)
+      // console.log("触摸开始" + event.changedTouches[0].y)
+      //获取触摸开始的 x,y
+      let point = { x: event.changedTouches[0].x, y: event.changedTouches[0].y }
+      touchs.push(point)
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  canvasIdErrorCallback: function (e) {
-    console.error(e.detail.errMsg)
-  },
-  onReady: function (e) {
-    // 使用 wx.createContext 获取绘图上下文 context
-    var context = wx.createCanvasContext('firstCanvas')
+    // 画布的触摸移动手势响应
+    move: function (e) {
+      let point = { x: e.touches[0].x, y: e.touches[0].y }
+      touchs.push(point)
+      if (touchs.length >= 2) {
+        this.draw(touchs)
+      }
+    },
 
-    context.setStrokeStyle("#00ff00")
-    context.setLineWidth(5)
-    context.rect(0, 0, 200, 200)
-    context.stroke()
-    context.setStrokeStyle("#ff0000")
-    context.setLineWidth(2)
-    context.moveTo(160, 100)
-    context.arc(100, 100, 60, 0, 2 * Math.PI, true)
-    context.moveTo(140, 100)
-    context.arc(100, 100, 40, 0, Math.PI, false)
-    context.moveTo(85, 80)
-    context.arc(80, 80, 5, 0, 2 * Math.PI, true)
-    context.moveTo(125, 80)
-    context.arc(120, 80, 5, 0, 2 * Math.PI, true)
-    context.stroke()
-    context.draw()
-  },
+    // 画布的触摸移动结束手势响应
+    end: function (e) {
+      console.log("触摸结束" + e)
+      //清空轨迹数组
+      for (let i = 0; i < touchs.length; i++) {
+        touchs.pop()
+      }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
+    // 画布的触摸取消响应
+    cancel: function (e) {
+      console.log("触摸取消" + e)
+    },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
+    // 画布的长按手势响应
+    tap: function (e) {
+      console.log("长按手势" + e)
+    },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
+    error: function (e) {
+      console.log("画布触摸错误" + e)
+    },
+    /**
+    * 生命周期函数--监听页面加载
+    */
+    onLoad: function (options) {
+      //获得Canvas的上下文
+      content = wx.createCanvasContext('firstCanvas')
+      //设置线的颜色
+      content.setStrokeStyle("#000")
+      //设置线的宽度
+      content.setLineWidth(3)
+      //设置线两端端点样式更加圆润
+      content.setLineCap('round')
+      //设置两条线连接处更加圆润
+      content.setLineJoin('round')
+    },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
+    /**
+    * 生命周期函数--监听页面初次渲染完成
+    */
+    onReady: function () {
+    },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
-})
+    //绘制
+    draw: function (touchs) {
+      let point1 = touchs[0]
+      let point2 = touchs[1]
+      touchs.shift()
+      content.moveTo(point1.x, point1.y)
+      content.lineTo(point2.x, point2.y)
+      content.stroke()
+      content.draw(true)
+    },
+    //清除操作
+    clearClick: function () {
+      //清除画布
+      content.clearRect(0, 0, canvasw, canvash)
+      content.draw(true)
+    },
+    //保存图片
+    saveClick: function () {
+      var that = this
+      wx.canvasToTempFilePath({
+        canvasId: 'firstCanvas',
+
+        success: function (res) {
+          //打印图片路径
+          console.log(res.tempFilePath)
+          //设置保存的图片
+          that.setData({
+            signImage: res.tempFilePath
+          })
+        }
+      })
+
+    }
+
+  })
