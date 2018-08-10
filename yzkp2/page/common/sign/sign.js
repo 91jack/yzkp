@@ -9,6 +9,7 @@ wx.getSystemInfo({
   success: function (res) {
     canvasw = res.windowWidth;
     canvash = canvasw * 9 / 6;
+    console.log(canvash)
   },
 }),
 
