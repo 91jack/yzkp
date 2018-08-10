@@ -19,6 +19,10 @@ page{
   color: #fff;
   background: #F39800
 }
+
+
+
+
 /* 简历管理 */
 .manageintro-cont .manage-intro-nav{
   height: 84rpx;
@@ -44,6 +48,16 @@ page{
   top: 50%;
   margin-top: -13rpx;
   right: 0;
+}
+.manage-intro-cont{
+  padding-top: 36rpx;
+}
+.manage-intro-item{
+  width: 702rpx;
+  height: 229rpx;
+  background:rgba(56,48,235,0.05);
+  margin: auto;
+  border-radius: 6rpx;
 }
 
 
