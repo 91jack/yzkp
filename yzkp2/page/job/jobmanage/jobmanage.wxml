@@ -25,7 +25,15 @@
 
 
   <view class='manage-intro-cont'>
-    <view class='manage-intro-item'></view>
+    <view class='manage-intro-item'>
+      <view class='manage-intro-item-info'>
+        <text class='manage-intro-item-info-job'></text>
+        <text></text>
+      </view>
+      <view class='manage-intro-item-phone'>
+        <image src='/image/mine/cellphone.png'></image>
+      </view>
+    </view>
   </view>
 </view>
 <!-- 职位管理 -->
