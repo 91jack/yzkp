@@ -23,8 +23,8 @@ Page({
         text:'兼职职位'
       },
       {
-        //url: '/page/my/resume/index/index',  
-        url: '/page/common/sign/sign',        
+        url: '/page/my/resume/index/index',  
+        //url: '/page/common/sign/sign',        
         src:'/image/index/manageintro.png',
         text:'简历管理'
       },
@@ -41,14 +41,14 @@ Page({
     ], //求职者
     selectBar2: [
       {
-        url: '/page/job/postfulltime/postfulltime',
+        url: '/page/job/joblist/joblist',
         src: '/image/index/office.png',
-        text: '全职发布'
+        text: '最新职位'
       },
       {
-        url: '/page/job/postparttime/postparttime',
+        url: '/page/job/joblist/joblist',
         src: '/image/index/datetime.png',
-        text: '兼职发布'
+        text: '兼职职位'
       },
       {
         url: '/page/my/contract/step1/step1',

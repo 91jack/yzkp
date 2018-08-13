@@ -61,7 +61,7 @@
   <navigator  url="/page/job/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
     <view class='cont-tit'>
       <text class='title'>{{item.name}}</text>
-      <text class='time'>1天前</text>
+      <text class='time'>{{item.refreshTime}}</text>
     </view>
     <view class='cont-detail'>
       <view class='det-left'>
@@ -85,10 +85,10 @@
       <view class='det-right'>{{item.pay}}</view>
     </view>
     <view class='cont-company'>
-      <image src='/image/index/company.png'></image>
+      <!-- <image src='/image/index/company.png'></image> -->
       <view class='company-info'>
         <view class='company-name'>{{item.companyName}}</view>
-        <view class='company-detail'>{{item.companySize}}/民营/{{item.companyIndustry}}</view>
+        <view class='company-detail'>{{item.companySize}}/{{item.companyType}}/{{item.companyIndustry}}</view>
       </view>
     </view>
   </navigator>
