@@ -3,60 +3,7 @@
 page{
   background: #F6F6F6
 }
-.header{
-  height: 192rpx;
-  background: #fff;
-  margin-bottom: 16rpx;
-}
-.header .header-cont{
-    display: flex;
-    position: relative
-}
-.header .company-pic{
-  width: 113rpx;
-  height: 113rpx;
-  background: red;
-  margin-left: 29rpx;
-  margin-top: 40rpx;
-  border-radius: 50%  
-}
-.header-intro {
-  margin-left: 33rpx;
-}
-.header-intro>text{
-  display: block;
-}
-.header-intro .name{
-  font-size: 32rpx;
-  color: #353535;
-  margin-top: 54rpx;
-  margin-bottom: 25rpx;
-}
-.header-intro .intro-cont{
-  height: 26rpx;
-  line-height: 26rpx;
-}
-.header-intro .intro{
-  font-size: 26rpx;
-  color: #868686;
-  line-height: 26rpx;  
-  display: inline-block;  
-}
-.header-intro .intro.detail{
-  width: 379rpx;
-  height: 26rpx;
-  overflow:hidden; 
-  text-overflow:ellipsis; 
-  white-space:nowrap;
-}
-.tonext{
-  width: 18rpx;
-  height: 32rpx;
-  position: absolute;
-  top: 50%;
-  margin-top: -16rpx;
-  right:24rpx;
-}
+
 /* 中间内容区 */
 .box{
   height: 80rpx;

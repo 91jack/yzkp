@@ -611,3 +611,140 @@ checkbox{
   font-size: 24rpx;
   color: #A1A1A1
 }
+/* ---------------------------------------顶部头像以及自我介绍 */
+.header{
+  height: 192rpx;
+  background: #fff;
+  margin-bottom: 16rpx;
+}
+.header .header-cont{
+    display: flex;
+    position: relative
+}
+.header .company-pic{
+  width: 113rpx;
+  height: 113rpx;
+  background: red;
+  margin-left: 29rpx;
+  margin-top: 40rpx;
+  border-radius: 50%  
+}
+.header-intro {
+  margin-left: 33rpx;
+}
+.header-intro>text{
+  display: block;
+}
+.header-intro .name{
+  font-size: 32rpx;
+  color: #353535;
+  margin-top: 54rpx;
+  margin-bottom: 25rpx;
+}
+.header-intro .intro-cont{
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.header-intro .intro{
+  font-size: 26rpx;
+  color: #868686;
+  line-height: 26rpx;  
+  display: inline-block;  
+}
+.header-intro .intro.detail{
+  width: 379rpx;
+  height: 26rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+.tonext{
+  width: 18rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -16rpx;
+  right:24rpx;
+}
+/* -----------------------------------简历部分 */
+.con{
+  border-top: 10rpx solid #f6f6f6;
+  padding-top: 39rpx;
+}
+.con-item{
+  width: 701rpx;
+  height: 153rpx;
+  padding: 0 35rpx 0 33rpx;
+  background: rgba(56,48,235,0.05);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: auto;
+  border-radius: 6rpx;
+  margin-bottom: 10rpx;
+}
+.con-detail{
+  padding-top: 25rpx;
+}
+.con-detail>text{
+  display: block;
+  font-size: 24rpx;
+  color: #868686;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.con-item .con-btn image{
+  width: 21rpx;
+  height: 21rpx;
+}
+.con-detail .con-detail-comp{
+  font-size: 26rpx;
+  color: #353535;
+  height: 26rpx;
+  line-height: 26rpx;
+  margin: 18rpx 0 14rpx;
+}
+.con-btn{
+  display: flex;
+  height: 100%;
+}
+.con-btn .btn-edit{
+  margin-right: 35rpx;
+}
+.con-btn .btn-edit image,
+.con-btn .btn-delete image{
+  margin: 66rpx 5rpx 0 0;
+}
+.con-btn .btn-edit text{
+  font-size: 22rpx;
+  color: #F39800
+}
+.con-btn .btn-delete text{
+  font-size: 22rpx;
+  color: #FF1E1E;
+}
+.add-btn{
+  width:701rpx;
+  height:104rpx;
+  background:rgba(117, 111, 224,0.1);
+  border-radius:6px;
+  margin: auto;
+  margin-top: 14rpx;
+  display: flex;
+}
+.add-btn image{
+  width: 37rpx;
+  height: 37rpx;
+  margin: 34rpx 12rpx 0 228rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.add-btn text{
+  display: inline-block;
+  font-size: 28rpx;
+  color: #868686;
+  height: 28rpx;
+  line-height: 28rpx;
+  vertical-align: middle;
+  margin-top: 38rpx;
+}

@@ -6,36 +6,8 @@
 
 
 
-<!-- 简历管理 -->
-<view class='manageintro-cont'>
-  <view class='manage-intro-nav'>
-    <view class='manage-intro-nav-item'>
-      111
-    </view>
-    <view class='manage-intro-nav-item'>
-      111
-    </view>
-    <view class='manage-intro-nav-item'>
-      111
-    </view>
-    <view class='manage-intro-nav-item'>
-      111
-    </view>
-  </view>
 
-
-  <view class='manage-intro-cont'>
-    <view class='manage-intro-item'>
-      <view class='manage-intro-item-info'>
-        <text class='manage-intro-item-info-job'></text>
-        <text></text>
-      </view>
-      <view class='manage-intro-item-phone'>
-        <image src='/image/mine/cellphone.png'></image>
-      </view>
-    </view>
-  </view>
-</view>
+  
 <!-- 职位管理 -->
 
 

@@ -1,1 +1,58 @@
 /* page/my/resume/personmsg/personmsg.wxss */
+page{
+  background: #fff;
+}
+.head-pic{
+  width: 100%;
+  text-align: center;
+}
+.head-pic image{
+  display: block;
+  width: 187rpx;
+  height: 187rpx;
+  margin: 48rpx 0 26rpx 283rpx;
+}
+.head-pic text{
+  display: block;
+  text-decoration: underline;
+  font-size: 24rpx;
+  color: #868686;
+}
+.real-name{
+  width:703rpx;
+  height:94rpx;
+  background:rgba(245,244,254,1);
+  border-radius:6rpx;
+  margin: auto;
+  box-sizing: border-box;
+  padding-left: 28rpx;
+  margin-top: 49rpx;
+  margin-bottom: 42rpx;
+}
+.real-name input{
+  width: 100%;
+  height: 100%;
+  font-size: 26rpx;
+  color: #AEAEAE;
+  line-height: 94rpx;
+}
+.discuss-yourself{
+  padding-left: 30rpx;
+}
+.discuss-yourself .discuss-tit{
+  display: block;
+  height: 28rpx;
+  font-size: 28rpx;
+  color: #868686;
+  margin-bottom: 25rpx;
+}
+.discuss-yourself textarea{
+  width:703rpx;
+  height:300rpx;
+  font-size:26rpx;
+  color:rgba(174,174,174,1);
+  line-height:35rpx;
+  box-sizing: border-box;
+  padding: 29rpx 28rpx 0;
+  background: #F5F4FE;
+}

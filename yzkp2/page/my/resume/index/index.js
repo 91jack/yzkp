@@ -14,7 +14,11 @@ Page({
   onLoad: function (options) {
   
   },
-
+  noname:function(){
+    wx.navigateTo({
+      url: '/page/my/resume/cryptonym/cryptonym',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

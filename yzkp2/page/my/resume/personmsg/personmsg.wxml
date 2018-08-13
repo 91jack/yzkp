@@ -1,2 +1,13 @@
 <!--page/my/resume/personmsg/personmsg.wxml-->
-<text>page/my/resume/personmsg/personmsg.wxml</text>
+<view class='head-pic'>
+  <image src='/image/mine/singnal.png'></image>
+  <text>更换照片</text>
+</view>
+<view class='real-name'>
+  <input placeholder='请输入你的真实姓名'></input>
+</view>
+<view class='discuss-yourself'>
+  <text class='discuss-tit'>自我评价</text>
+  <textarea placeholder='请简单介绍一下你自己' placeholder-style='color:#AEAEAE'></textarea>
+</view>
+<view class='btn'>保存编辑</view>

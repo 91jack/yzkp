@@ -1,2 +1,36 @@
 <!--page/my/resume/jobedit/jobedit.wxml-->
-<text>page/my/resume/jobedit/jobedit.wxml</text>
+<view class='box'>
+  <text>入职时间</text>
+  <view class='right'>
+     <picker mode="selector" range="{{workexpressData}}" value="{{item}}" bindchange="bindDateChangeExpress">
+        <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>        
+        <text class='choose'>{{workexpress}}</text>
+        <image class='next' src='../../../../image/mine/next.png'></image>
+     </picker>
+  </view>
+</view>
+<view class='box'>
+  <text>离职时间</text>
+  <view class='right'>
+     <picker mode="selector" range="{{workexpressData}}" value="{{item}}" bindchange="bindDateChangeExpress">
+        <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>        
+        <text class='choose'>{{workexpress}}</text>
+        <image class='next' src='../../../../image/mine/next.png'></image>
+     </picker>
+  </view>
+</view>
+<view class='box'>
+  <text>所属公司名称</text>
+  <input placeholder='请输入所属公司名称' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='box'>
+  <text>所属部门</text>
+  <input placeholder='请输入该公司所属部门' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='box'>
+  <text>担任职位</text>
+  <input placeholder='请输入该公司所担任职位' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='btn'>保存编辑</view>
+
+

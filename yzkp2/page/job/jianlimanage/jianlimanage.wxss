@@ -1,1 +1,60 @@
-/* page/job/jianlimanage/jianlimanage.wxss */
+/* 简历管理 */
+page{
+  background: #fff;
+}
+.jobmanage-tit{
+  height: 92rpx;
+  width: 100%;
+  border-bottom: 10rpx solid #e8e8e8;
+  display: flex;
+}
+.jobmanage-tit>view{
+  width: 50%;
+  font-size: 30rpx;
+  color: #353535;
+  text-align: center;
+  line-height: 92rpx;
+}
+.jobmanage-tit>view.active{
+  color: #fff;
+  background: #F39800
+}
+.manageintro-cont .manage-intro-nav{
+  height: 84rpx;
+  border-bottom: 1rpx solid #E8E8E8;
+  display: flex;
+}
+.manageintro-cont .manage-intro-nav-item{
+  width: 186rpx;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  line-height: 84rpx;
+  color: #6B6B6B;
+}
+.manageintro-cont .manage-intro-nav-item:first-of-type::after,
+.manageintro-cont .manage-intro-nav-item:nth-of-type(2)::after,
+.manageintro-cont .manage-intro-nav-item:nth-of-type(3)::after{
+  content: '';
+  position: absolute;  
+  width:2rpx;
+  height: 26rpx;
+  background: #BFBFBF;
+  top: 50%;
+  margin-top: -13rpx;
+  right: 0;
+}
+.manage-intro-cont{
+  padding-top: 36rpx;
+}
+.manage-intro-item{
+  width: 702rpx;
+  height: 229rpx;
+  background:rgba(56,48,235,0.05);
+  margin: auto;
+  border-radius: 6rpx;
+}
+.manage-intro-item-phone image{
+  width: 45rpx;
+  height: 45rpx;
+}
