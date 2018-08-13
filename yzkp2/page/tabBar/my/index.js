@@ -5,7 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    //求职者列表
+    jobSeekerList:[
+      {
+        url: '/page/job/joblist/joblist?type=0',
+        src: '/image/index/office.png',
+        text: '我的简历'
+     },
+     {
+        url: '/page/job/joblist/joblist?type=0',
+        src: '/image/index/office.png',
+        text: '我的收藏'
+      },
+      {
+        url: '/page/job/joblist/joblist?type=0',
+        src: '/image/index/office.png',
+        text: '我的申请'
+      },
+      {
+        url: '/page/job/joblist/joblist?type=0',
+        src: '/image/index/office.png',
+        text: '我要招聘'
+      },
+      {
+        url: '/page/job/joblist/joblist?type=0',
+        src: '/image/index/office.png',
+        text: '成为员工'
+      }
+    ]
+    // 员工列表
+
+    // 企业列表
+
   },
 
   /**

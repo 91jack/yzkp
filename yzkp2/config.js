@@ -42,9 +42,16 @@ var config = {
 
   /*企业模块*/
   // 发布全职招聘
+  addFulljobUrl: `${host}recruit/notice/add.json`,
+
   // 发布兼职招聘
+  addPartjobUrl: `${host}recruit/notice/info.json`,
+
   // 企业职位管理
+
   // 刷新职位
+
+
   // 删除职位
   // 企业简历管理
   // 添加企业信息

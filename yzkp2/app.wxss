@@ -33,7 +33,7 @@ page {
 .top .loc{
   height: 78rpx;
   display: flex;
-  background: red;
+  /* background: red; */
   margin-right: 40rpx;
   padding-right: 20rpx;
   margin-left: 20rpx;

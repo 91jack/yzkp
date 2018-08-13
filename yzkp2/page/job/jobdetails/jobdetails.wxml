@@ -1,45 +1,7 @@
 <!--page/job/newwork/jobdetails/jobdetails.wxml-->
+<import src ="/template/jobinfo/jobinfo.wxml"/>
+<template is="jobinfo" data="{{jobDetails}}"/>
 
-
-<view class='tit'>
-  <view class='tit-name'>
-    <text class='work-name'>{{jobDetails.name}}</text>
-    <text class='work-price'>{{jobDetails.pay}}</text>
-  </view>
-  <view class='tit-request'>
-    <view class='request-item'>
-      <image class='img1' src='/image/index/express.png'></image>
-      <text>{{jobDetails.workYear}}</text>
-    </view>
-    <view class='request-item'>
-      <image class='img2' src='/image/index/xueli.png'></image>
-      <text>{{jobDetails.educationLevel}}</text>
-    </view>
-   
-    <view class='request-item'>
-      <image class='img4' src='/image/index/sex.png'></image>
-      <text>性别{{jobDetails.sex}}</text>
-    </view>
-    <view class='request-item'>
-      <image class='img5' src='/image/index/cont.png'></image>
-      <text>{{jobDetails.num}}人</text>
-    </view>
-    <view class='request-item'>
-      <image class='img6' src='/image/index/height.png'></image>
-      <text>{{jobDetails.height}}</text>
-    </view>
-  </view>
-  <view class='tit-treatment'>
-    <text>福利待遇: </text>
-    <text>{{jobDetails.welfare}}</text>
-  </view>
-  <view class='tit-adreess'>
-    <navigator hover-class='none'>
-      <image src='/image/index/area.png'></image>
-      <text>{{jobDetails.address}}</text>
-    </navigator>
-  </view>
-</view>
 
 <!--职位描述  -->
 <view class='discript'>

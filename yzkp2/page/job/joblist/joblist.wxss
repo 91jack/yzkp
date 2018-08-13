@@ -8,14 +8,14 @@ page{
   overflow: hidden
 }
 
-.top{
+/* .top{
   background: #fff
 }
 .top .loc text{
   color: #F39800
-}
+} */
 /*输入框 */
-.top .inp{
+/* .top .inp{
   background: #F6F6F6;
 }
 ::-webkit-scrollbar{
@@ -23,7 +23,7 @@ width: 0;
 height: 0;
 color: transparent;
 }
-
+ */
 
 
 

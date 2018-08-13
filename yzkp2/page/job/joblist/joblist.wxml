@@ -1,4 +1,5 @@
 <!--page/index/pages/newwork/joblist/joblist.wxml-->
+<import src ="/template/joblist/joblist.wxml"/>
 <!--nav-bar-->
 <view class='top'>
   <view class='loc'>
@@ -15,6 +16,8 @@
 </view>
 
 
+
+
 <view>
   <jz-select-navbar>
     <view slot="nav"></view>
@@ -25,39 +28,7 @@
 
 <!--职位展示  -->
 <view class='cont'>
-  <view class='cont-item' bindtap='toCompanyDetail'>
-    <view class='cont-tit'>
-      <text class='title'>高级程序员</text>
-      <text class='time'>1天前</text>
-    </view>
-    <view class='cont-detail'>
-      <view class='det-left'>
-        <view class='left-item'>
-          <image src='/image/index/area.png'></image>
-          <text>重庆</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/work.png'></image>
-          <text>1-3年</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/xueli.png'></image>
-          <text>本科</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/height.png'></image>
-          <text>165cm以上</text>
-        </view>
-      </view>
-      <view class='det-right'>7K-9K</view>
-    </view>
-    <view class='cont-company'>
-      <image src='/image/index/company.png'></image>
-      <view class='company-info'>
-        <view class='company-name'>渐臻科技</view>
-        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
-      </view>
-    </view>
-  </view>
+<template is="joblist" data="{{jobList}}"/>
+
 </view>
 

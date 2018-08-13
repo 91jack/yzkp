@@ -13,12 +13,12 @@ Page({
     index: 0,//选择的下拉列表下标，
     selectBar1:[
       {
-        url:'/page/job/joblist/joblist',
+        url:'/page/job/joblist/joblist?type=0',
         src:'/image/index/office.png',
         text:'最新职位'
       },
       {
-        url: '/page/job/joblist/joblist',        
+        url: '/page/job/joblist/joblist?recruitType=1',        
         src:'/image/index/datetime.png',
         text:'兼职职位'
       },
@@ -41,12 +41,12 @@ Page({
     ], //求职者
     selectBar2: [
       {
-        url: '/page/job/joblist/joblist',
+        url: '/page/job/joblist/joblist?type=0',
         src: '/image/index/office.png',
         text: '最新职位'
       },
       {
-        url: '/page/job/joblist/joblist',
+        url: '/page/job/joblist/joblist?recruitType=1',
         src: '/image/index/datetime.png',
         text: '兼职职位'
       },

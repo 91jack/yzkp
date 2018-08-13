@@ -1,17 +1,6 @@
 <!--pages/index/index.wxml-->
-<view class='top'>
-    <view class='loc'>
-      <image src='/image/index/locye.png'></image>
-      <text>重庆打理谈</text>
-    </view>
-    <view class='serach'>
-      <view class='inp'>
-        <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
-        <image src='/image/index/serach.png'></image>
-        <!-- <image class='clear' src='/image/index/clear.png'></image> -->
-      </view>
-    </view>
-  </view>
+<import src ="/template/joblist/joblist.wxml"/>
+
 
 
 <view class='banner'>
@@ -57,42 +46,7 @@
 
 <!--职位展示  -->
 <view class='cont'>
-<block  wx:for="{{jobList}}">
-  <navigator  url="/page/job/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
-    <view class='cont-tit'>
-      <text class='title'>{{item.name}}</text>
-      <text class='time'>{{item.refreshTime}}</text>
-    </view>
-    <view class='cont-detail'>
-      <view class='det-left'>
-        <view class='left-item'>
-          <image src='/image/index/area.png'></image>
-          <text>重庆</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/work.png'></image>
-          <text>{{item.workYear}}</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/xueli.png'></image>
-          <text>{{item.educationLevel}}</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/height.png'></image>
-          <text>{{item.height}}</text>
-        </view>
-      </view>
-      <view class='det-right'>{{item.pay}}</view>
-    </view>
-    <view class='cont-company'>
-      <!-- <image src='/image/index/company.png'></image> -->
-      <view class='company-info'>
-        <view class='company-name'>{{item.companyName}}</view>
-        <view class='company-detail'>{{item.companySize}}/{{item.companyType}}/{{item.companyIndustry}}</view>
-      </view>
-    </view>
-  </navigator>
-  </block>
+  <template is="joblist" data="{{jobList}}"/>
 </view>
 
 

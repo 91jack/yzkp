@@ -1,0 +1,10 @@
+<!--components/jz-search/jz-search.wxml-->
+<view class='top'>
+    <view class='serach'>
+      <view class='inp'>
+        <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
+        <image src='/image/index/serach.png'></image>
+     
+      </view>
+    </view>
+  </view>

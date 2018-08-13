@@ -1,0 +1,87 @@
+<!--template/joblist/joblist.wxml-->
+<template name="joblist">
+  <view class="joblist-item">
+    <block wx:for="{{jobList}}">
+      <!-- 全职列表 -->
+      <block wx:if="{{item.type==0}}">
+        <navigator url="/page/job/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
+          <view class='cont-tit'>
+            <view>
+              <text class='title'>{{item.name}}</text>/
+              <text class="type">{{item.type}}</text>
+            </view>
+
+            <text class='time'>{{item.refreshTime}}</text>
+          </view>
+          <view class='cont-detail'>
+            <view class='det-left'>
+              <view class='left-item'>
+                <image src='/image/index/area.png'></image>
+                <text>重庆</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/work.png'></image>
+                <text>{{item.workYear}}</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/xueli.png'></image>
+                <text>{{item.educationLevel}}</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/height.png'></image>
+                <text>{{item.height}}</text>
+              </view>
+            </view>
+            <view class='det-right'>{{item.pay}}</view>
+          </view>
+          <view class='cont-company'>
+
+            <view class='company-info'>
+              <view class='company-name'>{{item.companyName}}</view>
+            </view>
+          </view>
+        </navigator>
+      </block>
+      <!-- 兼职列表 -->
+      <block wx:if="{{item.type==1}}">
+        <navigator url="/page/job/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
+          <view class='cont-tit'>
+            <view>
+              <text class='title'>{{item.name}}</text>/
+              <text class="type">{{item.type}}</text>
+            </view>
+
+            <text class='time'>{{item.refreshTime}}</text>
+          </view>
+          <view class='cont-detail'>
+            <view class='det-left'>
+              <view class='left-item'>
+                <image src='/image/index/area.png'></image>
+                <text>重庆</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/copy.png'></image>
+                <text>{{item.num}}人</text>
+              </view>
+             
+              <view class='left-item'>
+                <image src='/image/index/height.png'></image>
+                <text>{{item.height}}</text>
+              </view>
+            </view>
+            <view class='det-right'>{{item.pay}}</view>
+          </view>
+          <view class='cont-company'>
+
+            <view class='company-info'>
+              <view class='company-name'>{{item.companyName}}</view>
+
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </block>
+  </view>
+
+
+</template>

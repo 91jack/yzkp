@@ -1,0 +1,75 @@
+<!--template/jobinfo/jobinfo.wxml-->
+<template name="jobinfo">
+  <view class='tit'>
+    <view class='tit-name'>
+      <text class='work-name'>{{jobDetails.name}}</text>
+      <text class='work-price'>{{jobDetails.pay}}</text>
+    </view>
+
+    <view class='tit-request'>
+      <!-- 全职岗位 -->
+      <block wx:if="{{jobDetails.type==0}}">
+        <view class='request-item'>
+          <image src='/image/index/area.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='request-item'>
+          <image  src='/image/index/express.png'></image>
+          <text>{{jobDetails.workYear}}</text>
+        </view>
+        <view class='request-item'>
+          <image src='/image/index/xueli.png'></image>
+          <text>{{jobDetails.educationLevel}}</text>
+        </view>
+
+
+        <view class='request-item'>
+          <image  src='/image/index/sex.png'></image>
+          <text>{{jobDetails.sex}}</text>
+        </view>
+      
+        <view class='request-item'>
+          <image  src='/image/index/height.png'></image>
+          <text>{{jobDetails.height}}</text>
+        </view>
+      </block>
+      <!-- 兼职岗位 -->
+      <block wx:if="{{jobDetails.type==1}}">
+        <view class='request-item'>
+          <image src='/image/index/area.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='request-item'>
+          <image  src='/image/index/sex.png'></image>
+          <text>{{jobDetails.sex}}</text>
+        </view>
+        <view class='request-item'>
+          <image src='/image/index/copy.png'></image>
+          <text>{{jobDetails.num}}人</text>
+        </view>
+
+      
+        <view class='request-item'>
+          <image src='/image/index/height.png'></image>
+          <text>{{jobDetails.height}}</text>
+        </view>
+        <view class='request-item'>
+          <image  src='/image/index/jiesuan.png'></image>
+          <text>{{jobDetails.payType}}</text>
+        </view>
+      </block>
+    </view>
+    <view class='tit-treatment' wx:if="{{jobDetails.type==0}}">
+      <text>福利待遇: </text>
+      <text>{{jobDetails.welfare}}</text>
+    </view>
+
+
+    <view class='tit-adreess'>
+      <navigator hover-class='none'>
+        <image src='/image/index/area.png'></image>
+        <text>{{jobDetails.address}}</text>
+      </navigator>
+    </view>
+  </view>
+</template>
