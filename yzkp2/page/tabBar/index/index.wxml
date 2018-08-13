@@ -19,7 +19,7 @@
 </view>
 
 <!-- 求职者 -->
-<view class='select-bar'>
+<view class='select-bar' wx:if="{{role==1}}">
   <view class='item' wx:for="{{selectBar1}}">
     <navigator hover-class="none" url='{{item.url}}'>
       <image src='{{item.src}}'></image>
@@ -28,7 +28,7 @@
   </view>
 </view>
 <!-- 员工 -->
-<view class='select-bar'>
+<view class='select-bar' wx:if="{{role==2}}">
   <view class='item' wx:for="{{selectBar2}}">
     <navigator hover-class="none" url='{{item.url}}'>
       <image src='{{item.src}}'></image>
@@ -37,7 +37,7 @@
   </view>
 </view>
 <!-- 企业 -->
-<view class='select-bar'>
+<view class='select-bar' wx:if="{{role==3}}">
   <view class='item' wx:for="{{selectBar3}}">
     <navigator hover-class="none" url='{{item.url}}'>
       <image src='{{item.src}}'></image>

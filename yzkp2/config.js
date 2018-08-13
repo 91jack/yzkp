@@ -25,12 +25,13 @@ var config = {
   // 新增项目经历
   // 修改项目经历
 
-  // 获取招聘详情
+ 
+
   // 获取招聘列表信息
-  
+  jobListUrl: `${host}recruit/notice/list.json`,
 
-
-
+  // 获取招聘详情
+  jobDetailsUrl: `${host}recruit/notice/info.json`,
 
 
   /*员工模块*/

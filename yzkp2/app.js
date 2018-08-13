@@ -29,7 +29,19 @@ App({
               }
             }
           })
-        }
+        }  
+      }
+    })
+    // 获取用户位置
+    wx.getLocation({
+      type: ' wgs84', 
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        console.log(latitude, longitude)
+        //将坐标传到后台 返回区域
+
+      
       }
     })
   },

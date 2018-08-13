@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    jobList:[],
-
+    role:1,//用户角色 1：求职者 2：员工 3：企业
+    jobList: [],
 
     index: 0,//选择的下拉列表下标，
     selectBar1:[
