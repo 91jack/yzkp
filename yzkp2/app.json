@@ -96,8 +96,7 @@
       "root": "page/common/",
       "pages": [
         "city/city",
-        "sign/sign",
-        "topsearch/topsearch"
+        "sign/sign"
       ]
     }
   ],

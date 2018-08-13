@@ -1,7 +1,17 @@
 <!--pages/index/index.wxml-->
-<import src="../../topsearch/topsearch.wxml"/>
-<template is="msgItem"/>
-
+<view class='top'>
+    <view class='loc'>
+      <image src='/image/index/locye.png'></image>
+      <text>重庆打理谈</text>
+    </view>
+    <view class='serach'>
+      <view class='inp'>
+        <input placeholder='请输入关键字' bindconfirm='serachoffices' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
+        <image src='/image/index/serach.png'></image>
+        <!-- <image class='clear' src='/image/index/clear.png'></image> -->
+      </view>
+    </view>
+  </view>
 
 
 <view class='banner'>
@@ -47,9 +57,10 @@
 
 <!--职位展示  -->
 <view class='cont'>
-  <view class='cont-item' bindtap='toCompanyDetail'>
+<block  wx:for="{{jobList}}">
+  <navigator  url="/page/job/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
     <view class='cont-tit'>
-      <text class='title'>高级程序员</text>
+      <text class='title'>{{item.name}}</text>
       <text class='time'>1天前</text>
     </view>
     <view class='cont-detail'>
@@ -60,25 +71,26 @@
         </view>
         <view class='left-item'>
           <image src='/image/index/work.png'></image>
-          <text>1-3年</text>
+          <text>{{item.workYear}}</text>
         </view>
         <view class='left-item'>
           <image src='/image/index/xueli.png'></image>
-          <text>本科</text>
+          <text>{{item.educationLevel}}</text>
         </view>
         <view class='left-item'>
           <image src='/image/index/height.png'></image>
-          <text>165cm以上</text>
+          <text>{{item.height}}</text>
         </view>
       </view>
-      <view class='det-right'>7K-9K</view>
+      <view class='det-right'>{{item.pay}}</view>
     </view>
     <view class='cont-company'>
       <image src='/image/index/company.png'></image>
       <view class='company-info'>
-        <view class='company-name'>渐臻科技</view>
-        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
+        <view class='company-name'>{{item.companyName}}</view>
+        <view class='company-detail'>{{item.companySize}}/民营/{{item.companyIndustry}}</view>
       </view>
     </view>
-  </view>
+  </navigator>
+  </block>
 </view>

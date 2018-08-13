@@ -7,6 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    jobList:[],
+
+
     index: 0,//选择的下拉列表下标，
     selectBar1:[
       {
@@ -123,18 +126,21 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    var _this = this;
     wx.request({
       url: testLoginUrl,
       data: {
-       openId:'1001'
+       openId:'1002'
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded', // 默认值
        
       },
       success: function (res) {
-        console.log(res)
-       
+        console.log(res.data.list)
+        _this.setData({
+          jobList:res.data.list
+        })
       }
     })
   },
