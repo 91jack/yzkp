@@ -1,99 +1,98 @@
 // pages/index/index.js
 const testLoginUrl = require('../../../config').testLoginUrl;
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    role:1,//用户角色 1：求职者 2：员工 3：企业
+    role:3,//用户角色 1：求职者 2：员工 3：企业
     jobList: [],
 
     index: 0,//选择的下拉列表下标，
     selectBar1:[
       {
-        url:'/page/job/joblist/joblist?type=0',
+        url:'/page/common/joblist/joblist?type=0',
         src:'/image/index/office.png',
         text:'最新职位'
       },
       {
-        url: '/page/job/joblist/joblist?recruitType=1',        
+        url: '/page/common/joblist/joblist?recruitType=1',        
         src:'/image/index/datetime.png',
         text:'兼职职位'
       },
       {
-        url: '/page/my/resume/index/index',  
+        url: '/page/common/resume/index/index',  
         //url: '/page/common/sign/sign',        
         src:'/image/index/manageintro.png',
         text:'简历管理'
       },
       {
-        url: '/page/my/resume/apply/apply',        
+        url: '/page/common/resume/apply/apply',        
         src:'/image/index/pro.png',
         text:'应聘进度'
       },
       {
-        url: '/page/index/course/courselist/courselist',        
+        url: '/page/common/course/courselist/courselist',        
         src:'/image/index/train.png',
         text:'能力提升'
       }
     ], //求职者
     selectBar2: [
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/common/joblist/joblist?type=0',
         src: '/image/index/office.png',
         text: '最新职位'
       },
       {
-        url: '/page/job/joblist/joblist?recruitType=1',
+        url: '/page/common/joblist/joblist?recruitType=1',
         src: '/image/index/datetime.png',
         text: '兼职职位'
       },
       {
-        url: '/page/my/contract/step1/step1',
+        url: '/page/employee/contract/step1/step1',
         src: '/image/index/discuss.png',
         text: '合同管理'
       },
       {
-        url: '/page/my/payment/index/index',
+        url: '/page/employee/payment/index/index',
         src: '/image/index/price.png',
         text: '薪酬管理'
       },
       {
-        url: '/page/index/linghuo/linghuo',
+        url: '/page/common/linghuo/linghuo',
         src: '/image/index/train.png',
         text: '能力提升'
       }
     ], //员工
     selectBar3: [
       {
-        url: '/page/job/postfulltime/postfulltime',
+        url: '/page/company/postfulltime/postfulltime',
         src: '/image/index/office.png',
         text: '全职发布'
       },
       {
-        url: '/page/job/postparttime/postparttime',
+        url: '/page/company/postparttime/postparttime',
         src: '/image/index/datetime.png',
         text: '兼职发布'
       },
       {
-        url: '/page/job/jobmanage/jobmanage',
+        url: '/page/company/jobmanage/jobmanage',
         src: '/image/index/serachintro.png',
         text: '职位管理'
       },
       {
-        url: '/page/index/waibao/waibao',
+        url: '/page/company/waibao/waibao',
         src: '/image/index/other.png',
         text: '招聘外包'
       },
       {
-        url: '/page/index/laowu/laowu',
+        url: '/page/company/laowu/laowu',
         src: '/image/index/goout.png',
         text: '劳务派遣'
       },
       {
-        url: '/page/index/linghuo/linghuo',
+        url: '/page/company/linghuo/linghuo',
         src: '/image/index/change.png',
         text: '灵活用工'
       }

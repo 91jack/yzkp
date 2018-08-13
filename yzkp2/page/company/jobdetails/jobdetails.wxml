@@ -29,7 +29,8 @@
   此岗位为{{jobDetails.attr}}。
 </view>
 
-<view class='to-company' bindtap='toCompany'>
+
+ <navigator url="/page/company/companydetail/companydetail?companyId={{jobDetails.companyId}}" class='to-company'>
   <view>
     
     <view class='company-detail'>
@@ -38,7 +39,8 @@
     </view>
   </view>
   <image class='next' src='/image/index/next.png'></image>
-</view>
+   </navigator>
+
 
 <view class='footer'>
   <view class='footer-item first'>

@@ -4,7 +4,7 @@
     <block wx:for="{{jobList}}">
       <!-- 全职列表 -->
       <block wx:if="{{item.type==0}}">
-        <navigator url="/page/job/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
+        <navigator url="/page/company/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
           <view class='cont-tit'>
             <view>
               <text class='title'>{{item.name}}</text>/
@@ -44,7 +44,7 @@
       </block>
       <!-- 兼职列表 -->
       <block wx:if="{{item.type==1}}">
-        <navigator url="/page/job/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
+        <navigator url="/page/company/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
           <view class='cont-tit'>
             <view>
               <text class='title'>{{item.name}}</text>/

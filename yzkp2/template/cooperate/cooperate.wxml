@@ -1,4 +1,5 @@
-<!--page/index/waibao/waibao.wxml-->
+<!--template/cooperate/cooperate.wxml-->
+
 <view class='public-tit'>
   <text>招聘外包</text>
 </view>
@@ -16,3 +17,4 @@
   <image src='/image/index/phonefff.png'></image>
   <text>拨打电话咨询</text>
 </view>
+

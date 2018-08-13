@@ -49,12 +49,7 @@ Page({
       }
     })
   },
-  // 公司详情页面跳转
-  toCompany: function () {
-    wx.navigateTo({
-      url: '../companydetail/companydetail',
-    })
-  },
+ 
   //收藏
   collect: function () {
     console.log(this.data.collectType)

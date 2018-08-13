@@ -1,11 +1,10 @@
 {
   "pages": [
     "page/tabBar/my/index",
-    "page/tabBar/msg/index",
-    "page/tabBar/index/index"
-    
+    "page/tabBar/index/index",
    
-  
+    "page/tabBar/msg/index"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,19 +40,7 @@
   },
   "subPackages": [
     {
-      "root": "page/job/",
-      "pages": [
-        "joblist/joblist",
-        "jobdetails/jobdetails",
-        "companydetail/companydetail",
-        "postfulltime/postfulltime",
-        "postparttime/postparttime",
-        "jobmanage/jobmanage",
-        "jianlimanage/jianlimanage"
-      ]
-    },
-    {
-      "root": "page/my/",
+      "root": "page/employee/",
       "pages": [
         "contract/step1/step1",
         "contract/step2/step2",
@@ -64,7 +51,31 @@
         "payment/index/index",
         "payment/award/award",
         "payment/deduct/deduct",
-        "payment/subsidy/subsidy",
+        "payment/subsidy/subsidy"
+      ]
+    },
+    {
+      "root": "page/company/",
+      "pages": [
+        "joblist/joblist",
+        "jobdetails/jobdetails",
+        "companydetail/companydetail",
+        "postfulltime/postfulltime",
+        "postparttime/postparttime",
+        "jobmanage/jobmanage",
+        "jianlimanage/jianlimanage",
+        "waibao/waibao",
+        "linghuo/linghuo",
+        "laowu/laowu"
+      ]
+    },
+    {
+      "root": "page/common/",
+      "pages": [
+        "sign/sign",
+        "course/courselist/courselist",
+        "course/coursedetails/coursedetails",
+        "course/enroll/enroll",
         "resume/index/index",
         "resume/resumeedit/resumeedit",
         "resume/personmsg/personmsg",
@@ -78,24 +89,6 @@
         "resume/projectedit/projectedit",
         "resume/cryptonym/cryptonym",
         "opinion/opinion"
-      ]
-    },
-    {
-      "root": "page/index/",
-      "pages": [
-        "course/courselist/courselist",
-        "course/coursedetails/coursedetails",
-        "course/enroll/enroll",
-        "waibao/waibao",
-        "linghuo/linghuo",
-        "laowu/laowu"
-      ]
-    },
-    {
-      "root": "page/common/",
-      "pages": [
-        "city/city",
-        "sign/sign"
       ]
     }
   ],

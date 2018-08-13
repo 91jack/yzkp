@@ -1,20 +1,34 @@
-// page/common/city/city.js
+// pages/index/companyrequest/companydetail/companydetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    barShow:[false,true]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options.companyId)
   },
-
+  // nav-bar的隐藏选择
+  choosebar: function(e){
+    var i = Number(e.currentTarget.dataset.id);
+    var hid = "barShow[" + i + "]";
+    for (var j = 0; j < this.data.barShow.length;j++){
+      var act = "barShow[" + j + "]"
+      this.setData({
+        [act]: true
+      })
+    }
+    this.setData({
+      [hid]: false
+    })
+    console.log(this.data.barShow)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
