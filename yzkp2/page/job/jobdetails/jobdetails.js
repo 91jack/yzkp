@@ -1,10 +1,25 @@
 // page/job/newwork/jobdetails/jobdetails.js
+const jobDetailsUrl = require('../../../config').jobDetailsUrl;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    jobDetails:'',
+    nodes: [{
+      name: 'div',
+      attrs: {
+        class: 'div_class',
+        style: 'line-height: 60px; color: red;'
+      },
+      children: [{
+        type: 'text',
+        text: 'Hello&nbsp;World!'
+      }]
+    }],
+
     collectType: false,
     modalShow: true,
     modalData: [true, true, true]
@@ -14,7 +29,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    var _this = this;
 
+    wx.request({
+      url: jobDetailsUrl,
+      data: {
+        id: options.id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded', // 默认值
+
+      },
+      success: function (res) {
+        console.log(res.data)
+        _this.setData({
+          jobDetails: res.data.obj
+        })
+      }
+    })
   },
   // 公司详情页面跳转
   toCompany: function () {
@@ -90,7 +123,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**

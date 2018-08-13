@@ -1,5 +1,5 @@
 // page/index/pages/newwork/joblist/joblist.js
-
+const jobListUrl = require('../../../config').jobListUrl;
 
 Page({
 
@@ -7,12 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    role: 1,//用户角色 1：求职者 2：员工 3：企业
+    jobList: [],
     index: 0//选择的下拉列表下标
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function (options) {
 
   },
@@ -26,7 +29,23 @@ Page({
     })
   },
   onReady: function () {
+    var _this = this;
+    wx.request({
+      url: jobListUrl,
+      data: {
+        openId: '1002'
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded', // 默认值
 
+      },
+      success: function (res) {
+        console.log(res.data.list)
+        _this.setData({
+          jobList: res.data.list
+        })
+      }
+    })
   },
 
   /**

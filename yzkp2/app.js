@@ -34,7 +34,7 @@ App({
     })
     // 获取用户位置
     wx.getLocation({
-      type: ' wgs84', 
+      type: ' wgs84',   
       success: function (res) {
         var latitude = res.latitude
         var longitude = res.longitude
