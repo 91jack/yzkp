@@ -4,13 +4,14 @@
   <view class='job-manage' bindtap='zhiweimanage'>职位管理</view>
 </view>
 <view class='manage-intro-nav'>
-  <view class='manage-intro-nav-item'>邀请面试</view>
+  <view class='manage-intro-nav-item active'>邀请面试</view>
   <view class='manage-intro-nav-item'>暂未接通</view>
   <view class='manage-intro-nav-item'>待定</view>
   <view class='manage-intro-nav-item'>不合适</view>
 </view>
 
 <view class='manageintro-cont'>
+  <!-- 邀请面试  -->
   <view class='manage-intro-cont'>
     <view class='manage-intro-item'>
       <view class='manage-intro-item-info'>
@@ -45,8 +46,136 @@
     <view class='manage-intro-price'>
       <view class='manage-pricedetail'>7K-9K</view>
       <view class='manage-intro-btn'>
-        <text>邀请面试</text>
-        <image src='/image/index/return1.png'></image>
+        <picker>
+          <text>邀请面试</text>
+          <image src='/image/index/return1.png'></image>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <!-- 待定 -->
+  <view class='manage-intro-cont unconfirmed'>
+    <view class='manage-intro-item'>
+      <view class='manage-intro-item-info'>
+        <text class='manage-intro-item-info-job'>高级程序员 </text>
+        <text>/李天</text>
+      </view>
+      <view class='manage-intro-item-phone'>
+        <image src='/image/mine/cellphone.png'></image>
+      </view>
+    </view>
+    <view class='icon-content'>
+      <view class='icon-cont'>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+      </view>
+      <view class='icon-date'>1天前</view>
+    </view>
+    <view class='manage-intro-price'>
+      <view class='manage-pricedetail'>7K-9K</view>
+      <view class='manage-intro-btn'>
+        <picker>
+          <text>待定</text>
+          <image src='/image/index/return1.png'></image>
+        </picker>          
+      </view>
+    </view>
+  </view>
+  <!-- 暂未接通 -->
+  <view class='manage-intro-cont unconnext'>
+    <view class='manage-intro-item'>
+      <view class='manage-intro-item-info'>
+        <text class='manage-intro-item-info-job'>高级程序员 </text>
+        <text>/李天</text>
+      </view>
+      <view class='manage-intro-item-phone'>
+        <image src='/image/mine/cellphone.png'></image>
+      </view>
+    </view>
+    <view class='icon-content'>
+      <view class='icon-cont'>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+      </view>
+      <view class='icon-date'>1天前</view>
+    </view>
+    <view class='manage-intro-price'>
+      <view class='manage-pricedetail'>7K-9K</view>
+      <view class='manage-intro-btn'>
+        <picker>      
+          <text>暂未接通</text>
+          <image src='/image/index/return1.png'></image>
+        </picker>        
+      </view>
+    </view>
+  </view>
+  <!-- 不合适 -->
+  <view class='manage-intro-cont unapprop'>
+    <view class='manage-intro-item'>
+      <view class='manage-intro-item-info'>
+        <text class='manage-intro-item-info-job'>高级程序员 </text>
+        <text>/李天</text>
+      </view>
+      <view class='manage-intro-item-phone'>
+        <image src='/image/mine/cellphone.png'></image>
+      </view>
+    </view>
+    <view class='icon-content'>
+      <view class='icon-cont'>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+      </view>
+      <view class='icon-date'>1天前</view>
+    </view>
+    <view class='manage-intro-price'>
+      <view class='manage-pricedetail'>7K-9K</view>
+      <view class='manage-intro-btn'>
+        <picker>      
+          <text>不合适</text>
+          <image src='/image/index/return1.png'></image>
+        </picker>        
       </view>
     </view>
   </view>

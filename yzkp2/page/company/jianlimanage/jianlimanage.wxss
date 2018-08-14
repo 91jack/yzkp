@@ -32,6 +32,9 @@ page{
   line-height: 84rpx;
   color: #6B6B6B;
 }
+.manage-intro-nav-item.active{
+  color: #F39800;
+}
 .manage-intro-nav-item:first-of-type::after,
 .manage-intro-nav-item:nth-of-type(2)::after,
 .manage-intro-nav-item:nth-of-type(3)::after{
@@ -44,6 +47,9 @@ page{
   margin-top: -13rpx;
   right: 0;
 }
+.manageintro-cont{
+  margin-top: 36rpx;  
+}
 .manage-intro-cont{
   height: 229rpx;  
   width: 702rpx;
@@ -52,7 +58,7 @@ page{
   border-radius: 6rpx;
   box-sizing: border-box;
   padding: 30rpx 29rpx 0 25rpx;
-  margin-top: 36rpx;
+  margin-bottom: 10rpx;
 }
 .manage-intro-item{
   display: flex;
@@ -116,7 +122,9 @@ page{
 }
 .manage-intro-price .manage-pricedetail{
   font-size: 28rpx;
-  color: #F39800
+  color: #F39800;
+  height: 46rpx;
+  line-height: 46rpx;
 }
 .manage-intro-price .manage-intro-btn{
   width:157rpx;
@@ -131,4 +139,14 @@ page{
 .manage-intro-price .manage-intro-btn image{
   width: 19rpx;
   height: 12rpx;
+  margin-left: 5rpx;
+}
+.unconfirmed .manage-intro-price .manage-intro-btn{
+  background: #00A37B;
+}
+.unconnext .manage-intro-price .manage-intro-btn{
+  background: #008FF3;
+}
+.unapprop .manage-intro-price .manage-intro-btn{
+  background: #868686;
 }
