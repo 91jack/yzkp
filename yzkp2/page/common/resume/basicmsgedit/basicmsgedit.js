@@ -18,7 +18,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log('-----------简历-------------')
+    console.log(getApp().globalData.resume)
   },
 
   /**
@@ -45,6 +46,7 @@ Page({
         name:'涛哥',
         sex:0,
         age:28,
+        educationLevel:'本科',
         workYear:10,
         state:0,
         address:'渝北区',

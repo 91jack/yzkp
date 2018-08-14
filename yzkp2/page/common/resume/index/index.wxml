@@ -1,240 +1,234 @@
 <!--page/my/resume/index/index.wxml-->
-<view class='header'>
-  <navigator hover-class='none' url='/page/common/resume/basicmsgedit/basicmsgedit'>
-    <view class='header-cont'>
+<view class="header">
+  <navigator hover-class="none" url="/page/common/resume/basicmsgedit/basicmsgedit">
+    <view class="header-cont">
       <view>
-        <image class='company-pic' src=''></image>
+        <image class="company-pic" src=""></image>
       </view>
-      <view class='header-intro'>  
-        <text class='name'>张澜澜(微信名)</text>
-        <view class='intro-cont'>
-          <text class='intro detail'>踏实勤奋，积极上进,热爱生活,......</text>
+      <view class="header-intro">
+        <text class="name">张澜澜(微信名)</text>
+        <view class="intro-cont">
+          <text class="intro detail">踏实勤奋，积极上进,热爱生活,......</text>
         </view>
       </view>
-      <image class='tonext' src='/image/mine/next.png'></image>
+      <image class="tonext" src="/image/mine/next.png"></image>
     </view>
   </navigator>
 </view>
-<view class='manageintro-nav'>
-  <view class='manageintro-nav-item active'>简历编辑</view>
-  <view class='manageintro-nav-item'>简历设置</view>
-  <view class='manageintro-nav-item'>谁看过我</view>
-  <view class='manageintro-nav-item'>我的申请</view>
+<view class="manageintro-nav">
+  <view class="manageintro-nav-item active">简历编辑</view>
+  <view class="manageintro-nav-item">简历设置</view>
+  <view class="manageintro-nav-item">谁看过我</view>
+  <view class="manageintro-nav-item">我的申请</view>
 </view>
 
-<view class='manageintro-cont'>
+<view class="manageintro-cont">
 
   <!--  -----------简历编辑 ----------- -->
-  <view class='edit-intro'>
-      <!-- 基本信息 -->
-    <view class='manageintro-cont-item'>
-      <view class='manageintro-cont-item-tit'>
-        <view class='tit-info'>
-          <image src='/image/mine/selfmsg.png'></image>
+  <view class="edit-intro">
+    <!-- 基本信息 -->
+    <view class="manageintro-cont-item">
+      <view class="manageintro-cont-item-tit">
+        <view class="tit-info">
+          <image src="/image/mine/selfmsg.png"></image>
           <text>基本信息</text>
         </view>
-        <navigator hover-class='none' url='/page/common/resume/basicmsgedit/basicmsgedit'>
-          <view class='tit-edit'>
-            <image src='/image/mine/edit.png'></image>
+        <navigator hover-class="none" url="/page/common/resume/basicmsgedit/basicmsgedit">
+          <view class="tit-edit">
+            <image src="/image/mine/edit.png"></image>
             <text>编辑</text>
           </view>
         </navigator>
       </view>
-      <view class='manageintro-cont-item-detail'>
-        <text class='in-name'>张澜澜</text>
-        <text class='in-info'>重庆-渝北 |  2年 | 女 | 22岁 | 165cm </text>
-        <view class='inbox'>
-          <image src='/image/mine/cellphone.png'></image>
-          <text>18723627888</text>      
+<block wx:if="{{baseInfo==''}}">
+      <view class="manageintro-cont-item-detail">
+        <text class="in-name">{{baseInfo.name}}</text>
+        <view class="in-info">
+          <text>{{baseInfo.address}}</text>|
+          <text>{{baseInfo.workYear}}年</text>|
+          <text>{{baseInfo.sex==0?'男':'女'}}</text>|
+          <text>{{baseInfo.age}}岁</text>|
+          <text>{{baseInfo.height}}cm</text>
         </view>
-        <view class='inbox'>
-          <image src='/image/mine/email.png'></image>
-          <text>1872314455@qq.com</text>
+       
+        <view class="inbox">
+          <image src="/image/mine/cellphone.png"></image>
+          <text>{{baseInfo.mobile}}</text>
         </view>
-        <view class='inbox'>
-          <image src='/image/mine/gata.png'></image>
-          <text>离职-随时到岗</text>
+        <view class="inbox">
+          <image src="/image/mine/email.png"></image>
+          <text>{{baseInfo.email}}</text>
+        </view>
+        <view class="inbox">
+          <image src="/image/mine/gata.png"></image>
+          <text>{{baseInfo.state}}</text>
         </view>
       </view>
+</block>
     </view>
     <!-- 求职意向 -->
-    <view class='manageintro-cont-item'>
-      <view class='manageintro-cont-item-tit'>
-        <view class='tit-info'>
-          <image src='/image/mine/wantto.png'></image>
+    <view class="manageintro-cont-item">
+      <view class="manageintro-cont-item-tit">
+        <view class="tit-info">
+          <image src="/image/mine/wantto.png"></image>
           <text>求职意向</text>
         </view>
-        <navigator hover-class='none' url='/page/common/resume/jobintensionedit/jobintensionedit'>
-          <view class='tit-edit'>
-            <image src='/image/mine/edit.png'></image>
+        <navigator hover-class="none" url="/page/common/resume/jobintensionedit/jobintensionedit">
+          <view class="tit-edit">
+            <image src="/image/mine/edit.png"></image>
             <text>编辑</text>
           </view>
         </navigator>
       </view>
-      <view class='manageintro-cont-item-detail'>
-        <text class='in-info want'>UI设计师 | 渝北区 | 8K-10K</text>
+      <view class="manageintro-cont-item-detail">
+        <text class="in-info want">{{baseInfo.workName}} | {{baseInfo.workAddress}} | {{baseInfo.workPay}}k</text>
       </view>
     </view>
     <!-- 工作经验 -->
-    <view class='manageintro-cont-item'>
-      <view class='manageintro-cont-item-tit'>
-        <view class='tit-info'>
-          <image src='/image/mine/workes.png'></image>
+    <view class="manageintro-cont-item">
+      <view class="manageintro-cont-item-tit">
+        <view class="tit-info">
+          <image src="/image/mine/workes.png"></image>
           <text>工作经验</text>
         </view>
-        <navigator hover-class='none' url='/page/common/resume/jobexperience/jobexperience'>
-          <view class='tit-edit'>
-            <image src='/image/mine/edit.png'></image>
+        <navigator hover-class="none" url="/page/common/resume/jobexperience/jobexperience">
+          <view class="tit-edit">
+            <image src="/image/mine/edit.png"></image>
             <text>编辑</text>
           </view>
         </navigator>
       </view>
-      <view class='manageintro-cont-item-detail'>
-        <view class='la-item'>
-          <image src='/image/mine/checkon.png'></image>
-          <view class='la-item-cont'>
-            <text class='la-item-date'>2017-2~2017-9</text>
-            <text class='la-item-comp'>重庆渐臻科技有限公司</text>
-            <text class='la-item-intro'>设计部 | UI设计师</text>
+      <view class="manageintro-cont-item-detail">
+      <block wx:for="{{work}}">
+        <view class="la-item">
+          <image src="/image/mine/checkon.png"></image>
+          <view class="la-item-cont">
+            <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
+            <text class="la-item-comp">{{item.company}}</text>
+            <text class="la-item-intro">{{item.department}} | {{item.position}}</text>
           </view>
         </view>
-        <view class='la-item'>
-          <image src='/image/mine/checkon.png'></image>
-          <view class='la-item-cont'>
-            <text class='la-item-date'>2017-2~2017-9</text>
-            <text class='la-item-comp'>重庆渐臻科技有限公司</text>
-            <text class='la-item-intro'>设计部 | UI设计师</text>
-          </view>
-        </view>
+        </block>
+      
       </view>
     </view>
 
     <!-- 教育经历 -->
-    <view class='manageintro-cont-item'>
-      <view class='manageintro-cont-item-tit'>
-        <view class='tit-info'>
-          <image src='/image/mine/educationexpress.png'></image>
+    <view class="manageintro-cont-item">
+      <view class="manageintro-cont-item-tit">
+        <view class="tit-info">
+          <image src="/image/mine/educationexpress.png"></image>
           <text>教育经历</text>
         </view>
-        <navigator hover-class='none' url='/page/common/resume/eduexperience/eduexperience'>
-          <view class='tit-edit'>
-            <image src='/image/mine/edit.png'></image>
+        <navigator hover-class="none" url="/page/common/resume/eduexperience/eduexperience">
+          <view class="tit-edit">
+            <image src="/image/mine/edit.png"></image>
             <text>编辑</text>
           </view>
         </navigator>
       </view>
-      <view class='manageintro-cont-item-detail'>
-        <view class='la-item'>
-          <image src='/image/mine/checkon.png'></image>
-          <view class='la-item-cont'>
-            <text class='la-item-date'>2017-2~2017-9</text>
-            <text class='la-item-comp'>重庆渐臻科技有限公司</text>
-            <text class='la-item-intro'>设计部 | UI设计师</text>
+      <view class="manageintro-cont-item-detail">
+
+      <block wx:for="{{education}}">
+        <view class="la-item">
+          <image src="/image/mine/checkon.png"></image>
+          <view class="la-item-cont">
+            <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
+            <text class="la-item-comp">{{item.schoolName}}</text>
+            <text class="la-item-intro">{{item.profession}} | {{item.level}}</text>
           </view>
         </view>
-        <view class='la-item'>
-          <image src='/image/mine/checkon.png'></image>
-          <view class='la-item-cont'>
-            <text class='la-item-date'>2017-2~2017-9</text>
-            <text class='la-item-comp'>重庆渐臻科技有限公司</text>
-            <text class='la-item-intro'>设计部 | UI设计师</text>
-          </view>
-        </view>
+        </block>
+      
       </view>
     </view>
     <!-- 项目经验 -->
-    <view class='manageintro-cont-item'>
-      <view class='manageintro-cont-item-tit'>
-        <view class='tit-info'>
-          <image src='/image/mine/progrom.png'></image>
+    <view class="manageintro-cont-item">
+      <view class="manageintro-cont-item-tit">
+        <view class="tit-info">
+          <image src="/image/mine/progrom.png"></image>
           <text>项目经历</text>
         </view>
-        <navigator hover-class='none' url='/page/common/resume/project/project'>
-          <view class='tit-edit'>
-            <image src='/image/mine/edit.png'></image>
+        <navigator hover-class="none" url="/page/common/resume/project/project">
+          <view class="tit-edit">
+            <image src="/image/mine/edit.png"></image>
             <text>编辑</text>
           </view>
         </navigator>
       </view>
-      <view class='manageintro-cont-item-detail'>
-        <view class='la-item'>
-          <image src='/image/mine/checkon.png'></image>
-          <view class='la-item-cont'>
-            <text class='la-item-date'>2017-2~2017-9</text>
-            <text class='la-item-comp'>重庆渐臻科技有限公司</text>
-            <text class='la-item-intro'>设计部 | UI设计师</text>
+      <view class="manageintro-cont-item-detail">
+        <block wx:for="{{project}}">
+        <view class="la-item">
+          <image src="/image/mine/checkon.png"></image>
+          <view class="la-item-cont">
+            <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
+            <text class="la-item-comp">{{item.name}} | {{item.role}} </text>
+            <text class="la-item-intro">{{item.tag}}</text>
           </view>
         </view>
-        <view class='la-item'>
-          <image src='/image/mine/checkon.png'></image>
-          <view class='la-item-cont'>
-            <text class='la-item-date'>2017-2~2017-9</text>
-            <text class='la-item-comp'>重庆渐臻科技有限公司</text>
-            <text class='la-item-intro'>设计部 | UI设计师</text>
-          </view>
-        </view>
+        </block>
       </view>
     </view>
   </view>
   <!-- ----------------简历设置------------- -->
-  <view class='set-intro' hidden='true'>
-    <view class='set-intro-box'>
+  <view class="set-intro" hidden="true">
+    <view class="set-intro-box">
       <text>公开简历</text>
-      <switch checked='true' class='fr'></switch>
+      <switch checked="true" class="fr"></switch>
     </view>
-    <view class='set-intro-box'>
+    <view class="set-intro-box">
       <text>匿名展示</text>
-      <switch checked='true' class='fr'></switch>
+      <switch checked="true" class="fr"></switch>
     </view>
   </view>
 
   <!-- ---------------- 谁看过我 ------------ -->
-  <view class='who-see' hidden='true'>
-    <view class='who-see-item'>
-      <view class='see-me-company'>
-        <text class='see-me-company-name'>渐臻科技</text>
-        <text class='see-me-company-date'>07-12</text>
+  <view class="who-see" hidden="true">
+    <view class="who-see-item">
+      <view class="see-me-company">
+        <text class="see-me-company-name">渐臻科技</text>
+        <text class="see-me-company-date">07-12</text>
       </view>
-      <view class='see-me-company-frt'>50人以上/民营/互联网/软件开发</view>
+      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
     </view>
-    <view class='who-see-item'>
-      <view class='see-me-company'>
-        <text class='see-me-company-name'>渐臻科技</text>
-        <text class='see-me-company-date'>07-12</text>
+    <view class="who-see-item">
+      <view class="see-me-company">
+        <text class="see-me-company-name">渐臻科技</text>
+        <text class="see-me-company-date">07-12</text>
       </view>
-      <view class='see-me-company-frt'>50人以上/民营/互联网/软件开发</view>
+      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
     </view>
   </view>
   <!-- ----------------我的申请 ------------ -->
-  <view class='my-apply' hidden='true'>
-    <view class='my-apply-item'>
-      <view class='my-apply-item-tit'>
-        <text class='posi-left'>已查阅</text>
+  <view class="my-apply" hidden="true">
+    <view class="my-apply-item">
+      <view class="my-apply-item-tit">
+        <text class="posi-left">已查阅</text>
         <text>07-12</text>
       </view>
-      <view class='my-apply-item-name'>
+      <view class="my-apply-item-name">
         <text>UI设计</text>
-        <image src='/image/mine/cellphone.png'></image>
+        <image src="/image/mine/cellphone.png"></image>
       </view>
-      <view class='my-apply-item-pay'>3K-7k</view>
-      <view class='my-apply-item-footer'>
-        <text class='my-apply-item-footer-comp'>重庆渐臻科技有限公司</text>
-        <text class='my-apply-item-footer-comment'>匿名评价</text>
+      <view class="my-apply-item-pay">3K-7k</view>
+      <view class="my-apply-item-footer">
+        <text class="my-apply-item-footer-comp">重庆渐臻科技有限公司</text>
+        <text class="my-apply-item-footer-comment">匿名评价</text>
       </view>
     </view>
-    <view class='my-apply-item'>
-      <view class='my-apply-item-tit'>
-        <text class='posi-left active'>已录入人才库</text>
+    <view class="my-apply-item">
+      <view class="my-apply-item-tit">
+        <text class="posi-left active">已录入人才库</text>
         <text>07-12</text>
       </view>
-      <view class='my-apply-item-name'>
+      <view class="my-apply-item-name">
         <text>UI设计</text>
-        <image src='/image/mine/cellphone.png'></image>
+        <image src="/image/mine/cellphone.png"></image>
       </view>
-      <view class='my-apply-item-pay'>3K-7k</view>
-      <view class='my-apply-item-footer'>
-        <text class='my-apply-item-footer-comp'>重庆渐臻科技有限公司</text>
-        <text class='my-apply-item-footer-comment' bindtap='noname'>匿名评价</text>
+      <view class="my-apply-item-pay">3K-7k</view>
+      <view class="my-apply-item-footer">
+        <text class="my-apply-item-footer-comp">重庆渐臻科技有限公司</text>
+        <text class="my-apply-item-footer-comment" bindtap="noname">匿名评价</text>
       </view>
     </view>
   </view>

@@ -1,4 +1,6 @@
 // page/my/resume/index/index.js
+// 简历详情
+const resumeUrl = require('../../../../config').resumeUrl;
 
 Page({
 
@@ -6,7 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    baseInfo:null,
+    work:[],
+    education:[],
+    project:[]
   },
 
   /**
@@ -24,14 +29,32 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this= this;
+    wx.request({
+      url: resumeUrl,
+      data: {
+        token: getApp().globalData.token,
+        
+      },
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          baseInfo: res.data.obj.base,
+          work: res.data.obj.work,
+          education: res.data.obj.education,
+          project: res.data.obj.project
+        })
+        
+
+      }
+    })
   },
 
   /**

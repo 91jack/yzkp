@@ -115,6 +115,6 @@
   </view>
 </view>
 
-<view class='post-job-btn'></view>
-<view class='btn'>立即发布</view>
+
+<view class='btn' bindtap='postBtn'>立即发布</view>
 

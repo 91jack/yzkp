@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    role:1,//用户角色 1：求职者 2：员工 3：企业
+    role:3,//用户角色 1：求职者 2：员工 3：企业
     jobList: [],
 
     index: 0,//选择的下拉列表下标，
@@ -107,20 +107,9 @@ Page({
   onLoad: function (options) {
   
   },
-  // 搜索职位
-  serachoffices:function(){
-    wx.showToast({
-      title: '111111',
-    })
-  },
 
 
-  //招聘信息页面跳转
-  toCompanyDetail: function(e){
-    wx.navigateTo({
-      url: '/page/job/jobdetails/jobdetails',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -129,18 +118,12 @@ Page({
     wx.request({
       url: testLoginUrl,
       data: {
-       openId:'1002'
+       openId:'1001'
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded', // 默认值
-       
       },
       success: function (res) {
-       
-        wx.setStorage({
-          key: "token",
-          data: res.data.obj.token
-        })
         getApp().globalData.token = res.data.obj.token;// 用户token
         getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
        

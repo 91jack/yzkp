@@ -19,6 +19,9 @@
 </view>
 
 <view class='add-btn'>
-  <image src='/image/mine/add.png'></image>
-  <text>添加工作经验</text>
+  <navigator url='/page/common/resume/jobedit/jobedit'>
+     <image src='/image/mine/add.png'></image>
+    <text>添加工作经验</text>
+  </navigator>
+ 
 </view>

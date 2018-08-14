@@ -46,6 +46,8 @@ var config = {
   // 获取招聘详情
   jobDetailsUrl: `${host}recruit/notice/info.json`,
 
+  // 简历详情
+  resumeUrl: `${host}resume/get.json`,
   // 收藏与取消收藏
   // 投递简历
   // 简历是否公开，是否匿名
