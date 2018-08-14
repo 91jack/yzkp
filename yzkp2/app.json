@@ -1,7 +1,8 @@
 {
   "pages": [
+      "page/tabBar/index/index",
     "page/tabBar/my/index",
-    "page/tabBar/index/index",
+  
    
     "page/tabBar/msg/index"
    

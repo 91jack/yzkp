@@ -1,1 +1,75 @@
 /* components/jz-search/jz-search.wxss */
+
+/* 顶部输入框 */
+.top{
+  height: 158rpx;
+  background: #3830EB;
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 47rpx;
+  justify-content: space-around
+}
+.top .loc{
+  height: 78rpx;
+  display: flex;
+  /* background: red; */
+  margin-right: 40rpx;
+  padding-right: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 8rpx;
+}
+.top .loc image{
+  width: 28rpx;
+  height: 34rpx;
+  display: inline-block;
+  margin-right: 12rpx;
+  margin-left: 20rpx;
+  margin-top: 22rpx;
+}
+.top .loc text{
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 78rpx;
+  display: inline-block;  
+}
+/*输入框 */
+.serach{
+  height: 78rpx;
+  /* width: 512rpx; */
+  background: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  line-height: 78rpx;
+  justify-content: space-around;
+  margin-right: 20rpx;
+  flex: 1;
+}
+
+.serach .inp{
+  width: 100%;
+  position: relative;
+}
+.serach .inp image{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 47rpx;
+  top: 50%;
+  margin-top: -16rpx
+}
+.serach .inp .clear{
+  width: 35rpx;
+  height: 35rpx;
+  right: 106rpx;
+  margin-top: -17rpx;
+}
+.serach view input{
+  display: block;
+  font-size: 28rpx;
+  line-height: 78rpx;
+  text-align: left;
+  height: 78rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}

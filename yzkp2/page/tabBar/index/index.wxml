@@ -1,6 +1,8 @@
 <!--pages/index/index.wxml-->
 <import src ="/template/joblist/joblist.wxml"/>
-
+ <jz-search>
+   
+</jz-search>
 
 
 <view class='banner'>

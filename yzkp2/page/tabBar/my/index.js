@@ -67,7 +67,14 @@ Page({
         url: '/page/job/joblist/joblist?type=0',
         src: '/image/index/office.png',
         text: '招聘进度'
+      },
+      {
+        url: '/page/job/joblist/joblist?type=0',
+        src: '/image/index/office.png',
+        text: '职位管理'
       }
+
+
     ]
   },
 

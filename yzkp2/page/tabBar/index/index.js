@@ -6,18 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    role:3,//用户角色 1：求职者 2：员工 3：企业
+    role:1,//用户角色 1：求职者 2：员工 3：企业
     jobList: [],
 
     index: 0,//选择的下拉列表下标，
     selectBar1:[
       {
-        url:'/page/common/joblist/joblist?type=0',
+        url:'/page/company/joblist/joblist?type=0',
         src:'/image/index/office.png',
         text:'最新职位'
       },
       {
-        url: '/page/common/joblist/joblist?recruitType=1',        
+        url: '/page/company/joblist/joblist?recruitType=1',        
         src:'/image/index/datetime.png',
         text:'兼职职位'
       },
