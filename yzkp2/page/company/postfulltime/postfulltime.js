@@ -1,6 +1,6 @@
 // page/job/postfulltime/postfulltime.js
 // 发布全职招聘
-const addFulljobUrl = require('../../../config').addFulljobUrl;
+const addjobUrl = require('../../../config').addjobUrl;
 
 Page({
   /**
@@ -33,7 +33,7 @@ Page({
   postBtn:function(){
     var _this = this;
     wx.request({
-      url: addFulljobUrl,
+      url: addjobUrl,
       data: {
         token: getApp().globalData.token,
         type:0,
