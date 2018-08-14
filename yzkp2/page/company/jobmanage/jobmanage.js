@@ -14,7 +14,11 @@ Page({
   onLoad: function (options) {
   
   },
-
+  jianlimanage:function(){
+    wx.navigateTo({
+      url: '/page/company/jianlimanage/jianlimanage',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

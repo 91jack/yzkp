@@ -67,7 +67,7 @@
 
     <view class='tit-adreess'>
       <navigator hover-class='none'>
-        <image src='/image/index/area.png'></image>
+        <image src='/image/index/comploc.png'></image>
         <text>{{jobDetails.address}}</text>
       </navigator>
     </view>

@@ -1,6 +1,6 @@
 <!--page/job/jobmanage/jobmanage.wxml-->
 <view class='jobmanage-tit'>
-  <view class='intro-manage'>简历管理</view>
+  <view class='intro-manage' bindtap='jianlimanage'>简历管理</view>
   <view class='job-manage active'>职位管理</view>
 </view>
 
@@ -38,13 +38,6 @@
       </view>
       <view class='det-right'>7K-9K</view>
     </view>
-    <view class='cont-company'>
-      <image src='/image/index/company.png'></image>
-      <view class='company-info'>
-        <view class='company-name'>渐臻科技</view>
-        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
-      </view>
-    </view>
     <view class='company-btn'>
       <view class='company-btn-item'>
         <image src='/image/index/refresh.png'></image>
@@ -81,13 +74,6 @@
         </view>
       </view>
       <view class='det-right'>7K-9K</view>
-    </view>
-    <view class='cont-company'>
-      <image src='/image/index/company.png'></image>
-      <view class='company-info'>
-        <view class='company-name'>渐臻科技</view>
-        <view class='company-detail'>50人以上/民营/互联网/软件开发</view>
-      </view>
     </view>
     <view class='company-btn'>
       <view class='company-btn-item'>

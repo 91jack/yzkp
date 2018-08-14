@@ -1,7 +1,7 @@
 <!--page/job/jianlimanage/jianlimanage.wxml-->
 <view class='jobmanage-tit'>
   <view class='intro-manage active'>简历管理</view>
-  <view class='job-manage'>职位管理</view>
+  <view class='job-manage' bindtap='zhiweimanage'>职位管理</view>
 </view>
 <view class='manage-intro-nav'>
   <view class='manage-intro-nav-item'>邀请面试</view>
@@ -19,6 +19,34 @@
       </view>
       <view class='manage-intro-item-phone'>
         <image src='/image/mine/cellphone.png'></image>
+      </view>
+    </view>
+    <view class='icon-content'>
+      <view class='icon-cont'>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>重庆</text>
+        </view>
+      </view>
+      <view class='icon-date'>1天前</view>
+    </view>
+    <view class='manage-intro-price'>
+      <view class='manage-pricedetail'>7K-9K</view>
+      <view class='manage-intro-btn'>
+        <text>邀请面试</text>
+        <image src='/image/index/return1.png'></image>
       </view>
     </view>
   </view>
