@@ -9,7 +9,7 @@
   <!--nav-bar内容区-->
     <view class='bar'>
       <!--推荐-->  
-      <view hidden="{{currentTab[0]}}">
+      <view hidden="{{currentTab[0]}}" data-idx="0" bindtap='hideBar'>
         <view class='bar-cont'>
           <view>
             <text>推荐</text>
@@ -21,7 +21,8 @@
         <view class='cover'></view>
       </view> 
 
-      <!--地区--> 
+      <!--地区-->
+
       <view hidden="{{currentTab[1]}}" data-idx="1" bindtap='hideBar'>
         <view class='bar2'>
           <view class='left' >
@@ -31,15 +32,20 @@
             </scroll-view>
           </view>
           <view class='right' >
-            <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"  scroll-top="100">
-              <view class="scroll-view-item box">222</view>
-            </scroll-view>
+            <view class="scroll-view-item box">深圳</view>
+            <view class="scroll-view-item box active">深圳</view>
+            <view class="scroll-view-item box">深圳</view>
+            <view class="scroll-view-item box">深圳</view>
           </view>
         </view>
       </view> 
+      
+       
+      <!--行业  -->
+      <view hidden="{{currentTab[2]}}" data-idx="2" bindtap='hideBar' ></view>
 
       <!--要求  -->
-      <view hidden="{{currentTab[2]}}" data-idx="3" bindtap='hideBar'>
+      <view hidden="{{currentTab[3]}}" data-idx="3" bindtap='hideBar'>
         <view class='bar-request'>
           <view class='bar-request-item'>
             <view class='bar-request-tit'>职位类别</view>

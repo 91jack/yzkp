@@ -10,11 +10,12 @@
 }
 .nav-bar .nav-item{
   display: flex;
-  width: 284rpx;
+  width: 186rpx;
   position: relative
 }
 .nav-bar .nav-item:first-of-type::after,
-.nav-bar .nav-item:nth-of-type(2)::after{
+.nav-bar .nav-item:nth-of-type(2)::after,
+.nav-bar .nav-item:nth-of-type(3)::after{
   content: '';
   position: absolute;
   top: 50%;
@@ -28,7 +29,7 @@
   font-size: 28rpx;
   color: #6B6B6B;
   display: block;
-  margin-left: 80rpx;
+  margin-left: 45rpx;
 }
 .nav-bar .nav-item image{
   width: 21rpx;
@@ -40,11 +41,12 @@
 
 /*bar内容展示区*/
 .bar{
-  position: absolute;
-  top: 85rpx;
+  position: fixed;
+  top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.2);
-  border-top:1rpx solid #6B6B6B
+  border-top:1rpx solid #6B6B6B;
+  z-index: 100;
 }
 .bar>view{
   height: 980rpx;
@@ -74,7 +76,7 @@
   display: flex
 }
 .bar2 .left{
-  width: 188rpx;
+  width: 211rpx;
   height: 624rpx;
 }
 .bar2 .left .box{
@@ -82,12 +84,29 @@
   color: #868686;
   font-size: 26rpx;
   text-align: center;
+  width: 211rpx;
   border-bottom: 1rpx solid #fff
 }
 .bar2 .right{
-  width: 625rpx;
   height: 624rpx;
-  background: #fff
+  background: #fff;
+  padding: 48rpx 50rpx 0 33rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.bar2 .right .scroll-view-item.box{
+  width:129rpx;
+  height:60rpx;
+  background:rgba(243,152,0,0.05);
+  text-align: center;
+  line-height: 60rpx;
+  color: #6B6B6B;
+  margin: 0 35rpx 19rpx 0;
+  font-size: 28rpx;
+}
+.bar2 .right .scroll-view-item.box.active{
+  background: #F39800;
+  color: #fff;
 }
 /* 要求 */
 .bar-request{
@@ -136,7 +155,7 @@
   width: 50%;
   height: 100%;
   text-align: center;
-  line-break: 84rpx;
+  line-height: 84rpx;
   color: #fff;
   font-size: 26rpx;
 }
