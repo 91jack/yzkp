@@ -9,6 +9,6 @@
   <text>3.离职证明：避免双重劳动关系和商业间谍;</text>
   <text>4.如过对以上条件有疑问,请致电666666详询.</text>
 </view>
-<navigator hover-class='none' url='/page/employee/contract/step2/step2'>
+<navigator hover-class='none' url='/page/employee/contract/step7/step7'>
   <view class='btn'>开始入职</view>
 </navigator>

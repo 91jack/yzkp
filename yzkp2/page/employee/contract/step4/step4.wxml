@@ -1,5 +1,5 @@
 <!--page/my/contract/step4/step4.wxml-->
-<view class=''>
+<view class='insurance'>
   <view class='five-insurance'>
     <view class='insurance-item'>
       <text>以前是否办理过保险:</text>

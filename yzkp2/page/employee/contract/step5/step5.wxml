@@ -9,7 +9,7 @@
   <view class='wage-card-item'>
     <input placeholder='请输入开户行' placeholder-style='color:#AEAEAE'></input>
   </view>
-  <navigator hover-class='none' url='/page/employee/contract/step6/step6'>
+  <navigator hover-class='none' url='/page/employee/contract/step7/step7'>
     <view class='btn'>下一步</view>
   </navigator>
 </view>

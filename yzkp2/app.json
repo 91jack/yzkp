@@ -3,7 +3,6 @@
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index"
-   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -47,6 +46,7 @@
         "contract/step4/step4",
         "contract/step5/step5",
         "contract/step6/step6",
+        "contract/step7/step7",
         "payment/index/index",
         "payment/award/award",
         "payment/deduct/deduct",
