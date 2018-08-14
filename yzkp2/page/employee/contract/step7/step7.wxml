@@ -1,0 +1,207 @@
+<!--page/employee/contract/step7/step7.wxml-->
+<view class='confirm-contract'>
+  <view class='confirm-basicmsg'>
+    <view class='confirm-basicmsg-tit'>基本信息</view>
+    <view class='confirm-basicmsg-cont'>
+      <text class='confirm-basicmsg-cont-header'>个人信息</text>
+      <view class='confirm-basicmsg-cont-box'>
+        <text>张澜澜 | 女 | 本科</text>
+        <text>500082183838823838838</text>
+      </view>
+      <view class='confirm-basicmsg-cont-box'>
+        <text>18723637382</text>
+        <view class='emergency'>
+          <text>182323637382</text>
+          <text class='emergency-tit'>(紧急联系电话)</text>
+        </view>
+      </view>
+      <view class='confirm-basicmsg-cont-box'>
+        <text>设计部  UI设计师  张考考</text>
+        <text>2018-09-08  9:00</text>
+      </view>
+      <view class='confirm-basicmsg-cont-box'>
+        <text>重庆市  重庆市  渝北区  嘉州路301</text>
+      </view>
+    </view>
+  </view>
+  <!-- 证明材料 -->
+  <view class='confirm-basicmsg active'>
+    <view class='confirm-basicmsg-tit'>证明材料</view>
+    <view class='pictures'>
+      <!-- 寸照 -->
+      <view class="post-job">
+        <view class='tip'>
+          <view></view>
+          <text>寸照</text>
+        </view>
+        <view class='picture cunzhao'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>寸照</text>
+          </view>
+        </view>
+        <text>红底/蓝底</text>
+      </view>
+      <!-- 户口簿 -->
+      <view class="post-job">
+        <view class='tip'>
+          <view></view>
+          <text>寸照</text>
+        </view>
+        <view class='picture hukou active'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>户口簿-主页</text>
+          </view>
+        </view>
+        <view class='picture hukou'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>户口簿-增减页</text>
+          </view>
+        </view>
+        <view class='picture hukou'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>户口簿-本人页</text>
+          </view>
+        </view>
+      </view>
+      <!-- 身份证 -->
+      <view class="post-job">
+        <view class='tip'>
+          <view></view>
+          <text>身份证</text>
+        </view>
+        <view class='picture sfz active'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>身份证正面</text>
+          </view>
+        </view>
+        <view class='picture sfz'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>身份证返面</text>
+          </view>
+        </view>
+      </view>
+      <!-- 学历证明 -->
+      <view class="post-job">
+        <view class='tip'>
+          <view></view>
+          <text>学历证明</text>
+        </view>
+        <view class='picture xueli'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>学历证明证书</text>
+          </view>
+        </view>
+      </view>
+      <!-- 离职证明 -->
+      <view class="post-job">
+        <view class='tip'>
+          <view></view>
+          <text>离职证明</text>
+        </view>
+        <view class='picture lizhi'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>离职证明材料</text>
+          </view>
+        </view>
+      </view>
+      <!-- 其它资格/职称证明 -->
+      <view class="post-job">
+        <view class='tip'>
+          <view></view>
+          <text>其它资格/职称证明</text>
+        </view>
+        <view class='picture other'>
+          <image src=''></image>
+          <view class='upload-btn'>
+            <image src='/image/mine/add.png'></image>
+            <text>其它资格/职称证明</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 五险一金 -->
+    <view class='confirm-basicmsg'>
+      <view class='confirm-basicmsg-tit'>五险一金办理</view>
+      <view class='five-insurance'>
+        <view class='insurance-item'>
+          <text>以前是否办理过保险:</text>
+          <radio-group>
+            <radio>是</radio>
+            <radio>否</radio>
+          </radio-group>
+        </view>
+        <view class='insurance-item'>
+          <text>前期社保关系所在地:</text>
+          <radio-group>
+            <radio>外地</radio>
+            <radio>本地</radio>
+          </radio-group>
+        </view>
+        <view class='insurance-item'>
+          <text>户籍类别:</text>
+          <radio-group>
+            <radio>城镇</radio>
+            <radio>农村</radio>
+          </radio-group>
+        </view>
+        <view class='insurance-item'>
+          <text>是否办理农民工保险:</text>
+          <radio-group>
+            <radio>是</radio>
+            <radio>否</radio>
+          </radio-group>
+        </view>
+        <view class='insurance-item'>
+          <text>是否购买过公积金:</text>
+          <radio-group>
+            <radio color='#868686'>是</radio>
+            <radio>否</radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class='public-gold'>
+        <text>公积金卡号:   2003321233366554</text>
+      </view>
+    </view>
+    <!-- 工资卡信息 -->
+    <view class='confirm-basicmsg noborder'>
+      <view class='confirm-basicmsg-tit'>工资卡信息</view>
+      <view class='confirm-basicmsg-cont'>
+        <text class='confirm-basicmsg-cont-header'>个人信息</text>
+        <view class='confirm-basicmsg-cont-box'>
+          <text>账户名:   张澜澜</text>
+        </view>
+        <view class='confirm-basicmsg-cont-box'>
+          <text>账号:   11254655685666</text>
+        </view>
+        <view class='confirm-basicmsg-cont-box'>
+          <text>开户行:   重庆渝北支行</text>
+        </view>
+      </view>
+    </view>
+    <view class='confirm-contract-company'>《渐臻科技入职合同》</view>
+    <view class='confirm-contract-yzcode'>
+      <input placeholder='请输入验证码'></input>
+      <view>验证码</view>
+    </view>
+  </view>
+  <navigator hover-class='none' url='/page/employee/contract/step4/step4'>
+    <view class='btn'>立即提交</view>
+  </navigator>
+</view>

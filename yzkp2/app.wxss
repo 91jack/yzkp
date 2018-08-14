@@ -346,7 +346,7 @@ page {
   box-sizing: border-box;
   padding: 20rpx 0 20rpx 25rpx;
   line-height: 80rpx;
-  font-size: 28rpxrpx;
+  font-size: 28rpx;
   display: block;
   height: 80rpx;
   color: #6B6B6B;
@@ -679,4 +679,179 @@ checkbox{
   line-height: 28rpx;
   vertical-align: middle;
   margin-top: 38rpx;
+}
+/* 各种材料照片 */
+
+.pictures .post-job .tip{
+  height: 28rpx;
+  margin-bottom: 34rpx;
+  display: flex;
+}
+.pictures .post-job .tip>view{
+  display: inline-block;
+  height: 28rpx;
+  width: 8rpx;
+  background: #F39800;
+  margin-right: 8rpx;
+}
+.pictures .post-job .tip text{
+  display: inline-block;
+  height: 28rpx;
+  line-height: 28rpx;
+  color: #353535;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.pictures .post-job .picture{
+  position: relative;
+  display: inline-block;
+  background:rgba(56,48,235,0.05);
+  border-radius:10rpx;
+}
+.pictures .post-job{
+  padding-bottom: 20rpx;
+}
+.pictures .post-job>text{
+  font-size: 26rpx;
+  margin-left: 81rpx;
+  color: #868686;
+  display: inline-block;
+  height: 236rpx;
+  line-height: 236rpx;
+  vertical-align: top;
+}
+.cunzhao,
+.cunzhao image{
+  width:169rpx;
+  height:236rpx;
+}
+.hukou,
+.hukou image{
+  width:346rpx;
+  height:254rpx;
+}
+.hukou.active,
+.sfz.active{
+  margin-right: 11rpx;
+}
+.sfz,
+.sfz image{
+  width:345rpx;
+  height:217rpx;
+}
+.xueli,
+.xueli image{
+  width:265rpx;
+  height:375rpx;
+}
+.lizhi,
+.lizhi image{
+  width:538rpx;
+  height:378rpx;
+}
+.other,
+.other image{
+  width:702rpx;
+  height:262rpx;
+}
+.pictures .post-job .xueli,
+.pictures .post-job .lizhi,
+.pictures .post-job .other{
+  margin: auto;
+  display: block;
+}
+.upload-btn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-btn image{
+  width: 32rpx;
+  height: 32rpx;
+  display: inline-block;
+}
+.upload-btn text{
+  font-size: 24rpx;
+  color: #868686;
+  display: inline-block;
+  height: 24rpx;
+  line-height: 24rpx;
+  margin-top: 4rpx;
+}
+.pictures .post-job-btn{
+  margin: 0 auto 200rpx;
+}
+.pictures .post-job-btn .other-goods{
+  width:276rpx;
+  height:80rpx;
+  background:rgba(56,48,235,0.1);
+  border-radius:6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pictures .post-job-btn .other-goods image{
+  width: 37rpx;
+  height: 37rpx;
+  margin-right: 12rpx;
+}
+.pictures .post-job-btn .other-goods text{
+  color: #868686;
+  font-size: 28rpx;
+}
+/* --------------------------------------------------------------------------五险一金 */
+.five-insurance{
+  padding: 44rpx 0 0 27rpx;
+}
+.insurance-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.insurance-item text,
+.public-gold text{
+  font-size: 28rpx;
+  color: #353535;
+  font-weight: bold;
+  display: block;
+}
+.insurance-item radio-group{
+  display: block;
+  margin-right: 56rpx;
+  font-size: 28rpx;
+}
+.insurance-item radio-group radio{
+  width: 150rpx;
+}
+.public-gold{
+  display: flex;
+  padding: 0 21rpx 0 26rpx;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.public-gold input{
+  width: 480rpx;
+  height: 100rpx;
+  background: #F5F4FE;
+  font-size: 28rpx;
+  padding-left: 31rpx;
+  box-sizing: border-box;
+  margin-left: 71rpx;
+  color: 
+}
+.public-gold text{
+  line-height: 100rpx;
+}
+.little-tip{
+  padding: 35rpx 17rpx 0 26rpx
+}
+.little-tip text{
+  font-size: 24rpx;
+  color: #868686;
 }

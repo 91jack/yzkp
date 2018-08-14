@@ -1,1 +1,4 @@
 /* page/my/contract/step4/step4.wxss */
+page{
+  background: #fff;
+}
