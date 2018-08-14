@@ -1,1 +1,54 @@
 /* page/my/contract/step4/step4.wxss */
+page{
+  background: #fff;
+}
+.five-insurance{
+  padding: 44rpx 0 0 27rpx;
+}
+.insurance-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.insurance-item text,
+.public-gold text{
+  font-size: 28rpx;
+  color: #353535;
+  font-weight: bold;
+  display: block;
+}
+.insurance-item radio-group{
+  display: block;
+  margin-right: 56rpx;
+  font-size: 28rpx;
+}
+.insurance-item radio-group radio{
+  width: 150rpx;
+}
+.public-gold{
+  display: flex;
+  padding: 0 21rpx 0 26rpx;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.public-gold input{
+  width: 480rpx;
+  height: 100rpx;
+  background: #F5F4FE;
+  font-size: 28rpx;
+  padding-left: 31rpx;
+  box-sizing: border-box;
+  margin-left: 71rpx;
+  color: 
+}
+.public-gold text{
+  line-height: 100rpx;
+}
+.little-tip{
+  padding: 35rpx 17rpx 0 26rpx
+}
+.little-tip text{
+  font-size: 24rpx;
+  color: #868686;
+}

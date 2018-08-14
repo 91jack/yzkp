@@ -18,8 +18,7 @@ page{
 }
 .list text{
   display: block;
-  height: 26rpx;
   color: #6B6B6B;
-  line-height: 26rpx;
+  line-height: 42rpx;
   margin-bottom: 25rpx;
 }

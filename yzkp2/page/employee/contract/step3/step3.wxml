@@ -110,7 +110,7 @@
     <text>继续添加</text>
   </view>
 </view>
-<navigator hover-class='none' url='/page/employee/contract/step3/step3'>
+<navigator hover-class='none' url='/page/employee/contract/step4/step4'>
   <view class='btn'>下一步</view>
 </navigator>
 

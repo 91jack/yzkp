@@ -1,2 +1,50 @@
 <!--page/my/contract/step4/step4.wxml-->
-<text>page/my/contract/step4/step4.wxml</text>
+<view class=''>
+  <view class='five-insurance'>
+    <view class='insurance-item'>
+      <text>以前是否办理过保险:</text>
+      <radio-group>
+        <radio>是</radio>
+        <radio>否</radio>
+      </radio-group>
+    </view>
+    <view class='insurance-item'>
+      <text>前期社保关系所在地:</text>
+      <radio-group>
+        <radio>外地</radio>
+        <radio>本地</radio>
+      </radio-group>
+    </view>
+    <view class='insurance-item'>
+      <text>户籍类别:</text>
+      <radio-group>
+        <radio>城镇</radio>
+        <radio>农村</radio>
+      </radio-group>
+    </view>
+    <view class='insurance-item'>
+      <text>是否办理农民工保险:</text>
+      <radio-group>
+        <radio>是</radio>
+        <radio>否</radio>
+      </radio-group>
+    </view>
+    <view class='insurance-item'>
+      <text>是否购买过公积金:</text>
+      <radio-group>
+        <radio color='#868686'>是</radio>
+        <radio>否</radio>
+      </radio-group>
+    </view>
+  </view>
+  <view class='public-gold'>
+    <text>公积金卡号:</text>
+    <input placeholder='请输入公积金卡号' placeholder-style='color:#AEAEAE'></input>
+  </view>
+  <view class='little-tip'>
+    <text>注:农村户口办理农民工保险,以前办过保险的请将保险办理转移至指定区域并提供接续卡.公积金卡必须为建设银行一类储蓄卡.</text>
+  </view>
+  <navigator hover-class='none' url='/page/employee/contract/step5/step5'>
+    <view class='btn'>下一步</view>
+  </navigator>
+</view>
