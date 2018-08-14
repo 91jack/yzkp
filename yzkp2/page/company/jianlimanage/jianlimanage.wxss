@@ -19,12 +19,12 @@ page{
   color: #fff;
   background: #F39800
 }
-.manageintro-cont .manage-intro-nav{
+.manage-intro-nav{
   height: 84rpx;
   border-bottom: 1rpx solid #E8E8E8;
   display: flex;
 }
-.manageintro-cont .manage-intro-nav-item{
+.manage-intro-nav-item{
   width: 186rpx;
   position: relative;
   height: 100%;
@@ -32,9 +32,9 @@ page{
   line-height: 84rpx;
   color: #6B6B6B;
 }
-.manageintro-cont .manage-intro-nav-item:first-of-type::after,
-.manageintro-cont .manage-intro-nav-item:nth-of-type(2)::after,
-.manageintro-cont .manage-intro-nav-item:nth-of-type(3)::after{
+.manage-intro-nav-item:first-of-type::after,
+.manage-intro-nav-item:nth-of-type(2)::after,
+.manage-intro-nav-item:nth-of-type(3)::after{
   content: '';
   position: absolute;  
   width:2rpx;
@@ -45,16 +45,90 @@ page{
   right: 0;
 }
 .manage-intro-cont{
-  padding-top: 36rpx;
-}
-.manage-intro-item{
+  height: 229rpx;  
   width: 702rpx;
-  height: 229rpx;
   background:rgba(56,48,235,0.05);
   margin: auto;
   border-radius: 6rpx;
+  box-sizing: border-box;
+  padding: 30rpx 29rpx 0 25rpx;
+  margin-top: 36rpx;
+}
+.manage-intro-item{
+  display: flex;
+  justify-content: space-between;
+  height: 45rpx;
 }
 .manage-intro-item-phone image{
   width: 45rpx;
   height: 45rpx;
+  display: inline-block;
+}
+.manage-intro-item-info text{
+  font-size: 24rpx;
+  color: #6B6B6B;
+}
+.manage-intro-item-info .manage-intro-item-info-job{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.icon-content{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16rpx;
+}
+.icon-content .icon-cont{
+  display: flex;
+  height: 28rpx;
+}
+.icon-content .icon-cont .icon-cont-item{
+  height: 100%;
+  line-height: 28rpx;
+  margin-right: 15rpx;
+}
+.icon-content .icon-cont .icon-cont-item image{
+  width: 30rpx;
+  height: 28rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-content .icon-cont .icon-cont-item text{
+  font-size: 24rpx;
+  color: #868686;
+  display: inline-block;  
+  height: 24rpx;
+  line-height: 24rpx;
+  margin-left: 5rpx;
+}
+.icon-content .icon-date{
+  font-size: 24rpx;
+  color: #A0A0A0;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+
+.manage-intro-price{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 31rpx;
+}
+.manage-intro-price .manage-pricedetail{
+  font-size: 28rpx;
+  color: #F39800
+}
+.manage-intro-price .manage-intro-btn{
+  width:157rpx;
+  height:46rpx;
+  background:rgba(243,152,0,1);
+  border-radius:23rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 22rpx;
+  line-height: 46rpx;
+}
+.manage-intro-price .manage-intro-btn image{
+  width: 19rpx;
+  height: 12rpx;
 }

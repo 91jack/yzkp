@@ -59,9 +59,7 @@ color: transparent;
 
 /* 简历管理 */
 
-page{
-  background: #fff;
-}
+
 .jobmanage-tit{
   height: 92rpx;
   width: 100%;
