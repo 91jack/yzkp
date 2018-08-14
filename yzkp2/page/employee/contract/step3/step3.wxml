@@ -1,2 +1,118 @@
-<!--page/index/contract/step3/step3.wxml-->
-<text>page/index/contract/step3/step3.wxml</text>
+<!-- 寸照 -->
+<view class="post-job">
+  <view class='tip'>
+    <view></view>
+    <text>寸照</text>
+  </view>
+  <view class='picture cunzhao'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>寸照</text>
+    </view>
+  </view>
+  <text>红底/蓝底</text>
+</view>
+<!-- 户口簿 -->
+<view class="post-job">
+  <view class='tip'>
+    <view></view>
+    <text>寸照</text>
+  </view>
+  <view class='picture hukou active'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>户口簿-主页</text>
+    </view>
+  </view>
+  <view class='picture hukou'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>户口簿-增减页</text>
+    </view>
+  </view>
+  <view class='picture hukou'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>户口簿-本人页</text>
+    </view>
+  </view>
+</view>
+<!-- 身份证 -->
+<view class="post-job">
+  <view class='tip'>
+    <view></view>
+    <text>身份证</text>
+  </view>
+  <view class='picture sfz active'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>身份证正面</text>
+    </view>
+  </view>
+  <view class='picture sfz'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>身份证返面</text>
+    </view>
+  </view>
+</view>
+<!-- 学历证明 -->
+<view class="post-job">
+  <view class='tip'>
+    <view></view>
+    <text>学历证明</text>
+  </view>
+  <view class='picture xueli'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>学历证明证书</text>
+    </view>
+  </view>
+</view>
+<!-- 离职证明 -->
+<view class="post-job">
+  <view class='tip'>
+    <view></view>
+    <text>离职证明</text>
+  </view>
+  <view class='picture lizhi'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>离职证明材料</text>
+    </view>
+  </view>
+</view>
+<!-- 其它资格/职称证明 -->
+<view class="post-job">
+  <view class='tip'>
+    <view></view>
+    <text>其它资格/职称证明</text>
+  </view>
+  <view class='picture other'>
+    <image src=''></image>
+    <view class='upload-btn'>
+      <image src='/image/mine/add.png'></image>
+      <text>其它资格/职称证明</text>
+    </view>
+  </view>
+</view>
+<view class='post-job-btn'>
+  <view class='other-goods'>
+    <image src='/image/mine/add.png'></image>
+    <text>继续添加</text>
+  </view>
+</view>
+<navigator hover-class='none' url='/page/employee/contract/step3/step3'>
+  <view class='btn'>下一步</view>
+</navigator>
+
+
+

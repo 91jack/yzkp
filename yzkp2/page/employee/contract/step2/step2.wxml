@@ -1,2 +1,81 @@
-<!--page/index/contract/step2/step2.wxml-->
-<text>page/index/contract/step2/step2.wxml</text>
+<view class="post-job">
+  <view class='tip'>
+    <view></view>
+    <text>个人信息</text>
+  </view>
+  <view class='post-job-header'>
+    <view class='header-item'>
+      <input placeholder='请输入姓名' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <picker>
+        <text>请选择性别</text>
+        <image src='/image/index/return.png'></image>
+      </picker>
+    </view>
+    <view class='header-item'>
+      <input placeholder='请输入身份证号码' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <picker>
+        <text>请选择学历</text>
+        <image src='/image/index/return.png'></image>
+      </picker>
+    </view>
+    <view class='header-item'>
+      <input placeholder='请输入联系电话' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <input placeholder='请输入紧急联系电话' placeholder-style='color:#AEAEAE'></input>
+    </view>
+  </view>
+
+  <view class='post-job-area'>
+    <view class='choose-place'>
+      <text>请选择现住地址:</text>
+      <view class='choose-region'>
+        <view class='choose-region-item'>
+          <text>省</text>
+          <image src='/image/index/return.png'></image>
+        </view>
+        <view class='choose-region-item'>
+          <text>市</text>
+          <image src='/image/index/return.png'></image>
+        </view>
+        <view class='choose-region-item'>
+          <text>区</text>
+          <image src='/image/index/return.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='detail-place'>
+    <input placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></input>
+  </view>
+</view>
+
+<view class="post-job active">
+  <view class='tip'>
+    <view></view>
+    <text>个人信息</text>
+  </view>
+  <view class='post-job-header'>
+    <view class='header-item'>
+      <input placeholder='请输入所属部门' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <input placeholder='请输入担任职位' placeholder-style='color:#AEAEAE'></input>
+    </view>
+    <view class='header-item'>
+      <input placeholder='请输入入职时间' placeholder-style='color:#AEAEAE'></input>
+    </view>
+  </view>
+</view>
+
+<view class='post-job-btn'></view>
+<navigator hover-class='none' url='/page/employee/contract/step3/step3'>
+  <view class='btn'>下一步</view>
+</navigator>
+
+
+

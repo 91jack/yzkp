@@ -1,7 +1,10 @@
 
+<<<<<<< HEAD
 <view class='head-pic'>
   <image src='/image/mine/singnal.png'></image>
 </view>
+=======
+>>>>>>> 61c0e7e6f389056ea804821dd8306bf2823c2a01
 
 <view class='box'>
   <text>姓名</text>

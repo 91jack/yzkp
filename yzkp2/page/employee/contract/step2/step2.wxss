@@ -1,1 +1,36 @@
-/* page/index/contract/step2/step2.wxss */
+page{
+  background: #fff;
+}
+.post-job{
+  border-bottom: 15rpx solid #e8e8e8;
+}
+
+.tip{
+  height: 28rpx;
+  margin-bottom: 34rpx;
+  display: flex;
+}
+.tip>view{
+  display: inline-block;
+  height: 28rpx;
+  width: 8rpx;
+  background: #F39800;
+  margin-right: 8rpx;
+}
+.tip text{
+  display: inline-block;
+  height: 28rpx;
+  line-height: 28rpx;
+  color: #353535;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.post-job-header{
+  height: 256rpx;
+}
+.post-job.active{
+  border-bottom: none;
+}
+.post-job.active .post-job-header{
+  height: 170rpx;
+}

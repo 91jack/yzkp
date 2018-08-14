@@ -1,1 +1,25 @@
-/* page/index/contract/step1/step1.wxss */
+page{
+  background: #fff;
+}
+.begin{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 41rpx 27rpx 36rpx 26rpx;
+}
+.begin text{
+  font-size: 30rpx;
+  color: #353535;
+}
+.begin .name{
+  font-weight: bold;
+}
+.list{
+  padding-left: 28rpx;
+}
+.list text{
+  display: block;
+  height: 26rpx;
+  color: #6B6B6B;
+  line-height: 26rpx;
+  margin-bottom: 25rpx;
+}

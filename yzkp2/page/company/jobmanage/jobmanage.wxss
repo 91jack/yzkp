@@ -43,7 +43,7 @@ page{
   line-height: 93rpx;
 }
 .company-btn-item:first-of-type{
-  margin-left: 457rpx;
+  margin-left: 511rpx;
 }
 .company-btn-item:last-of-type{
   margin-left: 39rpx;

@@ -345,7 +345,7 @@ page {
   font-size: 28rpxrpx;
   display: block;
   height: 80rpx;
-  color: #AEAEAE;
+  color: #6B6B6B;
 }
 .post-job-type{
   height: 111rpx;

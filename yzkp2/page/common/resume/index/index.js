@@ -17,7 +17,7 @@ Page({
   },
   noname:function(){
     wx.navigateTo({
-      url: '/page/my/resume/cryptonym/cryptonym',
+      url: '/page/common/resume/cryptonym/cryptonym',
     })
   },
   /**
