@@ -7,87 +7,54 @@
 
 
 
-  
+
 <!-- 职位管理 -->
 
 
 <view class='managejob-cont'>
-  <view class='cont-item' bindtap='toCompanyDetail'>
-    <view class='cont-tit'>
-      <text class='title'>高级程序员</text>
-      <text class='time'>1天前</text>
-    </view>
-    <view class='cont-detail'>
-      <view class='det-left'>
-        <view class='left-item'>
-          <image src='/image/index/area.png'></image>
-          <text>重庆</text>
+  <block wx:for="{{jobList}}">
+    <view class='cont-item'>
+      <view class='cont-tit'>
+        <text class='title'>{{item.name}}</text>
+        <text class='time'>{{item.refreshTime}}</text>
+      </view>
+     
+      <view class='cont-detail' wx:if="{{item.type==0}}">
+        <view class='det-left'>
+          <view class='left-item'>
+            <image src='/image/index/area.png'></image>
+            <text>{{item.city}}</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/work.png'></image>
+            <text>{{item.workYear}}</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/xueli.png'></image>
+            <text>{{item.educationLevel}}</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/height.png'></image>
+            <text>{{item.height}}</text>
+          </view>
         </view>
-        <view class='left-item'>
-          <image src='/image/index/work.png'></image>
-          <text>1-3年</text>
+        <view class='det-right'>{{item.pay}}</view>
+      </view>
+
+      <view class='company-btn'>
+        <view class='company-btn-item'>
+          <image src='/image/index/refresh.png'></image>
+          <text bindtap='refreshJob' data-jobId="{{item.id}}">刷新</text>
         </view>
-        <view class='left-item'>
-          <image src='/image/index/xueli.png'></image>
-          <text>本科</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/height.png'></image>
-          <text>165cm以上</text>
+        <view class='company-btn-item'>
+          <image src='/image/index/delete.png'></image>
+          <text bindtap='delJob' data-jobId="{{item.id}}">删除</text>
         </view>
       </view>
-      <view class='det-right'>7K-9K</view>
     </view>
-    <view class='company-btn'>
-      <view class='company-btn-item'>
-        <image src='/image/index/refresh.png'></image>
-        <text>刷新</text>
-      </view>
-      <view class='company-btn-item'>
-        <image src='/image/index/delete.png'></image>  
-        <text>删除</text>              
-      </view>
-    </view>
-  </view>
-  <view class='cont-item' bindtap='toCompanyDetail'>
-    <view class='cont-tit'>
-      <text class='title'>高级程序员</text>
-      <text class='time'>1天前</text>
-    </view>
-    <view class='cont-detail'>
-      <view class='det-left'>
-        <view class='left-item'>
-          <image src='/image/index/area.png'></image>
-          <text>重庆</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/work.png'></image>
-          <text>1-3年</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/xueli.png'></image>
-          <text>本科</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/height.png'></image>
-          <text>165cm以上</text>
-        </view>
-      </view>
-      <view class='det-right'>7K-9K</view>
-    </view>
-    <view class='company-btn'>
-      <view class='company-btn-item'>
-        <image src='/image/index/refresh.png'></image>
-        <text>刷新</text>
-      </view>
-      <view class='company-btn-item'>
-        <image src='/image/index/delete.png'></image>  
-        <text>删除</text>              
-      </view>
-    </view>
-  </view>
-  <view class='manage-job-btn'>
-    <image src='/image/mine/add.png'></image>
-    <text>发布职位</text>
-  </view>
+  </block>
+</view>
+<view class='manage-job-btn'>
+  <image src='/image/mine/add.png'></image>
+  <text>发布职位</text>
 </view>

@@ -1,4 +1,8 @@
 // page/job/jianlimanage/jianlimanage.js
+// 企业简历管理
+const companyResumeUrl = require('../../../config').companyResumeUrl;
+
+
 Page({
 
   /**
@@ -30,7 +34,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this = this;
+    wx.request({
+      url: companyResumeUrl,
+      data: {
+        token: getApp().globalData.token,
+      },
+      success: function (res) {
+        console.log(res)
+
+      }
+    })
   },
 
   /**

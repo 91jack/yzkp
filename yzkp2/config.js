@@ -60,11 +60,8 @@ var config = {
 
 
   /*企业模块*/
-  // 发布全职招聘
+  // 发布全职招聘 发布兼职招聘
   addjobUrl: `${host}recruit/notice/add.json`,
-
-  // 发布兼职招聘
- // addPartjobUrl: `${host}recruit/notice/info.json`,
 
   // 企业介绍
   companyIntroUrl: `${host}company/get.json`,
@@ -80,12 +77,19 @@ var config = {
 
   // 删除职位
   delJobUrl: `${host}recruit/notice/delete.json`,
-  
+
   // 企业简历管理
+  companyResumeUrl: `${host}resume/apply/list.json`,
+
   // 添加企业信息
+  addCompanyInfoUrl: `${host}company/add.json`,
+
   // 修改企业信息
+  editCompanyInfoUrl: `${host}company/edit.json`,
+
   // 搜索简历
-  // 企业查看简历
+  searchResumeUrl: `${host}resume/list.json`,
+ 
   
 
 
