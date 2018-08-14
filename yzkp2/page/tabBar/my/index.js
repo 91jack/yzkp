@@ -5,10 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    resume: getApp().globalData.resume,
     //求职者列表
     jobSeekerList:[
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/common/resume/index/index',
         src: '/image/index/office.png',
         text: '我的简历'
      },
@@ -82,7 +83,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(getApp().globalData.resume)
   },
 
   /**

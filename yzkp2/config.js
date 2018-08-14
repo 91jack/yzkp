@@ -13,18 +13,31 @@ var config = {
   
 
   /*求职者模块*/
-  // 新增简历
-  // 修改简历
+  // 新增简历基本信息
+  addBasicUrl: `${host}resume/info/addBase.json`,
+  
+  // 修改简历基本信息
+  editBasicUrl: `${host}resume/info/editBase.json`,
 
-  // 新增求职意向
   // 修改求职意向
+  editJobintensionUrl: `${host}resume/info/editDemand.json`,
+
+  // 新增工作经验
+  addJobexperienceUrl: `${host}resume/work/add.json`,
+  // 修改工作经验
+  editJobexperienceUrl: `${host}resume/work/edit.json`,
 
   // 新增教育经历
+  addEduexperienceUrl: `${host}resume/education/add.json`,
+
   // 修改教育经历
+  editEduexperienceUrl: `${host}resume/education/edit.json`,
 
   // 新增项目经历
-  // 修改项目经历
+  addProjectUrl: `${host}resume/project/add.json`,
 
+  // 修改项目经历
+  editProjectUrl: `${host}resume/project/edit.json`,
  
 
   // 获取招聘列表信息
@@ -33,6 +46,10 @@ var config = {
   // 获取招聘详情
   jobDetailsUrl: `${host}recruit/notice/info.json`,
 
+  // 收藏与取消收藏
+  // 投递简历
+  // 简历是否公开，是否匿名
+  
 
   /*员工模块*/
   // 

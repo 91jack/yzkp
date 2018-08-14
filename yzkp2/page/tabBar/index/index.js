@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    role:3,//用户角色 1：求职者 2：员工 3：企业
+    role:1,//用户角色 1：求职者 2：员工 3：企业
     jobList: [],
 
     index: 0,//选择的下拉列表下标，
@@ -141,8 +141,9 @@ Page({
           key: "token",
           data: res.data.obj.token
         })
-        getApp().globalData.token = res.data.obj.token;
-        console.log(getApp().globalData.token)
+        getApp().globalData.token = res.data.obj.token;// 用户token
+        getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
+       
         console.log(res)
         _this.setData({
           jobList:res.data.list

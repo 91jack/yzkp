@@ -2,13 +2,7 @@
 page{
   background: #fff
 }
-.top{
-  background: #fff;
-  border-bottom: 11rpx solid #F6F6F6
-}
-.serach{
-  background: #F6F6F6
-}
+
 .ability-nav{
   height: 85rpx;
   border-bottom: 1rpx solid #F6F6F6;

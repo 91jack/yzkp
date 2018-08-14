@@ -1,8 +1,9 @@
 <!--page/index/pages/newwork/joblist/joblist.wxml-->
+
+<import src ="/template/topsearch/topsearch.wxml"/>
 <import src ="/template/joblist/joblist.wxml"/>
- <jz-search>
-   
-</jz-search>
+  
+<template is="topsearch"/>
 
 
 

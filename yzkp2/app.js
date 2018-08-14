@@ -47,6 +47,7 @@ App({
   },
   globalData: {
     token:'',
+    resume:'',//简历
     userInfo: null
   }
 })

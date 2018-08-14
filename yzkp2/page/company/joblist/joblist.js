@@ -24,7 +24,7 @@ Page({
       data: {
         token: getApp().globalData.token,
         type:options.type?0:1,//最新0推荐1
-        recruitType: options.recruitType//全职0兼职1
+        recruitType: options.recruitType?0:1//全职0兼职1
       },
       success: function (res) {
         console.log(res)
@@ -83,5 +83,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+ 
 })

@@ -1,1 +1,18 @@
 /* page/my/resume/basicmsgedit/basicmsgedit.wxss */
+.head-pic{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1rpx solid red;
+}
+.head-pic image{
+  display: block;
+  width: 187rpx;
+  height: 187rpx;
+  margin: 48rpx 0 26rpx 283rpx;
+}
+.head-pic text{
+  display: block;
+  text-decoration: underline;
+  font-size: 24rpx;
+  color: #868686;
+}

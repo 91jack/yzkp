@@ -1,4 +1,10 @@
 // page/my/resume/basicmsgedit/basicmsgedit.js
+// 新增简历基本信息
+addBasicUrl = require('../../../../config').addBasicUrl;
+
+// 修改简历基本信息
+editBasicUrl = require('../../../../config').editBasicUrl;
+
 Page({
 
   /**
@@ -28,39 +34,28 @@ Page({
   onShow: function () {
   
   },
-
   /**
-   * 生命周期函数--监听页面隐藏
+   * 新增简历基本信息
    */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  saveEdit:function(){
+    wx.request({
+      url: addBasicUrl,
+      data: {
+        token: getApp().globalData.token,
+        name:'涛哥',
+        sex:0,
+        age:28,
+        workYear:10,
+        state:0,
+        address:'渝北区',
+        mobile:'18502323596',
+        email:'2764132626@qq.com'
+      },
+      success: function (res) {
+        console.log(res)
+        
+       
+      }
+    })
   }
 })

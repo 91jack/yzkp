@@ -12,7 +12,7 @@ Component({
    */
   data: {
     currentTab: [true, true, true],//控制nav-bar的显示
-    navBarData: ['推荐', '行业', '要求'],
+    navBarData: ['推荐','地区', '行业', '要求'],
     navbarShow: false
   },
 

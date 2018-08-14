@@ -1,13 +1,11 @@
 <!--page/my/resume/index/index.wxml-->
-
-
 <view class='header'>
-  <navigator hover-class='none' url='/page/my/resume/personmsg/personmsg'>
+  <navigator hover-class='none' url='/page/common/resume/basicmsgedit/basicmsgedit'>
     <view class='header-cont'>
       <view>
         <image class='company-pic' src=''></image>
       </view>
-      <view class='header-intro'>
+      <view class='header-intro'>  
         <text class='name'>张澜澜(微信名)</text>
         <view class='intro-cont'>
           <text class='intro detail'>踏实勤奋，积极上进,热爱生活,......</text>
@@ -27,7 +25,7 @@
 <view class='manageintro-cont'>
 
   <!--  -----------简历编辑 ----------- -->
-  <view class='edit-intro' hidden='true'>
+  <view class='edit-intro'>
       <!-- 基本信息 -->
     <view class='manageintro-cont-item'>
       <view class='manageintro-cont-item-tit'>
@@ -35,7 +33,7 @@
           <image src='/image/mine/selfmsg.png'></image>
           <text>基本信息</text>
         </view>
-        <navigator hover-class='none' url='/page/my/resume/basicmsgedit/basicmsgedit'>
+        <navigator hover-class='none' url='/page/common/resume/basicmsgedit/basicmsgedit'>
           <view class='tit-edit'>
             <image src='/image/mine/edit.png'></image>
             <text>编辑</text>
@@ -66,7 +64,7 @@
           <image src='/image/mine/wantto.png'></image>
           <text>求职意向</text>
         </view>
-        <navigator hover-class='none' url='/page/my/resume/jobintensionedit/jobintensionedit'>
+        <navigator hover-class='none' url='/page/common/resume/jobintensionedit/jobintensionedit'>
           <view class='tit-edit'>
             <image src='/image/mine/edit.png'></image>
             <text>编辑</text>
@@ -84,7 +82,7 @@
           <image src='/image/mine/workes.png'></image>
           <text>工作经验</text>
         </view>
-        <navigator hover-class='none' url='/page/my/resume/jobexperience/jobexperience'>
+        <navigator hover-class='none' url='/page/common/resume/jobexperience/jobexperience'>
           <view class='tit-edit'>
             <image src='/image/mine/edit.png'></image>
             <text>编辑</text>
@@ -118,7 +116,7 @@
           <image src='/image/mine/educationexpress.png'></image>
           <text>教育经历</text>
         </view>
-        <navigator hover-class='none' url='/page/my/resume/eduexperience/eduexperience'>
+        <navigator hover-class='none' url='/page/common/resume/eduexperience/eduexperience'>
           <view class='tit-edit'>
             <image src='/image/mine/edit.png'></image>
             <text>编辑</text>
@@ -151,7 +149,7 @@
           <image src='/image/mine/progrom.png'></image>
           <text>项目经历</text>
         </view>
-        <navigator hover-class='none' url='/page/my/resume/project/project'>
+        <navigator hover-class='none' url='/page/common/resume/project/project'>
           <view class='tit-edit'>
             <image src='/image/mine/edit.png'></image>
             <text>编辑</text>
@@ -208,7 +206,7 @@
     </view>
   </view>
   <!-- ----------------我的申请 ------------ -->
-  <view class='my-apply'>
+  <view class='my-apply' hidden='true'>
     <view class='my-apply-item'>
       <view class='my-apply-item-tit'>
         <text class='posi-left'>已查阅</text>

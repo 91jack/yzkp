@@ -1,5 +1,4 @@
-/* components/jz-search/jz-search.wxss */
-
+/* template/topsearch/topsearch.wxss */
 /* 顶部输入框 */
 .top{
   height: 158rpx;

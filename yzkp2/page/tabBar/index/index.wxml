@@ -1,9 +1,11 @@
 <!--pages/index/index.wxml-->
+<import src ="/template/topsearch/topsearch.wxml"/>
 <import src ="/template/joblist/joblist.wxml"/>
- <jz-search>
-   
-</jz-search>
 
+
+  <navigator hover-class="none" url='/page/company/joblist/joblist'>
+ <template is="topsearch"/>
+  </navigator>
 
 <view class='banner'>
   <image src='/image/index/banner.png'></image>

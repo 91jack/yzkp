@@ -1,4 +1,5 @@
 // page/my/resume/index/index.js
+
 Page({
 
   /**
