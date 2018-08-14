@@ -104,6 +104,9 @@ page {
   overflow: auto
 }
 
+.main-content {
+  margin-bottom: 250rpx;
+}
 /* 底部按钮 */
 .btn{
   width: 100%;
@@ -114,6 +117,7 @@ page {
   text-align: center;
   line-height: 117rpx;
   position: fixed;
+  z-index: 999;
   bottom: 0;
   left: 0
 }

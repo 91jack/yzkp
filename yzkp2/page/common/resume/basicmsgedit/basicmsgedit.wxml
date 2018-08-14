@@ -1,83 +1,84 @@
+<view class="page">
 
-<<<<<<< HEAD
-<view class='head-pic'>
-  <image src='/image/mine/singnal.png'></image>
-</view>
-=======
->>>>>>> 61c0e7e6f389056ea804821dd8306bf2823c2a01
-
-<view class='box'>
-  <text>姓名</text>
-  <input placeholder='请输入姓名' placeholder-style="color:#D7D7D7"></input>
-</view>
-
-<view class='box'>
-  <text>性别</text>
-  <view class='right'>
-    <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
-      <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
-      <text class='choose'>{{workexpress}}</text>
-      <image class='next' src='/image/mine/next.png'></image>
-    </picker>
+  <view class='head-pic'>
+    <image src='/image/mine/singnal.png'></image>
   </view>
-</view>
 
-
-<view class='box'>
-  <text>年龄</text>
-  <view class='right'>
-    <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
-      <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
-      <text class='choose'>{{workexpress}}</text>
-      <image class='next' src='/image/mine/next.png'></image>
-    </picker>
-  </view>
-</view>
-<view class='box'>
-  <text>学历</text>
-  <view class='right'>
-    <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
-      <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
-      <text class='choose'>{{workexpress}}</text>
-      <image class='next' src='/image/mine/next.png'></image>
-    </picker>
-  </view>
-</view>
-  <view class='box'>
-    <text>工作经验</text>
-    <view class='right'>
-      <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
-        <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
-        <text class='choose'>{{workexpress}}</text>
-        <image class='next' src='/image/mine/next.png'></image>
-      </picker>
+  <view class="main-content">
+    <view class='box'>
+      <text>姓名</text>
+      <input placeholder='请输入姓名' placeholder-style="color:#D7D7D7"></input>
     </view>
-  </view>
 
-  <view class='box'>
-    <text>目前状态</text>
-    <view class='right'>
-      <picker mode="selector" range="{{nowTypeData}}" value="{{item}}" bindchange="bindDateChangeType">
-        <text hidden='{{pickerDefault[1]}}' class='choose'>请选择</text>
-        <text class='choose'>{{nowtype}}</text>
-        <image class='next' src='/image/mine/next.png'></image>
-      </picker>
+    <view class='box'>
+      <text>性别</text>
+      <view class='right'>
+        <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
+          <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
+          <text class='choose'>{{workexpress}}</text>
+          <image class='next' src='/image/mine/next.png'></image>
+        </picker>
+      </view>
     </view>
-  </view>
 
-  <view class='box'>
-    <text>现居住地址</text>
-    <input placeholder='请输入地址' placeholder-style="color:#D7D7D7"></input>
-  </view>
 
-  <view class='box'>
-    <text>联系电话</text>
-    <input placeholder='请输入电话号码' placeholder-style="color:#D7D7D7"></input>
-  </view>
+    <view class='box'>
+      <text>年龄</text>
+      <view class='right'>
+        <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
+          <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
+          <text class='choose'>{{workexpress}}</text>
+          <image class='next' src='/image/mine/next.png'></image>
+        </picker>
+      </view>
+    </view>
+    <view class='box'>
+      <text>学历</text>
+      <view class='right'>
+        <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
+          <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
+          <text class='choose'>{{workexpress}}</text>
+          <image class='next' src='/image/mine/next.png'></image>
+        </picker>
+      </view>
+    </view>
+    <view class='box'>
+      <text>工作经验</text>
+      <view class='right'>
+        <picker mode="selector" range="" value="{{item}}" bindchange="bindDateChangeExpress">
+          <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>
+          <text class='choose'>{{workexpress}}</text>
+          <image class='next' src='/image/mine/next.png'></image>
+        </picker>
+      </view>
+    </view>
 
-  <view class='box'>
-    <text>邮箱</text>
-    <input placeholder='请输入姓邮箱' placeholder-style="color:#D7D7D7"></input>
-  </view>
+    <view class='box'>
+      <text>目前状态</text>
+      <view class='right'>
+        <picker mode="selector" range="{{nowTypeData}}" value="{{item}}" bindchange="bindDateChangeType">
+          <text hidden='{{pickerDefault[1]}}' class='choose'>请选择</text>
+          <text class='choose'>{{nowtype}}</text>
+          <image class='next' src='/image/mine/next.png'></image>
+        </picker>
+      </view>
+    </view>
 
+    <view class='box'>
+      <text>现居住地址</text>
+      <input placeholder='请输入地址' placeholder-style="color:#D7D7D7"></input>
+    </view>
+
+    <view class='box'>
+      <text>联系电话</text>
+      <input placeholder='请输入电话号码' placeholder-style="color:#D7D7D7"></input>
+    </view>
+
+    <view class='box'>
+      <text>邮箱</text>
+      <input placeholder='请输入姓邮箱' placeholder-style="color:#D7D7D7"></input>
+    </view>
+
+  </view>
   <view class='btn' bindtap='saveEdit'>保存编辑</view>
+</view>
