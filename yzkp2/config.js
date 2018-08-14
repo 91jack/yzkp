@@ -1,7 +1,7 @@
 // 本地
-var host = "https://www.jiansou-cn.com/yzkp/app/";
+//var host = "https://www.jiansou-cn.com/yzkp/app/";
 // 线上
-//var host = "";
+var host = "http://192.168.1.123:8080/yzkp/app/";
 
 
 var config = {
@@ -47,8 +47,14 @@ var config = {
   // 发布兼职招聘
   addPartjobUrl: `${host}recruit/notice/info.json`,
 
-  // 企业职位管理
+  // 企业介绍
+  companyIntroUrl: `${host}company/get.json`,
 
+  // 在招职位
+  recruitListUrl: `${host}company/notice/get.json`,
+
+  // 企业职位管理
+  
   // 刷新职位
 
 

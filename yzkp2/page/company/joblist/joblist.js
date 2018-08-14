@@ -17,14 +17,17 @@ Page({
    */
 
   onLoad: function (options) {
+    console.log(getApp().globalData.token)
     var _this = this;
     wx.request({
       url: jobListUrl,
       data: {
-        //type:options.type,
-        recruitType: options.recruitType
+        token: getApp().globalData.token,
+        type:options.type?0:1,//最新0推荐1
+        recruitType: options.recruitType//全职0兼职1
       },
       success: function (res) {
+        console.log(res)
         console.log(res.data.list)
         _this.setData({
           jobList: res.data.list

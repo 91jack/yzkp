@@ -136,7 +136,14 @@ Page({
        
       },
       success: function (res) {
-        console.log(res.data.list)
+       
+        wx.setStorage({
+          key: "token",
+          data: res.data.obj.token
+        })
+        getApp().globalData.token = res.data.obj.token;
+        console.log(getApp().globalData.token)
+        console.log(res)
         _this.setData({
           jobList:res.data.list
         })

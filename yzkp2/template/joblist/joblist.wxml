@@ -8,7 +8,7 @@
           <view class='cont-tit'>
             <view>
               <text class='title'>{{item.name}}</text>/
-              <text class="type">{{item.type}}</text>
+              <text class="type">{{item.jobType}}</text>
             </view>
 
             <text class='time'>{{item.refreshTime}}</text>
@@ -48,7 +48,7 @@
           <view class='cont-tit'>
             <view>
               <text class='title'>{{item.name}}</text>/
-              <text class="type">{{item.type}}</text>
+              <text class="type">{{item.jobType}}</text>
             </view>
 
             <text class='time'>{{item.refreshTime}}</text>
