@@ -35,6 +35,7 @@ Page({
     wx.request({
       url: jobDetailsUrl,
       data: {
+        token: getApp().globalData.token,
         id: options.id
       },
       header: {
