@@ -43,12 +43,12 @@ Page({
     ], //求职者
     selectBar2: [
       {
-        url: '/page/common/joblist/joblist?type=0',
+        url: '/page/company/joblist/joblist?type=0',
         src: '/image/index/office.png',
         text: '最新职位'
       },
       {
-        url: '/page/common/joblist/joblist?recruitType=1',
+        url: '/page/company/joblist/joblist?recruitType=1',
         src: '/image/index/datetime.png',
         text: '兼职职位'
       },
@@ -63,7 +63,7 @@ Page({
         text: '薪酬管理'
       },
       {
-        url: '/page/common/linghuo/linghuo',
+        url: '/page/common/course/courselist/courselist',
         src: '/image/index/train.png',
         text: '能力提升'
       }
@@ -130,25 +130,26 @@ Page({
         getApp().globalData.token = res.data.obj.token;// 用户token
         getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
 
-
-      }
-    })
-
-    wx.request({
-      url: jobListUrl,
-      data: {
-        token: getApp().globalData.token,
-        // type: options.type ? 0 : 1,//最新0推荐1
-        // recruitType: options.recruitType ? 0 : 1//全职0兼职1
-      },
-      success: function (res) {
-        console.log(res)
-        console.log(res.data.list)
-        _this.setData({
-          jobList: res.data.list
+        wx.request({
+          url: jobListUrl,
+          data: {
+            token: res.data.obj.token,
+            // type: options.type ? 0 : 1,//最新0推荐1
+            // recruitType: options.recruitType ? 0 : 1//全职0兼职1
+          },
+          success: function (res) {
+            console.log(res)
+            console.log(res.data.list)
+            _this.setData({
+              jobList: res.data.list
+            })
+          }
         })
+
       }
     })
+
+   
   },
 
   /**
@@ -192,5 +193,5 @@ Page({
   onShareAppMessage: function () {
   
   },
-  
+
 })

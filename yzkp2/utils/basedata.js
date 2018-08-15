@@ -7,10 +7,10 @@ var host = "http://192.168.1.123:8080/yzkp/app/";
 const cityUrl = `${host}common/cities.json`;
 
 // 公司性质
-const companyTypeUrl = `${host}common/cities.json`;
+const companyTypeUrl = `${host}common/company_type.json`;
 
 // 公司规模
-const companySizeUrl = `${host}common/company_type.json`;
+const companySizeUrl = `${host}common/company_size.json`;
 
 // 月薪
 const monthPayUrl = `${host}common/month_pay.json`;
@@ -33,7 +33,13 @@ function cityList() {
   wx.request({
     url: cityUrl, 
     success: function(res) {
-      console.log(res.data)
+      console.log(res)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "cityArr",
+          data: res.data.obj
+        })
+      }
     }
   })
 }
@@ -42,7 +48,12 @@ function companyType() {
   wx.request({
     url: companyTypeUrl,
     success: function (res) {
-      console.log(res.data)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "companyTypeArr",
+          data: res.data.list
+        })
+      }
     }
   })
 }
@@ -51,7 +62,13 @@ function companySize() {
   wx.request({
     url: companySizeUrl,
     success: function (res) {
-      console.log(res.data)
+      console.log(res)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "companySizeArr",
+          data: res.data.list
+        })
+      }
     }
   })
 }
@@ -59,27 +76,43 @@ function companySize() {
 // 月薪
 function monthPay() {
   wx.request({
-    url: companySizeUrl,
+    url: monthPayUrl,
     success: function (res) {
-      console.log(res.data)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "monthPayArr",
+          data: res.data.list
+        })
+      }
     }
   })
 }
 // 学历
 function education() {
   wx.request({
-    url: companySizeUrl,
+    url: educationUrl,
     success: function (res) {
-      console.log(res.data)
+      if(res.data.status == 0){
+        wx.setStorage({
+          key: "educationArr",
+          data: res.data.list
+        })
+      }
     }
   })
+  
 }
 // 工作经验
 function workYear() {
   wx.request({
-    url: companySizeUrl,
+    url: workYearUrl,
     success: function (res) {
-      console.log(res.data)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "workYearArr",
+          data: res.data.list
+        })
+      }
     }
   })
 }
@@ -88,7 +121,12 @@ function height() {
   wx.request({
     url: heightUrl,
     success: function (res) {
-      console.log(res.data)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "heightArr",
+          data: res.data.list
+        })
+      }
     }
   })
 }
@@ -116,6 +154,12 @@ function welfare() {
     url: welfareUrl,
     success: function (res) {
       console.log(res.data)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "welfareArr",
+          data: res.data.list
+        })
+      }
     }
   })
 }

@@ -1,4 +1,7 @@
 // page/my/payment/index/index.js
+// 员工基本信息填写
+const payInformationUrl = require('../../../../config').payInformationUrl;
+
 Page({
 
   /**
@@ -12,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
@@ -26,7 +29,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this = this;
+    wx.request({//工资条
+      url: payInformationUrl,
+      data: {
+        token: getApp().globalData.token,
+        timeflag:1
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 0) {
+         
+         
+        }
+      }
+    })
   },
 
   /**
