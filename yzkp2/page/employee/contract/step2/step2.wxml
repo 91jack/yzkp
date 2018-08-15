@@ -1,6 +1,6 @@
 <view class="begin">
   <text>欢迎 </text>
-  <text class='name'>张澜澜 </text>
+  <text class='name'>{{name}} </text>
   <text>女士成为渐臻科技公司一员,在开始入职前,请准备好以下入职资料:</text>
 </view>
 <view class='list'>

@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    name:''
   },
 
   /**
@@ -37,12 +37,12 @@ Page({
       url: regBaseInfoUrl,
       data: {
         token: getApp().globalData.token,
-        name:'网米子',
+        name:'小张',
         sex:'男',
-        id_no:'5130291253658855555',
+        id_no:'500000000000000000',
         education_level:'本科',
-        mobile:'18502323596',
-        link_mobile:'15023246443',
+        mobile:'18500000000',
+        link_mobile:'13113113111',
         address:'重庆市金开大道110号永固金鼎时代17楼4-6',
         department:'技术部',
         position:'程序员鼓励师',
@@ -52,11 +52,25 @@ Page({
         console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
-            title: '职位发布成功',
+            title: '信息提交成功',
             icon: 'success',
-            duration: 2000
+            duration: 2000,
+            success:function(){
+              setTimeout(function(){
+                wx.navigateTo({
+                  url: '/page/employee/contract/step2/step2',
+                })
+              },1000)
+            }
           })
-        
+          wx.setStorage({
+            key: 'employeesId',
+            data: res.data.obj.id,
+          })
+          wx.setStorage({
+            key: 'employeesName',
+            data: "张三丰",
+          })
         }
       }
     })
