@@ -1,6 +1,8 @@
 // page/common/sign/sign.js
 // 上传图片
 const uploadImgUrl = require('../../../config').uploadImgUrl;
+// 签收工资
+const signForWagesUrl = require('../../../config').signForWagesUrl;
 
 var content = null;
 var touchs = [];
@@ -12,7 +14,6 @@ wx.getSystemInfo({
   success: function (res) {
     canvasw = res.windowWidth;
     canvash = canvasw * 9 / 6;
-    console.log(canvash)
   },
 }),
 
@@ -21,7 +22,11 @@ wx.getSystemInfo({
     * 页面的初始数据
     */
     data: {
-      signImage: '',
+      
+    },
+  onLoad: function (options) {
+    console.log('----------------------')
+      console.log(options.payid)
     },
     // 画布的触摸移动开始手势响应
     start: function (event) {
@@ -109,28 +114,49 @@ wx.getSystemInfo({
         canvasId: 'firstCanvas',
 
         success: function (res) {
-        
+        console.log(res)
           wx.uploadFile({
             url: uploadImgUrl, 
             filePath: res.tempFilePath,
             name: 'file',
             formData: {
               token: getApp().globalData.token,
+              suffix:'jpg'
             },
             success: function (res) {
-              var data = res.data
+              var imgUrl = JSON.parse(res.data).obj;
               console.log(res)
-            }
-          })
-
-        
-          //打印图片路径
-          console.log(res.tempFilePath)
-          //设置保存的图片
-          that.setData({
-            signImage: res.tempFilePath
+              console.log(imgUrl)
+              wx.request({
+                url: signForWagesUrl,
+                data: {
+                  token: getApp().globalData.token,
+                 payid:4,
+                  sign_name: imgUrl
+                },
+                success: function (res) {
+                  console.log(res);
+                  if (res.data.status == 0) {
+                    wx.showToast({
+                      title: '工资签收成功',
+                      icon: 'success',
+                      duration: 2000,
+                      success: function () {
+                        setTimeout(function () {
+                          wx.navigateTo({
+                            url: '/page/employee/payment/index/index',
+                          })
+                        }, 1000)
+                      }
+                    })
+                   
+                  }
+                }
+              })
+            } 
           })
         }
+       
       })
 
     }

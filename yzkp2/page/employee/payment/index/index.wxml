@@ -89,7 +89,7 @@
           
           
           <view class='item-footer-item' >
-          <navigator hover-class='none' url='/page/common/sign/sign'>
+          <navigator hover-class='none' url='/page/common/sign/sign?payid={{item.id}}'>
            <text>签收</text> 
             <text>({{item.pay_date}})</text>
              </navigator>
