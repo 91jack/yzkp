@@ -173,6 +173,5 @@ module.exports = {
   workYear: workYear,// 工作经验
   height: height,// 身高要求
   demand: demand,// 首页-要求
-  uploadImg: uploadImg,  // 上传图片
   welfare: welfare,// 福利待遇
 }

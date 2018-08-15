@@ -22,11 +22,7 @@ wx.getSystemInfo({
     * 页面的初始数据
     */
     data: {
-      
-    },
-  onLoad: function (options) {
-    console.log('----------------------')
-      console.log(options.payid)
+      payid:'',
     },
     // 画布的触摸移动开始手势响应
     start: function (event) {
@@ -73,8 +69,15 @@ wx.getSystemInfo({
     * 生命周期函数--监听页面加载
     */
     onLoad: function (options) {
+      console.log(options.payid)
+      this.setData({
+        payid: options.payid
+      })
       //获得Canvas的上下文
       content = wx.createCanvasContext('firstCanvas')
+      content.setFillStyle('#ccc')
+      content.fillRect(0, 0, 705, 1090)
+      content.draw()
       //设置线的颜色
       content.setStrokeStyle("#000")
       //设置线的宽度
@@ -89,6 +92,7 @@ wx.getSystemInfo({
     * 生命周期函数--监听页面初次渲染完成
     */
     onReady: function () {
+
     },
 
     //绘制
@@ -109,7 +113,7 @@ wx.getSystemInfo({
     },
     //保存图片
     saveClick: function () {
-      var that = this
+      var _this = this
       wx.canvasToTempFilePath({
         canvasId: 'firstCanvas',
 
@@ -131,7 +135,7 @@ wx.getSystemInfo({
                 url: signForWagesUrl,
                 data: {
                   token: getApp().globalData.token,
-                 payid:4,
+                 payid:_this.data.payid,
                   sign_name: imgUrl
                 },
                 success: function (res) {
