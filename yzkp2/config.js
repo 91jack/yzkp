@@ -9,13 +9,13 @@ var config = {
   host,
 
   // 模拟登陆
-  testLoginUrl:`${host}test/login.json`,
-  
+  testLoginUrl: `${host}test/login.json`,
 
-  /*求职者模块*/
+
+  /* --求职者模块-- */
   // 新增简历基本信息
   addBasicUrl: `${host}resume/info/addBase.json`,
-  
+
   // 修改简历基本信息
   editBasicUrl: `${host}resume/info/editBase.json`,
 
@@ -38,7 +38,7 @@ var config = {
 
   // 修改项目经历
   editProjectUrl: `${host}resume/project/edit.json`,
- 
+
 
   // 获取招聘列表信息
   jobListUrl: `${host}recruit/notice/list.json`,
@@ -48,18 +48,36 @@ var config = {
 
   // 简历详情
   resumeUrl: `${host}resume/get.json`,
+  
   // 收藏与取消收藏
   // 投递简历
   // 简历是否公开，是否匿名
-  
-
-  /*员工模块*/
-  // 
 
 
+  /* --员工模块-- */
+  // 查看薪酬
+  payInformationUrl: `${host}employee/payInformation.json`,
 
+  // 签收工资
+  signForWagesUrl: `${host}employee/signForWages.json`,
 
-  /*企业模块*/
+  // 补贴、扣除、奖励工资详情
+  bonusOrdeductionUrl: `${host}employee/bonusOrdeduction.json`,
+
+  // 查看合同
+  getContractUrl: `${host}employee/getContract.json`,
+  // 基本信息填写
+  regBaseInfoUrl: `${host}employee/regBaseInfo.json`,
+  // 证明材料填写
+  regImgInfoUrl: `${host}employee/regImgInfo.json`,
+
+  // 五险一金信息填写
+  regFiveRisksInfoUrl: `${host}employee/regFiveRisksInfo.json`,
+
+  // 工资卡信息填写
+  regBankInfoUrl: `${host}employee/regBankInfo.jsonn`,
+
+  /* --企业模块-- */
   // 发布全职招聘 发布兼职招聘
   addjobUrl: `${host}recruit/notice/add.json`,
 
@@ -89,11 +107,10 @@ var config = {
 
   // 搜索简历
   searchResumeUrl: `${host}resume/list.json`,
- 
-  
+
+
 
 
 };
 
 module.exports = config
-

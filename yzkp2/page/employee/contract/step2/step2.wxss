@@ -1,36 +1,25 @@
 page{
   background: #fff;
 }
-.post-job{
-  border-bottom: 15rpx solid #e8e8e8;
+.begin{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 41rpx 27rpx 36rpx 26rpx;
 }
-
-.tip{
-  height: 28rpx;
-  margin-bottom: 34rpx;
-  display: flex;
-}
-.tip>view{
-  display: inline-block;
-  height: 28rpx;
-  width: 8rpx;
-  background: #F39800;
-  margin-right: 8rpx;
-}
-.tip text{
-  display: inline-block;
-  height: 28rpx;
-  line-height: 28rpx;
+.begin text{
+  font-size: 30rpx;
   color: #353535;
-  font-size: 28rpx;
+}
+.begin .name{
   font-weight: bold;
 }
-.post-job-header{
-  height: 256rpx;
+.list{
+  padding-left: 28rpx;
 }
-.post-job.active{
-  border-bottom: none;
-}
-.post-job.active .post-job-header{
-  height: 170rpx;
+.list text{
+  display: block;
+  color: #6B6B6B;
+  line-height: 42rpx;
+  margin-bottom: 25rpx;
+  font-size: 26rpx;
 }

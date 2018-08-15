@@ -57,7 +57,7 @@
             <view class='det-left'>
               <view class='left-item'>
                 <image src='/image/index/area.png'></image>
-                <text>重庆</text>
+                <text>{{item.city}}</text>
               </view>
               <view class='left-item'>
                 <image src='/image/index/copy.png'></image>
