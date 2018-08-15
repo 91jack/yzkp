@@ -9,7 +9,7 @@ Page({
    */
   data: {
 
-    role:3,//用户角色 1：求职者 2：员工 3：企业
+    role:2,//用户角色 1：求职者 2：员工 3：企业
 
     jobList: [],
 
@@ -122,7 +122,7 @@ Page({
     wx.request({
       url: testLoginUrl,
       data: {
-       openId:'1001'
+       openId:'1003'
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded', // 默认值
