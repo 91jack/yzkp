@@ -38,6 +38,22 @@
   margin-top: 38rpx;
   margin-left: 11rpx;
 }
+.nav-item picker{
+  display: flex;
+  width: 186rpx;
+}
+.nav-bar .nav-item picker image{
+  position: absolute;
+  top: 0;
+  right: 55rpx;
+}
+.nav-item picker view{
+  width: 98rpx;
+  font-size: 28rpx;
+  color: #6B6B6B;
+  box-sizing: border-box;
+  padding-left: 45rpx;
+}
 
 /*bar内容展示区*/
 .bar{

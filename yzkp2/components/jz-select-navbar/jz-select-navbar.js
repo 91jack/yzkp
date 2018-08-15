@@ -11,8 +11,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    currentTab: [true, true, true,true],//控制nav-bar的显示
-    navBarData: ['推荐','地区', '行业', '要求'],
+    currentTab: [ true, true,true],//控制nav-bar的显示
+    navBarData: ['地区', '行业', '要求'],
     navbarShow: false
   },
 
