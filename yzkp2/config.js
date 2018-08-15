@@ -75,7 +75,7 @@ var config = {
   regFiveRisksInfoUrl: `${host}employee/regFiveRisksInfo.json`,
 
   // 工资卡信息填写
-  regBankInfoUrl: `${host}employee/regBankInfo.jsonn`,
+  regBankInfoUrl: `${host}employee/regBankInfo.json`,
 
   /* --企业模块-- */
   // 发布全职招聘 发布兼职招聘

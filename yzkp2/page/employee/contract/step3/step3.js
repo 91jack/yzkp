@@ -8,14 +8,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    urlData: ['', '', '', '', '', '', '', '','']
+    urlData: ['', '', '', '', '', '', '', '',''],
+    id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.getStorage({
+      key: 'employeesId',
+      success: function (res) {
+        that.setData({
+          id: Number(res.data)
+        })
+      },
+    })
   },
 
   /**
@@ -32,73 +41,52 @@ Page({
   
   },
   // 上传照片
-  uploadPic:function(){
-    // wx.uploadFile({
-    //   url: uploadImgUrl,
-    //   filePath: tempFilePaths[0],
-    //   name: 'file', 
-    //   formData: {
-    //     file:'',
-    //     token: getApp().globalData.token
-    //   }
-    // wx.chooseImage({
-    //   success: function (res) {
-    //     var tempFilePaths = res.tempFilePaths
-    //     wx.uploadFile({
-    //       url: uploadImgUrl, //仅为示例，非真实的接口地址
-    //       filePath: tempFilePaths[0],
-    //       name: 'file',
-    //       formData: {
-    //         'user': 'test'
-    //       },
-    //       success: function (res) {
-    //         var data = res.data
-    //         //do something
-    //       }
-    //     })
-    //   }
-    // })
-    console.log(11111111);
+  uploadPic:function(e){
+    var that = this;
+    var i = Number(e.currentTarget.dataset.idx);
+    var currentUrl = "urlData[" + i +"]";
+    wx.chooseImage({
+      success: function (res) {
+        console.log(res);        
+        var tempFilePaths = res.tempFilePaths[0];
+        that.setData({
+          [currentUrl]: tempFilePaths
+        })
+      }
+    })
   },
   submitBtn: function () {
     var _this = this;
     wx.request({
-      url: regBaseInfoUrl,
+      url: regImgInfoUrl,
       data: {
         token: getApp().globalData.token,
-        name: '小张',
-        sex: '男',
-        id_no: '500000000000000000',
-        education_level: '本科',
-        mobile: '18500000000',
-        link_mobile: '13113113111',
-        address: '重庆市金开大道110号永固金鼎时代17楼4-6',
-        department: '技术部',
-        position: '程序员鼓励师',
-        in_date: '2018-08-13'
+        id: this.data.id,
+        head_img: this.data.urlData[0],
+        id_no_img1: this.data.urlData[1],
+        id_no_img2: this.data.urlData[2],
+        account_img1: this.data.urlData[3],
+        account_img2: this.data.urlData[4],
+        account_img3: this.data.urlData[5],
+        education_img: this.data.urlData[6],
+        leave_img: this.data.urlData[7],
+        other_img: this.data.urlData[8]
       },
       success: function (res) {
         console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
-            title: '信息提交成功',
+            title: '材料提交成功',
             icon: 'success',
             duration: 2000,
-            success: function () {
-              setTimeout(function () {
+            success:function(){
+              setTimeout(function(){
                 wx.navigateTo({
-                  url: '/page/employee/contract/step2/step2',
+                  url: '/page/employee/contract/step4/step4',
                 })
-              }, 1000)
+              },2000)
             }
           })
-          wx.setStorage({
-            key: 'employeesId',
-            data: res.data.obj.id,
-          }, {
-              key: 'employeesName',
-              data: _this.data.name
-            })
         }
       }
     })

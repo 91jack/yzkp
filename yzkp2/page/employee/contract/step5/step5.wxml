@@ -1,15 +1,15 @@
 <!--page/my/contract/step5/step5.wxml-->
 <view class='wage-card'>
   <view class='wage-card-item'>
-    <input placeholder='请输入银行卡账户名' placeholder-style='color:#AEAEAE'></input>
+    <input data-idx="0" bindinput='getValue' placeholder='请输入银行卡账户名' placeholder-style='color:#AEAEAE'></input>
   </view>
   <view class='wage-card-item'>
-    <input placeholder='请输入银行卡账号' placeholder-style='color:#AEAEAE'></input>
+    <input data-idx="1" bindinput='getValue' placeholder='请输入银行卡账号' placeholder-style='color:#AEAEAE'></input>
   </view>
   <view class='wage-card-item'>
-    <input placeholder='请输入开户行' placeholder-style='color:#AEAEAE'></input>
+    <input data-idx="2" bindinput='getValue' placeholder='请输入开户行' placeholder-style='color:#AEAEAE'></input>
   </view>
-  <navigator hover-class='none' url='/page/employee/contract/step7/step7'>
-    <view class='btn'>下一步</view>
-  </navigator>
+  <!-- <navigator hover-class='none' url='/page/employee/contract/step7/step7'> -->
+    <view class='btn' bindtap='submitBtn'>下一步</view>
+  <!-- </navigator> -->
 </view>

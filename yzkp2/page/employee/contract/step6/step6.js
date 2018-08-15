@@ -1,18 +1,51 @@
 // page/my/contract/step6/step6.js
+const getContractUrl = require('../../../../config').getContractUrl;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var _this = this;
+    wx.getStorage({
+      key: 'employeesId',
+      success: function (res) {
+        _this.setData({
+          id: res.data
+        })
+      },
+    })
+    wx.request({
+      url: getContractUrl,
+      data: {
+        token: getApp().globalData.token,
+        id:this.data.id
+      },
+      success: function (res) {
+        console.log(res)
+        // if (res.data.status == 0) {
+        //   wx.showToast({
+        //     title: '信息提交成功',
+        //     icon: 'success',
+        //     duration: 2000,
+        //     success: function () {
+        //       setTimeout(function () {
+        //         wx.navigateTo({
+        //           url: '/page/employee/contract/step6/step6',
+        //         })
+        //       }, 2000)
+        //     }
+        //   })
+        // }
+      }
+    })
   },
 
   /**

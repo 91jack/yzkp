@@ -441,10 +441,13 @@ checkbox{
   margin-top: 10rpx;
   margin-bottom: 44rpx;
 }
-.detail-place input{
+.detail-place textarea{
+  width: 705rpx;
+  height: 120rpx;
+  box-sizing: border-box;
   font-size: 28rpx;
-  padding-left: 26rpx;
-  color: #AEAEAE;
+  padding: 26rpx;
+  color: #6B6B6B;
 }
 .post-job-btn{
   margin:auto;

@@ -8,11 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:'',
+    name:'小张',
     sex:'',
     id_no:'',
     education_level:'',
-    mobile:'',
+    mobile:'18500000000',
     link_mobile:'',
     address:'',
     department:'',
@@ -21,9 +21,9 @@ Page({
     pickerSel:["男","女"],
     sexIndex:0,
     sexHide:false,
-    workYearSel:[],
-    workYearIndex:0,
-    workYearHide:false
+    educationSel:[],
+    educationIndex:0,
+    educationHide:false
   },
 
   /**
@@ -32,40 +32,67 @@ Page({
   onLoad: function (options) {
     var That = this;
     wx.getStorage({
-      key: 'workYearArr',
+      key: 'educationArr',
       success: function(res) {
         That.setData({
-          workYearSel:res.data
+          educationSel:res.data
         })
       },
     })
   },
-  // 获取姓名
-  getName:function(e){
-    this.setData({
-      name:e.detail.value
-    })
+  // 获取input值
+  getValue:function(e){
+    var i = e.currentTarget.dataset.inx;
+    if(i=="0"){           //姓名
+      this.setData({
+        name: e.detail.value
+      })   
+    } else if (i == "1") {// 获取身份证号码
+      this.setData({
+        id_no: e.detail.value
+      })
+    } else if (i == "2") {// 获取电话号码
+      this.setData({
+        mobile: e.detail.value
+      })    
+    } else if (i == "3") {// 获取紧急联系电话
+      this.setData({
+        link_mobile: e.detail.value
+      })    
+    } else if (i == "4") {// 获取地址
+      this.setData({
+        address: e.detail.value
+      })   
+    } else if (i == "5") {// 获取部门
+      this.setData({
+        department: e.detail.value
+      })      
+    } else if (i == "6") {// 获取职位
+      this.setData({
+        position: e.detail.value
+      })     
+    } else if (i == "7") {// 获取入职时间
+      this.setData({
+        in_date: e.detail.value
+      })    
+    }
   },
-  // 获取身份证号码
-  getIdnum:function(e){
-    this.setData({
-      id_no: e.detail.value
-    })
-  },
+  
+  
   // picker
   bindPickerChange: function (e){
-    console.log(e);
     var i = e.currentTarget.dataset.idx;
-    console.log(typeof i);
     if(i=="0"){
       this.setData({
         sexIndex: e.detail.value,
-        sexHide:true
+        sexHide:true,
+        sex: this.data.pickerSel[e.detail.value]
       })
     }else if(i=="1"){
       this.setData({
-        workYearIndex: e.detail.value,
-        workYearHide: true
+        educationIndex: e.detail.value,
+        educationHide: true,
+        education_level: this.data.educationSel[e.detail.value]
       })
     }
     
@@ -89,30 +116,30 @@ Page({
       url: regBaseInfoUrl,
       data: {
         token: getApp().globalData.token,
-        name:'小张',
-        sex:'男',
-        id_no:'500000000000000000',
-        education_level:'本科',
-        mobile:'18500000000',
-        link_mobile:'13113113111',
-        address:'重庆市金开大道110号永固金鼎时代17楼4-6',
-        department:'技术部',
-        position:'程序员鼓励师',
-        in_date:'2018-08-13'
+        name:this.data.name,
+        sex: this.data.sex,
+        id_no: this.data.id_no,
+        education_level: this.data.education_level,
+        mobile: this.data.mobile,
+        link_mobile: this.data.link_mobile,
+        address: this.data.address,
+        department: this.data.department,
+        position: this.data.position,
+        in_date: this.data.in_date
       },
       success: function (res) {
-        console.log(res)
+        console.log(res);
         if (res.data.status == 0) {
           wx.showToast({
             title: '信息提交成功',
             icon: 'success',
             duration: 2000,
-            success:function(){
-              setTimeout(function(){
+            success: function () {
+              setTimeout(function () {
                 wx.navigateTo({
                   url: '/page/employee/contract/step2/step2',
                 })
-              },1000)
+              }, 1000)
             }
           })
           wx.setStorage({
@@ -121,7 +148,7 @@ Page({
           })
           wx.setStorage({
             key: 'employeesName',
-            data: "张三丰",
+            data: _this.data.name,
           })
         }
       }
