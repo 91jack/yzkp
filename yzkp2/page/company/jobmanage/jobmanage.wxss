@@ -62,6 +62,9 @@ page{
 .company-btn-item text{
   font-size: 22rpx;
 }
+.managejob-cont{
+  margin-bottom: 150rpx;
+}
 .manage-job-btn{
   width: 701rpx;
   height: 108rpx;
@@ -80,4 +83,20 @@ page{
   font-size: 28rpx;
   color: #868686;
   line-height: 108rpx;
+}
+.job-manage-postjob-btn{
+  width: 100%;
+  height: 117rpx;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.job-manage-postjob-btn .job-manage-postjob-btn-item{
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,rgba(105,100,253,1),rgba(56,48,235,1));
+  line-height: 117rpx;
+  font-size: 30rpx;
+  color: #fff;
 }

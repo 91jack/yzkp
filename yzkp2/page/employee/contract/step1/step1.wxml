@@ -73,9 +73,7 @@
 </view>
 
 <view class='post-job-btn'></view>
-<navigator hover-class='none' url='/page/employee/contract/step3/step3'>
-  <view class='btn'>下一步</view>
-</navigator>
+<view class='btn' bindtap='submitBtn'>下一步</view>
 
 
 

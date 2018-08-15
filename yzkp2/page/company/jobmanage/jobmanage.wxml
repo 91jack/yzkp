@@ -72,7 +72,11 @@
   </block>
 </view>
 
-<view class='manage-job-btn'>
-  <image src='/image/mine/add.png'></image>
-  <text>发布职位</text>
+<view class='job-manage-postjob-btn'>
+  <navigator url='/page/company/postparttime/postparttime' hover-class='none'>
+    <view class='job-manage-postjob-btn-item'>发布兼职</view>
+  </navigator>
+  <navigator url='/page/company/postfulltime/postfulltime' hover-class='none'>
+    <view class='job-manage-postjob-btn-item'>发布全职</view> 
+  </navigator>
 </view>

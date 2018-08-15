@@ -1,6 +1,6 @@
 // page/index/contract/step2/step2.js
 // 员工基本信息填写
-const regBaseInfoUrl = require('../../../config').regBaseInfoUrl;
+const regBaseInfoUrl = require('../../../../config').regBaseInfoUrl;
 
 Page({
 
