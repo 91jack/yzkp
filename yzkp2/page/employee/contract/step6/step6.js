@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:''
+    id:'',
+    content:''
   },
 
   /**
@@ -17,35 +18,36 @@ Page({
     wx.getStorage({
       key: 'employeesId',
       success: function (res) {
-        _this.setData({
-          id: res.data
+        wx.request({
+          url: getContractUrl,
+          data: {
+            token: getApp().globalData.token,
+            id: res.data
+          },
+          success: function (result) {
+            if (result.data.status == 0) {
+              _this.setData({
+                content: result.data.obj.content
+              })
+              // wx.showToast({
+              //   title: '信息提交成功',
+              //   icon: 'success',
+              //   duration: 2000,
+              //   success: function () {
+              //     setTimeout(function () {
+              //       wx.navigateTo({
+              //         url: '/page/employee/contract/step6/step6',
+              //       })
+              //     }, 2000)
+              //   }
+              // })
+            }
+          }
         })
+       
       },
     })
-    wx.request({
-      url: getContractUrl,
-      data: {
-        token: getApp().globalData.token,
-        id:this.data.id
-      },
-      success: function (res) {
-        console.log(res)
-        // if (res.data.status == 0) {
-        //   wx.showToast({
-        //     title: '信息提交成功',
-        //     icon: 'success',
-        //     duration: 2000,
-        //     success: function () {
-        //       setTimeout(function () {
-        //         wx.navigateTo({
-        //           url: '/page/employee/contract/step6/step6',
-        //         })
-        //       }, 2000)
-        //     }
-        //   })
-        // }
-      }
-    })
+   
   },
 
   /**

@@ -70,7 +70,8 @@ var config = {
   regBaseInfoUrl: `${host}employee/regBaseInfo.json`,
   // 证明材料填写
   regImgInfoUrl: `${host}employee/regImgInfo.json`,
-
+  // 查看所有信息
+  allInfoUrl: `${host}employee/allInfo.json`,
   // 五险一金信息填写
   regFiveRisksInfoUrl: `${host}employee/regFiveRisksInfo.json`,
 

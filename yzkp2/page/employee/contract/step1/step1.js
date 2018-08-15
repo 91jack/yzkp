@@ -138,6 +138,8 @@ Page({
               setTimeout(function () {
                 wx.navigateTo({
                   url: '/page/employee/contract/step2/step2',
+                  // url: '/page/employee/contract/step3/step3',                  
+                  // url: '/page/employee/contract/step7/step7',                  
                 })
               }, 1000)
             }

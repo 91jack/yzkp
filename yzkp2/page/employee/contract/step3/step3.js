@@ -46,12 +46,30 @@ Page({
     var i = Number(e.currentTarget.dataset.idx);
     var currentUrl = "urlData[" + i +"]";
     wx.chooseImage({
-      success: function (res) {
-        console.log(res);        
+      success: function (res) {      
         var tempFilePaths = res.tempFilePaths[0];
         that.setData({
           [currentUrl]: tempFilePaths
         })
+        wx.uploadFile({
+          url: uploadImgUrl, 
+          filePath: tempFilePaths,
+          name: 'file',
+          formData: {
+            token: getApp().globalData.token,
+            suffix:'png'
+          },
+          success: function (result) {
+            var imgData = JSON.parse(result.data);
+            if (imgData.status==0){
+              console.log(imgData.obj)
+              that.setData({
+                [currentUrl]: imgData.obj
+              })
+            }
+          }
+        })
+      
       }
     })
   },
@@ -74,18 +92,19 @@ Page({
       },
       success: function (res) {
         console.log(res)
+        console.log(_this.data.urlData)
         if (res.data.status == 0) {
           wx.showToast({
             title: '材料提交成功',
             icon: 'success',
             duration: 2000,
-            success:function(){
-              setTimeout(function(){
+            success: function () {
+              setTimeout(function () {
                 wx.navigateTo({
                   url: '/page/employee/contract/step4/step4',
                 })
-              },2000)
-            }
+              }, 2000)
+            }            
           })
         }
       }

@@ -1,2 +1,10 @@
 <!--page/my/contract/step6/step6.wxml-->
-
+<rich-text>{{content}}</rich-text>
+<view class='hetong'>
+  <navigator hover-class='none' url='/page/tabBar/index/index'>
+    <view class='yes'>不同意</view>
+  </navigator>
+  <navigator url='/page/employee/contract/step7/step7' hover-class='none'>
+    <view class='no'>同意</view>
+  </navigator>
+</view>
