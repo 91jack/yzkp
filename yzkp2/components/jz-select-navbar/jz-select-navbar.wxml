@@ -15,21 +15,6 @@
   <!--nav-bar内容区-->
     <view class='bar'>
       <!--推荐-->  
-      <!-- <view hidden="{{currentTab[0]}}" data-idx="0" bindtap='hideBar'>
-        <view class='bar-cont'>
-          <view>
-            <text>推荐</text>
-          </view>
-          <view>
-            <text>最新</text>          
-          </view>
-        </view>
-        <view class='cover'></view>
-      </view>  -->
-      <!-- <picker mode="selector">
-        <view>推荐</view>
-        <view>最新</view>
-      </picker> -->
 
       <!--地区-->
 
