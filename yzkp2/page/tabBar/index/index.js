@@ -1,7 +1,9 @@
 // pages/index/index.js
+// var base = require('/utils/basedata.js');
+// base.baseData()
 const testLoginUrl = require('../../../config').testLoginUrl;
 Page({
-
+  
   /**
    * 页面的初始数据
    */
