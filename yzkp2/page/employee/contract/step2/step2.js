@@ -1,4 +1,4 @@
-// page/index/contract/step2/step2.js
+// page/index/contract/step1/step1.js
 Page({
 
   /**

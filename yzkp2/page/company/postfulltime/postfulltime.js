@@ -37,15 +37,15 @@ Page({
       data: {
         token: getApp().globalData.token,
         type:0,
-        name:'高级前端工程师',
+        name:'前端工程师',
         num:100,
-        educationLevel:'博士',
-        workYear:'15年',
+        educationLevel:'本科',
+        workYear:'1年',
         payType:'月结',
         pay: '1.5-2万',
         height:'170cm-185cm',
         sex:'性别不限',
-        linkMan:'找我啥事',
+        linkMan:'张飞',
         linkPhone:18502323596,
         attr:'普通职位',
         welfare:'五险一金,住房补贴,交通补贴',
@@ -57,7 +57,16 @@ Page({
       },
       success: function (res) {
         console.log(res)
-       
+        if(res.data.status==0){
+          wx.showToast({
+            title: '职位发布成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.navigateTo({
+            url: '/page/company/jobmanage/jobmanage'
+          })
+        }
       }
     })
   }

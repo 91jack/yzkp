@@ -10,7 +10,6 @@
 
 <!-- 职位管理 -->
 
-
 <view class='managejob-cont'>
   <block wx:for="{{jobList}}">
     <view class='cont-item'>
@@ -18,7 +17,7 @@
         <text class='title'>{{item.name}}</text>
         <text class='time'>{{item.refreshTime}}</text>
       </view>
-     
+      <!-- 全职 -->
       <view class='cont-detail' wx:if="{{item.type==0}}">
         <view class='det-left'>
           <view class='left-item'>
@@ -32,6 +31,24 @@
           <view class='left-item'>
             <image src='/image/index/xueli.png'></image>
             <text>{{item.educationLevel}}</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/height.png'></image>
+            <text>{{item.height}}</text>
+          </view>
+        </view>
+        <view class='det-right'>{{item.pay}}</view>
+      </view>
+      <!-- 兼职 -->
+      <view class='cont-detail' wx:if="{{item.type==1}}">
+        <view class='det-left'>
+          <view class='left-item'>
+            <image src='/image/index/area.png'></image>
+            <text>{{item.city}}</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/copy.png'></image>
+            <text>{{item.num}}人</text>
           </view>
           <view class='left-item'>
             <image src='/image/index/height.png'></image>
@@ -54,6 +71,7 @@
     </view>
   </block>
 </view>
+
 <view class='manage-job-btn'>
   <image src='/image/mine/add.png'></image>
   <text>发布职位</text>
