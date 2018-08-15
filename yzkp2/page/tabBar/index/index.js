@@ -129,7 +129,7 @@ Page({
       success: function (res) {
         getApp().globalData.token = res.data.obj.token;// 用户token
         getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
-
+        getApp().globalData.employee = res.data.obj.employee;// 求职者，员工简历
         wx.request({
           url: jobListUrl,
           data: {

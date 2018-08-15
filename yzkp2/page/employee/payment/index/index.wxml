@@ -6,7 +6,7 @@
   <view class='user-detail'>
     <view class='user-detail-item-left'>
       <text class='user-detail-item-tit'>姓名:</text>
-      <text>张三丰</text>
+      <text>{{employee.name}}</text>
     </view>
     <view class='user-detail-item-right'>
       <text class='user-detail-item-tit'>性别:</text>

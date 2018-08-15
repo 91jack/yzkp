@@ -1,5 +1,5 @@
 // page/my/payment/index/index.js
-// 员工基本信息填写
+// 员工查看薪酬
 const payInformationUrl = require('../../../../config').payInformationUrl;
 
 Page({
@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    employee:getApp().globalData.employee
   },
 
   /**
@@ -22,7 +22,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**

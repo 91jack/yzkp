@@ -3,7 +3,7 @@
 App({
   onLaunch: function () {
     // 城市列表
-    
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -52,7 +52,8 @@ App({
     token:'',
    
 
-    resume:'',//简历
+    resume:null,//简历
+    employee:null,
     userInfo: null
   }
 })

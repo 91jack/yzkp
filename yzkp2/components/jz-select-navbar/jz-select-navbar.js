@@ -1,15 +1,15 @@
 // page/common/jz-select-navbar/jz-select-navbar.js
 var base = require('../../utils/basedata.js');
-base.cityList(); //城市列表
-base.companyType(); // 公司性质
-base.companySize(); // 公司规模
-base.monthPay(); // 月薪
-base.education(); // 学历
-base.workYear(); // 工作经验
-base.height(); // 身高要求
-base.demand(); // 首页-要求
-base.uploadImg(); // 上传图片
-base.welfare(); // 福利待遇
+// base.cityList(); //城市列表
+// base.companyType(); // 公司性质
+// base.companySize(); // 公司规模
+// base.monthPay(); // 月薪
+// base.education(); // 学历
+// base.workYear(); // 工作经验
+// base.height(); // 身高要求
+// base.demand(); // 首页-要求
+// base.uploadImg(); // 上传图片
+// base.welfare(); // 福利待遇
 
 Component({
   /**
