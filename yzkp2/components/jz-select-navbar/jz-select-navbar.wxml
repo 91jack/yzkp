@@ -3,8 +3,8 @@
   
   <view class='nav-bar'>
     <view class='nav-item suguest'>
-      <picker mode="selector">
-        <view>推荐</view>
+      <picker mode="selector" range="{{isRecommon}}" range-key='name' bindchange='bindPickerChange' value="{{index}}">
+        <view>{{isRecommon[index].name}}</view>
         <image class='select_img' src='/image/index/return1.png'></image>
       </picker>
     </view>

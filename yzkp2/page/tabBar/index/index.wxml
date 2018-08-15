@@ -3,9 +3,9 @@
 <import src ="/template/joblist/joblist.wxml"/>
 
 
-  <navigator hover-class="none" url='/page/company/joblist/joblist'>
- <template is="topsearch"/>
-  </navigator>
+<navigator hover-class="none" url='/page/company/joblist/joblist'>
+  <template is="topsearch"/>
+</navigator>
 
 <view class='banner'>
   <image src='/image/index/banner.png'></image>

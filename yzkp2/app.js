@@ -45,11 +45,13 @@ App({
         //将坐标传到后台 返回区域
 
       
-      }
+      } 
     })
   },
   globalData: {
     token:'',
+   
+
     resume:'',//简历
     userInfo: null
   }

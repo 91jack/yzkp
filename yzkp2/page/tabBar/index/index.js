@@ -1,7 +1,9 @@
 // pages/index/index.js
-var base = require('../../../utils/basedata.js');
-base.baseData()
+// var base = require('../../../utils/basedata.js');
+// base.cityList();//城市列表
+
 const testLoginUrl = require('../../../config').testLoginUrl;
+const jobListUrl = require('../../../config').jobListUrl;
 Page({
   
   /**
@@ -127,10 +129,23 @@ Page({
       success: function (res) {
         getApp().globalData.token = res.data.obj.token;// 用户token
         getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
-       
+
+
+      }
+    })
+
+    wx.request({
+      url: jobListUrl,
+      data: {
+        token: getApp().globalData.token,
+        // type: options.type ? 0 : 1,//最新0推荐1
+        // recruitType: options.recruitType ? 0 : 1//全职0兼职1
+      },
+      success: function (res) {
         console.log(res)
+        console.log(res.data.list)
         _this.setData({
-          jobList:res.data.list
+          jobList: res.data.list
         })
       }
     })
@@ -176,5 +191,6 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  
 })
