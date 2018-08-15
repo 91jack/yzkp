@@ -1,7 +1,7 @@
 <!--page/my/payment/index/index.wxml-->
 <view class='user'>
   <view class='user-pic'>
-    <image src=''></image>
+    <image src='{{employee.headImg}}'></image>
   </view>
   <view class='user-detail'>
     <view class='user-detail-item-left'>
@@ -10,23 +10,23 @@
     </view>
     <view class='user-detail-item-right'>
       <text class='user-detail-item-tit'>性别:</text>
-      <text>男</text>
+      <text>{{employee.sex}}</text>
     </view>
     <view class='user-detail-item-left'>
       <text class='user-detail-item-tit'>职位:</text>
-      <text>javascript工程师</text>
+      <text>{{employee.position}}</text>
     </view>
     <view class='user-detail-item-right'>
-      <text class='user-detail-item-tit'>职级:</text>
-      <text>小职员</text>
+      <text class='user-detail-item-tit'>部门:</text>
+      <text>{{employee.department}}</text>
     </view>
     <view class='user-detail-idcard'>
       <text class='user-detail-item-tit'>身份证号码:</text>
-      <text>500132548965745528</text>
+      <text>{{employee.idNo}}</text>
     </view>
     <view class='user-detail-idcard'>
       <text class='user-detail-item-tit'>入职时间:</text>
-      <text>2019-09-09</text>
+      <text>{{employee.inDate}}</text>
     </view>
   </view>
 </view>
@@ -37,50 +37,75 @@
     <text>我的工资条</text>
   </view>
   <view class='payment-date'>
-    <view class='payment-date-item active'>本月</view>
-    <view class='payment-date-item'>近半年</view>
-    <view class='payment-date-item'>近一年</view>
+    <view class="payment-date-item {{timeflag==1?'active':''}}" data-timeflag="1" bindtap="payFn">近半年</view>
+    <view class="payment-date-item {{timeflag==2?'active':''}}" data-timeflag="2" bindtap="payFn">近一年</view>
+    <view class="payment-date-item {{timeflag==3?'active':''}}" data-timeflag="3" bindtap="payFn">近两年</view>
   </view>
 
   <view class='payment-cont'>
+    <block wx:for="{{payList}}">
     <view class='payment-cont-item'>
+
       <view class='item-top'>
+    
         <view class='item-top-item'>
           <text class='item-top-item-tit'>基本工资</text>
-          <text>8888.88</text>
+          <text>{{item.base}}</text>
         </view>
         <view class='item-top-item'>
           <text class='item-top-item-tit'>绩效工资</text>
-          <text>8888.88</text>
+          <text>{{item.performance}}</text>
         </view>
 
         <view class='item-top-item active'>
-          <navigator hover-class='none' url='/page/my/payment/subsidy/subsidy'>
+          <navigator hover-class='none' url='/page/employee/payment/subsidy/subsidy?type=1&payid={{item.id}}'>
             <text class='item-top-item-tit'>补贴工资</text>
-            <text>8888.88</text>
+            <text>{{item.subsidy}}</text>
           </navigator>
         </view>
       
         <view class='item-top-item active'>
-         <navigator hover-class='none' url='/page/my/payment/award/award'>
+         <navigator hover-class='none' url='/page/employee/payment/subsidy/subsidy?type=3&payid={{item.id}}'>
             <text class='item-top-item-tit'>奖励工资</text>
-            <text>8888.88</text>
+            <text>{{item.bonus}}</text>
           </navigator>
         </view>
 
         <view class='item-top-item active'>
-          <navigator hover-class='none' url='/page/my/payment/deduct/deduct'>
+          <navigator hover-class='none' url='/page/employee/payment/subsidy/subsidy?type=2&payid={{item.id}}'>
             <text class='item-top-item-tit'>扣除工资</text>
-            <text>8888.88</text>
+            <text>{{item.deduction}}</text>
           </navigator>
         </view>
 
       </view>
+
       <view class='item-footer'>
-        <view class='item-footer-item'>应发:8K</view>
-        <view class='item-footer-item'>实发:8K</view>
-        <view class='item-footer-item'>已签收</view>
+      
+        <view class='item-footer-item'>应发:{{item.must_pay}}</view>
+        <view class='item-footer-item'>实发:{{item.final_pay}}</view>
+       
+        <block wx:if="{{item.state==0}}">
+          
+          
+          <view class='item-footer-item' >
+          <navigator hover-class='none' url='/page/common/sign/sign'>
+           <text>签收</text> 
+            <text>({{item.pay_date}})</text>
+             </navigator>
+          </view>
+          
+        </block>
+
+        <block wx:if="{{item.state==1}}">
+       
+          <view class='item-footer-item active' >
+            <text>已签收</text> 
+            <text>({{item.pay_date}})</text>
+          </view>
+        </block>
       </view>
     </view>
+    </block>
   </view>
 </view>

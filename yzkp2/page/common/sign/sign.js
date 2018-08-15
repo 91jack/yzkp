@@ -1,4 +1,7 @@
 // page/common/sign/sign.js
+// 上传图片
+const uploadImgUrl = require('../../../config').uploadImgUrl;
+
 var content = null;
 var touchs = [];
 var canvasw = 0;
@@ -106,6 +109,21 @@ wx.getSystemInfo({
         canvasId: 'firstCanvas',
 
         success: function (res) {
+        
+          wx.uploadFile({
+            url: uploadImgUrl, 
+            filePath: res.tempFilePath,
+            name: 'file',
+            formData: {
+              token: getApp().globalData.token,
+            },
+            success: function (res) {
+              var data = res.data
+              console.log(res)
+            }
+          })
+
+        
           //打印图片路径
           console.log(res.tempFilePath)
           //设置保存的图片

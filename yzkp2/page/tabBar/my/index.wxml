@@ -19,7 +19,7 @@
 </view>
 
 <view >
-<block wx:for="{{jobSeekerList}}">
+<block wx:for="{{employeeList}}">
     <navigator hover-class='none' url="{{item.url}}">
       <view class='box sec'>
         <view class='left'>

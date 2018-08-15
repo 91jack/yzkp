@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    employee:getApp().globalData.employee
+    employee:getApp().globalData.employee,
+    payList:[],
+    timeflag:0
   },
 
   /**
@@ -30,54 +32,37 @@ Page({
    */
   onShow: function () {
     var _this = this;
+    this.payFn()
+  },
+  payFn:function(event){
+    var _this = this;
+    //console.log(event.currentTarget.dataset.timeflag);
+    var timeflag = 0;
+    if(event){
+      timeflag = event.currentTarget.dataset.timeflag;
+    }
+    
+    
     wx.request({//工资条
       url: payInformationUrl,
       data: {
         token: getApp().globalData.token,
-        timeflag:1
+        timeflag: timeflag
       },
       success: function (res) {
         console.log(res)
         if (res.data.status == 0) {
-         
-         
+          _this.setData({
+            payList: res.data.list,
+            timeflag: timeflag
+          })
+
         }
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   }
+
+
+
+
 })
