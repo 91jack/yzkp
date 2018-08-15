@@ -8,16 +8,68 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:''
+    name:'',
+    sex:'',
+    id_no:'',
+    education_level:'',
+    mobile:'',
+    link_mobile:'',
+    address:'',
+    department:'',
+    position:'',
+    in_date:'',
+    pickerSel:["男","女"],
+    sexIndex:0,
+    sexHide:false,
+    workYearSel:[],
+    workYearIndex:0,
+    workYearHide:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var That = this;
+    wx.getStorage({
+      key: 'workYearArr',
+      success: function(res) {
+        That.setData({
+          workYearSel:res.data
+        })
+      },
+    })
   },
-
+  // 获取姓名
+  getName:function(e){
+    this.setData({
+      name:e.detail.value
+    })
+  },
+  // 获取身份证号码
+  getIdnum:function(e){
+    this.setData({
+      id_no: e.detail.value
+    })
+  },
+  // picker
+  bindPickerChange: function (e){
+    console.log(e);
+    var i = e.currentTarget.dataset.idx;
+    console.log(typeof i);
+    if(i=="0"){
+      this.setData({
+        sexIndex: e.detail.value,
+        sexHide:true
+      })
+    }else if(i=="1"){
+      this.setData({
+        workYearIndex: e.detail.value,
+        workYearHide: true
+      })
+    }
+    
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

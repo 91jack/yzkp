@@ -31,6 +31,35 @@ Page({
   onShow: function () {
   
   },
+  // 上传照片
+  uploadPic:function(){
+    // wx.uploadFile({
+    //   url: uploadImgUrl,
+    //   filePath: tempFilePaths[0],
+    //   name: 'file', 
+    //   formData: {
+    //     file:'',
+    //     token: getApp().globalData.token
+    //   }
+    // wx.chooseImage({
+    //   success: function (res) {
+    //     var tempFilePaths = res.tempFilePaths
+    //     wx.uploadFile({
+    //       url: uploadImgUrl, //仅为示例，非真实的接口地址
+    //       filePath: tempFilePaths[0],
+    //       name: 'file',
+    //       formData: {
+    //         'user': 'test'
+    //       },
+    //       success: function (res) {
+    //         var data = res.data
+    //         //do something
+    //       }
+    //     })
+    //   }
+    // })
+    console.log(11111111);
+  },
   submitBtn: function () {
     var _this = this;
     wx.request({

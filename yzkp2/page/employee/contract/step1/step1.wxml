@@ -5,20 +5,22 @@
   </view>
   <view class='post-job-header'>
     <view class='header-item'>
-      <input placeholder='请输入姓名' placeholder-style='color:#AEAEAE'></input>
+      <input placeholder='请输入姓名' bindinput='getName' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
-      <picker>
-        <text>请选择性别</text>
+      <picker bindchange="bindPickerChange" data-idx="0" value="{{sexIndex}}" range="{{pickerSel}}">
+        <text hidden='{{sexHide}}'>请选择性别</text>
+        <text hidden='{{!sexHide}}'>{{pickerSel[sexIndex]}}</text>
         <image src='/image/index/return.png'></image>
       </picker>
     </view>
     <view class='header-item'>
-      <input placeholder='请输入身份证号码' maxlength='18' placeholder-style='color:#AEAEAE'></input>
+      <input placeholder='请输入身份证号码'bindinput='getIdnum' maxlength='18' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
-      <picker>
-        <text>请选择学历</text>
+      <picker bindchange="bindPickerChange" data-idx="1" value="{{workYearIndex}}" range='{{workYearSel}}'>
+        <text hidden='{{workYearHide}}'>请选择学历</text>
+        <text hidden='{{!workYearHide}}'>{{workYearSel[workYearIndex]}}</text>
         <image src='/image/index/return.png'></image>
       </picker>
     </view>
@@ -35,16 +37,22 @@
       <text>请选择现住地址:</text>
       <view class='choose-region'>
         <view class='choose-region-item'>
-          <text>省</text>
-          <image src='/image/index/return.png'></image>
+          <picker>
+            <text>省</text>
+            <image src='/image/index/return.png'></image>
+          </picker>
         </view>
         <view class='choose-region-item'>
-          <text>市</text>
-          <image src='/image/index/return.png'></image>
+          <picker>
+            <text>市</text>
+            <image src='/image/index/return.png'></image>
+          </picker>
         </view>
         <view class='choose-region-item'>
-          <text>区</text>
-          <image src='/image/index/return.png'></image>
+          <picker>
+            <text>区</text>
+            <image src='/image/index/return.png'></image>
+          </picker>
         </view>
       </view>
     </view>
