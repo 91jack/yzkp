@@ -32,12 +32,12 @@
     <view class='insurance-item'>
       <text>是否购买过公积金:</text>
       <radio-group data-idx="4" bindchange="radioChange">
-        <radio color='#868686'>是</radio>
-        <radio>否</radio>
+        <radio bindtap='fundShow' color='#868686'>是</radio>
+        <radio bindtap='fundHide'>否</radio>
       </radio-group>
     </view>
   </view>
-  <view class='public-gold'>
+  <view class='public-gold' hidden='{{fund_show}}'>
     <text>公积金卡号:</text>
     <input bindinput='getNum' placeholder='请输入公积金卡号' placeholder-style='color:#AEAEAE'></input>
   </view>

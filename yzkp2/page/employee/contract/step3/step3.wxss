@@ -1,4 +1,7 @@
 page{
   background: #fff;
 }
+.post-job.active{
+  margin-bottom: 150rpx;
+}
 

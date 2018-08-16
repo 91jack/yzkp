@@ -12,7 +12,8 @@ Page({
     account_type:'',
     farmer_safe:'',
     is_fund:'',
-    fund_no:''
+    fund_no:'',
+    fund_show:true
   },
 
   /**
@@ -36,7 +37,16 @@ Page({
   onReady: function () {
   
   },
-
+  fundShow:function(){
+    this.setData({
+      fund_show: false
+    })
+  },
+  fundHide:function(){
+    this.setData({
+      fund_show: true
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

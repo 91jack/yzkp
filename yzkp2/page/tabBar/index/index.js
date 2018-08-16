@@ -53,7 +53,7 @@ Page({
         text: '兼职职位'
       },
       {
-        url: '/page/employee/contract/step1/step1',
+        url: '/page/employee/contract/step4/step4',
         src: '/image/index/discuss.png',
         text: '合同管理'
       },

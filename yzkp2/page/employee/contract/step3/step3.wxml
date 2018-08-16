@@ -92,7 +92,7 @@
     </view>
   </view>
   <!-- 其它资格/职称证明 -->
-  <view class="post-job">
+  <view class="post-job active">
     <view class='tip'>
       <view></view>
       <text>其它资格/职称证明</text>
@@ -103,12 +103,6 @@
         <image src='/image/mine/add.png'></image>
         <text>其它资格/职称证明</text>
       </view>
-    </view>
-  </view>
-  <view class='post-job-btn'>
-    <view class='other-goods'>
-      <image src='/image/mine/add.png'></image>
-      <text>继续添加</text>
     </view>
   </view>
   <view class='btn' bindtap='submitBtn'>下一步</view>

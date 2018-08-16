@@ -88,6 +88,10 @@ Page({
         sexHide:true,
         sex: this.data.pickerSel[e.detail.value]
       })
+      wx.setStorage({
+        key: 'sex',
+        data: this.data.pickerSel[e.detail.value],
+      })
     }else if(i=="1"){
       this.setData({
         educationIndex: e.detail.value,
@@ -137,9 +141,9 @@ Page({
             success: function () {
               setTimeout(function () {
                 wx.navigateTo({
-                  url: '/page/employee/contract/step2/step2',
+                  // url: '/page/employee/contract/step2/step2',
                   // url: '/page/employee/contract/step3/step3',                  
-                  // url: '/page/employee/contract/step7/step7',                  
+                  url: '/page/employee/contract/step7/step7',                  
                 })
               }, 1000)
             }

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: ""
+    name: "",
+    sex:''
   },
 
   /**
@@ -20,7 +21,16 @@ Page({
         That.setData({
           name:res.data
         })
-      },
+      }
+    });
+    wx.getStorage({
+      key: 'sex',
+      success: function (res) {
+        console.log(res);
+        That.setData({
+          sex: res.data
+        })
+      }
     })
   },
 

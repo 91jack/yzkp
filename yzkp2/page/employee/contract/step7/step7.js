@@ -36,7 +36,11 @@ Page({
     position:'',
     safe_type:'',
     sex:'',
-    state:''//审核状态
+    state:'',//审核状态
+    timer: '',//定时器名字
+    timerData:'获取验证码',
+    countDownNum: 60,
+    openInterVal:true
   },
 
   /**
@@ -109,8 +113,39 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
+  // 获取验证码
+  getCode:function(event){
+    var _this = this;
+    if (_this.data.openInterVal){
+      this.setData({
+        timerData: '5s',
+      });
+      var time = 5;
+      var timer = setInterval(function () {
+        time--;
+        if (time > 0) {
+          _this.setData({
+            openInterVal: false,
+            countDownNum: time,
+            timerData: time + 's'
+          })
+        }
+        if (time == 0) {
+          clearInterval(timer);
+          time = 60;
+          _this.setData({
+            openInterVal: true,
+            timerData: '重新获取'
+          })
+        }
+      }, 1000)
+      timer;
+    }
+  },
+
+
   submitBtn: function () {
     var _this = this;
     wx.request({
