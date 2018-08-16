@@ -93,10 +93,11 @@ page{
   left: 0;
 }
 .job-manage-postjob-btn .job-manage-postjob-btn-item{
-  width: 50%;
+  width: 375rpx;
   height: 100%;
   background: linear-gradient(to right,rgba(105,100,253,1),rgba(56,48,235,1));
   line-height: 117rpx;
   font-size: 30rpx;
   color: #fff;
+  text-align: center;
 }

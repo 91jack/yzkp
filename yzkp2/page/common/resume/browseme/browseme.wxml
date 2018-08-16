@@ -17,13 +17,19 @@
     </navigator>
   </view>
   <view class="manageintro-nav">
-    <view class="manageintro-nav-item">简历编辑</view>
-    <view class="manageintro-nav-item">简历设置</view>
+    <navigator url='/page/common/resume/index/index' hover-class='none'>
+      <view class="manageintro-nav-item">简历编辑</view>
+    </navigator>
+    <navigator url='/page/common/resume/resumeconfig/resumeconfig' hover-class='none'>
+      <view class="manageintro-nav-item">简历设置</view>
+    </navigator>
     <view class="manageintro-nav-item active">谁看过我</view>
-    <view class="manageintro-nav-item">我的申请</view>
+    <navigator url='/page/common/resume/myapply/myapply' hover-class='none'>
+      <view class="manageintro-nav-item">我的申请</view>
+    </navigator>
   </view>
   <!-- ---------------- 谁看过我 ------------ -->
-  <view class="who-see" hidden="true">
+  <view class="who-see">
     <view class="who-see-item">
       <view class="see-me-company">
         <text class="see-me-company-name">渐臻科技</text>
