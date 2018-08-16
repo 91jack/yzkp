@@ -5,3 +5,8 @@ page{
 .page{
   margin-bottom: 150rpx;
 }
+.post-job-wealf-tit{
+  color: #868686;
+  font-size: 24rpx;
+  margin-bottom: 16rpx;
+}

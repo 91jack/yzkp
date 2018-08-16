@@ -2,52 +2,58 @@
   <view class="post-job">
     <view class='post-job-header'>
       <view class='header-item'>
-        <input placeholder='职位名称' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='职位名称' data-idx='0' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
-        <input placeholder='请输入招聘人数' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='请输入招聘人数' data-idx='1' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
-        <picker>
-          <text>学历要求</text>
+        <picker bindchange="bindPickerChange" data-idx="0" value="{{eduIndex}}" range="{{eduData}}">
+          <text hidden='{{eduHide}}'>学历要求</text>
+          <text hidden='{{!eduHide}}'>{{eduData[eduIndex]}}</text>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
-        <picker>
-          <text>经验要求</text>
+        <picker bindchange="bindPickerChange" data-idx="1" value="{{exerciseIndex}}" range="{{exerciseData}}">
+          <text hidden='{{exerciseHide}}'>经验要求</text>
+          <text hidden='{{!exerciseHide}}'>{{exerciseData[exerciseIndex]}}</text>          
           <image src='/image/index/return.png'></image>        
         </picker>
       </view>
       <view class='header-item'>
-        <picker>
-          <text>薪资结算方式</text>
+        <picker bindchange="bindPickerChange" data-idx="2" value="{{styleIndex}}" range="{{payStyle}}">
+          <text hidden='{{styleHide}}'>薪资结算方式</text>
+          <text hidden='{{!styleHide}}'>{{payStyle[styleIndex]}}</text>
           <image src='/image/index/return.png'></image>        
         </picker>
       </view>
       <view class='header-item'>
-        <picker>
-          <text>薪资范围</text>
+        <picker bindchange="bindPickerChange" data-idx="3" value="{{payIndex}}" range="{{payData}}">
+          <text hidden='{{payHide}}'>薪资范围</text>
+          <text hidden='{{!payHide}}'>{{payData[payIndex]}}</text>
           <image src='/image/index/return.png'></image>        
         </picker>
       </view>
       <view class='header-item'>
-        <picker>
-          <text>身高要求</text>
+        <picker bindchange="bindPickerChange" data-idx="4" value="{{heightIndex}}" range="{{heightData}}">
+          <text hidden='{{heightHide}}'>身高要求</text>
+          <text hidden='{{!heightHide}}'>{{heightData[heightIndex]}}</text>
           <image src='/image/index/return.png'></image>        
         </picker>
       </view>
       <view class='header-item'>
-        <picker>
-          <text>性别要求</text>
+        <picker bindchange="bindPickerChange" data-idx="5" value="{{sexIndex}}" range="{{sexData}}">
+          <text hidden='{{sexHide}}'>性别要求</text>
+          <text hidden='{{!sexHide}}'>{{sexData[sexIndex]}}</text>
           <image src='/image/index/return.png'></image>        
         </picker>
       </view>
       <view class='header-item'>
-        <input placeholder='招聘人姓名' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='招聘人姓名' data-idx='2' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
-        <input placeholder='招聘人联系电话' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='招聘人联系电话' data-idx='3' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
     </view>
 
@@ -55,16 +61,16 @@
       <view class='post-job-type-item'>
         <text>职位属性:</text>
       </view>
-      <view class='post-job-type-item'>
-        <image src='/image/mine/checkon.png'></image>
+      <view class='post-job-type-item' data-idx='0' bindtap='chooseStyle'>
+        <image src='{{attrData[0]?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
         <text>普通职位</text>
       </view>
-      <view class='post-job-type-item'>
-        <image src='/image/mine/uncheck.png'></image>
+      <view class='post-job-type-item' data-idx='1' bindtap='chooseStyle'>
+        <image src='{{attrData[1]?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
         <text>招聘外包</text>
       </view>
-      <view class='post-job-type-item'>
-        <image src='/image/mine/uncheck.png'></image>
+      <view class='post-job-type-item' data-idx='2' bindtap='chooseStyle'>
+        <image src='{{attrData[2]?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
         <text>劳务派遣</text>
       </view>
     </view>
@@ -73,16 +79,9 @@
       <view class='post-job-wealf-tit'>福利待遇:</view>
       <view class='post-job-wealf-cont'>
         <view class='post-job-wealf-item'>
-          <checkbox>五险一金</checkbox>
-          <checkbox>住房补贴</checkbox>
-          <checkbox>交通补贴</checkbox>
-          <checkbox>午餐补贴</checkbox>
-        </view>
-        <view class='post-job-wealf-item'>
-          <checkbox>带薪休假</checkbox>
-          <checkbox>节日补贴</checkbox>
-          <checkbox>五险一金</checkbox>
-          <checkbox>五险一金</checkbox>
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox wx:for='{{welfareData}}' value='{{item}}'>{{item}}</checkbox>
+          </checkbox-group>
         </view>
       </view>
     </view>
@@ -106,13 +105,13 @@
         </view>
       </view>
     </view>
-    <view class='detail-place'>
-      <input placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></input>
+    <view class='choose-place detail'>
+      <textarea data-idx='4' bindblur='getValue' placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
     </view>
     <view class='choose-place'>
       <text>职位描述:</text>
-      <textarea placeholder='请输入岗位职责:' placeholder-style='color:#AEAEAE'></textarea>
-      <textarea placeholder='请输入职位要求:' placeholder-style='color:#AEAEAE'></textarea>
+      <textarea data-idx='5' bindblur='getValue' placeholder='请输入岗位职责:' placeholder-style='color:#AEAEAE'></textarea>
+      <textarea data-idx='6' bindblur='getValue' placeholder='请输入职位要求:' placeholder-style='color:#AEAEAE'></textarea>
     </view>
   </view>
 

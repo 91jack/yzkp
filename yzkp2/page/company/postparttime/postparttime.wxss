@@ -35,7 +35,27 @@ page{
   height: 39rpx;
   border-bottom:1rpx solid #868686
 }
+.header-item{
+  position: relative;
+}
 .week-cont{
   display: flex;
   justify-content: space-between;
+}
+.post-job-header .header-item .dayOrMonth{
+  position: absolute;
+  width: 101rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  right: 0;
+  top: 0;
+  background: rgba(56,48,235,0.2)
+}
+.post-job-header .header-item .dayOrMonth text{
+  margin-left: 24rpx;
+  color: #7B76F2;
+}
+.post-job-header .header-item input.active{
+  width: 245rpx;
 }
