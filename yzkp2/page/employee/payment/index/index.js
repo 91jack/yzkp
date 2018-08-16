@@ -50,7 +50,7 @@ Page({
         timeflag: timeflag
       },
       success: function (res) {
-        console.log(res)
+      
         if (res.data.status == 0) {
           _this.setData({
             payList: res.data.list,

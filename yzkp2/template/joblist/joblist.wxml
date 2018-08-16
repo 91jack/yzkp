@@ -1,7 +1,7 @@
 <!--template/joblist/joblist.wxml-->
 <template name="joblist">
   <view class="joblist-item">
-    <block wx:for="{{jobList}}">
+    <block wx:for="{{jobList}}" wx:key="id">
       <!-- 全职列表 -->
       <block wx:if="{{item.type==0}}">
         <navigator url="/page/company/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>

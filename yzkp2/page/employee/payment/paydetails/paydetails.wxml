@@ -8,7 +8,7 @@
       <view class='price-item-tit'>{{title}}名称</view>
       <view class='price-item-tit'>{{title}}金额(元)</view>
     </view>
-<block wx:for="{{payDetails}}">
+<block wx:for="{{payDetails}}" wx:key="name">
     <view class='price-item'>
       <view class='price-basic-tit'>{{item.name}}</view>
       <view class='price-basic-tit'>{{item.money}}</view>

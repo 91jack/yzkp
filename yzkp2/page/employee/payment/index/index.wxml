@@ -43,7 +43,7 @@
   </view>
 
   <view class='payment-cont'>
-    <block wx:for="{{payList}}">
+    <block wx:for="{{payList}}" wx:key="id">
     <view class='payment-cont-item'>
 
       <view class='item-top'>
@@ -58,21 +58,21 @@
         </view>
 
         <view class='item-top-item active'>
-          <navigator hover-class='none' url='/page/employee/payment/subsidy/subsidy?type=1&payid={{item.id}}'>
+          <navigator hover-class='none' url='/page/employee/payment/paydetails/paydetails?type=1&payid={{item.id}}'>
             <text class='item-top-item-tit'>补贴工资</text>
             <text>{{item.subsidy}}</text>
           </navigator>
         </view>
       
         <view class='item-top-item active'>
-         <navigator hover-class='none' url='/page/employee/payment/subsidy/subsidy?type=3&payid={{item.id}}'>
+         <navigator hover-class='none' url='/page/employee/payment/paydetails/paydetails?type=3&payid={{item.id}}'>
             <text class='item-top-item-tit'>奖励工资</text>
             <text>{{item.bonus}}</text>
           </navigator>
         </view>
 
         <view class='item-top-item active'>
-          <navigator hover-class='none' url='/page/employee/payment/subsidy/subsidy?type=2&payid={{item.id}}'>
+          <navigator hover-class='none' url='/page/employee/payment/paydetails/paydetails?type=2&payid={{item.id}}'>
             <text class='item-top-item-tit'>扣除工资</text>
             <text>{{item.deduction}}</text>
           </navigator>

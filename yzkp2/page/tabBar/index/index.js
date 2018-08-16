@@ -146,8 +146,7 @@ Page({
             // recruitType: options.recruitType ? 0 : 1//全职0兼职1
           },
           success: function (res) {
-            console.log(res)
-            console.log(res.data.list)
+           
             _this.setData({
               jobList: res.data.list
             })
