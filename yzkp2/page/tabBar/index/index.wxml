@@ -40,11 +40,9 @@
 </view>
 
 
-<view>
-  <jz-select-navbar>
-    <view slot="nav"></view>
-  </jz-select-navbar>
-</view>
+<navigator hover-class="none" url='/page/company/joblist/joblist'>
+  <jz-select-navbar> </jz-select-navbar>
+</navigator>
 
 
 

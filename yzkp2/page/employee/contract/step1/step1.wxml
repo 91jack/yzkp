@@ -5,7 +5,7 @@
   </view>
   <view class='post-job-header'>
     <view class='header-item'>
-      <input placeholder='请输入姓名'  bindinput='getValue' data-inx="0" placeholder-style='color:#AEAEAE'></input>
+      <input placeholder='请输入姓名'  bindblur='getValue' data-inx="0" placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
       <picker bindchange="bindPickerChange" data-idx="0" value="{{sexIndex}}" range="{{pickerSel}}">
@@ -15,7 +15,7 @@
       </picker>
     </view>
     <view class='header-item'>
-      <input placeholder='请输入身份证号码' bindinput='getValue' data-inx="1" maxlength='18' placeholder-style='color:#AEAEAE'></input>
+      <input placeholder='请输入身份证号码' bindblur='getValue' data-inx="1" maxlength='18' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
       <picker bindchange="bindPickerChange" data-idx="1" value="{{educationIndex}}" range='{{educationSel}}'>
@@ -25,10 +25,10 @@
       </picker>
     </view>
     <view class='header-item'>
-      <input placeholder='请输入联系电话'  bindinput='getValue' data-inx="2" maxlength='11' placeholder-style='color:#AEAEAE'></input>
+      <input placeholder='请输入联系电话'  bindblur='getValue' data-inx="2" maxlength='11' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
-      <input placeholder='请输入紧急联系电话' bindinput='getValue' data-inx="3" maxlength='11' placeholder-style='color:#AEAEAE'></input>
+      <input placeholder='请输入紧急联系电话' bindblur='getValue' data-inx="3" maxlength='11' placeholder-style='color:#AEAEAE'></input>
     </view>
   </view>
 
@@ -58,7 +58,7 @@
     </view>
   </view> -->
   <view class='detail-place'>
-    <textarea bindinput='getValue' data-inx="4" placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
+    <textarea bindblur='getValue' data-inx="4" placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
   </view>
 </view>
 
@@ -69,13 +69,13 @@
   </view>
   <view class='post-job-header'>
     <view class='header-item'>
-      <input bindinput='getValue' data-inx="5" placeholder='请输入所属部门' placeholder-style='color:#AEAEAE'></input>
+      <input bindblur='getValue' data-inx="5" placeholder='请输入所属部门' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
-      <input bindinput='getValue' data-inx="6" placeholder='请输入担任职位' placeholder-style='color:#AEAEAE'></input>
+      <input bindblur='getValue' data-inx="6" placeholder='请输入担任职位' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
-      <input bindinput='getValue' data-inx="7" placeholder='请输入入职时间' placeholder-style='color:#AEAEAE'></input>
+      <input bindblur='getValue' data-inx="7" placeholder='请输入入职时间' placeholder-style='color:#AEAEAE'></input>
     </view>
   </view>
 </view>

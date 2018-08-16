@@ -4,24 +4,21 @@
 <template is="topsearch"/>
 
 <view class='ability-nav'>
-  <view class='ability-left'>
-    <text>地区</text>
-    <image src='/image/index/return.png'></image>
-  </view>
-  <view class='ability-right'>
-    
-    <!-- <scroll-view scroll-x style="width: 450rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"> -->
-      <view class='ability-right-item active'>
-        技能提升
+
+    <view class='ability-left'>
+<navigator hover-class='none' url='/page/common/city/city'>
+      <text>地区</text>
+      <image src='/image/index/return.png'></image>
+</navigator>
+    </view>
+
+    <view class='ability-right'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseType}}">
+      <view class="picker">
+        当前选择：{{courseType[index].name}}
       </view>
-      <view class='ability-right-item'>
-        考研培训
-      </view>
-      <view class='ability-right-item'>
-        考证培训
-      </view>
-    <!-- </scroll-view> -->
-      <image src='/image/index/next.png'></image>
+      <!-- <image src='/image/index/return.png'></image> -->
+    </picker>
   </view>
 </view>
 

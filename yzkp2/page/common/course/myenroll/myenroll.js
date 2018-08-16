@@ -1,16 +1,13 @@
-// page/index/course/courselist/courselist.js
-//获取能力提升列表信息
-const courseListUrl = require('../../../../config').courseListUrl;
+// page/common/course/myenroll/myenroll.js
 // 获取能力提升类型列表信息
-const courseTypeurl = require('../../../../config').courseTypeurl;
+const mycoursetUrl = require('../../../../config').mycoursetUrl;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    index:0,
-    courseType:null,
     courseList:null
   },
 
@@ -20,35 +17,18 @@ Page({
   onLoad: function (options) {
     var _this = this;
     wx.request({
-      url: courseTypeurl,//课程分类
+      url: mycoursetUrl,//课程分类
       data: {
         token: getApp().globalData.token,
       },
       success: function (res) {
-        console.log(res.data.list)
+       
         if (res.data.status == 0) {
-          _this.setData({
-            courseType: res.data.list
-          })
-        }
-
-      }
-    })
-
-    wx.request({
-      url: courseListUrl,//课程列表
-      data: {
-        token: getApp().globalData.token,
-        type:1,
-        city:'重庆'
-      },
-      success: function (res) {
-        if(res.data.status == 0){
           _this.setData({
             courseList: res.data.list
           })
         }
-       
+
       }
     })
   },
@@ -64,7 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+  
   },
 
   /**
@@ -100,11 +80,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  bindPickerChange: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
   }
 })

@@ -129,11 +129,9 @@ Page({
     wx.request({
       url: testLoginUrl,
       data: {
-       openId:'1001'
+       openId:'1002'
       },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded', // 默认值
-      },
+     
       success: function (res) {
         getApp().globalData.token = res.data.obj.token;// 用户token
         getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历

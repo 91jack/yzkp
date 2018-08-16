@@ -63,7 +63,10 @@ var config = {
   courseenrolltUrl: `${host}capaciypromotion/enroll/add.json`,
 
   //获取我报名的课程列表信息
-  mycoursetUrl: `${host}apaciypromotion/enroll/getbyuid.json`,
+  mycoursetUrl: `${host}capaciypromotion/enroll/getbyuid.json`,
+
+  // 获取能力提升类型列表信息
+  courseTypeurl: `${host}capaciypromotion/type/get.json`,
 
   /* --员工模块-- */
   // 查看薪酬

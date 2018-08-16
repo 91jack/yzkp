@@ -24,6 +24,11 @@ Page({
         text: '我的申请'
       },
       {
+        url: '/page/common/course/myenroll/myenroll',
+        src: '/image/index/office.png',
+        text: '我的报名'
+      },
+      {
         url: '/page/job/joblist/joblist?type=0',
         src: '/image/index/office.png',
         text: '我要招聘'
@@ -51,11 +56,16 @@ Page({
         src: '/image/index/office.png',
         text: '我的申请'
       },
-      // {
-      //   url: '/page/employee/contract/',
-      //   src: '/image/index/office.png',
-      //   text: '我的合同'
-      // },
+      {
+        url: '/page/common/course/myenroll/myenroll',
+        src: '/image/index/office.png',
+        text: '我的报名'
+      },
+      {
+        url: '/page/employee/contract/',
+        src: '/image/index/office.png',
+        text: '我的合同'
+      },
       {
         url: '/page/employee/payment/index/index',
         src: '/image/index/office.png',

@@ -1,0 +1,4 @@
+/* page/common/course/myenroll/myenroll.wxss */
+page{
+  background: #fff
+}

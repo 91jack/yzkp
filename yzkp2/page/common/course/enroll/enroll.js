@@ -23,7 +23,7 @@ Page({
   },
   getValue:function(e){
     var name = e.currentTarget.dataset.name;
-    console.log(name)
+   
     if(name=='name'){
       this.setData({
         name: e.detail.value
