@@ -2,6 +2,9 @@
 page{
   background: #fff;
 }
+.page{
+  margin-bottom: 150rpx;
+}
 .post-job-week{
   width: 703rpx;
   height: 124rpx;

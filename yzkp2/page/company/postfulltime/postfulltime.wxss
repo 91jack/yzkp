@@ -2,3 +2,6 @@
 page{
   background: #fff;
 }
+.page{
+  margin-bottom: 150rpx;
+}

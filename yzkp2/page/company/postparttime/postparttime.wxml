@@ -1,4 +1,5 @@
 <!--page/job/postparttime/postparttime.wxml-->
+<view class='page'>
 <view class="post-job">
   <view class='post-job-header parttime'>
     <view class='header-item'>
@@ -110,5 +111,6 @@
 </view>
 
 <view class='btn' bindtap='postBtn'>立即发布</view>
+</view>
 
 
