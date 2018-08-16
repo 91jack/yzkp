@@ -44,7 +44,7 @@ wx.getSystemInfo({
 
     // 画布的触摸移动结束手势响应
     end: function (e) {
-      console.log("触摸结束" + e)
+      //console.log("触摸结束" + e)
       //清空轨迹数组
       for (let i = 0; i < touchs.length; i++) {
         touchs.pop()
@@ -54,22 +54,22 @@ wx.getSystemInfo({
 
     // 画布的触摸取消响应
     cancel: function (e) {
-      console.log("触摸取消" + e)
+      //console.log("触摸取消" + e)
     },
 
     // 画布的长按手势响应
     tap: function (e) {
-      console.log("长按手势" + e)
+     // console.log("长按手势" + e)
     },
 
     error: function (e) {
-      console.log("画布触摸错误" + e)
+     // console.log("画布触摸错误" + e)
     },
     /**
     * 生命周期函数--监听页面加载
     */
     onLoad: function (options) {
-      console.log(options.payid)
+      //console.log(options.payid)
       this.setData({
         payid: options.payid
       })
@@ -118,7 +118,7 @@ wx.getSystemInfo({
         canvasId: 'firstCanvas',
 
         success: function (res) {
-        console.log(res)
+       // console.log(res)
           wx.uploadFile({
             url: uploadImgUrl, 
             filePath: res.tempFilePath,
@@ -139,7 +139,7 @@ wx.getSystemInfo({
                   sign_name: imgUrl
                 },
                 success: function (res) {
-                  console.log(res);
+                 // console.log(res);
                   if (res.data.status == 0) {
                     wx.showToast({
                       title: '工资签收成功',
