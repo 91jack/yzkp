@@ -12,13 +12,13 @@
       <text class='cont'>规模: {{companyInfo.size}}</text>
       <text class='type'>性质: {{companyInfo.attr}}</text>
       <text class='industry'>行业: {{companyInfo.industry}}</text>
-    
+
     </view>
     <view class='welfare'>
       <text class='welfare-tit'>福利: </text>
       <view class='welfare-detail'>
 
-       
+
         <view class='welfare-item'>带薪年假</view>
         <view class='welfare-item'>交通补助</view>
         <view class='welfare-item'>节日礼金</view>
@@ -43,35 +43,72 @@
 <view class='work' hidden='{{barShow[1]}}'>
   <view class='cont'>
     <block wx:for="{{recruitListUrl}}" wx:key="id">
-    <view class='cont-item' bindtap='toCompanyDetail'>
-      <view class='cont-tit'>
-        <text class='title'>{{item.name}}</text>
-        <text class='time'>{{item.refreshTime}}</text>
-      </view>
-      <view class='cont-detail'>
-        <view class='det-left'>
-          <view class='left-item'>
-            <image src='/image/index/area.png'></image>
-            <text>{{item.city}}</text>
+      <!-- 全职列表 -->
+      <block wx:if="{{item.type==0}}">
+        <navigator url="/page/company/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
+          <view class='cont-tit'>
+            <view>
+              <text class='title'>{{item.name}}</text>/
+              <text class="type">{{item.jobType}}</text>
+            </view>
+
+            <text class='time'>{{item.refreshTime}}</text>
           </view>
-          <view class='left-item'>
-            <image src='/image/index/work.png'></image>
-            <text>{{item.workYear}}</text>
+          <view class='cont-detail'>
+            <view class='det-left'>
+              <view class='left-item'>
+                <image src='/image/index/area.png'></image>
+                <text>{{item.city}}</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/work.png'></image>
+                <text>{{item.workYear}}</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/xueli.png'></image>
+                <text>{{item.educationLevel}}</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/height.png'></image>
+                <text>{{item.height}}</text>
+              </view>
+            </view>
+            <view class='det-right'>{{item.pay}}</view>
           </view>
-          <view class='left-item'>
-            <image src='/image/index/xueli.png'></image>
-            <text>{{item.educationLevel}}</text>
+
+        </navigator>
+      </block>
+      <!-- 兼职列表 -->
+      <block wx:if="{{item.type==1}}">
+        <navigator url="/page/company/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
+          <view class='cont-tit'>
+            <view>
+              <text class='title'>{{item.name}}</text>/
+              <text class="type">{{item.jobType}}</text>
+            </view>
+
+            <text class='time'>{{item.refreshTime}}</text>
           </view>
-          <view class='left-item'>
-            <image src='/image/index/height.png'></image>
-            <text>{{item.height}}</text>
+          <view class='cont-detail'>
+            <view class='det-left'>
+              <view class='left-item'>
+                <image src='/image/index/area.png'></image>
+                <text>{{item.city}}</text>
+              </view>
+              <view class='left-item'>
+                <image src='/image/index/copy.png'></image>
+                <text>{{item.num}}人</text>
+              </view>
+
+              <view class='left-item'>
+                <image src='/image/index/height.png'></image>
+                <text>{{item.height}}</text>
+              </view>
+            </view>
+            <view class='det-right'>{{item.pay}}</view>
           </view>
-        </view>
-        <view class='det-right'>{{item.pay}}</view>
-      </view>
-    </view>
+        </navigator>
+      </block>
     </block>
-   
-   
   </view>
 </view>
