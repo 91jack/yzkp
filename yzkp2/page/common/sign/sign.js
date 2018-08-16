@@ -23,6 +23,7 @@ wx.getSystemInfo({
     */
     data: {
       payid:'',
+      id:''//员工id
     },
     // 画布的触摸移动开始手势响应
     start: function (event) {
@@ -71,8 +72,10 @@ wx.getSystemInfo({
     onLoad: function (options) {
       //console.log(options.payid)
       this.setData({
-        payid: options.payid
+        payid: options.payid,
+        id: options.contractId
       })
+
       //获得Canvas的上下文
       content = wx.createCanvasContext('firstCanvas')
       content.setFillStyle('#ccc')
