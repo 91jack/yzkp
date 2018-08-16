@@ -1,2 +1,58 @@
 <!--page/common/resume/myapply/myapply.wxml-->
-<text>page/common/resume/myapply/myapply.wxml</text>
+<view class='my-apply'>
+  <view class="header">
+    <navigator hover-class="none" url="/page/common/resume/basicmsgedit/basicmsgedit">
+      <view class="header-cont">
+        <view>
+          <image class="company-pic" src=""></image>
+        </view>
+        <view class="header-intro">
+          <text class="name">张澜澜(微信名)</text>
+          <view class="intro-cont">
+            <text class="intro detail">踏实勤奋，积极上进,热爱生活,......</text>
+          </view>
+        </view>
+        <image class="tonext" src="/image/mine/next.png"></image>
+      </view>
+    </navigator>
+  </view>
+  <view class="manageintro-nav">
+    <view class="manageintro-nav-item">简历编辑</view>
+    <view class="manageintro-nav-item">简历设置</view>
+    <view class="manageintro-nav-item">谁看过我</view>
+    <view class="manageintro-nav-item active">我的申请</view>
+  </view>
+  <!-- ----------------我的申请 ------------ -->
+  <view class="my-apply" hidden="true">
+    <view class="my-apply-item">
+      <view class="my-apply-item-tit">
+        <text class="posi-left">已查阅</text>
+        <text>07-12</text>
+      </view>
+      <view class="my-apply-item-name">
+        <text>UI设计</text>
+        <image src="/image/mine/cellphone.png"></image>
+      </view>
+      <view class="my-apply-item-pay">3K-7k</view>
+      <view class="my-apply-item-footer">
+        <text class="my-apply-item-footer-comp">重庆渐臻科技有限公司</text>
+        <text class="my-apply-item-footer-comment">匿名评价</text>
+      </view>
+    </view>
+    <view class="my-apply-item">
+      <view class="my-apply-item-tit">
+        <text class="posi-left active">已录入人才库</text>
+        <text>07-12</text>
+      </view>
+      <view class="my-apply-item-name">
+        <text>UI设计</text>
+        <image src="/image/mine/cellphone.png"></image>
+      </view>
+      <view class="my-apply-item-pay">3K-7k</view>
+      <view class="my-apply-item-footer">
+        <text class="my-apply-item-footer-comp">重庆渐臻科技有限公司</text>
+        <text class="my-apply-item-footer-comment" bindtap="noname">匿名评价</text>
+      </view>
+    </view>
+  </view>
+</view>

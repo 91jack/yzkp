@@ -17,9 +17,15 @@
 </view>
 <view class="manageintro-nav">
   <view class="manageintro-nav-item active">简历编辑</view>
-  <view class="manageintro-nav-item">简历设置</view>
-  <view class="manageintro-nav-item">谁看过我</view>
-  <view class="manageintro-nav-item">我的申请</view>
+  <navigator url='/page/common/resume/resumeconfig/resumeconfig' hover-class='none'>
+    <view class="manageintro-nav-item">简历设置</view>
+  </navigator>
+  <navigator url='' hover-class='none'>
+    <view class="manageintro-nav-item">谁看过我</view>
+  </navigator>
+  <navigator url='' hover-class='none'>
+    <view class="manageintro-nav-item">我的申请</view>
+  </navigator>
 </view>
 
 <view class="manageintro-cont">
@@ -167,68 +173,6 @@
           </view>
         </view>
         </block>
-      </view>
-    </view>
-  </view>
-  <!-- ----------------简历设置------------- -->
-  <view class="set-intro" hidden="true">
-    <view class="set-intro-box">
-      <text>公开简历</text>
-      <switch checked="true" class="fr"></switch>
-    </view>
-    <view class="set-intro-box">
-      <text>匿名展示</text>
-      <switch checked="true" class="fr"></switch>
-    </view>
-  </view>
-
-  <!-- ---------------- 谁看过我 ------------ -->
-  <view class="who-see" hidden="true">
-    <view class="who-see-item">
-      <view class="see-me-company">
-        <text class="see-me-company-name">渐臻科技</text>
-        <text class="see-me-company-date">07-12</text>
-      </view>
-      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
-    </view>
-    <view class="who-see-item">
-      <view class="see-me-company">
-        <text class="see-me-company-name">渐臻科技</text>
-        <text class="see-me-company-date">07-12</text>
-      </view>
-      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
-    </view>
-  </view>
-  <!-- ----------------我的申请 ------------ -->
-  <view class="my-apply" hidden="true">
-    <view class="my-apply-item">
-      <view class="my-apply-item-tit">
-        <text class="posi-left">已查阅</text>
-        <text>07-12</text>
-      </view>
-      <view class="my-apply-item-name">
-        <text>UI设计</text>
-        <image src="/image/mine/cellphone.png"></image>
-      </view>
-      <view class="my-apply-item-pay">3K-7k</view>
-      <view class="my-apply-item-footer">
-        <text class="my-apply-item-footer-comp">重庆渐臻科技有限公司</text>
-        <text class="my-apply-item-footer-comment">匿名评价</text>
-      </view>
-    </view>
-    <view class="my-apply-item">
-      <view class="my-apply-item-tit">
-        <text class="posi-left active">已录入人才库</text>
-        <text>07-12</text>
-      </view>
-      <view class="my-apply-item-name">
-        <text>UI设计</text>
-        <image src="/image/mine/cellphone.png"></image>
-      </view>
-      <view class="my-apply-item-pay">3K-7k</view>
-      <view class="my-apply-item-footer">
-        <text class="my-apply-item-footer-comp">重庆渐臻科技有限公司</text>
-        <text class="my-apply-item-footer-comment" bindtap="noname">匿名评价</text>
       </view>
     </view>
   </view>

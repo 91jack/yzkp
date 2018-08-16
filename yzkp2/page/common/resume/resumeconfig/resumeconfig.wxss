@@ -1,1 +1,50 @@
 /* page/common/resume/resumeconfig/resumeconfig.wxss */
+page{
+  background: #fff;
+}
+.header{
+  margin-bottom: 0;
+  border-bottom: 10rpx solid #e8e8e8
+}
+.manageintro-nav{
+  height: 75rpx;
+  display: flex;
+  border-bottom: 1rpx solid #E8E8E8;
+}
+.manageintro-nav-item{
+  width: 186rpx;
+  border-right: 2rpx solid #E8E8E8;
+  font-size: 28rpx;
+  color: #868686;
+  line-height: 75rpx;
+  text-align: center;
+}
+.manageintro-nav-item.active{
+  color: #fff;
+  background: #F39800;
+}
+.manageintro-nav-item:last-of-type{
+  border-right: none;
+}
+/* 简历设置 */
+.set-intro{
+  padding-top: 24rpx;
+}
+.set-intro .set-intro-box{
+  width:702rpx;
+  height:97rpx;
+  background:rgba(56,48,235,0.05);
+  border-radius:6rpx;
+  margin: auto;
+  margin-top: 14rpx; 
+}
+.set-intro .set-intro-box text{
+  line-height: 97rpx;
+  color: #353535;
+  font-size: 30rpx;
+  margin-left: 38rpx;
+}
+.set-intro .set-intro-box switch{
+  margin-right: 36rpx;
+  line-height: 97rpx;
+}
