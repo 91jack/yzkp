@@ -1,66 +1,61 @@
 // page/index/course/enroll/enroll.js
+//能力提升报名
+const courseenrolltUrl = require('../../../../config').courseenrolltUrl;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    name:'',
+    phone:'',
+    webchat:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+   this.setData({
+     id:options.id
+   })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  getValue:function(e){
+    var name = e.currentTarget.dataset.name;
+    console.log(name)
+    if(name=='name'){
+      this.setData({
+        name: e.detail.value
+      })
+    }else if(name=="phone"){
+      this.setData({
+        phone: e.detail.value
+      })
+     
+    }else{
+      this.setData({
+        webchat: e.detail.value
+      })
+      
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  submitBtn:function(){
+    var _this = this;
+    wx.request({
+      url: courseenrolltUrl,
+      data: {
+        token: getApp().globalData.token,
+        id: _this.data.id,
+        name: _this.data.name,
+        phone: _this.data.phone,
+        webchat: _this.data.webchat
+      },
+      success: function (res) {
+       console.log(res)
+      }
+    })
   }
+
+
 })

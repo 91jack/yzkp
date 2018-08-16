@@ -1,17 +1,16 @@
 <!--page/index/course/enroll/enroll.wxml-->
 <view class='box'>
   <text>姓名</text>
-  <input placeholder='请输入姓名' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入姓名' placeholder-style="color:#D7D7D7" bindblur='getValue' data-name="name" ></input>
 </view>
 <view class='box'>
   <text>电话</text>
-  <input placeholder='请输入电话号码' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入电话号码' placeholder-style="color:#D7D7D7" type="number" maxlength='11' bindblur='getValue' data-name="phone"></input>
 </view>
 <view class='box'>
   <text>微信</text>
-  <input placeholder='请输入微信号' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入微信号' placeholder-style="color:#D7D7D7" bindblur='getValue' data-name="webchat"></input>
 </view>
 
-<navigator hover-class='none' url='/page/index/course/enroll/enroll'>
-  <view class='btn'>提交报名</view>
-</navigator>
+
+  <view class='btn' bindtap='submitBtn'>提交报名</view>

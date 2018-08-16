@@ -1,18 +1,34 @@
 // page/index/course/courselist/courselist.js
+//获取能力提升列表信息
+const courseListUrl = require('../../../../config').courseListUrl;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    courseList:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var _this = this;
+    wx.request({
+      url: courseListUrl,
+      data: {
+        token: getApp().globalData.token,
+        type:1,
+        city:'重庆'
+      },
+      success: function (res) {
+        _this.setData({
+          courseList: res.data.list
+        })
+      }
+    })
   },
 
   /**

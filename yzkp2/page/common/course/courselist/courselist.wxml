@@ -26,17 +26,19 @@
 </view>
 
 <view class='ability-cont'>
-  <navigator hover-class='none' url='../coursedetails/coursedetails'>
+<block wx:for="{{courseList}}" wx:key="id">
+  <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.id}}'>
     <view class='ability-cont-item'>
-      <image></image>
+      <image src="{{item.logo}}"></image>
       <view>
-        <text class='ability-cont-item-tit'>技能提升</text>
-        <text class='ability-cont-item-price'>学费1200元/12节课</text>
-        <text>招生对象:公司员工</text>
-        <text>开课时间:2018-09-12</text>
-        <text>报名截止时间: 2018-09-11 0:00</text>
+        <text class='ability-cont-item-tit'>{{item.name}}</text>
+        <text class='ability-cont-item-price'>{{item.tuition}}/{{item.curriculum}}</text>
+        <text>招生对象:{{item.recruitStudents}}</text>
+        <text>开课时间:{{item.openClassTime}}</text>
+        <text>报名截止时间: {{item.signupTime}}</text>
       </view>
     </view>
   </navigator>
+</block>
 </view>
 

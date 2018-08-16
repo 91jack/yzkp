@@ -53,6 +53,17 @@ var config = {
   // 投递简历
   // 简历是否公开，是否匿名
 
+  //获取能力提升列表信息
+  courseListUrl: `${host}capaciypromotion/getbytype.json`,
+
+  //获取能力提升详情
+  courseDetailtUrl: `${host}capaciypromotion/get.json`,
+  
+  //能力提升报名
+  courseenrolltUrl: `${host}capaciypromotion/enroll/add.json`,
+
+  //获取我报名的课程列表信息
+  mycoursetUrl: `${host}apaciypromotion/enroll/getbyuid.json`,
 
   /* --员工模块-- */
   // 查看薪酬
