@@ -3,6 +3,7 @@
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index"
+ 
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -85,6 +86,9 @@
         "resume/project/project",
         "resume/projectedit/projectedit",
         "resume/cryptonym/cryptonym",
+          "resume/resumeconfig/resumeconfig",
+          "resume/browseme/browseme",
+          "resume/myapply/myapply",
         "opinion/opinion"
       ]
     }
