@@ -132,8 +132,8 @@ wx.getSystemInfo({
             },
             success: function (res) {
               var imgUrl = JSON.parse(res.data).obj;
-              console.log(res)
-              console.log(imgUrl)
+              // console.log(res)
+              // console.log(imgUrl)
               wx.request({
                 url: signForWagesUrl,
                 data: {
@@ -150,10 +150,10 @@ wx.getSystemInfo({
                       duration: 2000,
                       success: function () {
                         setTimeout(function () {
-                          wx.navigateTo({
-                            url: '/page/employee/payment/index/index',
+                          wx.navigateBack({
+                            delta: 1
                           })
-                        }, 1000)
+                        }, 2000)
                       }
                     })
                    

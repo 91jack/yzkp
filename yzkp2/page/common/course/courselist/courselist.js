@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index:0,
+    index:1,
+    search:'',
     courseType:null,
     courseList:null
   },
@@ -35,22 +36,8 @@ Page({
       }
     })
 
-    wx.request({
-      url: courseListUrl,//课程列表
-      data: {
-        token: getApp().globalData.token,
-        type:1,
-        city:'重庆'
-      },
-      success: function (res) {
-        if(res.data.status == 0){
-          _this.setData({
-            courseList: res.data.list
-          })
-        }
-       
-      }
-    })
+    this.getCourseList();
+    
   },
 
   /**
@@ -106,5 +93,27 @@ Page({
     this.setData({
       index: e.detail.value
     })
+    this.getCourseList();
+  },
+  // 获取课程列表
+  getCourseList:function(){
+    var _this = this;
+    wx.request({
+      url: courseListUrl,//课程列表
+      data: {
+        token: getApp().globalData.token,
+        type: _this.data.index,
+        city: '重庆'
+      },
+      success: function (res) {
+        if (res.data.status == 0) {
+          _this.setData({
+            courseList: res.data.list
+          })
+        }
+
+      }
+    })
   }
+ 
 })

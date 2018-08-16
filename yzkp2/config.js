@@ -68,6 +68,9 @@ var config = {
   // 获取能力提升类型列表信息
   courseTypeurl: `${host}capaciypromotion/type/get.json`,
 
+  // 意见反馈
+  suggestionAdd: `${host}suggestion/add.json`,
+
   /* --员工模块-- */
   // 查看薪酬
   payInformationUrl: `${host}employee/payInformation.json`,

@@ -1,10 +1,13 @@
 
 <view class='cont'>
-  <textarea placeholder='请输入你的问题'></textarea>
+  <textarea placeholder='请输入你的问题' bindinput='getContent'></textarea>
 </view>
 
 <view class='btn'>
-  <view class='no'>取消</view>
-  <view class='yes'>提交</view>
+<navigator hover-class='none' url="/page/tabBar/my/index">
+ <view class='no'>取消</view>
+</navigator>
+ 
+  <view class='yes' bindtap='submitBtn'>提交</view>
 </view>
 

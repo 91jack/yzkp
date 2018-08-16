@@ -22,7 +22,7 @@ Page({
         token: getApp().globalData.token,
       },
       success: function (res) {
-       
+       console.log(res)
         if (res.data.status == 0) {
           _this.setData({
             courseList: res.data.list

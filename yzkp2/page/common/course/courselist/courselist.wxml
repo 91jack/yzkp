@@ -1,7 +1,7 @@
 <!--page/index/course/courselist/courselist.wxml-->
 <import src ="/template/topsearch/topsearch.wxml"/>
 
-<template is="topsearch"/>
+<template is="topsearch" />
 
 <view class='ability-nav'>
 
@@ -13,7 +13,7 @@
     </view>
 
     <view class='ability-right'>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseType}}">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseType}}" range-key='name'>
       <view class="picker">
         当前选择：{{courseType[index].name}}
       </view>
