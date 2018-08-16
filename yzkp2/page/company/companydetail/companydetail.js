@@ -1,18 +1,51 @@
 // pages/index/companyrequest/companydetail/companydetail.js
+// 公司简介
+const companyIntroUrl = require('../../../config').companyIntroUrl;
+// 在招职位
+const recruitListUrl = require('../../../config').recruitListUrl;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    barShow:[false,true]
+    barShow:[false,true],
+    companyInfo:null,
+    recruitList:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.companyId)
+    var _this = this;
+    // 公司详情  
+    wx.request({
+      url: companyIntroUrl,
+      data: {
+        token: getApp().globalData.token,
+        id: options.companyId
+      },
+      success: function (res) {
+        _this.setData({
+          companyInfo: res.data.obj
+        })
+      }
+    })
+    // 在招职位
+    wx.request({
+      url: recruitListUrl,
+      data: {
+        token: getApp().globalData.token,
+        id: options.companyId
+      },
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          recruitListUrl: res.data.list
+        })
+      }
+    })
   },
   // nav-bar的隐藏选择
   choosebar: function(e){
@@ -40,7 +73,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
 
   /**
