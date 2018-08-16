@@ -29,7 +29,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+   
     var _this = this;
 
     wx.request({
@@ -37,10 +37,6 @@ Page({
       data: {
         token: getApp().globalData.token,
         id: options.id
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded', // 默认值
-
       },
       success: function (res) {
         console.log(res.data)
