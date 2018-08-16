@@ -45,7 +45,7 @@ Component({
       var i = e.currentTarget.dataset.idx;
       var index = this.data.currentTab[i];
       var hid = "currentTab[" + i + "]";
-      console.log(index);
+     
       for (var j = 0; j < this.data.currentTab.length; j++) {
         var act = "currentTab[" + j + "]"
         this.setData({
@@ -65,7 +65,7 @@ Component({
     // navbar的收起
     hideBar: function(e) {
       var i = Number(e.currentTarget.dataset.idx);
-      console.log(typeof i)
+    
       var index = this.data.currentTab[i];
       var hid = "currentTab[" + i + "]";
       this.setData({

@@ -1,7 +1,6 @@
 // page/my/payment/subsidy/subsidy.js
  // 补贴、扣除、奖励工资详情
 const bonusOrdeductionUrl = require('../../../../config').bonusOrdeductionUrl;
-
 Page({
 
   /**
@@ -17,7 +16,6 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    console.log(options)
     if(options.type == 1){
       _this.setData({
         title:'补贴'
@@ -41,7 +39,7 @@ Page({
         payid: options.payid
       },
       success: function (res) {
-        console.log(res.data.list)
+       
         if (res.data.status == 0) {
           _this.setData({
             payDetails: res.data.list

@@ -1,6 +1,8 @@
 // page/common/sign/sign.js
 // 上传图片
 const uploadImgUrl = require('../../../config').uploadImgUrl;
+// 签收工资
+const signForWagesUrl = require('../../../config').signForWagesUrl;
 
 var content = null;
 var touchs = [];
@@ -12,7 +14,6 @@ wx.getSystemInfo({
   success: function (res) {
     canvasw = res.windowWidth;
     canvash = canvasw * 9 / 6;
-    console.log(canvash)
   },
 }),
 
@@ -21,7 +22,7 @@ wx.getSystemInfo({
     * 页面的初始数据
     */
     data: {
-      signImage: '',
+      payid:'',
     },
     // 画布的触摸移动开始手势响应
     start: function (event) {
@@ -43,7 +44,7 @@ wx.getSystemInfo({
 
     // 画布的触摸移动结束手势响应
     end: function (e) {
-      console.log("触摸结束" + e)
+      //console.log("触摸结束" + e)
       //清空轨迹数组
       for (let i = 0; i < touchs.length; i++) {
         touchs.pop()
@@ -53,23 +54,30 @@ wx.getSystemInfo({
 
     // 画布的触摸取消响应
     cancel: function (e) {
-      console.log("触摸取消" + e)
+      //console.log("触摸取消" + e)
     },
 
     // 画布的长按手势响应
     tap: function (e) {
-      console.log("长按手势" + e)
+     // console.log("长按手势" + e)
     },
 
     error: function (e) {
-      console.log("画布触摸错误" + e)
+     // console.log("画布触摸错误" + e)
     },
     /**
     * 生命周期函数--监听页面加载
     */
     onLoad: function (options) {
+      //console.log(options.payid)
+      this.setData({
+        payid: options.payid
+      })
       //获得Canvas的上下文
       content = wx.createCanvasContext('firstCanvas')
+      content.setFillStyle('#ccc')
+      content.fillRect(0, 0, 705, 1090)
+      content.draw()
       //设置线的颜色
       content.setStrokeStyle("#000")
       //设置线的宽度
@@ -84,6 +92,7 @@ wx.getSystemInfo({
     * 生命周期函数--监听页面初次渲染完成
     */
     onReady: function () {
+
     },
 
     //绘制
@@ -104,33 +113,54 @@ wx.getSystemInfo({
     },
     //保存图片
     saveClick: function () {
-      var that = this
+      var _this = this
       wx.canvasToTempFilePath({
         canvasId: 'firstCanvas',
 
         success: function (res) {
-        
+       // console.log(res)
           wx.uploadFile({
             url: uploadImgUrl, 
             filePath: res.tempFilePath,
             name: 'file',
             formData: {
               token: getApp().globalData.token,
+              suffix:'jpg'
             },
             success: function (res) {
-              var data = res.data
+              var imgUrl = JSON.parse(res.data).obj;
               console.log(res)
-            }
-          })
-
-        
-          //打印图片路径
-          console.log(res.tempFilePath)
-          //设置保存的图片
-          that.setData({
-            signImage: res.tempFilePath
+              console.log(imgUrl)
+              wx.request({
+                url: signForWagesUrl,
+                data: {
+                  token: getApp().globalData.token,
+                 payid:_this.data.payid,
+                  sign_name: imgUrl
+                },
+                success: function (res) {
+                 // console.log(res);
+                  if (res.data.status == 0) {
+                    wx.showToast({
+                      title: '工资签收成功',
+                      icon: 'success',
+                      duration: 2000,
+                      success: function () {
+                        setTimeout(function () {
+                          wx.navigateTo({
+                            url: '/page/employee/payment/index/index',
+                          })
+                        }, 1000)
+                      }
+                    })
+                   
+                  }
+                }
+              })
+            } 
           })
         }
+       
       })
 
     }

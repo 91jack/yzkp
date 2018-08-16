@@ -37,14 +37,9 @@ Page({
     // 员工列表
     employeeList:[
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/common/resume/index/index',
         src: '/image/index/office.png',
         text: '我的简历'
-      },
-      {
-        url: '/page/job/joblist/joblist?type=0',
-        src: '/image/index/office.png',
-        text: '我的申请'
       },
       {
         url: '/page/job/joblist/joblist?type=0',
@@ -54,10 +49,15 @@ Page({
       {
         url: '/page/job/joblist/joblist?type=0',
         src: '/image/index/office.png',
-        text: '我的合同'
+        text: '我的申请'
       },
+      // {
+      //   url: '/page/employee/contract/',
+      //   src: '/image/index/office.png',
+      //   text: '我的合同'
+      // },
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/employee/payment/index/index',
         src: '/image/index/office.png',
         text: '我的薪酬'
       }

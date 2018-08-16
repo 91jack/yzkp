@@ -33,7 +33,7 @@ function cityList() {
   wx.request({
     url: cityUrl, 
     success: function(res) {
-      console.log(res)
+    
       if (res.data.status == 0) {
         wx.setStorage({
           key: "cityArr",
@@ -62,7 +62,7 @@ function companySize() {
   wx.request({
     url: companySizeUrl,
     success: function (res) {
-      console.log(res)
+ 
       if (res.data.status == 0) {
         wx.setStorage({
           key: "companySizeArr",
@@ -135,25 +135,22 @@ function demand() {
   wx.request({
     url: demandUrl,
     success: function (res) {
-      console.log(res.data)
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "demandtArr",
+          data: res.data.list
+        })
+      }
     }
   })
 }
-// 上传图片
-function uploadImg() {
-  wx.request({
-    url: uploadImgUrl,
-    success: function (res) {
-      console.log(res.data)
-    }
-  })
-}
+
 // 福利待遇
 function welfare() {
   wx.request({
     url: welfareUrl,
     success: function (res) {
-      console.log(res.data)
+
       if (res.data.status == 0) {
         wx.setStorage({
           key: "welfareArr",
@@ -173,6 +170,5 @@ module.exports = {
   workYear: workYear,// 工作经验
   height: height,// 身高要求
   demand: demand,// 首页-要求
-  uploadImg: uploadImg,  // 上传图片
   welfare: welfare,// 福利待遇
 }

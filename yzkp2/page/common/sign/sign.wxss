@@ -7,7 +7,7 @@
 }
 
 .firstCanvas {
-  background-color: #fff;
+  background-color: #ccc;
   width: 705rpx;
   height: 1019rpx;
   margin: 23rpx;
