@@ -832,13 +832,26 @@ checkbox{
   font-weight: bold;
   display: block;
 }
-.insurance-item radio-group{
-  display: block;
-  margin-right: 56rpx;
-  font-size: 28rpx;
+.five-insurance .insurance-item .btn-cont{
+  display: flex;
+  width: 302rpx;
 }
-.insurance-item radio-group radio{
-  width: 150rpx;
+.five-insurance .insurance-item .btn-cont .btn-cont-item{
+  width: 120rpx;
+  display: flex;
+  align-items: center;
+}
+.five-insurance .insurance-item .btn-cont .btn-cont-item image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 7rpx;
+}
+.five-insurance .insurance-item .btn-cont .btn-cont-item text{
+  font-size: 28rpx;
+  color: #868686;
+}
+.five-insurance .insurance-item .btn-cont .btn-cont-item text.active{
+  color: #F39800
 }
 .public-gold{
   display: flex;

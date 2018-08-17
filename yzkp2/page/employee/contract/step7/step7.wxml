@@ -105,42 +105,72 @@
       <view class='five-insurance'>
         <view class='insurance-item'>
           <text>以前是否办理过保险:</text>
-          <radio-group>
-            <radio disabled="true" checked='{{infoData.is_safe==0?true:false}}'>是</radio>
-            <radio disabled="true" checked='{{infoData.is_safe==1?true:false}}'>否</radio>
-          </radio-group>
+          <view class='btn-cont'>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.is_safe=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.is_safe=="1"?"active":""}}'>是</text>
+            </view>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.is_safe=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.is_safe=="0"?"active":""}}'>否</text>
+            </view>
+          </view>
         </view>
         <view class='insurance-item'>
           <text>前期社保关系所在地:</text>
-          <radio-group>
-            <radio disabled="true" checked='{{infoData.safe_type==0?true:false}}'>外地</radio>
-            <radio disabled="true" checked='{{infoData.safe_type==1?true:false}}'>本地</radio>
-          </radio-group>
+          <view class='btn-cont'>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.safe_type=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.safe_type=="0"?"active":""}}'>外地</text>
+            </view>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.safe_type=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.safe_type=="1"?"active":""}}'>本地</text>
+            </view>
+          </view>
         </view>
         <view class='insurance-item'>
           <text>户籍类别:</text>
-          <radio-group>
-            <radio disabled="true" checked='{{infoData.account_type==0?true:false}}'>城镇</radio>
-            <radio disabled="true" checked='{{infoData.account_type==1?true:false}}'>农村</radio>
-          </radio-group>
+          <view class='btn-cont'>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.account_type=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.account_type=="0"?"active":""}}'>城镇</text>
+            </view>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.account_type=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.account_type=="1"?"active":""}}'>农村</text>
+            </view>
+          </view>
         </view>
         <view class='insurance-item'>
           <text>是否办理农民工保险:</text>
-          <radio-group>
-            <radio disabled="true" checked='{{infoData.farmer_safe==0?true:false}}'>是</radio>
-            <radio disabled="true" checked='{{infoData.farmer_safe==1?true:false}}'>否</radio>
-          </radio-group>
+          <view class='btn-cont'>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.farmer_safe=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.farmer_safe=="1"?"active":""}}'>是</text>
+            </view>
+            <view class='btn-cont-item' data-idx="7" bindtap="radioChange">
+              <image src='{{infoData.farmer_safe=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.farmer_safe=="0"?"active":""}}'>否</text>
+            </view>
+          </view>
         </view>
         <view class='insurance-item'>
           <text>是否购买过公积金:</text>
-          <radio-group>
-            <radio disabled="true" checked='{{infoData.is_fund==0?true:false}}' color='#868686'>是</radio>
-            <radio disabled="true" checked='{{infoData.is_fund==1?true:false}}'>否</radio>
-          </radio-group>
+          <view class='btn-cont'>
+            <view class='btn-cont-item'>
+              <image src='{{infoData.is_fund=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.is_fund=="1"?"active":""}}'>是</text>
+            </view>
+            <view class='btn-cont-item' data-idx="9" bindtap="radioChange">
+              <image src='{{infoData.is_fund=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+              <text class='{{infoData.is_fund=="0"?"active":""}}'>否</text>
+            </view>
+          </view>
         </view>
       </view>
       <view class='public-gold'>
-        <text>公积金卡号:   {{fund_no}}</text>
+        <text>公积金卡号:   {{infoData.fund_no}}</text>
       </view>
     </view>
     <!-- 工资卡信息 -->

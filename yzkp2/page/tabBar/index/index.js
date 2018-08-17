@@ -18,7 +18,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    role:3,//用户角色 1：求职者 2：员工 3：企业
+    role:2,//用户角色 1：求职者 2：员工 3：企业
     jobList: [],
     index: 0,//选择的下拉列表下标，
     selectBar1:[
@@ -61,7 +61,7 @@ Page({
         text: '兼职职位'
       },
       {
-        url: '/page/employee/contract/step1/step1',
+        url: '/page/employee/contract/step7/step7',
         src: '/image/index/discuss.png',
         text: '合同管理'
       },
@@ -129,7 +129,7 @@ Page({
     wx.request({
       url: testLoginUrl,
       data: {
-       openId:'1002'
+       openId:'1003'
       },
      
       success: function (res) {

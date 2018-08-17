@@ -52,56 +52,48 @@ Page({
    */
   radioChange:function(e){
     var i = e.currentTarget.dataset.idx;
-    if(i=='0'){
-      if (e.detail.value=='是'){
-        this.setData({
-          is_safe:'1'
-        })
-      }else{
-        this.setData({
-          is_safe: '0'
-        })
-      }
-    } else if (i == '1') {
-      if (e.detail.value == '本地') {
-        this.setData({
-          safe_type: '1'
-        })
-      } else {
+    if(i=='0'){  //是否办理过保险 ‘是’
+      this.setData({
+        is_safe: '1'
+      })
+    } else if (i == '1') {//是否办理过保险 ‘否’
+      this.setData({
+        is_safe: '0'
+      })
+    } else if (i == '2') { //前期社保关系所在地 ‘外地’
         this.setData({
           safe_type: '0'
         })
-      }
-    } else if (i == '2') {
-      if (e.detail.value == '农村') {
-        this.setData({
-          account_type: '1'
-        })
-      } else {
+    } else if (i == '3') { //前期社保关系所在地 ‘本地’
+      this.setData({
+        safe_type: '1'
+      })
+    } else if (i == '4') { //户籍类别 ‘城镇’
         this.setData({
           account_type: '0'
         })
-      }
-    } else if (i == '3') {
-      if (e.detail.value == '是') {
+    } else if (i == '5') { //户籍类别 ‘农村’
+      this.setData({
+        account_type: '1'
+      })
+    } else if (i == '6') { //是否办理过农民工保险 ‘是’
         this.setData({
           farmer_safe: '1'
         })
-      } else {
+    } else if (i == '7') { //是否办理过农民工保险 ‘否’
         this.setData({
           farmer_safe: '0'
         })
-      }
-    } else if (i == '4') {
-      if (e.detail.value == '是') {
+    } else if (i == '8') { //是否购买过公积金 ‘是’
         this.setData({
-          is_fund: '1'
+          is_fund: '1',
+          fund_show:false
         })
-      } else {
+    } else if (i == '9') { //是否购买过公积金 ‘否’
         this.setData({
-          is_fund: '0'
+          is_fund: '0',
+          fund_show:true
         })
-      }
     }
   },
   onShow: function () {

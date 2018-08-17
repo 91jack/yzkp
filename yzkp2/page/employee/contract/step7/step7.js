@@ -1,44 +1,14 @@
 // page/employee/contract/step7/step7.js
 const allInfoUrl = require('../../../../config').allInfoUrl;
+const phonecodeUrl = require('../../../../config').phonecodeUrl
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // account_img1:'',
-    // account_img2:'',
-    // account_img3:'',
-    // account_type:'',
-    // address:'',
-    // bank_account_no:'',
-    // bank_name:'',
-    // bank_no:'',
-    // contract_id:'',
-    // department:'',
-    // education_img:'',
-    // education_level:'',
-    // farmer_safe:'',
-    // fund_no:'',
-    // head_img:'',
-    // id_no:'',
-    // id_no_img1:'',
-    // id_no_img2:'',
-    // in_date:'',
-    // is_fund:'',
-    // is_safe:'',
-    // leave_img:'',
-    // link_man:'',
-    // link_mobile:'',
-    // mobile:'',
-    // name:'',
-    // other_img:'',
-    // position:'',
-    // safe_type:'',
-    // sex:'',
-    // state:'',//审核状态
     infoData:{},
-    timer: '',//定时器名字
+    timer: '',
     timerData:'获取验证码',
     countDownNum: 60,
     openInterVal:true
@@ -64,37 +34,6 @@ Page({
             if(res.data.status==0){
               that.setData({
                 infoData: infoData
-                // account_img1: infoData.account_img1,
-                // account_img2: infoData.account_img2,
-                // account_img3: infoData.account_img3,
-                // account_type: infoData.account_type,
-                // address: infoData.address,
-                // bank_account_no: infoData.bank_account_no,
-                // bank_name: infoData.bank_name,
-                // bank_no: infoData.bank_no,
-                // contract_id: infoData.contract_id,
-                // department: infoData.department,
-                // education_img: infoData.education_img,
-                // education_level: infoData.education_level,
-                // farmer_safe: infoData.farmer_safe,
-                // fund_no: infoData.fund_no,
-                // head_img: infoData.head_img,
-                // id_no: infoData.id_no,
-                // id_no_img1: infoData.id_no_img1,
-                // id_no_img2: infoData.id_no_img2,
-                // in_date: infoData.in_date,
-                // is_fund: infoData.is_fund,
-                // is_safe: infoData.is_safe,
-                // leave_img: infoData.leave_img,
-                // link_man: infoData.link_man,
-                // link_mobile: infoData.link_mobile,
-                // mobile: infoData.mobile,
-                // name: infoData.name,
-                // other_img: infoData.other_img,
-                // position: infoData.position,
-                // safe_type: infoData.safe_type,
-                // sex: infoData.sex,
-                // state: infoData.state//审核状态
               })
             }
           }
@@ -120,6 +59,7 @@ Page({
   // 获取验证码
   getCode:function(event){
     var _this = this;
+    // 按钮倒计时
     if (_this.data.openInterVal){
       this.setData({
         timerData: '5s',

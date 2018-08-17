@@ -3,38 +3,68 @@
   <view class='five-insurance'>
     <view class='insurance-item'>
       <text>以前是否办理过保险:</text>
-      <radio-group data-idx="0" bindchange="radioChange">
-        <radio>是</radio>
-        <radio>否</radio>
-      </radio-group>
+      <view class='btn-cont'>
+        <view class='btn-cont-item' data-idx="0" bindtap="radioChange">
+          <image src='{{is_safe=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{is_safe=="1"?"active":""}}'>是</text>
+        </view>
+        <view class='btn-cont-item' data-idx="1" bindtap="radioChange">
+          <image src='{{is_safe=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{is_safe=="0"?"active":""}}'>否</text>
+        </view>
+      </view>
     </view>
     <view class='insurance-item'>
       <text>前期社保关系所在地:</text>
-      <radio-group data-idx="1" bindchange="radioChange">
-        <radio>外地</radio>
-        <radio>本地</radio>
-      </radio-group>
+      <view class='btn-cont'>
+        <view class='btn-cont-item' data-idx="2" bindtap="radioChange">
+          <image src='{{safe_type=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{safe_type=="0"?"active":""}}'>外地</text>
+        </view>
+        <view class='btn-cont-item' data-idx="3" bindtap="radioChange">
+          <image src='{{safe_type=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{safe_type=="1"?"active":""}}'>本地</text>
+        </view>
+      </view>
     </view>
     <view class='insurance-item'>
       <text>户籍类别:</text>
-      <radio-group data-idx="2" bindchange="radioChange">
-        <radio>城镇</radio>
-        <radio>农村</radio>
-      </radio-group>
+      <view class='btn-cont'>
+        <view class='btn-cont-item' data-idx="4" bindtap="radioChange">
+          <image src='{{account_type=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{account_type=="0"?"active":""}}'>城镇</text>
+        </view>
+        <view class='btn-cont-item' data-idx="5" bindtap="radioChange">
+          <image src='{{account_type=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{account_type=="1"?"active":""}}'>农村</text>
+        </view>
+      </view>
     </view>
     <view class='insurance-item'>
       <text>是否办理农民工保险:</text>
-      <radio-group data-idx="3" bindchange="radioChange">
-        <radio>是</radio>
-        <radio>否</radio>
-      </radio-group>
+      <view class='btn-cont'>
+        <view class='btn-cont-item' data-idx="6" bindtap="radioChange">
+          <image src='{{farmer_safe=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{farmer_safe=="1"?"active":""}}'>是</text>
+        </view>
+        <view class='btn-cont-item' data-idx="7" bindtap="radioChange">
+          <image src='{{farmer_safe=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{farmer_safe=="0"?"active":""}}'>否</text>
+        </view>
+      </view>
     </view>
     <view class='insurance-item'>
       <text>是否购买过公积金:</text>
-      <radio-group data-idx="4" bindchange="radioChange">
-        <radio bindtap='fundShow' color='#868686'>是</radio>
-        <radio bindtap='fundHide'>否</radio>
-      </radio-group>
+      <view class='btn-cont'>
+        <view class='btn-cont-item' data-idx="8" bindtap="radioChange">
+          <image src='{{is_fund=="1"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{is_fund=="1"?"active":""}}'>是</text>
+        </view>
+        <view class='btn-cont-item' data-idx="9" bindtap="radioChange">
+          <image src='{{is_fund=="0"?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class='{{is_fund=="0"?"active":""}}'>否</text>
+        </view>
+      </view>
     </view>
   </view>
   <view class='public-gold' hidden='{{fund_show}}'>
