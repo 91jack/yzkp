@@ -1,15 +1,23 @@
 <!--page/common/city/city.wxml-->
 <view class="city">
-  <view class="left" wx:for="{{city}}" wx:key="index">
-    <view class="city-level1" bindtap="clickLevel1" data-citynav="{{index}}">{{index}}</view>
-  </view>
-  <view class="right">
-    <block wx:for="{{currentSelect}}">
-      <view>{{item}}</view>
+  <view class="left">
+    <block wx:for="{{cities}}" wx:key="index">
+      <view class="city-level1 {{_citynav==index?'active':''}}" bindtap="clickLevel1" data-citynav="{{index}}">{{index}}</view>
     </block>
   </view>
+  <view class="right">
+    <view class="city-level2">
+      <block wx:for="{{currentSelect}}">
+        <view class="citybtn {{_city==index?'active':''}}" data-city="{{index}}" bindtap='clickLevel2'>{{index}}</view>
+      </block>
+    </view>
 
-<!-- <block wx:for="{{hotCity}}">
-  <view >{{index}}</view>
-  </block> -->
+    <view class="city-level3">
+      <block wx:for="{{country}}">
+        <view class="citybtn {{_country==item?'active':''}}" bindtap='clickLevel3' data-country="{{item}}">
+          {{item}}
+        </view>
+      </block>
+    </view>
+  </view>
 </view>

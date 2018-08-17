@@ -11,7 +11,7 @@ Page({
     jobList: [],
     index: 0,//选择的下拉列表下标
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
-     navBarData: ['推荐', '地区', '行业', '要求'],
+     navBarData: [ '地区', '行业', '要求'],
   },
 
   /**

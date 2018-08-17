@@ -1,2 +1,23 @@
 <!--page/common/industry/industry.wxml-->
-<text>page/common/industry/industry.wxml</text>
+<view class="industry">
+  <view class="left">
+    <block wx:for="{{industry}}" wx:key="index">
+      <view class="industry-level1 {{_industrynav==index?'active':''}}" bindtap="clickLevel1" data-industrynav="{{index}}">{{item.name}}</view>
+    </block>
+  </view>
+  <view class="right">
+    <view class="industry-level2">
+      <block wx:for="{{currentSelect}}">
+        <view class="industrybtn {{_profession==index?'active':''}}" data-profession="{{index}}" bindtap='clickLevel2'>{{item.name}}</view>
+      </block>
+    </view>
+
+    <!-- <view class="industry-level3">
+      <block wx:for="{{profession}}">
+        <view class="industrybtn {{_job==index?'active':''}}" bindtap='clickLevel3' data-job="{{index}}">
+          {{item.name}}
+        </view>
+      </block>
+    </view>-->
+  </view> 
+</view>

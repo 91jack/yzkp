@@ -1,30 +1,45 @@
 <!--page/index/pages/newwork/joblist/joblist.wxml-->
 
-<import src ="/template/topsearch/topsearch.wxml"/>
-<import src ="/template/joblist/joblist.wxml"/>
-  
-<template is="topsearch"/>
+<import src="/template/topsearch/topsearch.wxml" />
+<import src="/template/joblist/joblist.wxml" />
+
+<template is="topsearch" />
 
 
-
-
- <view class='nav-bar'>
-     <view class='nav-item suguest'>
-      <picker mode="selector" range="{{isRecommon}}" range-key='name' bindchange='bindPickerChange' value="{{index}}">
-        <view>{{isRecommon[index].name}}</view>
-        <image class='select_img' src='/image/index/return1.png'></image>
-      </picker>
-    </view>
-    <view wx:for="{{navBarData}}" class='nav-item' wx:key="unique">
-      <text class='select_font {{!currentTab[index]&&"select_font_yellow"}}'>{{item}}</text>
-      <image class='select_img {{!currentTab[index]&&"select_img_rotate"}}' src='/image/index/return1.png'></image>
-    </view>
+<view class='nav-bar'>
+  <view class='nav-item suguest'>
+    <picker mode="selector" range="{{isRecommon}}" range-key='name' bindchange='bindPickerChange' value="{{index}}">
+      <view>{{isRecommon[index].name}}</view>
+      <image class='select_img' src='/image/index/return1.png'></image>
+    </picker>
   </view>
+
+  <navigator hover-class='none' url="/page/common/city/city">
+    <view class='nav-item'>
+      <text class='select_font'>地区</text>
+      <image class='select_img' src='/image/index/return1.png'></image>
+    </view>
+  </navigator>
+
+  <navigator hover-class='none' url="/page/common/industry/industry">
+    <view class='nav-item'>
+      <text class='select_font'>行业</text>
+      <image class='select_img' src='/image/index/return1.png'></image>
+    </view>
+  </navigator>
+
+  <navigator hover-class='none' url="/page/common/demand/demand">
+    <view class='nav-item'>
+      <text class='select_font'>要求</text>
+      <image class='select_img' src='/image/index/return1.png'></image>
+    </view>
+  </navigator>
+
+</view>
 
 
 
 <!--职位展示  -->
 <view class='cont'>
-  <template is="joblist" data="{{jobList}}"/>
+  <template is="joblist" data="{{jobList}}" />
 </view>
-

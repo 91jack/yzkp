@@ -4,18 +4,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    city:null,
+    cities:null,
     currentSelect:null,
-    hotCity:null,
-    ABC:null,
-    DEFG:null,
-    HI:null,
-    JK:null,
-    LMN:null,
-    OPQR:null,
-    STU:null,
-    VWX:null,
-    YZ:null
+    country:null,
+    _citynav:'热门城市',
+    _city:'重庆',
+    _country:'所有'
   },
 
   /**
@@ -28,21 +22,10 @@ Page({
       success: function(res) {
         console.log(res)
         _this.setData({
-          city:res.data,
-          hotCity: res.data['热门城市'],
-          ABC: res.data['A B C'],
-          DEFG: res.data['D E F G'],
-          HI: res.data['H I'],
-          JK: res.data['J K'],
-          LMN: res.data['L M N'],
-          OPQR: res.data['O P Q R'],
-          STU: res.data['S T U'],
-          VWX: res.data['V W X'],
-          YZ: res.data['Y Z']
+          cities:res.data,
+          currentSelect:res.data['热门城市'],
+          country: res.data['热门城市']['重庆']
         })
-        console.log(res.data['热门城市'])
-        console.log(res.data['A B C'])
-        
       },
     })
   },
@@ -60,15 +43,33 @@ Page({
   onShow: function () {
   
   },
+  // 城市一级筛选
   clickLevel1:function(e){
     var _this = this;
-    console.log(e.currentTarget.dataset.citynav)
     var citynav = e.currentTarget.dataset.citynav;
-
-    this.setData({
-   
-      currentSelect:_this.data.city[citynav]
+    _this.setData({
+      _citynav: citynav,
+      currentSelect: _this.data.cities[citynav],
+      country:[]
     })
-  }
-
+  },
+// 城市二级筛选
+  clickLevel2:function(e) {
+    var _this = this;
+    var city = e.currentTarget.dataset.city
+    var country = _this.data.currentSelect[city];
+    this.setData({
+      _city:city,
+      country: country
+    })
+  },
+  // 区县城市选择
+  clickLevel3: function (e) {
+    var _this = this;
+    var city = e.currentTarget.dataset.country
+    console.log(city)
+    this.setData({
+      _country:city
+    })
+  },
 })

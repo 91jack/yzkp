@@ -1,21 +1,34 @@
 // page/common/industry/industry.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    industry: null,
+    currentSelect: null,
+    profession:'',
+    _industrynav: '',
+    _profession: '',
+    _job: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  wx.getStorage({
-    key: '',
-    success: function(res) {},
-  })
+    var _this = this;
+    wx.getStorage({
+      key: 'industryArr',
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          industry: res.data,
+          currentSelect:res.data[0].list
+        })
+      },
+    })
   },
 
   /**
@@ -31,39 +44,37 @@ Page({
   onShow: function () {
   
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  // 城市一级筛选
+  clickLevel1: function (e) {
+    var _this = this;
+    console.log(e.currentTarget.dataset.industrynav)
+    var industrynav = e.currentTarget.dataset.industrynav;
+    console.log(_this.data.industry[industrynav])
+    this.setData({
+      _industrynav: industrynav,
+      currentSelect: _this.data.industry[industrynav].list
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  // 城市二级筛选
+  clickLevel2: function (e) {
+    var _this = this;
+    var professionIndex = e.currentTarget.dataset.profession
+    console.log(_this.data.currentSelect[professionIndex].list)
+   _this.setData({
+     _profession: professionIndex,
+     profession: _this.data.currentSelect[professionIndex].list
+   })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  // 区县城市选择
+  clickLevel3: function (e) {
+    var _this = this;
+    console.log(e)
+    var jobIndex = e.currentTarget.dataset.job
+   
+    this.setData({
+      _job: jobIndex,
+      job: _this.data.profession[jobIndex].name
+    })
+    console.log(this.data.job)
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
