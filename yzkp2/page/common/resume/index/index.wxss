@@ -119,6 +119,15 @@ page{
 .la-item{
   padding: 30rpx 0;
   border-top: 1rpx solid #E8E8E8;  
+  position: relative;
+}
+.la-item .edit-exercise{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 26rpx;
+  height: 26rpx;
+  margin-top: -13rpx;
 }
 .la-item:last-of-type{
   padding-bottom: 0;

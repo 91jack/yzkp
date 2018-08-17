@@ -3,7 +3,6 @@
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -93,7 +92,8 @@
         "city/city",
         "demand/demand",
         "industry/industry",
-        "opinion/opinion"
+        "opinion/opinion",
+        "msgdetail/msgdetail"
       ]
     }
   ],

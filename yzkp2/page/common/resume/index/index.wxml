@@ -99,8 +99,8 @@
         </view>
         <navigator hover-class="none" url="/page/common/resume/jobexperience/jobexperience">
           <view class="tit-edit">
-            <image src="/image/mine/edit.png"></image>
-            <text>编辑</text>
+            <image src="/image/mine/add-exercise.png"></image>
+            <text>添加</text>
           </view>
         </navigator>
       </view>
@@ -128,8 +128,8 @@
         </view>
         <navigator hover-class="none" url="/page/common/resume/eduexperience/eduexperience">
           <view class="tit-edit">
-            <image src="/image/mine/edit.png"></image>
-            <text>编辑</text>
+            <image src="/image/mine/add-exercise.png"></image>
+            <text>添加</text>
           </view>
         </navigator>
       </view>
@@ -157,8 +157,8 @@
         </view>
         <navigator hover-class="none" url="/page/common/resume/project/project">
           <view class="tit-edit">
-            <image src="/image/mine/edit.png"></image>
-            <text>编辑</text>
+            <image src="/image/mine/add-exercise.png"></image>
+            <text>添加</text>
           </view>
         </navigator>
       </view>
@@ -171,6 +171,7 @@
             <text class="la-item-comp">{{item.name}} | {{item.role}} </text>
             <text class="la-item-intro">{{item.tag}}</text>
           </view>
+          <image class='edit-exercise' src='/image/mine/edit.png'></image>
         </view>
         </block>
       </view>

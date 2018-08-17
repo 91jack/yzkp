@@ -1,0 +1,18 @@
+<!--page/common/msgdetail/msgdetail.wxml-->
+<view class='chat'>
+  <view class='chat-item yourmsg'>
+    <image src=''></image>
+    <text>你好,可以把你的作品发过来看一下吗?可以把你的作品发过来看一下吗可以把你的作品发过来看一下吗</text>
+  </view>
+  <view class='chat-item mymsg'>
+    <text>好的,晚点发到你的邮箱晚点发到你的邮箱晚点发到你的邮箱晚点发到你的邮箱晚点发到你的邮箱!</text>
+    <image src=''></image>
+  </view>
+  <view class='bottom-input'>
+    <textarea placeholder='请输入新的聊天' show-confirm-bar="true" auto-height='40rpx' placeholder-style='color:#D7D7D7'></textarea>
+  </view>
+</view>
+
+
+
+
