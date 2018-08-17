@@ -1,17 +1,6 @@
 // pages/index/index.js
-var base = require('../../../utils/basedata.js');
-base.cityList();//城市列表
-base.companyType(); // 公司性质
-base.companySize(); // 公司规模
-base.monthPay(); // 月薪
-base.education();// 学历
-base.workYear();// 工作经验
-base.height();// 身高要求
-base.demand();// 首页-要求
-base.welfare();// 福利待遇
-base.industry();//行业
-
 const testLoginUrl = require('../../../config').testLoginUrl;
+const loginUrl = require('../../../config').loginUrl;
 const jobListUrl = require('../../../config').jobListUrl;
 Page({
   
@@ -19,9 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-    role:1,//用户角色 1：求职者 2：员工 3：企业
-
+    role: 1,//用户角色 0：求职者  1：企业 2：员工
     jobList: [],
     index: 0,//选择的下拉列表下标，
     navBarData: ['推荐','地区', '行业', '要求'],
@@ -117,10 +104,34 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  // 点击下拉列表
-
   onLoad: function (options) {
-  
+    var _this = this;
+    // 登录
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          //发起网络请求
+          wx.request({
+            url: loginUrl,
+            data: {
+              code: res.code
+            },
+            success: function (res) {
+              getApp().globalData.token = res.data.obj.token;
+              getApp().globalData.role = res.data.obj.type;
+              _this.jobListFn();
+             
+
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    });
+
+    
   },
 
 
@@ -129,34 +140,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var _this = this;
-    wx.request({
-      url: testLoginUrl,
-      data: {
-       openId:'1001'
-      },
-     
-      success: function (res) {
-        getApp().globalData.token = res.data.obj.token;// 用户token
-        getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
-        getApp().globalData.employee = res.data.obj.employee;// 求职者，员工简历
-        wx.request({
-          url: jobListUrl,
-          data: {
-            token: res.data.obj.token,
-            // type: options.type ? 0 : 1,//最新0推荐1
-            // recruitType: options.recruitType ? 0 : 1//全职0兼职1
-          },
-          success: function (res) {
-           
-            _this.setData({
-              jobList: res.data.list
-            })
-          }
-        })
+  
+  
 
-      }
-    })
+        //getApp().globalData.token = res.data.obj.token;
+        // getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
+        // getApp().globalData.employee = res.data.obj.employee;// 求职者，员工简历
+       
+        
+
 
    
   },
@@ -202,5 +194,21 @@ Page({
   onShareAppMessage: function () {
   
   },
-
+  jobListFn:function(){
+    var _this = this;
+    wx.request({
+      url: jobListUrl,
+      data: {
+        token: getApp().globalData.token,
+        // type: options.type ? 0 : 1,//最新0推荐1
+        // recruitType: options.recruitType ? 0 : 1//全职0兼职1
+      },
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          jobList: res.data.list
+        })
+      }
+    })
+  }
 })

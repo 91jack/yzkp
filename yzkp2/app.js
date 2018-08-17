@@ -1,20 +1,21 @@
 //app.js
+var base = require('./utils/basedata.js');
+base.cityList();//城市列表
+base.companyType(); // 公司性质
+base.companySize(); // 公司规模
+base.monthPay(); // 月薪
+base.education();// 学历
+base.workYear();// 工作经验
+base.height();// 身高要求
+base.demand();// 首页-要求
+base.welfare();// 福利待遇
+base.industry();//行业
 
+const loginUrl = require('./config').loginUrl;
 App({
   onLaunch: function () {
-    // 城市列表
-
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    
+   
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -35,6 +36,7 @@ App({
         }  
       }
     })
+
     // 获取用户位置
     wx.getLocation({
       type: ' wgs84',   
@@ -50,10 +52,9 @@ App({
   },
   globalData: {
     token:'',
-   
-
+    role:0,
     resume:null,//简历
-    employee:null,
-    userInfo: null
+    employee:null,//员工
+    userInfo: null//用户信息
   }
 })

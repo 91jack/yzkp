@@ -11,6 +11,9 @@ var config = {
   // 模拟登陆
   testLoginUrl: `${host}test/login.json`,
 
+  // 登录
+  loginUrl: `${host}/login.json`,
+
 
   /* --求职者模块-- */
   // 新增简历基本信息
