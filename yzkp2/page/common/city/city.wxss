@@ -1,1 +1,20 @@
 /* page/common/city/city.wxss */
+.city {
+  background: #fff;
+  heihgt:100%;
+}
+.city left {
+  width:211rpx;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.city-level1 {
+  text-align: center;
+  width:211rpx;
+  height:91rpx;
+  line-height: 91rpx;
+  background: #F6F6F6;
+  color:#868686;
+  border-bottom: 1rpx solid #fff;
+}

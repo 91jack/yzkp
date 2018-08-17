@@ -23,8 +23,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    index:0,
-    isRecommon:[{type:0,name:'最新'},{type:1,name:'推荐'}],
+    
     sexArray: [ '男', '女' ],//性别
     currentTab: [true, true, true], //控制nav-bar的显示
     navBarData: ['地区', '行业', '要求'],

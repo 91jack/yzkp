@@ -132,6 +132,10 @@ var config = {
   // 搜索简历
   searchResumeUrl: `${host}resume/list.json`,
 
+
+  // 招聘外包，用工灵活，劳务派遣
+  laowuUrl: `${host}recruit/config/get.json`,
+
   /** 基础数据 */
   // 城市列表
   // cityUrl: `${host}common/cities.json`,

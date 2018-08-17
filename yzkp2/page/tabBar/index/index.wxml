@@ -1,10 +1,10 @@
 <!--pages/index/index.wxml-->
-<import src ="/template/topsearch/topsearch.wxml"/>
-<import src ="/template/joblist/joblist.wxml"/>
+<import src="/template/topsearch/topsearch.wxml" />
+<import src="/template/joblist/joblist.wxml" />
 
 
 <navigator hover-class="none" url='/page/company/joblist/joblist'>
-  <template is="topsearch"/>
+  <template is="topsearch" />
 </navigator>
 
 <view class='banner'>
@@ -41,13 +41,17 @@
 
 
 <navigator hover-class="none" url='/page/company/joblist/joblist'>
-  <jz-select-navbar> </jz-select-navbar>
+  <view class='nav-bar'>
+    <view wx:for="{{navBarData}}" class='nav-item' wx:key="unique">
+      <text class='select_font {{!currentTab[index]&&"select_font_yellow"}}'>{{item}}</text>
+      <image class='select_img {{!currentTab[index]&&"select_img_rotate"}}' src='/image/index/return1.png'></image>
+    </view>
+  </view>
 </navigator>
 
 
 
 <!--职位展示  -->
 <view class='cont'>
-  <template is="joblist" data="{{jobList}}"/>
+  <template is="joblist" data="{{jobList}}" />
 </view>
-

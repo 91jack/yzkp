@@ -8,17 +8,23 @@
 
 
 
-<view>
-  <jz-select-navbar>
-    <view slot="nav"></view>
-  </jz-select-navbar>
-</view>
+ <view class='nav-bar'>
+     <view class='nav-item suguest'>
+      <picker mode="selector" range="{{isRecommon}}" range-key='name' bindchange='bindPickerChange' value="{{index}}">
+        <view>{{isRecommon[index].name}}</view>
+        <image class='select_img' src='/image/index/return1.png'></image>
+      </picker>
+    </view>
+    <view wx:for="{{navBarData}}" class='nav-item' wx:key="unique">
+      <text class='select_font {{!currentTab[index]&&"select_font_yellow"}}'>{{item}}</text>
+      <image class='select_img {{!currentTab[index]&&"select_img_rotate"}}' src='/image/index/return1.png'></image>
+    </view>
+  </view>
 
 
 
 <!--职位展示  -->
 <view class='cont'>
-<template is="joblist" data="{{jobList}}"/>
-
+  <template is="joblist" data="{{jobList}}"/>
 </view>
 

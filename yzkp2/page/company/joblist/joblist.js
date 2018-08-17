@@ -9,7 +9,9 @@ Page({
   data: {
     role: 1,//用户角色 1：求职者 2：员工 3：企业
     jobList: [],
-    index: 0//选择的下拉列表下标
+    index: 0,//选择的下拉列表下标
+    isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
+     navBarData: ['推荐', '地区', '行业', '要求'],
   },
 
   /**
@@ -83,5 +85,10 @@ Page({
   onShareAppMessage: function () {
 
   },
- 
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
 })

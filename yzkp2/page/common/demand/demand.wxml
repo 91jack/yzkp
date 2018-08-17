@@ -1,0 +1,61 @@
+<!--page/common/demand/demand.wxml-->
+ <view hidden="{{currentTab[2]}}" data-idx="2" bindtap='hideBar'>
+        <view class='bar-request'>
+          <view class='bar-request-item'>
+            <view class='bar-request-tit'>职位类别</view>
+            <view class='bar-request-detail'>
+              <view class='detail-box active'>全职</view>
+              <view class='detail-box'>兼职</view>
+            </view>          
+          </view>
+          <view class='bar-request-item'>
+            <view class='bar-request-tit'>结算方式</view>
+            <view class='bar-request-detail'>
+              <view class='detail-box active'>日结</view>
+              <view class='detail-box'>周结</view>
+              <view class='detail-box'>月结</view>
+              <view class='detail-box'>完工结算</view>
+            </view>          
+          </view>
+          <view class='bar-request-item'>
+            <view class='bar-request-tit'>月薪要求</view>
+            <view class='bar-request-detail'>
+              <view class='detail-box active'>2k以下</view>
+              <view class='detail-box'>2k-5k</view>
+              <view class='detail-box'>5k-10k</view>
+            </view>          
+          </view>
+          <view class='bar-request-item'>
+            <view class='bar-request-tit'>性别要求</view>
+            <view class='bar-request-detail'>
+              <view class='detail-box active'>不限</view>
+              <view class='detail-box none'>
+                <radio-group>
+                  <radio>男</radio>
+                  <radio>女</radio>
+                </radio-group>
+              </view>
+            </view>          
+          </view>
+          <view class='bar-request-item'>
+            <view class='bar-request-tit'>学历要求</view>
+            <view class='bar-request-detail'>
+              <view class='detail-box active'>不限</view>
+              <view class='detail-box'>大专</view>
+              <view class='detail-box'>5k-10k</view>
+            </view>          
+          </view>
+          <view class='bar-request-item'>
+            <view class='bar-request-tit'>工作经验</view>
+            <view class='bar-request-detail'>
+              <view class='detail-box active'>不限</view>
+              <view class='detail-box'>大专</view>
+              <view class='detail-box'>5k-10k</view>
+            </view>          
+          </view> 
+        </view>
+        <view class='request-btn'>
+          <view class='request-btn-left'>取消</view>
+          <view class='request-btn-right'>确定</view>
+        </view>
+      </view> 

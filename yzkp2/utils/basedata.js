@@ -27,6 +27,9 @@ const uploadImgUrl = `${host}image/upload.json`;
 // 福利待遇
 const welfareUrl = `${host}common/welfare.json`;
 
+// 行业
+const industryUrl = `${host}common/industry.json`;
+
 
 // 城市列表
 function cityList() {
@@ -161,6 +164,23 @@ function welfare() {
   })
 }
 
+
+//// 行业
+function industry() {
+  wx.request({
+    url: industryUrl,
+    success: function (res) {
+
+      if (res.data.status == 0) {
+        wx.setStorage({
+          key: "industryArr",
+          data: res.data.list
+        })
+      }
+    }
+  })
+}
+
 module.exports = {
   cityList: cityList,//城市列表
   companyType: companyType, // 公司性质
@@ -171,4 +191,5 @@ module.exports = {
   height: height,// 身高要求
   demand: demand,// 首页-要求
   welfare: welfare,// 福利待遇
+  industry:industry// 行业
 }

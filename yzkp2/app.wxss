@@ -23,6 +23,61 @@ page {
 }
 
 
+.nav-bar{
+  height: 84rpx;
+  line-height: 84rpx;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #F5F5F5;
+  background: #fff;
+  position: relative
+}
+.nav-bar .nav-item{
+  display: flex;
+  width: 186rpx;
+  position: relative
+}
+.nav-bar .nav-item:first-of-type::after,
+.nav-bar .nav-item:nth-of-type(2)::after,
+.nav-bar .nav-item:nth-of-type(3)::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 26rpx;
+  width: 1px;
+  background: #BFBFBF;
+  margin-top: -13rpx;
+}
+.nav-bar .nav-item text{
+  font-size: 28rpx;
+  color: #6B6B6B;
+  display: block;
+  margin-left: 45rpx;
+}
+.nav-bar .nav-item image{
+  width: 21rpx;
+  height: 13rpx;
+  display: block;
+  margin-top: 38rpx;
+  margin-left: 11rpx;
+}
+.nav-item picker{
+  display: flex;
+  width: 186rpx;
+}
+.nav-bar .nav-item picker image{
+  position: absolute;
+  top: 0;
+  right: 55rpx;
+}
+.nav-item picker view{
+  font-size: 28rpx;
+  color: #6B6B6B;
+  box-sizing: border-box;
+  padding-left: 45rpx;
+}
+
 /* 能力提升部分 */
 .ability-cont .ability-cont-item{
   height: 260rpx;
