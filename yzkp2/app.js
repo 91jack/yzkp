@@ -53,6 +53,7 @@ App({
   globalData: {
     token:'',
     role:0,
+    company:null,//公司
     resume:null,//简历
     employee:null,//员工
     userInfo: null//用户信息

@@ -120,6 +120,10 @@ Page({
             success: function (res) {
               getApp().globalData.token = res.data.obj.token;
               getApp().globalData.role = res.data.obj.type;
+              getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
+              getApp().globalData.employee = res.data.obj.employee;// 员工
+              
+
               _this.jobListFn();
              
 
@@ -140,14 +144,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
-  
-
-        //getApp().globalData.token = res.data.obj.token;
-        // getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
-        // getApp().globalData.employee = res.data.obj.employee;// 求职者，员工简历
-       
-        
 
 
    
