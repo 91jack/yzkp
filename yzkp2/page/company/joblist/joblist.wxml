@@ -29,7 +29,7 @@
   </navigator>
 
   <navigator hover-class='none' url="/page/common/demand/demand">
-    <view class='nav-item'>
+    <view class='nav-item last'>
       <text class='select_font'>要求</text>
       <image class='select_img' src='/image/index/return1.png'></image>
     </view>

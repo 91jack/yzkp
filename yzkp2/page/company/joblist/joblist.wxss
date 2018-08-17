@@ -7,3 +7,6 @@ page{
   background: #F5F5F5;
   overflow: hidden
 }
+.nav-bar .nav-item.last::after{
+  height: 0;
+}

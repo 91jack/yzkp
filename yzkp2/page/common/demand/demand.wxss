@@ -1,28 +1,37 @@
 /* page/common/demand/demand.wxss */
 /* 要求 */
+page{
+  background: #fff;
+}
+.demand{
+  margin-bottom: 120rpx;
+}
 .bar-request{
   width: 100%;
-  height: 805rpx;
   background: #fff;
-  padding: 0 25rpx;
+  padding: 30rpx 25rpx 0;
 }
 .bar-request-tit{
-  font-size: 24rpx;
+  font-size: 30rpx;
   color: #868686;
+  margin-bottom: 20rpx;
 }
 .bar-request-detail{
   display: flex;
+  margin-bottom: 20rpx;
+  flex-wrap: wrap;
 }
 .bar-request-detail .detail-box{
-  width: 106rpx;
-  height: 39rpx;
-  font-size: 24rpx;
+  height: 60rpx;
+  font-size: 30rpx;
   color: #353535;
-  border: 1rpx solid #000;
+  border: 1rpx solid rgba(0, 0, 0, 0.2);
   text-align: center;
-  line-height: 39rpx;
-  margin-right: 11rpx;
+  line-height: 60rpx;
+  margin-right: 22rpx;
   box-sizing: border-box;
+  margin-bottom: 10rpx;
+  padding: 0 28rpx;
 }
 .bar-request-detail .detail-box.active{
   background: #F39800;
@@ -32,18 +41,26 @@
 .bar-request-detail .detail-box.none{
   border: none;
   width: 300rpx;
-}
-.bar-request-detail .detail-box.none radio:last-of-type{
-  margin-left: 50rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .request-btn{
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   height: 84rpx;
   width: 100%;
   display: flex;
+  z-index: 20;
+}
+.request-btn navigator{
+  width: 375rpx;
 }
 .request-btn-left,
 .request-btn-right{
-  width: 50%;
+  width: 100%;
   height: 100%;
   text-align: center;
   line-height: 84rpx;
@@ -55,4 +72,21 @@
 }
 .request-btn-right{
   background: #F39800;
+}
+.detail-box-checksex{
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.detail-box-checksex image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+.detail-box-checksex text{
+  font-size: 30rpx;
+  color: #353535;
+}
+.detail-box-checksex text.active{
+  color: #F39800;
 }

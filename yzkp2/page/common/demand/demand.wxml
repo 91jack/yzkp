@@ -1,61 +1,52 @@
 <!--page/common/demand/demand.wxml-->
- <view hidden="{{currentTab[2]}}" data-idx="2" bindtap='hideBar'>
-        <view class='bar-request'>
-          <view class='bar-request-item'>
-            <view class='bar-request-tit'>职位类别</view>
-            <view class='bar-request-detail'>
-              <view class='detail-box active'>全职</view>
-              <view class='detail-box'>兼职</view>
-            </view>          
-          </view>
-          <view class='bar-request-item'>
-            <view class='bar-request-tit'>结算方式</view>
-            <view class='bar-request-detail'>
-              <view class='detail-box active'>日结</view>
-              <view class='detail-box'>周结</view>
-              <view class='detail-box'>月结</view>
-              <view class='detail-box'>完工结算</view>
-            </view>          
-          </view>
-          <view class='bar-request-item'>
-            <view class='bar-request-tit'>月薪要求</view>
-            <view class='bar-request-detail'>
-              <view class='detail-box active'>2k以下</view>
-              <view class='detail-box'>2k-5k</view>
-              <view class='detail-box'>5k-10k</view>
-            </view>          
-          </view>
-          <view class='bar-request-item'>
-            <view class='bar-request-tit'>性别要求</view>
-            <view class='bar-request-detail'>
-              <view class='detail-box active'>不限</view>
-              <view class='detail-box none'>
-                <radio-group>
-                  <radio>男</radio>
-                  <radio>女</radio>
-                </radio-group>
-              </view>
-            </view>          
-          </view>
-          <view class='bar-request-item'>
-            <view class='bar-request-tit'>学历要求</view>
-            <view class='bar-request-detail'>
-              <view class='detail-box active'>不限</view>
-              <view class='detail-box'>大专</view>
-              <view class='detail-box'>5k-10k</view>
-            </view>          
-          </view>
-          <view class='bar-request-item'>
-            <view class='bar-request-tit'>工作经验</view>
-            <view class='bar-request-detail'>
-              <view class='detail-box active'>不限</view>
-              <view class='detail-box'>大专</view>
-              <view class='detail-box'>5k-10k</view>
-            </view>          
-          </view> 
+<view class='demand'>
+  <view class='bar-request'>
+    <view class='bar-request-item'>
+      <view class='bar-request-tit'>职位类别</view>
+      <view class='bar-request-detail'>
+        <view data-type="zhibie" bindtap='choose' wx:for="{{workData}}" data-idx='{{index}}' class='detail-box {{workDataActive==index?"active":""}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='bar-request-item'>
+      <view class='bar-request-tit'>结算方式</view>
+      <view class='bar-request-detail'>
+        <view data-type="style" bindtap='choose' data-idx='{{index}}' wx:for="{{payData}}" class='detail-box {{payDataActive==index?"active":""}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='bar-request-item'>
+      <view class='bar-request-tit'>月薪要求</view>
+      <view class='bar-request-detail'>
+        <view data-type="monthpay" bindtap='choose' data-idx='{{index}}' wx:for="{{monthPayArr}}" class='detail-box {{monthPayArrActive==index?"active":""}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='bar-request-item'>
+      <view class='bar-request-tit'>性别要求</view>
+      <view class='bar-request-detail'>
+        <view data-type="sex" bindtap='choose' data-idx='{{index}}' wx:for="{{sexData}}" class='detail-box-checksex'>
+          <image src=' {{sexActive==index?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+          <text class=' {{sexActive==index?"active":""}}'>{{item}}</text>
         </view>
-        <view class='request-btn'>
-          <view class='request-btn-left'>取消</view>
-          <view class='request-btn-right'>确定</view>
-        </view>
-      </view> 
+      </view>
+    </view>
+    <view class='bar-request-item'>
+      <view class='bar-request-tit'>学历要求</view>
+      <view class='bar-request-detail'>
+        <view data-type="xueli" bindtap='choose' data-idx='{{index}}' wx:for="{{educationArr}}" class='detail-box {{educationArrActive==index?"active":""}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='bar-request-item'>
+      <view class='bar-request-tit'>工作经验</view>
+      <view class='bar-request-detail'>
+        <view data-type="workexercise" bindtap='choose' data-idx='{{index}}' wx:for="{{workYearArr}}" class='detail-box {{workYearArrActive==index?"active":""}}'>{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='request-btn'>
+    <navigator url="/page/company/joblist/joblist" hover-class='none'>
+      <view class='request-btn-left'>取消</view>
+    </navigator>
+    <navigator url="/page/company/joblist/joblist?demand={{searchData}}" hover-class='none'>   
+      <view class='request-btn-right'>确定</view>
+    </navigator>    
+  </view>
+</view>
