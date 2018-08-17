@@ -41,7 +41,6 @@ Page({
       url: resumeUrl,
       data: {
         token: getApp().globalData.token,
-        
       },
       success: function (res) {
         console.log(res)
