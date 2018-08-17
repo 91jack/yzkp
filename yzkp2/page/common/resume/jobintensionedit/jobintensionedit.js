@@ -39,7 +39,9 @@ Page({
 // 获取期望薪资
   bindPicker:function(e){
     this.setData({
-      workPay:e.detail.value
+      workPay:this.data.monthPayArr[e.detail.value],
+      monthPayIndex:e.detail.value,
+      monthPayHide:true
     })
   },
   /**

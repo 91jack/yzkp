@@ -14,7 +14,7 @@
       <input data-idx="1" bindblur='getValue' placeholder='请输入年龄' placeholder-style="color:#D7D7D7"></input>
     </view>
     <view class='box'>
-      <text>身高（非必填）</text>
+      <text>身高</text>
       <input data-idx="6" bindblur='getValue' placeholder='请输入身高' placeholder-style="color:#D7D7D7"></input>
     </view>
     <view class='box'>
