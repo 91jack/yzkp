@@ -1,15 +1,15 @@
 // page/employee/contract/step7/step7.js
 const allInfoUrl = require('../../../../config').allInfoUrl;
-<<<<<<< HEAD
+
 const phonecodeUrl = require('../../../../config').phonecodeUrl
-=======
+
 
 // 获取验证码
 const phoneCodeUrl = require('../../../../config').phoneCodeUrl;
 // 验证码校验
 const phoneCodeyzUrl = require('../../../../config').phoneCodeyzUrl;
 
->>>>>>> cb0430c4f03fcd70e956812bf3f11e63ee2c074f
+
 Page({
 
   /**
@@ -17,13 +17,13 @@ Page({
    */
   data: {
     infoData:{},
-<<<<<<< HEAD
+
     timer: '',
-=======
+
     timer: '',//定时器名字
     yzcode:'',
     incode:'',
->>>>>>> cb0430c4f03fcd70e956812bf3f11e63ee2c074f
+
     timerData:'获取验证码',
     countDownNum: 60,
     openInterVal:true
@@ -74,9 +74,6 @@ Page({
   // 获取验证码
   getCode:function(event){
     var _this = this;
-<<<<<<< HEAD
-    // 按钮倒计时
-=======
     wx.request({
       url: phoneCodeUrl,//获取验证码
       data:{
@@ -86,14 +83,13 @@ Page({
       success:function(res){
         console.log(res)
         if(res.data.status == 0){
-          // _this.setData({
-          //   yzcode:res.data.obj
-          // })
+          _this.setData({
+            yzcode:res.data.obj
+          })
 
         }
       }
     })
->>>>>>> cb0430c4f03fcd70e956812bf3f11e63ee2c074f
     if (_this.data.openInterVal){
       this.setData({
         timerData: '5s',
@@ -132,9 +128,9 @@ Page({
     wx.request({
       url: phoneCodeyzUrl,//验证验证码
       data: {
-        token: getApp().globalData.token,
+       token: getApp().globalData.token,
        phone:'18502323596',
-       yzcode:_this.data.incode
+       yzcode: _this.data.yzcode
       },
       success: function (res) {
         console.log(res)

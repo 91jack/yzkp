@@ -2,7 +2,7 @@
 .head-pic{
   width: 100%;
   text-align: center;
-  border-bottom: 1rpx solid red;
+  border-bottom: 1rpx solid #e8e8e8;
 }
 .head-pic image{
   display: block;

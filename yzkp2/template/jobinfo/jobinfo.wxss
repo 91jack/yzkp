@@ -34,7 +34,7 @@
 .tit-request .request-item{
   display: flex;
   align-items: flex-end;
-  margin-right: 48rpx;
+  margin-right: 25rpx;
   margin-bottom: 5rpx;
 }
 .tit-request .request-item image{

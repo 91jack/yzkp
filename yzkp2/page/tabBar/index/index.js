@@ -19,11 +19,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-    role:2,//用户角色 1：求职者 2：员工 3：企业
-=======
+
     role:1,//用户角色 1：求职者 2：员工 3：企业
->>>>>>> cb0430c4f03fcd70e956812bf3f11e63ee2c074f
+
     jobList: [],
     index: 0,//选择的下拉列表下标，
     navBarData: ['推荐','地区', '行业', '要求'],
@@ -67,11 +65,7 @@ Page({
         text: '兼职职位'
       },
       {
-<<<<<<< HEAD
-=======
-        //url: '/page/common/sign/sign',  
->>>>>>> cb0430c4f03fcd70e956812bf3f11e63ee2c074f
-        url: '/page/employee/contract/step7/step7',
+        url: '/page/employee/contract/step1/step1',
         src: '/image/index/discuss.png',
         text: '合同管理'
       },
@@ -139,7 +133,7 @@ Page({
     wx.request({
       url: testLoginUrl,
       data: {
-       openId:'1002'
+       openId:'1001'
       },
      
       success: function (res) {

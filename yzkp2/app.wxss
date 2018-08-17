@@ -586,9 +586,9 @@ checkbox{
   line-height: 28rpx;
 }
 .cont-company{
-  height: 66rpx;
+  height: 50rpx;
   display: flex;
-  margin-top: 34rpx;
+  margin-top: 20rpx;
 }
 .cont-company image{
   width: 66rpx;
