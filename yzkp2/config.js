@@ -68,6 +68,9 @@ var config = {
   // 获取能力提升类型列表信息
   courseTypeurl: `${host}capaciypromotion/type/get.json`,
 
+  // 意见反馈
+  suggestionAdd: `${host}suggestion/add.json`,
+
   /* --员工模块-- */
   // 查看薪酬
   payInformationUrl: `${host}employee/payInformation.json`,
@@ -91,6 +94,12 @@ var config = {
 
   // 工资卡信息填写
   regBankInfoUrl: `${host}employee/regBankInfo.json`,
+
+  // 获取验证码
+  phoneCodeUrl: `${host}employee/phonecode/get.json`,
+
+  // 验证码校验
+  phoneCodeyzUrl: `${host}employee/phonecode/yz.json`,
 
   /* --企业模块-- */
   // 发布全职招聘 发布兼职招聘

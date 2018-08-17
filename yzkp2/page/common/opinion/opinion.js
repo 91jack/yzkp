@@ -1,11 +1,15 @@
 // pages/mine/opinion/opinion.js
+//意见反馈
+const suggestionAdd = require('../../../config').suggestionAdd;
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+  content:''
   },
 
   /**
@@ -62,5 +66,48 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  // 获取评价内容
+  getContent:function(e){
+    this.setData({
+      content: e.detail.value
+    })
+  },
+  // 意见反馈
+  submitBtn:function(){
+    var _this = this;
+    wx.request({
+      url: suggestionAdd,//意见反馈
+      data: {
+        token: getApp().globalData.token,
+        content:_this.data.content
+      },
+      success: function (res) {
+       console.log(res)
+        if (res.data.status == 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 2000,
+            success:function(){
+              setTimeout(function(){
+                wx.navigateBack({
+                  delta: 1
+                })
+              },1000)
+             
+            }
+          })
+
+        }else if(res.data.status == 1004){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 1000
+          })
+        }
+
+      }
+    })
   }
 })

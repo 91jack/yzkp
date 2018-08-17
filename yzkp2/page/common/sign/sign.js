@@ -23,6 +23,7 @@ wx.getSystemInfo({
     */
     data: {
       payid:'',
+      id:''//员工id
     },
     // 画布的触摸移动开始手势响应
     start: function (event) {
@@ -71,8 +72,10 @@ wx.getSystemInfo({
     onLoad: function (options) {
       //console.log(options.payid)
       this.setData({
-        payid: options.payid
+        payid: options.payid,
+        id: options.contractId
       })
+
       //获得Canvas的上下文
       content = wx.createCanvasContext('firstCanvas')
       content.setFillStyle('#ccc')
@@ -129,8 +132,8 @@ wx.getSystemInfo({
             },
             success: function (res) {
               var imgUrl = JSON.parse(res.data).obj;
-              console.log(res)
-              console.log(imgUrl)
+              // console.log(res)
+              // console.log(imgUrl)
               wx.request({
                 url: signForWagesUrl,
                 data: {
@@ -147,10 +150,10 @@ wx.getSystemInfo({
                       duration: 2000,
                       success: function () {
                         setTimeout(function () {
-                          wx.navigateTo({
-                            url: '/page/employee/payment/index/index',
+                          wx.navigateBack({
+                            delta: 1
                           })
-                        }, 1000)
+                        }, 2000)
                       }
                     })
                    
