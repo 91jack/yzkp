@@ -9,6 +9,7 @@ base.workYear();// 工作经验
 base.height();// 身高要求
 base.demand();// 首页-要求
 base.welfare();// 福利待遇
+base.industry();//行业
 
 const testLoginUrl = require('../../../config').testLoginUrl;
 const jobListUrl = require('../../../config').jobListUrl;
@@ -25,6 +26,7 @@ Page({
 >>>>>>> cb0430c4f03fcd70e956812bf3f11e63ee2c074f
     jobList: [],
     index: 0,//选择的下拉列表下标，
+    navBarData: ['推荐','地区', '行业', '要求'],
     selectBar1:[
       {
         url:'/page/company/joblist/joblist?type=0',
@@ -101,17 +103,17 @@ Page({
         text: '职位管理'
       },
       {
-        url: '/page/company/waibao/waibao',
+        url: '/page/company/laowu/laowu?id=1',
         src: '/image/index/other.png',
         text: '招聘外包'
       },
       {
-        url: '/page/company/laowu/laowu',
+        url: '/page/company/laowu/laowu?id=3',
         src: '/image/index/goout.png',
         text: '劳务派遣'
       },
       {
-        url: '/page/company/linghuo/linghuo',
+        url: '/page/company/laowu/laowu?id=2',
         src: '/image/index/change.png',
         text: '灵活用工'
       }
@@ -137,7 +139,7 @@ Page({
     wx.request({
       url: testLoginUrl,
       data: {
-       openId:'1003'
+       openId:'1002'
       },
      
       success: function (res) {

@@ -1,18 +1,19 @@
 <!--page/index/laowu/laowu.wxml-->
 <view class='public-tit'>
-  <text>劳务派遣</text>
+  <text>{{message.name}}</text>
 </view>
 <view class='public-cont'>
   <view class='cont-item'>
     <text class='cont-item-name'>用工方式:</text>
-    <text>甲方提出业务外包项目，腾迈负责预算，评估价格，谈妥后安排人员进场交接，按照约定开展工作.</text>
+    <text>{{message.mode}}</text>
   </view>
   <view class='cont-item'>
     <text class='cont-item-name'>平台优势:</text>
-    <text>整合行业资深人士，流程快，服务质量有保障..</text>
+    <text>{{message.advantage}}</text>
   </view>
 </view>
-<view class='blue-btn'>
+
+<view class='blue-btn' bindtap='call' data-tel="18502323596">
   <image src='/image/index/phonefff.png'></image>
   <text>拨打电话咨询</text>
 </view>

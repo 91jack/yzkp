@@ -1,2 +1,15 @@
 <!--page/common/city/city.wxml-->
-<text>page/common/city/city.wxml</text>
+<view class="city">
+  <view class="left" wx:for="{{city}}" wx:key="index">
+    <view class="city-level1" bindtap="clickLevel1" data-citynav="{{index}}">{{index}}</view>
+  </view>
+  <view class="right">
+    <block wx:for="{{currentSelect}}">
+      <view>{{item}}</view>
+    </block>
+  </view>
+
+<!-- <block wx:for="{{hotCity}}">
+  <view >{{index}}</view>
+  </block> -->
+</view>
