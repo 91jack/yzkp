@@ -730,6 +730,9 @@ checkbox{
   margin-top: 14rpx;
   display: flex;
 }
+.add-btn navigator{
+  width: 100%;
+}
 .add-btn image{
   width: 37rpx;
   height: 37rpx;

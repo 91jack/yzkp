@@ -2,9 +2,9 @@
 <view class='box'>
   <text>入职时间</text>
   <view class='right'>
-     <picker mode="selector" range="{{workexpressData}}" value="{{item}}" bindchange="bindDateChangeExpress">
-        <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>        
-        <text class='choose'>{{workexpress}}</text>
+     <picker mode="date" data-idx="0" value="{{inDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <text hidden='{{inHide}}' class='choose'>请选择</text>        
+        <text hidden='{{!inHide}}' class='choose'>{{inData}}</text>
         <image class='next' src='../../../../image/mine/next.png'></image>
      </picker>
   </view>
@@ -12,9 +12,9 @@
 <view class='box'>
   <text>离职时间</text>
   <view class='right'>
-     <picker mode="selector" range="{{workexpressData}}" value="{{item}}" bindchange="bindDateChangeExpress">
-        <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>        
-        <text class='choose'>{{workexpress}}</text>
+     <picker data-idx="1" mode="date" value="{{outDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <text hidden='{{outHide}}' class='choose'>请选择</text>        
+        <text hidden='{{!outHide}}' class='choose'>{{outData}}</text>
         <image class='next' src='../../../../image/mine/next.png'></image>
      </picker>
   </view>
