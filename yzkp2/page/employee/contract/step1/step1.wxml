@@ -75,13 +75,31 @@
       <input bindblur='getValue' data-inx="6" placeholder='请输入担任职位' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
-      <input bindblur='getValue' data-inx="7" placeholder='请输入入职时间' placeholder-style='color:#AEAEAE'></input>
+      <picker mode="date" value="{{indate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <text hidden='{{inHide}}'>请选择入职时间</text>
+        <text hidden='{{!inHide}}'>{{indate}}</text>
+        <image src='/image/index/return.png'></image>
+      </picker>
     </view>
   </view>
+  <!-- <view class='post-job-header'>
+    
+  </view> -->
 </view>
 
 
 <view class='btn' bindtap='submitBtn'>下一步</view>
+
+<view class='be-employees' hidden='{{modalShow}}'>
+  <view class='be-employees-cont'>
+    <image src='/image/index/warmtip.png' class='be-employees-cont-pic'></image>
+    <text class='be-employees-cont-info'>温馨提示:如果您不是滕迈企业员工,请勿随意点击!</text>
+    <view class='be-employees-cont-btn'>
+      <view class='be-employees-cont-btn-item' bindtap='returnTab'>暂时放弃</view>
+      <view class='be-employees-cont-btn-item active' bindtap='writeContinue'>继续填写</view>        
+    </view>
+  </view>
+</view>
 
 
 

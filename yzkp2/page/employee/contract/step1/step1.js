@@ -23,7 +23,10 @@ Page({
     sexHide:false,
     educationSel:[],
     educationIndex:0,
-    educationHide:false
+    educationHide:false,
+    modalShow:false,
+    indate:'',   //入职时间
+    inHide:false
   },
 
   /**
@@ -157,10 +160,26 @@ Page({
         }
       }
     })
+  },
+  // 继续填写
+  writeContinue:function(){
+    this.setData({
+      modalShow:true
+    })
+  },
+  // 暂时放弃
+  returnTab:function(){
+    console.log(1111)
+    wx.navigateBack({
+      delta: 2
+    })
+  },
+  // 选择入职时间
+  bindDateChange:function(e){
+    var value = e.detail.value;
+    this.setData({
+      indate:value,
+      inHide:true
+    })
   }
-
-
-
-
-
 })

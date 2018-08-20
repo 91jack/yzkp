@@ -172,7 +172,7 @@ page {
   text-align: center;
   line-height: 117rpx;
   position: fixed;
-  z-index: 999;
+  z-index: 19;
   bottom: 0;
   left: 0
 }

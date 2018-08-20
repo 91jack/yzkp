@@ -36,10 +36,3 @@
     </view>
   </navigator>
 </view>
-<view class='be-employees'>
-  <view class='be-employees-cont'>
-    <image class='be-employees-cont-pic'></image>
-    <text class='be-employees-cont-info'>温馨提示:如果您不是滕迈企业员工,请勿随意点击!</text>
-    <view class='be-employees-cont-btn'></view>
-  </view>
-</view>
