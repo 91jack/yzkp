@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    school:'',
+    educationArr:[],
+    eduIndex:0,
+    level:'',
+    inDate:'',
+    inHide:false,
+    outDate:[],
+    outHide:'',
+    profession:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.getStorage({
+      key: 'educationArr',
+      success: function(res) {
+        that.setData({
+          educationArr:res.data
+        })
+      },
+    })
   },
 
   /**
@@ -28,39 +44,12 @@ Page({
   onShow: function () {
   
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //学历选择
+  bindLevelSelect:function(e){
+    var i = e.detail.value;
+    this.setData({
+      eduIndex:i,
+      level: that.data.educationArr[i]
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

@@ -121,6 +121,9 @@ Page({
               code: res.code
             },
             success: function (res) {
+              
+              console.log(res)
+              
               getApp().globalData.token = res.data.obj.token;
               getApp().globalData.role = res.data.obj.type;
               getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历

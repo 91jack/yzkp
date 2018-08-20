@@ -5,7 +5,7 @@
      <picker mode="date" data-idx="0" value="{{inDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
         <text hidden='{{inHide}}' class='choose'>请选择</text>        
         <text hidden='{{!inHide}}' class='choose'>{{inData}}</text>
-        <image class='next' src='../../../../image/mine/next.png'></image>
+        <image class='next' src='/image/mine/next.png'></image>
      </picker>
   </view>
 </view>
@@ -15,22 +15,22 @@
      <picker data-idx="1" mode="date" value="{{outDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
         <text hidden='{{outHide}}' class='choose'>请选择</text>        
         <text hidden='{{!outHide}}' class='choose'>{{outData}}</text>
-        <image class='next' src='../../../../image/mine/next.png'></image>
+        <image class='next' src='/image/mine/next.png'></image>
      </picker>
   </view>
 </view>
 <view class='box'>
   <text>所属公司名称</text>
-  <input placeholder='请输入所属公司名称' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入所属公司名称' data-idx='0' bindblur='getValue' placeholder-style="color:#D7D7D7"></input>
 </view>
 <view class='box'>
   <text>所属部门</text>
-  <input placeholder='请输入该公司所属部门' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入该公司所属部门' data-idx='1' bindblur='getValue' placeholder-style="color:#D7D7D7"></input>
 </view>
 <view class='box'>
   <text>担任职位</text>
-  <input placeholder='请输入该公司所担任职位' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入该公司所担任职位' data-idx='2' bindblur='getValue' placeholder-style="color:#D7D7D7"></input>
 </view>
-<view class='btn'>保存编辑</view>
+<view class='btn' bindtap='submitBtn'>保存编辑</view>
 
 

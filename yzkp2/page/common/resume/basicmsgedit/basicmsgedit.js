@@ -140,6 +140,10 @@ Page({
       },
       success: function (res) {
         console.log(res)
+        wx.setStorage({
+          key: 'resumeId',
+          data: res.data.obj.id,
+        })
         if(res.data.status==0){
           wx.navigateTo({
             url: '/page/common/resume/index/index',
