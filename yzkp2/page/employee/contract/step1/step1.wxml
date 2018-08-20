@@ -82,11 +82,7 @@
       </picker>
     </view>
   </view>
-  <!-- <view class='post-job-header'>
-    
-  </view> -->
 </view>
-
 
 <view class='btn' bindtap='submitBtn'>下一步</view>
 
