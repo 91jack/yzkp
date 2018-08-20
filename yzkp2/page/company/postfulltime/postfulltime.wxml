@@ -75,7 +75,7 @@
       </view>
     </view>
 
-    <view class='post-job-wealf'>
+    <!-- <view class='post-job-wealf'>
       <view class='post-job-wealf-tit'>福利待遇:</view>
       <view class='post-job-wealf-cont'>
         <view class='post-job-wealf-item'>
@@ -84,22 +84,14 @@
           </checkbox-group>
         </view>
       </view>
-    </view>
+    </view> -->
 
     <view class='post-job-area'>
       <view class='choose-place'>
         <text>请选择工作地点:</text>
         <view class='choose-region'>
           <view class='choose-region-item'>
-            <text>省</text>
-            <image src='/image/index/return.png'></image>
-          </view>
-          <view class='choose-region-item'>
-            <text>市</text>
-            <image src='/image/index/return.png'></image>
-          </view>
-          <view class='choose-region-item'>
-            <text>区</text>
+            <text>选择城市</text>
             <image src='/image/index/return.png'></image>
           </view>
         </view>

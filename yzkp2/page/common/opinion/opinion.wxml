@@ -4,9 +4,9 @@
 </view>
 
 <view class='btn'>
-<navigator hover-class='none' url="/page/tabBar/my/index">
- <view class='no'>取消</view>
-</navigator>
+
+ <view class='no' bindtap='cancleBtn'>取消</view>
+
  
   <view class='yes' bindtap='submitBtn'>提交</view>
 </view>

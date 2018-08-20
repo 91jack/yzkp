@@ -162,11 +162,17 @@ Page({
       success: function (res) {
         console.log(res)
         if(res.data.status==0){
-          // wx.navigateTo({
-          //   url: '',
-          // })
           wx.showToast({
-            title: '选择您想要发布的职位类型'
+            title: '认证成功',
+            icon: 'success',
+            duration: 2000,
+            success:function(){
+              setTimeout(function(){
+                wx.reLaunch({
+                  url: '/page/tabBar/index/index',
+                })
+              },1000)
+            }
           })
         }
       }

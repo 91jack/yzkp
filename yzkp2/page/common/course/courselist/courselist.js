@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index:1,
+    index:0,
     search:'',
     courseType:null,
     courseList:null

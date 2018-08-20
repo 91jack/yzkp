@@ -67,6 +67,11 @@ Page({
   onShareAppMessage: function () {
   
   },
+  cancleBtn:function(){
+    wx.navigateBack({
+      delta: 2
+    })
+  },
   // 获取评价内容
   getTextarea:function(e){
     this.setData({

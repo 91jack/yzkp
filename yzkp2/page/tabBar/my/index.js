@@ -77,12 +77,7 @@ Page({
     // 企业列表
     companyList:[
       {
-        url: '/page/job/joblist/joblist?type=0',
-        src: '/image/index/office.png',
-        text: '招聘进度'
-      },
-      {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/company/jobmanage/jobmanage',
         src: '/image/index/office.png',
         text: '职位管理'
       }

@@ -62,6 +62,7 @@ Page({
       _city:city,
       country: country
     })
+
   },
   // 区县城市选择
   clickLevel3: function (e) {
@@ -71,5 +72,6 @@ Page({
     this.setData({
       _country:city
     })
+    
   },
 })

@@ -63,7 +63,7 @@
       </view>
   </view>
 
-  <view class='post-job-week'>
+  <!-- <view class='post-job-week'>
     <text>工作周期:</text>
     <view class='week-cont'>
       <picker>
@@ -78,7 +78,7 @@
         </view>
       </picker>
     </view>
-  </view>
+  </view> -->
 
   <view class='post-job-area'>
     <view class='choose-place'>
@@ -86,26 +86,12 @@
       <view class='detail-place detail'>
         <textarea data-idx='5' bindblur='getValue'  placeholder-style='color:#AEAEAE' placeholder='请输入详细时间'></textarea>
       </view>
-      <text>工作地址:</text>
+      <text>选择工作地点:</text>
       <view class='choose-region'>
-        <picker>
           <view class='choose-region-item'>
-            <text>省</text>
+            <text>选择城市</text>
             <image src='/image/index/return.png'></image>
           </view>
-        </picker>
-        <picker>
-          <view class='choose-region-item'>
-            <text>市</text>
-            <image src='/image/index/return.png'></image>
-          </view>
-        </picker>
-        <picker>
-          <view class='choose-region-item'>
-            <text>区</text>
-            <image src='/image/index/return.png'></image>
-          </view>
-        </picker>
       </view>
     </view>
   </view>
