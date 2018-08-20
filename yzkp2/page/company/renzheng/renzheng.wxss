@@ -1,1 +1,102 @@
 /* page/company/renzheng/renzheng.wxss */
+page{
+  background: #fff;
+}
+.renzheng{
+  padding: 0 19rpx 0 27rpx;
+}
+.rz-type{
+  display: flex;
+  justify-content: space-between;
+
+  height: 106rpx;
+  align-items: center;
+}
+.rz-type .yz-tit{
+  font-size: 28rpx;
+  color: #6B6B6B;
+}
+.rz-type .re-select-cont{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.rz-type .re-select-cont .rz-select-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rz-type .re-select-cont .rz-select-item image{
+  width: 28rpx;
+  height: 28rpx;
+  margin: 0 7rpx 0 51rpx;
+}
+.rz-type .re-select-cont .rz-select-item text{
+  color: #868686;
+  font-size: 28rpx;
+}
+.rz-type .re-select-cont .rz-select-item.active text{
+  color: #F39800
+}
+.rz-item-cont{
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 13rpx;
+}
+.rz-item-cont>text{
+  font-size: 28rpx;
+  color: #868686
+}
+.rz-item-cont .re-item-input{
+  width: 447rpx;
+  height: 100%;
+  background: #F5F4FE;
+  display: flex;
+  align-items: center;
+}
+.rz-item-cont .re-item-input input{
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #868686;
+  line-height: 40rpx;
+  padding-left: 47rpx;
+}
+.re-company{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.re-company .re-company-item{
+  width: 226rpx;
+  height: 80rpx;
+  background: #F5F4FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.re-company .re-company-item text{
+  font-size: 28rpx;
+  color: #AEAEAE;
+}
+.re-company .re-company-item image{
+  width: 24rpx;
+  height: 13rpx;
+  margin-left: 45rpx;
+}
+.rz-intro{
+  width:702rpx;
+  height:461rpx;
+  background:rgba(245,244,254,1);
+  border-radius:6rpx;
+  box-sizing: border-box;
+  padding: 27rpx 21rpx;
+  margin: 34rpx 0 150rpx;
+}
+.rz-intro textarea{
+  font-size: 28rpx;
+  color: #868686;
+  width: 100%;
+  height: 100%;
+}
