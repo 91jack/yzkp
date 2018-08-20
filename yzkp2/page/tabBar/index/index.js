@@ -26,7 +26,6 @@ Page({
       },
       {
         url: '/page/common/resume/index/index',  
-             
         src:'/image/index/manageintro.png',
         text:'简历管理'
       },

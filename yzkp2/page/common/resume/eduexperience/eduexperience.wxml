@@ -19,8 +19,8 @@
 </view>
 
 <view class='add-btn'>
-  <navigator url='/page/common/resume/eduedit/eduedit' hover-class='none'>
+  <!-- <navigator url='/page/common/resume/eduedit/eduedit' hover-class='none'>
     <image src='/image/mine/add.png'></image>
     <text>添加教育经验</text>
-  </navigator>
+  </navigator> -->
 </view>

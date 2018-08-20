@@ -1,5 +1,5 @@
 <!--page/my/resume/index/index.wxml-->
-<view class="header">
+<!-- <view class="header">
   <navigator hover-class="none" url="/page/common/resume/basicmsgedit/basicmsgedit">
     <view class="header-cont">
       <view>
@@ -14,7 +14,7 @@
       <image class="tonext" src="/image/mine/next.png"></image>
     </view>
   </navigator>
-</view>
+</view> -->
 <view class="manageintro-nav">
   <view class="manageintro-nav-item active">简历编辑</view>
   <navigator url='/page/common/resume/resumeconfig/resumeconfig' hover-class='none'>
