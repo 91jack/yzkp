@@ -1,7 +1,7 @@
 {
   "pages": [
-    "page/tabBar/my/index",
     "page/tabBar/index/index",
+    "page/tabBar/my/index",
     "page/tabBar/msg/index"
    
   ],
@@ -78,7 +78,7 @@
         "course/enroll/enroll",
         "course/myenroll/myenroll",
         "resume/index/index",
-       
+        "resume/eduedit/eduedit",
         "resume/resumeedit/resumeedit",
         "resume/personmsg/personmsg",
         "resume/basicmsgedit/basicmsgedit",
