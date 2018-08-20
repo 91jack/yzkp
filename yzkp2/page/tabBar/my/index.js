@@ -31,12 +31,12 @@ Page({
         text: '我的报名'
       },
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/company/renzheng/renzheng',
         src: '/image/index/office.png',
         text: '我要招聘'
       },
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/employee/contract/step1/step1',
         src: '/image/index/office.png',
         text: '成为员工'
       }

@@ -1,58 +1,32 @@
-// page/index/course/coursedetails/coursedatails.js
-//获取能力提升详情
-const courseDetailtUrl = require('../../../../config').courseDetailtUrl;
-
-
+// page/company/renzheng/renzheng.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    courseDetails:null,
-    id:''
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(options.id){
-      this.setData({
-        id: options.id
-      })
-    } else if (options.capacityId){
-      this.setData({
-        id: options.capacityId
-      })
-    }
-    
+  
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var _this = this;
-    wx.request({
-      url: courseDetailtUrl,
-      data: {
-        token: getApp().globalData.token,
-        id:_this.data.id
-      },
-      success: function (res) {
-        _this.setData({
-          courseDetails: res.data.obj
-        })
-      }
-    })
+  
   },
 
   /**

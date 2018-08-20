@@ -2,8 +2,8 @@
   "pages": [
     "page/tabBar/my/index",
     "page/tabBar/index/index",
-   
     "page/tabBar/msg/index"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -64,7 +64,8 @@
         "jianlimanage/jianlimanage",
         "waibao/waibao",
         "linghuo/linghuo",
-        "laowu/laowu"
+        "laowu/laowu",
+        "renzheng/renzheng"
       ]
     },
     {

@@ -1,7 +1,7 @@
 <!--page/common/course/myenroll/myenroll.wxml-->
 <view class='ability-cont'>
 <block wx:for="{{courseList}}" wx:key="id">
-  <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.id}}'>
+  <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.capacityId}}'>
     <view class='ability-cont-item'>
       <image src="{{item.logo}}"></image>
       <view>
