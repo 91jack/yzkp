@@ -1,25 +1,32 @@
 // page/my/resume/jobedit/jobedit.js
 const addJobexperienceUrl = require('../../../config').addJobexperienceUrl;
+const resumeUrl = require('../../../config').resumeUrl;
+const editJobexperienceUrl = require('../../../config').editJobexperienceUrl
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    inData:'',
+    inData:'请选择',
     inHide:false,
-    outData:'',
+    outData:'请选择',
     outHide:false,
     conpanyName:'',
     partment:'',
     job:'',
-    resumeId:''
+    resumeId:'',
+    id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    this.setData({
+      id: options.id
+    })
     var that = this;
     wx.getStorage({
       key: 'resumeId',
@@ -28,7 +35,30 @@ Page({
           resumeId:res.data
         })
       },
-    })
+    });
+    if (that.data.id == options.id){
+      wx.request({
+        url: resumeUrl,
+        data: {
+          token: getApp().globalData.token,
+        },
+        success: function (res) {
+          console.log(res)
+          var bigData = res.data.obj.work;
+          for (var i = 0; i < bigData.length;i++){
+            if (bigData[i].id == options.id){
+              that.setData({
+                inData: bigData[i].beginDate,
+                outData: bigData[i].endDate,
+                conpanyName: bigData[i].company,
+                partment: bigData[i].department,
+                job: bigData[i].position,
+              })
+            }
+          }
+        }
+      })
+    }
   },
 
   /**
@@ -79,23 +109,44 @@ Page({
   //调教信息
   submitBtn:function(){
     var _this = this;
-    wx.request({
-      url: addJobexperienceUrl,
-      data: {
-        token: getApp().globalData.token,
-        resumeId: _this.data.resumeId,
-        beginDate: _this.data.inData,
-        endDate: _this.data.outData,
-        company: _this.data.conpanyName,
-        department: _this.data.partment,
-        position: _this.data.job
-      },
-      success: function (res) {
-        console.log(res)
-        wx.navigateTo({
-          url: '/page/common/resume/index/index',
-        })
-      }
-    })
+    if (Boolean(_this.data.id)){
+      wx.request({
+        url: editJobexperienceUrl,
+        data: {
+          token: getApp().globalData.token,
+          id: _this.data.id,
+          beginDate: _this.data.inData,
+          endDate: _this.data.outData,
+          company: _this.data.conpanyName,
+          department: _this.data.partment,
+          position: _this.data.job
+        },
+        success: function (res) {
+          console.log(res)
+          wx.navigateTo({
+            url: '/page/resume/index/index',
+          })
+        }
+      })
+    }else{
+      wx.request({
+        url: addJobexperienceUrl,
+        data: {
+          token: getApp().globalData.token,
+          resumeId: _this.data.resumeId,
+          beginDate: _this.data.inData,
+          endDate: _this.data.outData,
+          company: _this.data.conpanyName,
+          department: _this.data.partment,
+          position: _this.data.job
+        },
+        success: function (res) {
+          console.log(res)
+          wx.navigateTo({
+            url: '/page/resume/index/index',
+          })
+        }
+      })
+    }
   }
 })

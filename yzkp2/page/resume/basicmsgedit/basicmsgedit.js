@@ -4,7 +4,7 @@ addBasicUrl = require('../../../config').addBasicUrl;
 
 // 修改简历基本信息
 editBasicUrl = require('../../../config').editBasicUrl;
-
+const resumeUrl = require('../../../config').resumeUrl;
 Page({
 
   /**
@@ -20,17 +20,17 @@ Page({
     sexData:["男","女"],
     sexHide:false,
     sexIndex:0,
-
+    educationLevel:'',
     name: '',
-    sex: '',
+    sex: '请选择',
     age: '',
-    educationLevel: '',
     workYear: '',
-    state: '',
+    state: '请选择',
     address: '渝北区',
     mobile: '18502323596',
     email: '2764132626@qq.com',
-    height:''
+    height:'',
+    resumeId:''
   },
 
   /**
@@ -48,8 +48,39 @@ Page({
           workExerciseData:res.data
         })
       },
-    })
-
+    });
+    wx.getStorage({
+      key: 'resumeId',
+      success: function(res) {
+        that.setData({
+          resumeId: res.data
+        });
+        console.log(that.data.resumeId)
+        if (that.data.resumeId) {
+          wx.request({
+            url: resumeUrl,
+            data: {
+              token: getApp().globalData.token,
+            },
+            success: function (res) {
+              console.log(res)
+              var bsData = res.data.obj.base;
+              that.setData({
+                name: bsData.name,
+                sex: bsData.sex,
+                age: bsData.age,
+                workYear: bsData.workYear,
+                state: bsData.state,
+                address: bsData.address,
+                mobile: bsData.mobile,
+                email: bsData.email,
+                height: bsData.height
+              })
+            }
+          })
+        }
+      },
+    });
   },
 // 获取picker的item
   bindChange:function(e){
@@ -115,41 +146,72 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
   /**
    * 新增简历基本信息
    */
   saveEdit:function(){
     var that = this.data;
-    wx.request({
-      url: addBasicUrl,
-      data: {
-        token: getApp().globalData.token,
-        name: that.name,
-        sex: Number(that.sex),
-        age: Number(that.age),
-        educationLevel: that.educationLevel,
-        workYear: that.workYear,
-        state: Number(that.state),
-        address: that.address,
-        mobile: that.mobile,
-        email: that.email,
-        educationLevel:'11',
-        height:that.height
-      },
-      success: function (res) {
-        console.log(res)
-        wx.setStorage({
-          key: 'resumeId',
-          data: res.data.obj.id,
-        })
-        if(res.data.status==0){
-          wx.navigateTo({
-            url: '/page/common/resume/index/index',
-          })
+    if (this.data.resumeId){
+      wx.request({
+        url: editBasicUrl,
+        data: {
+          token: getApp().globalData.token,
+          id: that.resumeId,
+          name: that.name,
+          sex: Number(that.sex),
+          age: Number(that.age),
+          educationLevel: that.educationLevel,
+          workYear: that.workYear,
+          state: Number(that.state),
+          address: that.address,
+          mobile: that.mobile,
+          email: that.email,
+          educationLevel: '11',
+          height: that.height
+        },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 0) {
+            wx.navigateTo({
+              url: '/page/common/resume/index/index',
+            })
+          }
         }
-      }
-    })
+      })
+    }else{
+      wx.request({
+        url: addBasicUrl,
+        data: {
+          token: getApp().globalData.token,
+          name: that.name,
+          sex: Number(that.sex),
+          age: Number(that.age),
+          educationLevel: that.educationLevel,
+          workYear: that.workYear,
+          state: Number(that.state),
+          address: that.address,
+          mobile: that.mobile,
+          email: that.email,
+          educationLevel: '11',
+          height: that.height
+        },
+        success: function (res) {
+          console.log(res)
+          wx.setStorage({
+            key: 'resumeId',
+            data: res.data.obj.id,
+          })
+          if (res.data.status == 0) {
+            wx.navigateTo({
+              url: '/page/common/resume/index/index',
+            })
+          }
+        }
+      })
+      
+    }
+    
   }
 })

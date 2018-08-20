@@ -702,6 +702,10 @@ checkbox{
   color: #868686;
   height: 24rpx;
   line-height: 24rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width: 450rpx;
 }
 .con-item .con-btn image{
   width: 21rpx;
