@@ -1,3 +1,4 @@
+<!--page/employee/contract/index/index.wxml-->
 <!--page/employee/contract/step7/step7.wxml-->
 <view class='confirm-contract'>
   <view class='confirm-basicmsg'>
@@ -188,12 +189,8 @@
       </view>
     </view>
     <view class='confirm-contract-company'>《渐臻科技入职合同》</view>
-    <view class='confirm-contract-yzcode'>
-      <input placeholder='请输入验证码' bindblur='getIncode' value="{{yzcode}}"></input>
-      <view bindtap='getCode'>{{timerData}}</view>
-    </view>
+   
   </view>
  
-    <view class='btn' bindtap='submitBtn'>立即提交</view>
 
 </view>

@@ -48,6 +48,7 @@
         "contract/step5/step5",
         "contract/step6/step6",
         "contract/step7/step7",
+        "contract/index/index",
         "payment/index/index",
         "payment/paydetails/paydetails"
       ]
@@ -77,13 +78,14 @@
         "course/enroll/enroll",
         "course/myenroll/myenroll",
         "resume/index/index",
+       
         "resume/resumeedit/resumeedit",
         "resume/personmsg/personmsg",
         "resume/basicmsgedit/basicmsgedit",
         "resume/jobintensionedit/jobintensionedit",
         "resume/jobexperience/jobexperience",
         "resume/eduexperience/eduexperience",
-        "resume/eduedit/eduedit",
+        
         "resume/jobedit/jobedit",
         "resume/project/project",
         "resume/projectedit/projectedit",

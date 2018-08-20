@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    employee:getApp().globalData.employee,
+    employee:null,
     payList:[],
     timeflag:0
   },
@@ -54,7 +54,8 @@ Page({
         if (res.data.status == 0) {
           _this.setData({
             payList: res.data.list,
-            timeflag: timeflag
+            timeflag: timeflag,
+            employee:res.data.obj
           })
 
         }

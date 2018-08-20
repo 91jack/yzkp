@@ -104,6 +104,9 @@ var config = {
   // 验证码校验
   phoneCodeyzUrl: `${host}employee/phonecode/yz.json`,
 
+  // 确认信息签字
+  signNameUrl: `${host}employee/signName.json`,
+
   /* --企业模块-- */
   // 发布全职招聘 发布兼职招聘
   addjobUrl: `${host}recruit/notice/add.json`,

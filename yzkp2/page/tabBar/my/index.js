@@ -64,7 +64,7 @@ Page({
         text: '我的报名'
       },
       {
-        url: '/page/employee/contract/',
+        url: '/page/employee/contract/index/index',
         src: '/image/index/office.png',
         text: '我的合同'
       },
@@ -106,21 +106,10 @@ Page({
         }
       }
     })
-    console.log(getApp().globalData.role)
-    var role = getApp().globalData.role
-    if(role == 0){
-      this.setData({
-        currentList:this.data.jobSeekerList
-      })
-    }else if(role == 1){
-      this.setData({
-        currentList: this.data.companyList
-      })
-    }else if(role == 2){
-      this.setData({
-        currentList: this.data.employeeList
-      })
-    }
+    
+    
+   
+   
 
   },
 
@@ -135,7 +124,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(getApp().globalData.resume)
+    var _this = this;
+    wx.getStorage({
+      key: 'role',
+      success: function (res) {
+        var role = res.data;
+        console.log(role);
+        if (role == 0) {
+          _this.setData({
+            currentList: _this.data.jobSeekerList
+          })
+        } else if (role == 1) {
+          _this.setData({
+            currentList: _this.data.companyList
+          })
+        } else if (role == 2) {
+          _this.setData({
+            currentList: _this.data.employeeList
+          })
+        }
+      },
+    })
   },
 
   /**

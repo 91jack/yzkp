@@ -129,6 +129,14 @@ Page({
               getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
               getApp().globalData.employee = res.data.obj.employee;// 员工
               
+              _this.setData({
+                role: res.data.obj.type
+              })
+
+              wx.setStorage({
+                key: 'role',
+                data: res.data.obj.type
+              })
 
               _this.jobListFn();
              

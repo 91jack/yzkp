@@ -68,7 +68,7 @@ Page({
   
   },
   // 获取评价内容
-  getContent:function(e){
+  getTextarea:function(e){
     this.setData({
       content: e.detail.value
     })

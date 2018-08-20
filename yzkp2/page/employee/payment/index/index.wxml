@@ -1,7 +1,7 @@
 <!--page/my/payment/index/index.wxml-->
 <view class='user'>
   <view class='user-pic'>
-    <image src='{{employee.headImg}}'></image>
+    <image src='{{employee.head_img}}'></image>
   </view>
 
   <view class='user-detail'>
@@ -27,12 +27,12 @@
 
     <view class='user-detail-item-left'>
       <text class='user-detail-item-tit'>身份证号码:</text>
-      <text>{{employee.idNo}}</text>
+      <text>{{employee.id_no}}</text>
     </view>
 
     <view class='user-detail-item-left'>
       <text class='user-detail-item-tit'>入职时间:</text>
-      <text>{{employee.inDate}}</text>
+      <text>{{employee.in_date}}</text>
     </view>
   </view>
 </view>

@@ -1,0 +1,95 @@
+/* page/employee/contract/index/index.wxss */
+page{
+  background: #fff;
+}
+.confirm-basicmsg{
+  padding: 0 26rpx;
+  border-bottom: 10rpx solid #e8e8e8;
+  padding-bottom: 23rpx;
+}
+.confirm-basicmsg.active{
+  padding: 0;
+}
+.confirm-basicmsg.noborder{
+  border-bottom: none;
+}
+.confirm-basicmsg-tit{
+  text-align: center;
+  font-size: 30rpx;
+  color: #353535;
+  font-weight: bold;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 43rpx;
+  margin-bottom: 18rpx;
+}
+.confirm-basicmsg-cont-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 21rpx;
+}
+.confirm-basicmsg-cont .confirm-basicmsg-cont-box text{
+  color: #353535;
+  font-size: 30rpx;
+  display: block;
+}
+.confirm-basicmsg-cont .confirm-basicmsg-cont-box .emergency-tit{
+  color: #868686;
+}
+.confirm-basicmsg-cont .confirm-basicmsg-cont-box .emergency text{
+  display: inline-block;
+}
+.confirm-basicmsg-cont .confirm-basicmsg-cont-header{
+  display: block;
+  font-size: 30rpx;
+  color: #6B6B6B;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-bottom: 26rpx;
+}
+.post-job{
+  border:none;
+}
+.public-gold{
+  margin: 0;
+}
+.public-gold text{
+  line-height: 30rpx;
+  margin-bottom: 20rpx;
+}
+.confirm-contract-company{
+  height: 124rpx;
+  line-height: 124rpx;
+  font-size: 26rpx;
+  color: #868686;
+  text-align: center;
+  background: #f6f6f6;
+}
+.confirm-contract-yzcode{
+  display: flex;
+  padding: 0 21rpx 0 25rpx;
+  justify-content: space-between;
+  margin: 38rpx 0 150rpx;
+}
+.confirm-contract-yzcode input{
+  display: block;
+  width:342rpx;
+  height:80rpx;
+  background:rgba(56,48,235,0.1);
+  border-radius:10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+.confirm-contract-yzcode view{
+  width:282rpx;
+  height:80rpx;
+  background:linear-gradient(to right,rgba(105,100,253,1),rgba(56,48,235,1));
+  border-radius:10rpx;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+}

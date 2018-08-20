@@ -4,6 +4,9 @@ const uploadImgUrl = require('../../../config').uploadImgUrl;
 // 签收工资
 const signForWagesUrl = require('../../../config').signForWagesUrl;
 
+// 确认合同信息
+const signNameUrl = require('../../../config').signNameUrl;
+
 var content = null;
 var touchs = [];
 var canvasw = 0;
@@ -70,11 +73,16 @@ wx.getSystemInfo({
     * 生命周期函数--监听页面加载
     */
     onLoad: function (options) {
-      //console.log(options.payid)
-      this.setData({
-        payid: options.payid,
-        id: options.contractId
-      })
+      if(options.payid){
+        this.setData({
+          payid: options.payid,
+        })
+      } else if (options.employeeId){
+        this.setData({
+          id: options.employeeId
+        })
+      }
+    
 
       //获得Canvas的上下文
       content = wx.createCanvasContext('firstCanvas')
@@ -134,32 +142,62 @@ wx.getSystemInfo({
               var imgUrl = JSON.parse(res.data).obj;
               // console.log(res)
               // console.log(imgUrl)
-              wx.request({
-                url: signForWagesUrl,
-                data: {
-                  token: getApp().globalData.token,
-                 payid:_this.data.payid,
-                  sign_name: imgUrl
-                },
-                success: function (res) {
-                 // console.log(res);
-                  if (res.data.status == 0) {
-                    wx.showToast({
-                      title: '工资签收成功',
-                      icon: 'success',
-                      duration: 2000,
-                      success: function () {
-                        setTimeout(function () {
-                          wx.navigateBack({
-                            delta: 1
-                          })
-                        }, 2000)
-                      }
-                    })
-                   
+              if(_this.data.payid!=''){
+                wx.request({
+                  url: signForWagesUrl,
+                  data: {
+                    token: getApp().globalData.token,
+                    payid: _this.data.payid,
+                    sign_name: imgUrl
+                  },
+                  success: function (res) {
+                    // console.log(res);
+                    if (res.data.status == 0) {
+                      wx.showToast({
+                        title: '工资签收成功',
+                        icon: 'success',
+                        duration: 2000,
+                        success: function () {
+                          setTimeout(function () {
+                            wx.navigateBack({
+                              delta: 1
+                            })
+                          }, 2000)
+                        }
+                      })
+
+                    }
                   }
-                }
-              })
+                })
+              }else if(_this.data.id!=''){
+                wx.request({
+                  url: signNameUrl,
+                  data: {
+                    token: getApp().globalData.token,
+                    eid: _this.data.id,
+                    sign_name: imgUrl
+                  },
+                  success: function (res) {
+                    // console.log(res);
+                    if (res.data.status == 0) {
+                      wx.showToast({
+                        title: '签字成功',
+                        icon: 'success',
+                        duration: 2000,
+                        success: function () {
+                          setTimeout(function () {
+                            wx.navigateTo({
+                              url: '/page/employee/contract/index/index',
+                            })
+                          }, 2000)
+                        }
+                      })
+
+                    }
+                  }
+                })
+              }
+              
             } 
           })
         }

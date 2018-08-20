@@ -1,4 +1,4 @@
-// page/employee/contract/step7/step7.js
+// page/employee/contract/index/index.js
 const allInfoUrl = require('../../../../config').allInfoUrl;
 
 const phonecodeUrl = require('../../../../config').phonecodeUrl
@@ -16,17 +16,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    infoData:{},
+    infoData: {},
 
     timer: '',
 
     timer: '',//定时器名字
-    yzcode:'',
-    incode:'',
+    yzcode: '',
+    incode: '',
 
-    timerData:'获取验证码',
+    timerData: '获取验证码',
     countDownNum: 60,
-    openInterVal:true
+    openInterVal: true
   },
 
   /**
@@ -46,7 +46,7 @@ Page({
           success: function (res) {
             console.log(res)
             var infoData = res.data.obj;
-            if(res.data.status==0){
+            if (res.data.status == 0) {
               that.setData({
                 infoData: infoData
               })
@@ -55,42 +55,42 @@ Page({
         })
       },
     })
-    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
   // 获取验证码
-  getCode:function(event){
+  getCode: function (event) {
     var _this = this;
     wx.request({
       url: phoneCodeUrl,//获取验证码
-      data:{
-        phone:18502323596,
-        token:getApp().globalData.token,
+      data: {
+        phone: 18502323596,
+        token: getApp().globalData.token,
       },
-      success:function(res){
+      success: function (res) {
         console.log(res)
-        if(res.data.status == 0){
+        if (res.data.status == 0) {
           _this.setData({
-            yzcode:res.data.obj
+            yzcode: res.data.obj
           })
 
         }
       }
     })
-    if (_this.data.openInterVal){
+    if (_this.data.openInterVal) {
       this.setData({
         timerData: '5s',
       });
@@ -117,7 +117,7 @@ Page({
     }
   },
   // 获取输入的验证码
-  getIncode:function(e){
+  getIncode: function (e) {
     this.setData({
       incode: e.detail.value
     })
@@ -128,9 +128,9 @@ Page({
     wx.request({
       url: phoneCodeyzUrl,//验证验证码
       data: {
-       token: getApp().globalData.token,
-       phone:'18502323596',
-       yzcode: _this.data.yzcode
+        token: getApp().globalData.token,
+        phone: '18502323596',
+        yzcode: _this.data.yzcode
       },
       success: function (res) {
         console.log(res)
@@ -142,7 +142,7 @@ Page({
             success: function () {
               setTimeout(function () {
                 wx.navigateTo({
-                  url: '/page/common/sign/sign?employeeId=' + _this.data.infoData.id+'&id=',
+                  url: '/page/common/sign/sign?employeeId=' + _this.data.infoData.id + '&id=',
                 })
               }, 2000)
             }
