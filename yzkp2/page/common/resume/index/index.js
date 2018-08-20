@@ -44,12 +44,12 @@ Page({
       },
       success: function (res) {
         console.log(res)
-        _this.setData({
-          baseInfo: res.data.obj.base,
-          work: res.data.obj.work,
-          education: res.data.obj.education,
-          project: res.data.obj.project
-        })
+        // _this.setData({
+        //   baseInfo: res.data.obj.base,
+        //   work: res.data.obj.work,
+        //   education: res.data.obj.education,
+        //   project: res.data.obj.project
+        // })
         
 
       }

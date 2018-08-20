@@ -11,7 +11,7 @@
           <text class="intro detail">踏实勤奋，积极上进,热爱生活,......</text>
         </view>
       </view>
-      <image class="tonext" src="/image/mine/next.png"></image>
+      <!-- <image class="tonext" src="/image/mine/next.png"></image> -->
     </view>
   </navigator>
 </view>

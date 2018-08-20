@@ -20,7 +20,7 @@
 </view>
 
 <view class='add-btn'>
-  <navigator hover-class='none' url='/page/my/resume/projectedit/projectedit'>
+  <navigator hover-class='none' url='/page/common/resume/projectedit/projectedit'>
     <image src='/image/mine/add.png'></image>
     <text>添加项目经验</text>
   </navigator>

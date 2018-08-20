@@ -47,9 +47,9 @@ page{
 .first{
   margin-bottom: 1rpx;
 }
-.sec{
+/* .sec{
   margin-bottom: 11rpx;
-}
+} */
 .box.sec .left image{
   width: 29rpx;
   height: 34rpx;
