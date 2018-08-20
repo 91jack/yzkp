@@ -1,22 +1,16 @@
 <!--page/tabBar/my/index.wxml-->
-<!--pages/mine/mine.wxml-->
 <!-- 求职者 -->
 <view class='header'>
-  <navigator hover-class='none' url='/page/common/resume/basicmsgedit/basicmsgedit'>
-    <view class='header-cont'>
-      <view>
-        <open-data type="userAvatarUrl" class='company-pic'></open-data>
-      </view>
-      <view class='header-intro'>
-        <open-data type="userNickName" class='name'></open-data>
-      </view>
-      <image class='tonext' src='/image/mine/next.png'></image>
-    </view>
-  </navigator>
+  <view class="userinfo-avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="userinfo-name">
+    微信昵称：<open-data type="userNickName"></open-data>
+  </view>
 </view>
 
-<view >
-<block wx:for="{{employeeList}}">
+<view class="personal-list">
+  <block wx:for="{{currentList}}">
     <navigator hover-class='none' url="{{item.url}}">
       <view class='box sec'>
         <view class='left'>
@@ -28,20 +22,17 @@
         </view>
       </view>
     </navigator>
-    </block>
-   
-    <navigator hover-class='none' url='/page/common/opinion/opinion'>
-      <view class='box sec'>
-        <view class='left'>
-          <image src='/image/mine/record.png'></image>
-          <text>意见反馈</text>
-        </view>
-        <view class='right'>
-          <image src='/image/mine/next.png'></image>
-        </view>
+  </block>
+
+  <navigator hover-class='none' url='/page/common/opinion/opinion'>
+    <view class='box sec'>
+      <view class='left'>
+        <image src='/image/mine/record.png'></image>
+        <text>意见反馈</text>
       </view>
-    </navigator>
+      <view class='right'>
+        <image src='/image/mine/next.png'></image>
+      </view>
+    </view>
+  </navigator>
 </view>
-
-
-

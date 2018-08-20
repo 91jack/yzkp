@@ -7,6 +7,7 @@ Page({
   data: {
     resume: getApp().globalData.resume,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    currentList:[],
     //求职者列表
     jobSeekerList:[
       {
@@ -85,8 +86,6 @@ Page({
         src: '/image/index/office.png',
         text: '职位管理'
       }
-
-
     ]
   },
 
@@ -107,7 +106,22 @@ Page({
         }
       }
     })
-    console.log(getApp().globalData.resume)
+    console.log(getApp().globalData.role)
+    var role = getApp().globalData.role
+    if(role == 0){
+      this.setData({
+        currentList:this.data.jobSeekerList
+      })
+    }else if(role == 1){
+      this.setData({
+        currentList: this.data.companyList
+      })
+    }else if(role == 2){
+      this.setData({
+        currentList: this.data.employeeList
+      })
+    }
+
   },
 
   /**
@@ -121,7 +135,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    console.log(getApp().globalData.resume)
   },
 
   /**

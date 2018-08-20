@@ -53,6 +53,35 @@ Page({
       },
       success: function (res) {
        console.log(res)
+       if(res.data.status == 0){
+         wx.showToast({
+           title: '您的课程报名已成功',
+           icon: 'success',
+           duration: 2000,
+           success:function(){
+             setTimeout(function(){
+               wx.navigateTo({
+                 url: '/page/common/course/courselist/courselist',
+               })
+             },1000)
+            
+          }
+         })
+       }else{
+         wx.showToast({
+           title: '你已报名了该课程，请勿重复报名',
+           icon: 'fail',
+           duration: 2000,
+           success: function () {
+             setTimeout(function () {
+               wx.navigateTo({
+                 url: '/page/common/course/courselist/courselist',
+               })
+             }, 1000)
+
+           }
+         })
+       }
       }
     })
   }

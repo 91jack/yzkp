@@ -16,3 +16,13 @@
   font-size: 24rpx;
   color: #868686;
 }
+.userinfo-avatar {
+  overflow:hidden;  
+  display: block;  
+  width: 160rpx;  
+  height: 160rpx;  
+  margin: 20rpx auto;  
+  margin-top: 50rpx;  
+  border-radius: 50%;  
+  border: 2px solid #fff;  
+}

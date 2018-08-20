@@ -611,26 +611,38 @@ checkbox{
 }
 /* ---------------------------------------顶部头像以及自我介绍 */
 .header{
-  height: 192rpx;
+  height: 240rpx;
   background: #fff;
   margin-bottom: 16rpx;
+  overflow: hidden;
 }
-.header .header-cont{
-    display: flex;
-    position: relative
+.userinfo-avatar {
+  overflow:hidden;  
+  display: block;  
+  width: 150rpx;  
+  height: 150rpx;  
+  border-radius: 50%;  
+  margin: 10rpx auto;
+  border: 2px solid #fff;  
 }
-.header .company-pic{
+.userinfo-name {
+  display: block;
+  width:100%;
+  text-align: center;
+}
+/* .header .company-pic{
   width: 113rpx;
   height: 113rpx;
   background: red;
   margin-left: 29rpx;
   margin-top: 40rpx;
   border-radius: 50%  
-}
+} */
 .header-intro {
   margin-left: 33rpx;
+  line-height: 192rpx;
 }
-.header-intro>text{
+/* .header-intro>text{
   display: block;
 }
 .header-intro .name{
@@ -638,7 +650,7 @@ checkbox{
   color: #353535;
   margin-top: 54rpx;
   margin-bottom: 25rpx;
-}
+} */
 .header-intro .intro-cont{
   height: 26rpx;
   line-height: 26rpx;
