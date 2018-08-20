@@ -161,6 +161,14 @@ Page({
       },
       success: function (res) {
         console.log(res)
+        if(res.data.status==0){
+          // wx.navigateTo({
+          //   url: '',
+          // })
+          wx.showToast({
+            title: '选择您想要发布的职位类型'
+          })
+        }
       }
     })
   }
