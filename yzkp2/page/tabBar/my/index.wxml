@@ -5,13 +5,10 @@
   <navigator hover-class='none' url='/page/common/resume/basicmsgedit/basicmsgedit'>
     <view class='header-cont'>
       <view>
-        <image class='company-pic' src=''></image>
+        <open-data type="userAvatarUrl" class='company-pic'></open-data>
       </view>
       <view class='header-intro'>
-        <text class='name'>张澜澜(微信名)</text>
-        <view class='intro-cont'>
-          <text class='intro detail'>踏实勤奋，积极上进,热爱生活,......</text>
-        </view>
+        <open-data type="userNickName" class='name'></open-data>
       </view>
       <image class='tonext' src='/image/mine/next.png'></image>
     </view>

@@ -11,6 +11,7 @@ Page({
     role: 1,//用户角色 0：求职者  1：企业 2：员工
     jobList: [],
     index: 0,//选择的下拉列表下标，
+   
     navBarData: ['推荐','地区', '行业', '要求'],
     selectBar1:[
       {
@@ -105,6 +106,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+
     var _this = this;
     // 登录
     wx.login({

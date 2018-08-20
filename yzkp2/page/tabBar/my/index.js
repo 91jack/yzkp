@@ -6,6 +6,7 @@ Page({
    */
   data: {
     resume: getApp().globalData.resume,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     //求职者列表
     jobSeekerList:[
       {
@@ -93,6 +94,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res.userInfo)
+            }
+          })
+        }
+      }
+    })
     console.log(getApp().globalData.resume)
   },
 
@@ -138,10 +152,7 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  bindGetUserInfo: function (e) {
+    console.log(e.detail.userInfo)
   }
 })
