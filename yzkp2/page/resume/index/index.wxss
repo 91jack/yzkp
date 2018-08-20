@@ -1,0 +1,171 @@
+/* page/my/resume/index/index.wxss */
+page{
+  background: #fff;
+}
+.header{
+  margin-bottom: 0;
+  border-bottom: 10rpx solid #e8e8e8
+}
+.manageintro-nav{
+  height: 75rpx;
+  display: flex;
+  border-bottom: 1rpx solid #E8E8E8;
+}
+.manageintro-nav-item{
+  width: 186rpx;
+  border-right: 2rpx solid #E8E8E8;
+  font-size: 28rpx;
+  color: #868686;
+  line-height: 75rpx;
+  text-align: center;
+}
+.manageintro-nav-item.active{
+  color: #fff;
+  background: #F39800;
+}
+.manageintro-nav-item:last-of-type{
+  border-right: none;
+}
+.manageintro-cont{
+  margin-top: 37rpx;
+}
+.manageintro-cont-item{
+  width: 702rpx;
+  background: rgba(56,48,235,0.05);
+  border-radius: 10rpx;
+  margin: auto;
+  padding: 0 26rpx 0 24rpx; 
+  box-sizing: border-box;
+  margin-bottom: 11rpx;
+}
+.manageintro-cont-item-tit{
+  display: flex;
+  height: 70rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  justify-content: space-between;
+}
+.manageintro-cont-item-tit .tit-info,
+.manageintro-cont-item-tit .tit-edit{
+  display: flex;
+}
+.manageintro-cont-item-tit .tit-info image{
+  width: 31rpx;
+  height: 31rpx;
+  margin: 21rpx 7rpx 0 0;
+}
+.manageintro-cont-item-tit .tit-info text{
+  font-size: 24rpx;
+  color: #353535;
+  margin-top: 24rpx;
+  display: inline-block;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.manageintro-cont-item-tit .tit-edit image{
+  width: 26rpx;
+  height: 26rpx;
+  margin: 24rpx 4rpx 0 0;
+}
+.manageintro-cont-item-tit .tit-edit text{
+  font-size: 22rpx;
+  color: #F39800;
+  margin-top: 26rpx;
+  display: inline-block;
+  height: 22rpx;
+  line-height: 22rpx;
+}
+.manageintro-cont-item-detail{
+  padding-bottom: 38rpx;
+}
+.manageintro-cont-item-detail>text{
+  display: block;
+}
+.inbox{
+  height: 26rpx;
+  margin-bottom: 16rpx;
+}
+.inbox:last-of-type{
+  margin-bottom: 0;
+}
+.inbox image{
+  width: 26rpx;
+  height: 26rpx;
+}
+.inbox text{
+  font-size: 24rpx;
+  color: #868686;
+  margin-left: 8rpx;
+  display: inline-block;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.in-name{
+  height: 60rpx;
+  margin-top: 9rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #353535;
+}
+.in-info{
+  color: #868686;
+  font-size: 24rpx;
+  margin-bottom: 19rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.in-info.want{
+  margin-top: 30rpx;
+}
+.la-item{
+  padding: 30rpx 0;
+  border-top: 1rpx solid #E8E8E8;  
+  position: relative;
+}
+.la-item .edit-exercise{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 26rpx;
+  height: 26rpx;
+  margin-top: -13rpx;
+}
+.la-item:last-of-type{
+  padding-bottom: 0;
+}
+.la-item:first-of-type{
+  border-top: none;
+}
+.la-item>image{
+  display: inline-block;
+  width: 22rpx;
+  height: 22rpx;
+}
+.la-item-cont{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10rpx;
+}
+.la-item-cont text{
+  display: block;
+}
+.la-item-date{
+  font-size: 24rpx;
+  margin-bottom: 18rpx;
+  color: #868686;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.la-item-comp{
+  font-size: 26rpx;
+  margin-bottom: 14rpx;
+  color: #353535;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.la-item-intro{
+  font-size: 24rpx;
+  color: #868686;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+

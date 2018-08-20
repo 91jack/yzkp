@@ -1,0 +1,26 @@
+<view class="con">
+  <view class='con-item'>
+    <view class='con-detail'>
+      <text>2017-2~2017-9</text>
+      <text class='con-detail-comp'>重庆渐臻科技有限公司</text>
+      <text>设计部 | UI设计师</text>
+    </view>
+    <view class='con-btn'>
+      <view class='btn-edit'>
+        <image src='/image/mine/edit.png'></image>
+        <text>编辑</text>
+      </view>
+      <view class='btn-delete'>
+        <image src='/image/index/delete.png'></image>
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='add-btn'>
+  <navigator url='/page/common/resume/eduedit/eduedit' hover-class='none'>
+    <image src='/image/mine/add.png'></image>
+    <text>添加教育经验</text>
+  </navigator>
+</view>

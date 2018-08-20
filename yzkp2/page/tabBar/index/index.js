@@ -25,13 +25,12 @@ Page({
         text:'兼职职位'
       },
       {
-        url: '/page/common/resume/index/index',  
-             
+        url: '/page/resume/index/index',  
         src:'/image/index/manageintro.png',
         text:'简历管理'
       },
       {
-        url: '/page/common/resume/apply/apply',        
+        url: '/page/resume/myapply/myapply',        
         src:'/image/index/pro.png',
         text:'应聘进度'
       },
