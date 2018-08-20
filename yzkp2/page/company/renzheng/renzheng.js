@@ -1,4 +1,5 @@
 // page/company/renzheng/renzheng.js
+const addCompanyInfoUrl = require('../../../config').addCompanyInfoUrl;
 Page({
 
   /**
@@ -139,5 +140,28 @@ Page({
         companyIndustry: this.data.companySizeArr[e.detail.value]
       })
     }
+  },
+  // 立即认证
+  nowRz:function(){
+    var _this = this;
+    wx.request({
+      url: addCompanyInfoUrl,
+      data: {
+        token: getApp().globalData.token,
+        type: _this.data.rzIndex,
+        name: _this.data.postName,
+        simpleName: _this.data.postShortName,
+        idNo: _this.data.postCard,
+        linkPhone: _this.data.postphone,
+        email: _this.data.postEmail,
+        attr: _this.data.companyNature,
+        size: _this.data.companyScale,
+        industry: _this.data.companyIndustry,
+        tag: _this.data.postIntro
+      },
+      success: function (res) {
+        console.log(res)
+      }
+    })
   }
 })
