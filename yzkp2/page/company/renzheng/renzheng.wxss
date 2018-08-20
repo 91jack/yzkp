@@ -69,12 +69,14 @@ page{
   margin-top: 20rpx;
 }
 .re-company .re-company-item{
-  width: 226rpx;
+  width: 704rpx;
   height: 80rpx;
   background: #F5F4FE;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 32rpx;
 }
 .re-company .re-company-item text{
   font-size: 28rpx;
@@ -83,7 +85,6 @@ page{
 .re-company .re-company-item image{
   width: 24rpx;
   height: 13rpx;
-  margin-left: 45rpx;
 }
 .rz-intro{
   width:702rpx;

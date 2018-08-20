@@ -47,6 +47,8 @@
         <image src='/image/index/return.png'></image>
       </view>
     </picker>
+  </view>
+  <view class='re-company'>
     <picker bindchange="bindPicker" data-idx="1"  value="{{companySizeIndex}}" range="{{companySizeArr}}">
       <view class='re-company-item'>
         <text hidden='{{companySizeHide}}'>公司规模</text>
