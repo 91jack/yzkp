@@ -1,0 +1,43 @@
+<view class='box'>
+  <text>学校名称</text>
+  <input placeholder='请输入学校名称' data-idx="0" bindblur='getValue' placeholder-style="color:#D7D7D7"></input>
+</view>
+<view class='box'>
+  <text>学历/学位</text>
+  <view class='right'>
+     <picker range="{{educationArr}}" value="{{eduIndex}}" bindchange="bindLevelSelect">
+        <text hidden='{{eduHide}}' class='choose'>请选择</text>        
+        <text hidden='{{!eduHide}}' class='choose'>{{level}}</text>
+        <image class='next' src='/image/mine/next.png'></image>
+     </picker>
+  </view>
+</view>
+<view class='box'>
+  <text>入学时间</text>
+  <view class='right'>
+     <picker mode="date" data-idx="0" value="{{inDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <text hidden='{{inHide}}' class='choose'>请选择</text>        
+        <text hidden='{{!inHide}}' class='choose'>{{inDate}}</text>
+        <image class='next' src='/image/mine/next.png'></image>
+     </picker>
+  </view>
+</view>
+<view class='box'>
+  <text>毕业时间</text>
+  <view class='right'>
+     <picker mode="date" data-idx="1" value="{{outDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <text hidden='{{outHide}}' class='choose'>请选择</text>        
+        <text hidden='{{!outHide}}' class='choose'>{{outDate}}</text>
+        <image class='next' src='/image/mine/next.png'></image>
+     </picker>
+  </view>
+</view>
+<view class='box'>
+  <text>专业名称</text>
+  <input placeholder='请输入专业名称' data-idx="1" bindblur='getValue' placeholder-style="color:#D7D7D7"></input>
+</view>
+
+<view class='btn' bindtap='addEdu'>保存编辑</view>
+
+
+

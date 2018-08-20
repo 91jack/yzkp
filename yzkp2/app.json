@@ -3,7 +3,7 @@
     "page/tabBar/index/index",
     "page/tabBar/my/index",
     "page/tabBar/msg/index"
-   
+ 
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -70,6 +70,26 @@
       ]
     },
     {
+      "root": "page/resume/",
+      "pages": [
+        "index/index",
+        "eduedit/eduedit",
+        "resumeedit/resumeedit",
+        "personmsg/personmsg",
+        "basicmsgedit/basicmsgedit",
+        "jobintensionedit/jobintensionedit",
+        "jobexperience/jobexperience",
+        "eduexperience/eduexperience",
+        "jobedit/jobedit",
+        "project/project",
+        "projectedit/projectedit",
+        "cryptonym/cryptonym",
+        "resumeconfig/resumeconfig",
+        "browseme/browseme",
+        "myapply/myapply"
+      ]
+    },
+    {
       "root": "page/common/",
       "pages": [
         "sign/sign",
@@ -77,22 +97,6 @@
         "course/coursedetails/coursedetails",
         "course/enroll/enroll",
         "course/myenroll/myenroll",
-        "resume/index/index",
-        "resume/eduedit/eduedit",
-        "resume/resumeedit/resumeedit",
-        "resume/personmsg/personmsg",
-        "resume/basicmsgedit/basicmsgedit",
-        "resume/jobintensionedit/jobintensionedit",
-        "resume/jobexperience/jobexperience",
-        "resume/eduexperience/eduexperience",
-        
-        "resume/jobedit/jobedit",
-        "resume/project/project",
-        "resume/projectedit/projectedit",
-        "resume/cryptonym/cryptonym",
-        "resume/resumeconfig/resumeconfig",
-        "resume/browseme/browseme",
-        "resume/myapply/myapply",
         "city/city",
         "demand/demand",
         "industry/industry",

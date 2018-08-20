@@ -1,0 +1,48 @@
+<!--page/common/resume/browseme/browseme.wxml-->
+<view class='browseme'>
+  <view class="header">
+    <navigator hover-class="none" url="/page/common/resume/basicmsgedit/basicmsgedit">
+      <view class="header-cont">
+        <view>
+          <image class="company-pic" src=""></image>
+        </view>
+        <view class="header-intro">
+          <text class="name">张澜澜(微信名)</text>
+          <view class="intro-cont">
+            <text class="intro detail">踏实勤奋，积极上进,热爱生活,......</text>
+          </view>
+        </view>
+        <image class="tonext" src="/image/mine/next.png"></image>
+      </view>
+    </navigator>
+  </view>
+  <view class="manageintro-nav">
+    <navigator url='/page/common/resume/index/index' hover-class='none'>
+      <view class="manageintro-nav-item">简历编辑</view>
+    </navigator>
+    <navigator url='/page/common/resume/resumeconfig/resumeconfig' hover-class='none'>
+      <view class="manageintro-nav-item">简历设置</view>
+    </navigator>
+    <view class="manageintro-nav-item active">谁看过我</view>
+    <navigator url='/page/common/resume/myapply/myapply' hover-class='none'>
+      <view class="manageintro-nav-item">我的申请</view>
+    </navigator>
+  </view>
+  <!-- ---------------- 谁看过我 ------------ -->
+  <view class="who-see">
+    <view class="who-see-item">
+      <view class="see-me-company">
+        <text class="see-me-company-name">渐臻科技</text>
+        <text class="see-me-company-date">07-12</text>
+      </view>
+      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
+    </view>
+    <view class="who-see-item">
+      <view class="see-me-company">
+        <text class="see-me-company-name">渐臻科技</text>
+        <text class="see-me-company-date">07-12</text>
+      </view>
+      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
+    </view>
+  </view>
+</view>

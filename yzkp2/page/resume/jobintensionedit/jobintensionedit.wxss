@@ -1,0 +1,4 @@
+/* page/my/resume/jobintensionedit/jobintensionedit.wxss */
+.box .right>image{
+  margin-right: 0;
+}

@@ -1,3 +1,4 @@
+<!--page/my/resume/project/project.wxml-->
 <view class="con">
   <view class='con-item'>
     <view class='con-detail'>
@@ -19,8 +20,9 @@
 </view>
 
 <view class='add-btn'>
-  <navigator url='/page/common/resume/eduedit/eduedit' hover-class='none'>
+  <navigator hover-class='none' url='/page/my/resume/projectedit/projectedit'>
     <image src='/image/mine/add.png'></image>
-    <text>添加教育经验</text>
+    <text>添加项目经验</text>
   </navigator>
 </view>
+
