@@ -4,60 +4,60 @@
   <view class='job-manage active'>职位管理</view>
 </view>
 
-
-
-
-
 <!-- 职位管理 -->
 
 <view class='managejob-cont'>
   <block wx:for="{{jobList}}">
-    <view class='cont-item'>
-      <view class='cont-tit'>
-        <text class='title'>{{item.name}}</text>
-        <text class='time'>{{item.refreshTime}}</text>
-      </view>
-      <!-- 全职 -->
-      <view class='cont-detail' wx:if="{{item.type==0}}">
-        <view class='det-left'>
-          <view class='left-item'>
-            <image src='/image/index/area.png'></image>
-            <text>{{item.city}}</text>
-          </view>
-          <view class='left-item'>
-            <image src='/image/index/work.png'></image>
-            <text>{{item.workYear}}</text>
-          </view>
-          <view class='left-item'>
-            <image src='/image/index/xueli.png'></image>
-            <text>{{item.educationLevel}}</text>
-          </view>
-          <view class='left-item'>
-            <image src='/image/index/height.png'></image>
-            <text>{{item.height}}</text>
-          </view>
-        </view>
-        <view class='det-right'>{{item.pay}}</view>
-      </view>
-      <!-- 兼职 -->
-      <view class='cont-detail' wx:if="{{item.type==1}}">
-        <view class='det-left'>
-          <view class='left-item'>
-            <image src='/image/index/area.png'></image>
-            <text>{{item.city}}</text>
-          </view>
-          <view class='left-item'>
-            <image src='/image/index/copy.png'></image>
-            <text>{{item.num}}人</text>
-          </view>
-          <view class='left-item'>
-            <image src='/image/index/height.png'></image>
-            <text>{{item.height}}</text>
-          </view>
-        </view>
-        <view class='det-right'>{{item.pay}}</view>
-      </view>
 
+    <view class='cont-item'>
+      <navigator hover-class='none' url="/page/company/jobdetails/jobdetails?id={{item.id}}">
+        <view class='cont-tit'>
+          <text class='title'>{{item.name}}</text>
+          <text class='time'>{{item.refreshTime}}</text>
+        </view>
+        <!-- 全职 -->
+
+        <view class='cont-detail' wx:if="{{item.type==0}}">
+          <view class='det-left'>
+            <view class='left-item'>
+              <image src='/image/index/area.png'></image>
+              <text>{{item.city}}</text>
+            </view>
+            <view class='left-item'>
+              <image src='/image/index/work.png'></image>
+              <text>{{item.workYear}}</text>
+            </view>
+            <view class='left-item'>
+              <image src='/image/index/xueli.png'></image>
+              <text>{{item.educationLevel}}</text>
+            </view>
+            <view class='left-item'>
+              <image src='/image/index/height.png'></image>
+              <text>{{item.height}}</text>
+            </view>
+          </view>
+          <view class='det-right'>{{item.pay}}</view>
+        </view>
+        <!-- 兼职 -->
+        <view class='cont-detail' wx:if="{{item.type==1}}">
+          <view class='det-left'>
+            <view class='left-item'>
+              <image src='/image/index/area.png'></image>
+              <text>{{item.city}}</text>
+            </view>
+            <view class='left-item'>
+              <image src='/image/index/copy.png'></image>
+              <text>{{item.num}}人</text>
+            </view>
+            <view class='left-item'>
+              <image src='/image/index/height.png'></image>
+              <text>{{item.height}}</text>
+            </view>
+          </view>
+          <view class='det-right'>{{item.pay}}</view>
+        </view>
+
+      </navigator>
       <view class='company-btn'>
         <view class='company-btn-item'>
           <image src='/image/index/refresh.png'></image>
@@ -77,6 +77,6 @@
     <view class='job-manage-postjob-btn-item'>发布兼职</view>
   </navigator>
   <navigator url='/page/company/postfulltime/postfulltime' hover-class='none'>
-    <view class='job-manage-postjob-btn-item'>发布全职</view> 
+    <view class='job-manage-postjob-btn-item'>发布全职</view>
   </navigator>
 </view>
