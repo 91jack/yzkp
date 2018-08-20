@@ -1,15 +1,17 @@
 <view class="con">
-  <view class='con-item'>
+  <view wx:for='{{work}}' class='con-item'>
     <view class='con-detail'>
-      <text>2017-2~2017-9</text>
-      <text class='con-detail-comp'>重庆渐臻科技有限公司</text>
-      <text>设计部 | UI设计师</text>
+      <text>{{item.beginDate}}~{{item.endDate}}</text>
+      <text class='con-detail-comp'>{{item.company}}</text>
+      <text>{{item.department}} | {{item.position}}</text>
     </view>
     <view class='con-btn'>
-      <view class='btn-edit'>
-        <image src='/image/mine/edit.png'></image>
-        <text>编辑</text>
-      </view>
+      <navigator hover-class='none' url='/page/resume/jobedit/jobedit?id={{item.id}}'>
+        <view class='btn-edit'>
+          <image src='/image/mine/edit.png'></image>
+          <text>编辑</text>
+        </view>
+      </navigator>
       <view class='btn-delete'>
         <image src='/image/index/delete.png'></image>
         <text>删除</text>
@@ -19,7 +21,7 @@
 </view>
 
 <view class='add-btn'>
-  <navigator hover-class='none' url='/page/common/resume/jobedit/jobedit'>
+  <navigator hover-class='none' url='/page/resume/jobedit/jobedit'>
      <image src='/image/mine/add.png'></image>
     <text>添加工作经验</text>
   </navigator>

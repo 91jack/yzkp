@@ -1,4 +1,5 @@
 // page/my/resume/jobexperience/jobexperience.js
+
 const resumeUrl = require('../../../config').resumeUrl;
 Page({
 
@@ -6,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resumeId:''
+    resumeId:'',
+    work:{}
   },
 
   /**
@@ -19,6 +21,21 @@ Page({
       success: function(res) {
         that.setData({
           resumeId:res.data
+        })
+        wx.request({
+          url: resumeUrl,
+          data: {
+            token: getApp().globalData.token,
+          },
+          success: function (res) {
+            console.log(res)
+            that.setData({
+              // baseInfo: res.data.obj.base,
+              work: res.data.obj.work,
+              // education: res.data.obj.education,
+              // project: res.data.obj.project
+            })
+          }
         })
       },
     })

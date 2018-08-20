@@ -31,7 +31,7 @@
           </view>
         </navigator>
       </view>
-<block wx:if="{{baseInfo==''}}">
+<block wx:if="{{baseInfo!=''}}">
       <view class="manageintro-cont-item-detail">
         <text class="in-name">{{baseInfo.name}}</text>
         <view class="in-info">

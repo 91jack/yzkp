@@ -1,11 +1,12 @@
 // page/my/resume/project/project.js
+const resumeUrl = require('../../../config').resumeUrl;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    project:[]
   },
 
   /**
@@ -26,7 +27,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this = this;
+    wx.request({
+      url: resumeUrl,
+      data: {
+        token: getApp().globalData.token,
+      },
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          project: res.data.obj.project
+        })
+      }
+    })
   },
 
   /**

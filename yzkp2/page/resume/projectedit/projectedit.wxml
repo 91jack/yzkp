@@ -1,13 +1,13 @@
 <!--page/my/resume/projectedit/projectedit.wxml-->
 <view class='box'>
   <text>项目名称</text>
-  <input placeholder='请输入项目名称' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入项目名称' value='{{conpanyName}}' placeholder-style="color:#D7D7D7"></input>
 </view>
 <view class='box'>
   <text>项目开始时间</text>
   <view class='right'>
-     <picker mode="selector" range="{{workexpressData}}" value="{{item}}" bindchange="bindDateChangeExpress">
-        <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>        
+     <picker mode="date" data-idx="0" value="{{inData}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <text hidden='{{pickerDefault[0]}}' class='choose'>{{inData}}</text>        
         <text class='choose'>{{workexpress}}</text>
         <image class='next' src='../../../../image/mine/next.png'></image>
      </picker>
@@ -17,8 +17,8 @@
 <view class='box'>
   <text>项目结束时间</text>
   <view class='right'>
-     <picker mode="selector" range="{{workexpressData}}" value="{{item}}" bindchange="bindDateChangeExpress">
-        <text hidden='{{pickerDefault[0]}}' class='choose'>请选择</text>        
+     <picker mode="date" data-idx="1" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <text hidden='{{pickerDefault[0]}}' class='choose'>{{outData}}</text>        
         <text class='choose'>{{workexpress}}</text>
         <image class='next' src='../../../../image/mine/next.png'></image>
      </picker>
@@ -26,12 +26,12 @@
 </view>
 <view class='box'>
   <text>项目角色</text>
-  <input placeholder='请输入在该项目中担任角色' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入在该项目中担任角色' value='{{partment}}' placeholder-style="color:#D7D7D7"></input>
 </view>
 <view class='box last'>
   <text>项目介绍</text>
 </view>
-<textarea placeholder='请简单介绍一下你的项目' placeholder-class='color:#AEAEAE'>
+<textarea placeholder='请简单介绍一下你的项目' value='{{job}}' placeholder-class='color:#AEAEAE'>
 
 </textarea>
 <view class='btn'>保存编辑</view>

@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseInfo:null,
+    baseInfo:{},
     work:[],
     education:[],
     project:[]
@@ -50,8 +50,10 @@ Page({
           education: res.data.obj.education,
           project: res.data.obj.project
         })
-        
-
+        wx.setStorage({
+          key: 'resumeId',
+          data: res.data.obj.base.id,
+        })
       }
     })
   },
