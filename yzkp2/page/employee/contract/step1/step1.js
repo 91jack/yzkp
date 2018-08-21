@@ -1,18 +1,17 @@
-// page/index/contract/step2/step2.js
+// page/index/contract/step1/step1.js
 // 员工基本信息填写
 const regBaseInfoUrl = require('../../../../config').regBaseInfoUrl;
 
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    name:'小张',
+    name:'',
     sex:'',
     id_no:'',
     education_level:'',
-    mobile:'18500000000',
+    mobile:'',
     link_mobile:'',
     address:'',
     department:'',
@@ -132,7 +131,7 @@ Page({
         address: this.data.address,
         department: this.data.department,
         position: this.data.position,
-        in_date: this.data.in_date
+        in_date: this.data.indate
       },
       success: function (res) {
         console.log(res);
@@ -177,6 +176,7 @@ Page({
   // 选择入职时间
   bindDateChange:function(e){
     var value = e.detail.value;
+    console.log(value)
     this.setData({
       indate:value,
       inHide:true

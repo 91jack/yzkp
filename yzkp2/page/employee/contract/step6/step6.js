@@ -1,5 +1,6 @@
 // page/my/contract/step6/step6.js
 const getContractUrl = require('../../../../config').getContractUrl;
+var WxParse = require('../../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -14,6 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 页面初始化 options为页面跳转所带来的参数
     var _this = this;
     wx.getStorage({
       key: 'employeesId',
@@ -29,18 +31,10 @@ Page({
               _this.setData({
                 content: result.data.obj.content
               })
-              // wx.showToast({
-              //   title: '信息提交成功',
-              //   icon: 'success',
-              //   duration: 2000,
-              //   success: function () {
-              //     setTimeout(function () {
-              //       wx.navigateTo({
-              //         url: '/page/employee/contract/step6/step6',
-              //       })
-              //     }, 2000)
-              //   }
-              // })
+              var aHrefHrefData = result.data.obj.content;
+              console.log(aHrefHrefData)
+              WxParse.wxParse('aHrefHrefData', 'html', aHrefHrefData, _this);
+            
             }
           }
         })
@@ -49,7 +43,23 @@ Page({
     })
    
   },
+  insertNodeTap: function (e) {
+    var that = this;
+    var insertData = '<div style="color:red;text-align:center;padding:20px;">我是一个被插入的元素</div>';
+    WxParse.wxParse('insertData', 'html', insertData, that);
+  },
+  wxParseTagATap: function (e) {
+    var href = e.currentTarget.dataset.src;
+    console.log(href);
+    //我们可以在这里进行一些路由处理
+    if (href.indexOf(index) > 0) {
+      // wx.redirectTo({
+      //   url: '../index/index'
+      // })
 
+    }
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

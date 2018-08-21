@@ -7,18 +7,12 @@ Page({
   data: {
     resume: getApp().globalData.resume,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    currentList:[],
+    currentList: [],
     //求职者列表
-    jobSeekerList:[
-      {
+    jobSeekerList: [{
         url: '/page/common/resume/index/index',
         src: '/image/index/office.png',
         text: '我的简历'
-     },
-     {
-        url: '/page/job/joblist/joblist?type=0',
-        src: '/image/index/office.png',
-        text: '我的收藏'
       },
       {
         url: '/page/job/joblist/joblist?type=0',
@@ -42,16 +36,10 @@ Page({
       }
     ],
     // 员工列表
-    employeeList:[
-      {
+    employeeList: [{
         url: '/page/common/resume/index/index',
         src: '/image/index/office.png',
         text: '我的简历'
-      },
-      {
-        url: '/page/job/joblist/joblist?type=0',
-        src: '/image/index/office.png',
-        text: '我的收藏'
       },
       {
         url: '/page/job/joblist/joblist?type=0',
@@ -75,54 +63,52 @@ Page({
       }
     ],
     // 企业列表
-    companyList:[
-      {
-        url: '/page/company/jobmanage/jobmanage',
-        src: '/image/index/office.png',
-        text: '职位管理'
-      }
-    ]
+    companyList: [{
+      url: '/page/company/jobmanage/jobmanage',
+      src: '/image/index/office.png',
+      text: '职位管理'
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     // 查看是否授权
     wx.getSetting({
-      success: function (res) {
+      success: function(res) {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
-            success: function (res) {
+            success: function(res) {
               console.log(res.userInfo)
             }
           })
         }
       }
     })
-    
-    
-   
-   
+
+
+
+
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     var _this = this;
     wx.getStorage({
       key: 'role',
-      success: function (res) {
+      success: function(res) {
         var role = res.data;
         console.log(role);
         if (role == 0) {
@@ -145,32 +131,32 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
-  bindGetUserInfo: function (e) {
+  bindGetUserInfo: function(e) {
     console.log(e.detail.userInfo)
   }
 })

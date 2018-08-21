@@ -186,8 +186,8 @@ wx.getSystemInfo({
                         duration: 2000,
                         success: function () {
                           setTimeout(function () {
-                            wx.navigateTo({
-                              url: '/page/employee/contract/index/index',
+                            wx.switchTab({
+                              url: '/page/tabBar/my/index',
                             })
                           }, 2000)
                         }
