@@ -64,7 +64,7 @@
           <image src="/image/mine/wantto.png"></image>
           <text>求职意向</text>
         </view>
-        <navigator hover-class="none" url="/page/resume/jobintensionedit/jobintensionedit">
+        <navigator hover-class="none" url="/page/resume/jobintensionedit/jobintensionedit?id={{baseInfo.id}}">
           <view class="tit-edit">
             <image src="/image/mine/edit.png"></image>
             <text>编辑</text>

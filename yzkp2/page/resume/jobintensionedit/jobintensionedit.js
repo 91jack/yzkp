@@ -1,5 +1,6 @@
 // page/my/resume/jobintensionedit/jobintensionedit.js
-const editJobintensionUrl = require('../../../config').editJobintensionUrl
+const editJobintensionUrl = require('../../../config').editJobintensionUrl;
+const resumeUrl = require('../../../config').resumeUrl;
 Page({
 
   /**
@@ -11,11 +12,11 @@ Page({
     monthPayHide:false,
     id:'',			
     workName:'',		
-    workPay:'',				
-    workAddress:'',				
+    workPay:'',							
     industry:'',
     city:'',
-    resumeId:''
+    resumeId:'',
+    oldPay:''
   },
 
   /**
@@ -52,7 +53,12 @@ Page({
           resumeId: res.data
         })
       },
-    })
+    });
+    if(options.id){
+      that.setData({
+        id: options.id
+      })
+    }
   },
 
   /**
@@ -92,6 +98,24 @@ Page({
         })
       },
     })
+    if(this.data.id){
+      wx.request({
+        url: resumeUrl,
+        data: {
+          token: getApp().globalData.token,
+        },
+        success: function (res) {
+          console.log(res)
+          that.setData({
+            // baseInfo: res.data.obj.base,
+            city: res.data.obj.base.workAddress,
+            industry: res.data.obj.base.industry,
+            workName: res.data.obj.base.workName,
+            oldPay: res.data.obj.base.workPay
+          })
+        }
+      })
+    }
   },
 
   getValue:function(e){
@@ -115,6 +139,18 @@ Page({
         console.log(res)
         wx.navigateTo({
           url: '/page/resume/index/index',
+        })
+        wx.removeStorage({
+          key: 'city',
+          success: function (res) {
+            console.log(11111)
+          },
+        })
+        wx.removeStorage({
+          key: 'industry',
+          success: function (res) {
+            console.log(2222)
+          },
         })
       }
     })
