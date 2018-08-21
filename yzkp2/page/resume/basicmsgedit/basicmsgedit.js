@@ -5,6 +5,8 @@ addBasicUrl = require('../../../config').addBasicUrl;
 // 修改简历基本信息
 editBasicUrl = require('../../../config').editBasicUrl;
 const resumeUrl = require('../../../config').resumeUrl;
+// 上传图片
+const uploadImgUrl = require('../../../config').uploadImgUrl;
 Page({
 
   /**
@@ -32,7 +34,8 @@ Page({
     mobile: '',
     email: '',
     height:'',
-    resumeId:''
+    resumeId:'',
+    headImg:''  //头像
   },
 
   /**
@@ -174,6 +177,37 @@ Page({
       })
     }
     console.log(this.data.sex)
+  },
+  // 上传头像
+  uploadheadPic:function(){
+    var that = this;
+    wx.chooseImage({
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          headImg: res.tempFilePaths[0]
+        })
+        wx.uploadFile({
+          url: uploadImgUrl,
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          formData: {
+            token: getApp().globalData.token,
+            suffix: 'png'
+          },
+          success: function (result) {
+            console.log(JSON.parse(result.data))
+            var imgData = JSON.parse(result.data);
+            if (imgData.status == 0) {
+              console.log(imgData.obj)
+              that.setData({
+                headImg: imgData.obj
+              })
+            }
+          }
+        })
+      }
+    })
   },
   /**
    * 新增简历基本信息

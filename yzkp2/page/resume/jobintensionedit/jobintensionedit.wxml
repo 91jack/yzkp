@@ -1,9 +1,9 @@
 <!--page/my/resume/jobintensionedit/jobintensionedit.wxml-->
-<navigator url='/page/common/industry/industry' hover-class='none'>
+<navigator url='/page/common/industry/industry?id="intension"' hover-class='none'>
   <view class='box'>
     <text>期望行业</text>
     <view class='right'>
-      <text class='choose'>请选择</text>
+      <text class='choose'>{{industry?industry:"请选择"}}</text>
       <image class='next' src='/image/mine/next.png'></image>
     </view>
   </view>
@@ -23,7 +23,7 @@
     </picker>
   </view>
 </view>
-<navigator url='/page/common/city/city'>
+<navigator hover-class='none' url='/page/common/city/city?id=intension'>
   <view class='box'>
     <text>期望工作地址</text>
     <view class='right'>

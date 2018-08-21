@@ -11,13 +11,19 @@ Page({
     profession:'',
     _industrynav: '',
     _profession: '',
-    _job: ''
+    _job: '',
+    id:'',
+    returnIndustryData:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
+    this.setData({
+      id:options.id
+    })
     var _this = this;
     wx.getStorage({
       key: 'industryArr',
@@ -48,6 +54,7 @@ Page({
   clickLevel1: function (e) {
     var _this = this;
     console.log(e.currentTarget.dataset.industrynav)
+    // console.log(e.currentTarget.dataset.value)
     var industrynav = e.currentTarget.dataset.industrynav;
     console.log(_this.data.industry[industrynav])
     this.setData({
@@ -59,11 +66,17 @@ Page({
   clickLevel2: function (e) {
     var _this = this;
     var professionIndex = e.currentTarget.dataset.profession
-    console.log(_this.data.currentSelect[professionIndex].list)
+    console.log(e.currentTarget.dataset.value)
    _this.setData({
      _profession: professionIndex,
-     profession: _this.data.currentSelect[professionIndex].list
+     profession: _this.data.currentSelect[professionIndex].list,
+     returnIndustryData: e.currentTarget.dataset.value
    })
+    if (_this.data.id =='"intension"'){
+      wx.navigateTo({
+        url: '/page/resume/jobintensionedit/jobintensionedit?industry=' + _this.data.returnIndustryData+'',
+      })
+    }
   },
   // 区县城市选择
   clickLevel3: function (e) {
