@@ -54,10 +54,15 @@
     <image class='send' src='/image/index/send.png'></image>
     <text>发送简历</text>
   </view>
+  <!-- <navigator url="/page/tabBar/my/index" hover-class='none' class='footer-item rest'>
+    <image class='chat' src='/image/index/chat.png'></image>
+    <text>和Ta聊天</text>
+  </navigator> -->
   <view data-id='1' class='footer-item rest' bindtap='chat'>
     <image class='chat' src='/image/index/chat.png'></image>
     <text>和Ta聊天</text>
   </view>
+
 </view>
 
 <!-- 打电话发简历模态框 -->

@@ -2,6 +2,9 @@
 const testLoginUrl = require('../../../config').testLoginUrl;
 const loginUrl = require('../../../config').loginUrl;
 const jobListUrl = require('../../../config').jobListUrl;
+
+const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
+var socket = require('../../../socket.js');
 Page({
   
   /**
@@ -106,8 +109,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-
+    socket.init();
     var _this = this;
     // 登录
     wx.login({

@@ -95,7 +95,8 @@ Page({
                 address: bsData.address,
                 mobile: bsData.mobile,
                 email: bsData.email,
-                height: bsData.height
+                height: bsData.height,
+                headImg: bsData.headImg
               })
             }
           })

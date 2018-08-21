@@ -9,6 +9,7 @@
   width: 187rpx;
   height: 187rpx;
   margin: 48rpx 0 26rpx 283rpx;
+  border-radius: 50%;
 }
 .head-pic text{
   display: block;

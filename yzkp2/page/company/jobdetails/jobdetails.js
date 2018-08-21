@@ -157,5 +157,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  chat:function(){
+    wx.navigateTo({
+      url: '/page/common/msgdetail/msgdetail?msgType=0&resumeId=20&companyId=6',
+    })
+
   }
 })

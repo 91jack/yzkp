@@ -1,4 +1,14 @@
 <!--page/common/resume/resumeconfig/resumeconfig.wxml-->
+<view class="header">
+  <view class="header-cont resume">
+    <view>
+      <image class="company-pic" src="{{headImg}}"></image>
+    </view>
+    <view class="header-intro">
+      <text class="name">{{resumeName}}</text>
+    </view>
+  </view>
+</view>
 <view class='resumeconfig'>
   <view class="manageintro-nav">
     <navigator url='/page/resume/index/index' hover-class='none'>

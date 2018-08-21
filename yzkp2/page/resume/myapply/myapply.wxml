@@ -1,20 +1,14 @@
 <!--page/common/resume/myapply/myapply.wxml-->
 <view class='my-apply'>
   <view class="header">
-    <navigator hover-class="none" url="/page/resume/basicmsgedit/basicmsgedit">
-      <view class="header-cont">
-        <view>
-          <image class="company-pic" src=""></image>
-        </view>
-        <view class="header-intro">
-          <text class="name">张澜澜(微信名)</text>
-          <view class="intro-cont">
-            <text class="intro detail">踏实勤奋，积极上进,热爱生活,......</text>
-          </view>
-        </view>
-        <image class="tonext" src="/image/mine/next.png"></image>
+    <view class="header-cont resume">
+      <view>
+        <image class="company-pic" src="{{headImg}}"></image>
       </view>
-    </navigator>
+      <view class="header-intro">
+        <text class="name">{{resumeName}}</text>
+      </view>
+    </view>
   </view>
   <view class="manageintro-nav">
     <navigator url='/page/resume/index/index' hover-class='none'>  

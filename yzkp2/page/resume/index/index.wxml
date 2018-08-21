@@ -1,5 +1,14 @@
 <!--page/my/resume/index/index.wxml-->
-
+<view class="header">
+  <view class="header-cont resume">
+    <view>
+      <image class="company-pic" src="{{baseInfo.headImg}}"></image>
+    </view>
+    <view class="header-intro">
+      <text class="name">{{baseInfo.name}}</text>
+    </view>
+  </view>
+</view>
 <view class="manageintro-nav">
   <view class="manageintro-nav-item active">简历编辑</view>
   <navigator url='/page/resume/resumeconfig/resumeconfig' hover-class='none'>
@@ -64,7 +73,7 @@
           <image src="/image/mine/wantto.png"></image>
           <text>求职意向</text>
         </view>
-        <navigator hover-class="none" url="/page/resume/jobintensionedit/jobintensionedit">
+        <navigator hover-class="none" url="/page/resume/jobintensionedit/jobintensionedit?id={{baseInfo.id}}">
           <view class="tit-edit">
             <image src="/image/mine/edit.png"></image>
             <text>编辑</text>
@@ -72,7 +81,7 @@
         </navigator>
       </view>
       <view class="manageintro-cont-item-detail">
-        <text class="in-info want">{{baseInfo.workName}} | {{baseInfo.workAddress}} | {{baseInfo.workPay}}k</text>
+        <text class="in-info want">{{baseInfo.workName}}  {{baseInfo.workAddress}}  {{baseInfo.workPay}}</text>
       </view>
     </view>
     <!-- 工作经验 -->
