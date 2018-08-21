@@ -88,6 +88,9 @@ Page({
   onShareAppMessage: function () {
   
   },
+  getValue:function(e){
+    console.log(e.detail.value)
+  },
   bindPickerChange: function (e) {
     console.log(e.detail.value)
     this.setData({
@@ -103,7 +106,8 @@ Page({
       data: {
         token: getApp().globalData.token,
         type: _this.data.index,
-        city: '重庆'
+        city: '重庆',
+        search:''
       },
       success: function (res) {
         if (res.data.status == 0) {
