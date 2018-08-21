@@ -113,3 +113,6 @@ page{
   color: #fff;
   font-size: 28rpx;
 }
+.my-apply-item-footer-comment{
+  display: inline-block
+}

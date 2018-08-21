@@ -1,0 +1,14 @@
+
+<view class='cont'>
+  <textarea placeholder='请输入你的问题' bindtap='getTextarea'></textarea>
+</view>
+
+<view class='btn'>
+
+ <view class='no' bindtap='cancleBtn'>取消</view>
+
+ 
+  <view class='yes' bindtap='submitBtn'>提交</view>
+</view>
+
+
