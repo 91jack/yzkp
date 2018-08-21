@@ -84,8 +84,8 @@ Page({
         text: '职位管理'
       },
       {
-        url: '/page/company/renzheng/renzheng',
-        //url: '/page/company/laowu/laowu?id=1',
+        //url: '/page/company/renzheng/renzheng',
+        url: '/page/company/laowu/laowu?id=1',
         src: '/image/index/other.png',
         text: '招聘外包'
       },
@@ -138,11 +138,14 @@ Page({
                 key: 'role',
                 data: res.data.obj.type
               })
-
-              wx.setStorage({
-                key: 'companyId',
-                data: res.data.obj.company.id,
-              })
+             
+              if (res.data.obj.company !=null){
+                wx.setStorage({
+                  key: 'companyId',// 公司id
+                  data: res.data.obj.company.id,
+                })
+              }
+            
 
               _this.jobListFn();
              
