@@ -8,7 +8,6 @@ var config = {
   // 下面的地址配合云端 Server 工作
   host,
 
-
   // 模拟登陆
   testLoginUrl: `${host}test/login.json`,
 
@@ -59,6 +58,9 @@ var config = {
 
   // 简历是否公开，是否匿名
   resumeOpenUrl: `${host}resume/edit/OpenAndAnonymous.json`,
+
+  // 谁看过我
+  browseMeUrl: `${host}/resume/view/list.json`,
 
   // 简历投递记录
   resumeApplyUrl: `${host}recruit/notice/applylog.json`,
@@ -149,31 +151,8 @@ var config = {
   // 招聘外包，用工灵活，劳务派遣
   laowuUrl: `${host}recruit/config/get.json`,
 
-  /** 基础数据 */
-  // 城市列表
-  // cityUrl: `${host}common/cities.json`,
-
-  // // 公司性质
-  // companyTypeUrl: `${host}common/company_type.json`,
-
-  // // 公司规模
-  // companySizeUrl: `${host}common/company_size.json`,
-
-  // // 月薪
-  // monthPayUrl: `${host}common/month_pay.json`,
-  // // 学历
-  // educationUrl: `${host}common/education.json`,
-  // // 工作经验
-  // workYearUrl: `${host}common/work_year.json`,
-  // // 身高要求
-  // heightUrl: `${host}common/height.json`,
-  // // 首页-要求
-  // demandUrl: `${host}common/demand.json`,
   // 上传图片
   uploadImgUrl: `${host}image/upload.json`,
-  // // 福利待遇
-  // welfareUrl: `${host}common/welfare.json`,
-
 };
 
 module.exports = config

@@ -1,5 +1,5 @@
 // page/common/resume/browseme/browseme.js
-const resumeOpenUrl = require('../../../config').resumeOpenUrl;
+const browseMeUrl = require('../../../config').browseMeUrl;
 
 Page({
 
@@ -8,7 +8,8 @@ Page({
    */
   data: {
     headImg:'',
-    resumeName:''
+    resumeName:'',
+    browseList:null
   },
 
   /**
@@ -31,6 +32,20 @@ Page({
           resumeName: res.data
         })
       },
+    })
+
+    wx.request({
+      url: browseMeUrl,
+      data: {
+        token: getApp().globalData.token,
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          browseList:res.data.list
+        })
+        
+      }
     })
   },
 

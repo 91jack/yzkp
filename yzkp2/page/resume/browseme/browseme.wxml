@@ -24,19 +24,17 @@
   </view>
   <!-- ---------------- 谁看过我 ------------ -->
   <view class="who-see">
-    <view class="who-see-item">
+
+    <view class="who-see-item" wx:for="{{browseList}}">
+      <navigator url="/page/company/companydetail/companydetail?companyId={{item.id}}" hover-class='none'>
       <view class="see-me-company">
-        <text class="see-me-company-name">渐臻科技</text>
-        <text class="see-me-company-date">07-12</text>
-      </view>
-      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
+          <text class="see-me-company-name">{{item.name}}</text>
+          <text class="see-me-company-date">{{item.view_time}}</text>
+        </view>
+        <view class="see-me-company-frt">{{item.size}}/{{item.attr}}/{{item.industry}}</view>
+      </navigator>
+     
     </view>
-    <view class="who-see-item">
-      <view class="see-me-company">
-        <text class="see-me-company-name">渐臻科技</text>
-        <text class="see-me-company-date">07-12</text>
-      </view>
-      <view class="see-me-company-frt">50人以上/民营/互联网/软件开发</view>
-    </view>
+  
   </view>
 </view>

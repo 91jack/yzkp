@@ -9,13 +9,14 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     currentList: [],
     //求职者列表
-    jobSeekerList: [{
-        url: '/page/common/resume/index/index',
+    jobSeekerList: [
+      {
+        url: '/page/resume/index/index',
         src: '/image/index/office.png',
         text: '我的简历'
       },
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/resume/myapply/myapply',
         src: '/image/index/office.png',
         text: '我的申请'
       },
@@ -36,13 +37,14 @@ Page({
       }
     ],
     // 员工列表
-    employeeList: [{
-        url: '/page/common/resume/index/index',
+    employeeList: [
+      {
+        url: '/page/resume/index/index',
         src: '/image/index/office.png',
         text: '我的简历'
       },
       {
-        url: '/page/job/joblist/joblist?type=0',
+        url: '/page/resume/myapply/myapply',
         src: '/image/index/office.png',
         text: '我的申请'
       },
