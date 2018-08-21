@@ -39,8 +39,8 @@ page{
 }
 .company-btn{
   display: flex;
-  height: 93rpx;
-  line-height: 93rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }
 .company-btn-item:first-of-type{
   margin-left: 511rpx;
