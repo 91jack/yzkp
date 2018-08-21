@@ -1,6 +1,9 @@
 // page/job/newwork/jobdetails/jobdetails.js
 const jobDetailsUrl = require('../../../config').jobDetailsUrl;
 
+// 投递简历
+const resumeDoudiUrl = require('../../../config').resumeDoudiUrl;
+
 Page({
 
   /**
@@ -8,18 +11,9 @@ Page({
    */
   data: {
     jobDetails:'',
-    nodes: [{
-      name: 'div',
-      attrs: {
-        class: 'div_class',
-        style: 'line-height: 60px; color: red;'
-      },
-      children: [{
-        type: 'text',
-        text: 'Hello&nbsp;World!'
-      }]
-    }],
-
+    id:'',
+    companyId:'',
+    linkPhone:'',
     collectType: false,
     modalShow: true,
     modalData: [true, true, true]
@@ -41,37 +35,15 @@ Page({
       success: function (res) {
         console.log(res.data)
         _this.setData({
-          jobDetails: res.data.obj
+          jobDetails: res.data.obj,
+          id: res.data.obj.id,
+          companyId: res.data.obj.companyId,
+          linkPhone: res.data.obj.linkPhone,
         })
       }
     })
   },
- 
-  //收藏
-  collect: function () {
-    console.log(this.data.collectType)
-    wx.showToast({
-      title: '已收藏',
-      duration: 5000,
-      mask: true
 
-    })
-    this.setData({
-      collectType: true
-    })
-  },
-  // 取消收藏
-  collectYet: function () {
-    var that = this;
-    wx.showToast({
-      title: '已取消',
-      duration: 5000,
-      mask: true
-    })
-    this.setData({
-      collectType: false
-    })
-  },
   // 模态框显示与否
   call: function (e) {
     var i = Number(e.currentTarget.dataset.id)
@@ -84,12 +56,39 @@ Page({
   },
   // 显示具体的模态框
   send: function (e) {
+    var _this = this;
     var i = Number(e.currentTarget.dataset.id)
-    console.log(i);
-    var show = "modalData[" + i + "]"
-    this.setData({
-      modalShow: false,
-      [show]: false
+    wx.getStorage({
+      key: 'resumeId',
+      success: function(res) {
+        if(res.data<0){
+          var show = "modalData[" + i + "]"
+          _this.setData({
+            modalShow: false,
+            [show]: false
+          })
+        }
+      },
+    })
+   
+
+    wx.request({
+      url: resumeDoudiUrl,
+      data: {
+        token: getApp().globalData.token,
+        id:_this.data.id,
+        companyId: _this.data.companyId
+      },
+      success: function (res) {
+        console.log(res)
+        if(res.data.status == 0){
+          wx.showToast({
+            title: '简历投递成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
     })
   },
   // 隐藏模态框
@@ -108,7 +107,7 @@ Page({
   //打电话
   callnumber: function () {
     wx.makePhoneCall({
-      phoneNumber: '13110141797'
+      phoneNumber: this.data.linkPhone
     })
   },
   /**

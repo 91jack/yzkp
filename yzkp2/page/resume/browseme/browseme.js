@@ -1,4 +1,6 @@
 // page/common/resume/browseme/browseme.js
+const resumeOpenUrl = require('../../../config').resumeOpenUrl;
+
 Page({
 
   /**

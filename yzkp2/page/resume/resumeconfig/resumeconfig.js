@@ -1,4 +1,6 @@
 // page/common/resume/resumeconfig/resumeconfig.js
+const resumeOpenUrl = require('../../../config').resumeOpenUrl;
+
 Page({
 
   /**
@@ -62,5 +64,45 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  switch1Change:function(e){
+    var open = e.detail.value?1:0;
+    wx.request({
+      url: resumeOpenUrl,
+      data:{
+        token: getApp().globalData.token,
+        open: open
+      },
+      success:function(res){
+        console.log(res)
+        if(res.data.status == 0){
+          wx.showToast({
+            title: '设置成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
+  switch2Change: function (e) {
+    var anonymous = e.detail.value ? 1 : 0;
+    wx.request({
+      url: resumeOpenUrl,
+      data: {
+        token: getApp().globalData.token,
+        anonymous: anonymous
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 0) {
+          wx.showToast({
+            title: '设置成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
 })

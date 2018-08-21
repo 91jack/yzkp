@@ -1,21 +1,5 @@
 <!--page/common/resume/resumeconfig/resumeconfig.wxml-->
 <view class='resumeconfig'>
-  <view class="header">
-    <navigator hover-class="none" url="/page/resume/basicmsgedit/basicmsgedit">
-      <view class="header-cont">
-        <view>
-          <image class="company-pic" src=""></image>
-        </view>
-        <view class="header-intro">
-          <text class="name">张澜澜(微信名)</text>
-          <view class="intro-cont">
-            <text class="intro detail">踏实勤奋，积极上进,热爱生活,......</text>
-          </view>
-        </view>
-        <image class="tonext" src="/image/mine/next.png"></image>
-      </view>
-    </navigator>
-  </view>
   <view class="manageintro-nav">
     <navigator url='/page/resume/index/index' hover-class='none'>
       <view class="manageintro-nav-item">简历编辑</view>
@@ -32,11 +16,11 @@
   <view class="set-intro">
     <view class="set-intro-box">
       <text>公开简历</text>
-      <switch checked="true" class="fr"></switch>
+      <switch checked="true" class="fr" bindchange='switch1Change'></switch>
     </view>
     <view class="set-intro-box">
       <text>匿名展示</text>
-      <switch checked="true" class="fr"></switch>
+      <switch checked="true" class="fr" bindchange='switch2Change'></switch>
     </view>
   </view>
 </view>

@@ -52,9 +52,15 @@ var config = {
   // 简历详情
   resumeUrl: `${host}resume/get.json`,
   
-  // 收藏与取消收藏
+  
   // 投递简历
+  resumeDoudiUrl: `${host}recruit/notice/apply.json`,
+
   // 简历是否公开，是否匿名
+  resumeOpenUrl: `${host}resume/edit/OpenAndAnonymous.json`,
+
+  // 简历投递记录
+  resumeApplyUrl: `${host}recruit/notice/applylog.json`,
 
   //获取能力提升列表信息
   courseListUrl: `${host}capaciypromotion/getbytype.json`,

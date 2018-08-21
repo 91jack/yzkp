@@ -1,18 +1,32 @@
 // page/common/resume/myapply/myapply.js
+const resumeApplyUrl = require('../../../config').resumeApplyUrl;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    applyList:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var _this = this;
+    wx.request({
+      url: resumeApplyUrl,
+      data: {
+        token: getApp().globalData.token,
+       
+      },
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          applyList:res.data.list
+        })
+      }
+    })
   },
 
   /**
