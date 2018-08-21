@@ -11,7 +11,7 @@
 
 <view class='box'>
   <text>期望职位</text>
-  <input placeholder='请输入期望职位' placeholder-style="color:#D7D7D7"></input>
+  <input placeholder='请输入期望职位' bindblur='getValue' placeholder-style="color:#D7D7D7"></input>
 </view>
 <view class='box'>
   <text>期待薪资</text>
@@ -27,10 +27,10 @@
   <view class='box'>
     <text>期望工作地址</text>
     <view class='right'>
-      <text class='choose'>请选择</text>
+      <text class='choose'>{{city?city:"请选择"}}</text>
       <image class='next' src='/image/mine/next.png'></image>
     </view>
   </view>
 </navigator>
 
-<view class='btn'>保存编辑</view>
+<view class='btn' bindtap='sunBtn'>保存编辑</view>

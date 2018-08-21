@@ -10,13 +10,15 @@ Page({
     _citynav:'热门城市',
     _city:'重庆',
     _country:'所有',
-    id:''
+    id:'',
+    city:['重庆','']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
     if (options.id){
       this.setData({
         id: options.id
@@ -68,7 +70,20 @@ Page({
       _city:city,
       country: country
     })
-
+    console.log(city)
+    console.log(country)
+    console.log(_this.data.id)
+    if (country.length==0){
+      if (_this.data.id == 'intension') {
+        wx.navigateTo({
+          url: '/page/resume/jobintensionedit/jobintensionedit?city=' + city + '',
+        })
+      }
+    }else{
+      _this.setData({
+        "city[0]": city
+      })
+    }
   },
   // 区县城市选择
   clickLevel3: function (e) {
@@ -76,7 +91,13 @@ Page({
     var city = e.currentTarget.dataset.country
     console.log(city)
     this.setData({
-      _country:city
+      _country:city,
+      "city[1]":city
     })
+    if (_this.data.id == 'intension') {
+      wx.navigateTo({
+        url: '/page/resume/jobintensionedit/jobintensionedit?city='+_this.data.city+'',
+      })
+    }
   },
 })

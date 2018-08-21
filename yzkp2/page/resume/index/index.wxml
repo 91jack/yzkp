@@ -72,7 +72,7 @@
         </navigator>
       </view>
       <view class="manageintro-cont-item-detail">
-        <text class="in-info want">{{baseInfo.workName}} | {{baseInfo.workAddress}} | {{baseInfo.workPay}}k</text>
+        <text class="in-info want">{{baseInfo.workName}}  {{baseInfo.workAddress}}  {{baseInfo.workPay}}</text>
       </view>
     </view>
     <!-- 工作经验 -->
