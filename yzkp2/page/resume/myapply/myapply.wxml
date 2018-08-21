@@ -37,7 +37,7 @@
       <view class="my-apply-item-pay">{{item.pay}}</view>
       <view class="my-apply-item-footer">
         <text class="my-apply-item-footer-comp">{{item.companyName}}</text>
-        <navigator url='/page/common/noname/nomane' hover-class='none'>
+        <navigator url='/page/common/noname/nomane?id={{item.id}}' hover-class='none'>
           <text class="my-apply-item-footer-comment">匿名评价</text>
         </navigator>
       </view>

@@ -83,6 +83,9 @@ var config = {
   // 意见反馈
   suggestionAdd: `${host}suggestion/add.json`,
 
+  // 匿名评价
+  praiseUrl: `${host}recruit/notice/praise.json`,
+
   /* --员工模块-- */
   // 查看薪酬
   payInformationUrl: `${host}employee/payInformation.json`,
