@@ -6,10 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    applyList:null,
+    applyList:[],
     headImg:'',
     resumeName:'',
-    modalShow:true
+    modalShow:true,
+    linkPhone:''
   },
 
   /**
@@ -48,7 +49,15 @@ Page({
     })
   },
   //显示模态框
-  callphone:function(){
+  callphone:function(e){
+    var i = e.currentTarget.dataset.id;
+    for (var j = 0; j < this.data.applyList.length;j++){
+      if(i==j){
+        this.setData({
+          linkPhone: this.data.applyList[j].linkPhone
+        })
+      }
+    }
     this.setData({
       modalShow: false,
     })
@@ -61,9 +70,10 @@ Page({
   },
   //打电话
   callnumber:function(e){
+    var that =this;
     console.log(e);
     wx.makePhoneCall({
-      phoneNumber: String(e.currentTarget.dataset.number)
+      phoneNumber: String(that.data.linkPhone)
     })
   },
   /**

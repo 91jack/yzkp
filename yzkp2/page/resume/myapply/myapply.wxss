@@ -27,6 +27,9 @@ page{
 .manageintro-nav-item:last-of-type{
   border-right: none;
 }
+.my-apply{
+  margin-top: 37rpx;
+}
 .my-apply .my-apply-item{
   width:702rpx;
   height:273rpx;
