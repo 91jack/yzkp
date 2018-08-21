@@ -28,9 +28,9 @@ Page({
     workYear: '',
     getstate:'请选择',
     state: '',
-    address: '渝北区',
-    mobile: '18502323596',
-    email: '2764132626@qq.com',
+    address: '',
+    mobile: '',
+    email: '',
     height:'',
     resumeId:''
   },
@@ -185,6 +185,7 @@ Page({
         url: editBasicUrl,
         data: {
           token: getApp().globalData.token,
+          headImg: that.headImg,//头像上传
           id: that.resumeId,
           name: that.name,
           sex: Number(that.sex),
