@@ -30,7 +30,7 @@
 </view>
 
 
- <navigator url="/page/company/companydetail/companydetail?companyId={{jobDetails.companyId}}" class='to-company'>
+<navigator url="/page/company/companydetail/companydetail?companyId={{jobDetails.companyId}}" class='to-company'>
   <view>
     
     <view class='company-detail'>
@@ -39,22 +39,11 @@
     </view>
   </view>
   <image class='next' src='/image/index/next.png'></image>
-   </navigator>
+</navigator>
 
 
 <view class='footer'>
   <view class='footer-item first'>
-
-
-    <view hidden='{{collectType}}' class='footer-item-box' bindtap='collect'>
-      <image src='/image/index/collect.png'></image>
-      <text>收藏</text>
-    </view> 
-    <view hidden='{{!collectType}}' class='footer-item-box' bindtap='collectYet'>
-      <image src='/image/index/collect1.png'></image>
-      <text>收藏</text>
-    </view> 
-
 
     <view class='footer-item-box' data-id='2' bindtap='call'>
       <image src='/image/index/phone.png'></image>

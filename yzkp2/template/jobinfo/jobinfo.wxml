@@ -59,11 +59,7 @@
         </view>
       </block>
     </view>
-    <view class='tit-treatment' wx:if="{{jobDetails.type==0}}">
-      <text>福利待遇: </text>
-      <text>{{jobDetails.welfare}}</text>
-    </view>
-
+  
 
     <view class='tit-adreess'>
       <navigator hover-class='none'>

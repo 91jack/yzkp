@@ -137,7 +137,7 @@ Page({
       this.setData({
         industryIndex: e.detail.value,
         industryHide: true,
-        companyIndustry: this.data.companySizeArr[e.detail.value]
+        companyIndustry: this.data.industryArr[e.detail.value]
       })
     }
   },
@@ -167,11 +167,11 @@ Page({
             icon: 'success',
             duration: 2000,
             success:function(){
-              setTimeout(function(){
-                wx.reLaunch({
-                  url: '/page/tabBar/index/index',
-                })
-              },1000)
+              // setTimeout(function(){
+              //   wx.reLaunch({
+              //     url: '/page/tabBar/index/index',
+              //   })
+              // },1000)
             }
           })
         }

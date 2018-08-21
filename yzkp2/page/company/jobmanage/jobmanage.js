@@ -129,11 +129,19 @@ Page({
   },
   jobList: function () {
     var _this = this;
+    var companyId = '';
+    wx.getStorage({
+      key: 'companyId',
+      success: function(res) {
+        companyId = res.data;
+      },
+    })
 
     wx.request({
       url: jobListUrl,
       data: {
         token: getApp().globalData.token,
+        companyId: companyId
       },
       success: function (res) {
         if (res.data.status == 0) {

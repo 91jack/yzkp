@@ -84,7 +84,8 @@ Page({
         text: '职位管理'
       },
       {
-        url: '/page/company/laowu/laowu?id=1',
+        url: '/page/company/renzheng/renzheng',
+        //url: '/page/company/laowu/laowu?id=1',
         src: '/image/index/other.png',
         text: '招聘外包'
       },
@@ -127,6 +128,7 @@ Page({
               getApp().globalData.role = res.data.obj.type;
               getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
               getApp().globalData.employee = res.data.obj.employee;// 员工
+              getApp().globalData.company = res.data.obj.company;//公司
               
               _this.setData({
                 role: res.data.obj.type
@@ -135,6 +137,11 @@ Page({
               wx.setStorage({
                 key: 'role',
                 data: res.data.obj.type
+              })
+
+              wx.setStorage({
+                key: 'companyId',
+                data: res.data.obj.company.id,
               })
 
               _this.jobListFn();
