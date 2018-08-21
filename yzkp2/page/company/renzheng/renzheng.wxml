@@ -39,6 +39,19 @@
       <input placeholder='请输入发布者联系邮箱' data-idx="4" bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
     </view>
   </view>
+
+  <view class='post-job-wealf'>
+      <view class='post-job-wealf-tit'>福利待遇:</view>
+      <view class='post-job-wealf-cont'>
+        <view class='post-job-wealf-item'>
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox wx:for='{{welfareData}}' value='{{item}}'>{{item}}</checkbox>
+          </checkbox-group>
+        </view>
+      </view>
+    </view>
+
+    
   <view class='re-company'>
     <picker bindchange="bindPicker" data-idx="0" value="{{companyTypeIndex}}" range="{{companyTypeArr}}">
       <view class='re-company-item'>
