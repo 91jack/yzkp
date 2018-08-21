@@ -98,6 +98,9 @@
             <text class="la-item-comp">{{item.company}}</text>
             <text class="la-item-intro">{{item.department}} | {{item.position}}</text>
           </view>
+          <navigator hover-class='none' url='/page/resume/jobedit/jobedit?id={{item.id}}'>
+            <image class='edit-exercise' src='/image/mine/edit.png'></image>
+          </navigator>
         </view>
         </block>
       
@@ -128,6 +131,9 @@
             <text class="la-item-comp">{{item.schoolName}}</text>
             <text class="la-item-intro">{{item.profession}} | {{item.level}}</text>
           </view>
+         <navigator hover-class='none' url='/page/resume/eduedit/eduedit?id={{item.id}}'>
+           <image class='edit-exercise' src='/image/mine/edit.png'></image>
+         </navigator>
         </view>
         </block>
       
@@ -156,7 +162,9 @@
             <text class="la-item-comp">{{item.name}} | {{item.role}} </text>
             <text class="la-item-intro">{{item.tag}}</text>
           </view>
-          <image class='edit-exercise' src='/image/mine/edit.png'></image>
+          <navigator hover-class='none' url='/page/resume/projectedit/projectedit?id={{item.id}}'>
+            <image class='edit-exercise' src='/image/mine/edit.png'></image>
+          </navigator>
         </view>
         </block>
       </view>

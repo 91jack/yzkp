@@ -19,6 +19,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.industry)
+    if (options.industry){
+      this.setData({
+        industry: options.industry
+      })
+      console.log(this.data.industry)
+    };
     var that = this;
     wx.getStorage({
       key: 'monthPayArr',

@@ -2,13 +2,13 @@
 <view class="industry">
   <view class="left">
     <block wx:for="{{industry}}" wx:key="index">
-      <view class="industry-level1 {{_industrynav==index?'active':''}}" bindtap="clickLevel1" data-industrynav="{{index}}">{{item.name}}</view>
+      <view class="industry-level1 {{_industrynav==index?'active':''}}" data-value="{{item.name}}" bindtap="clickLevel1" data-industrynav="{{index}}">{{item.name}}</view>
     </block>
   </view>
   <view class="right">
     <view class="industry-level2">
       <block wx:for="{{currentSelect}}">
-        <view class="industrybtn {{_profession==index?'active':''}}" data-profession="{{index}}" bindtap='clickLevel2'>{{item.name}}</view>
+        <view class="industrybtn {{_profession==index?'active':''}}" data-value="{{item.name}}" data-profession="{{index}}" bindtap='clickLevel2'>{{item.name}}</view>
       </block>
     </view>
 
