@@ -1,5 +1,10 @@
 // page/my/resume/project/project.js
+// 获取简历详情
 const resumeUrl = require('../../../config').resumeUrl;
+
+// 删除项目经历
+const delProjectUrlmeUrl = require('../../../config').delProjectUrl;
+
 Page({
 
   /**
@@ -43,7 +48,35 @@ Page({
   },
 
   // 删除
-  deleteItem: function (e) {
-    console.log(e.currentTarget.dataset.idx)
+  delBtn: function (e) {
+    console.log(e)
+    wx.showModal({
+      title: '温馨提示',
+      content: '您确定要删除该数据吗',
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: delProjectUrlmeUrl,
+            data: {
+              token: getApp().globalData.token,
+              id: e.currentTarget.dataset.id
+            },
+            success: function (res) {
+              if (res.data.status == 0) {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+              }
+
+            }
+          })
+        } else if (res.cancel) {
+
+        }
+      }
+    })
+
   }
 })

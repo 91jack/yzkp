@@ -23,7 +23,7 @@
     </picker>
   </view>
 </view>
-<navigator hover-class='none' url='/page/common/city/city?id=intension'>
+<navigator hover-class='none' url='/page/common/city/city?type=intension'>
   <view class='box'>
     <text>期望工作地址</text>
     <view class='right'>

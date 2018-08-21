@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "能力提升"
+  "navigationBarTitleText": "能力提升",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
 }

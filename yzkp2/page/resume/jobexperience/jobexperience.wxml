@@ -12,7 +12,7 @@
           <text>编辑</text>
         </view>
       </navigator>
-      <view class='btn-delete'>
+      <view class='btn-delete' bindtap='delBtn' data-id="{{item.id}}">
         <image src='/image/index/delete.png'></image>
         <text>删除</text>
       </view>

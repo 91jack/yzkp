@@ -19,8 +19,6 @@ Page({
    */
 
   onLoad: function (options) {
-    console.log(options.demand)
-
     var _this = this;
     wx.request({
       url: jobListUrl,

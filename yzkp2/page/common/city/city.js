@@ -10,7 +10,7 @@ Page({
     _citynav:'热门城市',
     _city:'重庆',
     _country:'所有',
-    id:'',
+    type:'',
     city:['重庆','']
   },
 
@@ -18,12 +18,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
-    if (options.id){
+    console.log(options.type)
+    if (options.type){
       this.setData({
-        id: options.id
+        type: options.type
       })
     }
+
     var _this = this;
     wx.getStorage({
       key: 'cityArr',
@@ -72,9 +73,9 @@ Page({
     })
     console.log(city)
     console.log(country)
-    console.log(_this.data.id)
+   
     if (country.length==0){
-      if (_this.data.id == 'intension') {
+      if (_this.data.type == 'intension') {
         wx.navigateTo({
           url: '/page/resume/jobintensionedit/jobintensionedit?city=' + city + '',
         })
@@ -94,10 +95,13 @@ Page({
       _country:city,
       "city[1]":city
     })
-    if (_this.data.id == 'intension') {
+
+    if (_this.data.type == 'intension') {
       wx.navigateTo({
-        url: '/page/resume/jobintensionedit/jobintensionedit?city='+_this.data.city+'',
+        url: '/page/resume/jobintensionedit/jobintensionedit?city='+_this.data.city+''
       })
+    }else if(_this.data.type == 'courselist'){
+      url: '/page/common/courselist/courselist?city=' + _this.data.city + ''
     }
   },
 })

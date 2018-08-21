@@ -10,7 +10,7 @@ page{
 }
 .ability-nav .ability-left{
   border-right: 2rpx solid #F6F6F6;
-  width: 200rpx;
+  width: 300rpx;
   height: 100%;
   text-align: center;
   line-height: 85rpx;
@@ -28,7 +28,7 @@ page{
   padding-left: 19rpx;
   display: flex;
   position: relative;
-  width: 500rpx;
+  width: 400rpx;
    line-height: 85rpx;
 }
 .ability-nav .ability-right image{

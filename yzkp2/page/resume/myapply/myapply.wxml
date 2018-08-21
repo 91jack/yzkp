@@ -24,7 +24,7 @@
   </view>
   <!-- ----------------我的申请 ------------ -->
   <view class="my-apply">
-  <block wx:for="{{applyList}}">
+  <block wx:for="{{applyList}}" wx:key="{{index}}">
     <view class="my-apply-item">
       <view class="my-apply-item-tit">
         <text class="posi-left">{{item.state_name}}</text>

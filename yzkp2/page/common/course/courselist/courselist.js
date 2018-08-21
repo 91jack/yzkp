@@ -19,6 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var _this = this;
     wx.request({
       url: courseTypeurl,//课程分类
@@ -90,6 +91,9 @@ Page({
   },
   getValue:function(e){
     console.log(e.detail.value)
+    this.setData({
+      search: e.detail.value
+    })
   },
   bindPickerChange: function (e) {
     console.log(e.detail.value)
@@ -107,7 +111,9 @@ Page({
         token: getApp().globalData.token,
         type: _this.data.index,
         city: '重庆',
-        search:''
+        search: _this.data.search,
+        pageSize:10,
+        page:1
       },
       success: function (res) {
         if (res.data.status == 0) {

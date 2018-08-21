@@ -1,8 +1,11 @@
 // page/my/resume/jobexperience/jobexperience.js
-
+// 获取简历详情
 const resumeUrl = require('../../../config').resumeUrl;
-Page({
 
+// 删除工作经验
+const delJobexperienceUrl = require('../../../config').delJobexperienceUrl;
+
+Page({
   /**
    * 页面的初始数据
    */
@@ -28,12 +31,8 @@ Page({
             token: getApp().globalData.token,
           },
           success: function (res) {
-            console.log(res)
             that.setData({
-              // baseInfo: res.data.obj.base,
               work: res.data.obj.work,
-              // education: res.data.obj.education,
-              // project: res.data.obj.project
             })
           }
         })
@@ -52,23 +51,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var _this = this;
-    wx.request({
-      url: resumeUrl,
-      data: {
-        token: getApp().globalData.token,
-        resumeId: _this.data.resumeId
-      },
-      success: function (res) {
-        console.log(res)
-        // _this.setData({
-        //   baseInfo: res.data.obj.base,
-        //   work: res.data.obj.work,
-        //   education: res.data.obj.education,
-        //   project: res.data.obj.project
-        // })
-      }
-    })
+    
   },
 
   /**
@@ -98,11 +81,35 @@ Page({
   onReachBottom: function () {
   
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  delBtn:function(e){
+    console.log(e)
+    wx.showModal({
+      title: '温馨提示',
+      content: '您确定要删除该数据吗',
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+      url: delJobexperienceUrl,
+      data:{
+        token: getApp().globalData.token,
+        id:e.currentTarget.dataset.id
+      },
+      success:function(res){
+        if(res.data.status == 0){
+          wx.showToast({
+            title: '删除成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+       
+      }
+    })
+        } else if (res.cancel) {
+         
+        }
+      }
+    })
+   
   }
 })

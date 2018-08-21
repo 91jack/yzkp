@@ -29,19 +29,22 @@ var config = {
   addJobexperienceUrl: `${host}resume/work/add.json`,
   // 修改工作经验
   editJobexperienceUrl: `${host}resume/work/edit.json`,
+  // 删除工作经验
+  delJobexperienceUrl: `${host}resume/work/del.json`,
 
   // 新增教育经历
   addEduexperienceUrl: `${host}resume/education/add.json`,
-
   // 修改教育经历
   editEduexperienceUrl: `${host}resume/education/edit.json`,
+  // 删除教育经历
+  delEduexperienceUrl: `${host}resume/education/del.json`,
 
   // 新增项目经历
   addProjectUrl: `${host}resume/project/add.json`,
-
   // 修改项目经历
   editProjectUrl: `${host}resume/project/edit.json`,
-
+  // 删除项目经历
+  delProjectUrl: `${host}resume/project/del.json`,
 
   // 获取招聘列表信息
   jobListUrl: `${host}recruit/notice/list.json`,

@@ -10,7 +10,9 @@
   </view>
 </view>
 <view class="manageintro-nav">
-  <view class="manageintro-nav-item active">简历编辑</view>
+  <navigator url='/page/resume/index/index' hover-class='none'>
+    <view class="manageintro-nav-item active">简历编辑</view>
+  </navigator>
   <navigator url='/page/resume/resumeconfig/resumeconfig' hover-class='none'>
     <view class="manageintro-nav-item">简历设置</view>
   </navigator>
@@ -40,31 +42,31 @@
           </view>
         </navigator>
       </view>
-<block wx:if="{{baseInfo!=''}}">
-      <view class="manageintro-cont-item-detail">
-        <text class="in-name">{{baseInfo.name}}</text>
-        <view class="in-info">
-          <text>{{baseInfo.address}}</text>|
-          <text>{{baseInfo.workYear}}年</text>|
-          <text>{{baseInfo.sex}}</text>|
-          <text>{{baseInfo.age}}岁</text>|
-          <text>{{baseInfo.height}}cm</text>
+      <block wx:if="{{baseInfo!=''}}">
+        <view class="manageintro-cont-item-detail">
+          <text class="in-name">{{baseInfo.name}}</text>
+          <view class="in-info">
+            <text>{{baseInfo.address}}</text>|
+            <text>{{baseInfo.workYear}}年</text>|
+            <text>{{baseInfo.sex}}</text>|
+            <text>{{baseInfo.age}}岁</text>|
+            <text>{{baseInfo.height}}cm</text>
+          </view>
+
+          <view class="inbox">
+            <image src="/image/mine/cellphone.png"></image>
+            <text>{{baseInfo.mobile}}</text>
+          </view>
+          <view class="inbox">
+            <image src="/image/mine/email.png"></image>
+            <text>{{baseInfo.email}}</text>
+          </view>
+          <view class="inbox">
+            <image src="/image/mine/gata.png"></image>
+            <text>{{baseInfo.state}}</text>
+          </view>
         </view>
-       
-        <view class="inbox">
-          <image src="/image/mine/cellphone.png"></image>
-          <text>{{baseInfo.mobile}}</text>
-        </view>
-        <view class="inbox">
-          <image src="/image/mine/email.png"></image>
-          <text>{{baseInfo.email}}</text>
-        </view>
-        <view class="inbox">
-          <image src="/image/mine/gata.png"></image>
-          <text>{{baseInfo.state}}</text>
-        </view>
-      </view>
-</block>
+      </block>
     </view>
     <!-- 求职意向 -->
     <view class="manageintro-cont-item">
@@ -99,20 +101,20 @@
         </navigator>
       </view>
       <view class="manageintro-cont-item-detail">
-      <block wx:for="{{work}}">
-        <view class="la-item">
-          <image src="/image/mine/checkon.png"></image>
-          <view class="la-item-cont">
-            <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
-            <text class="la-item-comp">{{item.company}}</text>
-            <text class="la-item-intro">{{item.department}} | {{item.position}}</text>
+        <block wx:for="{{work}}" wx:key="{{index}}">
+          <view class="la-item">
+            <image src="/image/mine/checkon.png"></image>
+            <view class="la-item-cont">
+              <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
+              <text class="la-item-comp">{{item.company}}</text>
+              <text class="la-item-intro">{{item.department}} | {{item.position}}</text>
+            </view>
+            <navigator hover-class='none' url='/page/resume/jobedit/jobedit?id={{item.id}}'>
+              <image class='edit-exercise' src='/image/mine/edit.png'></image>
+            </navigator>
           </view>
-          <navigator hover-class='none' url='/page/resume/jobedit/jobedit?id={{item.id}}'>
-            <image class='edit-exercise' src='/image/mine/edit.png'></image>
-          </navigator>
-        </view>
         </block>
-      
+
       </view>
     </view>
 
@@ -132,20 +134,20 @@
       </view>
       <view class="manageintro-cont-item-detail">
 
-      <block wx:for="{{education}}">
-        <view class="la-item">
-          <image src="/image/mine/checkon.png"></image>
-          <view class="la-item-cont">
-            <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
-            <text class="la-item-comp">{{item.schoolName}}</text>
-            <text class="la-item-intro">{{item.profession}} | {{item.level}}</text>
+        <block wx:for="{{education}}" wx:key="{{index}}">
+          <view class="la-item">
+            <image src="/image/mine/checkon.png"></image>
+            <view class="la-item-cont">
+              <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
+              <text class="la-item-comp">{{item.schoolName}}</text>
+              <text class="la-item-intro">{{item.profession}} | {{item.level}}</text>
+            </view>
+            <navigator hover-class='none' url='/page/resume/eduedit/eduedit?id={{item.id}}'>
+              <image class='edit-exercise' src='/image/mine/edit.png'></image>
+            </navigator>
           </view>
-         <navigator hover-class='none' url='/page/resume/eduedit/eduedit?id={{item.id}}'>
-           <image class='edit-exercise' src='/image/mine/edit.png'></image>
-         </navigator>
-        </view>
         </block>
-      
+
       </view>
     </view>
     <!-- 项目经验 -->
@@ -163,18 +165,18 @@
         </navigator>
       </view>
       <view class="manageintro-cont-item-detail">
-        <block wx:for="{{project}}">
-        <view class="la-item">
-          <image src="/image/mine/checkon.png"></image>
-          <view class="la-item-cont">
-            <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
-            <text class="la-item-comp">{{item.name}} | {{item.role}} </text>
-            <text class="la-item-intro">{{item.tag}}</text>
+        <block wx:for="{{project}}" wx:key="{{index}}">
+          <view class="la-item">
+            <image src="/image/mine/checkon.png"></image>
+            <view class="la-item-cont">
+              <text class="la-item-date">{{item.beginDate}}~{{item.endDate}}</text>
+              <text class="la-item-comp">{{item.name}} | {{item.role}} </text>
+              <text class="la-item-intro">{{item.tag}}</text>
+            </view>
+            <navigator hover-class='none' url='/page/resume/projectedit/projectedit?id={{item.id}}'>
+              <image class='edit-exercise' src='/image/mine/edit.png'></image>
+            </navigator>
           </view>
-          <navigator hover-class='none' url='/page/resume/projectedit/projectedit?id={{item.id}}'>
-            <image class='edit-exercise' src='/image/mine/edit.png'></image>
-          </navigator>
-        </view>
         </block>
       </view>
     </view>

@@ -1,46 +1,45 @@
 <!--page/index/course/courselist/courselist.wxml-->
 <view class='top'>
-    <view class='serach'>
-      <view class='inp'>
-        <input placeholder='请输入关键字' bindinput='getValue'  placeholder-style='color:#D7D7D7' confirm-type="search"></input>
-        <image src='/image/index/serach.png' bindtap='goSearch'></image>
-      </view>
+  <view class='serach'>
+    <view class='inp'>
+      <input placeholder='请输入关键字' bindinput='getValue' placeholder-style='color:#D7D7D7' confirm-type="search" bindconfirm='getCourseList'></input>
+      <image src='/image/index/serach.png' bindtap='getCourseList'></image>
     </view>
   </view>
+</view>
 
 <view class='ability-nav'>
 
-    <view class='ability-left'>
-<navigator hover-class='none' url='/page/common/city/city'>
+  <view class='ability-left'>
+    <navigator hover-class='none' url='/page/common/city/city?type=courselist'>
       <text>地区</text>
       <image src='/image/index/return.png'></image>
-</navigator>
-    </view>
+    </navigator>
+  </view>
 
-    <view class='ability-right'>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseType}}" range-key='name'>
+  <view class='ability-right'>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseType}}" range-key='name'>
       <view class="picker">
         当前选择：{{courseType[index].name}}
+         <image src='/image/index/return.png'></image>
       </view>
-      <!-- <image src='/image/index/return.png'></image> -->
     </picker>
   </view>
 </view>
 
 <view class='ability-cont'>
-<block wx:for="{{courseList}}" wx:key="id">
-  <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.id}}'>
-    <view class='ability-cont-item'>
-      <image src="{{item.logo}}"></image>
-      <view>
-        <text class='ability-cont-item-tit'>{{item.name}}</text>
-        <text class='ability-cont-item-price'>{{item.tuition}}/{{item.curriculum}}</text>
-        <text>招生对象:{{item.recruitStudents}}</text>
-        <text>开课时间:{{item.openClassTime}}</text>
-        <text>报名截止时间: {{item.signupTime}}</text>
+  <block wx:for="{{courseList}}" wx:key="id">
+    <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.id}}'>
+      <view class='ability-cont-item'>
+        <image src="{{item.logo}}"></image>
+        <view>
+          <text class='ability-cont-item-tit'>{{item.name}}</text>
+          <text class='ability-cont-item-price'>{{item.tuition}}/{{item.curriculum}}</text>
+          <text>招生对象:{{item.recruitStudents}}</text>
+          <text>开课时间:{{item.openClassTime}}</text>
+          <text>报名截止时间: {{item.signupTime}}</text>
+        </view>
       </view>
-    </view>
-  </navigator>
-</block>
+    </navigator>
+  </block>
 </view>
-
