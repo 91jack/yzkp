@@ -25,7 +25,7 @@
       <text>性别</text>
       <view class='right'>
         <picker mode="selector" data-idx="0" range="{{sexData}}" value="{{sexIndex}}" bindchange="bindChange">
-          <text hidden='{{sexHide}}' class='choose'>{{sex}}</text>
+          <text hidden='{{sexHide}}' class='choose'>{{getSex}}</text>
           <text hidden='{{!sexHide}}' class='choose'>{{sexData[sexIndex]}}</text>
           <image class='next' src='/image/mine/next.png'></image>
         </picker>
@@ -35,7 +35,7 @@
       <text>目前状态</text>
       <view class='right'>
         <picker mode="selector" data-idx="2" range="{{nowType}}" value="{{nowTypeIndex}}" bindchange="bindChange">
-          <text hidden='{{nowTypeHide}}' class='choose'>{{state}}</text>
+          <text hidden='{{nowTypeHide}}' class='choose'>{{getstate}}</text>
           <text hidden='{{!nowTypeHide}}' class='choose'>{{nowType[nowTypeIndex]}}</text>
           <image class='next' src='/image/mine/next.png'></image>
         </picker>

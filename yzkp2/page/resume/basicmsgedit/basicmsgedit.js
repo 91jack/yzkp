@@ -22,10 +22,12 @@ Page({
     sexIndex:0,
     educationLevel:'',
     name: '',
-    sex: '请选择',
+    getSex: '请选择',
+    sex:'',
     age: '',
     workYear: '',
-    state: '请选择',
+    getstate:'请选择',
+    state: '',
     address: '渝北区',
     mobile: '18502323596',
     email: '2764132626@qq.com',
@@ -65,12 +67,28 @@ Page({
             success: function (res) {
               console.log(res)
               var bsData = res.data.obj.base;
+              if (bsData.sex=='男'){
+                that.setData({
+                  sex:0
+                })
+              } else if (bsData.sex=='女'){
+                that.setData({
+                  sex: 1
+                })
+              }
+              for (var i = 0; i < that.data.nowType.length;i++){
+                if (that.data.nowType[i] == bsData.state){
+                  that.setData({
+                    state:i
+                  })
+                }
+              }
               that.setData({
                 name: bsData.name,
-                sex: bsData.sex,
+                getSex: bsData.sex,
                 age: bsData.age,
                 workYear: bsData.workYear,
-                state: bsData.state,
+                getstate: bsData.state,
                 address: bsData.address,
                 mobile: bsData.mobile,
                 email: bsData.email,
@@ -146,7 +164,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    if (this.data.sex=='男'){
+      this.setData({
+        sex:'0'
+      })
+    }else if(this.data.sex=='女'){
+      this.setData({
+        sex:'1'
+      })
+    }
+    console.log(this.data.sex)
   },
   /**
    * 新增简历基本信息
@@ -175,7 +202,7 @@ Page({
           console.log(res)
           if (res.data.status == 0) {
             wx.navigateTo({
-              url: '/page/common/resume/index/index',
+              url: '/page/resume/index/index',
             })
           }
         }
@@ -205,7 +232,7 @@ Page({
           })
           if (res.data.status == 0) {
             wx.navigateTo({
-              url: '/page/common/resume/index/index',
+              url: '/page/resume/index/index',
             })
           }
         }

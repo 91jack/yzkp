@@ -37,7 +37,7 @@
         <view class="in-info">
           <text>{{baseInfo.address}}</text>|
           <text>{{baseInfo.workYear}}年</text>|
-          <text>{{baseInfo.sex==0?'男':'女'}}</text>|
+          <text>{{baseInfo.sex}}</text>|
           <text>{{baseInfo.age}}岁</text>|
           <text>{{baseInfo.height}}cm</text>
         </view>
