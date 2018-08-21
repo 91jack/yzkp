@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    welfareData:[],
+    welfare: [],
     rzType:['个人','企业','其他'],
     rzIndex:null,
     postName:"",
@@ -63,6 +65,14 @@ Page({
         })
       },
     })
+    wx.getStorage({
+      key: 'welfareArr',
+      success: function (res) {
+        that.setData({
+          welfareData: res.data
+        })
+      },
+    })
     console.log(this.data.industryArr)
   },
 
@@ -72,7 +82,12 @@ Page({
   onReady: function () {
   
   },
-
+  // checkbox选择
+  checkboxChange: function (e) {
+    this.setData({
+      welfare: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -157,7 +172,8 @@ Page({
         attr: _this.data.companyNature,
         size: _this.data.companyScale,
         industry: _this.data.companyIndustry,
-        tag: _this.data.postIntro
+        tag: _this.data.postIntro,
+        welfare: _this.data.welfare
       },
       success: function (res) {
         console.log(res)
@@ -167,11 +183,11 @@ Page({
             icon: 'success',
             duration: 2000,
             success:function(){
-              // setTimeout(function(){
-              //   wx.reLaunch({
-              //     url: '/page/tabBar/index/index',
-              //   })
-              // },1000)
+              setTimeout(function(){
+                wx.reLaunch({
+                  url: '/page/tabBar/index/index',
+                })
+              },1000)
             }
           })
         }

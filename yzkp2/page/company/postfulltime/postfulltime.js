@@ -26,7 +26,6 @@ Page({
     // 职位属性控制
     attrData:[false,false,false],
     // 福利
-    welfareData:'',
     eduData:[],
     eduIndex:0,
     eduHide:false,
@@ -124,14 +123,6 @@ Page({
         })
       },
     })
-    wx.getStorage({
-      key: 'welfareArr',
-      success: function(res) {
-        that.setData({
-          welfareData:res.data
-        })
-      },
-    })
   },
   // 职位属性
   chooseStyle:function(e){
@@ -199,13 +190,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  // checkbox选择
-  checkboxChange:function(e){
-    console.log(String(e.detail.value))
-    this.setData({
-      welfare: String(e.detail.value)
-    })
-  },
+
   onReady: function () {
   
   },
