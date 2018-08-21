@@ -32,7 +32,7 @@
       </view>
       <view class="my-apply-item-name">
         <text>{{item.name}}</text>
-        <image src="/image/mine/cellphone.png"></image>
+        <image bindtap='callphone' src="/image/mine/cellphone.png"></image>
       </view>
       <view class="my-apply-item-pay">{{item.pay}}</view>
       <view class="my-apply-item-footer">
@@ -41,5 +41,15 @@
       </view>
     </view>
     </block>
+  </view>
+</view>
+
+<view class='modal' hidden='{{modalShow}}' bindtap='hidemodal'>
+  <view class='call' bindtap='showdetail'>
+    <view class='call-number'>{{applyList.linkPhone}}</view>
+    <view class='call-btn'>
+      <view class='not'>取消</view>
+      <view class='call-out' data-number="{{applyList.linkPhone}}" bindtap='callnumber'>确认拨出</view>
+    </view>
   </view>
 </view>
