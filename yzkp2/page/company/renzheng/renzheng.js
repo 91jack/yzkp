@@ -152,7 +152,7 @@ Page({
         name: _this.data.postName,
         simpleName: _this.data.postShortName,
         idNo: _this.data.postCard,
-        linkPhone: _this.data.postphone,
+        linkPhone: _this.data.postPhone,
         email: _this.data.postEmail,
         attr: _this.data.companyNature,
         size: _this.data.companyScale,
