@@ -108,11 +108,11 @@ Page({
       this.setData({
         postPhone: e.detail.value
       })
-    } else if (i == 3) {    //发布者邮箱
+    } else if (i == 4) {    //发布者邮箱
       this.setData({
         postEmail: e.detail.value
       })
-    } else if (i == 4) {    //个人或者企业介绍
+    } else if (i == 5) {    //个人或者企业介绍
       this.setData({
         postIntro: e.detail.value
       })

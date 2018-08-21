@@ -75,16 +75,7 @@
       </view>
     </view>
 
-    <!-- <view class='post-job-wealf'>
-      <view class='post-job-wealf-tit'>福利待遇:</view>
-      <view class='post-job-wealf-cont'>
-        <view class='post-job-wealf-item'>
-          <checkbox-group bindchange="checkboxChange">
-            <checkbox wx:for='{{welfareData}}' value='{{item}}'>{{item}}</checkbox>
-          </checkbox-group>
-        </view>
-      </view>
-    </view> -->
+   
 
     <view class='post-job-area'>
       <view class='choose-place'>
