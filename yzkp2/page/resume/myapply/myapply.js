@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    applyList:null
+    applyList:null,
+    headImg:'',
+    resumeName:''
   },
 
   /**
@@ -14,6 +16,22 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
+    wx.getStorage({
+      key: 'headImg',
+      success: function(res) {
+        _this.setData({
+          headImg:res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'resumeName',
+      success: function (res) {
+        _this.setData({
+          resumeName: res.data
+        })
+      },
+    })
     wx.request({
       url: resumeApplyUrl,
       data: {

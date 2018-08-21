@@ -1,5 +1,14 @@
 <!--page/my/resume/index/index.wxml-->
-
+<view class="header">
+  <view class="header-cont resume">
+    <view>
+      <image class="company-pic" src="{{baseInfo.headImg}}"></image>
+    </view>
+    <view class="header-intro">
+      <text class="name">{{baseInfo.name}}</text>
+    </view>
+  </view>
+</view>
 <view class="manageintro-nav">
   <view class="manageintro-nav-item active">简历编辑</view>
   <navigator url='/page/resume/resumeconfig/resumeconfig' hover-class='none'>

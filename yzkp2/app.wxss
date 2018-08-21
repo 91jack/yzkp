@@ -614,7 +614,6 @@ checkbox{
 }
 /* ---------------------------------------顶部头像以及自我介绍 */
 .header{
-  height: 240rpx;
   background: #fff;
   margin-bottom: 16rpx;
   overflow: hidden;
@@ -955,4 +954,21 @@ checkbox{
 .little-tip text{
   font-size: 24rpx;
   color: #868686;
+}
+/* 简历头像 */
+.header-cont.resume{
+  display: flex;
+  align-items: center;
+  padding-left:29rpx; 
+}
+.header-cont.resume>view image{
+  width: 113rpx;
+  height: 113rpx;
+  border-radius: 50%;
+  margin-right: 33rpx;
+}
+.header-cont.resume .header-intro text{
+  font-size: 32rpx;
+  color: #353535;
+  font-weight: bold;
 }

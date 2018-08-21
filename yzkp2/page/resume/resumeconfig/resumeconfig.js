@@ -7,14 +7,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    headImg:'',
+    resumeName:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.getStorage({
+      key: 'headImg',
+      success: function(res) {
+        that.setData({
+          headImg:res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'resumeName',
+      success: function (res) {
+        that.setData({
+          resumeName: res.data
+        })
+      },
+    })
   },
 
   /**

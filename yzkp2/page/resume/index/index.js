@@ -11,7 +11,9 @@ Page({
     baseInfo:{},
     work:[],
     education:[],
-    project:[]
+    project:[],
+    headImg:'',
+    resumeName:''
   },
 
   /**
@@ -48,11 +50,19 @@ Page({
           baseInfo: res.data.obj.base,
           work: res.data.obj.work,
           education: res.data.obj.education,
-          project: res.data.obj.project
+          project: res.data.obj.project,
         })
         wx.setStorage({
           key: 'resumeId',
           data: res.data.obj.base.id,
+        })
+        wx.setStorage({
+          key: 'headImg',
+          data: res.data.obj.base.headImg,
+        })
+        wx.setStorage({
+          key: 'resumeName',
+          data: res.data.obj.base.name,
         })
       }
     })
