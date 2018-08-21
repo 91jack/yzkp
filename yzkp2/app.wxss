@@ -478,7 +478,7 @@ checkbox{
   justify-content: space-between;
 }
 .choose-region-item{
-  width: 225rpx;
+  width: 100%;
   height: 80rpx;
   background: #F5F4FE;
   position: relative;
@@ -549,18 +549,21 @@ checkbox{
 .cont-detail{
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: top;
   margin-top: 16rpx;
 }
 .cont-detail .det-left{
   display: flex;
-  height: 28rpx;
+  /* height: 28rpx; */
+  width: 494rpx;
+  flex-wrap: wrap;
 }
 .cont-detail .det-left .left-item{
   display: flex;
   align-items: flex-end;
   height: 28rpx;
   margin-left: 15rpx;
+  margin-bottom: 15rpx;
 }
 .cont-detail .det-left .left-item:first-of-type{
   margin-left: 19rpx;
