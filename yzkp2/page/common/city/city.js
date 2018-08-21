@@ -73,7 +73,10 @@ Page({
     console.log(city)
     console.log(country)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6f5cbc8b2a27970fc4178ebae845e96e88cb2e3a
     console.log(_this.data.id)
     if (country.length==0){
       if (_this.data.id == 'intension') {
@@ -86,6 +89,9 @@ Page({
         "city[0]": city
       })
     }
+<<<<<<< HEAD
+>>>>>>> 6f5cbc8b2a27970fc4178ebae845e96e88cb2e3a
+=======
 >>>>>>> 6f5cbc8b2a27970fc4178ebae845e96e88cb2e3a
   },
   // 区县城市选择
