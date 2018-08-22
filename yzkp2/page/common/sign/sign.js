@@ -182,7 +182,7 @@ wx.getSystemInfo({
                     if (res.data.status == 0) {
                       wx.showToast({
                         title: '签字成功',
-                        icon: 'success',
+                        icon: 'success',  
                         duration: 2000,
                         success: function () {
                           setTimeout(function () {
