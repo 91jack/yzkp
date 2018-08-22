@@ -201,11 +201,17 @@ Page({
 
       },
       success: function (res) {
-        console.log(res)
-
+        if (res.data.status == 0) {
+          wx.showToast({
+            title: '职位发布成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.navigateTo({
+            url: '/page/company/jobmanage/jobmanage'
+          })
+        }
       }
     })
   }
-
-
 })

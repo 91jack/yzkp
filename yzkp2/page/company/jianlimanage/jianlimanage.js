@@ -11,10 +11,11 @@ Page({
   data: {
     nav:['邀请面试','暂未接通','待定','不合适'],
     navShow:0,
-    navBar:[false,true,true,true],
+    navBar:2,
     pickerData: ['邀请面试', '暂未接通', '待定', '不合适'],
     pickerIndex:[0,1,2,3],
-    modalShow:true
+    modalShow:true,
+    manageData:[],
   },
 
   /**
@@ -39,7 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var _this = this;
+    var that = this;
     wx.request({
       url: companyResumeUrl,
       data: {
@@ -47,14 +48,36 @@ Page({
       },
       success: function (res) {
         console.log(res)
+        if(res.data.status==0){
+          that.setData({
+            manageData:res.data.list
+          })
+        }
       }
     })
   },
   // tabBar的显示与隐藏
   chooseNav:function(e){
     console.log(e);
-    var i = e.currentTarget.dataset.id;
-    var nowType = "navBar["+i+"]";
+    var i = Number(e.currentTarget.dataset.id);
+    if(i==0){ //显示面试邀请
+      this.setData({
+        navBar:2
+      })
+    }else if (i == 1) { //暂未接通
+      this.setData({
+        navBar: 3
+      })
+    } else if (i == 2) { //待定
+      this.setData({
+        navBar: 0
+      })
+    } else if (i == 3) { //不合适
+      this.setData({
+        navBar: 1
+      })
+    }
+    // var nowType = "navBar["+i+"]";
     for (var j = 0; j < this.data.navBar.length;j++){
       var yetType = "navBar["+j+"]";
       this.setData({
@@ -62,13 +85,12 @@ Page({
       })
     }
     this.setData({
-      navShow:i,
-      [nowType]:false
+      navShow:i
     })
   },
   // picker获取内容
   getPicker:function(e){
-
+    console.log(e);
   },
   // 打电话
   showModal:function(){
@@ -89,39 +111,5 @@ Page({
       // phoneNumber: String(that.data.linkPhone)
       phoneNumber:'13110141797'
     })
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   }
 })
