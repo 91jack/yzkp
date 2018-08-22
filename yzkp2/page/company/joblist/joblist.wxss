@@ -10,10 +10,3 @@ page{
 .nav-bar .nav-item.last::after{
   height: 0;
 }
-.cont image{
-  display: block;
-  width: 375rpx;
-  height: 241rpx;
-  margin: auto;
-  margin-top: 206rpx;
-}

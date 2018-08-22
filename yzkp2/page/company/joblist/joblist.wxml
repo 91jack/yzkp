@@ -41,5 +41,7 @@
 <!--职位展示  -->
 <view class='cont'>
   <template is="joblist" data="{{jobList}}" />
-  <image hidden='{{jobList==[]?false:true}}' src='/image/mine/bigbg.png'></image>
+  <view hidden='{{jobList?false:true}}'>
+    <image class='none-show' src='/image/mine/bigbg.png'></image>
+  </view>
 </view>

@@ -43,3 +43,6 @@
     </navigator>
   </block>
 </view>
+<view hidden='{{courseList?false:true}}'>
+  <image class='none-show' src='/image/mine/bigbg.png'></image>
+</view>

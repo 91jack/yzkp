@@ -10,7 +10,8 @@ Page({
     headImg:'',
     resumeName:'',
     modalShow:true,
-    linkPhone:''
+    linkPhone:'',
+    imgShow:true
   },
 
   /**
@@ -38,13 +39,18 @@ Page({
       url: resumeApplyUrl,
       data: {
         token: getApp().globalData.token,
-       
       },
       success: function (res) {
-        console.log(res)
+        console.log(res.data.list.length)
+        if(res.data.list.length!=0){
+          _this.setData({
+            imgShow:true
+          })
+        }
         _this.setData({
           applyList:res.data.list
         })
+        console.log(_this.data.imgShow)
       }
     })
   },
