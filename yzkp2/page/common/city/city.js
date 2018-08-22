@@ -11,7 +11,6 @@ Page({
     _city:'重庆',
     _country:'所有',
     type:'',
-    //city:['重庆',''],
     selectCity:''
 
   },
@@ -74,8 +73,6 @@ Page({
       country: country,
       selectCity: city
     })
-    console.log(city)
-    console.log(country)
 
     if (country.length==0){
       var url = '';
@@ -92,6 +89,9 @@ Page({
           break;
         case 'postparttime':// 发布兼职
           url = '/page/company/postparttime/postparttime?city=' + city;
+          break;  
+        case 'jobList':// 职位列表
+          url = '/page/company/joblist/joblist?city=' + city;
           break;  
       }
       wx.navigateTo({
@@ -122,10 +122,10 @@ Page({
     var url = '';
     var type = this.data.type;
     switch (type) {
-      case 'intension'://
+      case 'intension'://求职意向
         url = '/page/resume/jobintensionedit/jobintensionedit?city=' + _this.data.selectCity;
         break;
-      case 'courselist'://
+      case 'courselist'://能力提升
         url = '/page/common/course/courselist/courselist?city=' + _this.data.selectCity;
         break;
       case 'postfulltime':// 发布全职
@@ -134,6 +134,9 @@ Page({
       case 'postparttime':// 发布兼职
         url = '/page/company/postparttime/postparttime?city=' + _this.data.selectCity;
         break;
+      case 'jobList':// 职位列表
+        url = '/page/company/joblist/joblist?city=' +  _this.data.selectCity;
+        break;  
     }
     wx.navigateTo({
       url: url

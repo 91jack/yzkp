@@ -3,7 +3,7 @@ const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 function init(){
   // 建立连接
   wx.connectSocket({
-    url: webSocketUrl + '?type=0&id=20&head_img=1',
+    url: webSocketUrl + '?type=0&id=24',
     data: {
       // type: 0,
       // id: 20
@@ -29,13 +29,13 @@ function init(){
   })
 }
 
-function sendMessage(){
+function sendMessage(data){
  // wx.onSocketOpen(function () {
     // console.log('WebSocket连接已打开！')
     // console.log(options)
-    var data = {
-      msgType: 0, resumeId: 20, companyId: 1, content: '小程序就是渣渣'
-    }
+    // var data = {
+    //   msgType: 0, resumeId: 20, companyId: 1, content: '小程序就是渣渣'
+    // }
 
     wx.sendSocketMessage({ data: JSON.stringify(data) })
     console.log(JSON.stringify(data))

@@ -3,8 +3,9 @@
   <view class="tab-select-content">
     <!-- 聊天记录 -->
     <view class="chats-list">
-      <navigator url='/page/common/msgdetail/msgdetail' hover-class='none'>
-        <view class="chat-item" wx:for="{{chatList}}">
+    <block  wx:for="{{chatList}}">
+      <navigator url='/page/common/msgdetail/msgdetail?companyId={{item.company_id}}&resumeId={{item.resumeId}}' hover-class='none'>
+        <view class="chat-item">
           <!-- <view class="avatar fl">
             <image src="/image/index/company.png"></image>
           </view> -->
@@ -17,13 +18,12 @@
             </view>
             <view class="cell">
               <view class="msg-status">未读</view>
-              <view class="last-msg">{{item.lastContent}}</view>
+              <view class="last-msg ">{{item.lastContent}}</view>
             </view>
-
           </view>
         </view>
       </navigator>
-
+</block>
       <!-- <view class="chat-item">
         <view class="avatar fl">
           <image src="/image/index/company.png"></image>

@@ -1,6 +1,8 @@
 // pages/index/index.js
-const testLoginUrl = require('../../../config').testLoginUrl;
+// 登录
 const loginUrl = require('../../../config').loginUrl;
+
+// 职位列表
 const jobListUrl = require('../../../config').jobListUrl;
 
 var socket = require('../../../socket.js');
@@ -12,10 +14,10 @@ Page({
   data: {
     role: 0,//用户角色 0：求职者  1：企业 2：员工
     jobList: [],
-    index: 0,//选择的下拉列表下标，
-   
-    navBarData: ['推荐','地区', '行业', '要求'],
-    selectBar1:[
+    index: 0,//选择的下拉列表下标
+    isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
+    navBarData: ['地区', '行业', '要求'],
+    selectBar1: [//求职者
       {
         url:'/page/company/joblist/joblist?type=0',
         src:'/image/index/office.png',
@@ -41,8 +43,8 @@ Page({
         src:'/image/index/train.png',
         text:'能力提升'
       }
-    ], //求职者
-    selectBar2: [
+    ], 
+    selectBar2: [ //员工
       {
         url: '/page/company/joblist/joblist?type=0',
         src: '/image/index/office.png',
@@ -68,8 +70,8 @@ Page({
         src: '/image/index/train.png',
         text: '能力提升'
       }
-    ], //员工
-    selectBar3: [
+    ],
+    selectBar3: [//企业
       {
         url: '/page/company/postfulltime/postfulltime',
         src: '/image/index/office.png',
@@ -101,7 +103,7 @@ Page({
         src: '/image/index/change.png',
         text: '灵活用工'
       }
-    ] //企业
+    ] 
   },
 
   /**
@@ -123,7 +125,7 @@ Page({
             },
             success: function (res) {
               
-              console.log(res)
+              //console.log(res)
               
               getApp().globalData.token = res.data.obj.token;
               getApp().globalData.role = res.data.obj.type;
@@ -220,11 +222,9 @@ Page({
       url: jobListUrl,
       data: {
         token: getApp().globalData.token,
-        // type: options.type ? 0 : 1,//最新0推荐1
-        // recruitType: options.recruitType ? 0 : 1//全职0兼职1
       },
       success: function (res) {
-        console.log(res)
+        //console.log(res)
         _this.setData({
           jobList: res.data.list
         })

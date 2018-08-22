@@ -1,19 +1,15 @@
 // 本地
 //var host = "https://www.jiansou-cn.com/yzkp/app/";
+
 // 线上
 var host = "http://192.168.1.123:8080/yzkp/app/";
 
 
 var config = {
   // 下面的地址配合云端 Server 工作
-//
-
-  // 模拟登陆
-  testLoginUrl: `${host}test/login.json`,
 
   // 登录
   loginUrl: `${host}/login.json`,
-
 
   /* --求职者模块-- */
   // 新增简历基本信息

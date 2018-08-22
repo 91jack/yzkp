@@ -429,7 +429,6 @@ page {
 .post-job-wealf-cont{
   display: flex;
   flex-wrap: wrap;
-  /* height: 136rpx; */
   width: 100%;
   justify-content: space-around;
   flex-direction: column;
@@ -529,7 +528,7 @@ checkbox{
   background: #fff;
   box-sizing: border-box;
   border-bottom: 1px solid #F5F5F5;
-  padding-top: 27rpx;
+  padding-top: 15rpx;
 }
 .cont-item .cont-tit{
   display: flex;
@@ -550,23 +549,23 @@ checkbox{
   display: flex;
   justify-content: space-between;
   align-items: top;
-  margin-top: 16rpx;
+  /* margin-top: 16rpx; */
 }
 .cont-detail .det-left{
   display: flex;
   /* height: 28rpx; */
-  width: 494rpx;
+  /* width: 494rpx; */
   flex-wrap: wrap;
 }
 .cont-detail .det-left .left-item{
   display: flex;
   align-items: flex-end;
   height: 28rpx;
-  margin-left: 15rpx;
+  margin-left: 10rpx;
   margin-bottom: 15rpx;
 }
 .cont-detail .det-left .left-item:first-of-type{
-  margin-left: 19rpx;
+  margin-left: 10rpx;
 }
 .cont-detail .det-left .left-item image{
   width: 30rpx;
@@ -591,7 +590,7 @@ checkbox{
 .cont-company{
   height: 50rpx;
   display: flex;
-  margin-top: 20rpx;
+  margin-top: 10rpx;
 }
 .cont-company image{
   width: 66rpx;

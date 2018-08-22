@@ -11,7 +11,20 @@ Page({
     jobList: [],
     index: 0,//选择的下拉列表下标
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
-     navBarData: [ '地区', '行业', '要求'],
+    navBarData: [ '地区', '行业', '要求'],
+
+    type:'',//类型（0最新，1推荐）
+    search:'',//搜索条件
+    region:'',//地区
+    job:'',//职位
+    education:'',//学历
+    workYear:'',//工作年限
+    monthPay:'',//月薪
+    companyId:'',//公司id
+    recruitType: '',//招聘类型（0：  全职   1：兼职）
+    payType: '',//结算方式
+    sex: '',//性别
+    industry: '',//行业
   },
 
   /**
@@ -19,21 +32,29 @@ Page({
    */
 
   onLoad: function (options) {
+    console.log(options)
     var _this = this;
-    wx.request({
-      url: jobListUrl,
-      data: {
-        token: getApp().globalData.token,
-        type:options.type?0:1,//最新0推荐1
-        recruitType: options.recruitType?0:1//全职0兼职1
-      },
-      success: function (res) {
-      
-        _this.setData({
-          jobList: res.data.list
-        })
-      }
-    })
+    if(options.type){
+      _this.setData({
+        type:options.type
+      })
+    } else if (options.recruitType){
+      _this.setData({
+        recruitType: options.recruitType
+      })
+    }else if(options.city){
+      _this.setData({
+        region:options.city
+      })
+    }else if(options.industry){
+      _this.setData({
+        industry: options.industry
+      })
+    }
+
+
+    _this.getJobListFn();
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -85,9 +106,42 @@ Page({
 
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      type: e.detail.value,
+    })
+    this.getJobListFn();
+  },
+  getValue: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+      search: e.detail.value
     })
   },
+  getJobListFn:function(){
+    var _this = this;
+    wx.request({
+      url: jobListUrl,
+      data: {
+        token: getApp().globalData.token,
+        type: _this.data.type,//类型（0最新，1推荐）
+        recruitType: _this.data.recruitType,//招聘类型（0：  全职   1：兼职）
+        search: _this.data.search,//搜索条件
+        region: _this.data.region,//地区
+        job: '',//职位
+        education: '',//学历
+        workYear: '',//工作年限
+        monthPay: '',//月薪
+        companyId: '',//公司id
+        payType: '',//结算方式
+        sex: '',//性别
+        industry: _this.data.industry,//行业
+      },
+      success: function (res) {
+        _this.setData({
+          jobList: res.data.list
+        })
+      }
+    })
+  }
 })

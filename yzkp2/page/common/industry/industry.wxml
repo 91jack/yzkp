@@ -7,7 +7,7 @@
   </view>
   <view class="right">
     <view class="industry-level2">
-      <block wx:for="{{currentSelect}}">
+      <block wx:for="{{currentSelect}}" wx:key="{{index}}">
         <view class="industrybtn {{_profession==index?'active':''}}" data-value="{{item.name}}" data-profession="{{index}}" bindtap='clickLevel2'>{{item.name}}</view>
       </block>
     </view>
