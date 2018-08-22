@@ -11,7 +11,9 @@ Page({
     _city:'重庆',
     _country:'所有',
     type:'',
-    city:['重庆','']
+    //city:['重庆',''],
+    selectCity:''
+
   },
 
   /**
@@ -69,39 +71,53 @@ Page({
     var country = _this.data.currentSelect[city];
     this.setData({
       _city:city,
-      country: country
+      country: country,
+      selectCity: city
     })
     console.log(city)
     console.log(country)
-   
+
     if (country.length==0){
-      if (_this.data.type == 'intension') {
-        wx.navigateTo({
-          url: '/page/resume/jobintensionedit/jobintensionedit?city=' + city + '',
-        })
+      var url = '';
+      var type = this.data.type;
+      switch(type){
+        case 'intension'://
+          url = '/page/resume/jobintensionedit/jobintensionedit?city='+city;
+          break;
+        case 'courselist'://
+          url = '/page/common/course/courselist/courselist?city=' + city;
+          break;  
       }
-    }else{
-      _this.setData({
-        "city[0]": city
+      wx.navigateTo({
+        url: url
       })
+    
     }
+
   },
   // 区县城市选择
   clickLevel3: function (e) {
     var _this = this;
     var city = e.currentTarget.dataset.country
     console.log(city)
-    this.setData({
+    _this.setData({
       _country:city,
-      "city[1]":city
+      "city[1]":city,
+      selectCity: _this.data._city + '-' + city
     })
 
-    if (_this.data.type == 'intension') {
-      wx.navigateTo({
-        url: '/page/resume/jobintensionedit/jobintensionedit?city='+_this.data.city+''
-      })
-    }else if(_this.data.type == 'courselist'){
-      url: '/page/common/courselist/courselist?city=' + _this.data.city + ''
+    var url = '';
+    var type = this.data.type;
+    switch (type) {
+      case 'intension'://
+        url = '/page/resume/jobintensionedit/jobintensionedit?city=' + _this.data.selectCity;
+        break;
+      case 'courselist'://
+        url = '/page/common/course/courselist/courselist?city=' + _this.data.selectCity;
+        break;
     }
+    wx.navigateTo({
+      url: url
+    })
   },
 })

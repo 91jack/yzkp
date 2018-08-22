@@ -12,7 +12,7 @@
 
   <view class='ability-left'>
     <navigator hover-class='none' url='/page/common/city/city?type=courselist'>
-      <text>地区</text>
+      <text>{{city}}</text>
       <image src='/image/index/return.png'></image>
     </navigator>
   </view>

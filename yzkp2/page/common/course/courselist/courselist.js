@@ -11,6 +11,7 @@ Page({
   data: {
     index:0,
     search:'',
+    city:'地区',
     courseType:null,
     courseList:null
   },
@@ -21,6 +22,12 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var _this = this;
+    if(options.city){
+      _this.setData({
+        city: options.city
+      })
+    }
+   
     wx.request({
       url: courseTypeurl,//课程分类
       data: {
@@ -32,12 +39,13 @@ Page({
           _this.setData({
             courseType: res.data.list
           })
+          _this.getCourseList();
         }
 
       }
     })
 
-    this.getCourseList();
+   
     
   },
 
@@ -105,12 +113,14 @@ Page({
   // 获取课程列表
   getCourseList:function(){
     var _this = this;
+    var courseType = _this.data.courseType
+    console.log(courseType)
     wx.request({
       url: courseListUrl,//课程列表
       data: {
         token: getApp().globalData.token,
-        type: _this.data.index,
-        city: '重庆',
+        type: courseType[_this.data.index].id,
+        city: _this.data.city,
         search: _this.data.search,
         pageSize:10,
         page:1

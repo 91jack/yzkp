@@ -1,8 +1,8 @@
 /** 基础数据 */
 // 本地
-//var host = "https://www.jiansou-cn.com/yzkp/app/";
+var host = "https://www.jiansou-cn.com/yzkp/app/";
 // 线上
-var host = "http://192.168.1.123:8080/yzkp/app/";
+//var host = "http://192.168.1.123:8080/yzkp/app/";
 // 城市列表
 const cityUrl = `${host}common/cities.json`;
 
