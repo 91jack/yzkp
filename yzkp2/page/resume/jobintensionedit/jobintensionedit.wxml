@@ -1,5 +1,5 @@
 <!--page/my/resume/jobintensionedit/jobintensionedit.wxml-->
-<navigator url='/page/common/industry/industry?id="intension"' hover-class='none'>
+<navigator url='/page/common/industry/industry?type=intension' hover-class='none'>
   <view class='box'>
     <text>期望行业</text>
     <view class='right'>

@@ -1,9 +1,16 @@
 <!--page/index/pages/newwork/joblist/joblist.wxml-->
 
-<import src="/template/topsearch/topsearch.wxml" />
 <import src="/template/joblist/joblist.wxml" />
 
-<template is="topsearch" />
+<view class='top'>
+  <view class='serach'>
+    <view class='inp'>
+      <input placeholder='请输入关键字' bindinput='getValue' placeholder-style='color:#D7D7D7' confirm-type="search" bindconfirm='getJobListFn'></input>
+      <image src='/image/index/serach.png' bindtap='getJobListFn'></image>
+    </view>
+  </view>
+</view>
+
 
 
 <view class='nav-bar'>
@@ -14,14 +21,14 @@
     </picker>
   </view>
 
-  <navigator hover-class='none' url="/page/common/city/city">
+  <navigator hover-class='none' url="/page/common/city/city?type=jobList">
     <view class='nav-item'>
       <text class='select_font'>地区</text>
       <image class='select_img' src='/image/index/return1.png'></image>
     </view>
   </navigator>
 
-  <navigator hover-class='none' url="/page/common/industry/industry">
+  <navigator hover-class='none' url="/page/common/industry/industry?type=industry">
     <view class='nav-item'>
       <text class='select_font'>行业</text>
       <image class='select_img' src='/image/index/return1.png'></image>
