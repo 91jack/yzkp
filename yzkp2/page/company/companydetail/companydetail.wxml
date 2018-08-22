@@ -17,13 +17,7 @@
     <view class='welfare'>
       <text class='welfare-tit'>福利: </text>
       <view class='welfare-detail'>
-
-
-        <view class='welfare-item'>带薪年假</view>
-        <view class='welfare-item'>交通补助</view>
-        <view class='welfare-item'>节日礼金</view>
-        <view class='welfare-item'>定期体检</view>
-        <view class='welfare-item'>年底分红</view>
+        <view wx:for="{{welfare}}" class='welfare-item'>{{item}}</view>
       </view>
     </view>
     <view class='company-intro'>

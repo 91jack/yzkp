@@ -439,7 +439,7 @@ page {
 }
 checkbox{
   border-color: #817CFB;
-  width: 162rpx;
+  width: 230rpx;
   font-size: 26rpx;
   color: #6B6B6B;
   margin-bottom: 12rpx;

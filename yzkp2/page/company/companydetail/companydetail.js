@@ -11,7 +11,8 @@ Page({
   data: {
     barShow:[false,true],
     companyInfo:null,
-    recruitList:null
+    recruitList:null,
+    welfare:[]
   },
 
   /**
@@ -27,8 +28,10 @@ Page({
         id: options.companyId
       },
       success: function (res) {
+        console.log(res)
         _this.setData({
-          companyInfo: res.data.obj
+          companyInfo: res.data.obj,
+          welfare: JSON.parse(res.data.obj.welfare)
         })
       }
     })

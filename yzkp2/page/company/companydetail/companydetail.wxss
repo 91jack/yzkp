@@ -2,7 +2,6 @@
 page{
   background: #E8E8E8;
   height: 100%;
-  overflow: hidden
 }
 ::-webkit-scrollbar{
 width: 0;
@@ -97,6 +96,8 @@ color: transparent;
   background: #fff;
   margin-bottom: 11rpx;
   padding-left: 25rpx;  
+  padding-bottom: 10rpx;
+  flex-wrap: wrap;
 }
 .welfare .welfare-tit{
   color: #868686;

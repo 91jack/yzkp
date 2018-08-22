@@ -1,75 +1,59 @@
 <view class="page">
   <view class="post-job">
-    <view class='post-job-area'>
-        <view class='choose-place'>
-          <!-- <text>请选择工作地点:</text> -->
-          <navigator hover-class='none' url='/page/common/city/city?type=postfulltime'>
-            <view class='choose-region'>
-              <view class='choose-region-item'>
-                <text>{{city}}</text>
-                <image src='/image/index/return.png'></image>
-              </view>
-            </view>
-          </navigator>
-        </view>
-      </view>
-      <view class='choose-place detail'>
-        <textarea data-idx='4' bindblur='getValue' placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
-      </view>
     <view class='post-job-header'>
       <view class='header-item'>
-        <input placeholder='职位名称' data-idx='0' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='职位名称' value='{{name}}' data-idx='0' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
-        <input placeholder='请输入招聘人数' data-idx='1' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='请输入招聘人数' value='{{num}}' data-idx='1' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="0" value="{{eduIndex}}" range="{{eduData}}">
-          <text hidden='{{eduHide}}'>学历要求</text>
+          <text hidden='{{eduHide}}'>{{educationLevel}}</text>
           <text hidden='{{!eduHide}}'>{{eduData[eduIndex]}}</text>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="1" value="{{exerciseIndex}}" range="{{exerciseData}}">
-          <text hidden='{{exerciseHide}}'>经验要求</text>
+          <text hidden='{{exerciseHide}}'>{{workYear}}</text>
           <text hidden='{{!exerciseHide}}'>{{exerciseData[exerciseIndex]}}</text>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="2" value="{{styleIndex}}" range="{{payStyle}}">
-          <text hidden='{{styleHide}}'>薪资结算方式</text>
+          <text hidden='{{styleHide}}'>{{payType}}</text>
           <text hidden='{{!styleHide}}'>{{payStyle[styleIndex]}}</text>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="3" value="{{payIndex}}" range="{{payData}}">
-          <text hidden='{{payHide}}'>薪资范围</text>
+          <text hidden='{{payHide}}'>{{pay}}</text>
           <text hidden='{{!payHide}}'>{{payData[payIndex]}}</text>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="4" value="{{heightIndex}}" range="{{heightData}}">
-          <text hidden='{{heightHide}}'>身高要求</text>
+          <text hidden='{{heightHide}}'>{{height}}</text>
           <text hidden='{{!heightHide}}'>{{heightData[heightIndex]}}</text>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="5" value="{{sexIndex}}" range="{{sexData}}">
-          <text hidden='{{sexHide}}'>性别要求</text>
+          <text hidden='{{sexHide}}'>{{sex}}</text>
           <text hidden='{{!sexHide}}'>{{sexData[sexIndex]}}</text>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
-        <input placeholder='招聘人姓名' data-idx='2' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='招聘人姓名' data-idx='2' value='{{linkName}}' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
-        <input placeholder='招聘人联系电话' data-idx='3' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='招聘人联系电话' data-idx='3' value='{{linkPhone}}' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
     </view>
 
@@ -91,13 +75,27 @@
       </view>
     </view>
 
+    <view class='post-job-area'>
+      <view class='choose-place'>
+        <!-- <text>请选择工作地点:</text> -->
+        <navigator hover-class='none' url='/page/common/city/city?type=postfulltime'>
+          <view class='choose-region'>
+            <view class='choose-region-item'>
+              <text>{{city}}</text>
+              <image src='/image/index/return.png'></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class='choose-place detail'>
+      <textarea data-idx='4' value='{{address}}' bindblur='getValue' placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
+    </view>
 
-
-    
     <view class='choose-place'>
       <text>职位描述:</text>
-      <textarea data-idx='5' bindblur='getValue' placeholder='请输入岗位职责:' placeholder-style='color:#AEAEAE'></textarea>
-      <textarea data-idx='6' bindblur='getValue' placeholder='请输入职位要求:' placeholder-style='color:#AEAEAE'></textarea>
+      <textarea data-idx='5' value='{{duty}}' bindblur='getValue' placeholder='请输入岗位职责:' placeholder-style='color:#AEAEAE'></textarea>
+      <textarea data-idx='6' value='{{tag}}' bindblur='getValue' placeholder='请输入职位要求:' placeholder-style='color:#AEAEAE'></textarea>
     </view>
   </view>
 

@@ -10,11 +10,11 @@ Page({
   data: {
     name: '',
     num: '',
-    sex: '',
-    height: '',
+    sex: '性别要求',
+    height: '身高要求',
     pay: '',
     payUnit:'时',
-    payType: '',
+    payType: '薪资结算方式',
     linkMan: '',
     linkPhone: '',
     attr: '',
@@ -58,6 +58,110 @@ Page({
         })
       },
     })
+    wx.getStorage({
+      key: 'sex',
+      success: function(res) {
+        that.setData({
+          sex:res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'height',
+      success: function (res) {
+        that.setData({
+          height: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'payUnit',
+      success: function (res) {
+        that.setData({
+          payUnit: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'payType',
+      success: function (res) {
+        that.setData({
+          payType: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'name',
+      success: function (res) {
+        that.setData({
+          name: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'num',
+      success: function (res) {
+        that.setData({
+          num: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'linkMan',
+      success: function (res) {
+        that.setData({
+          linkMan: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'linkPhone',
+      success: function (res) {
+        that.setData({
+          linkPhone: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'address',
+      success: function (res) {
+        that.setData({
+          address: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'tm',
+      success: function (res) {
+        that.setData({
+          tm: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'duty',
+      success: function (res) {
+        that.setData({
+          duty: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'pay',
+      success: function (res) {
+        that.setData({
+          pay: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'tag',
+      success: function (res) {
+        that.setData({
+          tag: res.data
+        })
+      },
+    })
   },
   // picker相关
   bindPickerChange: function (e) {
@@ -69,11 +173,19 @@ Page({
         sexHide: true,
         sex: this.data.sexData[e.detail.value]
       })
+      wx.setStorage({
+        key: 'sex',
+        data: this.data.sexData[e.detail.value],
+      })
     } else if (i == 1) { //身高要求
       this.setData({
         heightIndex: e.detail.value,
         heightHide: true,
         height: this.data.heightData[e.detail.value]
+      })
+      wx.setStorage({
+        key: 'height',
+        data: this.data.heightData[e.detail.value],
       })
     } else if (i == 2) { //薪资
       this.setData({
@@ -81,11 +193,19 @@ Page({
         payHide: true,
         payUnit: this.data.payData[e.detail.value]
       })
+      wx.setStorage({
+        key: 'payUnit',
+        data: this.data.payData[e.detail.value],
+      })
     } else if (i == 3) { //结算方式
       this.setData({
         styleIndex: e.detail.value,
         styleHide: true,
         payType: this.data.payStyle[e.detail.value]
+      })
+      wx.setStorage({
+        key: 'payType',
+        data: this.data.payStyle[e.detail.value]
       })
     } 
   },
@@ -126,38 +246,73 @@ Page({
       this.setData({
         name: e.detail.value
       })
+      wx.setStorage({
+        key: 'name',
+        data: e.detail.value,
+      })
     } else if (i == 1) { //招聘人数
       this.setData({
         num: e.detail.value
+      })
+      wx.setStorage({
+        key: 'num',
+        data: e.detail.value,
       })
     } else if (i == 2) { //招聘人姓名
       this.setData({
         linkMan: e.detail.value
       })
+      wx.setStorage({
+        key: 'linkMan',
+        data: e.detail.value,
+      })
     } else if (i == 3) { //招聘人联系电话
       this.setData({
         linkPhone: e.detail.value
+      })
+      wx.setStorage({
+        key: 'linkPhone',
+        data: e.detail.value,
       })
     } else if (i == 4) { //详细时间
       this.setData({
         tm:e.detail.value
       })
-      console.log(this.data.tm)      
+      wx.setStorage({
+        key: 'tm',
+        data: e.detail.value,
+      })     
     } else if (i == 5) { //详细地址
       this.setData({
         address: e.detail.value
+      })
+      wx.setStorage({
+        key: 'address',
+        data: e.detail.value,
       })
     } else if (i == 6) { //岗位职责
       this.setData({
         duty: e.detail.value
       })
+      wx.setStorage({
+        key: 'duty',
+        data: e.detail.value,
+      })
     } else if (i == 7) { //薪资
       this.setData({
         pay: e.detail.value
       })
+      wx.setStorage({
+        key: 'pay',
+        data: e.detail.value,
+      })
     } else if (i == 8) { //职位要求
       this.setData({
         tag: e.detail.value
+      })
+      wx.setStorage({
+        key: 'tag',
+        data: e.detail.value,
       })
     } 
   },
@@ -209,6 +364,62 @@ Page({
           })
           wx.navigateTo({
             url: '/page/company/jobmanage/jobmanage'
+          })
+          wx.removeStorage({
+            key: 'sex',
+            success: function(res) {},
+          })
+          wx.removeStorage({
+            key: 'adreess',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'name',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'num',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'linkMan',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'linkPhone',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'duty',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'tag',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'educationLevel',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'workYear',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'payType',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'pay',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'payUnit',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'tm',
+            success: function (res) { },
           })
         }
       }
