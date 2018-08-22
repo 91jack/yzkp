@@ -9,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    nav:['邀请面试','暂未接通','待定','不合适'],
+    navShow:0,
+    navBar:[false,true,true,true]
   },
 
   /**
@@ -46,7 +48,13 @@ Page({
       }
     })
   },
-
+  chooseNav:function(e){
+    console.log(e);
+    var i = e.currentTarget.dataset.id;
+    this.setData({
+      navShow:i
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
