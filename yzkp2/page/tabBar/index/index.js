@@ -3,7 +3,6 @@ const testLoginUrl = require('../../../config').testLoginUrl;
 const loginUrl = require('../../../config').loginUrl;
 const jobListUrl = require('../../../config').jobListUrl;
 
-const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 var socket = require('../../../socket.js');
 Page({
   

@@ -7,14 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    chatList:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    var _this = this;
+    wx.getStorage({
+      key: 'chatList',
+      success: function(res) {
+        console.log(res.data)
+        _this.setData({
+          chatList:res.data  
+        })
+      },
+    })
   },
 
   /**

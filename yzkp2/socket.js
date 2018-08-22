@@ -17,6 +17,10 @@ function init(){
   //接收数据
   wx.onSocketMessage(function (res) {
     console.log(res)
+    wx.setStorage({
+      key: 'chatList',
+      data: res.data,
+    })
   })
 
   //连接失败
