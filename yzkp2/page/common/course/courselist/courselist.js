@@ -11,7 +11,7 @@ Page({
   data: {
     index:0,
     search:'',
-    city:'地区',
+    city:'',
     courseType:null,
     courseList:null
   },

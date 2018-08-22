@@ -79,8 +79,11 @@
       </view>
     </picker>
   </view>
+
+  
   <view class='rz-intro'>
-    <textarea placeholder='个人或企业介绍' data-idx="5" bindinput='getValue' placeholder-style='color:#AEAEAE'></textarea>
+    <!-- <textarea placeholder='个人或企业介绍' data-idx="5" bindinput='getValue' placeholder-style='color:#AEAEAE' show-confirm-bar='false' adjust-position="true" auto-height></textarea> -->
+     <textarea placeholder="个人或企业介绍" auto-focus auto-height/>
   </view>
-  <view class='btn' bindtap='nowRz'>立即认证</view>
+ <view class='btn' bindtap='nowRz'>立即认证</view>
 </view>

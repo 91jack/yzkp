@@ -41,7 +41,7 @@ Page({
         for (var i = 0; i < res.data.length; i++) {
           that.data.industryArr.push(res.data[i].name)
         }
-        console.log(that.data.industryArr);
+        
 
         that.setData({
           industryArr: that.data.industryArr
