@@ -4,25 +4,27 @@
     <!-- 聊天记录 -->
     <view class="chats-list">
       <navigator url='/page/common/msgdetail/msgdetail' hover-class='none'>
-        <view class="chat-item">
-          <view class="avatar fl">
+        <view class="chat-item" wx:for="{{chatList}}">
+          <!-- <view class="avatar fl">
             <image src="/image/index/company.png"></image>
-          </view>
+          </view> -->
+
           <view class="chat-item-info fl">
             <view class="cell">
-              <view class="chat-other">张伟</view>
-              <view class="company">渐臻科技</view>
-              <view class="last-time">07-12 9:00</view>
+              <view class="chat-other">{{item.name}}</view>
+              <!-- <view class="company">渐臻科技</view> -->
+              <view class="last-time">{{item.createTime}}</view>
             </view>
             <view class="cell">
               <view class="msg-status">未读</view>
-              <view class="last-msg">请把个人照片发过来</view>
+              <view class="last-msg">{{item.lastContent}}</view>
             </view>
+
           </view>
         </view>
       </navigator>
 
-      <view class="chat-item">
+      <!-- <view class="chat-item">
         <view class="avatar fl">
           <image src="/image/index/company.png"></image>
         </view>
@@ -37,8 +39,8 @@
             <view class="last-msg">请把个人照片发过来</view>
           </view>
         </view>
-      </view>
-    </view>
+      </view>-->
+    </view> 
 
     <!-- 消息通知 -->
     <view class="notices-list">
