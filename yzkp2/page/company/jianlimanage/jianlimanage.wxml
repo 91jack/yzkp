@@ -15,7 +15,7 @@
         <text class='manage-intro-item-info-job'>高级程序员 </text>
         <text>/李天</text>
       </view>
-      <view class='manage-intro-item-phone'>
+      <view class='manage-intro-item-phone' bindtap='showModal'>
         <image src='/image/mine/cellphone.png'></image>
       </view>
     </view>
@@ -43,8 +43,9 @@
     <view class='manage-intro-price'>
       <view class='manage-pricedetail'>7K-9K</view>
       <view class='manage-intro-btn'>
-        <picker>
+        <picker range='{{pickerData}}' value='{{pickerIndex[0]}}' bindchange='getPicker' >
           <text>邀请面试</text>
+          <text>{{getPicker[3]}}</text>
           <image src='/image/index/return3.png'></image>
         </picker>
       </view>
@@ -177,3 +178,14 @@
     </view>
   </view>
 </view>
+
+<view class='modal' hidden='{{modalShow}}' bindtap='hidemodal'>
+  <view class='call' bindtap='showdetail'>
+    <view class='call-number'>13110141797</view>
+    <view class='call-btn'>
+      <view class='not'>取消</view>
+      <view class='call-out' data-number="{{applyList.linkPhone}}" bindtap='callnumber'>确认拨出</view>
+    </view>
+  </view>
+</view>
+

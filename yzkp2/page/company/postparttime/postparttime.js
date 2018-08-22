@@ -13,14 +13,12 @@ Page({
     sex: '',
     height: '',
     pay: '',
+    payUnit:'时',
     payType: '',
     linkMan: '',
     linkPhone: '',
     attr: '',
-    beginDate: '',
-    endDate: '',
-    beginTime: '',
-    endTime: '',
+    tm:'',
     city: '选择城市',
     address: '',
     duty: '',
@@ -34,7 +32,7 @@ Page({
     heightData: [],
     heightHide: false,
     heightIndex: 0,
-    payData: ['时','日','周','月'],
+    payData: ['时','日','月'],
     payHide: false,
     payIndex: 0,
     // 职位属性控制
@@ -47,9 +45,11 @@ Page({
   // 获取缓存数据
   onLoad: function (options) {
     var that = this;
-    that.setData({
-      city:options.city
-    })
+    if(options.city){
+      that.setData({
+        city: options.city
+      })
+    }
     wx.getStorage({
       key: 'heightArr',
       success: function (res) {
@@ -61,6 +61,7 @@ Page({
   },
   // picker相关
   bindPickerChange: function (e) {
+    console.log(e);
     var i = Number(e.currentTarget.dataset.idx);
     if (i == 0) { //性别要求
       this.setData({
@@ -78,7 +79,7 @@ Page({
       this.setData({
         payIndex: e.detail.value,
         payHide: true,
-        pay: this.data.payData[e.detail.value]
+        payUnit: this.data.payData[e.detail.value]
       })
     } else if (i == 3) { //结算方式
       this.setData({
@@ -139,8 +140,9 @@ Page({
       })
     } else if (i == 4) { //详细时间
       this.setData({
-        endTime: e.detail.value
+        tm:e.detail.value
       })
+      console.log(this.data.tm)      
     } else if (i == 5) { //详细地址
       this.setData({
         address: e.detail.value
@@ -149,11 +151,15 @@ Page({
       this.setData({
         duty: e.detail.value
       })
-    } else if (i == 6) { //职位要求
+    } else if (i == 7) { //薪资
+      this.setData({
+        pay: e.detail.value
+      })
+    } else if (i == 8) { //职位要求
       this.setData({
         tag: e.detail.value
       })
-    }
+    } 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -170,29 +176,28 @@ Page({
   },
 
   postBtn: function () {
+    console.log(this.data.tm)
     var _this = this;
     wx.request({
       url: addjobUrl,
       data: {
         token: getApp().globalData.token,
         type: 1,
-        name: '高级暖床师',
-        num: 10,
-        sex: '女',
-        height: '170cm-185cm',
-        pay: '15-20万',
-        payType: '月结',
-        linkMan: '找我啥事',
-        linkPhone: 18502323596,
-        attr: '招聘外包',
-        beginDate:'08/09',
-        endDate:'08/19',
-        beginTime:'19:00',
-        endTime:'24:00',
-        city: '重庆',
-        address: '重庆市金凯罗999号鬼门关',
-        duty: '1、微信小程序菜单筛选;2、变量筛选程序源代码；3、小程序筛选功能开发qq号手机号筛选；4、微信筛选频繁短语的程序',
-        tag: '本职位为Java高级开发工程师'
+        name: _this.data.name,
+        num: _this.data.num,
+        sex: _this.data.sex,
+        height: _this.data.height,
+        pay: _this.data.pay,
+        payUnit: _this.data.payUnit,
+        payType: _this.data.payType,
+        linkMan: _this.data.linkMan,
+        linkPhone: _this.data.linkPhone,
+        attr: _this.data.attr,
+        tm: _this.data.tm,
+        city: _this.data.city,
+        address: _this.data.address,
+        duty: _this.data.duty,
+        tag: _this.data.tag
 
       },
       success: function (res) {

@@ -1,5 +1,21 @@
 <view class="page">
   <view class="post-job">
+    <view class='post-job-area'>
+        <view class='choose-place'>
+          <!-- <text>请选择工作地点:</text> -->
+          <navigator hover-class='none' url='/page/common/city/city?type=postfulltime'>
+            <view class='choose-region'>
+              <view class='choose-region-item'>
+                <text>{{city}}</text>
+                <image src='/image/index/return.png'></image>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class='choose-place detail'>
+        <textarea data-idx='4' bindblur='getValue' placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
+      </view>
     <view class='post-job-header'>
       <view class='header-item'>
         <input placeholder='职位名称' data-idx='0' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
@@ -77,22 +93,7 @@
 
 
 
-    <view class='post-job-area'>
-      <view class='choose-place'>
-        <text>请选择工作地点:</text>
-        <navigator hover-class='none' url='/page/common/city/city?type=postfulltime'>
-          <view class='choose-region'>
-            <view class='choose-region-item'>
-              <text>{{city}}</text>
-              <image src='/image/index/return.png'></image>
-            </view>
-          </view>
-        </navigator>
-      </view>
-    </view>
-    <view class='choose-place detail'>
-      <textarea data-idx='4' bindblur='getValue' placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
-    </view>
+    
     <view class='choose-place'>
       <text>职位描述:</text>
       <textarea data-idx='5' bindblur='getValue' placeholder='请输入岗位职责:' placeholder-style='color:#AEAEAE'></textarea>

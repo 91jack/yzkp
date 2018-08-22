@@ -92,9 +92,11 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var that = this;
-    that.setData({
-      city:options.city
-    })
+    if (options.city){
+      that.setData({
+        city: options.city
+      })
+    }
     wx.getStorage({
       key: 'educationArr',
       success: function(res) {
