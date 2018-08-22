@@ -15,7 +15,13 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-  
+    var data = {
+      msgType: 2,
+      resumeId: 24,
+      companyId: 1,
+      content: this.data.input
+    }
+    socket.sendMessage(data);
    
 
   },
@@ -76,8 +82,8 @@ Page({
   },
   sendBtn:function(){
     var data = {
-      msgType: 2, 
-      resumeId: 20, 
+      msgType: 0, 
+      resumeId: 24, 
       companyId: 1, 
       content: this.data.input
     }

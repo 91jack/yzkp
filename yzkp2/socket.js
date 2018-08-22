@@ -3,7 +3,7 @@ const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 function init(){
   // 建立连接
   wx.connectSocket({
-    url: webSocketUrl + '?type=0&id=24',
+    url: webSocketUrl + '?type=0&id=24&head_img=2',
     data: {
       // type: 0,
       // id: 20
