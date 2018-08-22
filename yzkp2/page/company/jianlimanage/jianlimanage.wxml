@@ -4,58 +4,72 @@
   <view class='job-manage' bindtap='zhiweimanage'>职位管理</view>
 </view>
 <view class='manage-intro-nav'>
-  <view wx:for='{{nav}}' data-id='{{index}}' bindtap='chooseNav' class='manage-intro-nav-item {{navShow==index?"active":""}}'>{{item}}</view>
+  <view wx:for='{{nav}}' data-id='{{index}}' bindtap='chooseNav' class='manage-intro-nav-item {{navShow[index]?"":"active"}}'>{{item}}</view>
 </view>
 
 <view class='manageintro-cont'>
   <!-- 邀请面试  -->
-    <view wx:for='{{manageData}}' class='manage-intro-cont {{item.state==1?"unapprop":""}}{{item.state==0?"unconfirmed":""}}{{item.state==3?"unconnext":""}}' hidden='{{item.state!=navBar}}'>
-  <navigator hover-class='none' url='/page/resume/index/index?id={{item.id}}'>
-    
-      <view class='manage-intro-item'>
-        <view class='manage-intro-item-info'>
-          <text class='manage-intro-item-info-job'>{{item.industry}} </text>
-          <text>/{{item.name}}</text>
-        </view>
-        <view class='manage-intro-item-phone' bindtap='showModal'>
-          <image src='/image/mine/cellphone.png'></image>
-        </view>
+  <view wx:for='{{manageData}}' class='manage-intro-cont {{navShow[3]?"":"unapprop"}}{{navShow[2]?"":"unconfirmed"}}{{navShow[1]?"":"unconnext"}}'>
+
+    <navigator hover-class='none' url='/page/company/companycheck/companycheck?id={{item.id}}'>
+
+    <view class='manage-intro-item'>
+      <view class='manage-intro-item-info'>
+        <text class='manage-intro-item-info-job'>{{item.industry}} </text>
+        <text>/{{item.name}}</text>
       </view>
-      <view class='icon-content'>
-        <view class='icon-cont'>
-          <view class='icon-cont-item'>
-            <image src='/image/index/area.png'></image>
-            <text>{{item.workAddress}}</text>
-          </view>
-          <view class='icon-cont-item'>
-            <image src='/image/index/work.png'></image>
-            <text>{{item.workYear}}</text>
-          </view>
-          <view class='icon-cont-item'>
-            <image src='/image/index/xueli.png'></image>
-            <text>{{item.educationLevel}}</text>
-          </view>
-          <view class='icon-cont-item'>
-            <image src='/image/index/height.png'></image>
-            <text>{{item.height}}</text>
-          </view>
-        </view>
-        <view class='icon-date'>{{item.applyTime}}</view>
+      <view class='manage-intro-item-phone' data-phone="{{item.mobile}}" bindtap='showModal'>
+        <image src='/image/mine/cellphone.png'></image>
       </view>
-      <view class='manage-intro-price'>
-        <view class='manage-pricedetail'>{{item.workPay}}</view>
-        <view class='manage-intro-btn'>
-          <picker range='{{pickerData}}' value='{{pickerIndex[0]}}' bindchange='getPicker' >
-            <text>{{item.state==0?"待定":""}}{{item.state==1?"不合适":""}}{{item.state==2?"邀请面试":""}}{{item.state==3?"暂未接通":""}}</text>
-            <text>{{getPicker[3]}}</text>
-            <image src='/image/index/return3.png'></image>
-          </picker>
-        </view>
-      </view>
-  </navigator>
-      
     </view>
-  <!-- 待定 -->
+    <view class='icon-content'>
+      <view class='icon-cont'>
+        <view class='icon-cont-item'>
+          <image src='/image/index/area.png'></image>
+          <text>{{item.workAddress}}</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/work.png'></image>
+          <text>{{item.workYear}}</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/xueli.png'></image>
+          <text>{{item.educationLevel}}</text>
+        </view>
+        <view class='icon-cont-item'>
+          <image src='/image/index/height.png'></image>
+          <text>{{item.height}}</text>
+        </view>
+      </view>
+      <view class='icon-date'>{{item.applyTime}}</view>
+    </view>
+    <view class='manage-intro-price'>
+      <view class='manage-pricedetail'>{{item.workPay}}</view>
+      <view class='manage-intro-btn'>
+        <picker range='{{pickerData}}' data-applyid='{{item.applyId}}' data-id='{{index}}' value='{{pickerIndex[0]}}' bindchange='getPicker'>
+          <text>{{item.applyState==0?"待定":""}}{{item.applyState==1?"不合适":""}}{{item.applyState==2?"邀请面试":""}}{{item.applyState==3?"暂未接通":""}}</text>
+          <image src='/image/index/return3.png'></image>
+        </picker>
+      </view>
+    </view>
+    </navigator>
+
+  </view>
+</view>
+
+<view class='modal' hidden='{{modalShow}}' bindtap='hidemodal'>
+  <view class='call' bindtap='showdetail'>
+    <view class='call-number'>{{linkPhone}}</view>
+    <view class='call-btn'>
+      <view class='not'>取消</view>
+      <view class='call-out' data-number="{{applyList.linkPhone}}" bindtap='callnumber'>确认拨出</view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 待定 -->
   <!-- <view class='manage-intro-cont unconfirmed' hidden='{{navBar[1]}}'>
     <view class='manage-intro-item'>
       <view class='manage-intro-item-info'>
@@ -187,15 +201,3 @@
       </view>
     </view>
   </view> -->
-</view>
-
-<view class='modal' hidden='{{modalShow}}' bindtap='hidemodal'>
-  <view class='call' bindtap='showdetail'>
-    <view class='call-number'>13110141797</view>
-    <view class='call-btn'>
-      <view class='not'>取消</view>
-      <view class='call-out' data-number="{{applyList.linkPhone}}" bindtap='callnumber'>确认拨出</view>
-    </view>
-  </view>
-</view>
-

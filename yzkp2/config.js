@@ -144,6 +144,8 @@ var config = {
   // 企业简历管理
   companyResumeUrl: `${host}resume/apply/list.json`,
 
+  //企业修改简历状态
+  companyEditResumeUrl: `${host}resume/apply/edit.json`,
   // 添加企业信息
   addCompanyInfoUrl: `${host}company/add.json`,
 
