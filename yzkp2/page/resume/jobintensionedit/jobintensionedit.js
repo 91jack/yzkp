@@ -31,9 +31,10 @@ Page({
       console.log(this.data.industry)
     };
     if (options.city){
+      console.log(options)
       wx.setStorage({
         key: 'city',
-        data: options.city.split(',')[0] + '-' + options.city.split(',')[1],
+        data:options.city
       })
       console.log(this.data.city)
     }

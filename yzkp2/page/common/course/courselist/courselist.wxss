@@ -12,6 +12,7 @@ page{
   border-right: 2rpx solid #F6F6F6;
   width: 300rpx;
   height: 100%;
+  overflow: hidden;
   text-align: center;
   line-height: 85rpx;
 }
