@@ -105,12 +105,19 @@ Page({
   clickLevel3: function (e) {
     var _this = this;
     var city = e.currentTarget.dataset.country
-    console.log(city)
-    _this.setData({
-      _country:city,
-      "city[1]":city,
-      selectCity: _this.data._city + '-' + city
-    })
+    if(city=='所有'){
+      city = '';
+      _this.setData({
+        _country: city,
+        selectCity: _this.data._city 
+      })
+    }else{
+      _this.setData({
+        _country: city,
+        selectCity: _this.data._city + '-' + city
+      })
+    }
+   
 
     var url = '';
     var type = this.data.type;

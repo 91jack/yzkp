@@ -75,7 +75,7 @@
       <input bindblur='getValue' data-inx="6" placeholder='请输入担任职位' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
-      <picker mode="date" value="{{indate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <picker mode="date" value="{{indate}}" start="" end="" bindchange="bindDateChange">
         <text hidden='{{inHide}}'>请选择入职时间</text>
         <text hidden='{{!inHide}}'>{{indate}}</text>
         <image src='/image/index/return.png'></image>

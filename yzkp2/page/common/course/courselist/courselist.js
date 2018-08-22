@@ -11,6 +11,7 @@ Page({
   data: {
     index:0,
     search:'',
+    show:true,
     city:'',
     courseType:null,
     courseList:null
@@ -20,7 +21,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     var _this = this;
     if(options.city){
       _this.setData({
@@ -34,7 +34,6 @@ Page({
         token: getApp().globalData.token,
       },
       success: function (res) {
-        console.log(res.data.list)
         if (res.data.status == 0) {
           _this.setData({
             courseType: res.data.list
@@ -60,7 +59,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+  
   },
 
   /**
@@ -114,7 +113,6 @@ Page({
   getCourseList:function(){
     var _this = this;
     var courseType = _this.data.courseType
-    console.log(courseType)
     wx.request({
       url: courseListUrl,//课程列表
       data: {
@@ -127,13 +125,18 @@ Page({
       },
       success: function (res) {
         if (res.data.status == 0) {
-          _this.setData({
-            courseList: res.data.list
-          })
+          if (res.data.list.length>0){
+            _this.setData({
+              courseList: res.data.list,
+              show: true
+            })
+          }else{
+            _this.setData({
+              show:false
+            })
+          }
         }
-
       }
     })
   }
- 
 })

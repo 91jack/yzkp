@@ -69,7 +69,7 @@ Page({
          })
        }else{
          wx.showToast({
-           title: '你已报名了该课程，请勿重复报名',
+           title: '你已报名了该课程',
            icon: 'fail',
            duration: 2000,
            success: function () {
