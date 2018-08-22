@@ -87,12 +87,14 @@
         <textarea data-idx='5' bindblur='getValue'  placeholder-style='color:#AEAEAE' placeholder='请输入详细时间'></textarea>
       </view>
       <text>选择工作地点:</text>
-      <view class='choose-region'>
+      <navigator hover-class='none' url='/page/common/city/city?type=postparttime'>
+        <view class='choose-region'>
           <view class='choose-region-item'>
-            <text>选择城市</text>
+            <text>{{city}}</text>
             <image src='/image/index/return.png'></image>
           </view>
-      </view>
+        </view>
+      </navigator>
     </view>
   </view>
   <view class='detail-place detail'>

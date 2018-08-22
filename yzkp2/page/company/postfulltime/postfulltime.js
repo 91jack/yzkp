@@ -19,7 +19,7 @@ Page({
     linkPhone: '',
     attr: '普通职位',
     welfare: '',
-    city: '重庆',
+    city: '选择城市',
     address: '',
     duty: '',
     tag: '',
@@ -90,7 +90,11 @@ Page({
    */
   // 获取缓存数据
   onLoad: function (options) {
+    console.log(options)
     var that = this;
+    that.setData({
+      city:options.city
+    })
     wx.getStorage({
       key: 'educationArr',
       success: function(res) {

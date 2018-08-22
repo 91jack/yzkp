@@ -21,7 +21,7 @@ Page({
     endDate: '',
     beginTime: '',
     endTime: '',
-    city: '',
+    city: '选择城市',
     address: '',
     duty: '',
     tag: '',
@@ -47,6 +47,9 @@ Page({
   // 获取缓存数据
   onLoad: function (options) {
     var that = this;
+    that.setData({
+      city:options.city
+    })
     wx.getStorage({
       key: 'heightArr',
       success: function (res) {

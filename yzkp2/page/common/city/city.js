@@ -81,11 +81,17 @@ Page({
       var url = '';
       var type = this.data.type;
       switch(type){
-        case 'intension'://
+        case 'intension':// 求职意向
           url = '/page/resume/jobintensionedit/jobintensionedit?city='+city;
           break;
-        case 'courselist'://
+        case 'courselist':// 能力提升
           url = '/page/common/course/courselist/courselist?city=' + city;
+          break;  
+        case 'postfulltime':// 发布全职
+          url = '/page/company/postfulltime/postfulltime?city=' + city;
+          break;
+        case 'postparttime':// 发布兼职
+          url = '/page/company/postparttime/postparttime?city=' + city;
           break;  
       }
       wx.navigateTo({
@@ -114,6 +120,12 @@ Page({
         break;
       case 'courselist'://
         url = '/page/common/course/courselist/courselist?city=' + _this.data.selectCity;
+        break;
+      case 'postfulltime':// 发布全职
+        url = '/page/company/postfulltime/postfulltime?city=' + _this.data.selectCity;
+        break;
+      case 'postparttime':// 发布兼职
+        url = '/page/company/postparttime/postparttime?city=' + _this.data.selectCity;
         break;
     }
     wx.navigateTo({

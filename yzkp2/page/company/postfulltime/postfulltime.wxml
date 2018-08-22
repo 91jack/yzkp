@@ -17,36 +17,36 @@
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="1" value="{{exerciseIndex}}" range="{{exerciseData}}">
           <text hidden='{{exerciseHide}}'>经验要求</text>
-          <text hidden='{{!exerciseHide}}'>{{exerciseData[exerciseIndex]}}</text>          
-          <image src='/image/index/return.png'></image>        
+          <text hidden='{{!exerciseHide}}'>{{exerciseData[exerciseIndex]}}</text>
+          <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="2" value="{{styleIndex}}" range="{{payStyle}}">
           <text hidden='{{styleHide}}'>薪资结算方式</text>
           <text hidden='{{!styleHide}}'>{{payStyle[styleIndex]}}</text>
-          <image src='/image/index/return.png'></image>        
+          <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="3" value="{{payIndex}}" range="{{payData}}">
           <text hidden='{{payHide}}'>薪资范围</text>
           <text hidden='{{!payHide}}'>{{payData[payIndex]}}</text>
-          <image src='/image/index/return.png'></image>        
+          <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="4" value="{{heightIndex}}" range="{{heightData}}">
           <text hidden='{{heightHide}}'>身高要求</text>
           <text hidden='{{!heightHide}}'>{{heightData[heightIndex]}}</text>
-          <image src='/image/index/return.png'></image>        
+          <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="5" value="{{sexIndex}}" range="{{sexData}}">
           <text hidden='{{sexHide}}'>性别要求</text>
           <text hidden='{{!sexHide}}'>{{sexData[sexIndex]}}</text>
-          <image src='/image/index/return.png'></image>        
+          <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
@@ -75,17 +75,19 @@
       </view>
     </view>
 
-   
+
 
     <view class='post-job-area'>
       <view class='choose-place'>
         <text>请选择工作地点:</text>
-        <view class='choose-region'>
-          <view class='choose-region-item'>
-            <text>选择城市</text>
-            <image src='/image/index/return.png'></image>
+        <navigator hover-class='none' url='/page/common/city/city?type=postfulltime'>
+          <view class='choose-region'>
+            <view class='choose-region-item'>
+              <text>{{city}}</text>
+              <image src='/image/index/return.png'></image>
+            </view>
           </view>
-        </view>
+        </navigator>
       </view>
     </view>
     <view class='choose-place detail'>
