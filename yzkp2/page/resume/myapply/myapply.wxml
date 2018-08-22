@@ -43,6 +43,9 @@
       </view>
     </view>
     </block>
+    <view hidden='{{imgShow}}'>
+      <image class='none-show' src='/image/mine/bigbg.png'></image>
+    </view>
   </view>
 </view>
 

@@ -1055,3 +1055,11 @@ checkbox{
 .modal .call .call-btn .call-out{
   background: #F39800
 }
+/* 页面没有内容显示图像 */
+image.none-show{
+  display: block;
+  width: 375rpx;
+  height: 241rpx;
+  margin: auto;
+  margin-top: 206rpx;
+}

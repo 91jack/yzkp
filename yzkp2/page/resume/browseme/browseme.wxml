@@ -37,6 +37,8 @@
       </navigator>
      
     </view>
-  
+    <view hidden='{{browseList?false:true}}'>
+      <image class='none-show' src='/image/mine/bigbg.png'></image>
+    </view>
   </view>
 </view>
