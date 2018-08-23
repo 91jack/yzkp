@@ -9,7 +9,7 @@ var config = {
   // 下面的地址配合云端 Server 工作
 
   // 登录
-  loginUrl: `${host}/login.json`,
+  loginUrl: `${host}login.json`,
 
   /* --求职者模块-- */
   // 新增简历基本信息

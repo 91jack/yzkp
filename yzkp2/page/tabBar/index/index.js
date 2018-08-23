@@ -111,6 +111,7 @@ Page({
    */
   onLoad: function (options) {
     socket.init();
+
     var _this = this;
     // 登录
     wx.login({

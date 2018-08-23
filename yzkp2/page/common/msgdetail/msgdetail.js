@@ -15,15 +15,54 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    var data = {
-      msgType: 2,
-      resumeId: 24,
-      companyId: 1,
-      content: this.data.input
-    }
-    socket.sendMessage(data);
-   
+   socket.init()
 
+
+    //接收数据
+    wx.onSocketMessage(function (res) {
+      console.log(res)
+      console.log(res.data)
+      console.log(JSON.parse(res.data))
+      wx.setStorage({
+        key: 'chatList',
+        data: JSON.parse(res.data),
+      })
+    })
+    // 建立连接
+    // wx.connectSocket({
+    //   url: webSocketUrl + '?type=0&id=24',
+    //   header: {
+    //     'content-type': 'application/x-www-form-urlencoded'
+    //   },
+    //   method: 'GET',
+    // })
+
+    // //连接失败
+    // wx.onSocketError(function () {
+    //   console.log('websocket连接失败！');
+    // })
+
+    
+
+    // var msg = {
+    //   msgType: 2,
+    //   resumeId: 24,
+    //   companyId: 1,
+    //   content:''
+    // }
+    // socket.sendMessage(msg)
+   
+  //  wx.getStorage({
+  //    key: 'chatList',
+  //    success: function(res) {
+  //      console.log(res.data)
+  //    },
+  //  })
+
+    // wx.onSocketMessage(function (res) {
+    //   console.log(res)
+    //   console.log(JSON.parse(res.data))
+    // })
   },
 
   /**
@@ -81,12 +120,12 @@ Page({
     })
   },
   sendBtn:function(){
-    var data = {
+    var msg = {
       msgType: 0, 
       resumeId: 24, 
       companyId: 1, 
       content: this.data.input
     }
-    socket.sendMessage(data);
+    socket.sendMessage(msg);
   }
 })

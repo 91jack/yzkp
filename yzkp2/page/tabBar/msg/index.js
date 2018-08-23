@@ -18,9 +18,9 @@ Page({
     wx.getStorage({
       key: 'chatList',
       success: function(res) {
-        console.log(JSON.parse(res.data))
+        //console.log(JSON.parse(res.data))
         _this.setData({
-          chatList: JSON.parse(res.data)
+          chatList: res.data
         })
       },
     })
