@@ -2,10 +2,10 @@
 <view class="header">
   <view class="header-cont resume">
     <view>
-      <image class="company-pic" src="{{headImg}}"></image>
+      <image class="company-pic" src="{{headImg?headImg:'/image/mine/singnal.png'}}"></image>
     </view>
     <view class="header-intro">
-      <text class="name">{{resumeName}}</text>
+      <text class="name">{{resumeName?resumeName:''}}</text>
     </view>
   </view>
 </view>
