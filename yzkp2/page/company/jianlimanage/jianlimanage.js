@@ -17,14 +17,32 @@ Page({
     pickerIndex:[0,1,2,3],
     modalShow:true,
     manageData:[],
-    linkPhone:''
+    linkPhone:'',
+    state:2,
+    monthPayArr:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.getStorage({
+      key: 'state',
+      success: function(res) {
+        that.setData({
+          state:res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'monthPayArr',
+      success: function(res) {
+        that.setData({
+          monthPayArr: res.data
+        })
+      },
+    })
   },
   zhiweimanage:function(){
     wx.navigateTo({
@@ -47,7 +65,7 @@ Page({
       url: companyResumeUrl,
       data: {
         token: getApp().globalData.token,
-        state:2
+        state:that.data.state
       },
       success: function (res) {
         console.log(res)
@@ -133,6 +151,7 @@ Page({
         })
       }
     })
+    return false;
   },
   // 打电话
   showModal:function(e){
@@ -152,6 +171,18 @@ Page({
     var that = this;
     wx.makePhoneCall({
       phoneNumber: String(that.data.linkPhone)
+    })
+  },
+  // 企业查看简历
+  toresume:function(e){
+    var that = this;
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/page/company/companycheck/companycheck?id='+id+'',
+    })
+    wx.setStorage({
+      key: 'state',
+      data: that.data.manageData[0].applyState,
     })
   }
 })

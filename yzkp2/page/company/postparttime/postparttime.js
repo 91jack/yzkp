@@ -49,6 +49,10 @@ Page({
       that.setData({
         city: options.city
       })
+      wx.setStorage({
+        key: 'city',
+        data: options.city,
+      })
     }
     wx.getStorage({
       key: 'heightArr',
@@ -63,6 +67,14 @@ Page({
       success: function(res) {
         that.setData({
           sex:res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'city',
+      success: function (res) {
+        that.setData({
+          city: res.data
         })
       },
     })
@@ -162,6 +174,16 @@ Page({
         })
       },
     })
+    wx.getStorage({
+      key: 'attr',
+      success: function (res) {
+        console.log(res.data[1])
+        var attr = "attrData[" + res.data[1] + "]";
+        that.setData({
+          [attr]: res.data[0]
+        })
+      },
+    })
   },
   // picker相关
   bindPickerChange: function (e) {
@@ -212,6 +234,7 @@ Page({
   // 职位属性
   chooseStyle: function (e) {
     console.log(e)
+    var that = this;
     var i = Number(e.currentTarget.dataset.idx);
     var nowAttr = "attrData[" + i + "]";
     console.log(nowAttr)
@@ -237,6 +260,10 @@ Page({
         attr: "劳务派遣"
       })
     }
+    wx.setStorage({
+      key: 'attr',
+      data: [that.data.attrData[i], i],
+    })
   },
   // 获取input框的值
   getValue: function (e) {
@@ -398,10 +425,6 @@ Page({
             success: function (res) { },
           })
           wx.removeStorage({
-            key: 'educationLevel',
-            success: function (res) { },
-          })
-          wx.removeStorage({
             key: 'workYear',
             success: function (res) { },
           })
@@ -419,6 +442,14 @@ Page({
           })
           wx.removeStorage({
             key: 'tm',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'attr',
+            success: function(res) {},
+          })
+          wx.removeStorage({
+            key: 'city',
             success: function (res) { },
           })
         }

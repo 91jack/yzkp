@@ -2,7 +2,7 @@
   <view class="header">
     <view class="header-cont resume">
       <view>
-        <image class="company-pic" src="{{baseInfo.headImg?baseInfo.headImg:'/iamge/mine/singnal.png'}}"></image>
+        <image class="company-pic" src="{{baseInfo.headImg?baseInfo.headImg:'/iamge/mine/singnal.png'?''}}"></image>
       </view>
       <view class="header-intro">
         <text class="name">{{baseInfo.name}}</text>
