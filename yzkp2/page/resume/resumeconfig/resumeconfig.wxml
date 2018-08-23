@@ -26,11 +26,11 @@
   <view class="set-intro">
     <view class="set-intro-box">
       <text>公开简历</text>
-      <switch checked="true" class="fr" bindchange='switch1Change'></switch>
+      <switch checked="true" checked='{{open==1}}' class="fr" bindchange='switch1Change'></switch>
     </view>
     <view class="set-intro-box">
       <text>匿名展示</text>
-      <switch checked="true" class="fr" bindchange='switch2Change'></switch>
+      <switch checked="true" checked='{{anonymous==1}}' class="fr" bindchange='switch2Change'></switch>
     </view>
   </view>
 </view>

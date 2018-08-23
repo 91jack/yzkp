@@ -9,7 +9,7 @@
     <image src=''></image>
   </view>
   <view class='bottom-input'>
-    <input type="text" placeholder='请输入新的聊天' placeholder-style='color:#D7D7D7' bindinput='getValue'/>
+    <input adjust-position='true' focus='true' type="text" placeholder='请输入新的聊天' placeholder-style='color:#D7D7D7' bindinput='getValue'/>
     <view bindtap='sendBtn'>发送</view>
   </view>
 </view>
