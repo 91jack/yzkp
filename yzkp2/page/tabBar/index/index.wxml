@@ -48,14 +48,14 @@
     </picker>
   </view>
 
-  <navigator hover-class='none' url="/page/common/city/city">
+  <navigator hover-class='none' url="/page/common/city/city?type=jobList">
     <view class='nav-item'>
       <text class='select_font'>地区</text>
       <image class='select_img' src='/image/index/return1.png'></image>
     </view>
   </navigator>
 
-  <navigator hover-class='none' url="/page/common/industry/industry">
+  <navigator hover-class='none' url="/page/common/industry/industry?type=industry">
     <view class='nav-item'>
       <text class='select_font'>行业</text>
       <image class='select_img' src='/image/index/return1.png'></image>
