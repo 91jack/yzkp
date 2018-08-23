@@ -8,12 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseInfo:{},
+    baseInfo:[],
     work:[],
     education:[],
     project:[],
     headImg:'',
-    resumeName:''
+    resumeName:'',
+    inten:''
   },
 
   /**
@@ -52,7 +53,9 @@ Page({
             work: res.data.obj.work,
             education: res.data.obj.education,
             project: res.data.obj.project,
+            inten: res.data.obj.base.workName + ' | ' + res.data.obj.base.workAddress + ' | ' + res.data.obj.base.workPay
           })
+          console.log(_this.data.baseInfo)
           wx.setStorage({
             key: 'resumeId',
             data: res.data.obj.base.id,

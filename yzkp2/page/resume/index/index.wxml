@@ -42,14 +42,14 @@
             </view>
           </navigator>
         </view>
-        <block wx:if="{{baseInfo!=''}}">
-          <view class="manageintro-cont-item-detail" hidden='{{baseInfo}}'>
+        <!-- <block wx:if="{{baseInfo!=''}}"> -->
+          <view class="manageintro-cont-item-detail" hidden='{{baseInfo==""}}'>
             <text class="in-name">{{baseInfo.name}}</text>
             <view class="in-info">
-              <text>{{baseInfo.address}}</text>|
-              <text>{{baseInfo.workYear}}年</text>|
-              <text>{{baseInfo.sex}}</text>|
-              <text>{{baseInfo.age}}岁</text>|
+              <text>{{baseInfo.address}} </text>|
+              <text>{{baseInfo.workYear}}年 </text>|
+              <text>{{baseInfo.sex}} </text>|
+              <text>{{baseInfo.age}}岁 </text>|
               <text>{{baseInfo.height}}cm</text>
             </view>
 
@@ -66,7 +66,7 @@
               <text>{{baseInfo.state}}</text>
             </view>
           </view>
-        </block>
+        <!-- </block> -->
       </view>
       <!-- 求职意向 -->
       <view class="manageintro-cont-item">
@@ -82,8 +82,8 @@
             </view>
           </navigator>
         </view>
-        <view class="manageintro-cont-item-detail" hidden='{{baseInfo.workName}}'>
-          <text class="in-info want">{{baseInfo.workName}}  {{baseInfo.workAddress}}  {{baseInfo.workPay}}</text>
+        <view class="manageintro-cont-item-detail" hidden='{{baseInfo.workName==""&&baseInfo==""}}'>
+          <text class="in-info want">{{inten}}</text>
         </view>
       </view>
       <!-- 工作经验 -->

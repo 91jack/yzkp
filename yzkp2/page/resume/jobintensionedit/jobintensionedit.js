@@ -12,7 +12,7 @@ Page({
     monthPayHide:false,
     id:'',			
     workName:'',		
-    workPay:'',							
+    workPay: ['请选择',''],							
     industry:'',
     city:'',
     resumeId:'',
@@ -48,6 +48,14 @@ Page({
       },
     }),
     wx.getStorage({
+      key: 'workName',
+      success: function(res) {
+        that.setData({
+          workName:res.data
+        })
+      },
+    })
+    wx.getStorage({
       key: 'resumeId',
       success: function(res) {
         that.setData({
@@ -55,6 +63,14 @@ Page({
         })
       },
     });
+    wx.getStorage({
+      key: 'workPay',
+      success: function(res) {
+        that.setData({
+          workPay:res.data
+        })
+      },
+    })
     if(options.id){
       that.setData({
         id: options.id
@@ -71,11 +87,16 @@ Page({
 // 获取期望薪资
   bindPicker:function(e){
     console.log(e)
+    var that = this;
     var i = Number(e.detail.value)
     this.setData({
-      workPay:i,
+      "workPay[1]":i,
       monthPayIndex:i,
       monthPayHide:true
+    })
+    wx.setStorage({
+      key: 'workPay',
+      data: [that.data.monthPayArr[i],i],
     })
   },
   /**
@@ -118,10 +139,14 @@ Page({
       })
     }
   },
-
+  // 期望职位
   getValue:function(e){
     this.setData({
       workName:e.detail.value
+    })
+    wx.setStorage({
+      key: 'workName',
+      data: e.detail.value,
     })
   },
   sunBtn:function(){
@@ -132,7 +157,7 @@ Page({
         token: getApp().globalData.token,
         id: _this.data.resumeId,			
         workName: _this.data.workName,			
-        workPay: _this.data.workPay,			
+        workPay: _this.data.workPay[1],			
         workAddress: _this.data.city,				
         industry: _this.data.industry
       },

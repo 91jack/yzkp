@@ -37,8 +37,6 @@ Page({
     })
     try {
       var value = wx.getStorageSync('resumeId')
-      console.log(Boolean(wx.getStorageSync('resumeId')))
-      console.log(Boolean(wx.getStorageSync('educationArr')))
       if (value) {
         wx.request({
           url: resumeApplyUrl,
@@ -49,7 +47,7 @@ Page({
             if (res.status == 0) {
               if (res.data.list.length != 0) {
                 _this.setData({
-                  imgShow: true
+                  imgShow: false
                 })
               }
               _this.setData({
@@ -63,9 +61,10 @@ Page({
         _this.setData({
           imgShow: false
         })
+        console.log(_this.data.imgShow)
       }
     } catch (e) {
-      
+      console.log(_this.data.imgShow)
     }
   },
   //显示模态框

@@ -31,7 +31,7 @@
 <view class='box last'>
   <text>项目介绍</text>
 </view>
-<textarea data-idx='2' bindblur='getValue' placeholder='请简单介绍一下你的项目' value='{{job}}' placeholder-class='color:#AEAEAE'>
+<textarea data-idx='2' bindinput='getValue' placeholder='请简单介绍一下你的项目' value='{{job}}' placeholder-class='color:#AEAEAE'>
 
 </textarea>
 <view class='btn' bindtap='subBtn'>保存编辑</view>

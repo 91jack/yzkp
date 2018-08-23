@@ -17,7 +17,7 @@
   <text>期待薪资</text>
   <view class='right'>
     <picker mode="selector" range="{{monthPayArr}}" value="{{monthPayIndex}}" bindchange="bindPicker">
-      <text hidden='{{monthPayHide}}' class='choose'>{{oldPay}}</text>
+      <text hidden='{{monthPayHide}}' class='choose'>{{workPay[0]}}</text>
       <text hidden='{{!monthPayHide}}' class='choose'>{{monthPayArr[monthPayIndex]}}</text>
       <image class='next' src='/image/mine/next.png'></image>
     </picker>

@@ -25,9 +25,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      id: options.id
-    })
+    if(options.id){
+      this.setData({
+        id: options.id
+      })
+    }
     var that = this;
     wx.getStorage({
       key: 'resumeId',
@@ -124,9 +126,11 @@ Page({
         },
         success: function (res) {
           console.log(res)
-          wx.navigateTo({
-            url: '/page/resume/index/index',
-          })
+          if (res.status == 0) {
+            wx.navigateTo({
+              url: '/page/resume/index/index',
+            })
+          }
         }
       })
     } else {
@@ -143,9 +147,11 @@ Page({
         },
         success: function (res) {
           console.log(res)
-          wx.navigateTo({
-            url: '/page/resume/index/index',
-          })
+          if(res.status==0){
+            wx.navigateTo({
+              url: '/page/resume/index/index',
+            })
+          }
         }
       })
     }

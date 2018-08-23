@@ -248,6 +248,7 @@ Page({
         url: addBasicUrl,
         data: {
           token: getApp().globalData.token,
+          headImg:that.headImg,
           name: that.name,
           sex: Number(that.sex),
           age: Number(that.age),

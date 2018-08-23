@@ -90,22 +90,14 @@ page{
 .rz-intro{
   width:702rpx;
   margin: 34rpx 0 250rpx;
-  /* height:461rpx; */
-  /* background:rgba(245,244,254,1);
-  border-radius:6rpx;
-  box-sizing: border-box; */
-  /* padding: 27rpx 21rpx; */
-  /* */
 }
 .rz-intro textarea{
   font-size: 28rpx;
   color: #868686;
- width:702rpx;
-padding: 25rpx 0;
-min-height: 80rpx;
-background:rgba(245,244,254,1);
-  /* height:461rpx; */
-  /* padding: 27rpx 21rpx; */
+  width:702rpx;
+  padding: 25rpx;
+  min-height: 80rpx;
+  background:rgba(245,244,254,1);
 }
 .post-job-wealf-tit{
   color: #868686;
