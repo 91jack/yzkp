@@ -33,12 +33,12 @@ page{
    line-height: 85rpx;
 }
 .ability-nav .ability-right image{
-  width: 16rpx;
-  height: 27rpx;
-  position: absolute;
+  height: 16rpx;
+  width: 27rpx;
+  /* position: absolute;
   top: 50%;
   margin-top: -13rpx;
-  right: 18rpx;
+  right: 18rpx; */
 }
 .ability-nav .ability-right .ability-right-item{
   width: 144rpx;
@@ -50,4 +50,10 @@ page{
 }
 .ability-nav .ability-right .ability-right-item.active{
   color: #3830EB
+}
+.picker{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400rpx;
 }

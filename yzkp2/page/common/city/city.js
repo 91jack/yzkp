@@ -94,6 +94,7 @@ Page({
           url = '/page/company/joblist/joblist?city=' + city;
           break;  
       }
+      // console.log(url);
       wx.navigateTo({
         url: url
       })

@@ -20,8 +20,8 @@
   <view class='ability-right'>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseType}}" range-key='name'>
       <view class="picker">
-        当前选择：{{courseType[index].name}}
-         <image src='/image/index/return.png'></image>
+        <text>当前选择：{{courseType[index].name}}</text>
+        <image src='/image/index/return.png'></image>
       </view>
     </picker>
   </view>
