@@ -5,6 +5,7 @@
     "page/tabBar/msg/index"
   ],
   "window": {
+    "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3830EB",
     "navigationBarTitleText": "优职快聘",

@@ -3,6 +3,8 @@ const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 var socket = require('../../../socket.js');
 
 var msgList = [];
+var curPage = 1;
+var loadMore = false;
 Page({
 
   /**
@@ -17,15 +19,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    socket.setFunc(this.getMsg)
+
     var msg = {
       msgType: 2,
       resumeId: 24,
       companyId: 1,
-      content: ''
+      content: curPage
     }
     socket.sendMessage(msg)
-    socket.setFunc(this.getMsg)
-    // this.setData({});
   },
 
   /**
@@ -60,7 +62,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    curPage++;
+    loadMore = true;
+    wx.showNavigationBarLoading();
+
+    var msg = {
+      msgType: 2,
+      resumeId: 24,
+      companyId: 1,
+      content: curPage
+    }
+    socket.sendMessage(msg);
   },
 
   /**
@@ -92,21 +104,30 @@ Page({
     socket.sendMessage(msg);
   },
 
+  /**
+  * 获取socket消息
+  */
   getMsg: function(data){
     var msg = JSON.parse(data);
     console.log(msg)
 
     if (msg.msgType==1){
-      msgList = msg.list;
+      var list = msg.list;
+      list.reverse();
+      msgList = list.concat(msgList);
     }
     if(msg.msgType==2){
       msgList.push(msg.obj);  
     }
 
     this.setData({ list: msgList }, function(){
-      wx.pageScrollTo({
-        scrollTop: 99999999
-      })
+      if(loadMore){
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+        wx.pageScrollTo({ scrollTop: 0 })
+      }else{
+        wx.pageScrollTo({ scrollTop: 99999999 })
+      }
     })    
   }
 })

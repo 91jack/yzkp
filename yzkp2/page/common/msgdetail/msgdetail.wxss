@@ -58,14 +58,18 @@
   box-sizing: border-box;
   line-height: 40rpx;
   min-height: 117rpx;
+  word-wrap: wrap;
 }
 .bottom-input view{
   width:141rpx;
-  height:61rpx;
+  height:100rpx;
   background:rgba(243,152,0,1);
   border-radius:6rpx;
-  line-height: 61rpx;
+  line-height: 100rpx;
   text-align: center;
   font-size: 30rpx;
   color: #fff;
+}
+.client{
+  margin-bottom: 150rpx;
 }

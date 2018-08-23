@@ -138,6 +138,7 @@ Page({
         url = '/page/company/joblist/joblist?city=' +  _this.data.selectCity;
         break;  
     }
+    
     wx.navigateTo({
       url: url
     })

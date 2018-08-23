@@ -1,19 +1,21 @@
 <!--page/common/msgdetail/msgdetail.wxml-->
-<view class='chat' wx:for='{{list}}' wx:key='id'>
-  <view wx:if='{{item.type==0}}'>
-    <view class='chat-item yourmsg' id='{{item.id}}'>
-      <image src=''></image>
-      <text>{{item.content}}</text>
+<view class='client' >
+  <view class='chat' wx:for='{{list}}' wx:key='id'>
+    <view wx:if='{{item.type==0}}'>
+      <view class='chat-item yourmsg' id='{{item.id}}'>
+        <image src=''></image>
+        <text>{{item.content}}</text>
+      </view>
     </view>
-  </view>
-  <view wx:else>
-    <view class='chat-item mymsg' id='{{item.id}}'>
-      <text>{{item.content}}</text>
-      <image src=''></image>
+    <view wx:else>
+      <view class='chat-item mymsg' id='{{item.id}}'>
+        <text>{{item.content}}</text>
+        <image src=''></image>
+      </view>
     </view>
   </view>
   <view class='bottom-input'>
-    <input adjust-position='true' focus='true' type="text" placeholder='请输入新的聊天' placeholder-style='color:#D7D7D7' bindinput='getValue'/>
-    <view bindtap='sendBtn'>发送</view>
+      <textarea auto-height='40rpx' adjust-position='true' focus='true' type="text" placeholder='请输入新的聊天' placeholder-style='color:#D7D7D7' bindinput='getValue'></textarea>
+      <view bindtap='sendBtn'>发送</view>
   </view>
 </view>
