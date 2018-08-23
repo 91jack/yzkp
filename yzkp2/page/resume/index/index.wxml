@@ -2,7 +2,7 @@
   <view class="header">
     <view class="header-cont resume">
       <view>
-        <image class="company-pic" src="{{baseInfo.headImg?baseInfo.headImg:'/iamge/mine/singnal.png'}}"></image>
+        <image class="company-pic" src="{{baseInfo.headImg?baseInfo.headImg:'/image/mine/singnal.png'}}"></image>
       </view>
       <view class="header-intro">
         <text class="name">{{baseInfo.name}}</text>
@@ -43,7 +43,7 @@
           </navigator>
         </view>
         <block wx:if="{{baseInfo!=''}}">
-          <view class="manageintro-cont-item-detail">
+          <view class="manageintro-cont-item-detail" hidden='{{baseInfo}}'>
             <text class="in-name">{{baseInfo.name}}</text>
             <view class="in-info">
               <text>{{baseInfo.address}}</text>|
@@ -82,7 +82,7 @@
             </view>
           </navigator>
         </view>
-        <view class="manageintro-cont-item-detail">
+        <view class="manageintro-cont-item-detail" hidden='{{baseInfo.workName}}'>
           <text class="in-info want">{{baseInfo.workName}}  {{baseInfo.workAddress}}  {{baseInfo.workPay}}</text>
         </view>
       </view>

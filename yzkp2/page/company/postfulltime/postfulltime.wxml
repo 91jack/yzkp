@@ -50,7 +50,7 @@
         </picker>
       </view>
       <view class='header-item'>
-        <input placeholder='招聘人姓名' data-idx='2' value='{{linkName}}' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='招聘人姓名' data-idx='2' value='{{linkMan}}' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
         <input placeholder='招聘人联系电话' data-idx='3' value='{{linkPhone}}' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>

@@ -59,6 +59,8 @@ page{
   box-sizing: border-box;
   padding: 30rpx 29rpx 0 25rpx;
   margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between
 }
 .manage-intro-item{
   display: flex;
@@ -108,11 +110,13 @@ page{
   line-height: 24rpx;
   margin-left: 5rpx;
 }
-.icon-content .icon-date{
+.icon-date{
   font-size: 24rpx;
   color: #A0A0A0;
   height: 28rpx;
   line-height: 28rpx;
+  margin-bottom: 29rpx;
+  margin-top: 22rpx;
 }
 
 .manage-intro-price{
@@ -126,7 +130,7 @@ page{
   height: 46rpx;
   line-height: 46rpx;
 }
-.manage-intro-price .manage-intro-btn{
+.manage-intro-btn{
   width:157rpx;
   height:46rpx;
   background:rgba(243,152,0,1);
@@ -136,17 +140,25 @@ page{
   font-size: 22rpx;
   line-height: 46rpx;
 }
-.manage-intro-price .manage-intro-btn image{
+.manage-intro-btn image{
   width: 19rpx;
   height: 12rpx;
   margin-left: 5rpx;
 }
-.unconfirmed .manage-intro-price .manage-intro-btn{
+.unconfirmed .manage-intro-btn{
   background: #00A37B;
 }
-.unconnext .manage-intro-price .manage-intro-btn{
+.unconnext .manage-intro-btn{
   background: #008FF3;
 }
-.unapprop .manage-intro-price .manage-intro-btn{
+.unapprop .manage-intro-btn{
   background: #868686;
+}
+.manage-intro-cont-left{
+  padding-top: 11rpx;
+}
+.manage-intro-cont-right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }

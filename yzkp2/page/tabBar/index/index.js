@@ -126,7 +126,7 @@ Page({
             },
             success: function (res) {
               
-              //console.log(res)
+              // console.log(res)
               
               getApp().globalData.token = res.data.obj.token;
               getApp().globalData.role = res.data.obj.type;

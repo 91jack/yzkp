@@ -553,9 +553,8 @@ checkbox{
 }
 .cont-detail .det-left{
   display: flex;
-  /* height: 28rpx; */
-  /* width: 494rpx; */
   flex-wrap: wrap;
+  flex:1;
 }
 .cont-detail .det-left .left-item{
   display: flex;
