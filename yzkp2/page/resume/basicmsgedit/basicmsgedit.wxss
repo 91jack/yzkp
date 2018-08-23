@@ -27,3 +27,6 @@
   border-radius: 50%;  
   border: 2px solid #fff;  
 }
+.page{
+  margin-bottom: 200rpx;
+}

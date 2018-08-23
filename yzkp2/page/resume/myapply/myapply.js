@@ -11,7 +11,7 @@ Page({
     resumeName:'',
     modalShow:true,
     linkPhone:'',
-    imgShow:true
+    imgShow:false
   },
 
   /**
@@ -35,37 +35,6 @@ Page({
         })
       },
     })
-    try {
-      var value = wx.getStorageSync('resumeId')
-      if (value) {
-        wx.request({
-          url: resumeApplyUrl,
-          data: {
-            token: getApp().globalData.token,
-          },
-          success: function (res) {
-            if (res.status == 0) {
-              if (res.data.list.length != 0) {
-                _this.setData({
-                  imgShow: false
-                })
-              }
-              _this.setData({
-                applyList: res.data.list
-              })
-              console.log(_this.data.imgShow)
-            }
-          }
-        })
-      }else{
-        _this.setData({
-          imgShow: false
-        })
-        console.log(_this.data.imgShow)
-      }
-    } catch (e) {
-      console.log(_this.data.imgShow)
-    }
   },
   //显示模态框
   callphone:function(e){
@@ -106,6 +75,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    wx.request({
+      url: resumeApplyUrl,
+      data: {
+        token: getApp().globalData.token,
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 0) {
+          if (res.data.list.length != 0) {
+            that.setData({
+              imgShow: true,
+              applyList: res.data.list
+            })
+          }
+          console.log(that.data.imgShow)
+        }
+      }
+    })
   }
 })

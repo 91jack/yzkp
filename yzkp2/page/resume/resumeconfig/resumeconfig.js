@@ -1,6 +1,8 @@
 // page/common/resume/resumeconfig/resumeconfig.js
 const resumeOpenUrl = require('../../../config').resumeOpenUrl;
 
+// 获取简历
+const resumeUrl = require('../../../config').resumeUrl;
 Page({
 
   /**
@@ -8,7 +10,9 @@ Page({
    */
   data: {
     headImg:'',
-    resumeName:''
+    resumeName:'',
+    open:'',
+    anonymous:''
   },
 
   /**
@@ -31,6 +35,21 @@ Page({
           resumeName: res.data
         })
       },
+    })
+    wx.request({
+      url: resumeUrl,
+      data: {
+        token: getApp().globalData.token,
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 0) {
+          that.setData({
+            open: res.data.obj.base.open,
+            anonymous: res.data.obj.base.anonymous
+          })
+        }
+      }
     })
   },
 
