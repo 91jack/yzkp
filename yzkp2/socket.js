@@ -10,13 +10,22 @@ var func = function(data){
 // 
 function init(){
   // 建立连接
-  wx.connectSocket({
-    url: webSocketUrl+'?type=0&id=24',
-    header: {
-      'content-type': 'application/x-www-form-urlencoded'
+  wx.getStorage({
+    key: 'resumeId',
+    success: function (res) {
+      var resumeId = res.data;
+
+      wx.connectSocket({
+        url: webSocketUrl + '?type=0&id=' + resumeId,
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: 'GET',
+      })
+      
     },
-    method: 'GET',
   })
+
 
   //接收数据
   wx.onSocketMessage(function (res) {

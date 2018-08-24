@@ -12,7 +12,9 @@ Page({
    */
   data: {
     input:'',
-    list:[]
+    list:[],
+    resumeId:'',
+    companyId:''
   },
 
   /**
@@ -20,11 +22,15 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    socket.setFunc(this.getMsg)
-    var msg = {
-      msgType: options.msgType,
+    this.setData({
       resumeId: options.resumeId,
       companyId: options.companyId,
+    })
+    socket.setFunc(this.getMsg)
+    var msg = {
+      msgType: 2,
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
       content: curPage
     }
     socket.sendMessage(msg)
@@ -67,9 +73,9 @@ Page({
     wx.showNavigationBarLoading();
 
     var msg = {
-      msgType: options.msgType,
-      resumeId: options.resumeId,
-      companyId: options.companyId,
+      msgType: 2,
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
       content: curPage
     }
     socket.sendMessage(msg);
@@ -97,8 +103,8 @@ Page({
   sendBtn:function(){
     var msg = {
       msgType: 0, 
-      resumeId: options.resumeId,
-      companyId: options.companyId,
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
       content: this.data.input
     }
     socket.sendMessage(msg);
