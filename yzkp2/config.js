@@ -1,8 +1,8 @@
 // 线上
-// var host = "https://www.zgdrkj.cn/yzkp/app/";
+ var host = "https://www.zgdrkj.cn/yzkp/app/";
 
 // 本地
-var host = "http://192.168.1.123:8080/yzkp/app/";
+//var host = "http://127.0.0.1:8080/yzkp/app/";
 
 
 var config = {

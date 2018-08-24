@@ -1,5 +1,4 @@
 // page/common/msgdetail/msgdetail.js
-const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 var socket = require('../../../socket.js');
 
 var msgList = [];
@@ -22,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log('opts:' + options)
     this.setData({
       resumeId: options.resumeId,
       companyId: options.companyId,

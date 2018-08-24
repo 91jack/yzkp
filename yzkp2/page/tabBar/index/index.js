@@ -117,8 +117,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    socket.init();
-    console.log(options)
     var _this = this;
     // 登录
     wx.login({
@@ -177,6 +175,8 @@ Page({
                   id: 'resume'
                 })
               }
+
+              socket.init();
             }
           })
         } else {
