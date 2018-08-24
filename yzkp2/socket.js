@@ -41,7 +41,7 @@ function init(){
             console.log('已连接')
 
             wx.connectSocket({
-              url: webSocketUrl + '?type=0&id=' + companyId,
+              url: webSocketUrl + '?type=1&id=' + companyId,
               header: {
                 'content-type': 'application/x-www-form-urlencoded'
               },
