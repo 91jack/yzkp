@@ -12,19 +12,25 @@ Page({
    */
   data: {
     input:'',
-    list:[]
+    list:[],
+    resumeId:'',
+    companyId:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    this.setData({
+      resumeId: options.resumeId,
+      companyId: options.companyId,
+    })
     socket.setFunc(this.getMsg)
-
     var msg = {
       msgType: 2,
-      resumeId: 24,
-      companyId: 1,
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
       content: curPage
     }
     socket.sendMessage(msg)
@@ -68,8 +74,8 @@ Page({
 
     var msg = {
       msgType: 2,
-      resumeId: 24,
-      companyId: 1,
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
       content: curPage
     }
     socket.sendMessage(msg);
@@ -97,8 +103,8 @@ Page({
   sendBtn:function(){
     var msg = {
       msgType: 0, 
-      resumeId: 24, 
-      companyId: 1, 
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
       content: this.data.input
     }
     socket.sendMessage(msg);

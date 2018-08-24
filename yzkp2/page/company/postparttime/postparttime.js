@@ -374,7 +374,7 @@ Page({
         payType: _this.data.payType,
         linkMan: _this.data.linkMan,
         linkPhone: _this.data.linkPhone,
-        attr: _this.data.attr,
+        attr: _this.data.attr[0],
         tm: _this.data.tm,
         city: _this.data.city,
         address: _this.data.address,
@@ -383,6 +383,7 @@ Page({
 
       },
       success: function (res) {
+        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: '职位发布成功',
@@ -397,7 +398,7 @@ Page({
             success: function(res) {},
           })
           wx.removeStorage({
-            key: 'adreess',
+            key: 'address',
             success: function (res) { },
           })
           wx.removeStorage({
@@ -450,6 +451,10 @@ Page({
           })
           wx.removeStorage({
             key: 'city',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'height',
             success: function (res) { },
           })
         }

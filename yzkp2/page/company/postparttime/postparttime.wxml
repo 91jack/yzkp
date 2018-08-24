@@ -24,7 +24,7 @@
         </picker>
       </view>
       <view class='header-item'>
-        <input class='active' data-idx='7' bindblur='getValue' placeholder='请输入薪资' placeholder-style='color:#AEAEAE'></input>
+        <input class='active' data-idx='7' value='{{pay}}' bindblur='getValue' placeholder='请输入薪资' placeholder-style='color:#AEAEAE'></input>
         <picker bindchange="bindPickerChange" data-idx="2" value="{{payIndex}}" range="{{payData}}" class='dayOrMonth'>
           <text hidden='{{payHide}}'>{{payUnit}}</text>
           <text hidden='{{!payHide}}'>{{payData[payIndex]}}</text>
@@ -39,7 +39,7 @@
         </picker>
       </view>
       <view class='header-item'>
-        <input placeholder='招聘人姓名' value='{{linkName}}' data-idx='2' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='招聘人姓名' value='{{linkMan}}' data-idx='2' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
         <input placeholder='招聘人联系电话' value='{{linkPhone}}' data-idx='3' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>

@@ -117,3 +117,19 @@ color: transparent;
   width: 45rpx;
   height: 45rpx;
 }
+.jianlicont.cont-detail{
+  margin-top: 16rpx;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.jianlicont.cont-detail .left-item.pay{
+  margin-right: 21rpx;
+  height: 43rpx;
+  align-items: flex-start;
+}
+.jianlicont.cont-detail .left-item.pay text{
+  color: #F39800;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
