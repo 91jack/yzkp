@@ -211,9 +211,11 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        _this.setData({
-          jianliList: res.data.list
-        })
+        if(res.data.status==0){
+          _this.setData({
+            jianliList: res.data.list
+          })
+        }
       }
     })
   },
@@ -238,9 +240,11 @@ Page({
         industry: _this.data.industry,//行业
       },
       success: function (res) {
-        _this.setData({
-          jobList: res.data.list
-        })
+        if(res.data.status==0){
+          _this.setData({
+            jobList: res.data.list
+          })
+        }
       }
     })
   },
@@ -256,9 +260,11 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        _this.setData({
-          jianliList: res.data.list
-        })
+        if(res.data.status==0){
+          _this.setData({
+            jianliList: res.data.list
+          })
+        }
       }
     })
   },
@@ -273,9 +279,11 @@ Page({
       },
       success: function (res) {
         console.log(res)
-        _this.setData({
-          jobList: res.data.list
-        })
+        if(res.data.status==0){
+          _this.setData({
+            jobList: res.data.list
+          })
+        }
       }
     })
   }
