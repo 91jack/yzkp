@@ -1,9 +1,9 @@
 // page/my/resume/basicmsgedit/basicmsgedit.js
 // 新增简历基本信息
-addBasicUrl = require('../../../config').addBasicUrl;
+const addBasicUrl = require('../../../config').addBasicUrl;
 
 // 修改简历基本信息
-editBasicUrl = require('../../../config').editBasicUrl;
+const editBasicUrl = require('../../../config').editBasicUrl;
 const resumeUrl = require('../../../config').resumeUrl;
 // 上传图片
 const uploadImgUrl = require('../../../config').uploadImgUrl;
