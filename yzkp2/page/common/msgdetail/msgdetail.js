@@ -132,7 +132,7 @@ Page({
 
     if (msg.msgType == 1) {//聊天详情
       if(msg.list){
-        list = msg.list;
+        var list = msg.list;
         list.reverse();
         msgList = list.concat(msgList);
       }
