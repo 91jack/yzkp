@@ -16,14 +16,15 @@
               <!-- <view class="company">渐臻科技</view> -->
               <view class="last-time">{{item.createTime}}</view>
             </view>
-            <view class="cell">
-              <view class="msg-status">未读</view>
+            <view class="cell">              
+                <view wx:if="{{item.isRead==0}}"><view class="msg-status">未读</view></view>
+                <view wx:else><view class="msg-status">已读</view></view>              
               <view class="last-msg ">{{item.lastContent}}</view>
             </view>
           </view>
         </view>
       </navigator>
-</block>
+    </block>
       <!-- <view class="chat-item">
         <view class="avatar fl">
           <image src="/image/index/company.png"></image>

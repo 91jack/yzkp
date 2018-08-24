@@ -61,7 +61,16 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    msgList = []
+
+    //退出页面时通知服务器退出了
+    var msg = {
+      msgType: 1,
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
+      content: ''
+    }
+    socket.sendMessage(msg);
   },
 
   /**
@@ -114,15 +123,17 @@ Page({
   * 获取socket消息
   */
   getMsg: function(data){
-    var msg = JSON.parse(data);
+    var msg = data
     console.log(msg)
 
-    if (msg.msgType==1){
-      var list = msg.list;
-      list.reverse();
-      msgList = list.concat(msgList);
+    if (msg.msgType == 1) {//聊天详情
+      if(msg.list){
+        list = msg.list;
+        list.reverse();
+        msgList = list.concat(msgList);
+      }
     }
-    if(msg.msgType==2){
+    if (msg.msgType == 2) {//单条消息
       msgList.push(msg.obj);  
     }
 

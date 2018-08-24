@@ -3,8 +3,7 @@
 
 const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 
-
-
+var chatList;
 var func = function(data){
 };
 // 
@@ -29,7 +28,6 @@ function init(){
               },
               method: 'GET',
             })
-
           },
         })
       }else if(res.data == 1){
@@ -55,14 +53,15 @@ function init(){
   })
 
 
-
   //接收数据
   wx.onSocketMessage(function (res) {
+    console.log(res);
     var data = JSON.parse(res.data)
-    if (data.msgType==-1){
-      console.log(data.obj)
+    if (data.msgType==0){
+      chatList = data;
+    }else{
+      func(data)
     }
-    func(res.data)
   })
 
   //连接失败
@@ -80,8 +79,13 @@ function sendMessage(msg){
     console.log(msg)
 }
 
+function getChatList(){
+  return chatList;
+}
+
 module.exports = {
   init:init,
   sendMessage: sendMessage,
-  setFunc: setFunc
+  setFunc: setFunc,
+  getChatList: getChatList
 }
