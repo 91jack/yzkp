@@ -15,7 +15,7 @@
     </view>
   </view>
   <view class='bottom-input'>
-      <textarea auto-height='40rpx' adjust-position='true' focus='true' type="text" placeholder='请输入新的聊天' placeholder-style='color:#D7D7D7' bindinput='getValue'></textarea>
+      <textarea auto-height='70rpx' fixed='true' maxlength='-1' adjust-position='true' focus='true' type="text" placeholder='请输入新的聊天' placeholder-style='color:#D7D7D7' show-confirm-bar='false' bindinput='getValue'></textarea>
       <view bindtap='sendBtn'>发送</view>
   </view>
 </view>
