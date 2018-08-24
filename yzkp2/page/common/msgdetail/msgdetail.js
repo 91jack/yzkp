@@ -19,12 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     socket.setFunc(this.getMsg)
-
     var msg = {
-      msgType: 2,
-      resumeId: 24,
-      companyId: 1,
+      msgType: options.msgType,
+      resumeId: options.resumeId,
+      companyId: options.companyId,
       content: curPage
     }
     socket.sendMessage(msg)
@@ -67,9 +67,9 @@ Page({
     wx.showNavigationBarLoading();
 
     var msg = {
-      msgType: 2,
-      resumeId: 24,
-      companyId: 1,
+      msgType: options.msgType,
+      resumeId: options.resumeId,
+      companyId: options.companyId,
       content: curPage
     }
     socket.sendMessage(msg);
@@ -97,8 +97,8 @@ Page({
   sendBtn:function(){
     var msg = {
       msgType: 0, 
-      resumeId: 24, 
-      companyId: 1, 
+      resumeId: options.resumeId,
+      companyId: options.companyId,
       content: this.data.input
     }
     socket.sendMessage(msg);

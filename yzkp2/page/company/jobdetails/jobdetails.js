@@ -159,9 +159,17 @@ Page({
 
   },
   chat:function(){
-    wx.navigateTo({
-      url: '/page/common/msgdetail/msgdetail?msgType=0&resumeId=20&companyId=6',
+    var _this = this;
+    wx.getStorage({
+      key: 'resumeId',
+      success: function(res) {
+        var resumeId = res.data;
+        wx.navigateTo({
+          url: '/page/common/msgdetail/msgdetail?msgType=2&resumeId=' + resumeId+'&companyId=' + _this.data.companyId,
+        })
+      },
     })
+  
 
   }
 })

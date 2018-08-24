@@ -129,10 +129,10 @@ Page({
               // console.log(res)
               
               getApp().globalData.token = res.data.obj.token;
-              getApp().globalData.role = res.data.obj.type;
-              getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
-              getApp().globalData.employee = res.data.obj.employee;// 员工
-              getApp().globalData.company = res.data.obj.company;//公司
+              // getApp().globalData.role = res.data.obj.type;
+              // getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
+              // getApp().globalData.employee = res.data.obj.employee;// 员工
+              // getApp().globalData.company = res.data.obj.company;//公司
               
               _this.setData({
                 role: res.data.obj.type
@@ -147,6 +147,14 @@ Page({
                 wx.setStorage({
                   key: 'companyId',// 公司id
                   data: res.data.obj.company.id,
+                })
+              }
+
+
+              if (res.data.obj.resume != null) {
+                wx.setStorage({
+                  key: 'resumeId',// 简历id
+                  data: res.data.obj.resume.id,
                 })
               }
             
