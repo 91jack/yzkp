@@ -9,23 +9,51 @@ var func = function(data){
 };
 // 
 function init(){
-  // 建立连接
   wx.getStorage({
-    key: 'resumeId',
-    success: function (res) {
-      var resumeId = res.data;
-      console.log(resumeId)
-      console.log('已连接')
-      wx.connectSocket({
-        url: webSocketUrl + '?type=0&id=' + resumeId,
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        method: 'GET',
-      })
+    key: 'role',
+    success: function(res) {
+      console.log(res)
+      if(res.data == 0){
+        // 建立连接
+        wx.getStorage({
+          key: 'resumeId',
+          success: function (res) {
+            var resumeId = res.data;
+            console.log(resumeId)
+            console.log('已连接')
 
-    },
+            wx.connectSocket({
+              url: webSocketUrl + '?type=0&id=' + resumeId,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: 'GET',
+            })
+
+          },
+        })
+      }else if(res.data == 1){
+        wx.getStorage({
+          key: 'companyId',
+          success: function (res) {
+            var companyId = res.data;
+            console.log(companyId)
+            console.log('已连接')
+
+            wx.connectSocket({
+              url: webSocketUrl + '?type=0&id=' + companyId,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: 'GET',
+            })
+
+          },
+        })
+      }
+    }
   })
+
 
 
   //接收数据
