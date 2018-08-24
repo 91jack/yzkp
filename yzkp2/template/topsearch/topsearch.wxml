@@ -3,7 +3,7 @@
 <view class='top'>
     <view class='serach'>
       <view class='inp'>
-        <input placeholder='请输入关键字' bindconfirm='goSearch' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
+        <input placeholder='请输入关键字' bindinput='getKey' bindconfirm='goSearch' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
         <image src='/image/index/serach.png' bindtap='goSearch'></image>
       </view>
     </view>

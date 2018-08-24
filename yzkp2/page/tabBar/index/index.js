@@ -8,6 +8,7 @@ const jobListUrl = require('../../../config').jobListUrl;
 // 搜索简历
 const searchResumeUrl = require('../../../config').searchResumeUrl;
 
+
 var socket = require('../../../socket.js');
 Page({
   
@@ -19,6 +20,8 @@ Page({
     jobList: [],
     jianliList:[],
     index: 0,//选择的下拉列表下标
+    id:'',
+    key:'',
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
     navBarData: ['地区', '行业', '要求'],
     selectBar1: [//求职者
@@ -115,7 +118,7 @@ Page({
    */
   onLoad: function (options) {
     socket.init();
-
+    console.log(options)
     var _this = this;
     // 登录
     wx.login({
@@ -151,21 +154,35 @@ Page({
                   key: 'companyId',// 公司id
                   data: res.data.obj.company.id,
                 })
+                wx.setStorage({
+                  key: 'serachId',// 公司id
+                  data: "company",
+                })
                 _this.jianliListFn()
+                _this.setData({
+                  id: 'company'
+                })
               }
               if (res.data.obj.resume != null) {
                 wx.setStorage({
                   key: 'resumeId',// 简历id
                   data: res.data.obj.resume.id,
                 })
+                wx.setStorage({
+                  key: 'serachId',// 公司id
+                  data: "resume",
+                })
                 _this.jobListFn();
+                _this.setData({
+                  id: 'resume'
+                })
               }
             }
           })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
-      }
+      } 
     }); 
   },
 
@@ -184,7 +201,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    if (this.data.id == "resume") {
+      this.jobListFn()
+    } else if (this.data.id == "company") {
+      this.jianliListFn()
+    }
   },
 
   /**
@@ -207,14 +228,33 @@ Page({
   onPullDownRefresh: function () {
   
   },
-
+  bindPickerChange:function(e){
+    console.log(e)
+    this.setData({
+      key: this.data.isRecommon[e.detail.value].type,
+      index:e.detail.value
+    })
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
   
   },
-
+  // 获取输入内容
+  getKey:function(e){
+    this.setData({
+      key:e.detail.value
+    })
+  },
+  // 搜索功能
+  goSearch:function(){
+    if (this.data.id =="resume"){
+      _this.jobListFn()
+    } else if (this.data.id =="company"){
+      _this.jianliListFn()
+    }
+  },
   /**
    * 用户点击右上角分享
    */
@@ -228,7 +268,7 @@ Page({
       url: searchResumeUrl,
       data: {
         token: getApp().globalData.token,
-        key: ''
+        key: _this.data.key
       },
       success: function (res) {
         console.log(res);
@@ -245,9 +285,10 @@ Page({
       url: jobListUrl,
       data: {
         token: getApp().globalData.token,
+        key: _this.data.key
       },
       success: function (res) {
-        //console.log(res)
+        console.log(res)
         _this.setData({
           jobList: res.data.list
         })

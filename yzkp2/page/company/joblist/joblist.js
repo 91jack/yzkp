@@ -1,6 +1,8 @@
 // page/index/pages/newwork/joblist/joblist.js
 const jobListUrl = require('../../../config').jobListUrl;
 
+// 搜索简历
+const searchResumeUrl = require('../../../config').searchResumeUrl;
 Page({
 
   /**
@@ -9,6 +11,7 @@ Page({
   data: {
     role: 1,//用户角色 1：求职者 2：员工 3：企业
     jobList: [],
+    jianliList:[],
     index: 0,//选择的下拉列表下标
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
     navBarData: [ '地区', '行业', '要求'],
@@ -25,6 +28,7 @@ Page({
     payType: '',//结算方式
     sex: '',//性别
     industry: '',//行业
+    page:'1'
   },
 
   /**
@@ -50,12 +54,24 @@ Page({
       _this.setData({
         industry: options.industry
       })
+    }else if(options.demand){
+      console.log(JSON.parse(options.demand))
     }
-
-
-    _this.getJobListFn();
-    
+    wx.getStorage({
+      key: 'serachId',
+      success: function(res) {
+        _this.setData({
+          id: res.data
+        })
+        if (_this.data.id == "resume") {
+          _this.getJobListFn();
+        } else if (_this.data.id == 'company') {
+          _this.jianliListFn();
+        }
+      },
+    })
   },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -116,6 +132,33 @@ Page({
     console.log(e.detail.value)
     this.setData({
       search: e.detail.value
+    })
+  },
+  // 获取简历列表
+  jianliListFn: function () {
+    var _this = this;
+    wx.request({
+      url: searchResumeUrl,
+      data: {
+        token: getApp().globalData.token,
+        page: _this.data.page,
+        pageSize: '30',		
+        type: _this.data.type,		
+        workAddress: _this.data.region,		
+        industry: _this.data.industry,				
+        educationLevel: _this.data.education,			
+        workYear: _this.data.workYear,			
+        workPay: _this.data.monthPay,			
+        height1: '',			
+        height2: '',	
+        sex: _this.data.sex	
+      },
+      success: function (res) {
+        console.log(res);
+        _this.setData({
+          jianliList: res.data.list
+        })
+      }
     })
   },
   getJobListFn:function(){

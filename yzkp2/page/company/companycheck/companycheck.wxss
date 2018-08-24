@@ -70,3 +70,6 @@
   display: block;
   line-height: 174rpx;
 }
+.jianli .manageintro-cont{
+  margin-bottom: 250rpx;
+}

@@ -126,9 +126,8 @@
       </view>
     </view>
   </view>
-    <view class='footer'>
+  <view class='footer'>
     <view class='footer-item first'>
-
       <view class='footer-item-box' data-id='2' bindtap='call'>
         <image src='/image/index/phone.png'></image>
         <text>电话</text>
@@ -136,32 +135,21 @@
     </view>
     <view class='footer-item rest' data-id='0' bindtap='send'>
       <image class='send' src='/image/index/send.png'></image>
-      <text>发送简历</text>
+      <text>邀请面试</text>
     </view>
-    <!-- <navigator url="/page/tabBar/my/index" hover-class='none' class='footer-item rest'>
-      <image class='chat' src='/image/index/chat.png'></image>
-      <text>和Ta聊天</text>
-    </navigator> -->
     <view data-id='1' class='footer-item rest' bindtap='chat'>
       <image class='chat' src='/image/index/chat.png'></image>
       <text>和Ta聊天</text>
     </view>
-
   </view>
-  <view class='modal' bindtap='hidemodal'>
-    <view class='modal-cont'>
-      <view class='modal-tit'>您尚未创建简历!</view>
-      <view class='modal-btn'>
-        <view class='not'>暂时不用</view>
-        <navigator url="/page/resume/index/index" hover-class='none' class='create'>去创建</navigator>
-      
-      </view>
+
+
+  <view class='modal' hidden='{{!modalShow}}' bindtap='hidemodal'>
+    <view data-id='1' bindtap='showdetail' hidden='{{!inviteShow}}' class="send-msg">
+      <text class='send-intro'>邀请成功!</text>
     </view>
-    <view data-id='1' bindtap='showdetail' class="send-msg">
-      <text class='send-intro'>恭喜你,简历发送成功!</text>
-    </view>
-    <view class='call' data-id='2' bindtap='showdetail'>
-      <view class='call-number'>{{jobDetails.linkPhone}}</view>
+    <view class='call' data-id='2' hidden='{{!mobilShow}}' bindtap='showdetail'>
+      <view class='call-number'>{{linkPhone}}</view>
       <view class='call-btn'>
         <view class='not'>取消</view>
         <view class='call-out' bindtap='callnumber'>确认拨出</view>

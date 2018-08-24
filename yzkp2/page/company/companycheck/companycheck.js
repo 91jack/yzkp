@@ -13,7 +13,12 @@ Page({
     project: [],
     headImg: '',
     resumeName: '',
-    resumeId:''
+    resumeId:'',
+    companyId:'',
+    modalShow:false,
+    inviteShow:false,
+    mobilShow:false,
+    linkPhone:''
   },
 
   /**
@@ -23,6 +28,14 @@ Page({
     var _this = this;
     _this.setData({
       resumeId:options.id
+    });
+    wx.getStorage({
+      key: 'companyId',
+      success: function(res) {
+        _this.setData({
+          companyId:res.data
+        })
+      },
     })
     
   },
@@ -51,8 +64,48 @@ Page({
           work: res.data.obj.work,
           education: res.data.obj.education,
           project: res.data.obj.project,
+          linkPhone: res.data.obj.base.mobile
         })
       }
+    })
+  },
+  call:function(){
+    this.setData({
+      modalShow: true,
+      mobilShow:true
+    })
+  },
+  callnumber:function(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.linkPhone
+    })
+  },
+  // 隐藏模态框
+  hidemodal:function(){
+    this.setData({
+      modalShow:false,
+      inviteShow:false,
+      mobilShow:false
+    })
+  },
+  // 邀请面试
+  send:function(){
+    this.setData({
+      modalShow: true,
+      inviteShow: true
+    })
+    var that =this;
+    setTimeout(function(){
+      that.setData({
+        modalShow:false,
+        inviteShow:false
+      })
+    },1000)
+  },
+  chat: function () {
+    var _this = this;
+    wx.navigateTo({
+      url: '/page/common/msgdetail/msgdetail?msgType=2&resumeId=' + _this.data.resumeId + '&companyId=' + _this.data.companyId,
     })
   }
 })
