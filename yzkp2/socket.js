@@ -14,7 +14,8 @@ function init(){
     key: 'resumeId',
     success: function (res) {
       var resumeId = res.data;
-
+      console.log(resumeId)
+      console.log('已连接')
       wx.connectSocket({
         url: webSocketUrl + '?type=0&id=' + resumeId,
         header: {
@@ -22,7 +23,7 @@ function init(){
         },
         method: 'GET',
       })
-      
+
     },
   })
 
