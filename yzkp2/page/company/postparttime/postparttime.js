@@ -383,6 +383,7 @@ Page({
 
       },
       success: function (res) {
+        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: '职位发布成功',
