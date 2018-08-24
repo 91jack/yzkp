@@ -4,8 +4,7 @@ const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 //const webSocketUrl = `ws://127.0.0.1:8080/yzkp/websocket`;
 
 var chatList;
-var func = function(data){
-};
+var func;
 //  
 function init(){
   wx.getStorage({
@@ -60,7 +59,9 @@ function init(){
     if (data.msgType==0){
       chatList = data;
     }else{
-      func(data)
+      if(func){
+        func(data)
+      }      
     }
   })
 
