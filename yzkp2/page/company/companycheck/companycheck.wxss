@@ -1,1 +1,72 @@
-/* page/company/companycheck/companycheck.wxss */
+/*底部按键footer  */
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 117rpx;
+  display: flex
+}
+.footer .footer-item{
+  width: 250rpx;
+  height: 100%;
+  background:linear-gradient(to right,#6964FD,#3830EB);
+}
+.footer .footer-item.first{
+  display: flex;
+  justify-content: space-around;
+  background: #fff
+}
+.footer-item-box{
+  display: flex;
+  flex-direction: column;
+}
+.footer-item-box image{
+  width: 46rpx;
+  height: 44rpx;
+  margin-top: 21rpx;
+  margin-bottom: 12rpx;
+}
+.footer-item-box text{
+  font-size: 20rpx;
+  color: #353535
+}
+.send{
+  width: 32rpx;
+  height: 33rpx;
+}
+.chat{
+  width: 35rpx;
+  height: 34rpx;
+}
+ .rest{
+  text-align: center
+} 
+.rest image{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.rest text{
+  color: #FFFFFF;
+  font-size: 28rpx;
+  display: inline-block;
+  height: 117rpx;
+  line-height: 117rpx
+} 
+/* 模态框 */
+
+.send-msg{
+  width: 612rpx;
+  height: 174rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin: auto
+}
+.send-msg .send-intro{
+  font-size: 30rpx;
+  color: #353535;
+  text-align: center;
+  display: block;
+  line-height: 174rpx;
+}

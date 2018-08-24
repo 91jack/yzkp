@@ -78,20 +78,15 @@
   <!-- 职位列表展示 -->
   <template is="joblist" data="{{jobList}}" />
   <!-- 简历列表展示 -->
-  <navigator wx:for='{{jianliList}}' url="/page/company/jobdetails/jobdetails?id={{item.id}}" class='cont-item'>
+  <navigator wx:for='{{jianliList}}' url="/page/company/companycheck/companycheck?id={{item.id}}" class='cont-item'>
     <view class='cont-tit'>
-      <text class='title'>{{item.workName}}</text>
-      <text class='time'>/{{item.name}}</text>
+      <text class='title'>{{item.workName}}/{{item.name}}</text>
+      <text class='time'>{{item.createTime}}</text>
     </view>
 
-    <view class='cont-company cont-detail'>
-      <view class='company-info det-left'>
-        <view class='company-name'>{{item.createTime}}</view>
-      </view>
-      <view class='det-right'>{{item.pay}}</view>
-    </view>
+    
 
-    <view class='cont-detail'>
+    <view class='jianlicont cont-detail'>
       <view class='det-left'>
         <view class='left-item'>
           <image src='/image/index/area.png'></image>
@@ -109,6 +104,9 @@
           <image src='/image/index/height.png'></image>
           <text>{{item.height}}cm</text>
         </view>
+      </view>
+      <view class='left-item pay'>
+        <text>{{item.monthPay}}</text>
       </view>
     </view>
   </navigator>
