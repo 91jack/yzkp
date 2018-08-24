@@ -5,6 +5,9 @@ const loginUrl = require('../../../config').loginUrl;
 // 职位列表
 const jobListUrl = require('../../../config').jobListUrl;
 
+// 搜索简历
+const searchResumeUrl = require('../../../config').searchResumeUrl;
+
 var socket = require('../../../socket.js');
 Page({
   
@@ -14,6 +17,7 @@ Page({
   data: {
     role: 0,//用户角色 0：求职者  1：企业 2：员工
     jobList: [],
+    jianliList:[],
     index: 0,//选择的下拉列表下标
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
     navBarData: ['地区', '行业', '要求'],
@@ -142,35 +146,27 @@ Page({
                 key: 'role',
                 data: res.data.obj.type
               })
-             
               if (res.data.obj.company !=null){
                 wx.setStorage({
                   key: 'companyId',// 公司id
                   data: res.data.obj.company.id,
                 })
+                _this.jianliListFn()
               }
-
-
               if (res.data.obj.resume != null) {
                 wx.setStorage({
                   key: 'resumeId',// 简历id
                   data: res.data.obj.resume.id,
                 })
+                _this.jobListFn();
               }
-            
-
-              _this.jobListFn();
-             
-
             }
           })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
       }
-    });
-
-    
+    }); 
   },
 
 
@@ -188,7 +184,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
 
   /**
@@ -225,6 +221,24 @@ Page({
   onShareAppMessage: function () {
   
   },
+  // 获取简历列表
+  jianliListFn:function(){
+    var _this = this;
+    wx.request({
+      url: searchResumeUrl,
+      data: {
+        token: getApp().globalData.token,
+        key: ''
+      },
+      success: function (res) {
+        console.log(res);
+        _this.setData({
+          jianliList: res.data.list
+        })
+      }
+    })
+  },
+  // 获取职位列表
   jobListFn:function(){
     var _this = this;
     wx.request({
