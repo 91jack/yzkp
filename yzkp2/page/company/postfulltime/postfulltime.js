@@ -478,6 +478,14 @@ Page({
             key: 'attr',
             success: function (res) { },
           })
+          wx.removeStorage({
+            key: 'height',
+            success: function (res) { },
+          })
+          wx.removeStorage({
+            key: 'address',
+            success: function (res) { },
+          })
         }
       }
     })

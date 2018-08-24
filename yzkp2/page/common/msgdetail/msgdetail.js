@@ -14,7 +14,8 @@ Page({
     input:'',
     list:[],
     resumeId:'',
-    companyId:''
+    companyId:'',
+    value:''
   },
 
   /**
@@ -88,6 +89,7 @@ Page({
       content: curPage
     }
     socket.sendMessage(msg);
+    
   },
 
   /**
@@ -117,6 +119,9 @@ Page({
       content: this.data.input
     }
     socket.sendMessage(msg);
+    this.setData({
+      value: ''
+    })
   },
 
   /**
