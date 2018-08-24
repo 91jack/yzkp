@@ -3,7 +3,7 @@
 <import src="/template/joblist/joblist.wxml" />
 
 
-<navigator hover-class="none" url='/page/company/joblist/joblist'>
+<navigator hover-class="none" url='/page/company/joblist/joblist?index=index'>
   <template is="topsearch" />
 </navigator>
 

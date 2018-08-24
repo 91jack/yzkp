@@ -1,8 +1,11 @@
 // page/index/pages/newwork/joblist/joblist.js
+
 const jobListUrl = require('../../../config').jobListUrl;
 
 // 搜索简历
 const searchResumeUrl = require('../../../config').searchResumeUrl;
+// 获取简历列表
+const getResumeListUrl = require('../../../config').getResumeListUrl;
 Page({
 
   /**
@@ -15,7 +18,7 @@ Page({
     index: 0,//选择的下拉列表下标
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
     navBarData: [ '地区', '行业', '要求'],
-
+    id:'',
     type:'',//类型（0最新，1推荐）
     search:'',//搜索条件
     region:'',//地区
@@ -28,7 +31,10 @@ Page({
     payType: '',//结算方式
     sex: '',//性别
     industry: '',//行业
-    page:'1'
+    page:'1',
+    height1: '',
+    height2: '',
+    key:''
   },
 
   /**
@@ -38,35 +44,73 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var _this = this;
-    if(options.type){
-      _this.setData({
-        type:options.type
-      })
-    } else if (options.recruitType){
-      _this.setData({
-        recruitType: options.recruitType
-      })
-    }else if(options.city){
-      _this.setData({
-        region:options.city
-      })
-    }else if(options.industry){
-      _this.setData({
-        industry: options.industry
-      })
-    }else if(options.demand){
-      console.log(JSON.parse(options.demand))
-    }
     wx.getStorage({
       key: 'serachId',
-      success: function(res) {
+      success: function (res) {
         _this.setData({
           id: res.data
         })
-        if (_this.data.id == "resume") {
-          _this.getJobListFn();
-        } else if (_this.data.id == 'company') {
-          _this.jianliListFn();
+        if (options.index) {
+          if (_this.data.id == "resume") {
+            _this.getJobListFn();
+          } else if (_this.data.id == "company") {
+            _this.getJianliListFn();
+          }
+        } else if (options.type) {
+          _this.setData({
+            type: options.type
+          })
+          if (_this.data.id == "resume") {
+            _this.jobListFn();
+          } else if (_this.data.id == "company") {
+            _this.jianliListFn();
+          }
+        } else if (options.recruitType) {
+          _this.setData({
+            recruitType: options.recruitType
+          })
+          if (_this.data.id == "resume") {
+            _this.jobListFn();
+          } else if (_this.data.id == "company") {
+            _this.jianliListFn();
+          }
+        } else if (options.city) {
+          _this.setData({
+            region: options.city
+          })
+          if (_this.data.id == "resume") {
+            _this.jobListFn();
+          } else if (_this.data.id == "company") {
+            _this.jianliListFn();
+          }
+        } else if (options.industry) {
+          _this.setData({
+            industry: options.industry
+          })
+          if (_this.data.id == "resume") {
+            _this.jobListFn();
+          } else if (_this.data.id == "company") {
+            _this.jianliListFn();
+          }
+        } else if (options.demand) {
+          var demandData = JSON.parse(options.demand);
+          console.log(demandData);
+          _this.setData({
+            recruitType: demandData.recruitType,
+            payType: demandData.payType,
+            sex: demandData.sex,
+            monthPay: demandData.monthPay,
+            education: demandData.education,
+            workYear: demandData.workYear,
+            height1: demandData.height1,
+            height2: demandData.height2
+          })
+          console.log(_this.data.education)
+          if (_this.data.id == "resume") {
+            _this.jobListFn();
+          } else if (_this.data.id == "company") {
+            _this.jianliListFn();
+          }
         }
       },
     })
@@ -126,13 +170,25 @@ Page({
       index: e.detail.value,
       type: e.detail.value,
     })
-    this.getJobListFn();
+    if(this.data.id=='company'){
+      this.jianliListFn();
+    }else if(this.data.id='resume'){
+      this.jobListFn();
+    }
   },
+
   getValue: function (e) {
     console.log(e.detail.value)
     this.setData({
-      search: e.detail.value
+      key: e.detail.value
     })
+  },
+  search:function(e){
+    if(this.data.id=='company'){
+      this.getJianliListFn()
+    } else if (this.data.id == 'resume'){
+      this.getJobListFn()
+    }
   },
   // 获取简历列表
   jianliListFn: function () {
@@ -149,8 +205,8 @@ Page({
         educationLevel: _this.data.education,			
         workYear: _this.data.workYear,			
         workPay: _this.data.monthPay,			
-        height1: '',			
-        height2: '',	
+        height1: _this.data.height1,			
+        height2: _this.data.height2,	
         sex: _this.data.sex	
       },
       success: function (res) {
@@ -161,7 +217,8 @@ Page({
       }
     })
   },
-  getJobListFn:function(){
+  
+  jobListFn:function(){
     var _this = this;
     wx.request({
       url: jobListUrl,
@@ -169,18 +226,53 @@ Page({
         token: getApp().globalData.token,
         type: _this.data.type,//类型（0最新，1推荐）
         recruitType: _this.data.recruitType,//招聘类型（0：  全职   1：兼职）
-        search: _this.data.search,//搜索条件
+        key: _this.data.key,//搜索条件
         region: _this.data.region,//地区
         job: '',//职位
-        education: '',//学历
-        workYear: '',//工作年限
-        monthPay: '',//月薪
+        education: _this.data.education,//学历
+        workYear: _this.data.workYear,//工作年限
+        monthPay: _this.data.monthPay,//月薪
         companyId: '',//公司id
-        payType: '',//结算方式
-        sex: '',//性别
+        payType: _this.data.payType,//结算方式
+        sex: _this.data.sex,//性别
         industry: _this.data.industry,//行业
       },
       success: function (res) {
+        _this.setData({
+          jobList: res.data.list
+        })
+      }
+    })
+  },
+
+  // 获取简历列表
+  getJianliListFn: function () {
+    var _this = this;
+    wx.request({
+      url: searchResumeUrl,
+      data: {
+        token: getApp().globalData.token,
+        key: _this.data.key
+      },
+      success: function (res) {
+        console.log(res);
+        _this.setData({
+          jianliList: res.data.list
+        })
+      }
+    })
+  },
+  // 获取职位列表
+  getJobListFn: function () {
+    var _this = this;
+    wx.request({
+      url: jobListUrl,
+      data: {
+        token: getApp().globalData.token,
+        key: _this.data.key
+      },
+      success: function (res) {
+        console.log(res)
         _this.setData({
           jobList: res.data.list
         })

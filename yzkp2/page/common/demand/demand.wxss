@@ -45,6 +45,33 @@ page{
   justify-content: space-around;
   align-items: center;
 }
+.bar-request-detail .detail-box.height-box{
+  display: flex;
+  border: none;
+  margin-right: 0;
+}
+.bar-request-detail .detail-box.height-box .lower{
+  display: flex;
+  align-items: center;
+}
+.bar-request-detail .detail-box.height-box .lower .cm{
+  margin-left: 10rpx;
+}
+.bar-request-detail .detail-box.height-box .lower .qujian{
+  margin-right: 10rpx;
+}
+.bar-request-detail .detail-box.height-box .lower text{
+  font-size: 24rpx;
+  color: #868686
+}
+.bar-request-detail .detail-box.height-box .lower input{
+  width:137rpx;
+  height:39rpx;
+  background:rgba(235,234,253,1);
+  font-size: 22rpx;
+  color: #353535;
+  line-height: 39rpx;
+}
 .request-btn{
   background: #fff;
   position: fixed;
@@ -60,7 +87,7 @@ page{
 }
 .request-btn-left,
 .request-btn-right{
-  width: 100%;
+  width: 375rpx;
   height: 100%;
   text-align: center;
   line-height: 84rpx;

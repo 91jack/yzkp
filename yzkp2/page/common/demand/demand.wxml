@@ -1,13 +1,13 @@
 <!--page/common/demand/demand.wxml-->
 <view class='demand'>
   <view class='bar-request'>
-    <view class='bar-request-item'>
+    <view class='bar-request-item' hidden='{{id=="company"}}'>
       <view class='bar-request-tit'>职位类别</view>
       <view class='bar-request-detail'>
         <view data-type="zhibie" bindtap='choose' wx:for="{{workData}}" data-idx='{{index}}' class='detail-box {{workDataActive==index?"active":""}}'>{{item}}</view>
       </view>
     </view>
-    <view class='bar-request-item'>
+    <view class='bar-request-item' hidden='{{id=="company"}}'>
       <view class='bar-request-tit'>结算方式</view>
       <view class='bar-request-detail'>
         <view data-type="style" bindtap='choose' data-idx='{{index}}' wx:for="{{payData}}" class='detail-box {{payDataActive==index?"active":""}}'>{{item}}</view>
@@ -40,13 +40,30 @@
         <view data-type="workexercise" bindtap='choose' data-idx='{{index}}' wx:for="{{workYearArr}}" class='detail-box {{workYearArrActive==index?"active":""}}'>{{item}}</view>
       </view>
     </view>
+    <view class='bar-request-item' hidden='{{id=="resume"}}'>
+      <view class='bar-request-tit'>身高要求</view>
+      <view class='bar-request-detail'>
+        <view data-type="height" bindtap='choose' class='detail-box {{heightActive?"active":""}}'>不限</view>
+        <view class='detail-box height-box'>
+          <view class='lower'>
+            <text class='qujian'>输入区间:</text>
+            <input placeholder='最低要求' data-type='lower' bindtap='setActive' bindblur='getHeight' placeholder-style='color:#AEAEAE'></input>
+            <text class='cm'>CM —— </text>
+          </view>
+           <view class='lower'>
+            <input placeholder='最高要求' data-type='higher' bindinput='getHeight'  placeholder-style='color:#AEAEAE'></input>
+            <text class='cm'>CM</text>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
   <view class='request-btn'>
     <navigator url="/page/company/joblist/joblist" hover-class='none'>
       <view class='request-btn-left'>取消</view>
     </navigator>
-    <navigator url="/page/company/joblist/joblist?demand={{searchData}}" hover-class='none'>   
-      <view class='request-btn-right'>确定</view>
-    </navigator>    
+    <!-- <navigator url="/page/company/joblist/joblist?demand={{searchData}}" hover-class='none'>    -->
+      <view class='request-btn-right' bindtap='returnBack'>确定</view>
+    <!-- </navigator>     -->
   </view>
 </view>

@@ -18,13 +18,17 @@ Page({
     educationArrActive: null,
     workYearArrActive: null,
     sexActive: null,
+    heightActive:false,
+    id:'',
     searchData:{
       recruitType:'', //全职0 兼职1
       payType:'',     //结算方式
       sex:'',
       monthPay:'',    //月薪
       education:'',  //学历
-      workYear:''   //工作经验  
+      workYear:'',   //工作经验  
+      height1:'',
+      height2:''
     }
   },
 
@@ -57,6 +61,14 @@ Page({
         })
       },
     });
+    wx.getStorage({
+      key: 'serachId',
+      success: function(res) {
+        that.setData({
+          id:res.data
+        })
+      },
+    })
   },
 
   /**
@@ -72,39 +84,75 @@ Page({
   onShow: function () {
 
   },
+  // 获取身高
+  getHeight:function(e){
+    if(e.currentTarget.dataset.type=='lower'){
+      var height1 = 'searchData.height1'
+      this.setData({
+        [height1]: e.detail.value
+      })
+    } else if(e.currentTarget.dataset.type == 'higher'){
+      var height2 = 'searchData.height2'
+      this.setData({
+        [height2]: e.detail.value
+      })
+    }
+  },
+  // 取消高亮
+  setActive:function(){
+    this.setData({
+      heightActive: false
+    })
+  },
   choose: function (e) {
     var attr = e.currentTarget.dataset.type;
     var i = Number(e.currentTarget.dataset.idx);
     if (attr == 'zhibie') { //选择职别
+      var recruitType = 'searchData.recruitType'
       this.setData({
         workDataActive: i,
-        recruitType:i
+        [recruitType]:i
       })
     } else if (attr == 'style') { //结算方式
+      var payType = "searchData.payType"
       this.setData({
         payDataActive: i,
-        payType: this.data.payData[i]
+        [payType]: this.data.payData[i]
       })
     } else if (attr == 'monthpay') { //月薪
+      var monthPay = 'searchData.monthPay'
       this.setData({
         monthPayArrActive: i,
-        monthPay: this.data.monthPayArr[i]
+        [monthPay]: i
       })
     } else if (attr == 'sex') { //性别
+      var sex = 'searchData.sex'
       this.setData({
         sexActive: i,
-        sex: this.data.sexData[i]
+        [sex]: i
       })
     } else if (attr == 'xueli') { //学历
+      var education = 'searchData.education'
       this.setData({
         educationArrActive: i,
-        education: this.data.educationArr[i]
+        [education]: i
       })
     } else if (attr == 'workexercise') { //工作经验
+      var workYear ='searchData.workYear'
       this.setData({
         workYearArrActive: i,
-        workYear: this.data.workYearArr[i]
+        [workYear]: i
+      })
+    } else if (attr == 'height') { //height
+      this.setData({
+        heightActive: true
       })
     }
+  },
+  returnBack:function(){
+    var serach = JSON.stringify(this.data.searchData)
+    wx.navigateTo({
+      url: '/page/company/joblist/joblist?demand=' + serach
+    })
   }
 })
