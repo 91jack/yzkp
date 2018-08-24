@@ -5,7 +5,6 @@ var host = "https://www.zgdrkj.cn/yzkp/app/";
 // var host = "http://192.168.1.123:8080/yzkp/app/";
 
 
-
 var config = {
   // 下面的地址配合云端 Server 工作
 

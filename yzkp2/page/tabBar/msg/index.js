@@ -14,23 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var _this = this;
-    // wx.getStorage({
-    //   key: 'chatList',
-    //   success: function(res) {
-    //     //console.log(JSON.parse(res.data))
-    //     _this.setData({
-    //       chatList: res.data
-    //     })
-    //   },
-    // })
+    this.setData({ chatList: socket.getChatList().list })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({ chatList: socket.getChatList().list})
+    
   },
 
   /**
@@ -58,7 +49,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.setData({ chatList: socket.getChatList().list }, function(){
+      wx.stopPullDownRefresh();
+    })  
   },
 
   /**

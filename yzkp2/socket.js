@@ -6,7 +6,7 @@ const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 var chatList;
 var func = function(data){
 };
-// 
+//  
 function init(){
   wx.getStorage({
     key: 'role',

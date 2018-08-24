@@ -226,7 +226,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    if (this.data.id == "resume") {
+      this.jobListFn(function(){
+        wx.stopPullDownRefresh();
+      })
+    } else if (this.data.id == "company") {
+      this.jianliListFn(function () {
+        wx.stopPullDownRefresh();
+      })
+    }
   },
   bindPickerChange:function(e){
     console.log(e)
@@ -262,7 +270,7 @@ Page({
   
   },
   // 获取简历列表
-  jianliListFn:function(){
+  jianliListFn: function (callback){
     var _this = this;
     wx.request({
       url: searchResumeUrl,
@@ -274,12 +282,16 @@ Page({
         console.log(res);
         _this.setData({
           jianliList: res.data.list
+        }, function () {
+          if(callback){
+            callback();
+          }          
         })
       }
     })
   },
   // 获取职位列表
-  jobListFn:function(){
+  jobListFn: function (callback){
     var _this = this;
     wx.request({
       url: jobListUrl,
@@ -291,6 +303,10 @@ Page({
         console.log(res)
         _this.setData({
           jobList: res.data.list
+        },function(){
+          if (callback) {
+            callback();
+          }  
         })
       }
     })

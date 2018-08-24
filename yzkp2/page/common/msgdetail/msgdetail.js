@@ -79,7 +79,6 @@ Page({
   onPullDownRefresh: function () {
     curPage++;
     loadMore = true;
-    wx.showNavigationBarLoading();
 
     var msg = {
       msgType: 2,
@@ -143,7 +142,6 @@ Page({
 
     this.setData({ list: msgList }, function(){
       if(loadMore){
-        wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
         wx.pageScrollTo({ scrollTop: 0 })
       }else{
