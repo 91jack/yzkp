@@ -20,6 +20,10 @@ function init(){
 
   //接收数据
   wx.onSocketMessage(function (res) {
+    var data = JSON.parse(res.data)
+    if (data.msgType==-1){
+      console.log(data.obj)
+    }
     func(res.data)
   })
 
