@@ -19,8 +19,9 @@ Page({
     companyNature:'',
     companyScale:'',
     companyIndustry:'',
-    industryArr:[],   
-    industryIndex:0,
+    industryArr:[],
+    pickIndustryArr:[],
+    industryIndex:[11,0],
     industryHide:false,
     companySizeArr:[],
     companySizeIndex:0,
@@ -38,15 +39,26 @@ Page({
     wx.getStorage({
       key: 'industryArr',
       success: function(res) {
+        console.log(res);
+        var tit = [];
         for (var i = 0; i < res.data.length; i++) {
-          that.data.industryArr.push(res.data[i].name)
-        }
-        
-
+          tit.push(res.data[i].name)
+          var list = [];
+          for( var j=0;j<res.data[i].list.length;j++){
+            list.push(res.data[i].list[j].name)
+          }
+          that.data.industryArr.push(list)
+        }  
+        that.data.industryArr.push(tit);
         that.setData({
           industryArr: that.data.industryArr
         })
-
+        var pickIndustryArr0 = "pickIndustryArr[0]";   
+        var pickIndustryArr1 = "pickIndustryArr[1]";   
+        that.setData({
+          [pickIndustryArr0]: that.data.industryArr[11],
+          [pickIndustryArr1]:that.data.industryArr[0],
+        })
       },
     })
     wx.getStorage({
@@ -150,11 +162,42 @@ Page({
       })
     } else if (i == 2) {//选择公司行业
       this.setData({
-        industryIndex: e.detail.value,
-        industryHide: true,
-        companyIndustry: this.data.industryArr[e.detail.value]
+        companyIndustry:''
       })
+      console.log(e);
+      var ind0 = e.detail.value[0];
+      var ind1 = e.detail.value[1];
+      var pic0 = this.data.pickIndustryArr[0];
+      var pic1 = this.data.pickIndustryArr[1];
+      // var ind1 = this.data.pickIndustryArr[1];
+      this.setData({
+        // industryIndex: e.detail.value,
+        industryHide: true,
+        companyIndustry: pic0[ind0] + '-' + pic1[ind1]
+      })
+      console.log(this.data.companyIndustry)
     }
+  },
+  // 多列选择器
+  bindMultiPickerColumnChange:function(e){
+    console.log(e);
+    var value = Number(e.detail.value);
+    var column = Number(e.detail.column);
+    var data = {
+      pickIndustryArr: this.data.pickIndustryArr,
+      industryIndex: this.data.industryIndex
+    };
+    data.industryIndex[column] = value;
+    if (column==0){
+      data.pickIndustryArr[1] = this.data.industryArr[value];
+      data.industryIndex[0] = value;
+      data.industryIndex[1] = 0;
+    } else if(column==1){
+      data.industryIndex[1] = value;
+    }
+    console.log(this.data.industryIndex)
+    console.log(data.industryIndex)
+    this.setData(data)
   },
   // 立即认证
   nowRz:function(){

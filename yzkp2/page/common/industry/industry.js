@@ -13,7 +13,8 @@ Page({
     _profession: '',
     _job: '',
     type: '',
-    returnIndustryData: ''
+    returnIndustryData: '',
+    locNav:'计算机/互联网/通信/电子'
   },
 
   /**
@@ -58,10 +59,11 @@ Page({
     console.log(e.currentTarget.dataset.industrynav)
     // console.log(e.currentTarget.dataset.value)
     var industrynav = e.currentTarget.dataset.industrynav;
-    console.log(_this.data.industry[industrynav])
+    console.log(_this.data.industry[industrynav].name);
     this.setData({
       _industrynav: industrynav,
-      currentSelect: _this.data.industry[industrynav].list
+      currentSelect: _this.data.industry[industrynav].list,
+      locNav: _this.data.industry[industrynav].name
     })
   },
   // 行业二级筛选
@@ -74,7 +76,9 @@ Page({
       profession: _this.data.currentSelect[professionIndex].list,
       returnIndustryData: e.currentTarget.dataset.value
     })
-
+    var industry =  _this.data.returnIndustryData
+    // var industry = _this.data.locNav + '-' + _this.data.returnIndustryData
+    
 
 
     var url = '';
@@ -82,10 +86,10 @@ Page({
     console.log(type)
     switch (type) {
       case 'intension': //求职意向
-        url = '/page/resume/jobintensionedit/jobintensionedit?industry=' + _this.data.returnIndustryData;
+        url = '/page/resume/jobintensionedit/jobintensionedit?industry=' + industry;
         break;
       case 'industry': // 职位列表
-        url = '/page/company/joblist/joblist?industry=' + _this.data.returnIndustryData;
+        url = '/page/company/joblist/joblist?industry=' + industry;
         break;
     }
     console.log(url)

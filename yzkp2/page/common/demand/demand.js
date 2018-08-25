@@ -24,9 +24,9 @@ Page({
       recruitType:'', //全职0 兼职1
       payType:'',     //结算方式
       sex:'',
-      monthPay:'',    //月薪
-      education:'',  //学历
-      workYear:'',   //工作经验  
+      monthPay:['',''],    //月薪
+      education:['',''],  //学历
+      workYear:['',''],   //工作经验  
       height1:'',
       height2:''
     }
@@ -120,10 +120,12 @@ Page({
         [payType]: this.data.payData[i]
       })
     } else if (attr == 'monthpay') { //月薪
-      var monthPay = 'searchData.monthPay'
+      var monthPay0 = 'searchData.monthPay[0]';
+      var monthPay1 = 'searchData.monthPay[1]';
       this.setData({
         monthPayArrActive: i,
-        [monthPay]: i
+        [monthPay0]: i,
+        [monthPay1]: this.data.monthPayArr[i]
       })
     } else if (attr == 'sex') { //性别
       var sex = 'searchData.sex'
@@ -132,16 +134,20 @@ Page({
         [sex]: i
       })
     } else if (attr == 'xueli') { //学历
-      var education = 'searchData.education'
+      var education0 = 'searchData.education[0]';
+      var education1 = 'searchData.education[1]'
       this.setData({
         educationArrActive: i,
-        [education]: i
+        [education0]: i,
+        [education1]: this.data.educationArr[i]
       })
     } else if (attr == 'workexercise') { //工作经验
-      var workYear ='searchData.workYear'
+      var workYear0 = 'searchData.workYear[0]';
+      var workYear1 ='searchData.workYear[1]';
       this.setData({
         workYearArrActive: i,
-        [workYear]: i
+        [workYear0]: i,
+        [workYear1]: this.data.workYearArr[i]
       })
     } else if (attr == 'height') { //height
       this.setData({
