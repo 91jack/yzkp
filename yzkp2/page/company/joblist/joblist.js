@@ -93,22 +93,30 @@ Page({
             _this.jianliListFn();
           }
         } else if (options.demand) {
-          var demandData = JSON.parse(options.demand);
-          console.log(demandData);
-          _this.setData({
-            recruitType: demandData.recruitType,
-            payType: demandData.payType,
-            sex: demandData.sex,
-            monthPay: demandData.monthPay,
-            education: demandData.education,
-            workYear: demandData.workYear,
-            height1: demandData.height1,
-            height2: demandData.height2
-          })
-          console.log(_this.data.education)
+          var demandData = JSON.parse(options.demand);     
           if (_this.data.id == "resume") {
+            _this.setData({
+              recruitType: demandData.recruitType,
+              payType: demandData.payType,
+              sex: demandData.sex,
+              monthPay: demandData.monthPay[1],
+              education: demandData.education[1],
+              workYear: demandData.workYear[1],
+              height1: demandData.height1,
+              height2: demandData.height2
+            })
             _this.jobListFn();
           } else if (_this.data.id == "company") {
+            _this.setData({
+              recruitType: demandData.recruitType,
+              payType: demandData.payType,
+              sex: demandData.sex,
+              monthPay: demandData.monthPay[0],
+              education: demandData.education[0],
+              workYear: demandData.workYear[0],
+              height1: demandData.height1,
+              height2: demandData.height2
+            })
             _this.jianliListFn();
           }
         }
@@ -226,6 +234,7 @@ Page({
         industry: _this.data.industry,//行业
       },
       success: function (res) {
+        console.log(res);
         if(res.data.status==0){
           _this.setData({
             jobList: res.data.list

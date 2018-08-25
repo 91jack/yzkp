@@ -71,10 +71,10 @@
     </picker>
   </view>
   <view class='re-company'>
-    <picker bindchange="bindPicker" data-idx="2"  value="{{industryIndex}}" range="{{industryArr}}">
+    <picker mode="multiSelector" data-idx="2" bindchange="bindPicker" bindcolumnchange="bindMultiPickerColumnChange" value="{{industryIndex}}" range="{{pickIndustryArr}}">
       <view class='re-company-item'>
         <text hidden='{{industryHide}}'>公司行业</text>
-        <text hidden='{{!industryHide}}'>{{industryArr[industryIndex]}}</text>
+        <text hidden='{{!industryHide}}'>{{companyIndustry}}</text>
         <image src='/image/index/return.png'></image>
       </view>
     </picker>

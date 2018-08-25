@@ -82,7 +82,7 @@
             </view>
           </navigator>
         </view>
-        <view class="manageintro-cont-item-detail" hidden='{{baseInfo.workName==""&&baseInfo==""}}'>
+        <view class="manageintro-cont-item-detail" hidden='{{!baseInfo.workName}}'>
           <text class="in-info want">{{inten}}</text>
         </view>
       </view>
