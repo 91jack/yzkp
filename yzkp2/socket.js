@@ -5,6 +5,7 @@ const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 
 var chatList;
 var func;
+var isConnect;
 //  
 function init(){
   wx.getStorage({
@@ -26,6 +27,10 @@ function init(){
                 'content-type': 'application/x-www-form-urlencoded'
               },
               method: 'GET',
+              success: function(){
+                isConnect = true;
+                console.log('websocket已连接')
+              }
             })
           },
         })
@@ -43,6 +48,10 @@ function init(){
                 'content-type': 'application/x-www-form-urlencoded'
               },
               method: 'GET',
+              success: function () {
+                isConnect = true;
+                console.log('websocket已连接')
+              }
             })
 
           },
@@ -67,7 +76,13 @@ function init(){
 
   //连接失败
   wx.onSocketError(function () {
+    isConnect = false;
     console.log('websocket连接失败！');
+  })
+
+  wx.onSocketClose(function(){
+    isConnect = false;
+    console.log('websocket已关闭')
   })
 }
 
@@ -84,9 +99,14 @@ function getChatList(){
   return chatList;
 }
 
+function getSocketStatus(){
+  return isConnect;
+}
+
 module.exports = {
   init:init,
   sendMessage: sendMessage,
   setFunc: setFunc,
-  getChatList: getChatList
+  getChatList: getChatList,
+  getSocketStatus: getSocketStatus
 }
