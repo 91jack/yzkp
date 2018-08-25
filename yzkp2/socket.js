@@ -6,6 +6,7 @@ const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 var chatList;
 var func;
 var isConnect;
+var noDida = true;
 //  
 function init(){
   wx.getStorage({
@@ -28,8 +29,10 @@ function init(){
               },
               method: 'GET',
               success: function(){
-                isConnect = true;
-                console.log('websocket已连接')
+                isConnect = true
+                if(noDida){
+                  dida()
+                }                
               }
             })
           },
@@ -40,7 +43,6 @@ function init(){
           success: function (res) {
             var companyId = res.data;
             console.log(companyId)
-            console.log('已连接')
 
             wx.connectSocket({
               url: webSocketUrl + '?type=1&id=' + companyId,
@@ -49,8 +51,10 @@ function init(){
               },
               method: 'GET',
               success: function () {
-                isConnect = true;
-                console.log('websocket已连接')
+                isConnect = true
+                if (noDida) {
+                  dida()
+                }   
               }
             })
 
@@ -101,6 +105,22 @@ function getChatList(){
 
 function getSocketStatus(){
   return isConnect;
+}
+
+//每隔20秒钟发送一次心跳，避免websocket连接因超时而自动断开
+function dida(){
+  noDida = false
+
+  setInterval(function () { 
+    if (isConnect){
+      sendMessage({
+        msgType: -1,
+        resumeId: 0,
+        companyId: 0,
+        content: ''
+      })
+    }    
+  }, 20000);
 }
 
 module.exports = {
