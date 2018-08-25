@@ -1,5 +1,4 @@
 // page/common/msgdetail/msgdetail.js
-const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 var socket = require('../../../socket.js');
 
 var msgList = [];
@@ -22,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log('opts:' + options)
     this.setData({
       resumeId: options.resumeId,
       companyId: options.companyId,
@@ -80,7 +79,6 @@ Page({
   onPullDownRefresh: function () {
     curPage++;
     loadMore = true;
-    wx.showNavigationBarLoading();
 
     var msg = {
       msgType: 2,
@@ -133,7 +131,7 @@ Page({
 
     if (msg.msgType == 1) {//聊天详情
       if(msg.list){
-        list = msg.list;
+        var list = msg.list;
         list.reverse();
         msgList = list.concat(msgList);
       }
@@ -144,7 +142,6 @@ Page({
 
     this.setData({ list: msgList }, function(){
       if(loadMore){
-        wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
         wx.pageScrollTo({ scrollTop: 0 })
       }else{

@@ -14,7 +14,7 @@ base.industry();//行业
 const loginUrl = require('./config').loginUrl;
 App({
   onLaunch: function () {
-    
+   
   },
   globalData: {
     token:'',

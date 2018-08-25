@@ -1,12 +1,11 @@
 //线上
-//const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
+const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 
-const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
+//const webSocketUrl = `ws://127.0.0.1:8080/yzkp/websocket`;
 
 var chatList;
-var func = function(data){
-};
-// 
+var func;
+//  
 function init(){
   wx.getStorage({
     key: 'role',
@@ -60,7 +59,9 @@ function init(){
     if (data.msgType==0){
       chatList = data;
     }else{
-      func(data)
+      if(func){
+        func(data)
+      }      
     }
   })
 
