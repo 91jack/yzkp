@@ -1,5 +1,7 @@
 /* page/tabBar/msg/index.wxss */
+
 /* tab切换 */
+
 .chat-record-num {
   width: 27rpx;
   height: 27rpx;
@@ -7,40 +9,44 @@
   font-size: 20rpx;
   text-align: center;
   border-radius: 50%;
-  background: #F39800;
-  color:#fff;
+  background: #f39800;
+  color: #fff;
   position: absolute;
-  top:17rpx;
-  right:86rpx;
+  top: 17rpx;
+  right: 86rpx;
 }
 
-.chats-list {
-  margin: 9rpx auto;
-}
 .chat-item {
   height: 84rpx;
   padding: 35rpx 28rpx;
   background: #fff;
-  border-bottom:1rpx solid #E8E8E8;
+  border-bottom: 1rpx solid #e8e8e8;
+  border-radius: 10rpx;
+  margin: 10rpx 15rpx 10rpx 15rpx;
 }
+
 .chat-item .avatar {
   width: 85rpx;
-  height:85rpx;
+  height: 85rpx;
 }
+
 .chat-item .avatar image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
+
 .chat-item-info {
   width: 500rpx;
   margin-left: 25rpx;
 }
+
 .chat-item-info .cell {
   line-height: 40rpx;
 }
+
 .chat-item-info .cell view {
-  float:left;
+  float: left;
   margin-right: 30rpx;
 }
 
@@ -49,61 +55,95 @@
   color: #353535;
   font-weight: bold;
 }
+
 .company {
   font-size: 24rpx;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
+
 .last-time {
   font-size: 24rpx;
-  color:#929292;
+  color: #929292;
   position: absolute;
-  right:0;
+  right: 0;
 }
+
 .msg-status {
   width: 76rpx;
-  /* height: 30rpx; */
-  /* line-height: 30rpx; */
-  background: #E8E8E8;
+  /* height: 30rpx; *//* line-height: 30rpx; */
+  background: #e8e8e8;
   text-align: center;
   font-size: 22rpx;
 }
+
 .last-msg {
   font-size: 26rpx;
-  color:#929292;
+  color: #929292;
 }
 
+.show {
+  margin: 9rpx auto;
+}
 
-
-
-/* 消息通知 */
-.notices-list {
-  width: 702rpx;
+.hide {
   margin: 9rpx auto;
   display: none;
 }
+
 .notice-item {
   min-height: 70rpx;
   padding: 28rpx;
-  width: 646rpx;
   background: #fff;
   border-radius: 10rpx;
-  margin-bottom: 10rpx;
+  margin: 10rpx 15rpx 10rpx 15rpx;
 }
+
 .cell {
   line-height: 1.5;
 }
+
 .notice-item-title {
   display: block;
   font-size: 28rpx;
   font-weight: bold;
 }
+
 .notice-item-time {
   font-size: 24rpx;
-  color:#929292;
+  color: #929292;
 }
+
 .notice-item-intro {
   clear: both;
   font-size: 26rpx;
   line-height: 1.5;
   color: #868686;
+}
+
+.nav {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  background-color:#fff;
+}
+
+.default {
+  line-height: 80rpx;
+  text-align: center;
+  flex: 1;
+  border-right: 1px solid #E8E8E8;
+  color: #000;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.selected {
+  line-height: 80rpx;
+  text-align: center;
+  color: #F39800;
+  flex: 1;
+  border-right: 1px solid #E8E8E8;
+  font-weight: bold;
+  font-size: 28rpx;
 }

@@ -1,72 +1,50 @@
 <!--page/tabBar/msg/index.wxml-->
 <view class="tab-select">
   <view class="tab-select-content">
-    <!-- 聊天记录 -->
-    <view class="chats-list">
-    <block  wx:for="{{chatList}}">
-      <navigator url='/page/common/msgdetail/msgdetail?companyId={{item.company_id}}&resumeId={{item.resumeId}}' hover-class='none'>
-        <view class="chat-item">
-          <!-- <view class="avatar fl">
-            <image src="/image/index/company.png"></image>
-          </view> -->
+    <view class="nav">
+      <view class="{{chatSelected?'selected':'default'}}" bindtap="switchChat">聊天记录</view>
+      <view class="{{noticeSelected?'selected':'default'}}" bindtap="switchNotice">消息通知</view>
+    </view>
 
-          <view class="chat-item-info fl">
-            <view class="cell">
-              <view class="chat-other">{{item.name}}</view>
-              <!-- <view class="company">渐臻科技</view> -->
-              <view class="last-time">{{item.createTime}}</view>
+    <!-- 聊天记录 -->
+    <view class="{{chatSelected?'show':'hide'}}">
+      <block  wx:for="{{chatList}}">
+        <navigator url='/page/common/msgdetail/msgdetail?companyId={{item.company_id}}&resumeId={{item.resumeId}}' hover-class='none'>
+          <view class="chat-item">
+            <!-- <view class="avatar fl">
+              <image src="/image/index/company.png"></image>
+            </view> -->
+
+            <view class="chat-item-info fl">
+              <view class="cell">
+                <view class="chat-other">{{item.name}}</view>
+                <!-- <view class="company">渐臻科技</view> -->
+                <view class="last-time">{{item.createTime}}</view>
+              </view>
+              <view class="cell">              
+                  <view wx:if="{{item.isRead==0}}"><view class="msg-status">未读</view></view>
+                  <view wx:else><view class="msg-status">已读</view></view>              
+                <view class="last-msg ">{{item.lastContent}}</view>
+              </view>
             </view>
-            <view class="cell">              
-                <view wx:if="{{item.isRead==0}}"><view class="msg-status">未读</view></view>
-                <view wx:else><view class="msg-status">已读</view></view>              
-              <view class="last-msg ">{{item.lastContent}}</view>
-            </view>
           </view>
-        </view>
-      </navigator>
-    </block>
-      <!-- <view class="chat-item">
-        <view class="avatar fl">
-          <image src="/image/index/company.png"></image>
-        </view>
-        <view class="chat-item-info fl">
-          <view class="cell">
-            <view class="chat-other">张伟</view>
-            <view class="company">渐臻科技</view>
-            <view class="last-time fr">07-12 9:00</view>
-          </view>
-          <view class="cell">
-            <view class="msg-status">已读</view>
-            <view class="last-msg">请把个人照片发过来</view>
-          </view>
-        </view>
-      </view>-->
+        </navigator>
+      </block>
     </view> 
 
     <!-- 消息通知 -->
-    <view class="notices-list">
-      
-      <view class="notice-item" >
-        <view class="cell">
-          <view class="notice-item-title fl">您的简历一被婉拒</view>
-          <view class="notice-item-time fr">07-12 9:00</view>
+    <view class="{{noticeSelected?'show':'hide'}}">   
+      <block  wx:for="{{noticeList}}">   
+        <view class="notice-item" >
+          <view class="cell">
+            <view class="notice-item-title fl">{{item.title}}</view>
+            <view class="notice-item-time fr">{{item.createTime}}</view>
+          </view>
+          <view class="notice-item-intro">{{item.content}}</view>
         </view>
-        <view class="notice-item-intro">请把送至我的邮箱请把简历发送至我的邮箱请把简历发送至我的邮箱请把简历发送至我的邮箱</view>
-      </view>
-
-       <view class="notice-item" >
-        <view class="cell">
-          <view class="notice-item-title fl">您的简历一被婉拒</view>
-          <view class="notice-item-time fr">07-12 9:00</view>
-        </view>
-        <view class="notice-item-intro">我的邮箱请把简历发送至我的邮箱</view>
-      </view>
-      
+      </block>
     </view>
-
   </view>
-
-  
 </view>
 
 

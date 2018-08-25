@@ -1,5 +1,6 @@
 // page/tabBar/msg/index.js
 var socket = require('../../../socket.js');
+const noticeUrl = require('../../../config').noticeUrl;
 
 Page({
 
@@ -7,7 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chatList:null
+    chatList:null,
+    noticeList:null,
+    chatSelected: true,
+    noticeSelected: false
   },
 
   /**
@@ -66,5 +70,23 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  //
+  switchChat: function(){
+    this.setData({ chatSelected: true, noticeSelected: false, chatList: socket.getChatList().list})
+  },
+
+  switchNotice: function () {
+    var _this = this;
+    wx.request({
+      url: noticeUrl,
+      data: { token: getApp().globalData.token},
+      success: function (res) {
+        _this.setData({ chatSelected: false, noticeSelected: true, noticeList: res.data.list ? res.data.list : null })
+      }
+    })
+
+    
   }
 })

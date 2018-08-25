@@ -2,7 +2,7 @@
 var host = "https://www.zgdrkj.cn/yzkp/app/";
 
 // 本地
-// var host = "http://127.0.0.1:8080/yzkp/app/";
+//var host = "http://127.0.0.1:8080/yzkp/app/";
 
 
 var config = {
@@ -159,6 +159,9 @@ var config = {
 
   // 上传图片
   uploadImgUrl: `${host}image/upload.json`,
+
+  //消息通知列表
+  noticeUrl: `${host}notice/list.json`
 };
 
 module.exports = config
