@@ -237,9 +237,10 @@ Page({
         success: function (res) {
           console.log(res)
           if (res.data.status == 0) {
-            wx.navigateTo({
-              url: '/page/resume/index/index',
-            })
+            wx.navigateBack(1)
+            // wx.navigateTo({
+            //   url: '/page/resume/index/index',
+            // })
           }
         }
       })
@@ -268,9 +269,10 @@ Page({
             data: res.data.obj.id,
           })
           if (res.data.status == 0) {
-            wx.navigateTo({
-              url: '/page/resume/index/index',
-            })
+            wx.navigateBack(1)
+            // wx.navigateTo({
+            //   url: '/page/resume/index/index',
+            // })
           }
         }
       })
