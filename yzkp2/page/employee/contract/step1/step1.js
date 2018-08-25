@@ -156,6 +156,12 @@ Page({
             key: 'employeesName',
             data: _this.data.name,
           })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon:'none',
+            duration: 2000
+          })
         }
       }
     })
