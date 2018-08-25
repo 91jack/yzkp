@@ -30,7 +30,7 @@ Page({
     wx.getStorage({
       key: 'resumeId',
       success: function(res) {
-        resumeId = res.data;
+        //resumeId = res.data;
         _this.setData({
           resumeId: res.data
         })
