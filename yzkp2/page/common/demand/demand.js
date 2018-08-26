@@ -156,9 +156,26 @@ Page({
     }
   },
   returnBack:function(){
+    let pages = getCurrentPages();//当前页面
+    let prevPage = pages[pages.length - 2];//上一页面
+    for (var key in this.data.searchData) {
+      if (this.data.searchData.hasOwnProperty(key) === true) {
+        prevPage.params[key] = this.data.searchData[key];
+      }
+    }
+    wx.navigateBack({//返回
+      delta: 1
+    })
+    return
+
     var serach = JSON.stringify(this.data.searchData)
     wx.navigateTo({
       url: '/page/company/joblist/joblist?demand=' + serach
+    })
+  },
+  returnCancel:function(){
+    wx.navigateBack({//返回
+      delta: 1
     })
   }
 })

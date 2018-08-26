@@ -59,9 +59,10 @@
     </view>
   </view>
   <view class='request-btn'>
-    <navigator url="/page/company/joblist/joblist" hover-class='none'>
+    <!-- <navigator url="/page/company/joblist/joblist" hover-class='none'>
       <view class='request-btn-left'>取消</view>
-    </navigator>
+    </navigator> -->
+    <view class='request-btn-left' bindtap='returnCancel'>取消</view>
     <!-- <navigator url="/page/company/joblist/joblist?demand={{searchData}}" hover-class='none'>    -->
       <view class='request-btn-right' bindtap='returnBack'>确定</view>
     <!-- </navigator>     -->

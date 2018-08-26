@@ -98,7 +98,6 @@ Page({
       wx.navigateTo({
         url: url
       })
-    
     }
 
   },
@@ -119,9 +118,20 @@ Page({
       })
     }
    
-
     var url = '';
     var type = this.data.type;
+    console.log(type)
+    if (type = 'jobList') {
+      let pages = getCurrentPages();//当前页面
+      let prevPage = pages[pages.length - 2];//上一页面
+      prevPage.params.region = _this.data.selectCity
+
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
+
     switch (type) {
       case 'intension'://求职意向
         url = '/page/resume/jobintensionedit/jobintensionedit?city=' + _this.data.selectCity;

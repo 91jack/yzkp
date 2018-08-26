@@ -3,13 +3,15 @@
 <import src="/template/joblist/joblist.wxml" />
 
 
-<navigator hover-class="none" url='/page/company/joblist/joblist?index=index'>
+<!-- <navigator hover-class="none" url='/page/company/joblist/joblist?index=index'>
   <template is="topsearch" />
-</navigator>
+</navigator> -->
 
-<view class='banner'>
+<template is="topsearch" />
+
+<!-- <view class='banner'>
   <image src='/image/index/banner.png'></image>
-</view>
+</view> -->
 
 <!-- 求职者 -->
 <view class='select-bar' wx:if="{{role==0}}">

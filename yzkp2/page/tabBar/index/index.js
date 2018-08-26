@@ -11,6 +11,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 
 var socket = require('../../../socket.js');
 Page({
+  params: {},
   
   /**
    * 页面的初始数据
@@ -138,7 +139,8 @@ Page({
               // getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
               // getApp().globalData.employee = res.data.obj.employee;// 员工
               // getApp().globalData.company = res.data.obj.company;//公司
-              
+              _this.params.token = res.data.obj.token;
+
               _this.setData({
                 role: res.data.obj.type
               })
@@ -258,9 +260,9 @@ Page({
   // 搜索功能
   goSearch:function(){
     if (this.data.id =="resume"){
-      _this.jobListFn()
+      this.jobListFn()
     } else if (this.data.id =="company"){
-      _this.jianliListFn()
+      this.jianliListFn()
     }
   },
   /**
@@ -269,18 +271,27 @@ Page({
   onShareAppMessage: function () {
   
   },
+  clearParams: function(){
+    if (this.params.monthPay){
+      this.params.monthPay = this.params.monthPay[1]
+    }
+    if (this.params.education) {
+      this.params.education = this.params.education[1]
+    }
+    if (this.params.workYear) {
+      this.params.workYear = this.params.workYear[1]
+    }
+  },
   // 获取简历列表
   jianliListFn: function (callback){
     var _this = this;
+    this.params.key = _this.data.key
     wx.request({
       url: searchResumeUrl,
-      data: {
-        token: getApp().globalData.token,
-        key: _this.data.key
-      },
+      data: _this.params,
       success: function (res) {
         console.log(res);
-        _this.setData({
+        _this.setData({ 
           jianliList: res.data.list
         }, function () {
           if(callback){
@@ -293,12 +304,12 @@ Page({
   // 获取职位列表
   jobListFn: function (callback){
     var _this = this;
+    this.params.key = _this.data.key
+    this.clearParams();
+    console.log(this.params)
     wx.request({
       url: jobListUrl,
-      data: {
-        token: getApp().globalData.token,
-        key: _this.data.key
-      },
+      data: _this.params,
       success: function (res) {
         console.log(res)
         _this.setData({
