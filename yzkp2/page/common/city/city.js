@@ -124,24 +124,24 @@ Page({
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
 
-    if (type == 'jobList') {      
+    if (type == 'jobList') {// 职位列表 
       prevPage.params.region = _this.data.selectCity
 
-      wx.navigateBack({//返回
+      wx.navigateBack({
         delta: 1
       })
       return
     }
-    if (type == 'intension') {
+    if (type == 'intension') {//求职意向
       prevPage.setData({ city: _this.data.selectCity })
-      wx.navigateBack({//返回
+      wx.navigateBack({
         delta: 1
       })
       return
     }
-    if (type == 'courselist') {
+    if (type == 'courselist') {//能力提升
       prevPage.setData({ city: _this.data.selectCity })
-      wx.navigateBack({//返回
+      wx.navigateBack({
         delta: 1
       })
       return
