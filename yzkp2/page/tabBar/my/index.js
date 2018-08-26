@@ -16,7 +16,7 @@ Page({
         text: '我的简历'
       },
       {
-        url: '/page/resume/myapply/myapply',
+        url: '/page/resume/index/index?id=apply',
         src: '/image/index/office.png',
         text: '我的申请'
       },
@@ -44,7 +44,7 @@ Page({
         text: '我的简历'
       },
       {
-        url: '/page/resume/myapply/myapply',
+        url: '/page/resume/index/index?id=apply',
         src: '/image/index/office.png',
         text: '我的申请'
       },

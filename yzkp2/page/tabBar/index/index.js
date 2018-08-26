@@ -42,7 +42,7 @@ Page({
         text:'简历管理'
       },
       {
-        url: '/page/resume/myapply/myapply',        
+        url: '/page/resume/index/index?id=apply',        
         src:'/image/index/pro.png',
         text:'应聘进度'
       },
