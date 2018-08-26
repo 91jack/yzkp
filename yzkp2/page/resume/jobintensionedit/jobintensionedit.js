@@ -107,10 +107,12 @@ Page({
     console.log(e)
     var that = this;
     var i = Number(e.detail.value)
+    console.log(that.data.monthPayArr[i])
     this.setData({
       "workPay[1]":i,
       monthPayIndex:i,
-      monthPayHide:true
+      monthPayHide:true,
+      oldPay: that.data.monthPayArr[i]
     })
     wx.setStorage({
       key: 'workPay',
@@ -148,8 +150,6 @@ Page({
     //     industry: that.params.industry
     //   })
     // }
-
-    
   },
   // 期望职位
   getValue:function(e){
