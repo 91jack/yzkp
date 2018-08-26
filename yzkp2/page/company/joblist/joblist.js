@@ -7,7 +7,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 // 获取简历列表
 const getResumeListUrl = require('../../../config').getResumeListUrl;
 Page({
-  params: { token: getApp().globalData.token},
+  params: { token: getApp().globalData.token, page: 1, pageSize: 30},
   /**
    * 页面的初始数据
    */
@@ -150,7 +150,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("show " + this.data.id)
+    this.params.page = 1
     if (this.data.id == "resume") {
       this.jobListFn();
     } else if (this.data.id == "company") {
@@ -162,14 +162,24 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.params.page = 1
+    if (this.data.id == "resume") {
+      this.jobListFn();
+    } else if (this.data.id == "company") {
+      this.jianliListFn();
+    }
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.params.page = this.params.page + 1
+    if (this.data.id == "resume") {
+      this.jobListFn();
+    } else if (this.data.id == "company") {
+      this.jianliListFn();
+    }
   },
 
   /**
@@ -292,43 +302,43 @@ Page({
     })
   },
 
-  // 获取简历列表
-  getJianliListFn: function () {
-    var _this = this;
+  // // 获取简历列表
+  // getJianliListFn: function () {
+  //   var _this = this;
     
-    wx.request({
-      url: searchResumeUrl,
-      data: {
-        token: getApp().globalData.token,
-        key: _this.data.key
-      },
-      success: function (res) {
-        console.log(res);
-        if(res.data.status==0){
-          _this.setData({
-            jianliList: res.data.list
-          })
-        }
-      }
-    })
-  },
-  // 获取职位列表
-  getJobListFn: function () {
-    var _this = this;
-    wx.request({
-      url: jobListUrl,
-      data: {
-        token: getApp().globalData.token,
-        key: _this.data.key
-      },
-      success: function (res) {
-        console.log(res)
-        if(res.data.status==0){
-          _this.setData({
-            jobList: res.data.list
-          })
-        }
-      }
-    })
-  }
+  //   wx.request({
+  //     url: searchResumeUrl,
+  //     data: {
+  //       token: getApp().globalData.token,
+  //       key: _this.data.key
+  //     },
+  //     success: function (res) {
+  //       console.log(res);
+  //       if(res.data.status==0){
+  //         _this.setData({
+  //           jianliList: res.data.list
+  //         })
+  //       }
+  //     }
+  //   })
+  // },
+  // // 获取职位列表
+  // getJobListFn: function () {
+  //   var _this = this;
+  //   wx.request({
+  //     url: jobListUrl,
+  //     data: {
+  //       token: getApp().globalData.token,
+  //       key: _this.data.key
+  //     },
+  //     success: function (res) {
+  //       console.log(res)
+  //       if(res.data.status==0){
+  //         _this.setData({
+  //           jobList: res.data.list
+  //         })
+  //       }
+  //     }
+  //   })
+  // }
 })

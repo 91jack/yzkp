@@ -60,9 +60,12 @@ Page({
            duration: 2000,
            success:function(){
              setTimeout(function(){
-               wx.navigateTo({
-                 url: '/page/common/course/courselist/courselist',
+               wx.navigateBack({
+                 delta: 2
                })
+              //  wx.navigateTo({
+              //    url: '/page/common/course/courselist/courselist',
+              //  })
              },1000)
             
           }
@@ -74,9 +77,12 @@ Page({
            duration: 2000,
            success: function () {
              setTimeout(function () {
-               wx.navigateTo({
-                 url: '/page/common/course/courselist/courselist',
+               wx.navigateBack({
+                 delta: 2
                })
+              //  wx.navigateTo({
+              //    url: '/page/common/course/courselist/courselist',
+              //  })
              }, 1000)
 
            }

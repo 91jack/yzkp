@@ -22,11 +22,11 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    if(options.city){
-      _this.setData({
-        city: options.city
-      })
-    }
+    // if(options.city){
+    //   _this.setData({
+    //     city: options.city
+    //   })
+    // }
    
     wx.request({
       url: courseTypeurl,//课程分类
@@ -37,15 +37,12 @@ Page({
         if (res.data.status == 0) {
           _this.setData({
             courseType: res.data.list
+          },function(){
+            _this.getCourseList();
           })
-          _this.getCourseList();
         }
-
       }
     })
-
-   
-    
   },
 
   /**
@@ -59,7 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getCourseList()
   },
 
   /**

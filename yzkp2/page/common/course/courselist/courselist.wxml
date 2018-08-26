@@ -27,7 +27,7 @@
   </view>
 </view>
 
-<view class='ability-cont'>
+<view class='ability-cont' hidden='{{!show}}'>
   <block wx:for="{{courseList}}" wx:key="id">
     <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.id}}'>
       <view class='ability-cont-item'>

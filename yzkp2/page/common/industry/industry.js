@@ -83,6 +83,21 @@ Page({
 
     var url = '';
     var type = this.data.type;
+    let pages = getCurrentPages();//当前页面
+    let prevPage = pages[pages.length - 2];//上一页面
+
+    if (type == 'industry') {
+      
+      return
+    }
+    if (type == 'intension') {
+      prevPage.setData({ industry: industry })
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
+
     console.log(type)
     switch (type) {
       case 'intension': //求职意向

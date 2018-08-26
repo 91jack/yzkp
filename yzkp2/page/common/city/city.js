@@ -121,11 +121,26 @@ Page({
     var url = '';
     var type = this.data.type;
     console.log(type)
-    if (type = 'jobList') {
-      let pages = getCurrentPages();//当前页面
-      let prevPage = pages[pages.length - 2];//上一页面
+    let pages = getCurrentPages();//当前页面
+    let prevPage = pages[pages.length - 2];//上一页面
+
+    if (type == 'jobList') {      
       prevPage.params.region = _this.data.selectCity
 
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
+    if (type == 'intension') {
+      prevPage.setData({ city: _this.data.selectCity })
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
+    if (type == 'courselist') {
+      prevPage.setData({ city: _this.data.selectCity })
       wx.navigateBack({//返回
         delta: 1
       })

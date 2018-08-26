@@ -2,7 +2,6 @@
 const editJobintensionUrl = require('../../../config').editJobintensionUrl;
 const resumeUrl = require('../../../config').resumeUrl;
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -22,22 +21,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    if (options.industry){
-      wx.setStorage({
-        key: 'industry',
-        data: options.industry,
-      })
-      console.log(this.data.industry)
-    };
-    if (options.city){
-      console.log(options)
-      wx.setStorage({
-        key: 'city',
-        data:options.city
-      })
-      console.log(this.data.city)
-    }
+  onLoad: function (options) {   
+    // if (options.industry){
+    //   wx.setStorage({
+    //     key: 'industry',
+    //     data: options.industry,
+    //   })
+    //   console.log(this.data.industry)
+    // };
+    // if (options.city){
+    //   console.log(options)
+    //   wx.setStorage({
+    //     key: 'city',
+    //     data:options.city
+    //   })
+    //   console.log(this.data.city)
+    // }
     var that = this;
     wx.getStorage({
       key: 'monthPayArr',
@@ -74,6 +73,25 @@ Page({
     if(options.id){
       that.setData({
         id: options.id
+      })
+    }
+
+    if (this.data.id) {
+      wx.request({
+        url: resumeUrl,
+        data: {
+          token: getApp().globalData.token,
+        },
+        success: function (res) {
+          console.log(res)
+          that.setData({
+            // baseInfo: res.data.obj.base,
+            city: res.data.obj.base.workAddress,
+            industry: res.data.obj.base.industry,
+            workName: res.data.obj.base.workName,
+            oldPay: res.data.obj.base.workPay
+          })
+        }
       })
     }
   },
@@ -120,24 +138,18 @@ Page({
         })
       },
     })
-    if(this.data.id){
-      wx.request({
-        url: resumeUrl,
-        data: {
-          token: getApp().globalData.token,
-        },
-        success: function (res) {
-          console.log(res)
-          that.setData({
-            // baseInfo: res.data.obj.base,
-            city: res.data.obj.base.workAddress,
-            industry: res.data.obj.base.industry,
-            workName: res.data.obj.base.workName,
-            oldPay: res.data.obj.base.workPay
-          })
-        }
-      })
-    }
+    // if (that.params.city){
+    //   that.setData({
+    //     city: that.params.city
+    //   })
+    // }
+    // if (that.params.industry) {
+    //   that.setData({
+    //     industry: that.params.industry
+    //   })
+    // }
+
+    
   },
   // 期望职位
   getValue:function(e){
@@ -162,20 +174,21 @@ Page({
         industry: _this.data.industry
       },
       success: function (res) {
-        console.log(res)
-        wx.navigateTo({
-          url: '/page/resume/index/index',
+        wx.navigateBack({//返回
+          delta: 1
         })
+        // console.log(res)
+        // wx.navigateTo({
+        //   url: '/page/resume/index/index',
+        // })
         wx.removeStorage({
           key: 'city',
           success: function (res) {
-            console.log(11111)
           },
         })
         wx.removeStorage({
           key: 'industry',
           success: function (res) {
-            console.log(2222)
           },
         })
       }
