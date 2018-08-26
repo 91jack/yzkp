@@ -84,10 +84,7 @@
         "jobedit/jobedit",
         "project/project",
         "projectedit/projectedit",
-        "cryptonym/cryptonym",
-        "resumeconfig/resumeconfig",
-        "browseme/browseme",
-        "myapply/myapply"
+        "cryptonym/cryptonym"
       ]
     },
     {

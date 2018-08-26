@@ -10,24 +10,14 @@
     </view>
   </view>
   <view class="manageintro-nav">
-    <navigator url='/page/resume/index/index' hover-class='none'>
-      <view class="manageintro-nav-item active">简历编辑</view>
-    </navigator>
-    <navigator url='/page/resume/resumeconfig/resumeconfig' hover-class='none'>
-      <view class="manageintro-nav-item">简历设置</view>
-    </navigator>
-    <navigator url='/page/resume/browseme/browseme' hover-class='none'>
-      <view class="manageintro-nav-item">谁看过我</view>
-    </navigator>
-    <navigator url='/page/resume/myapply/myapply' hover-class='none'>
-      <view class="manageintro-nav-item">我的申请</view>
-    </navigator>
+
+      <view wx:for='{{navName}}' data-id='{{index}}' bindtap='beActive' class="manageintro-nav-item {{navBarShow[index]?'active':''}}">{{item}}</view>
   </view>
 
   <view class="manageintro-cont">
 
     <!--  -----------简历编辑 ----------- -->
-    <view class="edit-intro">
+    <view class="edit-intro" hidden='{{!navBarShow[0]}}'>
       <!-- 基本信息 -->
       <view class="manageintro-cont-item">
         <view class="manageintro-cont-item-tit">
@@ -180,6 +170,69 @@
           </block>
         </view>
       </view>
+    </view>
+    <!-- 简历设置 -->
+    <view class="set-intro" hidden='{{!navBarShow[1]}}'>
+      <view class="set-intro-box">
+        <text>公开简历</text>
+        <switch checked="true" checked='{{open==1}}' class="fr" bindchange='switch1Change'></switch>
+      </view>
+      <view class="set-intro-box">
+        <text>匿名展示</text>
+        <switch checked="true" checked='{{anonymous==1}}' class="fr" bindchange='switch2Change'></switch>
+      </view>
+    </view>
+    <!-- ---------------- 谁看过我 ------------ -->
+    <view class="who-see" hidden='{{!navBarShow[2]}}'>
+
+      <view class="who-see-item" wx:for="{{browseList}}" wx:key="{{index}}">
+        <navigator url="/page/company/companydetail/companydetail?companyId={{item.id}}" hover-class='none'>
+        <view class="see-me-company">
+            <text class="see-me-company-name">{{item.name}}</text>
+            <text class="see-me-company-date">{{item.view_time}}</text>
+          </view>
+          <view class="see-me-company-frt">{{item.size}}/{{item.attr}}/{{item.industry}}</view>
+        </navigator>
+      
+      </view>
+      <view hidden='{{browseList}}'>
+        <image class='none-show' src='/image/mine/bigbg.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 我的申请 -->
+  <view class="my-apply" hidden='{{!navBarShow[3]}}'>
+  <block wx:for="{{applyList}}" wx:key="{{index}}">
+    <view class="my-apply-item">
+      <view class="my-apply-item-tit">
+        <text class="posi-left">{{item.state_name}}</text>
+        <text>{{item.createTime}}</text>
+      </view>
+      <view class="my-apply-item-name">
+        <text>{{item.name}}</text>
+        <image bindtap='callphone' data-id='{{index}}' src="/image/mine/cellphone.png"></image>
+      </view>
+      <view class="my-apply-item-pay">{{item.pay}}</view>
+      <view class="my-apply-item-footer">
+        <text class="my-apply-item-footer-comp">{{item.companyName}}</text>
+        <navigator url='/page/common/noname/nomane?id={{item.id}}' hover-class='none'>
+          <text class="my-apply-item-footer-comment">匿名评价</text>
+        </navigator>
+      </view>
+    </view>
+    </block>
+    <view hidden='{{applyList}}'>
+      <image class='none-show' src='/image/mine/bigbg.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='modal' hidden='{{modalShow}}' bindtap='hidemodal'>
+  <view class='call' bindtap='showdetail'>
+    <view class='call-number'>{{linkPhone}}</view>
+    <view class='call-btn'>
+      <view class='not'>取消</view>
+      <view class='call-out' data-number="{{applyList.linkPhone}}" bindtap='callnumber'>确认拨出</view>
     </view>
   </view>
 </view>
