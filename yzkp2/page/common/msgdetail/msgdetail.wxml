@@ -3,23 +3,21 @@
   <view class='chat' wx:for='{{list}}' wx:key='id'>
     <view wx:if='{{item.type==0}}'>
       <view class='chat-item yourmsg' id='{{item.id}}'>
-        <image src='/page/mine/puppy.jpg'></image>
+        <image src='/image/mine/puppy.jpg'></image>
         <text>{{item.content}}</text>
       </view>
     </view>
     <view wx:else>
       <view class='chat-item mymsg' id='{{item.id}}'>
         <text>{{item.content}}</text>
-        <image src='/page/mine/rab.jpg'></image>
+        <image src='/image/mine/rab.jpg'></image>
       </view>
     </view>
   </view>
   
 </view>
 <view class='bottom-input'>
-  <view class='bottom-input'>
       <input auto-height='70rpx' value='{{value}}' fixed='true' maxlength='-1' adjust-position='true' type="text" placeholder='请输入新的聊天' placeholder-style='color:#D7D7D7' show-confirm-bar='false' bindinput='getValue'></input>
       <view bindtap='sendBtn'>发送</view>
-  </view>
 </view>
 
