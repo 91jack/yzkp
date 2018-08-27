@@ -203,6 +203,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log(this.params)
+    console.log(this.data)
     if (this.data.id == "resume") {
       this.jobListFn()
     } else if (this.data.id == "company") {
@@ -272,20 +274,34 @@ Page({
   
   },
   clearParams: function(){
-    if (this.params.monthPay){
-      this.params.monthPay = this.params.monthPay[1]
-    }
-    if (this.params.education) {
-      this.params.education = this.params.education[1]
-    }
-    if (this.params.workYear) {
-      this.params.workYear = this.params.workYear[1]
-    }
+    if (this.data.id == "resume"){
+     if (this.params.monthPay) {
+       this.params.monthPay = this.params.monthPay[1]
+     }
+     if (this.params.education) {
+       this.params.education = this.params.education[1]
+     }
+     if (this.params.workYear) {
+       this.params.workYear = this.params.workYear[1]
+     }
+   }else{
+      if (this.params.monthPay) {
+        this.params.monthPay = this.params.monthPay[0]
+      }
+      if (this.params.education) {
+        this.params.educationLevel = this.params.education[0]
+      }
+      if (this.params.workYear) {
+        this.params.workYear = this.params.workYear[0]
+      }
+   }
   },
   // 获取简历列表
   jianliListFn: function (callback){
     var _this = this;
     this.params.key = _this.data.key
+    this.clearParams();
+    console.log(this.params)
     wx.request({
       url: searchResumeUrl,
       data: _this.params,
@@ -298,6 +314,7 @@ Page({
             callback();
           }          
         })
+        _this.params={};
       }
     })
   },
@@ -319,6 +336,7 @@ Page({
             callback();
           }  
         })
+        _this.params = {};
       }
     })
   }

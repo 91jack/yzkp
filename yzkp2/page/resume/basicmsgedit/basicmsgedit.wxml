@@ -14,6 +14,16 @@
       <input data-idx="1" value='{{age}}' bindblur='getValue' placeholder='请输入年龄' placeholder-style="color:#D7D7D7"></input>
     </view>
     <view class='box'>
+      <text>最高学历</text>
+      <view class='right'>
+        <picker mode="selector" data-idx="9" range="{{educationArr}}" value="{{educationIndex}}" bindchange="bindChange">
+          <text hidden='{{educationHide}}' class='choose'>{{educationLevel}}</text>
+          <text hidden='{{!educationHide}}' class='choose'>{{educationArr[educationIndex]}}</text>
+          <image class='next' src='/image/mine/next.png'></image>
+        </picker>
+      </view>
+    </view>
+    <view class='box'>
       <text>身高</text>
       <input data-idx="6" value='{{height}}' bindblur='getValue' placeholder='请输入身高' placeholder-style="color:#D7D7D7"></input>
     </view>
