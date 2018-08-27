@@ -219,7 +219,7 @@ Page({
         this.params.monthPay = this.params.monthPay[0]
       }
       if (this.params.education) {
-        this.params.education = this.params.education[0]
+        this.params.educationLevel = this.params.education[0]
       }
       if (this.params.workYear) {
         this.params.workYear = this.params.workYear[0]

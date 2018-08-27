@@ -11,7 +11,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 
 var socket = require('../../../socket.js');
 Page({
-  params: {},
+  params: { page: 1, pageSize: 30},
   
   /**
    * 页面的初始数据
@@ -203,11 +203,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(this.params)
-    console.log(this.data)
+    this.params.page = 1 
     if (this.data.id == "resume") {
+      this.setData({ jobList: [] })
       this.jobListFn()
     } else if (this.data.id == "company") {
+      this.setData({ jianliList: [] })
       this.jianliListFn()
     }
   },
@@ -230,11 +231,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.params.page = 1    
     if (this.data.id == "resume") {
+      this.setData({ jobList: []})
       this.jobListFn(function(){
         wx.stopPullDownRefresh();
       })
     } else if (this.data.id == "company") {
+      this.setData({ jianliList: [] })
       this.jianliListFn(function () {
         wx.stopPullDownRefresh();
       })
@@ -251,7 +255,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.params.page = this.params.page + 1
+    if (this.data.id == "resume") {
+      this.jobListFn();
+    } else if (this.data.id == "company") {
+      this.jianliListFn();
+    }
   },
   // 获取输入内容
   getKey:function(e){
@@ -308,7 +317,7 @@ Page({
       success: function (res) {
         console.log(res);
         _this.setData({ 
-          jianliList: res.data.list
+          jianliList: _this.data.jianliList.concat(res.data.list)
         }, function () {
           if(callback){
             callback();
@@ -330,7 +339,7 @@ Page({
       success: function (res) {
         console.log(res)
         _this.setData({
-          jobList: res.data.list
+          jobList: _this.data.jobList.concat(res.data.list)
         },function(){
           if (callback) {
             callback();
