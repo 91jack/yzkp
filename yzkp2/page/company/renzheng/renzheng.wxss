@@ -3,8 +3,12 @@ page{
   background: #fff;
 }
 .renzheng{
-  padding: 0 19rpx 0 27rpx;
-  /* margin-bottom: 200rpx; */
+  width: 100%;
+  padding-bottom: 200rpx;
+  overflow: auto;
+}
+.renzheng-cont{
+  padding: 0 19rpx 200rpx 27rpx;
 }
 .rz-type{
   display: flex;

@@ -3,7 +3,12 @@ page{
   background: #fff;
 }
 .page{
-  margin-bottom: 150rpx;
+  padding-bottom: 200rpx;
+  overflow: auto
+}
+.post-job{
+  position: relative;
+  z-index: 1
 }
 .post-job-week{
   width: 703rpx;
@@ -58,4 +63,7 @@ page{
 }
 .post-job-header .header-item input.active{
   width: 245rpx;
+}
+.choose-place.last{
+  padding-bottom: 200rpx;
 }

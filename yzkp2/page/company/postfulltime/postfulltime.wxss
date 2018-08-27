@@ -3,5 +3,17 @@ page{
   background: #fff;
 }
 .page{
-  margin-bottom: 150rpx;
+  /* margin-bottom: 200rpx; */
+  overflow: auto
+}
+.btn{
+  position: relative;
+
+}
+.post-job{
+  position: relative;
+  z-index: 1
+}
+.choose-place.last{
+  padding-bottom: 200rpx;
 }
