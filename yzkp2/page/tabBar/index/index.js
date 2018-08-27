@@ -163,8 +163,7 @@ Page({
                 _this.setData({
                   id: 'company'
                 })
-              }
-              if (res.data.obj.resume != null) {
+              } else if (res.data.obj.resume != null) {
                 wx.setStorage({
                   key: 'resumeId',// 简历id
                   data: res.data.obj.resume.id,
@@ -177,10 +176,12 @@ Page({
                 _this.setData({
                   id: 'resume'
                 })
-              }
-              if (res.data.obj.resume == null && res.data.obj.employee == null && res.data.obj.resume == null){
+              } else{
                 _this.jobListFn();
               }
+              // if (res.data.obj.resume == null && res.data.obj.employee == null && res.data.obj.resume == null){
+              //   _this.jobListFn();
+              // }
               socket.init();
             }
           })
@@ -263,9 +264,17 @@ Page({
   onReachBottom: function () {
     this.params.page = this.params.page + 1
     if (this.data.id == "resume") {
+      var oldList = this.data.jobList;
       this.jobListFn();
+      this.setData({
+        jobList:oldList.concat(this.data.jobList)
+      })
     } else if (this.data.id == "company") {
+      var oldList = this.data.jianliList;
       this.jianliListFn();
+      this.setData({
+        jianliList:oldList.concat(this.data.jianliList)
+      })
     }
   },
   // 获取输入内容
@@ -276,7 +285,9 @@ Page({
   },
   // 搜索功能
   goSearch:function(){
-    this.params.page = 1
+    this.setData({
+      params: { token: getApp().globalData.token}
+    })
     if (this.data.id =="resume"){
       this.jobListFn()
     } else if (this.data.id =="company"){
@@ -324,7 +335,7 @@ Page({
       success: function (res) {
         console.log(res);
         _this.setData({ 
-          jianliList: _this.data.jianliList.concat(res.data.list)
+          jianliList: res.data.list
         }, function () {
           if(callback){
             callback();
@@ -346,7 +357,7 @@ Page({
       success: function (res) {
         console.log(res)
         _this.setData({
-          jobList: _this.data.jobList.concat(res.data.list)
+          jobList: res.data.list
         },function(){
           if (callback) {
             callback();

@@ -45,8 +45,8 @@ Page({
     })
   },
   zhiweimanage:function(){
-    wx.navigateTo({
-      url: '/page/company/jobmanage/jobmanage',
+    wx.navigateBack({
+      delta: 1
     })
   },
   /**

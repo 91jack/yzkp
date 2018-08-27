@@ -67,7 +67,7 @@ function init(){
     console.log(res);
     var data = JSON.parse(res.data)
     if (data.msgType==0){
-      chatList = data;
+      chatList = data;      
     }else{
       if(func){
         func(data)

@@ -18,7 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ chatList: socket.getChatList().list })
+    
   },
 
   /**
@@ -32,7 +32,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    setTimeout(function(){
+      console.log(socket.getChatList().list)
+      that.setData({ chatList: socket.getChatList().list })
+    },500)    
   },
 
   /**
@@ -71,7 +75,6 @@ Page({
   onShareAppMessage: function () {
   
   },
-
   //
   switchChat: function(){
     this.setData({ chatSelected: true, noticeSelected: false, chatList: socket.getChatList().list})
@@ -85,8 +88,6 @@ Page({
       success: function (res) {
         _this.setData({ chatSelected: false, noticeSelected: true, noticeList: res.data.list ? res.data.list : null })
       }
-    })
-
-    
+    })    
   }
 })
