@@ -78,8 +78,6 @@ Page({
     })
     var industry =  _this.data.returnIndustryData
     // var industry = _this.data.locNav + '-' + _this.data.returnIndustryData
-    
-
 
     var url = '';
     var type = this.data.type;
@@ -88,6 +86,7 @@ Page({
 
     if (type == 'industry') {
       prevPage.params.industry= industry;
+      prevPage.setData({ isRefresh: true })
       wx.navigateBack({//返回
         delta: 1
       })

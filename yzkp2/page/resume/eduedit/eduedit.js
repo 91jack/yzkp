@@ -148,9 +148,9 @@ Page({
         success: function (res) {
           console.log(res)
           if (res.data.status == 0) {
-            wx.navigateTo({
-              url: '/page/resume/index/index',
-            })
+            wx.navigateBack({
+              delta: 1
+            })  
           }
         }
       })
@@ -169,9 +169,9 @@ Page({
         success: function (res) {
           console.log(res)
           if (res.data.status == 0) {
-            wx.navigateTo({
-              url: '/page/resume/index/index',
-            })
+            wx.navigateBack({
+              delta: 1
+            }) 
           }
         }
       })

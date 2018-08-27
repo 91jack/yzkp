@@ -34,7 +34,8 @@ Page({
     page:'1',
     height1: '',
     height2: '',
-    key:''
+    key:'',
+    isRefresh: false
   },
 
   /**
@@ -63,77 +64,6 @@ Page({
         } else if (_this.data.id == "company") {
           _this.jianliListFn();
         }
-
-        // if (options.index) {
-        //   if (_this.data.id == "resume") {
-        //     _this.getJobListFn();
-        //   } else if (_this.data.id == "company") {
-        //     _this.getJianliListFn();
-        //   }
-        // } else if (options.type) {
-        //   _this.setData({
-        //     type: options.type
-        //   })
-        //   if (_this.data.id == "resume") {
-        //     _this.jobListFn();
-        //   } else if (_this.data.id == "company") {
-        //     _this.jianliListFn();
-        //   }
-        // } else if (options.recruitType) {
-        //   _this.setData({
-        //     recruitType: options.recruitType
-        //   })
-        //   if (_this.data.id == "resume") {
-        //     _this.jobListFn();
-        //   } else if (_this.data.id == "company") {
-        //     _this.jianliListFn();
-        //   }
-        // } else if (options.city) {
-        //   _this.setData({
-        //     region: options.city
-        //   })
-        //   if (_this.data.id == "resume") {
-        //     _this.jobListFn();
-        //   } else if (_this.data.id == "company") {
-        //     _this.jianliListFn();
-        //   }
-        // } else if (options.industry) {
-        //   _this.setData({
-        //     industry: options.industry
-        //   })
-        //   if (_this.data.id == "resume") {
-        //     _this.jobListFn();
-        //   } else if (_this.data.id == "company") {
-        //     _this.jianliListFn();
-        //   }
-        // } else if (options.demand) {
-        //   var demandData = JSON.parse(options.demand);     
-        //   if (_this.data.id == "resume") {
-        //     _this.setData({
-        //       recruitType: demandData.recruitType,
-        //       payType: demandData.payType,
-        //       sex: demandData.sex,
-        //       monthPay: demandData.monthPay[1],
-        //       education: demandData.education[1],
-        //       workYear: demandData.workYear[1],
-        //       height1: demandData.height1,
-        //       height2: demandData.height2
-        //     })
-        //     _this.jobListFn();
-        //   } else if (_this.data.id == "company") {
-        //     _this.setData({
-        //       recruitType: demandData.recruitType,
-        //       payType: demandData.payType,
-        //       sex: demandData.sex,
-        //       monthPay: demandData.monthPay[0],
-        //       education: demandData.education[0],
-        //       workYear: demandData.workYear[0],
-        //       height1: demandData.height1,
-        //       height2: demandData.height2
-        //     })
-        //     _this.jianliListFn();
-        //   }
-        // }
       },
     })
   },
@@ -150,23 +80,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.params.page = 1
-    if (this.data.id == "resume") {
-      this.jobListFn();
-    } else if (this.data.id == "company") {
-      this.jianliListFn();
-    }
+    if (this.data.isRefresh) {
+      this.params.page = 1
+      if (this.data.id == "resume") {
+        this.setData({ jobList: [] })
+        this.jobListFn()
+      } else if (this.data.id == "company") {
+        this.setData({ jianliList: [] })
+        this.jianliListFn()
+      }
+      this.data.isRefresh = false
+    }   
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.params.page = 1
+    this.params = { token: getApp().globalData.token, page: 1, pageSize: 30 }
     if (this.data.id == "resume") {
-      this.jobListFn();
+      this.setData({ jobList: [] })
+      this.jobListFn(function () {
+        wx.stopPullDownRefresh();
+      });
     } else if (this.data.id == "company") {
-      this.jianliListFn();
+      this.setData({ jianliList: [] })
+      this.jianliListFn(function () {
+        wx.stopPullDownRefresh();
+      });
     }
   },
 
@@ -237,7 +178,7 @@ Page({
     }    
   },
   // 获取简历列表
-  jianliListFn: function () {
+  jianliListFn: function (callback) {
     var _this = this;
     this.clearParams()
     console.log(this.params)
@@ -249,13 +190,17 @@ Page({
         if(res.data.status==0){
           _this.setData({
             jianliList: _this.data.jianliList.concat(res.data.list)
+          }, function () {
+            if (callback) {
+              callback();
+            }
           })
         }
       }
     })
   },
   
-  jobListFn:function(){
+  jobListFn: function (callback){
     var _this = this;
     this.clearParams()
     console.log(this.params)
@@ -267,9 +212,14 @@ Page({
         if(res.data.status==0){
           _this.setData({
             jobList: _this.data.jobList.concat(res.data.list)
+          }, function () {
+            if (callback) {
+              callback();
+            }
           })
         }
       }
     })
-  }
+  },
+
 })

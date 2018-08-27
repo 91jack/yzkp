@@ -31,6 +31,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.refresh()
+  },
+  refresh: function () {
     var _this = this;
     wx.request({
       url: resumeUrl,
@@ -46,6 +49,7 @@ Page({
     })
   },
   delBtn: function (e) {
+    var that = this
     console.log(e)
     wx.showModal({
       title: '温馨提示',
@@ -66,7 +70,7 @@ Page({
                   duration: 2000
                 })
               }
-
+              that.refresh()
             }
           })
         } else if (res.cancel) {

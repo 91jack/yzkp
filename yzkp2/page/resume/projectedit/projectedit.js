@@ -126,9 +126,9 @@ Page({
         },
         success: function (res) {
           console.log(res)
-          if (res.status == 0) {
-            wx.navigateTo({
-              url: '/page/resume/index/index',
+          if (res.data.status == 0) {
+            wx.navigateBack({
+              delta: 1
             })
           }
         }
@@ -147,9 +147,9 @@ Page({
         },
         success: function (res) {
           console.log(res)
-          if(res.status==0){
-            wx.navigateTo({
-              url: '/page/resume/index/index',
+          if(res.data.status==0){
+            wx.navigateBack({
+              delta: 1
             })
           }
         }
