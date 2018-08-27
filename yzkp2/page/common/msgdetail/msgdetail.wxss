@@ -70,5 +70,6 @@
   color: #fff;
 }
 .client{
-  margin-bottom: 150rpx;
+  padding-bottom: 200rpx;
+  overflow: auto
 }
