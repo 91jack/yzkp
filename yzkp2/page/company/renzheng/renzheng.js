@@ -28,7 +28,8 @@ Page({
     companySizeHide:false,
     companyTypeArr:[],
     companyTypeIndex:0,
-    companyTypeHide:false
+    companyTypeHide:false,
+    ind:''
   },
 
   /**
@@ -173,7 +174,8 @@ Page({
       this.setData({
         // industryIndex: e.detail.value,
         industryHide: true,
-        companyIndustry: pic0[ind0] + '-' + pic1[ind1]
+        companyIndustry: pic0[ind0] + '-' + pic1[ind1],
+        ind: pic1[ind1]
       })
       console.log(this.data.companyIndustry)
     }
@@ -214,7 +216,7 @@ Page({
         email: _this.data.postEmail,
         attr: _this.data.companyNature,
         size: _this.data.companyScale,
-        industry: _this.data.companyIndustry,
+        industry: _this.data.ind,
         tag: _this.data.postIntro,
         welfare: _this.data.welfare
       },
