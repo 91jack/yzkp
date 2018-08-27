@@ -261,8 +261,12 @@ Page({
       success: function (res) {
         console.log(res);
         if(res.data.status==0){
+          var oldList = _this.data.jianliList;
+          for (var i = 0; i < res.data.list.length;i++){
+            oldList.push(res.data.list[i])
+          }
           _this.setData({
-            jianliList: res.data.list
+            jianliList: oldList
           })
         }
       }
@@ -294,6 +298,10 @@ Page({
       success: function (res) {
         console.log(res);
         if(res.data.status==0){
+          var oldList = _this.data.jianliList;
+          for (var i = 0; i < res.data.list.length; i++) {
+            oldList.push(res.data.list[i])
+          }
           _this.setData({
             jobList: res.data.list
           })
