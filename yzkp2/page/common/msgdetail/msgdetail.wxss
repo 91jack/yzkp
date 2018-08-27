@@ -50,7 +50,7 @@
   box-sizing: border-box;
   align-items: center;
 }
-.bottom-input textarea{
+.bottom-input text{
   color: #575757;
   font-size: 26rpx;
   padding: 43rpx 21rpx 44rpx 0;
