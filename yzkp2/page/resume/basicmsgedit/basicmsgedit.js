@@ -107,7 +107,8 @@ Page({
                 mobile: bsData.mobile,
                 email: bsData.email,
                 height: bsData.height,
-                headImg: bsData.headImg
+                headImg: bsData.headImg,
+                educationLevel: that.data.educationArr[bsData.educationLevel]
               })
             }
           })
@@ -134,7 +135,7 @@ Page({
     } else if (i == 9) { //学历选择
       that.setData({
         educationIndex: e.detail.value,
-        educationLevel: e.detail.value,
+        educationLevel: that.data.educationArr[e.detail.value],
         educationHide: true
       })
     }
