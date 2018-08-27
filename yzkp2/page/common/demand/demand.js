@@ -163,15 +163,16 @@ Page({
         prevPage.params[key] = this.data.searchData[key];
       }
     }
+    prevPage.setData({ isRefresh: true })
     wx.navigateBack({//返回
       delta: 1
     })
     return
 
-    var serach = JSON.stringify(this.data.searchData)
-    wx.navigateTo({
-      url: '/page/company/joblist/joblist?demand=' + serach
-    })
+    // var serach = JSON.stringify(this.data.searchData)
+    // wx.navigateTo({
+    //   url: '/page/company/joblist/joblist?demand=' + serach
+    // })
   },
   returnCancel:function(){
     wx.navigateBack({//返回

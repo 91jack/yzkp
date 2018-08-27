@@ -122,9 +122,8 @@ Page({
           position: _this.data.job
         },
         success: function (res) {
-          console.log(res)
-          wx.navigateTo({
-            url: '/page/resume/index/index',
+          wx.navigateBack({
+            delta: 1
           })
         }
       })
@@ -141,9 +140,8 @@ Page({
           position: _this.data.job
         },
         success: function (res) {
-          console.log(res)
-          wx.navigateTo({
-            url: '/page/resume/index/index',
+          wx.navigateBack({
+            delta: 1
           })
         }
       })

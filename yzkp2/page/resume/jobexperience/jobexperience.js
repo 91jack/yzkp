@@ -11,7 +11,8 @@ Page({
    */
   data: {
     resumeId:'',
-    work:{}
+    work:{},
+    refresh: false
   },
 
   /**
@@ -25,17 +26,8 @@ Page({
         that.setData({
           resumeId:res.data
         })
-        wx.request({
-          url: resumeUrl,
-          data: {
-            token: getApp().globalData.token,
-          },
-          success: function (res) {
-            that.setData({
-              work: res.data.obj.work,
-            })
-          }
-        })
+        that.refresh();
+        that.data.refresh = true
       },
     })
   },
@@ -44,14 +36,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.refresh()   
   },
 
   /**
@@ -81,7 +73,22 @@ Page({
   onReachBottom: function () {
   
   },
+  refresh: function(){
+    var that = this
+    wx.request({
+      url: resumeUrl,
+      data: {
+        token: getApp().globalData.token,
+      },
+      success: function (res) {
+        that.setData({
+          work: res.data.obj.work,
+        })
+      }
+    })
+  },
   delBtn:function(e){
+    var that = this;
     console.log(e)
     wx.showModal({
       title: '温馨提示',
@@ -101,6 +108,7 @@ Page({
             icon: 'success',
             duration: 2000
           })
+          that.refresh();
         }
        
       }
@@ -110,6 +118,5 @@ Page({
         }
       }
     })
-   
   }
 })

@@ -32,6 +32,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.refresh()
+  },
+  refresh: function () {
     var _this = this;
     wx.request({
       url: resumeUrl,
@@ -46,10 +49,9 @@ Page({
       }
     })
   },
-
   // 删除
   delBtn: function (e) {
-    console.log(e)
+    var that = this
     wx.showModal({
       title: '温馨提示',
       content: '您确定要删除该数据吗',
@@ -68,6 +70,7 @@ Page({
                   icon: 'success',
                   duration: 2000
                 })
+                that.refresh()
               }
 
             }

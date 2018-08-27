@@ -23,6 +23,7 @@ Page({
     index: 0,//选择的下拉列表下标
     id:'',
     key:'',
+    isRefresh: false, //onshow时是否刷新
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
     navBarData: ['地区', '行业', '要求'],
     selectBar1: [//求职者
@@ -203,14 +204,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.params.page = 1 
-    // if (this.data.id == "resume") {
-    //   this.setData({ jobList: [] })
-    //   this.jobListFn()
-    // } else if (this.data.id == "company") {
-    //   this.setData({ jianliList: [] })
-    //   this.jianliListFn()
-    // }
+    console.log(this.data)
+    if(this.data.isRefresh){
+      this.params.page = 1
+      if (this.data.id == "resume") {
+        this.setData({ jobList: [] })
+        this.jobListFn()
+      } else if (this.data.id == "company") {
+        this.setData({ jianliList: [] })
+        this.jianliListFn()
+      }
+      this.data.isRefresh = false
+    }    
   },
 
   /**
@@ -231,7 +236,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.params.page = 1    
+    this.params = { token: getApp().globalData.token, page: 1, pageSize: 30 }
     if (this.data.id == "resume") {
       this.setData({ jobList: []})
       this.jobListFn(function(){
@@ -270,6 +275,7 @@ Page({
   },
   // 搜索功能
   goSearch:function(){
+    this.params.page = 1
     if (this.data.id =="resume"){
       this.jobListFn()
     } else if (this.data.id =="company"){
