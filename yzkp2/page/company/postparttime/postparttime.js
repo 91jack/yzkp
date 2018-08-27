@@ -388,10 +388,14 @@ Page({
           wx.showToast({
             title: '职位发布成功',
             icon: 'success',
-            duration: 2000
-          })
-          wx.navigateTo({
-            url: '/page/company/jobmanage/jobmanage'
+            duration: 2000,
+            success:function(){
+              setTimeout(function(){
+                wx.navigateBack({
+                  delta: 1
+                })
+              },2000)
+            }
           })
           wx.removeStorage({
             key: 'sex',
