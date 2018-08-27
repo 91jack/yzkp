@@ -136,10 +136,8 @@ Page({
     if (type == 'jobList') {// 职位列表 
       if (_this.data.id=="resume"){
         prevPage.params.region = _this.data.selectCity;
-        
       }else if(_this.data.id='company'){
         prevPage.params.workAddress = _this.data.selectCity;
-
       }
       wx.navigateBack({
         delta: 1
