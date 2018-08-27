@@ -70,5 +70,5 @@
   color: #fff;
 }
 .client{
-  margin-bottom: 150rpx;
+  margin-bottom: 250rpx;
 }

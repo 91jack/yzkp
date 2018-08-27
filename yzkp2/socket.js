@@ -19,9 +19,6 @@ function init(){
           key: 'resumeId',
           success: function (res) {
             var resumeId = res.data;
-            console.log(resumeId)
-            console.log('已连接')
-
             wx.connectSocket({
               url: webSocketUrl + '?type=0&id=' + resumeId,
               header: {
@@ -30,6 +27,7 @@ function init(){
               method: 'GET',
               success: function(){
                 isConnect = true
+                console.log('websocket已连接')
                 if(noDida){
                   dida()
                 }                
@@ -42,8 +40,6 @@ function init(){
           key: 'companyId',
           success: function (res) {
             var companyId = res.data;
-            console.log(companyId)
-
             wx.connectSocket({
               url: webSocketUrl + '?type=1&id=' + companyId,
               header: {
@@ -52,6 +48,7 @@ function init(){
               method: 'GET',
               success: function () {
                 isConnect = true
+                console.log('websocket已连接')
                 if (noDida) {
                   dida()
                 }   
@@ -107,6 +104,10 @@ function getSocketStatus(){
   return isConnect;
 }
 
+function close(){
+  wx.closeSocket()
+}
+
 //每隔20秒钟发送一次心跳，避免websocket连接因超时而自动断开
 function dida(){
   noDida = false
@@ -128,5 +129,6 @@ module.exports = {
   sendMessage: sendMessage,
   setFunc: setFunc,
   getChatList: getChatList,
-  getSocketStatus: getSocketStatus
+  getSocketStatus: getSocketStatus,
+  close: close
 }

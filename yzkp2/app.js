@@ -25,9 +25,11 @@ App({
     employee:null,//员工
   },
   onShow: function (options) {
-    console.log(socket.getSocketStatus())
     if (!socket.getSocketStatus()){
       socket.init()
     }
+  },
+  onHide: function (options){
+    socket.close()
   }
 })
