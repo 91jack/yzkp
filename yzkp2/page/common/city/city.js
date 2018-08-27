@@ -11,7 +11,8 @@ Page({
     _city:'重庆',
     _country:'所有',
     type:'',
-    selectCity:''
+    selectCity:'',
+    id:''
 
   },
 
@@ -35,6 +36,14 @@ Page({
           cities:res.data,
           currentSelect:res.data['热门城市'],
           country: res.data['热门城市']['重庆']
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'serachId',
+      success: function(res) {
+        _this.setData({
+          id:res.data
         })
       },
     })
@@ -125,18 +134,17 @@ Page({
     let prevPage = pages[pages.length - 2];//上一页面
 
     if (type == 'jobList') {// 职位列表 
-      prevPage.params.region = _this.data.selectCity;
-      prevPage.params.workAddress = _this.data.selectCity;
+      if (_this.data.id=="resume"){
+        prevPage.params.region = _this.data.selectCity;
+        
+      }else if(_this.data.id='company'){
+        prevPage.params.workAddress = _this.data.selectCity;
+
+      }
       wx.navigateBack({
         delta: 1
       })
       return
-      // wx.navigateTo({
-        // url: '/page/company/joblist/joblist?city=' + _this.data.selectCity
-        // success: function(res) {},
-        // fail: function(res) {},
-        // complete: function(res) {},
-      // })
     }
     if (type == 'intension') {//求职意向
       prevPage.setData({ city: _this.data.selectCity })

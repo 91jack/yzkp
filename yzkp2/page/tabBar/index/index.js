@@ -323,7 +323,7 @@ Page({
             callback();
           }          
         })
-        _this.params={};
+        // _this.params={};
       }
     })
   },
@@ -345,7 +345,7 @@ Page({
             callback();
           }  
         })
-        _this.params = {};
+        // _this.params = {};
       }
     })
   }
