@@ -27,13 +27,7 @@ Page({
       companyId: options.companyId,
     })
     socket.setFunc(this.getMsg)
-    var msg = {
-      msgType: 2,
-      resumeId: this.data.resumeId,
-      companyId: this.data.companyId,
-      content: curPage
-    }
-    socket.sendMessage(msg)
+    
   },
 
   /**
@@ -47,7 +41,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var msg = {
+      msgType: 2,
+      resumeId: this.data.resumeId,
+      companyId: this.data.companyId,
+      content: curPage
+    }
+    socket.sendMessage(msg)
   },
 
   /**
