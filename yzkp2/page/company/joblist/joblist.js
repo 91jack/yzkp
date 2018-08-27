@@ -243,30 +243,12 @@ Page({
     console.log(this.params)
     wx.request({
       url: searchResumeUrl,
-      // data: {
-      //   token: getApp().globalData.token,
-      //   page: _this.data.page,
-      //   pageSize: '30',		
-      //   type: _this.data.type,		
-      //   workAddress: _this.data.region,		
-      //   industry: _this.data.industry,				
-      //   educationLevel: _this.data.education,			
-      //   workYear: _this.data.workYear,			
-      //   workPay: _this.data.monthPay,			
-      //   height1: _this.data.height1,			
-      //   height2: _this.data.height2,	
-      //   sex: _this.data.sex	
-      // },
       data: _this.params,
       success: function (res) {
         console.log(res);
         if(res.data.status==0){
-          var oldList = _this.data.jianliList;
-          for (var i = 0; i < res.data.list.length;i++){
-            oldList.push(res.data.list[i])
-          }
           _this.setData({
-            jianliList: oldList
+            jianliList: _this.data.jianliList.concat(res.data.list)
           })
         }
       }
@@ -279,74 +261,15 @@ Page({
     console.log(this.params)
     wx.request({
       url: jobListUrl,
-      // data: {
-      //   token: getApp().globalData.token,
-      //   type: _this.data.type,//类型（0最新，1推荐）
-      //   recruitType: _this.data.recruitType,//招聘类型（0：  全职   1：兼职）
-      //   key: _this.data.key,//搜索条件
-      //   region: _this.data.region,//地区
-      //   job: '',//职位
-      //   education: _this.data.education,//学历
-      //   workYear: _this.data.workYear,//工作年限
-      //   monthPay: _this.data.monthPay,//月薪
-      //   companyId: '',//公司id
-      //   payType: _this.data.payType,//结算方式
-      //   sex: _this.data.sex,//性别
-      //   industry: _this.data.industry,//行业
-      // },
       data: _this.params,
       success: function (res) {
         console.log(res);
         if(res.data.status==0){
-          var oldList = _this.data.jianliList;
-          for (var i = 0; i < res.data.list.length; i++) {
-            oldList.push(res.data.list[i])
-          }
           _this.setData({
-            jobList: res.data.list
+            jobList: _this.data.jobList.concat(res.data.list)
           })
         }
       }
     })
-  },
-
-  // // 获取简历列表
-  // getJianliListFn: function () {
-  //   var _this = this;
-    
-  //   wx.request({
-  //     url: searchResumeUrl,
-  //     data: {
-  //       token: getApp().globalData.token,
-  //       key: _this.data.key
-  //     },
-  //     success: function (res) {
-  //       console.log(res);
-  //       if(res.data.status==0){
-  //         _this.setData({
-  //           jianliList: res.data.list
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
-  // // 获取职位列表
-  // getJobListFn: function () {
-  //   var _this = this;
-  //   wx.request({
-  //     url: jobListUrl,
-  //     data: {
-  //       token: getApp().globalData.token,
-  //       key: _this.data.key
-  //     },
-  //     success: function (res) {
-  //       console.log(res)
-  //       if(res.data.status==0){
-  //         _this.setData({
-  //           jobList: res.data.list
-  //         })
-  //       }
-  //     }
-  //   })
-  // }
+  }
 })

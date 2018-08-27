@@ -203,14 +203,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.params.page = 1 
-    if (this.data.id == "resume") {
-      this.setData({ jobList: [] })
-      this.jobListFn()
-    } else if (this.data.id == "company") {
-      this.setData({ jianliList: [] })
-      this.jianliListFn()
-    }
+    // this.params.page = 1 
+    // if (this.data.id == "resume") {
+    //   this.setData({ jobList: [] })
+    //   this.jobListFn()
+    // } else if (this.data.id == "company") {
+    //   this.setData({ jianliList: [] })
+    //   this.jianliListFn()
+    // }
   },
 
   /**
