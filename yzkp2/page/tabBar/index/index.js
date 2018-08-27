@@ -133,7 +133,7 @@ Page({
             },
             success: function (res) {
               
-              // console.log(res)
+              console.log(res)
               
               getApp().globalData.token = res.data.obj.token;
               // getApp().globalData.role = res.data.obj.type;
@@ -150,7 +150,7 @@ Page({
                 key: 'role',
                 data: res.data.obj.type
               })
-              if (res.data.obj.company !=null){
+              if (res.data.obj.company != null){
                 wx.setStorage({
                   key: 'companyId',// 公司id
                   data: res.data.obj.company.id,
@@ -178,7 +178,9 @@ Page({
                   id: 'resume'
                 })
               }
-
+              if (res.data.obj.resume == null && res.data.obj.employee == null && res.data.obj.resume == null){
+                _this.jobListFn();
+              }
               socket.init();
             }
           })
@@ -204,8 +206,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(this.data)
-    if(this.data.isRefresh){
+    if (this.data.isRefresh) {
       this.params.page = 1
       if (this.data.id == "resume") {
         this.setData({ jobList: [] })
@@ -215,7 +216,7 @@ Page({
         this.jianliListFn()
       }
       this.data.isRefresh = false
-    }    
+    }  
   },
 
   /**

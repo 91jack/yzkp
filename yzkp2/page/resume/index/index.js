@@ -25,8 +25,7 @@ Page({
     browseList: null,
     modalShow: true,
     linkPhone: '',
-    imgShow: false,
-    applyList: [],
+    applyList: null,
   },
 
   /**
@@ -87,48 +86,40 @@ Page({
             key: 'resumeId',
             data: res.data.obj.base.id,
           })
-          wx.setStorage({
-            key: 'headImg',
-            data: res.data.obj.base.headImg,
-          })
-          wx.setStorage({
-            key: 'resumeName',
-            data: res.data.obj.base.name,
-          })
-        }
-      }
-    })
-    wx.request({
-      url: browseMeUrl,
-      data: {
-        token: getApp().globalData.token,
-      },
-      success: function (res) {
-        console.log(res.data)
-        _this.setData({
-          browseList: res.data.list
-        })
+          wx.request({
+            url: browseMeUrl,
+            data: {
+              token: getApp().globalData.token,
+            },
+            success: function (res) {
+              console.log(res.data)
+              _this.setData({
+                browseList: res.data.list
+              })
 
-      }
-    })
-    wx.request({
-      url: resumeApplyUrl,
-      data: {
-        token: getApp().globalData.token,
-      },
-      success: function (res) {
-        console.log(res)
-        if (res.data.status == 0) {
-          if (res.data.list.length != 0) {
-            _this.setData({
-              imgShow: true,
-              applyList: res.data.list
-            })
-          }
-          console.log(_this.data.imgShow)
+            }
+          })
+          wx.request({
+            url: resumeApplyUrl,
+            data: {
+              token: getApp().globalData.token,
+            },
+            success: function (res) {
+              console.log(res)
+              if (res.data.status == 0) {
+                if (res.data.list.length != 0) {
+                  _this.setData({
+                    applyList: res.data.list
+                  })
+                }
+                console.log(_this.data.imgShow)
+              }
+            }
+          })
         }
       }
     })
+    
   },
   // 切换tab
   beActive:function(e){

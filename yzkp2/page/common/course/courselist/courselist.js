@@ -34,6 +34,7 @@ Page({
         token: getApp().globalData.token,
       },
       success: function (res) {
+        console.log(res)
         if (res.data.status == 0) {
           _this.setData({
             courseType: res.data.list
@@ -110,17 +111,19 @@ Page({
   getCourseList:function(){
     var _this = this;
     var courseType = _this.data.courseType
+    var index = _this.data.index;
     wx.request({
       url: courseListUrl,//课程列表
       data: {
         token: getApp().globalData.token,
-        type: courseType[_this.data.index].id,
+        type: courseType[index].id,
         city: _this.data.city,
         search: _this.data.search,
         pageSize:10,
         page:1
       },
       success: function (res) {
+        console.log(res)
         if (res.data.status == 0) {
           if (res.data.list.length>0){
             _this.setData({
