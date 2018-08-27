@@ -125,12 +125,18 @@ Page({
     let prevPage = pages[pages.length - 2];//上一页面
 
     if (type == 'jobList') {// 职位列表 
-      prevPage.params.region = _this.data.selectCity
-
+      prevPage.params.region = _this.data.selectCity;
+      prevPage.params.workAddress = _this.data.selectCity;
       wx.navigateBack({
         delta: 1
       })
       return
+      // wx.navigateTo({
+        // url: '/page/company/joblist/joblist?city=' + _this.data.selectCity
+        // success: function(res) {},
+        // fail: function(res) {},
+        // complete: function(res) {},
+      // })
     }
     if (type == 'intension') {//求职意向
       prevPage.setData({ city: _this.data.selectCity })
@@ -146,27 +152,41 @@ Page({
       })
       return
     }
-
-    switch (type) {
-      case 'intension'://求职意向
-        url = '/page/resume/jobintensionedit/jobintensionedit?city=' + _this.data.selectCity;
-        break;
-      case 'courselist'://能力提升
-        url = '/page/common/course/courselist/courselist?city=' + _this.data.selectCity;
-        break;
-      case 'postfulltime':// 发布全职
-        url = '/page/company/postfulltime/postfulltime?city=' + _this.data.selectCity;
-        break;
-      case 'postparttime':// 发布兼职
-        url = '/page/company/postparttime/postparttime?city=' + _this.data.selectCity;
-        break;
-      case 'jobList':// 职位列表
-        url = '/page/company/joblist/joblist?city=' +  _this.data.selectCity;
-        break;  
+    if ( type =='postfulltime'){
+      prevPage.setData({ city: _this.data.selectCity })
+      wx.navigateBack({
+        delta: 1
+      })
+      return
     }
+    if (type == 'postparttime') {
+      prevPage.setData({ city: _this.data.selectCity })
+      wx.navigateBack({
+        delta: 1
+      })
+      return
+    }
+
+    // switch (type) {
+    //   case 'intension'://求职意向
+    //     url = '/page/resume/jobintensionedit/jobintensionedit?city=' + _this.data.selectCity;
+    //     break;
+    //   case 'courselist'://能力提升
+    //     url = '/page/common/course/courselist/courselist?city=' + _this.data.selectCity;
+    //     break;
+    //   case 'postfulltime':// 发布全职
+    //     url = '/page/company/postfulltime/postfulltime?city=' + _this.data.selectCity;
+    //     break;
+    //   case 'postparttime':// 发布兼职
+    //     url = '/page/company/postparttime/postparttime?city=' + _this.data.selectCity;
+    //     break;
+    //   case 'jobList':// 职位列表
+    //     url = '/page/company/joblist/joblist?city=' +  _this.data.selectCity;
+    //     break;  
+    // }
     
-    wx.navigateTo({
-      url: url
-    })
+    // wx.navigateTo({
+    //   url: url
+    // })
   },
 })

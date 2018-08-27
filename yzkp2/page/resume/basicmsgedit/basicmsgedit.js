@@ -16,13 +16,16 @@ Page({
     workExerciseData:[],
     workExerciseHide:false,
     workExerciseIndex:0,
+    educationArr:[],
+    educationIndex:0,
+    educationHide:false,
     nowType: ['目前再找工作', '观望有好机会会考虑','我不想换工作'],
     nowTypeHide:false,
     nowTypeIndex:0,
     sexData:["男","女"],
     sexHide:false,
     sexIndex:0,
-    educationLevel:'',
+    educationLevel:'请选择',
     name: '',
     getSex: '请选择',
     sex:'',
@@ -54,6 +57,14 @@ Page({
         })
       },
     });
+    wx.getStorage({
+      key: 'educationArr',
+      success: function(res) {
+        that.setData({
+          educationArr:res.data
+        })
+      },
+    })
     wx.getStorage({
       key: 'resumeId',
       success: function(res) {
@@ -119,6 +130,12 @@ Page({
         nowTypeIndex: e.detail.value,
         state: e.detail.value,
         nowTypeHide: true
+      })
+    } else if (i == 9) { //学历选择
+      that.setData({
+        educationIndex: e.detail.value,
+        educationLevel: e.detail.value,
+        educationHide: true
       })
     }
   },
@@ -231,7 +248,6 @@ Page({
           address: that.address,
           mobile: that.mobile,
           email: that.email,
-          educationLevel: '11',
           height: that.height
         },
         success: function (res) {
