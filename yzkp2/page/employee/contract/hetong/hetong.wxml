@@ -1,0 +1,12 @@
+<!--page/my/contract/step6/step6.wxml-->
+<import src="../../../../wxParse/wxParse.wxml" />
+<view style="text-align:center;font-size:32rpx;font-weight:bold;margin：20rpx auto;">劳动合同</view>
+<view style="padding:25rpx;margin-bottom:100rpx;">
+ <template is="wxParse" data="{{wxParseData:aHrefHrefData.nodes}}" />
+</view>
+
+
+
+
+
+

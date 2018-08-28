@@ -130,17 +130,20 @@ Page({
     var url = '';
     var type = this.data.type;
     console.log(type)
+    console.log(this.data.id)
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
 
     if (type == 'jobList') {// 职位列表 
-      if (_this.data.id=="resume"){
-        prevPage.params.region = _this.data.selectCity;
-        prevPage.setData({ isRefresh: true })
-      }else if(_this.data.id='company'){
+      if(_this.data.id=='company'){
         prevPage.params.workAddress = _this.data.selectCity;
+        prevPage.setData({ workAddress: _this.data.selectCity })        
         prevPage.setData({ isRefresh: true })
-      }
+      } else {
+        prevPage.params.region = _this.data.selectCity;
+        prevPage.setData({ region: _this.data.selectCity })
+        prevPage.setData({ isRefresh: true })
+      } 
       wx.navigateBack({
         delta: 1
       })

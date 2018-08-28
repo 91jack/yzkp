@@ -7,6 +7,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 // 获取简历列表
 const getResumeListUrl = require('../../../config').getResumeListUrl;
 Page({
+  
   params: { token: getApp().globalData.token, page: 1, pageSize: 30},
   /**
    * 页面的初始数据
@@ -91,6 +92,7 @@ Page({
       }
       this.data.isRefresh = false
     }   
+    console.log(this.data.jobList)
   },
 
   /**
@@ -181,12 +183,10 @@ Page({
   jianliListFn: function (callback) {
     var _this = this;
     this.clearParams()
-    console.log(this.params)
     wx.request({
       url: searchResumeUrl,
       data: _this.params,
       success: function (res) {
-        console.log(res);
         if(res.data.status==0){
           _this.setData({
             jianliList: _this.data.jianliList.concat(res.data.list)
@@ -203,12 +203,10 @@ Page({
   jobListFn: function (callback){
     var _this = this;
     this.clearParams()
-    console.log(this.params)
     wx.request({
       url: jobListUrl,
       data: _this.params,
       success: function (res) {
-        console.log(res);
         if(res.data.status==0){
           _this.setData({
             jobList: _this.data.jobList.concat(res.data.list)
@@ -220,6 +218,6 @@ Page({
         }
       }
     })
-  },
+  }
 
 })

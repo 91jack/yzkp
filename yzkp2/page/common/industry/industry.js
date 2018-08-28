@@ -79,13 +79,15 @@ Page({
     var industry =  _this.data.returnIndustryData
     // var industry = _this.data.locNav + '-' + _this.data.returnIndustryData
 
-    var url = '';
+    // var url = '';
     var type = this.data.type;
+    console.log(type)
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
-
     if (type == 'industry') {
       prevPage.params.industry= industry;
+      prevPage.setData({ industry: industry })   
+      // prevPage.params.setData({ industry: industry })      
       prevPage.setData({ isRefresh: true })
       wx.navigateBack({//返回
         delta: 1
@@ -93,6 +95,7 @@ Page({
       return
     }
     if (type == 'intension') {
+      prevPage.params.industry = industry;
       prevPage.setData({ industry: industry })
       wx.navigateBack({//返回
         delta: 1

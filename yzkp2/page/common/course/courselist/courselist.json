@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "能力提升",
   "enablePullDownRefresh": true,
-  "onReachBottomDistance": 50
+  "onReachBottomDistance": 50,
+  "backgroundColor": "#3830EB"
 }

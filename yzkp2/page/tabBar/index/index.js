@@ -8,6 +8,8 @@ const jobListUrl = require('../../../config').jobListUrl;
 // 搜索简历
 const searchResumeUrl = require('../../../config').searchResumeUrl;
 
+// 获取能力提升类型列表信息
+const courseTypeurl = require('../../../config').courseTypeurl;
 
 var socket = require('../../../socket.js');
 Page({
@@ -132,20 +134,27 @@ Page({
               code: res.code
             },
             success: function (res) {
-              
               console.log(res)
-              
               getApp().globalData.token = res.data.obj.token;
-              // getApp().globalData.role = res.data.obj.type;
-              // getApp().globalData.resume = res.data.obj.resume;// 求职者，员工简历
-              // getApp().globalData.employee = res.data.obj.employee;// 员工
-              // getApp().globalData.company = res.data.obj.company;//公司
               _this.params.token = res.data.obj.token;
+
+              wx.request({
+                url: courseTypeurl,//课程分类
+                data: {
+                  token: getApp().globalData.token,
+                },
+                success: function (res) {
+                  console.log(res)
+                  wx.setStorage({
+                    key: 'courseType',
+                    data: res.data.list,
+                  })
+                }
+              })
 
               _this.setData({
                 role: res.data.obj.type
               })
-
               wx.setStorage({
                 key: 'role',
                 data: res.data.obj.type
@@ -154,6 +163,10 @@ Page({
                 wx.setStorage({
                   key: 'companyId',// 公司id
                   data: res.data.obj.company.id,
+                  success:function(){
+                    console.log(11111111111)
+                    socket.init();
+                  }
                 })
                 wx.setStorage({
                   key: 'serachId',// 公司id
@@ -167,6 +180,10 @@ Page({
                 wx.setStorage({
                   key: 'resumeId',// 简历id
                   data: res.data.obj.resume.id,
+                  success: function () {
+                    console.log(22222222222222)
+                    socket.init();
+                  }
                 })
                 wx.setStorage({
                   key: 'serachId',// 公司id
@@ -177,12 +194,19 @@ Page({
                   id: 'resume'
                 })
               } else{
+                wx.setStorage({
+                  key: 'serachId',// 公司id
+                  data: "resume",
+                })
                 _this.jobListFn();
+              }              
+              if (res.data.obj.employee.id){
+                wx.setStorage({
+                  key: 'employeesId',
+                  data: res.data.obj.employee.id,
+                })
               }
-              // if (res.data.obj.resume == null && res.data.obj.employee == null && res.data.obj.resume == null){
-              //   _this.jobListFn();
-              // }
-              socket.init();
+              
             }
           })
         } else {
@@ -198,7 +222,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
 
    
   },
@@ -207,17 +231,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log(this.params)
     if (this.data.isRefresh) {
       this.params.page = 1
-      if (this.data.id == "resume") {
-        this.setData({ jobList: [] })
-        this.jobListFn()
-      } else if (this.data.id == "company") {
+      if (this.data.id == "company") {
         this.setData({ jianliList: [] })
         this.jianliListFn()
+      } else {
+        this.setData({ jobList: [] })
+        this.jobListFn()
       }
       this.data.isRefresh = false
     }  
+
+   
   },
 
   /**
@@ -238,18 +265,24 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.setBackgroundTextStyle({
+      textStyle: 'light', // 下拉背景字体、loading 图的样式为dark
+    })
+    this.setData({
+      key:''
+    })
     this.params = { token: getApp().globalData.token, page: 1, pageSize: 30 }
-    if (this.data.id == "resume") {
-      this.setData({ jobList: []})
-      this.jobListFn(function(){
-        wx.stopPullDownRefresh();
-      })
-    } else if (this.data.id == "company") {
+    if (this.data.id == "company") {
       this.setData({ jianliList: [] })
       this.jianliListFn(function () {
         wx.stopPullDownRefresh();
       })
-    }
+    } else {
+      this.setData({ jobList: [] })
+      this.jobListFn(function () {
+        wx.stopPullDownRefresh();
+      })
+    } 
   },
   bindPickerChange:function(e){
     console.log(e)
@@ -286,13 +319,16 @@ Page({
   // 搜索功能
   goSearch:function(){
     this.setData({
-      params: { token: getApp().globalData.token}
+      params: { token: getApp().globalData.token }
     })
-    if (this.data.id =="resume"){
-      this.jobListFn()
-    } else if (this.data.id =="company"){
+     if (this.data.id =="company"){
       this.jianliListFn()
-    }
+     } else{
+       this.jobListFn()
+     }
+    this.setData({
+      key:''
+    })
   },
   /**
    * 用户点击右上角分享
@@ -301,26 +337,19 @@ Page({
   
   },
   clearParams: function(){
-    if (this.data.id == "resume"){
-     if (this.params.monthPay) {
-       this.params.monthPay = this.params.monthPay[1]
-     }
-     if (this.params.education) {
-       this.params.education = this.params.education[1]
-     }
-     if (this.params.workYear) {
-       this.params.workYear = this.params.workYear[1]
-     }
-   }else{
+    if (this.data.id == "company"){
       if (this.params.monthPay) {
-        this.params.monthPay = this.params.monthPay[0]
+        this.params.workPay = this.params.monthPay
       }
       if (this.params.education) {
-        this.params.educationLevel = this.params.education[0]
+        this.params.educationLevel = this.params.education
       }
-      if (this.params.workYear) {
-        this.params.workYear = this.params.workYear[0]
+      if (this.params.sex) {
+        this.params.sex = this.params.sex-1
       }
+      console.log(this.params)      
+   }else{
+      console.log(this.params)
    }
   },
   // 获取简历列表
@@ -333,15 +362,15 @@ Page({
       url: searchResumeUrl,
       data: _this.params,
       success: function (res) {
-        console.log(res);
-        _this.setData({ 
-          jianliList: res.data.list
-        }, function () {
-          if(callback){
-            callback();
-          }          
-        })
-        // _this.params={};
+        if(res.data.status==0){
+          _this.setData({
+            jianliList: res.data.list
+          }, function () {
+            if (callback) {
+              callback();
+            }
+          })
+        }
       }
     })
   },
@@ -355,15 +384,16 @@ Page({
       url: jobListUrl,
       data: _this.params,
       success: function (res) {
-        console.log(res)
-        _this.setData({
-          jobList: res.data.list
-        },function(){
-          if (callback) {
-            callback();
-          }  
-        })
-        // _this.params = {};
+        if(res.data.status==0){
+          console.log(res)
+          _this.setData({
+            jobList: res.data.list
+          }, function () {
+            if (callback) {
+              callback();
+            }
+          })
+        }
       }
     })
   }

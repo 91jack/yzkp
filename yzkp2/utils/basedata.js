@@ -181,6 +181,8 @@ function industry() {
   })
 }
 
+
+
 module.exports = {
   cityList: cityList,//城市列表
   companyType: companyType, // 公司性质
@@ -191,5 +193,6 @@ module.exports = {
   height: height,// 身高要求
   demand: demand,// 首页-要求
   welfare: welfare,// 福利待遇
-  industry:industry// 行业
+  industry:industry,// 行业
+  //courseType: courseType
 }

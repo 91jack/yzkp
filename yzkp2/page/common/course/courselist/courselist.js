@@ -9,98 +9,95 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index:0,
-    search:'',
-    show:true,
-    city:'',
-    courseType:null,
-    courseList:null
+    index: 0,
+    search: '',
+    show: true,
+    city: '',
+    courseType: null,
+    courseList: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var _this = this;
-    // if(options.city){
-    //   _this.setData({
-    //     city: options.city
-    //   })
-    // }
-   
-    wx.request({
-      url: courseTypeurl,//课程分类
-      data: {
-        token: getApp().globalData.token,
-      },
-      success: function (res) {
+    wx.getStorage({
+      key: 'courseType',
+      success: function(res) {
         console.log(res)
-        if (res.data.status == 0) {
-          _this.setData({
-            courseType: res.data.list
-          },function(){
-            _this.getCourseList();
-          })
-        }
-      }
+        _this.setData({
+          courseType: res.data
+        })
+        _this.getCourseList();
+      },
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    this.getCourseList()
+  onShow: function() {
+    if (this.data.courseType !=null){
+      this.getCourseList()
+    }
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+    // wx.setBackgroundColor({
+    //   backgroundColorTop: '#3830EB', // 顶部窗口的背景色为白色
+    //   backgroundColorBottom: '#ffffff', // 底部窗口的背景色为白色
+    // })
+    wx.setBackgroundTextStyle({
+      textStyle: 'light', // 下拉背景字体、loading 图的样式为dark
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   },
-  getValue:function(e){
+  getValue: function(e) {
     console.log(e.detail.value)
     this.setData({
       search: e.detail.value
     })
   },
-  bindPickerChange: function (e) {
+  bindPickerChange: function(e) {
     console.log(e.detail.value)
     this.setData({
       index: e.detail.value
@@ -108,31 +105,35 @@ Page({
     this.getCourseList();
   },
   // 获取课程列表
-  getCourseList:function(){
+  getCourseList: function() {
     var _this = this;
-    var courseType = _this.data.courseType
+    var courseType = _this.data.courseType;
+    console.log(courseType)
     var index = _this.data.index;
+    console.log(index)
+    console.log(courseType[0])
+    console.log(courseType[index].id)
     wx.request({
-      url: courseListUrl,//课程列表
+      url: courseListUrl, //课程列表
       data: {
         token: getApp().globalData.token,
         type: courseType[index].id,
         city: _this.data.city,
         search: _this.data.search,
-        pageSize:10,
-        page:1
+        pageSize: 10,
+        page: 1
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res)
         if (res.data.status == 0) {
-          if (res.data.list.length>0){
+          if (res.data.list.length > 0) {
             _this.setData({
               courseList: res.data.list,
               show: true
             })
-          }else{
+          } else {
             _this.setData({
-              show:false
+              show: false
             })
           }
         }

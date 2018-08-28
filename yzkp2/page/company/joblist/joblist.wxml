@@ -22,14 +22,14 @@
   </view>
 
   <navigator hover-class='none' url="/page/common/city/city?type=jobList">
-    <view class='nav-item'>
+    <view class='nav-item area'>
       <text class='select_font'>地区</text>
       <image class='select_img' src='/image/index/return1.png'></image>
     </view>
   </navigator>
 
   <navigator hover-class='none' url="/page/common/industry/industry?type=industry">
-    <view class='nav-item'>
+    <view class='nav-item ind'>
       <text class='select_font'>行业</text>
       <image class='select_img' src='/image/index/return1.png'></image>
     </view>
@@ -84,4 +84,7 @@
       </view>
     </view>
   </navigator>
+  <view hidden="{{jobList.length!=0||jianliList.length!=0}}">
+    <image class='none-show' src='/image/mine/bigbg.png'></image>
+  </view>
 </view>

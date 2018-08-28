@@ -50,7 +50,8 @@
         "contract/step7/step7",
         "contract/index/index",
         "payment/index/index",
-        "payment/paydetails/paydetails"
+        "payment/paydetails/paydetails",
+        "contract/hetong/hetong"
       ]
     },
     {

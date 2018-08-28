@@ -9,6 +9,7 @@ var isConnect;
 var noDida = true;
 //  
 function init(){
+  console.log('socket init.....')
   wx.getStorage({
     key: 'role',
     success: function(res) {
@@ -18,7 +19,9 @@ function init(){
         wx.getStorage({
           key: 'resumeId',
           success: function (res) {
+            console.log(111111111111)
             var resumeId = res.data;
+            console.log(webSocketUrl + '?type=0&id=' + resumeId)
             wx.connectSocket({
               url: webSocketUrl + '?type=0&id=' + resumeId,
               header: {
@@ -39,6 +42,7 @@ function init(){
         wx.getStorage({
           key: 'companyId',
           success: function (res) {
+            console.log(22222222222222)
             var companyId = res.data;
             wx.connectSocket({
               url: webSocketUrl + '?type=1&id=' + companyId,

@@ -67,12 +67,11 @@
 
 <!-- 打电话发简历模态框 -->
 <view class='modal' hidden='{{modalShow}}' bindtap='hidemodal'>
-  <view hidden='{{modalData[0]}}' class='modal-cont'>
+  <view hidden='{{modalData[0]}}' data-id="0" bindtap='showdetail' class='modal-cont'>
     <view class='modal-tit'>您尚未创建简历!</view>
     <view class='modal-btn'>
       <view class='not'>暂时不用</view>
       <navigator url="/page/resume/index/index" hover-class='none' class='create'>去创建</navigator>
-    
     </view>
   </view>
   <view hidden='{{modalData[1]}}' data-id='1' bindtap='showdetail' class="send-msg">

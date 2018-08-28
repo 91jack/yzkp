@@ -1,0 +1,26 @@
+.hetong{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 117rpx;
+  display: flex;
+}
+.hetong nanavigator{
+  width: 50%;
+  height: 100%;
+}
+.hetong view{
+  width: 375rpx;
+  height: 100%;
+  line-height: 117rpx;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+}
+.yes{
+  background: #B9B9B9;
+}
+.no{
+  background: #F39800;
+}

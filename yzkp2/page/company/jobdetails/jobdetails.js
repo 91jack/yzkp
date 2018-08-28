@@ -24,9 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
     var _this = this;
-
     wx.getStorage({
       key: 'resumeId',
       success: function(res) {
@@ -65,42 +63,50 @@ Page({
       [show]: false
     })
   },
+
   // 显示具体的模态框
   send: function(e) {
+
     var _this = this;
     var i = Number(e.currentTarget.dataset.id)
+    
     wx.getStorage({
       key: 'resumeId',
       success: function(res) {
-        if (res.data < 0) {
-          var show = "modalData[" + i + "]"
-          _this.setData({
-            modalShow: false,
-            [show]: false
-          })
-        }
+        _this.setData({
+          resumeId:res.data
+        })
       },
     })
-
-
-    wx.request({
-      url: resumeDoudiUrl,
-      data: {
-        token: getApp().globalData.token,
-        id: _this.data.id,
-        companyId: _this.data.companyId
-      },
-      success: function(res) {
-        console.log(res)
-        if (res.data.status == 0) {
-          wx.showToast({
-            title: '简历投递成功',
-            icon: 'success',
-            duration: 2000
-          })
+    if (!this.data.resumeId) {
+      var show = "modalData[" + i + "]"
+      _this.setData({
+        modalShow: false,
+        [show]: false
+      })
+    }
+    if (this.data.resumeId){
+      wx.request({
+        url: resumeDoudiUrl,
+        data: {
+          token: getApp().globalData.token,
+          id: _this.data.id,
+          companyId: _this.data.companyId
+        },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 0) {
+            wx.showToast({
+              title: '简历投递成功',
+              icon: 'success',
+              duration: 2000
+            })
+          }
         }
-      }
-    })
+      })
+    }
+
+    
   },
   // 隐藏模态框
   hidemodal: function() {

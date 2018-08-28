@@ -24,9 +24,9 @@ Page({
       recruitType:'', //全职0 兼职1
       payType:'',     //结算方式
       sex:'',
-      monthPay:['',''],    //月薪
-      education:['',''],  //学历
-      workYear:['',''],   //工作经验  
+      monthPay:'',    //月薪
+      education:'',  //学历
+      workYear:'',   //工作经验  
       height1:'',
       height2:''
     }
@@ -117,37 +117,36 @@ Page({
       var payType = "searchData.payType"
       this.setData({
         payDataActive: i,
-        [payType]: this.data.payData[i]
+        [payType]: i
       })
     } else if (attr == 'monthpay') { //月薪
-      var monthPay0 = 'searchData.monthPay[0]';
-      var monthPay1 = 'searchData.monthPay[1]';
+      var monthPay = 'searchData.monthPay';
+      // var monthPay1 = 'searchData.monthPay[1]';
       this.setData({
         monthPayArrActive: i,
-        [monthPay0]: i,
-        [monthPay1]: this.data.monthPayArr[i]
+        [monthPay]: i
       })
     } else if (attr == 'sex') { //性别
       var sex = 'searchData.sex'
+      // var sex1 = 'searchData.sex[1]'
       this.setData({
         sexActive: i,
-        [sex]: i
+        [sex]: i,
+        // [sex1]: this.data.sexData[i]
       })
     } else if (attr == 'xueli') { //学历
-      var education0 = 'searchData.education[0]';
-      var education1 = 'searchData.education[1]'
+      var education = 'searchData.education';
+      // var education1 = 'searchData.education[1]'
       this.setData({
         educationArrActive: i,
-        [education0]: i,
-        [education1]: this.data.educationArr[i]
+        [education]: i
       })
     } else if (attr == 'workexercise') { //工作经验
-      var workYear0 = 'searchData.workYear[0]';
-      var workYear1 ='searchData.workYear[1]';
+      var workYear = 'searchData.workYear';
+      // var workYear1 ='searchData.workYear[1]';
       this.setData({
         workYearArrActive: i,
-        [workYear0]: i,
-        [workYear1]: this.data.workYearArr[i]
+        [workYear]: i
       })
     } else if (attr == 'height') { //height
       this.setData({
@@ -156,11 +155,23 @@ Page({
     }
   },
   returnBack:function(){
+
+    console.log(this.data.searchData)
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
-    for (var key in this.data.searchData) {
-      if (this.data.searchData.hasOwnProperty(key) === true) {
-        prevPage.params[key] = this.data.searchData[key];
+    if(this.data.id=='company'){
+      for (var key in this.data.searchData) {
+        if (this.data.searchData.hasOwnProperty(key) === true) {
+          prevPage.params[key] = this.data.searchData[key];
+        }
+      }
+    }else{
+      console.log(this.data.id)
+      for (var key in this.data.searchData) {
+        if (this.data.searchData.hasOwnProperty(key) === true) {
+          console.log(this.data.searchData)
+          prevPage.params[key] = this.data.searchData[key];
+        }
       }
     }
     prevPage.setData({ isRefresh: true })
@@ -168,11 +179,6 @@ Page({
       delta: 1
     })
     return
-
-    // var serach = JSON.stringify(this.data.searchData)
-    // wx.navigateTo({
-    //   url: '/page/company/joblist/joblist?demand=' + serach
-    // })
   },
   returnCancel:function(){
     wx.navigateBack({//返回

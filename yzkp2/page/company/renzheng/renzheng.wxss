@@ -4,11 +4,10 @@ page{
 }
 .renzheng{
   width: 100%;
-  padding-bottom: 200rpx;
   overflow: auto;
 }
 .renzheng-cont{
-  padding: 0 19rpx 200rpx 27rpx;
+  padding: 0 19rpx 0 27rpx;
 }
 .rz-type{
   display: flex;
@@ -94,6 +93,7 @@ page{
 .rz-intro{
   width:702rpx;
   margin: 34rpx 0 250rpx;
+  padding-bottom: 200rpx;  
 }
 .rz-intro textarea{
   font-size: 28rpx;
@@ -101,10 +101,16 @@ page{
   width:702rpx;
   padding: 25rpx;
   min-height: 80rpx;
+  box-sizing: border-box;
   background:rgba(245,244,254,1);
 }
 .post-job-wealf-tit{
   color: #868686;
   font-size: 24rpx;
   margin-bottom: 16rpx;
+}
+.btn{
+  position: relative;
+  bottom: 0;
+  left: 0
 }

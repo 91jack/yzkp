@@ -34,8 +34,10 @@ Page({
   onShow: function () {
     var that = this
     setTimeout(function(){
-      console.log(socket.getChatList().list)
-      that.setData({ chatList: socket.getChatList().list })
+      console.log(socket)
+      if (socket.getChatList().list){
+        that.setData({ chatList: socket.getChatList().list })
+      }
     },500)    
   },
 

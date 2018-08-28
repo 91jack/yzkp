@@ -11,14 +11,9 @@
       <block  wx:for="{{chatList}}">
         <navigator url='/page/common/msgdetail/msgdetail?companyId={{item.company_id}}&resumeId={{item.resumeId}}' hover-class='none'>
           <view class="chat-item">
-            <!-- <view class="avatar fl">
-              <image src="/image/index/company.png"></image>
-            </view> -->
-
             <view class="chat-item-info fl">
               <view class="cell">
                 <view class="chat-other">{{item.name}}</view>
-                <!-- <view class="company">渐臻科技</view> -->
                 <view class="last-time">{{item.createTime}}</view>
               </view>
               <view class="cell">              

@@ -37,9 +37,9 @@ page {
   width: 186rpx;
   position: relative
 }
-.nav-bar .nav-item:first-of-type::after,
-.nav-bar .nav-item:nth-of-type(2)::after,
-.nav-bar .nav-item:nth-of-type(3)::after{
+.nav-bar .nav-item.area::after,
+.nav-bar .nav-item.suguest::after,
+.nav-bar .nav-item.ind::after{
   content: '';
   position: absolute;
   top: 50%;
@@ -503,7 +503,7 @@ checkbox{
   margin-top: 10rpx;
   margin-bottom: 44rpx;
 }
-.detail-place textarea{
+.detail-place input{
   width: 705rpx;
   height: 120rpx;
   box-sizing: border-box;

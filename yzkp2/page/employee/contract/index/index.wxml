@@ -187,9 +187,8 @@
         </view>
       </view>
     </view>
-    <view class='confirm-contract-company'>《渐臻科技入职合同》</view>
-   
+    <navigator url='/page/employee/contract/hetong/hetong'>
+      <view class='confirm-contract-company'>《渐臻科技入职合同》</view>
+    </navigator>
   </view>
- 
-
 </view>
