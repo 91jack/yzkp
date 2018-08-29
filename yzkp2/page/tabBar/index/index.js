@@ -13,7 +13,7 @@ const courseTypeurl = require('../../../config').courseTypeurl;
 
 var socket = require('../../../socket.js');
 Page({
-  params: { page: 1, pageSize: 5},
+  params: { page: 1, pageSize: 10},
   
   /**
    * 页面的初始数据
@@ -296,15 +296,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    // 显示加载图标
+   
+
     var that = this;
     this.params.page = that.params.page + 1
     if (that.data.id == "resume") {
       // var oldList = that.data.jobList;
       that.jobListFn();
+     
     } else if (that.data.id == "company") {
       // var oldList = that.data.jianliList;
       that.jianliListFn();
+      
     }
+
+   
     return false;
   },
   // 获取输入内容
