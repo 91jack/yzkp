@@ -43,7 +43,7 @@
   </view>
   <view class='post-job-header'>
     <view class='header-item'>
-      <input bindblur='getValue' data-inx="5" placeholder='请输入所属部门' placeholder-style='color:#AEAEAE'></input>
+      <input bindblur='getValue' data-inx="5" placeholder='请输入所属单位' placeholder-style='color:#AEAEAE'></input>
     </view>
     <view class='header-item'>
       <input bindblur='getValue' data-inx="6" placeholder='请输入担任职位' placeholder-style='color:#AEAEAE'></input>
@@ -63,7 +63,7 @@
 <view class='be-employees' hidden='{{modalShow}}'>
   <view class='be-employees-cont'>
     <image src='/image/index/warmtip.png' class='be-employees-cont-pic'></image>
-    <text class='be-employees-cont-info'>温馨提示:如果您不是滕迈企业员工,请勿随意点击!</text>
+    <text class='be-employees-cont-info'>温馨提示:如果您不是腾迈企业员工,请勿随意点击!</text>
     <view class='be-employees-cont-btn'>
       <view class='be-employees-cont-btn-item' bindtap='returnTab'>暂时放弃</view>
       <view class='be-employees-cont-btn-item active' bindtap='writeContinue'>继续填写</view>        

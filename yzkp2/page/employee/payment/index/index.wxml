@@ -16,7 +16,7 @@
     </view>
 
     <view class='user-detail-item-left'>
-      <text class='user-detail-item-tit'>部门:</text>
+      <text class='user-detail-item-tit'>单位:</text>
       <text>{{employee.department}}</text>
     </view>
     

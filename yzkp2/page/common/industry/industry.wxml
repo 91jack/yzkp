@@ -12,12 +12,12 @@
       </block>
     </view>
 
-    <!-- <view class="industry-level3">
+    <view class="industry-level3">
       <block wx:for="{{profession}}">
         <view class="industrybtn {{_job==index?'active':''}}" bindtap='clickLevel3' data-job="{{index}}">
           {{item.name}}
         </view>
       </block>
-    </view>-->
+    </view>
   </view> 
 </view>

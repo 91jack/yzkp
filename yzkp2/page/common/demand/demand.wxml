@@ -14,7 +14,7 @@
       </view>
     </view>
     <view class='bar-request-item'>
-      <view class='bar-request-tit'>月薪要求</view>
+      <view class='bar-request-tit'>薪资要求</view>
       <view class='bar-request-detail'>
         <view data-type="monthpay" bindtap='choose' data-idx='{{index}}' wx:for="{{monthPayArr}}" class='detail-box {{monthPayArrActive==index?"active":""}}'>{{item}}</view>
       </view>

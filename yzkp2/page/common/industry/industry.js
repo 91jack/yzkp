@@ -77,28 +77,29 @@ Page({
       returnIndustryData: e.currentTarget.dataset.value
     })
     var industry =  _this.data.returnIndustryData
+    console.log(industry)
     // var industry = _this.data.locNav + '-' + _this.data.returnIndustryData
 
-     var url = '';
-    var type = this.data.type;
-    console.log(type)
-    let pages = getCurrentPages();//当前页面
-    let prevPage = pages[pages.length - 2];//上一页面
-    if (type == 'industry') {
-      prevPage.params.industry= industry;     
-      prevPage.setData({ isRefresh: true })
-      wx.navigateBack({//返回
-        delta: 1
-      })
-      return
-    }
-    if (type == 'intension') {
-      prevPage.setData({ industry: industry })
-      wx.navigateBack({//返回
-        delta: 1
-      })
-      return
-    }
+    // var url = '';
+    // var type = this.data.type;
+    // console.log(type)
+    // let pages = getCurrentPages();//当前页面
+    // let prevPage = pages[pages.length - 2];//上一页面
+    // if (type == 'industry') {
+    //   prevPage.params.industry= industry;     
+    //   prevPage.setData({ isRefresh: true })
+    //   wx.navigateBack({//返回
+    //     delta: 1
+    //   })
+    //   return
+    // }
+    // if (type == 'intension') {
+    //   prevPage.setData({ industry: industry })
+    //   wx.navigateBack({//返回
+    //     delta: 1
+    //   })
+    //   return
+    // }
 
     // console.log(type)
     // switch (type) {
@@ -114,16 +115,36 @@ Page({
     //   url: url
     // })
   },
-  // // 行业3级选择
-  // clickLevel3: function(e) {
-  //   var _this = this;
-  //   console.log(e)
-  //   var jobIndex = e.currentTarget.dataset.job
+  // 行业3级选择
+  clickLevel3: function(e) {
+    var _this = this;
+    var type = this.data.type;
+    console.log(e)
+    var jobIndex = e.currentTarget.dataset.job
 
-  //   this.setData({
-  //     _job: jobIndex,
-  //     job: _this.data.profession[jobIndex].name
-  //   })
-  //   console.log(this.data.job)
-  // },
+    this.setData({
+      _job: jobIndex,
+      job: _this.data.profession[jobIndex].name
+    })
+    var job = this.data.job;
+    console.log(this.data.job)
+
+    let pages = getCurrentPages();//当前页面
+    let prevPage = pages[pages.length - 2];//上一页面
+    if (type == 'industry') {
+      prevPage.params.industry= job;     
+      prevPage.setData({ isRefresh: true })
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
+    if (type == 'intension') {
+      prevPage.setData({ industry: job })
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
+  },
 })
