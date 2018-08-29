@@ -3,14 +3,14 @@
   <view class='chat' wx:for='{{list}}' wx:key='id'>
     <view wx:if='{{item.type==0}}'>
       <view class='chat-item yourmsg' id='{{item.id}}'>
-        <image src='/image/mine/puppy.jpg'></image>
+        <image src='/image/mine/puppy.png'></image>
         <text>{{item.content}}</text>
       </view>
     </view>
     <view wx:else>
       <view class='chat-item mymsg' id='{{item.id}}'>
         <text>{{item.content}}</text>
-        <image src='/image/mine/rab.jpg'></image>
+        <image src='/image/mine/rab.png'></image>
       </view>
     </view>
   </view>

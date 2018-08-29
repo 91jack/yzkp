@@ -11,7 +11,7 @@
 .chat-item image{
   width: 85rpx;
   height: 85rpx;
-  background: red;
+  /* background: red; */
   margin: 0 29rpx;
   display: block;
   margin-top: 6rpx;

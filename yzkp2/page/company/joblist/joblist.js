@@ -8,7 +8,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 const getResumeListUrl = require('../../../config').getResumeListUrl;
 Page({
   
-  params: { token: getApp().globalData.token, page: 1, pageSize: 30},
+  params: { token: getApp().globalData.token, page: 1, pageSize: 10},
   /**
    * 页面的初始数据
    */
@@ -99,18 +99,41 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.params = { token: getApp().globalData.token, page: 1, pageSize: 30 }
-    if (this.data.id == "resume") {
-      this.setData({ jobList: [] })
-      this.jobListFn(function () {
-        wx.stopPullDownRefresh();
-      });
-    } else if (this.data.id == "company") {
+    // this.params = { token: getApp().globalData.token, page: 1, pageSize: 10 }
+    // // this.params.setData({
+    // //   token: getApp().globalData.token, page: 1, pageSize: 10
+    // // })
+    // // this.setData({ jobList: [], jianliList: []}).success(function(){
+    //   if (this.data.id == "resume") {
+
+    //     this.jobListFn()
+    //     // });
+    //   } else if (this.data.id == "company") {
+    //     // this.setData({  })
+    //     this.jianliListFn()
+    //   }
+    // // })
+    wx.setBackgroundTextStyle({
+      textStyle: 'light', // 下拉背景字体、loading 图的样式为dark
+    })
+    this.setData({
+      key: ''
+    })
+    this.params = { token: getApp().globalData.token, page: 1, pageSize: 10 }
+    if (this.data.id == "company") {
       this.setData({ jianliList: [] })
       this.jianliListFn(function () {
         wx.stopPullDownRefresh();
-      });
-    }
+        wx.pageScrollTo({ scrollTop: -20 })
+      })
+    } else {
+      this.setData({ jobList: [] })
+      this.jobListFn(function () {
+        wx.stopPullDownRefresh();
+        wx.pageScrollTo({ scrollTop: -20 })
+      })
+    } 
+    
   },
 
   /**
@@ -188,14 +211,26 @@ Page({
       data: _this.params,
       success: function (res) {
         if(res.data.status==0){
-          _this.setData({
-            jianliList: _this.data.jianliList.concat(res.data.list)
-          }, function () {
-            if (callback) {
-              callback();
+          if (res.data.list != []) {
+            for (var j = 0; j < res.data.list.length; j++) {
+              _this.data.jianliList.push(res.data.list[j])
+              wx.stopPullDownRefresh();
+              wx.pageScrollTo({ scrollTop: 9999 })
+              _this.setData({
+                jianliList: _this.data.jianliList
+              })
             }
-          })
+          } else {
+            if (callback) {
+              callback()
+            }
+            wx.showToast({
+              title: '到底啦~',
+              duration: 2000
+            })
+          }
         }
+        
       }
     })
   },
@@ -208,14 +243,26 @@ Page({
       data: _this.params,
       success: function (res) {
         if(res.data.status==0){
-          _this.setData({
-            jobList: _this.data.jobList.concat(res.data.list)
-          }, function () {
-            if (callback) {
-              callback();
+          if (res.data.list != []) {
+            for (var j = 0; j < res.data.list.length; j++) {
+              _this.data.jobList.push(res.data.list[j])
+              wx.stopPullDownRefresh();
+              wx.pageScrollTo({ scrollTop: 9999 })
+              _this.setData({
+                jobList: _this.data.jobList
+              })
             }
-          })
+          } else {
+            if (callback) {
+              callback()
+            }
+            wx.showToast({
+              title: '到底啦~',
+              duration: 2000
+            })
+          }
         }
+        
       }
     })
   }

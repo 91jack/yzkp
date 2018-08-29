@@ -13,7 +13,7 @@ const courseTypeurl = require('../../../config').courseTypeurl;
 
 var socket = require('../../../socket.js');
 Page({
-  params: { page: 1, pageSize: 30},
+  params: { page: 1, pageSize: 5},
   
   /**
    * 页面的初始数据
@@ -270,16 +270,18 @@ Page({
     this.setData({
       key:''
     })
-    this.params = { token: getApp().globalData.token, page: 1, pageSize: 30 }
+    this.params = { token: getApp().globalData.token, page: 1, pageSize: 5 }
     if (this.data.id == "company") {
       this.setData({ jianliList: [] })
       this.jianliListFn(function () {
         wx.stopPullDownRefresh();
+        wx.pageScrollTo({ scrollTop: 0 })
       })
     } else {
       this.setData({ jobList: [] })
       this.jobListFn(function () {
         wx.stopPullDownRefresh();
+        wx.pageScrollTo({ scrollTop: 0 })
       })
     } 
   },
@@ -294,20 +296,16 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.params.page = this.params.page + 1
-    if (this.data.id == "resume") {
-      var oldList = this.data.jobList;
-      this.jobListFn();
-      this.setData({
-        jobList:oldList.concat(this.data.jobList)
-      })
-    } else if (this.data.id == "company") {
-      var oldList = this.data.jianliList;
-      this.jianliListFn();
-      this.setData({
-        jianliList:oldList.concat(this.data.jianliList)
-      })
+    var that = this;
+    this.params.page = that.params.page + 1
+    if (that.data.id == "resume") {
+      // var oldList = that.data.jobList;
+      that.jobListFn();
+    } else if (that.data.id == "company") {
+      // var oldList = that.data.jianliList;
+      that.jianliListFn();
     }
+    return false;
   },
   // 获取输入内容
   getKey:function(e){
@@ -362,16 +360,29 @@ Page({
       data: _this.params,
       success: function (res) {
         if(res.data.status==0){
-          _this.setData({
-            jianliList: res.data.list
-          }, function () {
-            if (callback) {
-              callback();
-            }
-          })
+         if(res.data.list!=[]){
+           for(var j=0;j<res.data.list.length;j++){
+             _this.data.jianliList.push(res.data.list[j])
+             _this.setData({
+               jianliList: _this.data.jianliList
+             })
+             wx.stopPullDownRefresh();
+             wx.pageScrollTo({ scrollTop: 9999 })
+           }
+         } else {
+           if (callback) {
+             callback()
+           }
+           wx.showToast({
+             title: '到底啦~',
+             duration: 2000
+           })
+         }
         }
+        
       }
     })
+    return false;
   },
   // 获取职位列表
   jobListFn: function (callback){
@@ -384,16 +395,28 @@ Page({
       data: _this.params,
       success: function (res) {
         if(res.data.status==0){
-          console.log(res)
-          _this.setData({
-            jobList: res.data.list
-          }, function () {
-            if (callback) {
-              callback();
+          if (res.data.list != []) {
+            for (var j = 0; j < res.data.list.length; j++) {
+              _this.data.jobList.push(res.data.list[j])
+              _this.setData({
+                jobList: _this.data.jobList
+              })
+              wx.stopPullDownRefresh();
+              wx.pageScrollTo({ scrollTop: 9999 })
             }
-          })
+          } else {
+            if (callback) {
+              callback()
+            }
+            wx.showToast({
+              title: '到底啦~',
+              duration:2000
+            })
+          }
         }
+        
       }
     })
+    return false;
   }
 })
