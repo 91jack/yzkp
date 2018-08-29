@@ -8,7 +8,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 const getResumeListUrl = require('../../../config').getResumeListUrl;
 Page({
   
-  params: { token: getApp().globalData.token, page: 1, pageSize: 10},
+  params: { token: getApp().globalData.token, page: 1, pageSize: 30},
   /**
    * 页面的初始数据
    */
@@ -81,58 +81,44 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
     if (this.data.isRefresh) {
       this.params.page = 1
-      if (this.data.id == "resume") {
-        this.setData({ jobList: [] })
-        this.jobListFn()
-      } else if (this.data.id == "company") {
-        this.setData({ jianliList: [] })
-        this.jianliListFn()
-      }
       this.data.isRefresh = false
-    }   
-    console.log(this.data.jobList)
+      if (this.data.id == "resume") {
+        this.setData({ jobList: [] }, function () {
+          that.jobListFn()
+        })
+
+      } else if (this.data.id == "company") {
+        this.setData({ jianliList: [] }, function () {
+          that.jianliListFn()
+        })
+      }
+    }
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    // this.params = { token: getApp().globalData.token, page: 1, pageSize: 10 }
-    // // this.params.setData({
-    // //   token: getApp().globalData.token, page: 1, pageSize: 10
-    // // })
-    // // this.setData({ jobList: [], jianliList: []}).success(function(){
-    //   if (this.data.id == "resume") {
+    var that = this
+    this.params = { page: 1, pageSize: 30, token: getApp().globalData.token }
+    if (this.data.id == "resume") {
+      this.setData({ jobList: [] }, function () {
+        that.jobListFn(function () {
+          wx.stopPullDownRefresh();
+        })
+      })
 
-    //     this.jobListFn()
-    //     // });
-    //   } else if (this.data.id == "company") {
-    //     // this.setData({  })
-    //     this.jianliListFn()
-    //   }
-    // // })
-    wx.setBackgroundTextStyle({
-      textStyle: 'light', // 下拉背景字体、loading 图的样式为dark
-    })
-    this.setData({
-      key: ''
-    })
-    this.params = { token: getApp().globalData.token, page: 1, pageSize: 10 }
-    if (this.data.id == "company") {
-      this.setData({ jianliList: [] })
-      this.jianliListFn(function () {
-        wx.stopPullDownRefresh();
-        wx.pageScrollTo({ scrollTop: -20 })
+    } else if (this.data.id == "company") {
+      this.setData({ jianliList: [] }, function () {
+        that.jianliListFn(function () {
+          wx.stopPullDownRefresh();
+        })
       })
-    } else {
-      this.setData({ jobList: [] })
-      this.jobListFn(function () {
-        wx.stopPullDownRefresh();
-        wx.pageScrollTo({ scrollTop: -20 })
-      })
-    } 
+
+    }
     
   },
 
@@ -140,11 +126,28 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    var that = this
     this.params.page = this.params.page + 1
     if (this.data.id == "resume") {
-      this.jobListFn();
+      this.jobListFn(function (end) {
+        if (end) {
+          wx.showToast({
+            title: '到底啦~',
+            duration: 2000
+          })
+          that.params.page = that.params.page - 1
+        }
+      });
     } else if (this.data.id == "company") {
-      this.jianliListFn();
+      this.jianliListFn(function (end) {
+        if (end) {
+          wx.showToast({
+            title: '到底啦~',
+            duration: 2000
+          })
+          that.params.page = that.params.page - 1
+        }
+      });
     }
   },
 
@@ -159,24 +162,36 @@ Page({
       index: e.detail.value,
       type: e.detail.value,
     })
-    if(this.data.id=='company'){
-      this.jianliListFn();
-    }else if(this.data.id='resume'){
-      this.jobListFn();
-    }
+    // if(this.data.id=='company'){
+    //   this.jianliListFn();
+    // }else if(this.data.id='resume'){
+    //   this.jobListFn();
+    // }
   },
 
   getValue: function (e) {
-    console.log(e.detail.value)
     this.setData({
       key: e.detail.value
     })
   },
   search:function(e){
-    if(this.data.id=='company'){
-      this.getJianliListFn()
-    } else if (this.data.id == 'resume'){
-      this.getJobListFn()
+    var that = this
+    this.params.page = 1;
+    this.params.key = this.data.key
+
+    if (this.data.id == "resume") {
+      this.setData({ jobList: [] }, function () {
+        that.jobListFn(function () {
+          that.params.key = ''
+        })
+      })
+    } else if (this.data.id == "company") {
+      this.setData({ jianliList: [] }, function () {
+        that.jianliListFn(function () {
+          console.log(that.data.jianliList)
+          that.params.key = ''
+        })
+      })
     }
   },
   clearParams: function () {
@@ -203,66 +218,43 @@ Page({
     }    
   },
   // 获取简历列表
+  // 获取简历列表
   jianliListFn: function (callback) {
     var _this = this;
-    this.clearParams()
+    //this.clearParams();
+    //console.log(this.params)
     wx.request({
       url: searchResumeUrl,
       data: _this.params,
       success: function (res) {
-        if(res.data.status==0){
-          if (res.data.list != []) {
-            for (var j = 0; j < res.data.list.length; j++) {
-              _this.data.jianliList.push(res.data.list[j])
-              wx.stopPullDownRefresh();
-              wx.pageScrollTo({ scrollTop: 9999 })
-              _this.setData({
-                jianliList: _this.data.jianliList
-              })
-            }
-          } else {
-            if (callback) {
-              callback()
-            }
-            wx.showToast({
-              title: '到底啦~',
-              duration: 2000
-            })
+        _this.setData({
+          jianliList: _this.data.jianliList.concat(res.data.list)
+        }, function () {
+          if (callback) {
+            callback(res.data.list.length == 0);
           }
-        }
-        
+        })
+        // _this.params={};
       }
     })
   },
-  
-  jobListFn: function (callback){
+  // 获取职位列表
+  jobListFn: function (callback) {
     var _this = this;
-    this.clearParams()
+    //this.clearParams();
+    //console.log(this.params)
     wx.request({
       url: jobListUrl,
       data: _this.params,
       success: function (res) {
-        if(res.data.status==0){
-          if (res.data.list != []) {
-            for (var j = 0; j < res.data.list.length; j++) {
-              _this.data.jobList.push(res.data.list[j])
-              wx.stopPullDownRefresh();
-              wx.pageScrollTo({ scrollTop: 9999 })
-              _this.setData({
-                jobList: _this.data.jobList
-              })
-            }
-          } else {
-            if (callback) {
-              callback()
-            }
-            wx.showToast({
-              title: '到底啦~',
-              duration: 2000
-            })
+        _this.setData({
+          jobList: _this.data.jobList.concat(res.data.list)
+        }, function () {
+          if (callback) {
+            callback(res.data.list.length == 0);
           }
-        }
-        
+        })
+        // _this.params = {};
       }
     })
   }
