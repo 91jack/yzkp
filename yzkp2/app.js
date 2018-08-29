@@ -11,12 +11,11 @@ base.demand();// 首页-要求
 base.welfare();// 福利待遇
 base.industry();//行业
 
-
 var socket = require('./socket.js');
 const loginUrl = require('./config').loginUrl;
 App({
   onLaunch: function () {
-    
+   
   },
   globalData: {
     token:'',
@@ -25,9 +24,7 @@ App({
     resume:null,//简历
     employee:null,//员工
   },
-  
   onShow: function (options) {
-    
     if (!socket.getSocketStatus()){
       socket.init()
     }
