@@ -12,16 +12,14 @@ function init(){
   console.log('socket init.....')
   wx.getStorage({
     key: 'role',
-    success: function(res) {
-      console.log(res)
-      if(res.data == 0){
+    success: function(result) {
+      console.log(result)
+      if (result.data == 0){
         // 建立连接
         wx.getStorage({
           key: 'resumeId',
           success: function (res) {
-            console.log(111111111111)
             var resumeId = res.data;
-            console.log(webSocketUrl + '?type=0&id=' + resumeId)
             wx.connectSocket({
               url: webSocketUrl + '?type=0&id=' + resumeId,
               header: {
@@ -38,11 +36,10 @@ function init(){
             })
           },
         })
-      }else if(res.data == 1){
+      } else if (result.data == 1){
         wx.getStorage({
           key: 'companyId',
           success: function (res) {
-            console.log(22222222222222)
             var companyId = res.data;
             wx.connectSocket({
               url: webSocketUrl + '?type=1&id=' + companyId,
@@ -58,7 +55,27 @@ function init(){
                 }   
               }
             })
-
+          },
+        })
+      } else if (result.data == 2) {
+        wx.getStorage({
+          key: 'resumeId',
+          success: function (res) {
+            var resumeId = res.data;
+            wx.connectSocket({
+              url: webSocketUrl + '?type=0&id=' + resumeId,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: 'GET',
+              success: function () {
+                isConnect = true
+                console.log('websocket已连接')
+                if (noDida) {
+                  dida()
+                }
+              }
+            })
           },
         })
       }

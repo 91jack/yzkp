@@ -137,7 +137,6 @@ Page({
               console.log(res)
               getApp().globalData.token = res.data.obj.token;
               _this.params.token = res.data.obj.token;
-
               wx.request({
                 url: courseTypeurl,//课程分类
                 data: {
