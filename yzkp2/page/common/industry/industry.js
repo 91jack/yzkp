@@ -79,43 +79,43 @@ Page({
     var industry =  _this.data.returnIndustryData
     // var industry = _this.data.locNav + '-' + _this.data.returnIndustryData
 
-    // var url = '';
+     var url = '';
     var type = this.data.type;
     console.log(type)
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
-    if (type == 'industry') {
-      prevPage.params.industry= industry;
-      prevPage.setData({ industry: industry })   
-      // prevPage.params.setData({ industry: industry })      
-      prevPage.setData({ isRefresh: true })
-      wx.navigateBack({//返回
-        delta: 1
-      })
-      return
-    }
-    if (type == 'intension') {
-      prevPage.params.industry = industry;
-      prevPage.setData({ industry: industry })
-      wx.navigateBack({//返回
-        delta: 1
-      })
-      return
-    }
-
-    // console.log(type)
-    // switch (type) {
-    //   case 'intension': //求职意向
-    //     url = '/page/resume/jobintensionedit/jobintensionedit?industry=' + industry;
-    //     break;
-    //   case 'industry': // 职位列表
-    //     url = '/page/company/joblist/joblist?industry=' + industry;
-    //     break;
+    // if (type == 'industry') {
+    //   prevPage.params.industry= industry;
+    //   prevPage.setData({ industry: industry })   
+    //   // prevPage.params.setData({ industry: industry })      
+    //   prevPage.setData({ isRefresh: true })
+    //   wx.navigateBack({//返回
+    //     delta: 1
+    //   })
+    //   return
     // }
-    // console.log(url)
-    // wx.navigateTo({
-    //   url: url
-    // })
+    // if (type == 'intension') {
+    //   prevPage.params.industry = industry;
+    //   prevPage.setData({ industry: industry })
+    //   wx.navigateBack({//返回
+    //     delta: 1
+    //   })
+    //   return
+    // }
+
+    console.log(type)
+    switch (type) {
+      case 'intension': //求职意向
+        url = '/page/resume/jobintensionedit/jobintensionedit?industry=' + industry;
+        break;
+      case 'industry': // 职位列表
+        url = '/page/company/joblist/joblist?industry=' + industry;
+        break;
+    }
+    console.log(url)
+    wx.navigateTo({
+      url: url
+    })
   },
   // // 行业3级选择
   // clickLevel3: function(e) {
