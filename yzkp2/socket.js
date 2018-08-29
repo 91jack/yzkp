@@ -1,7 +1,7 @@
 //线上
-const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
+//const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 
-//const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
+const webSocketUrl = `ws://192.168.0.107:8080/yzkp/websocket`;
 
 var chatList;
 var func;
@@ -145,11 +145,48 @@ function dida(){
   }, 20000);
 }
 
+//检查登录用户是否有权限进行下一步操作
+//比如：有简历才能聊天，才能投递
+function checkRole(obj){
+  wx.getStorage({
+    key: 'role',
+    success: function (res){
+      if (res.data == 1 || res.data == 2) {  //求职者或者员工
+        wx.getStorage({
+          key: 'resumeId',
+          fail: function (){ //没有简历
+            wx.showModal({
+              title:'温馨提示',
+              content: '您还没有简历，请先创建简历',
+              success: function (res) {
+                if (res.confirm) {
+                  wx.navigateTo({
+                    url: '/page/resume/basicmsgedit/basicmsgedit'
+                  })
+                } else if (res.cancel) {
+                  wx.switchTab({
+                    url:'/page/tabBar/index/index'
+                  })
+                }
+              }
+            })
+          }
+        })
+      } else {
+        if(obj.success){
+          obj.success()
+        }
+      }
+    }
+  })
+}
+
 module.exports = {
   init:init,
   sendMessage: sendMessage,
   setFunc: setFunc,
   getChatList: getChatList,
   getSocketStatus: getSocketStatus,
-  close: close
+  close: close,
+  checkRole: checkRole
 }
