@@ -22,6 +22,7 @@ Page({
    */
   onLoad: function(options) {
     var _this = this;
+    // this.getCourseList();
     wx.getStorage({
       key: 'courseType',
       success: function(res) {
@@ -29,8 +30,22 @@ Page({
         _this.setData({
           courseType: res.data
         })
-        _this.getCourseList();
       },
+    })
+    wx.request({
+      url: courseTypeurl,
+      data:{
+        token:getApp().globalData.token,
+      },
+      success:function(res){
+        console.log(res)
+        if(res.data.status==0){
+        _this.setData({
+            courseType:res.data.list
+          })
+        _this.getCourseList();
+        }
+      }
     })
   },
 
@@ -48,7 +63,6 @@ Page({
     if (this.data.courseType !=null){
       this.getCourseList()
     }
-    
   },
 
   /**
@@ -69,10 +83,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    // wx.setBackgroundColor({
-    //   backgroundColorTop: '#3830EB', // 顶部窗口的背景色为白色
-    //   backgroundColorBottom: '#ffffff', // 底部窗口的背景色为白色
-    // })
     wx.setBackgroundTextStyle({
       textStyle: 'light', // 下拉背景字体、loading 图的样式为dark
     })

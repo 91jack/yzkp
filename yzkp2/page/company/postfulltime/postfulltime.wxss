@@ -17,3 +17,6 @@ page{
 .choose-place.last{
   padding-bottom: 200rpx;
 }
+.choose-place.add{
+  margin-bottom: 20rpx;
+}

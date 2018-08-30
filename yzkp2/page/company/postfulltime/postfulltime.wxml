@@ -1,5 +1,17 @@
 <view class="page">
   <view class="post-job">
+    <view class='post-job-area'>
+      <view class='choose-place add'>
+        <navigator hover-class='none' url='/page/common/industry/industry?type=postfulltime'>
+          <view class='choose-region'>
+            <view class='choose-region-item'>
+              <text>{{industry}}</text>
+              <image src='/image/index/return.png'></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
     <view class='post-job-header'>
       <view class='header-item'>
         <input placeholder='职位名称' value='{{name}}' data-idx='0' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>

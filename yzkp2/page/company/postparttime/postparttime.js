@@ -21,6 +21,7 @@ Page({
     tm:'',
     city: '选择城市',
     address: '',
+    industry:"请选择岗位",
     duty: '',
     tag: '',
     sexData: ["男", "女"],
@@ -131,6 +132,14 @@ Page({
       success: function (res) {
         that.setData({
           linkPhone: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'industry',
+      success: function (res) {
+        that.setData({
+          industry: res.data
         })
       },
     })
@@ -354,7 +363,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this;
+    wx.setStorage({
+      key: 'industry',
+      data: that.data.industry,
+    })
   },
 
   postBtn: function () {
@@ -379,8 +392,8 @@ Page({
         city: _this.data.city,
         address: _this.data.address,
         duty: _this.data.duty,
-        tag: _this.data.tag
-
+        tag: _this.data.tag,
+        industry: _this.data.industry
       },
       success: function (res) {
         console.log(res)
@@ -400,6 +413,10 @@ Page({
           wx.removeStorage({
             key: 'sex',
             success: function(res) {},
+          })
+          wx.removeStorage({
+            key: 'industry',
+            success: function (res) { },
           })
           wx.removeStorage({
             key: 'address',

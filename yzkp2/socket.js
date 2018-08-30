@@ -165,6 +165,11 @@ function checkRole(obj){
       if (res.data == 0 || res.data == 2) {  //求职者或者员工
         wx.getStorage({
           key: 'resumeId',
+          success: function(){
+            if (obj.success) {
+              obj.success()
+            }
+          },
           fail: function (){ //没有简历
             wx.showModal({
               title:'温馨提示',

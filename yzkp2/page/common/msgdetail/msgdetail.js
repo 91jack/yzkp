@@ -38,21 +38,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
     socket.checkRole({
       success: function(){
         if (!socket.getSocketStatus) {
           socket.init({  //如果websocket未连接，尝试连接 并获取聊天详情
             success: function(){
-              socket.setFunc(this.getMsg)
+              socket.setFunc(that.getMsg)
               var msg = {
                 msgType: 2,
-                resumeId: this.data.resumeId,
-                companyId: this.data.companyId,
+                resumeId: that.data.resumeId,
+                companyId: that.data.companyId,
                 content: curPage
               }
               socket.sendMessage(msg)
             }
           })
+        }else{
+          socket.setFunc(that.getMsg)
+          var msg = {
+            msgType: 2,
+            resumeId: that.data.resumeId,
+            companyId: that.data.companyId,
+            content: curPage
+          }
+          socket.sendMessage(msg)
         }
       }
     })

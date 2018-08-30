@@ -503,7 +503,7 @@ checkbox{
   margin-top: 10rpx;
   margin-bottom: 44rpx;
 }
-.detail-place input{
+.detail-place textarea{
   width: 705rpx;
   height: 120rpx;
   box-sizing: border-box;

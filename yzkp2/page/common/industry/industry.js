@@ -146,5 +146,19 @@ Page({
       })
       return
     }
+    if (type == 'postfulltime') {
+      prevPage.setData({ industry: job })
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
+    if (type == 'postparttime') {
+      prevPage.setData({ industry: job })
+      wx.navigateBack({//返回
+        delta: 1
+      })
+      return
+    }
   },
 })
