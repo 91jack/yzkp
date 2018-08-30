@@ -240,15 +240,12 @@ Page({
           wx.login({
             success: function (result) {
               if (result.code) {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                //发起网络请求
                 wx.request({
                   url: loginUrl,
                   data: {
                     code: result.code
                   },
                   success: function (resD) {
-                    // console.log(resD)
                     if(resD.data.status==0){
                       wx.setStorage({
                         key: 'companyId',
