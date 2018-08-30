@@ -131,7 +131,7 @@ Page({
       // var sex1 = 'searchData.sex[1]'
       this.setData({
         sexActive: i,
-        [sex]: i,
+        [sex]: i-1,
         // [sex1]: this.data.sexData[i]
       })
     } else if (attr == 'xueli') { //学历

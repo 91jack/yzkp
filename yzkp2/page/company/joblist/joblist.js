@@ -8,7 +8,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 const getResumeListUrl = require('../../../config').getResumeListUrl;
 Page({
   
-  params: { token: getApp().globalData.token, page: 1, pageSize: 30},
+  params: { token: getApp().globalData.token, page: 1, pageSize: 10},
   /**
    * 页面的初始数据
    */
@@ -103,7 +103,7 @@ Page({
    */
   onPullDownRefresh: function () {
     var that = this
-    this.params = { page: 1, pageSize: 30, token: getApp().globalData.token }
+    this.params = { page: 1, pageSize: 10, token: getApp().globalData.token }
     if (this.data.id == "resume") {
       this.setData({ jobList: [] }, function () {
         that.jobListFn(function () {
@@ -162,11 +162,6 @@ Page({
       index: e.detail.value,
       type: e.detail.value,
     })
-    // if(this.data.id=='company'){
-    //   this.jianliListFn();
-    // }else if(this.data.id='resume'){
-    //   this.jobListFn();
-    // }
   },
 
   getValue: function (e) {
@@ -221,19 +216,29 @@ Page({
   // 获取简历列表
   jianliListFn: function (callback) {
     var _this = this;
-    //this.clearParams();
-    //console.log(this.params)
     wx.request({
       url: searchResumeUrl,
       data: _this.params,
       success: function (res) {
-        _this.setData({
-          jianliList: _this.data.jianliList.concat(res.data.list)
-        }, function () {
-          if (callback) {
-            callback(res.data.list.length == 0);
+        if(res.data.status==0){
+          if (res.data.list != []) {
+            for (var j = 0; j < res.data.list.length; j++) {
+              _this.data.jianliList.push(res.data.list[j])
+              wx.stopPullDownRefresh();
+              _this.setData({
+                jianliList: _this.data.jianliList
+              })
+            }
+          } else {
+            if (callback) {
+              callback()
+            }
+            wx.showToast({
+              title: '到底啦~',
+              duration: 2000
+            })
           }
-        })
+        }
         // _this.params={};
       }
     })
@@ -241,22 +246,30 @@ Page({
   // 获取职位列表
   jobListFn: function (callback) {
     var _this = this;
-    //this.clearParams();
-    //console.log(this.params)
     wx.request({
       url: jobListUrl,
       data: _this.params,
       success: function (res) {
-        _this.setData({
-          jobList: _this.data.jobList.concat(res.data.list)
-        }, function () {
-          if (callback) {
-            callback(res.data.list.length == 0);
+        if(res.data.status==0){
+          if (res.data.list != []) {
+            for (var j = 0; j < res.data.list.length; j++) {
+              _this.data.jobList.push(res.data.list[j])
+              wx.stopPullDownRefresh();
+              _this.setData({
+                jobList: _this.data.jobList
+              })
+            }
+          } else {
+            if (callback) {
+              callback()
+            }
+            wx.showToast({
+              title: '到底啦~',
+              duration: 2000
+            })
           }
-        })
-        // _this.params = {};
+        }
       }
     })
   }
-
 })
