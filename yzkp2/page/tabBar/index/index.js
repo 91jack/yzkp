@@ -132,7 +132,7 @@ Page({
             },
             success: function (res) {
               
-              // console.log(res)
+              //console.log(res)
               
               getApp().globalData.token = res.data.obj.token;
               _this.params.token = res.data.obj.token;
@@ -150,19 +150,18 @@ Page({
                     key: 'resumeId',// 简历id
                     data: res.data.obj.resume.id,
                     success: function () {
-                      console.log(22222222222222)
                       socket.init();
                     }
                   })
-                  wx.setStorage({
-                    key: 'serachId',// 公司id
-                    data: "resume",
-                  })
-                  _this.jobListFn();
-                  _this.setData({
-                    id: 'resume'
-                  })
                 }
+                wx.setStorage({
+                  key: 'serachId',// 公司id
+                  data: "resume",
+                })
+                _this.jobListFn();
+                _this.setData({
+                  id: 'resume'
+                })
               } else if (res.data.obj.type == 1) {//企业
                 wx.setStorage({
                   key: 'companyId',// 公司id

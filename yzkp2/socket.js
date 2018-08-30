@@ -1,14 +1,14 @@
 //线上
-//const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
+const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 
-const webSocketUrl = `ws://192.168.0.107:8080/yzkp/websocket`;
+//const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 
 var chatList;
 var func;
 var isConnect;
 var noDida = true;
 //  
-function init(){
+function init(obj){
   console.log('socket init.....')
   wx.getStorage({
     key: 'role',
@@ -31,6 +31,9 @@ function init(){
                 console.log('websocket已连接')
                 if(noDida){
                   dida()
+                }
+                if (obj && obj.success){
+                  obj.success()
                 }                
               }
             })
@@ -53,6 +56,9 @@ function init(){
                 if (noDida) {
                   dida()
                 }   
+                if (obj && obj.success) {
+                  obj.success()
+                } 
               }
             })
           },
@@ -74,6 +80,9 @@ function init(){
                 if (noDida) {
                   dida()
                 }
+                if (obj && obj.success) {
+                  obj.success()
+                } 
               }
             })
           },
@@ -113,8 +122,10 @@ function setFunc(func_name){
 }
 
 function sendMessage(msg){
-    wx.sendSocketMessage({data:JSON.stringify(msg)})
+  if(isConnect){
+    wx.sendSocketMessage({ data: JSON.stringify(msg) })
     console.log(msg)
+  }
 }
 
 function getChatList(){
@@ -151,7 +162,7 @@ function checkRole(obj){
   wx.getStorage({
     key: 'role',
     success: function (res){
-      if (res.data == 1 || res.data == 2) {  //求职者或者员工
+      if (res.data == 0 || res.data == 2) {  //求职者或者员工
         wx.getStorage({
           key: 'resumeId',
           fail: function (){ //没有简历
@@ -161,12 +172,18 @@ function checkRole(obj){
               success: function (res) {
                 if (res.confirm) {
                   wx.navigateTo({
-                    url: '/page/resume/basicmsgedit/basicmsgedit'
+                    url: '/page/resume/index/index'
                   })
-                } else if (res.cancel) {
-                  wx.switchTab({
-                    url:'/page/tabBar/index/index'
-                  })
+                } else if (res.cancel) {     
+                  if (getCurrentPages()[0].route == 'page/tabBar/msg/index'){
+                    wx.switchTab({
+                      url: '/page/tabBar/index/index'
+                    })
+                  }else{
+                    wx.navigateBack({
+                      delta: 1
+                    })
+                  }                  
                 }
               }
             })
