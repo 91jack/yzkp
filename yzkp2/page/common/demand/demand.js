@@ -171,6 +171,7 @@ Page({
       }
     }
     prevPage.setData({ isRefresh: true })
+    console.log(prevPage.params)
     wx.navigateBack({//返回
       delta: 1
     })

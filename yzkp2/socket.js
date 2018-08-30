@@ -1,14 +1,14 @@
 //线上
 const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 
-// const webSocketUrl = `ws://192.168.0.107:8080/yzkp/websocket`;
+//const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 
 var chatList;
 var func;
 var isConnect;
 var noDida = true;
 //  
-function init(){
+function init(obj){
   console.log('socket init.....')
   wx.getStorage({
     key: 'role',
@@ -31,6 +31,9 @@ function init(){
                 console.log('websocket已连接')
                 if(noDida){
                   dida()
+                }
+                if (obj && obj.success){
+                  obj.success()
                 }                
               }
             })
@@ -53,6 +56,9 @@ function init(){
                 if (noDida) {
                   dida()
                 }   
+                if (obj && obj.success) {
+                  obj.success()
+                } 
               }
             })
           },
@@ -74,6 +80,9 @@ function init(){
                 if (noDida) {
                   dida()
                 }
+                if (obj && obj.success) {
+                  obj.success()
+                } 
               }
             })
           },
@@ -113,8 +122,10 @@ function setFunc(func_name){
 }
 
 function sendMessage(msg){
-    wx.sendSocketMessage({data:JSON.stringify(msg)})
+  if(isConnect){
+    wx.sendSocketMessage({ data: JSON.stringify(msg) })
     console.log(msg)
+  }
 }
 
 function getChatList(){
@@ -162,11 +173,24 @@ function checkRole(obj){
                 if (res.confirm) {
                   wx.navigateTo({
                     url: '/page/resume/index/index'
+<<<<<<< HEAD
                   })
                 } else if (res.cancel) {
                   wx.switchTab({
                     url:'/page/tabBar/index/index'
+=======
+>>>>>>> db4c63a781548f53713581e7b7db6672e103eca9
                   })
+                } else if (res.cancel) {     
+                  if (getCurrentPages()[0].route == 'page/tabBar/msg/index'){
+                    wx.switchTab({
+                      url: '/page/tabBar/index/index'
+                    })
+                  }else{
+                    wx.navigateBack({
+                      delta: 1
+                    })
+                  }                  
                 }
               }
             })

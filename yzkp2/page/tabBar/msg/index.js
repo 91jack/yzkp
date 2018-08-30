@@ -41,12 +41,8 @@ Page({
             that.setData({ chatList: socket.getChatList().list })
           }
         }, 500)
-      },
-      fail:function(){
-
       }
-    })
-        
+    })  
   },
 
   /**
