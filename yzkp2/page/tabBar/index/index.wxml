@@ -78,40 +78,40 @@
 <!--展示  -->
 <view class='cont'>
   <!-- 职位列表展示 -->
+  
   <template is="joblist" data="{{jobList}}" />
   <!-- 简历列表展示 -->
-  <navigator wx:for='{{jianliList}}' url="/page/company/companycheck/companycheck?id={{item.id}}" class='cont-item'>
-    <view class='cont-tit'>
-      <text class='title'>{{item.workName}}/{{item.name}}</text>
-      <text class='time'>{{item.createTime}}</text>
-    </view>
-
-    
-
-    <view class='jianlicont cont-detail'>
-      <view class='det-left'>
-        <view class='left-item'>
-          <image src='/image/index/area.png'></image>
-          <text>{{item.workAddress}}</text>
+  <block wx:for='{{jianliList}}'>
+    <navigator url="/page/company/companycheck/companycheck?id={{item.id}}" class='cont-item'>
+      <view class='cont-tit'>
+        <text class='title'>{{item.workName}}/{{item.name}}</text>
+        <text class='time'>{{item.createTime}}</text>
+      </view>
+      <view class='jianlicont cont-detail'>
+        <view class='det-left'>
+          <view class='left-item'>
+            <image src='/image/index/area.png'></image>
+            <text>{{item.workAddress}}</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/work.png'></image>
+            <text>{{item.workYear}}年</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/xueli.png'></image>
+            <text>{{item.educationLevel}}</text>
+          </view>
+          <view class='left-item'>
+            <image src='/image/index/height.png'></image>
+            <text>{{item.height}}cm</text>
+          </view>
         </view>
-        <view class='left-item'>
-          <image src='/image/index/work.png'></image>
-          <text>{{item.workYear}}年</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/xueli.png'></image>
-          <text>{{item.educationLevel}}</text>
-        </view>
-        <view class='left-item'>
-          <image src='/image/index/height.png'></image>
-          <text>{{item.height}}cm</text>
+        <view class='left-item pay'>
+          <text>{{item.monthPay}}</text>
         </view>
       </view>
-      <view class='left-item pay'>
-        <text>{{item.monthPay}}</text>
-      </view>
-    </view>
-  </navigator>
+    </navigator>
+  </block>
   <view hidden="{{jobList.length!=0||jianliList.length!=0}}">
     <image class='none-show' src='/image/mine/bigbg.png'></image>
   </view>

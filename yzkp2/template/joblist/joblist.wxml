@@ -54,7 +54,7 @@
             <view class='company-info det-left'>
               <view class='company-name'>{{item.companyName}}</view>
             </view>
-            <view class='det-right'>{{item.pay}}</view>
+            <view class='det-right'>{{item.pay}}/{{item.payUnit}}</view>
           </view>
 
           <view class='cont-detail'>

@@ -1,5 +1,3 @@
-// page/common/industry/industry.js
-
 Page({
 
   /**
@@ -70,56 +68,18 @@ Page({
   clickLevel2: function(e) {
     var _this = this;
     var professionIndex = e.currentTarget.dataset.profession
-    console.log(e.currentTarget.dataset.value)
     _this.setData({
       _profession: professionIndex,
       profession: _this.data.currentSelect[professionIndex].list,
       returnIndustryData: e.currentTarget.dataset.value
     })
     var industry =  _this.data.returnIndustryData
-    console.log(industry)
-    // var industry = _this.data.locNav + '-' + _this.data.returnIndustryData
-
-    // var url = '';
-    // var type = this.data.type;
-    // console.log(type)
-    // let pages = getCurrentPages();//当前页面
-    // let prevPage = pages[pages.length - 2];//上一页面
-    // if (type == 'industry') {
-    //   prevPage.params.industry= industry;     
-    //   prevPage.setData({ isRefresh: true })
-    //   wx.navigateBack({//返回
-    //     delta: 1
-    //   })
-    //   return
-    // }
-    // if (type == 'intension') {
-    //   prevPage.setData({ industry: industry })
-    //   wx.navigateBack({//返回
-    //     delta: 1
-    //   })
-    //   return
-    // }
-
-    // console.log(type)
-    // switch (type) {
-    //   case 'intension': //求职意向
-    //     url = '/page/resume/jobintensionedit/jobintensionedit?industry=' + industry;
-    //     break;
-    //   case 'industry': // 职位列表
-    //     url = '/page/company/joblist/joblist?industry=' + industry;
-    //     break;
-    // }
-    // console.log(url)
-    // wx.navigateTo({
-    //   url: url
-    // })
+    
   },
   // 行业3级选择
   clickLevel3: function(e) {
     var _this = this;
     var type = this.data.type;
-    console.log(e)
     var jobIndex = e.currentTarget.dataset.job
 
     this.setData({
@@ -127,7 +87,6 @@ Page({
       job: _this.data.profession[jobIndex].name
     })
     var job = this.data.job;
-    console.log(this.data.job)
 
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面

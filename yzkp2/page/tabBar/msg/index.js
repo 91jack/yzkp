@@ -83,7 +83,11 @@ Page({
   },
   //
   switchChat: function(){
-    this.setData({ chatSelected: true, noticeSelected: false, chatList: socket.getChatList().list})
+    this.setData({ 
+      chatSelected: true, 
+      noticeSelected: false, 
+      chatList: socket.getChatList().list
+     })
   },
 
   switchNotice: function () {
@@ -92,7 +96,14 @@ Page({
       url: noticeUrl,
       data: { token: getApp().globalData.token},
       success: function (res) {
-        _this.setData({ chatSelected: false, noticeSelected: true, noticeList: res.data.list ? res.data.list : null })
+        console.log(res)
+        if(res.data.status==0){
+          _this.setData({
+            chatSelected: false,
+            noticeSelected: true,
+            noticeList: res.data.list ? res.data.list : null
+          })
+        }
       }
     })    
   }

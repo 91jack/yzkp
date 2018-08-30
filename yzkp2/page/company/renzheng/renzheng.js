@@ -1,5 +1,7 @@
 // page/company/renzheng/renzheng.js
 const addCompanyInfoUrl = require('../../../config').addCompanyInfoUrl;
+// 登录
+const loginUrl = require('../../../config').loginUrl;
 Page({
 
   /**
@@ -233,6 +235,29 @@ Page({
                   url: '/page/tabBar/index/index',
                 })
               },1000)
+            }
+          })
+          wx.login({
+            success: function (result) {
+              if (result.code) {
+                // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                //发起网络请求
+                wx.request({
+                  url: loginUrl,
+                  data: {
+                    code: result.code
+                  },
+                  success: function (resD) {
+                    // console.log(resD)
+                    if(resD.data.status==0){
+                      wx.setStorage({
+                        key: 'companyId',
+                        data: resD.data.obj.id,
+                      })
+                    }
+                  }
+                })
+              }
             }
           })
         }

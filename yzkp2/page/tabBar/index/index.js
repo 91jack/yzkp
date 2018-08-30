@@ -120,7 +120,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
+    // var _this = this;
+    
+  },
+
+  onLoadFn:function(){
+    var _this = this
     // 登录
     wx.login({
       success: function (res) {
@@ -170,7 +175,7 @@ Page({
                   id: 'resume'
                 })
               } else if (res.data.obj.type == 1) {//企业
-                
+
                 wx.setStorage({
                   key: 'serachId',// 公司id
                   data: "company",
@@ -180,7 +185,7 @@ Page({
                   id: 'company'
                 })
 
-                if(res.data.obj.company!=null){
+                if (res.data.obj.company != null) {
                   wx.setStorage({
                     key: 'companyId',// 公司id
                     data: res.data.obj.company.id,
@@ -222,11 +227,9 @@ Page({
         } else {
           console.log('登录失败！' + res.errMsg)
         }
-      } 
+      }
     }); 
   },
-
-
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -239,6 +242,7 @@ Page({
    */
   onShow: function () {
     var that = this
+    this.onLoadFn();
     if (this.data.isRefresh) {
       this.params.page = 1
       this.data.isRefresh = false
@@ -253,6 +257,7 @@ Page({
         })
       }
     }
+    console.log(this.data.jianliList)
   },
 
   /**
@@ -309,7 +314,8 @@ Page({
         if(end){
           wx.showToast({
             title: '到底啦~',
-            duration: 2000
+            duration: 2000,
+            icon:'none'
           })
           that.params.page = that.params.page - 1
         }
@@ -319,7 +325,8 @@ Page({
         if (end) {
           wx.showToast({
             title: '到底啦~',
-            duration: 2000
+            duration: 2000,
+            icon:'none'
           })
           that.params.page = that.params.page - 1
         }

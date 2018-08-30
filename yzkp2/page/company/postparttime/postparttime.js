@@ -269,6 +269,8 @@ Page({
         attr: "劳务派遣"
       })
     }
+    console.log(this.data.attr)
+    
     wx.setStorage({
       key: 'attr',
       data: [that.data.attrData[i], i],

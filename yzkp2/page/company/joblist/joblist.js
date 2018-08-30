@@ -133,7 +133,8 @@ Page({
         if (end) {
           wx.showToast({
             title: '到底啦~',
-            duration: 2000
+            duration: 2000,
+            icon:'none'
           })
           that.params.page = that.params.page - 1
         }
@@ -143,7 +144,8 @@ Page({
         if (end) {
           wx.showToast({
             title: '到底啦~',
-            duration: 2000
+            duration: 2000,
+            icon: 'none'
           })
           that.params.page = that.params.page - 1
         }

@@ -6,7 +6,8 @@ const signForWagesUrl = require('../../../config').signForWagesUrl;
 
 // 确认合同信息
 const signNameUrl = require('../../../config').signNameUrl;
-
+// 登录
+const loginUrl = require('../../../config').loginUrl;
 var content = null;
 var touchs = [];
 var canvasw = 0;
@@ -151,7 +152,6 @@ wx.getSystemInfo({
                     sign_name: imgUrl
                   },
                   success: function (res) {
-                    // console.log(res);
                     if (res.data.status == 0) {
                       wx.showToast({
                         title: '工资签收成功',
@@ -165,7 +165,6 @@ wx.getSystemInfo({
                           }, 2000)
                         }
                       })
-
                     }
                   }
                 })
@@ -178,7 +177,6 @@ wx.getSystemInfo({
                     sign_name: imgUrl
                   },
                   success: function (res) {
-                    // console.log(res);
                     if (res.data.status == 0) {
                       wx.showToast({
                         title: '签字成功',
@@ -187,12 +185,35 @@ wx.getSystemInfo({
                         success: function () {
                           setTimeout(function () {
                             wx.switchTab({
-                              url: '/page/tabBar/my/index',
+                              url: '/page/tabBar/index/index',
                             })
                           }, 2000)
                         }
                       })
+                      // 登录
 
+                      wx.login({
+                        success: function (result) {
+                          if (result.code) {
+                            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                            //发起网络请求
+                            wx.request({
+                              url: loginUrl,
+                              data: {
+                                code: result.code
+                              },
+                              success: function (resD) {
+                                if (resD.data.status == 0) {
+                                  wx.setStorage({
+                                    key: 'employeesId',
+                                    data: resD.data.obj.id,
+                                  })
+                                }
+                              }
+                            })
+                          }
+                        }
+                      })
                     }
                   }
                 })
