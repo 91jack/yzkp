@@ -155,21 +155,17 @@ Page({
     }
   },
   returnBack:function(){
-
-    console.log(this.data.searchData)
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
-    if(this.data.id=='company'){
+    if(this.data.id=='company'){      
       for (var key in this.data.searchData) {
         if (this.data.searchData.hasOwnProperty(key) === true) {
           prevPage.params[key] = this.data.searchData[key];
         }
       }
-    }else{
-      console.log(this.data.id)
+    }else{      
       for (var key in this.data.searchData) {
         if (this.data.searchData.hasOwnProperty(key) === true) {
-          console.log(this.data.searchData)
           prevPage.params[key] = this.data.searchData[key];
         }
       }

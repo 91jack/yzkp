@@ -21,13 +21,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('opts:' + options)
     this.setData({
       resumeId: options.resumeId,
       companyId: options.companyId,
     })
-    socket.setFunc(this.getMsg)
-    
   },
 
   /**
@@ -41,6 +38,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    socket.checkRole()
+    
+    if (!socket.getSocketStatus) {
+      socket.init()
+    }
+    socket.setFunc(this.getMsg)
     var msg = {
       msgType: 2,
       resumeId: this.data.resumeId,
@@ -86,8 +89,7 @@ Page({
       companyId: this.data.companyId,
       content: curPage
     }
-    socket.sendMessage(msg);
-    
+    socket.sendMessage(msg);    
   },
 
   /**

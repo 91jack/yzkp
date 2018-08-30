@@ -13,7 +13,7 @@ Page({
     workName:'',		
     workPay: ['请选择',''],							
     industry:'',
-    city:'',
+    city:'', 
     resumeId:'',
     oldPay:''
   },
