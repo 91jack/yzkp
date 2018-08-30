@@ -1,7 +1,7 @@
 //线上
-//const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
+const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
 
-const webSocketUrl = `ws://192.168.0.107:8080/yzkp/websocket`;
+// const webSocketUrl = `ws://192.168.0.107:8080/yzkp/websocket`;
 
 var chatList;
 var func;
@@ -151,7 +151,7 @@ function checkRole(obj){
   wx.getStorage({
     key: 'role',
     success: function (res){
-      if (res.data == 1 || res.data == 2) {  //求职者或者员工
+      if (res.data == 0 || res.data == 2) {  //求职者或者员工
         wx.getStorage({
           key: 'resumeId',
           fail: function (){ //没有简历
