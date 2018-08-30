@@ -25,6 +25,7 @@ Page({
     index: 0,//选择的下拉列表下标
     id:'',
     key:'',
+    isFromSearch: true, //用于判断数组是不是空数组，默认true，
     isRefresh: false, //onshow时是否刷新
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
     navBarData: ['地区', '行业', '要求'],
@@ -367,7 +368,7 @@ Page({
                jianliList: _this.data.jianliList
              })
              wx.stopPullDownRefresh();
-             wx.pageScrollTo({ scrollTop: 9999 })
+            //  wx.pageScrollTo({ scrollTop: 9999 })
            }
          } else {
            if (callback) {
@@ -402,7 +403,7 @@ Page({
                 jobList: _this.data.jobList
               })
               wx.stopPullDownRefresh();
-              wx.pageScrollTo({ scrollTop: 9999 })
+              // wx.pageScrollTo({ scrollTop: 9999 })
             }
           } else {
             if (callback) {

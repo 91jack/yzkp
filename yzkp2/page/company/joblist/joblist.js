@@ -215,7 +215,7 @@ Page({
             for (var j = 0; j < res.data.list.length; j++) {
               _this.data.jianliList.push(res.data.list[j])
               wx.stopPullDownRefresh();
-              wx.pageScrollTo({ scrollTop: 9999 })
+              // wx.pageScrollTo({ scrollTop: 9999 })
               _this.setData({
                 jianliList: _this.data.jianliList
               })
@@ -247,7 +247,7 @@ Page({
             for (var j = 0; j < res.data.list.length; j++) {
               _this.data.jobList.push(res.data.list[j])
               wx.stopPullDownRefresh();
-              wx.pageScrollTo({ scrollTop: 9999 })
+              // wx.pageScrollTo({ scrollTop: 9999 })
               _this.setData({
                 jobList: _this.data.jobList
               })
