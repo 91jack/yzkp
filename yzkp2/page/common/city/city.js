@@ -82,31 +82,52 @@ Page({
       country: country,
       selectCity: city
     })
+    var type = this.data.type;
+    let pages = getCurrentPages();//当前页面
+    let prevPage = pages[pages.length - 2];//上一页面
 
-    if (country.length==0){
-      var url = '';
-      var type = this.data.type;
-      switch(type){
-        case 'intension':// 求职意向
-          url = '/page/resume/jobintensionedit/jobintensionedit?city='+city;
-          break;
-        case 'courselist':// 能力提升
-          url = '/page/common/course/courselist/courselist?city=' + city;
-          break;  
-        case 'postfulltime':// 发布全职
-          url = '/page/company/postfulltime/postfulltime?city=' + city;
-          break;
-        case 'postparttime':// 发布兼职
-          url = '/page/company/postparttime/postparttime?city=' + city;
-          break;  
-        case 'jobList':// 职位列表
-          url = '/page/company/joblist/joblist?city=' + city;
-          break;  
+    if (type == 'jobList') {// 职位列表 
+      if (_this.data.id == 'company') {
+        prevPage.params.workAddress = _this.data.selectCity;
+        prevPage.setData({ workAddress: _this.data.selectCity })
+        prevPage.setData({ isRefresh: true })
+      } else {
+        prevPage.params.region = _this.data.selectCity;
+        prevPage.setData({ region: _this.data.selectCity })
+        prevPage.setData({ isRefresh: true })
       }
-      // console.log(url);
-      wx.navigateTo({
-        url: url
+      wx.navigateBack({
+        delta: 1
       })
+      return
+    }
+    if (type == 'intension') {//求职意向
+      prevPage.setData({ city: _this.data.selectCity })
+      wx.navigateBack({
+        delta: 1
+      })
+      return
+    }
+    if (type == 'courselist') {//能力提升
+      prevPage.setData({ city: _this.data.selectCity })
+      wx.navigateBack({
+        delta: 1
+      })
+      return
+    }
+    if (type == 'postfulltime') {
+      prevPage.setData({ city: _this.data.selectCity })
+      wx.navigateBack({
+        delta: 1
+      })
+      return
+    }
+    if (type == 'postparttime') {
+      prevPage.setData({ city: _this.data.selectCity })
+      wx.navigateBack({
+        delta: 1
+      })
+      return
     }
 
   },
@@ -177,27 +198,5 @@ Page({
       })
       return
     }
-
-    // switch (type) {
-    //   case 'intension'://求职意向
-    //     url = '/page/resume/jobintensionedit/jobintensionedit?city=' + _this.data.selectCity;
-    //     break;
-    //   case 'courselist'://能力提升
-    //     url = '/page/common/course/courselist/courselist?city=' + _this.data.selectCity;
-    //     break;
-    //   case 'postfulltime':// 发布全职
-    //     url = '/page/company/postfulltime/postfulltime?city=' + _this.data.selectCity;
-    //     break;
-    //   case 'postparttime':// 发布兼职
-    //     url = '/page/company/postparttime/postparttime?city=' + _this.data.selectCity;
-    //     break;
-    //   case 'jobList':// 职位列表
-    //     url = '/page/company/joblist/joblist?city=' +  _this.data.selectCity;
-    //     break;  
-    // }
-    
-    // wx.navigateTo({
-    //   url: url
-    // })
   },
 })

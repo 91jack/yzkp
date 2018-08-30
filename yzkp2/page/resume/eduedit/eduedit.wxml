@@ -15,7 +15,7 @@
 <view class='box'>
   <text>入学时间</text>
   <view class='right'>
-     <picker mode="date" data-idx="0" value="{{inDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+     <picker mode="date" data-idx="0" value="{{inDate}}" bindchange="bindDateChange">
         <text hidden='{{inHide}}' class='choose'>{{education.beginDate?education.beginDate:getIn}}</text>        
         <text hidden='{{!inHide}}' class='choose'>{{inDate}}</text>
         <image class='next' src='/image/mine/next.png'></image>
@@ -25,7 +25,7 @@
 <view class='box'>
   <text>毕业时间</text>
   <view class='right'>
-     <picker mode="date" data-idx="1" value="{{outDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+     <picker mode="date" data-idx="1" value="{{outDate}}" bindchange="bindDateChange">
         <text hidden='{{outHide}}' class='choose'>{{education.endDate?education.endDate:getOut}}</text>        
         <text hidden='{{!outHide}}' class='choose'>{{outDate}}</text>
         <image class='next' src='/image/mine/next.png'></image>

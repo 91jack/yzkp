@@ -6,7 +6,7 @@
 <view class='box'>
   <text>项目开始时间</text>
   <view class='right'>
-     <picker mode="date" data-idx="0" value="{{inData}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+     <picker mode="date" data-idx="0" value="{{inData}}" bindchange="bindDateChange">
         <text hidden='{{inHide}}' class='choose'>{{id?inDate:getInDate}}</text>        
         <text hidden='{{!inHide}}' class='choose'>{{inDate}}</text>
         <image class='next' src='/image/mine/next.png'></image>
@@ -17,7 +17,7 @@
 <view class='box'>
   <text>项目结束时间</text>
   <view class='right'>
-     <picker mode="date" data-idx="1" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+     <picker mode="date" data-idx="1" value="{{date}}" bindchange="bindDateChange">
         <text hidden='{{outHide}}' class='choose'>{{id?outDate:getOutDate}}</text>        
         <text hidden='{{!outHide}}' class='choose'>{{outDate}}</text>
         <image class='next' src='/image/mine/next.png'></image>

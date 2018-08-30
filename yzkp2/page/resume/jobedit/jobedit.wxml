@@ -2,7 +2,7 @@
 <view class='box'>
   <text>入职时间</text>
   <view class='right'>
-     <picker mode="date" data-idx="0" value="{{inDate}}" start="2012-09-01" end="2018-09-01" bindchange="bindDateChange">
+     <picker mode="date" data-idx="0" value="{{inDate}}" bindchange="bindDateChange">
         <text hidden='{{inHide}}' class='choose'>{{inData}}</text>        
         <text hidden='{{!inHide}}' class='choose'>{{inData}}</text>
         <image class='next' src='/image/mine/next.png'></image>
@@ -12,7 +12,7 @@
 <view class='box'>
   <text>离职时间</text>
   <view class='right'>
-     <picker data-idx="1" mode="date" value="{{outDate}}" start="2012-09-01" end="2018-09-01" bindchange="bindDateChange">
+     <picker data-idx="1" mode="date" value="{{outDate}}" bindchange="bindDateChange">
         <text hidden='{{outHide}}' class='choose'>{{outData}}</text>        
         <text hidden='{{!outHide}}' class='choose'>{{outData}}</text>
         <image class='next' src='/image/mine/next.png'></image>

@@ -134,7 +134,7 @@ Page({
             },
             success: function (res) {
               
-              // console.log(res)
+              console.log(res)
               
               getApp().globalData.token = res.data.obj.token;
               _this.params.token = res.data.obj.token;
@@ -147,6 +147,14 @@ Page({
                 data: res.data.obj.type
               })
               if (res.data.obj.type == 0) {  //求职者
+                _this.jobListFn();
+                wx.setStorage({
+                  key: 'serachId',// 公司id
+                  data: "resume",
+                })
+                _this.setData({
+                  id: 'resume'
+                })
                 if (res.data.obj.resume != null) {
                   wx.setStorage({
                     key: 'resumeId',// 简历id
@@ -156,23 +164,9 @@ Page({
                       socket.init();
                     }
                   })
-                  wx.setStorage({
-                    key: 'serachId',// 公司id
-                    data: "resume",
-                  })
-                  _this.jobListFn();
-                  _this.setData({
-                    id: 'resume'
-                  })
                 }
               } else if (res.data.obj.type == 1) {//企业
-                wx.setStorage({
-                  key: 'companyId',// 公司id
-                  data: res.data.obj.company.id,
-                  success: function () {
-                    socket.init();
-                  }
-                })
+                
                 wx.setStorage({
                   key: 'serachId',// 公司id
                   data: "company",
@@ -181,7 +175,26 @@ Page({
                 _this.setData({
                   id: 'company'
                 })
+
+                if(res.data.obj.company!=null){
+                  wx.setStorage({
+                    key: 'companyId',// 公司id
+                    data: res.data.obj.company.id,
+                    success: function () {
+                      socket.init();
+                    }
+                  })
+                }
               } else if (res.data.obj.type == 2) {//员工
+                _this.jobListFn();
+                wx.setStorage({
+                  key: 'serachId',
+                  data: "resume",
+                })
+
+                _this.setData({
+                  id: 'resume'
+                })
                 if (res.data.obj.resume != null) {//员工也具有求职者身份
                   wx.setStorage({
                     key: 'resumeId',// 简历id
@@ -190,16 +203,7 @@ Page({
                       socket.init();
                     }
                   })
-                  wx.setStorage({
-                    key: 'serachId',
-                    data: "resume",
-                  })
-                  _this.jobListFn();
-                  _this.setData({
-                    id: 'resume'
-                  })
                 }
-
                 if (res.data.obj.employee != null) {  //缓存员工id
                   if (res.data.obj.employee.id) {
                     wx.setStorage({

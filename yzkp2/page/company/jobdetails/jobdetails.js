@@ -25,32 +25,21 @@ Page({
    */
   onLoad: function(options) {
     var _this = this;
+    if(options.id){
+      this.setData({
+        id: options.id
+      })
+    }
     wx.getStorage({
       key: 'resumeId',
       success: function(res) {
-        //resumeId = res.data;
         _this.setData({
           resumeId: res.data
         })
       },
     })
 
-    wx.request({
-      url: jobDetailsUrl,
-      data: {
-        token: getApp().globalData.token,
-        id: options.id
-      },
-      success: function(res) {
-        console.log(res.data)
-        _this.setData({
-          jobDetails: res.data.obj,
-          id: res.data.obj.id,
-          companyId: res.data.obj.companyId,
-          linkPhone: res.data.obj.linkPhone,
-        })
-      }
-    })
+    
   },
 
   // 模态框显示与否
@@ -66,10 +55,8 @@ Page({
 
   // 显示具体的模态框
   send: function(e) {
-
     var _this = this;
     var i = Number(e.currentTarget.dataset.id)
-    
     wx.getStorage({
       key: 'resumeId',
       success: function(res) {
@@ -138,7 +125,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var that = this;
+    wx.request({
+      url: jobDetailsUrl,
+      data: {
+        token: getApp().globalData.token,
+        id: that.data.id
+      },
+      success: function (res) {
+        console.log(res.data)
+        _this.setData({
+          jobDetails: res.data.obj,
+          id: res.data.obj.id,
+          companyId: res.data.obj.companyId,
+          linkPhone: res.data.obj.linkPhone,
+        })
+      }
+    })
   },
 
   /**

@@ -255,9 +255,6 @@ Page({
           console.log(res)
           if (res.data.status == 0) {
             wx.navigateBack(1)
-            // wx.navigateTo({
-            //   url: '/page/resume/index/index',
-            // })
           }
         }
       })
@@ -287,14 +284,9 @@ Page({
           })
           if (res.data.status == 0) {
             wx.navigateBack(1)
-            // wx.navigateTo({
-            //   url: '/page/resume/index/index',
-            // })
           }
         }
       })
-      
     }
-    
   }
 })

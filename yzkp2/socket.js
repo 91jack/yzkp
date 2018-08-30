@@ -161,7 +161,7 @@ function checkRole(obj){
               success: function (res) {
                 if (res.confirm) {
                   wx.navigateTo({
-                    url: '/page/resume/basicmsgedit/basicmsgedit'
+                    url: '/page/resume/index/index'
                   })
                 } else if (res.cancel) {
                   wx.switchTab({

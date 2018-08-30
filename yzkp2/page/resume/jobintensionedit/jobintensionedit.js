@@ -5,6 +5,7 @@ Page({
   /**
    * 页面的初始数据
    */
+  params:{},
   data: {
     monthPayArr:[],
     monthPayIndex:0,
@@ -22,6 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {   
+    console.log(this.params)
     // if (options.industry){
     //   wx.setStorage({
     //     key: 'industry',
@@ -124,32 +126,32 @@ Page({
    */
   onShow: function () {
     var that = this;
-    wx.getStorage({
-      key: 'city',
-      success: function(res) {
-        that.setData({
-          city:res.data
-        })
-      },
-    });
-    wx.getStorage({
-      key: 'industry',
-      success: function(res) {
-        that.setData({
-          industry:res.data
-        })
-      },
-    })
-    // if (that.params.city){
-    //   that.setData({
-    //     city: that.params.city
-    //   })
-    // }
-    // if (that.params.industry) {
-    //   that.setData({
-    //     industry: that.params.industry
-    //   })
-    // }
+    // wx.getStorage({
+    //   key: 'city',
+    //   success: function(res) {
+    //     that.setData({
+    //       city:res.data
+    //     })
+    //   },
+    // });
+    // wx.getStorage({
+    //   key: 'industry',
+    //   success: function(res) {
+    //     that.setData({
+    //       industry:res.data
+    //     })
+    //   },
+    // })
+    if (that.params.city){
+      that.setData({
+        city: that.params.city
+      })
+    }
+    if (that.params.industry) {
+      that.setData({
+        industry: that.params.industry
+      })
+    }
   },
   // 期望职位
   getValue:function(e){
