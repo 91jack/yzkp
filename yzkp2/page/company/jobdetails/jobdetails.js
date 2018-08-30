@@ -134,7 +134,7 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
-        _this.setData({
+        that.setData({
           jobDetails: res.data.obj,
           id: res.data.obj.id,
           companyId: res.data.obj.companyId,

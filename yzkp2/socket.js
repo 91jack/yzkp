@@ -173,13 +173,6 @@ function checkRole(obj){
                 if (res.confirm) {
                   wx.navigateTo({
                     url: '/page/resume/index/index'
-<<<<<<< HEAD
-                  })
-                } else if (res.cancel) {
-                  wx.switchTab({
-                    url:'/page/tabBar/index/index'
-=======
->>>>>>> db4c63a781548f53713581e7b7db6672e103eca9
                   })
                 } else if (res.cancel) {     
                   if (getCurrentPages()[0].route == 'page/tabBar/msg/index'){

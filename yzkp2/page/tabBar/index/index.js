@@ -133,13 +133,6 @@ Page({
               code: res.code
             },
             success: function (res) {
-              
-<<<<<<< HEAD
-              console.log(res)
-=======
-              //console.log(res)
->>>>>>> db4c63a781548f53713581e7b7db6672e103eca9
-              
               getApp().globalData.token = res.data.obj.token;
               _this.params.token = res.data.obj.token;
 
