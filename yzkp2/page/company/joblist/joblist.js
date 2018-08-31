@@ -215,7 +215,6 @@ Page({
     }    
   },
   // 获取简历列表
-  // 获取简历列表
   jianliListFn: function (callback) {
     var _this = this;
     wx.request({
@@ -241,7 +240,6 @@ Page({
             })
           }
         }
-        // _this.params={};
       }
     })
   },

@@ -12,7 +12,7 @@ Page({
   data: {
     nav: ['待定', '不合适', '邀请面试','暂未接通'],
     navShow:[false,true,true,true],
-    navBar:2,
+    navBar:0,
     pickerData: ['待定','不合适','邀请面试','暂未接通'],
     pickerIndex:[0,1,2,3],
     modalShow:true,
@@ -27,6 +27,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    that.getResumeFn();
     wx.getStorage({
       key: 'state',
       success: function(res) {
@@ -44,11 +45,7 @@ Page({
       },
     })
   },
-  zhiweimanage:function(){
-    wx.navigateBack({
-      delta: 1
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -60,18 +57,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getResumeFn()
+  },
+
+  // 初次加载
+  getResumeFn:function(){
     var that = this;
     wx.request({
       url: companyResumeUrl,
       data: {
         token: getApp().globalData.token,
-        state:that.data.state
+        state: 0
       },
       success: function (res) {
         console.log(res)
-        if(res.data.status==0){
+        if (res.data.status == 0) {
           that.setData({
-            manageData:res.data.list
+            manageData: res.data.list
           })
         }
       }
@@ -81,21 +83,21 @@ Page({
   chooseNav:function(e){
     console.log(e);
     var i = Number(e.currentTarget.dataset.id);
-    if(i==0){ //显示面试邀请
+    if(i==2){ //显示面试邀请
       this.setData({
-        navBar:0
+        navBar:2
       })
-    }else if (i == 1) { //暂未接通
-      this.setData({
-        navBar: 1
-      })
-    } else if (i == 2) { //待定
-      this.setData({
-        navBar: 2
-      })
-    } else if (i == 3) { //不合适
+    }else if (i == 3) { //暂未接通
       this.setData({
         navBar: 3
+      })
+    } else if (i == 0) { //待定
+      this.setData({
+        navBar: 0
+      })
+    } else if (i == 1) { //不合适
+      this.setData({
+        navBar: 1
       })
     }
     // var nowType = "navBar["+i+"]";
@@ -131,7 +133,7 @@ Page({
   },
   // picker获取内容
   getPicker:function(e){
-    console.log(e);
+    // console.log(e);
     var that = this;
     var id = e.currentTarget.dataset.id;
     var applyId = Number(e.currentTarget.dataset.applyid);

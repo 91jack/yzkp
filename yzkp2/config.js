@@ -1,8 +1,8 @@
 // 线上
-var host = "https://www.zgdrkj.cn/yzkp/app/";
+// var host = "https://www.zgdrkj.cn/yzkp/app/";
 
 // 本地
-// var host = "http://192.168.1.123:8080/yzkp/app/";
+var host = "http://192.168.1.123:8080/yzkp/app/";
 
 var config = {
   // 下面的地址配合云端 Server 工作
@@ -152,6 +152,9 @@ var config = {
 
   // 企业获取简历列表
   getResumeListUrl: `${host}/recruit/config/get.json`,
+
+  // 企业邀请面试
+  inviteResumeUrl: `${host}/resume/apply/add.json`,
 
   // 招聘外包，用工灵活，劳务派遣
   laowuUrl: `${host}recruit/config/get.json`,

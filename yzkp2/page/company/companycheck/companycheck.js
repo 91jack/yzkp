@@ -1,7 +1,7 @@
 // page/my/resume/index/index.js
 const resumeUrl = require('../../../config').resumeUrl;
 // 邀请面试
-// const 
+const inviteResumeUrl = require('../../../config').inviteResumeUrl;
 Page({
 
   /**
@@ -90,19 +90,30 @@ Page({
   },
   // 邀请面试
   send:function(){
-    
-
-    this.setData({
-      modalShow: true,
-      inviteShow: true
+    var that = this;
+    wx.request({
+      url: inviteResumeUrl,
+      data:{
+        resumeId: that.data.resumeId,
+        token: getApp().globalData.token,
+      },
+      success:function(res){
+        console.log(res)
+        if(res.data.status==0){
+          that.setData({
+            modalShow: true,
+            inviteShow: true
+          })
+          // var that = this;
+          setTimeout(function () {
+            that.setData({
+              modalShow: false,
+              inviteShow: false
+            })
+          }, 1000)
+        }
+      }
     })
-    var that =this;
-    setTimeout(function(){
-      that.setData({
-        modalShow:false,
-        inviteShow:false
-      })
-    },1000)
   },
   chat: function () {
     var _this = this;

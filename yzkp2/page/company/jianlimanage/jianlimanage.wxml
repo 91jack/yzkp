@@ -9,7 +9,7 @@
 
 <view class='manageintro-cont'>
   <!-- 邀请面试  -->
-  <view wx:for='{{manageData}}' class='manage-intro-cont {{navShow[3]?"":"unapprop"}}{{navShow[2]?"":"unconfirmed"}}{{navShow[1]?"":"unconnext"}}'>
+  <view wx:for='{{manageData}}' class='manage-intro-cont {{navShow[1]?"":"unapprop"}}{{navShow[3]?"":"unconfirmed"}}{{navShow[0]?"":"unconnext"}}'>
     <view class='manage-intro-cont-left' data-id="{{item.id}}" bindtap='toresume'>
       <view class='manage-intro-item'>
         <view class='manage-intro-item-info'>
