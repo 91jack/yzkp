@@ -81,7 +81,7 @@
   
   <template is="joblist" data="{{jobList}}" />
   <!-- 简历列表展示 -->
-  <block wx:for='{{jianliList}}'>
+  <block wx:for='{{jianliList}}' wx:key='{{index}}'>
     <navigator url="/page/company/companycheck/companycheck?id={{item.id}}" class='cont-item'>
       <view class='cont-tit'>
         <text class='title'>{{item.workName}}/{{item.name}}</text>

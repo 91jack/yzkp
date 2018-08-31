@@ -9,11 +9,9 @@ var isConnect;
 var noDida = true;
 //  
 function init(obj){
-  console.log('socket init.....')
   wx.getStorage({
     key: 'role',
     success: function(result) {
-      console.log(result)
       if (result.data == 0){
         // 建立连接
         wx.getStorage({
@@ -28,7 +26,6 @@ function init(obj){
               method: 'GET',
               success: function(){
                 isConnect = true
-                console.log('websocket已连接')
                 if(noDida){
                   dida()
                 }
@@ -52,7 +49,6 @@ function init(obj){
               method: 'GET',
               success: function () {
                 isConnect = true
-                console.log('websocket已连接')
                 if (noDida) {
                   dida()
                 }   
@@ -76,7 +72,6 @@ function init(obj){
               method: 'GET',
               success: function () {
                 isConnect = true
-                console.log('websocket已连接')
                 if (noDida) {
                   dida()
                 }
@@ -94,7 +89,6 @@ function init(obj){
 
   //接收数据
   wx.onSocketMessage(function (res) {
-    console.log(res);
     var data = JSON.parse(res.data)
     if (data.msgType==0){
       chatList = data;      
@@ -108,12 +102,10 @@ function init(obj){
   //连接失败
   wx.onSocketError(function () {
     isConnect = false;
-    console.log('websocket连接失败！');
   })
 
   wx.onSocketClose(function(){
     isConnect = false;
-    console.log('websocket已关闭')
   })
 }
 
@@ -124,7 +116,6 @@ function setFunc(func_name){
 function sendMessage(msg){
   if(isConnect){
     wx.sendSocketMessage({ data: JSON.stringify(msg) })
-    console.log(msg)
   }
 }
 

@@ -10,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nav:['邀请面试','暂未接通','待定','不合适'],
+    nav: ['待定', '不合适', '邀请面试','暂未接通'],
     navShow:[false,true,true,true],
     navBar:2,
     pickerData: ['待定','不合适','邀请面试','暂未接通'],
@@ -83,19 +83,19 @@ Page({
     var i = Number(e.currentTarget.dataset.id);
     if(i==0){ //显示面试邀请
       this.setData({
-        navBar:2
+        navBar:0
       })
     }else if (i == 1) { //暂未接通
       this.setData({
-        navBar: 3
+        navBar: 1
       })
     } else if (i == 2) { //待定
       this.setData({
-        navBar: 0
+        navBar: 2
       })
     } else if (i == 3) { //不合适
       this.setData({
-        navBar: 1
+        navBar: 3
       })
     }
     // var nowType = "navBar["+i+"]";
