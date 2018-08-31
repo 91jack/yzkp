@@ -69,7 +69,13 @@ Page({
       url: '/page/company/jobmanage/jobmanage',
       src: '/image/index/office.png',
       text: '职位管理'
-    }]
+    },
+      {
+        url: '/page/company/jianlimanage/jianlimanage',
+        src: '/image/index/office.png',
+        text: '简历管理'
+      }
+    ]
   },
 
   /**
