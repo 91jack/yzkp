@@ -9,6 +9,8 @@
   </view>
 </view>
 
+<!-- <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button> -->
+
 <view class="personal-list">
   <block wx:for="{{currentList}}">
     <navigator hover-class='none' url="{{item.url}}">
