@@ -1,8 +1,8 @@
 <!--page/job/jianlimanage/jianlimanage.wxml-->
-<view class='jobmanage-tit'>
+<!-- <view class='jobmanage-tit'>
   <view class='intro-manage active'>简历管理</view>
   <view class='job-manage' bindtap='zhiweimanage'>职位管理</view>
-</view>
+</view> -->
 <view class='manage-intro-nav'>
   <view wx:for='{{nav}}' data-id='{{index}}' bindtap='chooseNav' class='manage-intro-nav-item {{navShow[index]?"":"active"}}'>{{item}}</view>
 </view>

@@ -1,6 +1,7 @@
 // page/my/resume/index/index.js
 const resumeUrl = require('../../../config').resumeUrl;
-
+// 邀请面试
+// const 
 Page({
 
   /**
@@ -90,6 +91,8 @@ Page({
   },
   // 邀请面试
   send:function(){
+    
+
     this.setData({
       modalShow: true,
       inviteShow: true

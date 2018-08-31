@@ -77,7 +77,7 @@ Page({
         url: resumeDoudiUrl,
         data: {
           token: getApp().globalData.token,
-          id: _this.data.id,
+          id: _this.data.resumeId,
           companyId: _this.data.companyId
         },
         success: function (res) {

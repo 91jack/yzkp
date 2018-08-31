@@ -1,8 +1,8 @@
 <!--page/job/jobmanage/jobmanage.wxml-->
-<view class='jobmanage-tit'>
+<!-- <view class='jobmanage-tit'>
   <view class='intro-manage' bindtap='jianlimanage'>简历管理</view>
   <view class='job-manage active'>职位管理</view>
-</view>
+</view> -->
 
 <!-- 职位管理 -->
 
