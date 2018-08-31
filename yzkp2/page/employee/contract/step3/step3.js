@@ -62,7 +62,6 @@ Page({
           success: function (result) {
             var imgData = JSON.parse(result.data);
             if (imgData.status==0){
-              console.log(imgData.obj)
               that.setData({
                 [currentUrl]: imgData.obj
               })
@@ -91,8 +90,6 @@ Page({
         other_img: this.data.urlData[8]
       },
       success: function (res) {
-        console.log(res)
-        console.log(_this.data.urlData)
         if (res.data.status == 0) {
           wx.showToast({
             title: '材料提交成功',
@@ -116,11 +113,4 @@ Page({
       }
     })
   }
-
-
-
-
- 
-
- 
 })

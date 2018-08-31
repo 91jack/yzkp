@@ -12,7 +12,6 @@ Page({
   data: {
     navName: ['简历编辑', '简历设置', '谁看过我','我的申请'],
     navBarShow:[true,false,false,false],
-    // navContShow:[false,false,false,false],
     baseInfo:[],
     work:[],
     education:[],
@@ -32,7 +31,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id);
     if (options.id){
       var i = 3
       var nowact = "navBarShow[" + i + "]";
@@ -70,7 +68,6 @@ Page({
         token: getApp().globalData.token,
       },
       success: function (res) {
-        console.log(res)
         if (res.data.status==0){
           _this.setData({
             baseInfo: res.data.obj.base,
@@ -81,7 +78,6 @@ Page({
             open: res.data.obj.base.open,
             anonymous: res.data.obj.base.anonymous
           })
-          console.log(_this.data.baseInfo)
           wx.setStorage({
             key: 'resumeId',
             data: res.data.obj.base.id,
@@ -92,7 +88,6 @@ Page({
               token: getApp().globalData.token,
             },
             success: function (res) {
-              console.log(res.data)
               _this.setData({
                 browseList: res.data.list
               })
@@ -105,14 +100,12 @@ Page({
               token: getApp().globalData.token,
             },
             success: function (res) {
-              console.log(res)
               if (res.data.status == 0) {
                 if (res.data.list.length != 0) {
                   _this.setData({
                     applyList: res.data.list
                   })
                 }
-                console.log(_this.data.imgShow)
               }
             }
           })
@@ -124,7 +117,6 @@ Page({
   // 切换tab
   beActive:function(e){
     var i = Number(e.currentTarget.dataset.id)
-    console.log(i)
     var nowact = "navBarShow["+i+"]";
     for (var j = 0; j < this.data.navBarShow.length;j++){
       var oldact = "navBarShow[" + j + "]";
@@ -146,7 +138,6 @@ Page({
         open: open
       },
       success: function (res) {
-        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: '设置成功',
@@ -166,7 +157,6 @@ Page({
         anonymous: anonymous
       },
       success: function (res) {
-        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: '设置成功',
@@ -200,7 +190,6 @@ Page({
   //打电话
   callnumber: function (e) {
     var that = this;
-    console.log(e);
     wx.makePhoneCall({
       phoneNumber: String(that.data.linkPhone)
     })

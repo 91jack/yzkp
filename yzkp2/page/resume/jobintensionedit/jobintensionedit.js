@@ -23,22 +23,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {   
-    console.log(this.params)
-    // if (options.industry){
-    //   wx.setStorage({
-    //     key: 'industry',
-    //     data: options.industry,
-    //   })
-    //   console.log(this.data.industry)
-    // };
-    // if (options.city){
-    //   console.log(options)
-    //   wx.setStorage({
-    //     key: 'city',
-    //     data:options.city
-    //   })
-    //   console.log(this.data.city)
-    // }
     var that = this;
     wx.getStorage({
       key: 'monthPayArr',
@@ -85,9 +69,7 @@ Page({
           token: getApp().globalData.token,
         },
         success: function (res) {
-          console.log(res)
           that.setData({
-            // baseInfo: res.data.obj.base,
             city: res.data.obj.base.workAddress,
             industry: res.data.obj.base.industry,
             workName: res.data.obj.base.workName,
@@ -106,10 +88,8 @@ Page({
   },
 // 获取期望薪资
   bindPicker:function(e){
-    console.log(e)
     var that = this;
     var i = Number(e.detail.value)
-    console.log(that.data.monthPayArr[i])
     this.setData({
       "workPay[1]":i,
       monthPayIndex:i,
@@ -126,22 +106,6 @@ Page({
    */
   onShow: function () {
     var that = this;
-    // wx.getStorage({
-    //   key: 'city',
-    //   success: function(res) {
-    //     that.setData({
-    //       city:res.data
-    //     })
-    //   },
-    // });
-    // wx.getStorage({
-    //   key: 'industry',
-    //   success: function(res) {
-    //     that.setData({
-    //       industry:res.data
-    //     })
-    //   },
-    // })
     if (that.params.city){
       that.setData({
         city: that.params.city
@@ -179,10 +143,6 @@ Page({
         wx.navigateBack({//返回
           delta: 1
         })
-        // console.log(res)
-        // wx.navigateTo({
-        //   url: '/page/resume/index/index',
-        // })
         wx.removeStorage({
           key: 'city',
           success: function (res) {

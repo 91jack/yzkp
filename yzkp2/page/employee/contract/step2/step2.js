@@ -17,7 +17,6 @@ Page({
     wx.getStorage({
       key: 'employeesName',
       success: function(res) {
-        console.log(res);
         That.setData({
           name:res.data
         })
@@ -26,7 +25,6 @@ Page({
     wx.getStorage({
       key: 'sex',
       success: function (res) {
-        console.log(res);
         That.setData({
           sex: res.data
         })

@@ -23,10 +23,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      id: options.id
-    })
+    if(options.id){
+      this.setData({
+        id: options.id
+      })
+    }
     var that = this;
     wx.getStorage({
       key: 'resumeId',
@@ -43,7 +44,6 @@ Page({
           token: getApp().globalData.token,
         },
         success: function (res) {
-          console.log(res)
           var bigData = res.data.obj.work;
           for (var i = 0; i < bigData.length;i++){
             if (bigData[i].id == options.id){
@@ -75,7 +75,6 @@ Page({
   
   },
   bindDateChange: function (e) {
-    console.log(e)
     var i = Number(e.currentTarget.dataset.idx)
     if(i==0){   //入职时间
       this.setData({

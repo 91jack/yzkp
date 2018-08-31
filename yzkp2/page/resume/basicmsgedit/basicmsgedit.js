@@ -45,13 +45,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log('-----------简历-------------')
     var that = this;
-    // console.log(getApp().globalData.resume)
     wx.getStorage({
       key: 'workYearArr',
       success: function(res) {
-        console.log(res)
         that.setData({
           workExerciseData:res.data
         })
@@ -71,7 +68,6 @@ Page({
         that.setData({
           resumeId: res.data
         });
-        console.log(that.data.resumeId)
         if (that.data.resumeId) {
           wx.request({
             url: resumeUrl,
@@ -79,7 +75,6 @@ Page({
               token: getApp().globalData.token,
             },
             success: function (res) {
-              console.log(res)
               var bsData = res.data.obj.base;
               if (bsData.sex=='男'){
                 that.setData({
@@ -143,7 +138,6 @@ Page({
   // 获取输入框内容
   getValue:function(e){
     var that = this;
-    console.log(e);
     var i = Number(e.currentTarget.dataset.idx);
     if (i == 0) { //姓名
       that.setData({
@@ -202,7 +196,6 @@ Page({
     var that = this;
     wx.chooseImage({
       success: function (res) {
-        console.log(res);
         that.setData({
           headImg: res.tempFilePaths[0]
         })
@@ -215,7 +208,6 @@ Page({
             suffix: 'png'
           },
           success: function (result) {
-            console.log(JSON.parse(result.data))
             var imgData = JSON.parse(result.data);
             if (imgData.status == 0) {
               console.log(imgData.obj)
@@ -252,7 +244,6 @@ Page({
           height: that.height
         },
         success: function (res) {
-          console.log(res)
           if (res.data.status == 0) {
             wx.navigateBack(1)
           }
@@ -277,7 +268,6 @@ Page({
           height: that.height
         },
         success: function (res) {
-          console.log(res)
           wx.setStorage({
             key: 'resumeId',
             data: res.data.obj.id,

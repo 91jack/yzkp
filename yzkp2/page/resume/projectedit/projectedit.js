@@ -46,7 +46,6 @@ Page({
           token: getApp().globalData.token,
         },
         success: function (res) {
-          console.log(res)
           var bigData = res.data.obj.project;
           for (var i = 0; i < bigData.length; i++) {
             if (bigData[i].id == options.id) {
@@ -78,14 +77,12 @@ Page({
   
   },
   bindDateChange:function(e){
-    console.log(e);
     var i = Number(e.currentTarget.dataset.idx);
     if(i==0){   //项目开始时间
       this.setData({
         inDate:e.detail.value,
         inHide:true
       })
-      console.log(this.data.inDate)
     }else if(i==1){
       this.setData({
         outDate:e.detail.value,
@@ -94,7 +91,6 @@ Page({
     }
   },
   getValue:function(e){
-    console.log(e);
     var i = Number(e.currentTarget.dataset.idx);
     if(i==0){  //项目名称
       this.setData({
@@ -125,7 +121,6 @@ Page({
           name: _this.data.conpanyName
         },
         success: function (res) {
-          console.log(res)
           if (res.data.status == 0) {
             wx.navigateBack({
               delta: 1
@@ -146,7 +141,6 @@ Page({
           name: _this.data.conpanyName
         },
         success: function (res) {
-          console.log(res)
           if(res.data.status==0){
             wx.navigateBack({
               delta: 1

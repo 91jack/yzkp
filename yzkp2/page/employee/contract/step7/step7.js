@@ -17,13 +17,10 @@ Page({
    */
   data: {
     infoData:{},
-
     timer: '',
-
     timer: '',//定时器名字
     yzcode:'',
     incode:'',
-
     timerData:'获取验证码',
     countDownNum: 60,
     openInterVal:true
@@ -44,7 +41,6 @@ Page({
             id: res.data,
           },
           success: function (res) {
-            console.log(res)
             var infoData = res.data.obj;
             if(res.data.status==0){
               that.setData({
@@ -81,7 +77,6 @@ Page({
         token:getApp().globalData.token,
       },
       success:function(res){
-        console.log(res)
         if(res.data.status == 0){
           _this.setData({
             yzcode:res.data.obj
@@ -121,7 +116,6 @@ Page({
     this.setData({
       incode: e.detail.value
     })
-    console.log(e.detail.value)
   },
   submitBtn: function () {
     var _this = this;
@@ -133,7 +127,6 @@ Page({
        yzcode: _this.data.yzcode
       },
       success: function (res) {
-        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: '信息验证成功',

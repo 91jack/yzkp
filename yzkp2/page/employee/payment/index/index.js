@@ -36,7 +36,6 @@ Page({
   },
   payFn:function(event){
     var _this = this;
-    //console.log(event.currentTarget.dataset.timeflag);
     var timeflag = 0;
     if(event){
       timeflag = event.currentTarget.dataset.timeflag;
@@ -50,20 +49,14 @@ Page({
         timeflag: timeflag
       },
       success: function (res) {
-      
         if (res.data.status == 0) {
           _this.setData({
             payList: res.data.list,
             timeflag: timeflag,
             employee:res.data.obj
           })
-
         }
       }
     })
   }
-
-
-
-
 })

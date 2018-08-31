@@ -89,7 +89,6 @@ Page({
   },
   delBtn:function(e){
     var that = this;
-    console.log(e)
     wx.showModal({
       title: '温馨提示',
       content: '您确定要删除该数据吗',
@@ -110,7 +109,6 @@ Page({
           })
           that.refresh();
         }
-       
       }
     })
         } else if (res.cancel) {

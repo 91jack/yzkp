@@ -134,7 +134,6 @@ Page({
         in_date: this.data.indate
       },
       success: function (res) {
-        console.log(res);
         if (res.data.status == 0) {
           wx.showToast({
             title: '信息提交成功',

@@ -24,7 +24,6 @@ Page({
             id: res.data,
           },
           success: function (res) {
-            console.log(res)
             var infoData = res.data.obj;
             if (res.data.status == 0) {
               that.setData({

@@ -23,7 +23,7 @@
 <view class='add-btn'>
   <navigator hover-class='none' url='/page/resume/jobedit/jobedit'>
      <image src='/image/mine/add.png'></image>
-    <text>添加工作经验</text>
+     <text>添加工作经验</text>
   </navigator>
  
 </view>

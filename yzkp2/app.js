@@ -30,8 +30,9 @@ App({
     if (!socket.getSocketStatus()){
       socket.init()
     }
+    
   },
   onHide: function (options){
     socket.close()
-  }
+  },
 })

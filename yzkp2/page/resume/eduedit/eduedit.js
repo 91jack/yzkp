@@ -73,7 +73,6 @@ Page({
           token: getApp().globalData.token,
         },
         success: function (res) {
-          console.log(res)
           for (var i = 0; i < res.data.obj.education.length; i++) {
             if (res.data.obj.education[i].id == _this.data.id) {
               _this.setData({
@@ -92,7 +91,6 @@ Page({
   },
   //学历选择
   bindLevelSelect:function(e){
-    console.log(e);
     var i = Number(e.detail.value);
     this.setData({
       eduIndex:i,
@@ -146,7 +144,6 @@ Page({
           profession: _this.data.profession
         },
         success: function (res) {
-          console.log(res)
           if (res.data.status == 0) {
             wx.navigateBack({
               delta: 1
@@ -167,7 +164,6 @@ Page({
           profession: _this.data.profession
         },
         success: function (res) {
-          console.log(res)
           if (res.data.status == 0) {
             wx.navigateBack({
               delta: 1

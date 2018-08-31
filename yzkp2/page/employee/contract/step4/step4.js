@@ -120,7 +120,6 @@ Page({
         fund_no: this.data.fund_no,
       },
       success: function (res) {
-        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: '信息提交成功',
@@ -133,7 +132,6 @@ Page({
                 })
               }, 2000)
             }
-            
           })
         }
       }

@@ -39,16 +39,12 @@ Page({
         payid: options.payid
       },
       success: function (res) {
-       
         if (res.data.status == 0) {
           _this.setData({
             payDetails: res.data.list
           })
-
         }
       }
     })
   },
-
-
 })

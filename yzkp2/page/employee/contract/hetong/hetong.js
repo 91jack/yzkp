@@ -32,9 +32,7 @@ Page({
                 content: result.data.obj.content
               })
               var aHrefHrefData = result.data.obj.content;
-              console.log(aHrefHrefData)
               WxParse.wxParse('aHrefHrefData', 'html', aHrefHrefData, _this);
-
             }
           }
         })
@@ -50,7 +48,6 @@ Page({
   },
   wxParseTagATap: function (e) {
     var href = e.currentTarget.dataset.src;
-    console.log(href);
     //我们可以在这里进行一些路由处理
     if (href.indexOf(index) > 0) {
       // wx.redirectTo({

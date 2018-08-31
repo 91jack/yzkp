@@ -67,7 +67,6 @@ Page({
         bank_name: this.data.bank_name
       },
       success: function (res) {
-        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: '信息提交成功',

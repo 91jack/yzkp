@@ -136,8 +136,6 @@ wx.getSystemInfo({
             },
             success: function (res) {
               var imgUrl = JSON.parse(res.data).obj;
-              // console.log(res)
-              // console.log(imgUrl)
               if (_this.data.payid != '') {
                 wx.request({
                   url: signForWagesUrl,
@@ -183,44 +181,19 @@ wx.getSystemInfo({
                               url: '/page/tabBar/index/index',
                             })
                           }, 2000)
+                          getApp().globalData.refreash = true;
                         }
                       })
-                      // // 登录
-
-                      // wx.login({
-                      //   success: function (result) {
-                      //     if (result.code) {
-                      //       wx.request({
-                      //         url: loginUrl,
-                      //         data: {
-                      //           code: result.code
-                      //         },
-                      //         success: function (resD) {
-                      //           if (resD.data.status == 0) {
-                      //             wx.setStorage({
-                      //               key: 'employeesId',
-                      //               data: resD.data.obj.id,
-                      //             })
-                      //           }
-                      //         }
-                      //       })
-                      //     }
-                      //   }
-                      // })
                     }
                   }
                 })
               }
-
             }
           })
         }
-
       })
-
     },
     onUnload: function () {
       getApp().globalData.refreash = true;
     }
-
   })

@@ -114,7 +114,7 @@
       </view>
     </block>
   </view>
-  <view hidden="{{!payList}}">
+  <view hidden="{{payList.length!=0}}">
     <image class='none-show' src='/image/mine/bigbg.png'></image>
   </view>
 </view>

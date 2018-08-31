@@ -8,7 +8,7 @@
 
     <!-- 聊天记录 -->
     <view class="{{chatSelected?'show':'hide'}}">
-      <block  wx:for="{{chatList}}">
+      <block wx:for="{{chatList}}">
         <navigator url='/page/common/msgdetail/msgdetail?companyId={{item.company_id}}&resumeId={{item.resumeId}}' hover-class='none'>
           <view class="chat-item">
             <view class="chat-item-info fl">
