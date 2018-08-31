@@ -91,7 +91,7 @@
         <view class='det-left'>
           <view class='left-item'>
             <image src='/image/index/area.png'></image>
-            <text>{{item.workAddress}}</text>
+            <text>{{item.address}}</text>
           </view>
           <view class='left-item'>
             <image src='/image/index/work.png'></image>
@@ -114,6 +114,19 @@
   </block>
   <view hidden="{{jobList.length!=0||jianliList.length!=0}}">
     <image class='none-show' src='/image/mine/bigbg.png'></image>
+  </view>
+</view>
+
+
+<view class='get-useinfo' hidden='{{getHide}}'>
+  <view class='.get-useinfo-cont'>
+    <text class='get-useinfo-cont-tit'>微信授权</text>
+    <text class='get-useinfo-cont-nei'>优职快聘申请获取以下权限</text>
+    <view class='get-useinfo-cont-inner'>
+      <text>获取你的公开信息（昵称、头像等）</text>
+    </view>
+    <button class='ok' size='mini' plain="true" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">允许</button>
+    <button size='mini' plain="true">拒绝</button>    
   </view>
 </view>
 

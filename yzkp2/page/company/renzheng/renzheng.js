@@ -237,28 +237,31 @@ Page({
               },1000)
             }
           })
-          wx.login({
-            success: function (result) {
-              if (result.code) {
-                wx.request({
-                  url: loginUrl,
-                  data: {
-                    code: result.code
-                  },
-                  success: function (resD) {
-                    if(resD.data.status==0){
-                      wx.setStorage({
-                        key: 'companyId',
-                        data: resD.data.obj.id,
-                      })
-                    }
-                  }
-                })
-              }
-            }
-          })
+          // wx.login({
+          //   success: function (result) {
+          //     if (result.code) {
+          //       wx.request({
+          //         url: loginUrl,
+          //         data: {
+          //           code: result.code
+          //         },
+          //         success: function (resD) {
+          //           if(resD.data.status==0){
+          //             wx.setStorage({
+          //               key: 'companyId',
+          //               data: resD.data.obj.id,
+          //             })
+          //           }
+          //         }
+          //       })
+          //     }
+          //   }
+          // })
         }
       }
     })
+  },
+  onUnload:function(){
+    getApp().globalData.refreash = true;
   }
 })

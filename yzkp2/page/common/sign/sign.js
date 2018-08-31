@@ -26,8 +26,8 @@ wx.getSystemInfo({
     * 页面的初始数据
     */
     data: {
-      payid:'',
-      id:''//员工id
+      payid: '',
+      id: ''//员工id
     },
     // 画布的触摸移动开始手势响应
     start: function (event) {
@@ -59,26 +59,26 @@ wx.getSystemInfo({
 
     // 画布的长按手势响应
     tap: function (e) {
-     // console.log("长按手势" + e)
+      // console.log("长按手势" + e)
     },
 
     error: function (e) {
-     // console.log("画布触摸错误" + e)
+      // console.log("画布触摸错误" + e)
     },
     /**
     * 生命周期函数--监听页面加载
     */
     onLoad: function (options) {
-      if(options.payid){
+      if (options.payid) {
         this.setData({
           payid: options.payid,
         })
-      } else if (options.employeeId){
+      } else if (options.employeeId) {
         this.setData({
           id: options.employeeId
         })
       }
-    
+
 
       //获得Canvas的上下文
       content = wx.createCanvasContext('firstCanvas')
@@ -125,20 +125,20 @@ wx.getSystemInfo({
         canvasId: 'firstCanvas',
 
         success: function (res) {
-       // console.log(res)
+          // console.log(res)
           wx.uploadFile({
-            url: uploadImgUrl, 
+            url: uploadImgUrl,
             filePath: res.tempFilePath,
             name: 'file',
             formData: {
               token: getApp().globalData.token,
-              suffix:'jpg'
+              suffix: 'jpg'
             },
             success: function (res) {
               var imgUrl = JSON.parse(res.data).obj;
               // console.log(res)
               // console.log(imgUrl)
-              if(_this.data.payid!=''){
+              if (_this.data.payid != '') {
                 wx.request({
                   url: signForWagesUrl,
                   data: {
@@ -163,7 +163,7 @@ wx.getSystemInfo({
                     }
                   }
                 })
-              }else if(_this.data.id!=''){
+              } else if (_this.data.id != '') {
                 wx.request({
                   url: signNameUrl,
                   data: {
@@ -175,7 +175,7 @@ wx.getSystemInfo({
                     if (res.data.status == 0) {
                       wx.showToast({
                         title: '签字成功',
-                        icon: 'success',  
+                        icon: 'success',
                         duration: 2000,
                         success: function () {
                           setTimeout(function () {
@@ -185,39 +185,42 @@ wx.getSystemInfo({
                           }, 2000)
                         }
                       })
-                      // 登录
+                      // // 登录
 
-                      wx.login({
-                        success: function (result) {
-                          if (result.code) {
-                            wx.request({
-                              url: loginUrl,
-                              data: {
-                                code: result.code
-                              },
-                              success: function (resD) {
-                                if (resD.data.status == 0) {
-                                  wx.setStorage({
-                                    key: 'employeesId',
-                                    data: resD.data.obj.id,
-                                  })
-                                }
-                              }
-                            })
-                          }
-                        }
-                      })
+                      // wx.login({
+                      //   success: function (result) {
+                      //     if (result.code) {
+                      //       wx.request({
+                      //         url: loginUrl,
+                      //         data: {
+                      //           code: result.code
+                      //         },
+                      //         success: function (resD) {
+                      //           if (resD.data.status == 0) {
+                      //             wx.setStorage({
+                      //               key: 'employeesId',
+                      //               data: resD.data.obj.id,
+                      //             })
+                      //           }
+                      //         }
+                      //       })
+                      //     }
+                      //   }
+                      // })
                     }
                   }
                 })
               }
-              
-            } 
+
+            }
           })
         }
-       
+
       })
 
+    },
+    onUnload: function () {
+      getApp().globalData.refreash = true;
     }
 
   })

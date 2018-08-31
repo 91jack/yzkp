@@ -23,6 +23,8 @@ App({
     company:null,//公司 
     resume:null,//简历
     employee:null,//员工
+    refreash:false,
+    getHide:false
   },
   onShow: function (options) {
     if (!socket.getSocketStatus()){

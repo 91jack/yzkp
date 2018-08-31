@@ -121,3 +121,53 @@ color: transparent;
   font-size: 28rpx;
   line-height: 28rpx;
 }
+.get-useinfo{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.get-useinfo-cont{
+  width: 500rpx;
+  height: 245rpx;
+  background: #fff;
+  margin: auto;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+.get-useinfo-cont-tit{
+  display: block;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.get-useinfo-cont-nei{
+  display: block;
+  height: 40rpx;
+  width: 100%;
+  font-size: 28rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #e8e8e8;
+}
+.get-useinfo-cont-inner{
+  /* text-align: right; */
+  padding: 20rpx 0;
+  height: 30rpx;
+  font-size: 26rpx;
+  line-height: 26rpx;
+}
+.get-useinfo button{
+  display: inline-block;
+  outline: none;
+  border: none;
+  float: right;
+}
+.get-useinfo button.ok{
+  color: #26A12E
+}

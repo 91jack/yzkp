@@ -60,6 +60,14 @@ Page({
         if (options.recruitType) {
           _this.params.recruitType = options.recruitType
         }
+        wx.showLoading({
+          title: '加载中',
+          success: function () {
+            setTimeout(function () {
+              wx.hideLoading()
+            }, 1000)
+          }
+        })
         if (_this.data.id == "resume") {
           _this.jobListFn();
         } else if (_this.data.id == "company") {

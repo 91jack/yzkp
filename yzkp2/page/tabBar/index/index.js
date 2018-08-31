@@ -23,6 +23,7 @@ Page({
     index: 0,//选择的下拉列表下标
     id:'',
     key:'',
+    getHide:false,
     isRefresh: false, //onshow时是否刷新
 
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
@@ -120,8 +121,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var _this = this;
     
+  },
+  // 获取用户信息
+  bindGetUserInfo:function(e){
+    if (e.detail.errMsg =="getUserInfo:ok"){
+      getApp().globalData.getHide=true;
+      this.setData({
+        getHide:true
+      })
+      wx.showLoading({
+        title: '加载中',
+        success: function () {
+          setTimeout(function () {
+            wx.hideLoading()
+          }, 1000)
+        }
+      })
+      this.onLoadFn();
+    }
   },
 
   onLoadFn:function(){
@@ -175,7 +193,6 @@ Page({
                   id: 'resume'
                 })
               } else if (res.data.obj.type == 1) {//企业
-
                 wx.setStorage({
                   key: 'serachId',// 公司id
                   data: "company",
@@ -184,7 +201,6 @@ Page({
                 _this.setData({
                   id: 'company'
                 })
-
                 if (res.data.obj.company != null) {
                   wx.setStorage({
                     key: 'companyId',// 公司id
@@ -200,7 +216,6 @@ Page({
                   key: 'serachId',
                   data: "resume",
                 })
-
                 _this.setData({
                   id: 'resume'
                 })
@@ -222,11 +237,13 @@ Page({
                   }
                 }
               }
+              getApp().globalData.refreash=false;
             }
           })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
+        
       }
     }); 
   },
@@ -241,8 +258,112 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this
-    this.onLoadFn();
+    this.setData({
+      getHide: getApp().globalData.getHide
+    })
+    var _this = this;
+    if (getApp().globalData.refreash){
+      wx.login({
+        success: function (res) {
+          if (res.code) {
+            wx.request({
+              url: loginUrl,
+              data: {
+                code: res.code
+              },
+              success: function (res) {
+                getApp().globalData.token = res.data.obj.token;
+                _this.params.token = res.data.obj.token;
+                _this.setData({
+                  role: res.data.obj.type
+                })
+                wx.setStorage({
+                  key: 'role',
+                  data: res.data.obj.type
+                })
+                if (res.data.obj.type == 0) {  //求职者
+                  _this.jobListFn();
+                  wx.setStorage({
+                    key: 'serachId',// 公司id
+                    data: "resume",
+                  })
+                  _this.setData({
+                    id: 'resume'
+                  })
+                  if (res.data.obj.resume != null) {
+                    wx.setStorage({
+                      key: 'resumeId',// 简历id
+                      data: res.data.obj.resume.id
+                    })
+                  }
+                  wx.setStorage({
+                    key: 'serachId',// 公司id
+                    data: "resume",
+                  })
+                  _this.jobListFn();
+                  _this.setData({
+                    id: 'resume'
+                  })
+                } else if (res.data.obj.type == 1) {//企业
+                  wx.setStorage({
+                    key: 'serachId',// 公司id
+                    data: "company",
+                  })
+                  _this.jianliListFn()
+                  _this.setData({
+                    id: 'company'
+                  })
+                  if (res.data.obj.company != null) {
+                    wx.setStorage({
+                      key: 'companyId',// 公司id
+                      data: res.data.obj.company.id
+                    })
+                  }
+                } else if (res.data.obj.type == 2) {//员工
+                  _this.jobListFn();
+                  wx.setStorage({
+                    key: 'serachId',
+                    data: "resume",
+                  })
+                  _this.setData({
+                    id: 'resume'
+                  })
+                  if (res.data.obj.resume != null) {//员工也具有求职者身份
+                    wx.setStorage({
+                      key: 'resumeId',// 简历id
+                      data: res.data.obj.resume.id
+                    })
+                  }
+                  if (res.data.obj.employee != null) {  //缓存员工id
+                    if (res.data.obj.employee.id) {
+                      wx.setStorage({
+                        key: 'employeesId',
+                        data: res.data.obj.employee.id,
+                      })
+                    }
+                  }
+                }
+                getApp().globalData.refreash = false;
+              }
+            })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
+      }); 
+    }
+    // if(this.data.role==1){
+    //   // if (this.data.jianliList == []) {
+    //     wx.showLoading({
+    //       title: '加载中',
+    //     })
+    //   }
+    // }else{
+    //   if (this.data.jobliList == []) {
+        
+    //   }
+    // }
+
     if (this.data.isRefresh) {
       this.params.page = 1
       this.data.isRefresh = false
