@@ -121,29 +121,24 @@ Page({
       })
     } else if (attr == 'monthpay') { //月薪
       var monthPay = 'searchData.monthPay';
-      // var monthPay1 = 'searchData.monthPay[1]';
       this.setData({
         monthPayArrActive: i,
         [monthPay]: i
       })
     } else if (attr == 'sex') { //性别
       var sex = 'searchData.sex'
-      // var sex1 = 'searchData.sex[1]'
       this.setData({
         sexActive: i,
         [sex]: i-1,
-        // [sex1]: this.data.sexData[i]
       })
     } else if (attr == 'xueli') { //学历
       var education = 'searchData.education';
-      // var education1 = 'searchData.education[1]'
       this.setData({
         educationArrActive: i,
         [education]: i
       })
     } else if (attr == 'workexercise') { //工作经验
       var workYear = 'searchData.workYear';
-      // var workYear1 ='searchData.workYear[1]';
       this.setData({
         workYearArrActive: i,
         [workYear]: i

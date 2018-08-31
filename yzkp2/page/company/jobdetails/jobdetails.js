@@ -45,7 +45,6 @@ Page({
   // 模态框显示与否
   call: function(e) {
     var i = Number(e.currentTarget.dataset.id)
-    console.log(i);
     var show = "modalData[" + i + "]"
     this.setData({
       modalShow: false,
@@ -77,11 +76,10 @@ Page({
         url: resumeDoudiUrl,
         data: {
           token: getApp().globalData.token,
-          id: _this.data.resumeId,
+          id: _this.data.id,
           companyId: _this.data.companyId
         },
         success: function (res) {
-          console.log(res)
           if (res.data.status == 0) {
             wx.showToast({
               title: '简历投递成功',
@@ -97,7 +95,6 @@ Page({
   },
   // 隐藏模态框
   hidemodal: function() {
-    console.log(11111111)
     for (var i = 0; i < this.data.modalData.length; i++) {
       var show = "modalData[" + i + "]";
       this.setData({
@@ -133,7 +130,6 @@ Page({
         id: that.data.id
       },
       success: function (res) {
-        console.log(res.data)
         that.setData({
           jobDetails: res.data.obj,
           id: res.data.obj.id,
@@ -180,8 +176,6 @@ Page({
   },
   chat: function() {
     var _this = this;
-
-
     wx.navigateTo({
       url: '/page/common/msgdetail/msgdetail?msgType=2&resumeId=' + _this.data.resumeId + '&companyId=' + _this.data.companyId,
     })

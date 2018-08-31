@@ -23,7 +23,6 @@ Page({
   },
   getValue:function(e){
     var name = e.currentTarget.dataset.name;
-   
     if(name=='name'){
       this.setData({
         name: e.detail.value
@@ -52,7 +51,6 @@ Page({
         webchat: _this.data.webchat
       },
       success: function (res) {
-       console.log(res)
        if(res.data.status == 0){
          wx.showToast({
            title: '您的课程报名已成功',
@@ -63,9 +61,6 @@ Page({
                wx.navigateBack({
                  delta: 2
                })
-              //  wx.navigateTo({
-              //    url: '/page/common/course/courselist/courselist',
-              //  })
              },1000)
             
           }
@@ -80,9 +75,6 @@ Page({
                wx.navigateBack({
                  delta: 2
                })
-              //  wx.navigateTo({
-              //    url: '/page/common/course/courselist/courselist',
-              //  })
              }, 1000)
 
            }

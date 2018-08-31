@@ -31,9 +31,6 @@ wx.getSystemInfo({
     },
     // 画布的触摸移动开始手势响应
     start: function (event) {
-      // console.log("触摸开始" + event.changedTouches[0].x)
-      // console.log("触摸开始" + event.changedTouches[0].y)
-      //获取触摸开始的 x,y
       let point = { x: event.changedTouches[0].x, y: event.changedTouches[0].y }
       touchs.push(point)
     },
@@ -49,8 +46,6 @@ wx.getSystemInfo({
 
     // 画布的触摸移动结束手势响应
     end: function (e) {
-      //console.log("触摸结束" + e)
-      //清空轨迹数组
       for (let i = 0; i < touchs.length; i++) {
         touchs.pop()
       }

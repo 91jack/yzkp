@@ -22,11 +22,9 @@ Page({
    */
   onLoad: function(options) {
     var _this = this;
-    // this.getCourseList();
     wx.getStorage({
       key: 'courseType',
       success: function(res) {
-        console.log(res)
         _this.setData({
           courseType: res.data
         })
@@ -38,7 +36,6 @@ Page({
         token:getApp().globalData.token,
       },
       success:function(res){
-        console.log(res)
         if(res.data.status==0){
         _this.setData({
             courseType:res.data.list
@@ -102,13 +99,11 @@ Page({
 
   },
   getValue: function(e) {
-    console.log(e.detail.value)
     this.setData({
       search: e.detail.value
     })
   },
   bindPickerChange: function(e) {
-    console.log(e.detail.value)
     this.setData({
       index: e.detail.value
     })
@@ -118,11 +113,7 @@ Page({
   getCourseList: function() {
     var _this = this;
     var courseType = _this.data.courseType;
-    console.log(courseType)
     var index = _this.data.index;
-    console.log(index)
-    console.log(courseType[0])
-    console.log(courseType[index].id)
     wx.request({
       url: courseListUrl, //课程列表
       data: {
@@ -134,7 +125,6 @@ Page({
         page: 1
       },
       success: function(res) {
-        console.log(res)
         if (res.data.status == 0) {
           if (res.data.list.length > 0) {
             _this.setData({

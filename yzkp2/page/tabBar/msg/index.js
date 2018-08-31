@@ -36,7 +36,6 @@ Page({
     socket.checkRole({
       success: function(){        
         setTimeout(function () {
-          console.log(socket)
           if (socket.getChatList().list) {
             that.setData({ chatList: socket.getChatList().list })
           }
@@ -96,7 +95,6 @@ Page({
       url: noticeUrl,
       data: { token: getApp().globalData.token},
       success: function (res) {
-        console.log(res)
         if(res.data.status==0){
           _this.setData({
             chatSelected: false,

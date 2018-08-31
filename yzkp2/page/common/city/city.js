@@ -20,7 +20,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.type)
     if (options.type){
       this.setData({
         type: options.type
@@ -31,7 +30,6 @@ Page({
     wx.getStorage({
       key: 'cityArr',
       success: function(res) {
-        console.log(res)
         _this.setData({
           cities:res.data,
           currentSelect:res.data['热门城市'],
@@ -150,8 +148,6 @@ Page({
    
     var url = '';
     var type = this.data.type;
-    console.log(type)
-    console.log(this.data.id)
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
 

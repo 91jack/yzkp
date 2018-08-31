@@ -54,10 +54,7 @@ Page({
   // 行业一级筛选
   clickLevel1: function(e) {
     var _this = this;
-    console.log(e.currentTarget.dataset.industrynav)
-    // console.log(e.currentTarget.dataset.value)
     var industrynav = e.currentTarget.dataset.industrynav;
-    console.log(_this.data.industry[industrynav].name);
     this.setData({
       _industrynav: industrynav,
       currentSelect: _this.data.industry[industrynav].list,

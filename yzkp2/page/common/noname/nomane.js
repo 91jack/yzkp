@@ -14,7 +14,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     this.setData({
       id:options.id
     })
@@ -27,7 +26,6 @@ Page({
   
   },
   getTextarea:function(e){
-    console.log(e);
     this.setData({
       comment:e.detail.value
     })
@@ -48,7 +46,6 @@ Page({
         token: getApp().globalData.token
       },
       success: function (res) {
-        console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: res.data.msg,

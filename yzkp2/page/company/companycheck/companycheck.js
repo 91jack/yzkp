@@ -59,7 +59,6 @@ Page({
         resumeId: _this.data.resumeId
       },
       success: function (res) {
-        console.log(res)
         _this.setData({
           baseInfo: res.data.obj.base,
           work: res.data.obj.work,

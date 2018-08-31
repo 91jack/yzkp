@@ -88,7 +88,6 @@ Page({
         content:_this.data.content
       },
       success: function (res) {
-       console.log(res)
         if (res.data.status == 0) {
           wx.showToast({
             title: res.data.msg,

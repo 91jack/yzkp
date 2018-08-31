@@ -113,7 +113,6 @@ Page({
       key: 'role',
       success: function(res) {
         var role = res.data;
-        console.log(role);
         if (role == 0) {
           _this.setData({
             currentList: _this.data.jobSeekerList

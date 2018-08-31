@@ -121,7 +121,6 @@ Page({
   
   },
   getValue:function(e){
-    console.log(e.detail.value)
     this.setData({
       input:e.detail.value
     })
@@ -144,7 +143,6 @@ Page({
   */
   getMsg: function(data){
     var msg = data
-    console.log(msg)
 
     if (msg.msgType == 1) {//聊天详情
       if(msg.list){
