@@ -11,7 +11,7 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 
 var socket = require('../../../socket.js');
 Page({
-  params: { page: 1, pageSize: 10},
+  params: { page: 1, pageSize: 30},
   
   /**
    * 页面的初始数据
@@ -35,7 +35,7 @@ Page({
         text:'最新职位'
       },
       {
-        url: '/page/company/joblist/joblist?recruitType=1',        
+        url: '/page/company/joblist/joblist?type=1&recruitType=1',        
         src:'/image/index/datetime.png',
         text:'兼职职位'
       },
@@ -62,7 +62,7 @@ Page({
         text: '最新职位'
       },
       {
-        url: '/page/company/joblist/joblist?recruitType=1',
+        url: '/page/company/joblist/joblist?type=1&recruitType=1',
         src: '/image/index/datetime.png',
         text: '兼职职位'
       },
@@ -399,7 +399,7 @@ Page({
    */
   onPullDownRefresh: function () {
     var that = this
-    this.params = { page: 1, pageSize: 10, token: getApp().globalData.token }  
+    this.params = { page: 1, pageSize: 30, token: getApp().globalData.token }  
     if (this.data.id == "resume") {
       this.setData({ jobList: []}, function(){
         that.jobListFn(function () {
@@ -435,7 +435,7 @@ Page({
           wx.showToast({
             title: '到底啦~',
             duration: 2000,
-            icon:'none'
+            //icon:'none'
           })
           that.params.page = that.params.page - 1
         }
@@ -446,7 +446,7 @@ Page({
           wx.showToast({
             title: '到底啦~',
             duration: 2000,
-            icon:'none'
+            //icon:'none'
           })
           that.params.page = that.params.page - 1
         }

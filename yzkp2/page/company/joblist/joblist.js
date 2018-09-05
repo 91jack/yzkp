@@ -56,6 +56,7 @@ Page({
           _this.setData({
             type: options.type
           })
+          _this.params.type = options.type
         }
         if (options.recruitType) {
           _this.params.recruitType = options.recruitType
@@ -111,7 +112,7 @@ Page({
    */
   onPullDownRefresh: function () {
     var that = this
-    this.params = { page: 1, pageSize: 30, token: getApp().globalData.token }
+    this.params = { page: 1, pageSize: 30, token: getApp().globalData.token, recruitType: this.params.recruitType, type:        this.params.type }
     if (this.data.id == "resume") {
       this.setData({ jobList: [] }, function () {
         that.jobListFn(function () {
