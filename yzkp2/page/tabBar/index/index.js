@@ -357,14 +357,14 @@ Page({
       })
     }
 
-    wx.checkSession({
-      success: function () {
+    // wx.checkSession({
+    //   success: function () {
         
-      },
-      fail: function () {
-        _this.reloadFn()
-      }
-    })
+    //   },
+    //   fail: function () {
+    //     _this.reloadFn()
+    //   }
+    // })
 
     if (this.data.isRefresh) {
       this.params.page = 1
