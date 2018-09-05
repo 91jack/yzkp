@@ -19,7 +19,7 @@ Page({
     educationArr:[],
     educationIndex:0,
     educationHide:false,
-    nowType: ['目前再找工作', '观望有好机会会考虑','我不想换工作'],
+    nowType: ['目前在找工作', '观望有好机会会考虑','我不想换工作'],
     nowTypeHide:false,
     nowTypeIndex:0,
     sexData:["男","女"],
