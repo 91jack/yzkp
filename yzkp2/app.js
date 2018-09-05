@@ -30,7 +30,11 @@ App({
     if (!socket.getSocketStatus()){
       socket.init()
     }
-    
+    this.globalData.refreash = true;
+    wx.reLaunch({
+      url: '/page/tabBar/index/index',
+    })
+
   },
   onHide: function (options){
     socket.close()
