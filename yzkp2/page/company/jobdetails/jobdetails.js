@@ -65,10 +65,26 @@ Page({
       },
     })
     if (!this.data.resumeId) {
-      var show = "modalData[" + i + "]"
-      _this.setData({
-        modalShow: false,
-        [show]: false
+      wx.showModal({
+        title: '温馨提示',
+        content: '您还没有简历，请先创建简历',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/page/resume/index/index'
+            })
+          } else if (res.cancel) {
+            if (getCurrentPages()[0].route == 'page/tabBar/msg/index') {
+              wx.switchTab({
+                url: '/page/tabBar/index/index'
+              })
+            } else {
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+          }
+        }
       })
     }
     if (this.data.resumeId){
@@ -90,8 +106,6 @@ Page({
         }
       })
     }
-
-    
   },
   // 隐藏模态框
   hidemodal: function() {
