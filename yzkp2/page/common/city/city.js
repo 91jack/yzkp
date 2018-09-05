@@ -83,51 +83,52 @@ Page({
     var type = this.data.type;
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length - 2];//上一页面
-
-    if (type == 'jobList') {// 职位列表 
-      if (_this.data.id == 'company') {
-        prevPage.params.workAddress = _this.data.selectCity;
-        prevPage.setData({ workAddress: _this.data.selectCity })
-        prevPage.setData({ isRefresh: true })
-      } else {
-        prevPage.params.region = _this.data.selectCity;
-        prevPage.setData({ region: _this.data.selectCity })
-        prevPage.setData({ isRefresh: true })
+    console.log(country)
+    if (_this.data.country.length==0){
+      if (type == 'jobList') {// 职位列表 
+        if (_this.data.id == 'company') {
+          prevPage.params.workAddress = _this.data.selectCity;
+          prevPage.setData({ workAddress: _this.data.selectCity })
+          prevPage.setData({ isRefresh: true })
+        } else {
+          prevPage.params.region = _this.data.selectCity;
+          prevPage.setData({ region: _this.data.selectCity })
+          prevPage.setData({ isRefresh: true })
+        }
+        wx.navigateBack({
+          delta: 1
+        })
+        return
       }
-      wx.navigateBack({
-        delta: 1
-      })
-      return
+      if (type == 'intension') {//求职意向
+        prevPage.setData({ city: _this.data.selectCity })
+        wx.navigateBack({
+          delta: 1
+        })
+        return
+      }
+      if (type == 'courselist') {//能力提升
+        prevPage.setData({ city: _this.data.selectCity })
+        wx.navigateBack({
+          delta: 1
+        })
+        return
+      }
+      if (type == 'postfulltime') {
+        prevPage.setData({ city: _this.data.selectCity })
+        wx.navigateBack({
+          delta: 1
+        })
+        return
+      }
+      if (type == 'postparttime') {
+        prevPage.setData({ city: _this.data.selectCity })
+        wx.navigateBack({
+          delta: 1
+        })
+        return
+      }
     }
-    if (type == 'intension') {//求职意向
-      prevPage.setData({ city: _this.data.selectCity })
-      wx.navigateBack({
-        delta: 1
-      })
-      return
-    }
-    if (type == 'courselist') {//能力提升
-      prevPage.setData({ city: _this.data.selectCity })
-      wx.navigateBack({
-        delta: 1
-      })
-      return
-    }
-    if (type == 'postfulltime') {
-      prevPage.setData({ city: _this.data.selectCity })
-      wx.navigateBack({
-        delta: 1
-      })
-      return
-    }
-    if (type == 'postparttime') {
-      prevPage.setData({ city: _this.data.selectCity })
-      wx.navigateBack({
-        delta: 1
-      })
-      return
-    }
-
   },
   // 区县城市选择
   clickLevel3: function (e) {
