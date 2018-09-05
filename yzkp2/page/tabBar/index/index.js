@@ -30,7 +30,7 @@ Page({
     navBarData: ['地区', '行业', '要求'],
     selectBar1: [//求职者
       {
-        url:'/page/company/joblist/joblist?type=0',
+        url:'/page/company/joblist/joblist?type=0&recruitType=0',
         src:'/image/index/office.png',
         text:'最新职位'
       },
@@ -57,7 +57,7 @@ Page({
     ], 
     selectBar2: [ //员工
       {
-        url: '/page/company/joblist/joblist?type=0',
+        url: '/page/company/joblist/joblist?type=0&recruitType=0',
         src: '/image/index/office.png',
         text: '最新职位'
       },
