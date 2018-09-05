@@ -25,6 +25,9 @@
           </view>
         </navigator>
       </block>
+      <view hidden="{{!chatList}}">
+        <image class='none-show' src='/image/mine/bigbg.png'></image>
+      </view>
     </view> 
 
     <!-- 消息通知 -->
@@ -38,6 +41,9 @@
           <view class="notice-item-intro">{{item.content}}</view>
         </view>
       </block>
+      <view hidden="{{!noticeList}}">
+        <image class='none-show' src='/image/mine/bigbg.png'></image>
+      </view>
     </view>
   </view>
 </view>

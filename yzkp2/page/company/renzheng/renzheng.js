@@ -247,7 +247,4 @@ Page({
       }
     })
   },
-  onUnload:function(){
-    getApp().globalData.refreash = true;
-  }
 })

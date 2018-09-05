@@ -193,7 +193,4 @@ wx.getSystemInfo({
         }
       })
     },
-    onUnload: function () {
-      getApp().globalData.refreash = true;
-    }
   })
