@@ -75,36 +75,39 @@ Page({
               token: getApp().globalData.token,
             },
             success: function (res) {
-              var bsData = res.data.obj.base;
-              if (bsData.sex=='男'){
-                that.setData({
-                  sex:0
-                })
-              } else if (bsData.sex=='女'){
-                that.setData({
-                  sex: 1
-                })
-              }
-              for (var i = 0; i < that.data.nowType.length;i++){
-                if (that.data.nowType[i] == bsData.state){
+              console.log(res)
+              if(res.data.status==0){
+                var bsData = res.data.obj.base;
+                if (bsData.sex == '男') {
                   that.setData({
-                    state:i
+                    sex: 0
+                  })
+                } else if (bsData.sex == '女') {
+                  that.setData({
+                    sex: 1
                   })
                 }
+                for (var i = 0; i < that.data.nowType.length; i++) {
+                  if (that.data.nowType[i] == bsData.state) {
+                    that.setData({
+                      state: i
+                    })
+                  }
+                }
+                that.setData({
+                  name: bsData.name,
+                  getSex: bsData.sex,
+                  age: bsData.age,
+                  workYear: bsData.workYear,
+                  getstate: bsData.state,
+                  address: bsData.address,
+                  mobile: bsData.mobile,
+                  email: bsData.email,
+                  height: bsData.height,
+                  headImg: bsData.headImg,
+                  educationLevel: bsData.educationLevel
+                })
               }
-              that.setData({
-                name: bsData.name,
-                getSex: bsData.sex,
-                age: bsData.age,
-                workYear: bsData.workYear,
-                getstate: bsData.state,
-                address: bsData.address,
-                mobile: bsData.mobile,
-                email: bsData.email,
-                height: bsData.height,
-                headImg: bsData.headImg,
-                educationLevel: that.data.educationArr[bsData.educationLevel]
-              })
             }
           })
         }

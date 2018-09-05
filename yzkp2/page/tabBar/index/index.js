@@ -142,7 +142,7 @@ Page({
     }
   },
 
-  onLoadFn:function(){
+  onLoadFn:function(){   
     var _this = this
     wx.login({
       success: function (res) {
@@ -180,14 +180,6 @@ Page({
                     }
                   })
                 }
-                wx.setStorage({
-                  key: 'serachId',// 公司id
-                  data: "resume",
-                })
-                _this.jobListFn();
-                _this.setData({
-                  id: 'resume'
-                })
               } else if (res.data.obj.type == 1) {//企业
                 wx.setStorage({
                   key: 'serachId',// 公司id
@@ -245,6 +237,10 @@ Page({
 
   // 重新登录
   reloadFn:function(){
+    this.setData({
+      jianliList:[],
+      jobList:[]
+    })  
     var _this = this;
     wx.login({
       success: function (res) {
@@ -351,13 +347,19 @@ Page({
     })
     var _this = this;
 
-    if (getApp().globalData.refreash){
-      _this.reloadFn()
+    if (getApp().globalData.refreash){  
+  
+      _this.setData({
+        jianliList: [],
+        jobList: []
+      },function(){
+        _this.reloadFn()
+      })
     }
 
     wx.checkSession({
       success: function () {
-        //session_key 未过期，并且在本生命周期一直有效
+        
       },
       fail: function () {
         _this.reloadFn()
@@ -513,7 +515,6 @@ Page({
   jianliListFn: function (callback) {
     var _this = this;
     //this.clearParams();
-    //console.log(this.params)
     wx.request({
       url: searchResumeUrl,
       data: _this.params,
@@ -525,15 +526,13 @@ Page({
             callback(res.data.list.length == 0);
           }
         })
-        // _this.params={};
       }
     })
   },
   // 获取职位列表
-  jobListFn: function (callback) {
+  jobListFn: function (callback) {  
     var _this = this;
     //this.clearParams();
-    //console.log(this.params)
     wx.request({
       url: jobListUrl,
       data: _this.params,
