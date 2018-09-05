@@ -14,7 +14,6 @@ base.industry();//行业
 var socket = require('./socket.js');
 const loginUrl = require('./config').loginUrl;
 App({
-  init : true,
   onLaunch: function () {
    
   },
@@ -25,19 +24,20 @@ App({
     resume:null,//简历
     employee:null,//员工
     refreash:false,
-    getHide:false
+    getHide:false,
+    reLogin: false
   },
   onShow: function (options) {
     if (!socket.getSocketStatus()){
       socket.init()
     }
-    if(!this.init){
+    if (this.globalData.reLogin){
       this.globalData.refreash = true;
       wx.reLaunch({
         url: '/page/tabBar/index/index',
       })
     }
-    this.init = false;
+    this.globalData.reLogin = true;
   },
   onHide: function (options){
     socket.close()

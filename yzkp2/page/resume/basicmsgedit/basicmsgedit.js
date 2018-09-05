@@ -197,8 +197,10 @@ Page({
   // 上传头像
   uploadheadPic:function(){
     var that = this;
+    getApp().globalData.reLogin = false;
     wx.chooseImage({
       success: function (res) {
+        getApp().globalData.reLogin = true;
         that.setData({
           headImg: res.tempFilePaths[0]
         })

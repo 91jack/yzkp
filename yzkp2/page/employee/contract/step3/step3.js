@@ -45,8 +45,10 @@ Page({
     var that = this;
     var i = Number(e.currentTarget.dataset.idx);
     var currentUrl = "urlData[" + i +"]";
+    getApp().globalData.reLogin = false;
     wx.chooseImage({
       success: function (res) {      
+        getApp().globalData.reLogin = true;
         var tempFilePaths = res.tempFilePaths[0];
         that.setData({
           [currentUrl]: tempFilePaths
