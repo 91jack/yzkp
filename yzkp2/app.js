@@ -14,6 +14,7 @@ base.industry();//行业
 var socket = require('./socket.js');
 const loginUrl = require('./config').loginUrl;
 App({
+  init : true,
   onLaunch: function () {
    
   },
@@ -30,10 +31,13 @@ App({
     if (!socket.getSocketStatus()){
       socket.init()
     }
-    this.globalData.refreash = true;
-    wx.reLaunch({
-      url: '/page/tabBar/index/index',
-    })
+    if(!this.init){
+      this.globalData.refreash = true;
+      wx.reLaunch({
+        url: '/page/tabBar/index/index',
+      })
+    }
+    this.init = false;
   },
   onHide: function (options){
     socket.close()

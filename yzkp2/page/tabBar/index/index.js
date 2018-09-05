@@ -339,6 +339,7 @@ Page({
     })
     var _this = this;
 
+    console.log(getApp().globalData.refreash)
     if (getApp().globalData.refreash){ 
       _this.setData({
         jianliList: [],
