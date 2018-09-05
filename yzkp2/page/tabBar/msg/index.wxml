@@ -19,7 +19,7 @@
               <view class="cell">              
                   <view wx:if="{{item.isRead==0}}"><view class="msg-status">未读</view></view>
                   <view wx:else><view class="msg-status">已读</view></view>              
-                <view class="last-msg ">{{item.lastContent}}</view>
+                <view class="last-msg "><text>{{item.lastContent}}</text></view>
               </view>
             </view>
           </view>
