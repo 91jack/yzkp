@@ -53,7 +53,7 @@ Page({
       success: function (res) {
        if(res.data.status == 0){
          wx.showToast({
-           title: '您的课程报名已成功',
+           title: '报名成功',
            icon: 'success',
            duration: 2000,
            success:function(){
@@ -62,13 +62,12 @@ Page({
                  delta: 2
                })
              },1000)
-            
           }
          })
        }else{
          wx.showToast({
-           title: '报名成功',
-           icon: 'fail',
+           title: res.data.msg,
+           icon: 'none',
            duration: 2000,
            success: function () {
              setTimeout(function () {
@@ -76,13 +75,10 @@ Page({
                  delta: 2
                })
              }, 1000)
-
            }
          })
        }
       }
     })
   }
-
-
 })

@@ -4,19 +4,23 @@
   height: 158rpx;
   background: #3830EB;
   box-sizing: border-box;
-  padding-top: 47rpx;
-  justify-content: space-around
+  padding: 47rpx 22rpx 0;
+  justify-content: space-around;
+  display: flex;
+  align-items: center
+  
 }
 /*输入框 */
 .serach{
   height: 78rpx;
-  width: 706rpx;
+  /* width: 706rpx; */
   background: #fff;
   border-radius: 10rpx;
   display: flex;
   line-height: 78rpx;
   justify-content: space-around;
   margin: auto;
+  flex:1
 }
 
 .serach .inp{
@@ -47,4 +51,19 @@
   width: 100%;
   box-sizing: border-box;
   padding-left: 30rpx;
+}
+.find-people{
+  display: flex;
+  justify-content: cenert;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 40rpx;
+}
+.find-people text{
+  color: #fff;
+  font-size: 20rpx;
+}
+.find-people image{
+  width: 40rpx;
+  height: 48rpx;
 }

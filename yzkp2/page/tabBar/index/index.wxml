@@ -7,7 +7,24 @@
   <template is="topsearch" />
 </navigator> -->
 
-<template is="topsearch" />
+<view class='top'>
+  <view class='serach'>
+    <view class='inp'>
+      <input placeholder='请输入关键字' value='{{key}}' bindinput='getKey' bindconfirm='goSearch' placeholder-style='color:#D7D7D7' confirm-type="goSearch"></input>
+      <image src='/image/index/serach.png' bindtap='goSearch'></image>
+    </view>
+  </view>
+  <view>
+  <navigator url='/page/company/renzheng/renzheng' hover-class='none'>
+    <view class='find-people'>
+    
+      <image src='/image/index/find.png'></image>
+      <text>招聘</text>
+    </view>
+  </navigator>
+  
+  </view>
+</view>
 
 <!-- <view class='banner'>
   <image src='/image/index/banner.png'></image>
