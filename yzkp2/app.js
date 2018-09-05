@@ -34,7 +34,6 @@ App({
     wx.reLaunch({
       url: '/page/tabBar/index/index',
     })
-
   },
   onHide: function (options){
     socket.close()

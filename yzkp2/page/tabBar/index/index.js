@@ -275,14 +275,6 @@ Page({
                     data: res.data.obj.resume.id
                   })
                 }
-                wx.setStorage({
-                  key: 'serachId',// 公司id
-                  data: "resume",
-                })
-                _this.jobListFn();
-                _this.setData({
-                  id: 'resume'
-                })
               } else if (res.data.obj.type == 1) {//企业
                 wx.setStorage({
                   key: 'serachId',// 公司id
@@ -347,24 +339,15 @@ Page({
     })
     var _this = this;
 
-    if (getApp().globalData.refreash){  
-  
+    if (getApp().globalData.refreash){ 
       _this.setData({
         jianliList: [],
         jobList: []
       },function(){
+        console.log(111111)
         _this.reloadFn()
       })
     }
-
-    wx.checkSession({
-      success: function () {
-        
-      },
-      fail: function () {
-        _this.reloadFn()
-      }
-    })
 
     if (this.data.isRefresh) {
       this.params.page = 1
