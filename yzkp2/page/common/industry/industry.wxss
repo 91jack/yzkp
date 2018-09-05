@@ -33,7 +33,7 @@
   border-bottom: 1rpx solid #fff;
 }
 .industry-level2 {
-  /* max-height:45%; */
+  max-height:45%;
   margin-bottom: 20rpx;
   overflow-y: auto;
  
@@ -42,7 +42,7 @@
    max-height:45%;
    overflow-y: auto;
    margin: 20rpx auto;
-    border-top: 2rpx solid #F6F6F6;
+  border-top: 2rpx solid #F6F6F6;
 }
 
 .industrybtn{

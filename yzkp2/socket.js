@@ -1,5 +1,5 @@
 //线上
-const webSocketUrl = `wss://www.zgdrkj.cn/yzkp/websocket`;
+const webSocketUrl = `wss://www.kuaipin99.com/yzkp/websocket`;
 
 //const webSocketUrl = `ws://192.168.1.123:8080/yzkp/websocket`;
 
