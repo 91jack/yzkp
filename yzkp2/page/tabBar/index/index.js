@@ -142,8 +142,7 @@ Page({
     }
   },
 
-  onLoadFn:function(){ 
-    console.log(11111111111)      
+  onLoadFn:function(){   
     var _this = this
     wx.login({
       success: function (res) {
@@ -238,7 +237,6 @@ Page({
 
   // 重新登录
   reloadFn:function(){
-    console.log(11111111111)   
     this.setData({
       jianliList:[],
       jobList:[]
@@ -532,8 +530,7 @@ Page({
     })
   },
   // 获取职位列表
-  jobListFn: function (callback) {
-    console.log(11111111111)     
+  jobListFn: function (callback) {  
     var _this = this;
     //this.clearParams();
     wx.request({

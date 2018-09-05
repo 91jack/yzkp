@@ -1,19 +1,19 @@
 <!--page/common/course/myenroll/myenroll.wxml-->
 <view class='ability-cont'>
-<block wx:for="{{courseList}}" wx:key="id">
-  <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.capacityId}}'>
-    <view class='ability-cont-item'>
-      <image src="{{item.logo}}"></image>
-      <view>
-        <text class='ability-cont-item-tit'>{{item.name}}</text>
-        <text class='ability-cont-item-price'>{{item.tuition}}/{{item.curriculum}}</text>
-        <text>招生对象:{{item.recruitStudents}}</text>
-        <text>开课时间:{{item.openClassTime}}</text>
-        <text>报名时间: {{item.createTime}}</text>
+  <block wx:for="{{courseList}}" wx:key="id">
+    <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.capacityId}}'>
+      <view class='ability-cont-item'>
+        <image src="{{item.logo}}"></image>
+        <view>
+          <text class='ability-cont-item-tit'>{{item.name}}</text>
+          <text class='ability-cont-item-price'>{{item.tuition}}/{{item.curriculum}}</text>
+          <text>招生对象:{{item.recruitStudents}}</text>
+          <text>开课时间:{{item.openClassTime}}</text>
+          <text>报名时间: {{item.createTime}}</text>
+        </view>
       </view>
-    </view>
-  </navigator>
-</block>
+    </navigator>
+  </block>
   <view hidden="{{courseList}}">
     <image class='none-show' src='/image/mine/bigbg.png'></image>
   </view>
