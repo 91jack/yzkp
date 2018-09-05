@@ -12,18 +12,18 @@ const searchResumeUrl = require('../../../config').searchResumeUrl;
 var socket = require('../../../socket.js');
 Page({
   params: { page: 1, pageSize: 30},
-  
+   
   /**
    * 页面的初始数据
    */
   data: {
-    role: 0,//用户角色 0：求职者  1：企业 2：员工
+    role: -1,//用户角色 0：求职者  1：企业 2：员工
     jobList: [],
     jianliList:[],
     index: 0,//选择的下拉列表下标
     id:'',
     key:'',
-    getHide:false,
+    getHide: true,
     isRefresh: false, //onshow时是否刷新
 
     isRecommon: [{ type: 0, name: '最新' }, { type: 1, name: '推荐' }],
@@ -121,10 +121,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting['scope.userInfo'])
+        var hide = res.authSetting['scope.userInfo']
+        that.setData({
+          getHide: hide ? hide : false
+        })
+        that.onLoadFn();
+         
+        // if (res.authSetting['scope.userInfo']) {
+        //   that.setData({
+        //     getHide: res.authSetting['scope.userInfo']
+        //   })
+        // }else{
+        //   that.setData({
+        //     getHide: getApp().globalData.getHide
+        //   })
+        // }
+      }
+    })
   },
   // 获取用户信息
   bindGetUserInfo:function(e){
+    console.log(e)
     if (e.detail.errMsg =="getUserInfo:ok"){
       getApp().globalData.getHide=true;
       this.setData({
@@ -138,7 +159,7 @@ Page({
           }, 1000)
         }
       })
-      this.onLoadFn();
+      this.reloadFn();
     }
   },
 
@@ -334,18 +355,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      getHide: getApp().globalData.getHide
-    })
+    
     var _this = this;
 
-    console.log(getApp().globalData.refreash)
     if (getApp().globalData.refreash){ 
       _this.setData({
         jianliList: [],
         jobList: []
       },function(){
-        console.log(111111)
         _this.reloadFn()
       })
     }
