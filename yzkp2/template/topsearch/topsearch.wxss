@@ -4,7 +4,7 @@
   height: 158rpx;
   background: #3830EB;
   box-sizing: border-box;
-  padding: 47rpx 22rpx 0;
+  padding: 37rpx 22rpx 0;
   justify-content: space-around;
   display: flex;
   align-items: center
