@@ -510,68 +510,42 @@ Page({
    }
   },
   // 获取简历列表
-  jianliListFn: function (callback){
+  jianliListFn: function (callback) {
     var _this = this;
+    //this.clearParams();
+    //console.log(this.params)
     wx.request({
       url: searchResumeUrl,
       data: _this.params,
       success: function (res) {
-        if(res.data.status==0){
-         if(res.data.list!=[]){
-           for(var j=0;j<res.data.list.length;j++){
-             _this.data.jianliList.push(res.data.list[j])
-             _this.setData({
-               jianliList: _this.data.jianliList
-             })
-             wx.stopPullDownRefresh();
-           }
-         } else {
-           if (callback) {
-             callback()
-           }
-           wx.showToast({
-             title: '到底啦~',
-             duration: 2000
-           })
-         }
-        }
-        
-        _this.setData({ 
+        _this.setData({
           jianliList: _this.data.jianliList.concat(res.data.list)
         }, function () {
-          if(callback){
+          if (callback) {
             callback(res.data.list.length == 0);
-          }          
+          }
         })
+        // _this.params={};
       }
     })
   },
   // 获取职位列表
-  jobListFn: function (callback){
+  jobListFn: function (callback) {
     var _this = this;
+    //this.clearParams();
+    //console.log(this.params)
     wx.request({
       url: jobListUrl,
       data: _this.params,
       success: function (res) {
-        if(res.data.status==0){
-          if (res.data.list != []) {
-            for (var j = 0; j < res.data.list.length; j++) {
-              _this.data.jobList.push(res.data.list[j])
-              _this.setData({
-                jobList: _this.data.jobList
-              })
-              wx.stopPullDownRefresh();
-            }
-          } else {
-            if (callback) {
-              callback()
-            }
-            wx.showToast({
-              title: '到底啦~',
-              duration:2000
-            })
+        _this.setData({
+          jobList: _this.data.jobList.concat(res.data.list)
+        }, function () {
+          if (callback) {
+            callback(res.data.list.length == 0);
           }
-        }
+        })
+        // _this.params = {};
       }
     })
   }
