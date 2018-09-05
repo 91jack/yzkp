@@ -223,7 +223,6 @@ Page({
         welfare: _this.data.welfare
       },
       success: function (res) {
-        console.log(res)
         if(res.data.status==0){
           wx.showToast({
             title: '认证成功',
@@ -238,6 +237,12 @@ Page({
             }
           })
           getApp().globalData.refreash = true;
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon:'none',
+            duration:1000
+          })
         }
       }
     })

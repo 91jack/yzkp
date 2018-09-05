@@ -81,9 +81,11 @@ Page({
         token: getApp().globalData.token,
       },
       success: function (res) {
-        that.setData({
-          work: res.data.obj.work,
-        })
+        if(res.data.status==0){
+          that.setData({
+            work: res.data.obj.work,
+          })
+        }
       }
     })
   },

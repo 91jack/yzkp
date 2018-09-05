@@ -83,7 +83,7 @@
 
     
     <view class='rz-intro'>
-      <textarea placeholder='个人或企业介绍' data-idx="5" bindinput='getValue' placeholder-style='color:#AEAEAE' show-confirm-bar='false' adjust-position="true" auto-height="40rpx"></textarea>
+      <textarea placeholder='个人或企业介绍' data-idx="5" bindinput='getValue' placeholder-style='color:#AEAEAE' show-confirm-bar='false' adjust-position="true"></textarea>
     </view>
   </view>
 </view>

@@ -140,9 +140,17 @@ Page({
         industry: _this.data.industry
       },
       success: function (res) {
-        wx.navigateBack({//返回
-          delta: 1
-        })
+        if(res.data.status==0){
+          wx.navigateBack({//返回
+            delta: 1
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon:'none',
+            duration:1000
+          })
+        }
         wx.removeStorage({
           key: 'city',
           success: function (res) {

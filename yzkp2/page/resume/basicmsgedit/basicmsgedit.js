@@ -246,6 +246,12 @@ Page({
         success: function (res) {
           if (res.data.status == 0) {
             wx.navigateBack(1)
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
           }
         }
       })
@@ -274,6 +280,12 @@ Page({
           })
           if (res.data.status == 0) {
             wx.navigateBack(1)
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
           }
         }
       })

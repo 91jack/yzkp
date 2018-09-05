@@ -148,6 +148,12 @@ Page({
             wx.navigateBack({
               delta: 1
             })  
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
           }
         }
       })
@@ -168,6 +174,12 @@ Page({
             wx.navigateBack({
               delta: 1
             }) 
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
           }
         }
       })

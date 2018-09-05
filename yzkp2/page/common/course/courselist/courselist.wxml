@@ -29,8 +29,8 @@
 
 <view class='ability-cont' hidden='{{!show}}'>
   <block wx:for="{{courseList}}" wx:key="id">
-    <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.id}}'>
-      <view class='ability-cont-item'>
+    <!-- <navigator hover-class='none' url='/page/common/course/coursedetails/coursedetails?id={{item.id}}'> -->
+      <view class='ability-cont-item' bindtap='toDetail' data-id='{{item.id}}' data-isEnd="{{item.isEnd}}"> 
         <image src="{{item.logo}}"></image>
         <view>
           <text class='ability-cont-item-tit'>{{item.name}}</text>
@@ -40,7 +40,7 @@
           <text>报名截止时间: {{item.signupTime}}</text>
         </view>
       </view>
-    </navigator>
+    <!-- </navigator> -->
   </block>
 </view>
 

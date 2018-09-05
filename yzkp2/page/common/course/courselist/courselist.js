@@ -68,7 +68,22 @@ Page({
   onHide: function() {
 
   },
-
+  toDetail:function(e){
+    console.log(e);
+    var id = e.currentTarget.dataset.id;
+    var isEnd = e.currentTarget.dataset.isend;
+    if(isEnd!=1){
+      wx.navigateTo({
+        url: '/page/common/course/coursedetails/coursedetails?id='+id,
+      })
+    }else{
+      wx.showToast({
+        title: '报名已结束',
+        icon:'none',
+        duration:1000
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

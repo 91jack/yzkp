@@ -480,6 +480,12 @@ Page({
             key: 'height',
             success: function (res) { },
           })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 1000
+          })
         }
       }
     })

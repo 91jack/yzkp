@@ -92,7 +92,7 @@ page{
 }
 .rz-intro{
   width:702rpx;
-  margin: 34rpx 0 250rpx;
+  margin: 34rpx 0 0;
   padding-bottom: 200rpx;  
 }
 .rz-intro textarea{

@@ -125,6 +125,12 @@ Page({
             wx.navigateBack({
               delta: 1
             })
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon:'none',
+              duration:1000
+            })
           }
         }
       })
@@ -144,6 +150,12 @@ Page({
           if(res.data.status==0){
             wx.navigateBack({
               delta: 1
+            })
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
             })
           }
         }

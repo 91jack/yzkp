@@ -76,6 +76,7 @@ Page({
   },
   bindDateChange: function (e) {
     var i = Number(e.currentTarget.dataset.idx)
+    console.log(e);
     if(i==0){   //入职时间
       this.setData({
         inData: e.detail.value,
@@ -105,7 +106,7 @@ Page({
       })
     }
   },
-  //调教信息
+  //提交信息
   submitBtn:function(){
     var _this = this;
     if (Boolean(_this.data.id)){
@@ -121,9 +122,17 @@ Page({
           position: _this.data.job
         },
         success: function (res) {
-          wx.navigateBack({
-            delta: 1
-          })
+         if(res.data.status==0){
+           wx.navigateBack({
+             delta: 1
+           })
+         }else{
+           wx.showToast({
+             title: res.data.msg,
+             duration:1000,
+             icon: 'none'
+           })
+         }
         }
       })
     }else{
@@ -139,9 +148,17 @@ Page({
           position: _this.data.job
         },
         success: function (res) {
-          wx.navigateBack({
-            delta: 1
-          })
+          if(res.data.status==0){
+            wx.navigateBack({
+              delta: 1
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              duration: 1000,
+              icon:'none'
+            })
+          }
         }
       })
     }
