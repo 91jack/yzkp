@@ -389,7 +389,7 @@ Page({
         payType: _this.data.payType,
         linkMan: _this.data.linkMan,
         linkPhone: _this.data.linkPhone,
-        attr: _this.data.attr[0],
+        attr: _this.data.attr,
         tm: _this.data.tm,
         city: _this.data.city,
         address: _this.data.address,

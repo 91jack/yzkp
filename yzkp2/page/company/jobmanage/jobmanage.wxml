@@ -36,7 +36,7 @@
               <text>{{item.height}}</text>
             </view>
           </view>
-          <view class='det-right'>{{item.pay}}</view>
+          <view class='det-right'>{{item.pay}}元</view>
         </view>
         <!-- 兼职 -->
         <view class='cont-detail' wx:if="{{item.type==1}}">

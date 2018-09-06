@@ -3,7 +3,7 @@
   <view class='tit'>
     <view class='tit-name'>
       <text class='work-name'>{{jobDetails.name}}</text>
-      <text class='work-price'>{{jobDetails.pay}}/{{jobDetails.payType}}</text>
+      <text class='work-price'>{{jobDetails.pay}}元/{{jobDetails.payType}}</text>
     </view>
 
     <view class='tit-request'>
