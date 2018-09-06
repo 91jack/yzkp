@@ -24,7 +24,7 @@ Page({
     industry:"请选择岗位",
     duty: '',
     tag: '',
-    sexData: ["男", "女"],
+    sexData: ["男", "女",'不限'],
     sexHide: false,
     sexIndex: 0,
     payStyle: ['日结', '周结', '月结','完工结算'],
