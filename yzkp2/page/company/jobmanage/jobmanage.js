@@ -140,25 +140,26 @@ Page({
       key: 'companyId',
       success: function(res) {
         companyId = res.data;
+        wx.request({
+          url: jobListUrl,
+          data: {
+            token: getApp().globalData.token,
+            companyId: companyId
+          },
+          success: function (res) {
+            if (res.data.status == 0) {
+
+              _this.setData({
+                jobList: res.data.list
+              })
+            }
+
+          }
+        })
       },
     })
 
-    wx.request({
-      url: jobListUrl,
-      data: {
-        token: getApp().globalData.token,
-        companyId: companyId
-      },
-      success: function (res) {
-        if (res.data.status == 0) {
-
-          _this.setData({
-            jobList: res.data.list
-          })
-        }
-
-      }
-    })
+   
   }
 
 })
