@@ -1,8 +1,8 @@
-// 线上
+﻿// 线上
 var host = "https://www.kuaipin99.com/yzkp/app/";
 
 // 本地
-// var host = "http://192.168.1.123:8080/yzkp/app/";
+// var host = "http://127.0.0.1:8080/yzkp/app/";
 
 var config = {
   // 下面的地址配合云端 Server 工作
