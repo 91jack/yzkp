@@ -3,7 +3,7 @@
   <view class='tit'>
     <view class='tit-name'>
       <text class='work-name'>{{jobDetails.name}}</text>
-      <text class='work-price'>{{jobDetails.pay}}/{{jobDetails.payUnit}}</text>
+      <text class='work-price'>{{jobDetails.pay}}/{{jobDetails.payType}}</text>
     </view>
 
     <view class='tit-request'>
@@ -11,7 +11,7 @@
       <block wx:if="{{jobDetails.type==0}}">
         <view class='request-item'>
           <image src='/image/index/area.png'></image>
-          <text>重庆</text>
+          <text>{{jobDetails.city}}</text>
         </view>
         <view class='request-item'>
           <image  src='/image/index/express.png'></image>

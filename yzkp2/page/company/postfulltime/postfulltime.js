@@ -33,7 +33,7 @@ Page({
     payData:[],
     payHide:false,
     payIndex:0,
-    sexData:["男","女"],
+    sexData:["男","女",'不限'],
     sexHide:false,
     sexIndex:0,
     payStyle:['日结','周结','月结'],
