@@ -62,7 +62,7 @@ Page({
         text: '最新职位'
       },
       {
-        url: '/page/company/joblist/joblist?type=1&recruitType=1',
+        url: '/page/company/joblist/joblist?type=0&recruitType=1',
         src: '/image/index/datetime.png',
         text: '兼职职位'
       },
