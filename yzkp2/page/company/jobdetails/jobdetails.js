@@ -17,19 +17,31 @@ Page({
     collectType: false,
     modalShow: true,
     modalData: [true, true, true],
-    resumeId: ''
+    resumeId: '',
+    footerShow:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+   
     var _this = this;
     if(options.id){
       this.setData({
         id: options.id
       })
     }
+
+    if(options.type){
+      if(options.type=='company'){
+        this.setData({
+          footerShow:false
+        })
+      }
+     
+    }
+
     wx.getStorage({
       key: 'resumeId',
       success: function(res) {

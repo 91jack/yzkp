@@ -42,7 +42,7 @@
 </navigator>
 
 
-<view class='footer'>
+<view class='footer' wx:if="{{footerShow}}">
   <view class='footer-item first'>
 
     <view class='footer-item-box' data-id='2' bindtap='call'>

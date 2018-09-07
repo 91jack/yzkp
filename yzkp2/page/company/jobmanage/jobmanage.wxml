@@ -10,7 +10,7 @@
   <block wx:for="{{jobList}}">
 
     <view class='cont-item'>
-      <navigator hover-class='none' url="/page/company/jobdetails/jobdetails?id={{item.id}}">
+      <navigator hover-class='none' url="/page/company/jobdetails/jobdetails?type=company&id={{item.id}}">
         <view class='cont-tit'>
           <text class='title'>{{item.name}}</text>
           <text class='time'>{{item.refreshTime}}</text>
