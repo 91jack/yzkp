@@ -58,7 +58,8 @@ Page({
     this.setData({
       _industrynav: industrynav,
       currentSelect: _this.data.industry[industrynav].list,
-      locNav: _this.data.industry[industrynav].name
+      locNav: _this.data.industry[industrynav].name,
+      profession:[]
     })
   },
   // 行业二级筛选

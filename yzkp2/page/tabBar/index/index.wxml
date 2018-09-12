@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
-<import src="/template/topsearch/topsearch.wxml" />
+<!-- <import src="/template/topsearch/topsearch.wxml" /> -->
 <import src="/template/joblist/joblist.wxml" />
 
 
@@ -10,7 +10,7 @@
 <view class='top' hidden='{{role!=0}}'>
   <view class='serach'>
     <view class='inp'>
-      <input placeholder='请输入关键字' value='{{key}}' bindinput='getKey' bindconfirm='goSearch' placeholder-style='color:#D7D7D7' confirm-type="goSearch"></input>
+      <input placeholder='请输入关键字' value='{{key}}' bindinput='getKey' bindconfirm='goSearch' placeholder-style='color:#D7D7D7' confirm-type="search"></input>
       <image src='/image/index/serach.png' bindtap='goSearch'></image>
     </view>
   </view>

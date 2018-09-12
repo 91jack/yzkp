@@ -48,7 +48,7 @@
   line-height: 78rpx;
   text-align: left;
   height: 78rpx;
-  width: 100%;
+  width: 80%;
   box-sizing: border-box;
   padding-left: 30rpx;
 }

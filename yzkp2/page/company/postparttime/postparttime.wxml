@@ -21,7 +21,7 @@
         <input placeholder='请输入招聘人数' value='{{num}}' data-idx='1' bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
       </view>
       <view class='header-item'>
-        <picker bindchange="bindPickerChange" data-idx="0" value="{{sexIndex}}" range="{{sexData}}">
+        <picker bindchange="bindPickerChange"  data-idx="0" value="{{sexIndex}}" range="{{sexData}}">
           <text hidden='{{sexHide}}'>{{sex}}</text>
           <text hidden='{{!sexHide}}'>{{sexData[sexIndex]}}</text>
           <image src='/image/index/return.png'></image>
