@@ -32,7 +32,8 @@
     </view>
   </view>
   <view class='detail-place'>
-    <textarea bindblur='getValue' data-inx="4" placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea>
+    <!-- <textarea bindblur='getValue' data-inx="4" placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></textarea> -->
+    <input bindblur='getValue' data-inx="4" placeholder-style='color:#AEAEAE' placeholder='请输入详细地址'></input>
   </view>
 </view>
 

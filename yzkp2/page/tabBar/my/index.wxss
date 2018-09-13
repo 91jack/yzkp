@@ -20,7 +20,7 @@ page{
   width: 41rpx;
   height: 41rpx;
   display: inline-block;
-  margin-right: 27rpx;
+  margin-right: 15rpx;
   padding-top: 20rpx;  
 }
 .box .left text{

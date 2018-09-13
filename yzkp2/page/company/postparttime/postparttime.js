@@ -31,7 +31,7 @@ Page({
     sexData: ['不限', "男", "女"],
     sexHide: false,
     sexIndex: 0,
-    payStyle: ['月结','日结', '周结', '完工结算'],
+    payStyle: ['日结', '周结', '月结', '完工结算'],
     styleHide: false,
     styleIndex: 0,
     heightData: [],

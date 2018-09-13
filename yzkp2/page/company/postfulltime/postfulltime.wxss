@@ -14,7 +14,7 @@ page{
   z-index: 1
 }
 .choose-place.last{
-  padding-bottom: 200rpx;
+  padding-bottom: 100rpx;
 }
 .choose-place.add{
   margin-bottom: 20rpx;

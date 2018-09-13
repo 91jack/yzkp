@@ -40,7 +40,7 @@ Page({
     sexData: ['不限',"男","女"],
     sexHide:false,
     sexIndex:0,
-    payStyle:['日结','周结','月结'],
+    payStyle: ['月结','日结','周结'],
     styleHide:false,
     styleIndex:0,
     heightData:[],

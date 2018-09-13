@@ -639,10 +639,6 @@ checkbox{
   text-align: center;
   padding-bottom: 20rpx;
 }
-.header-intro {
-  margin-left: 33rpx;
-  line-height: 192rpx;
-}
 .header-intro .intro-cont{
   height: 26rpx;
   line-height: 26rpx;
@@ -949,18 +945,21 @@ checkbox{
 .header-cont.resume{
   display: flex;
   align-items: center;
-  padding-left:29rpx; 
+  flex-direction: column;
+  justify-content: center;
 }
 .header-cont.resume>view image{
   width: 113rpx;
   height: 113rpx;
   border-radius: 50%;
-  margin-right: 33rpx;
+  margin: 20rpx 0;
 }
 .header-cont.resume .header-intro text{
+  display: block;
   font-size: 32rpx;
   color: #353535;
   font-weight: bold;
+  padding-bottom: 16rpx;
 }
 /* 模态框 */
 .modal{
@@ -1100,19 +1099,19 @@ image.none-show{
 .jianli .manageintro-cont-item-tit .tit-info,
 .jianli .manageintro-cont-item-tit .tit-edit{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .jianli .manageintro-cont-item-tit .tit-info image{
   width: 31rpx;
   height: 31rpx;
-  margin: 21rpx 7rpx 0 0;
+  margin-right: 7rpx;
+  display: block;
 }
 .jianli .manageintro-cont-item-tit .tit-info text{
   font-size: 24rpx;
   color: #353535;
-  margin-top: 24rpx;
-  display: inline-block;
-  height: 24rpx;
-  line-height: 24rpx;
+  display: block;
 }
 .jianli .manageintro-cont-item-tit .tit-edit image{
   width: 26rpx;
