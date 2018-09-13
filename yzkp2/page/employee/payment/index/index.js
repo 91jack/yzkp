@@ -1,4 +1,3 @@
-// page/my/payment/index/index.js
 // 员工查看薪酬
 const payInformationUrl = require('../../../../config').payInformationUrl;
 
@@ -59,4 +58,4 @@ Page({
       }
     })
   }
-})
+}) 
