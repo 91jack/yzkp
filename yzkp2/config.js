@@ -1,4 +1,4 @@
-﻿// 线上
+// 线上
 var host = "https://www.kuaipin99.com/yzkp/app/";
 
 // 本地
@@ -121,6 +121,8 @@ var config = {
   // 发布全职招聘 发布兼职招聘
   addjobUrl: `${host}recruit/notice/add.json`,
 
+  // 编辑职位
+  editjobUrl: `${host}recruit/notice/edit.json`,
   // 企业介绍
   companyIntroUrl: `${host}company/get.json`,
 

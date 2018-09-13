@@ -5,7 +5,7 @@
         <navigator hover-class='none' url='/page/common/industry/industry?type=postfulltime'>
           <view class='choose-region'>
             <view class='choose-region-item'>
-              <text>{{industry}}</text>
+              <input disabled='true' placeholder='请选择岗位' value="{{industry}}" placeholder-style='color:#AEAEAE'></input>
               <image src='/image/index/return.png'></image>
             </view>
           </view>
@@ -21,45 +21,37 @@
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="0" value="{{eduIndex}}" range="{{eduData}}">
-           <input disabled='true' placeholder='请选择学历' value="{{eduData[eduIndex]}}" placeholder-style='color:#AEAEAE'></input>
-
-          <!-- <text hidden='{{eduHide}}'>{{educationLevel}}</text>
-          <text hidden='{{!eduHide}}'></text> -->
+          <input disabled='true' placeholder='请选择学历' value="{{educationLevel}}" placeholder-style='color:#AEAEAE'></input>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="1" value="{{exerciseIndex}}" range="{{exerciseData}}">
-          <text hidden='{{exerciseHide}}'>{{workYear}}</text>
-          <text hidden='{{!exerciseHide}}'>{{exerciseData[exerciseIndex]}}</text>
+          <input disabled='true' placeholder='经验要求' value="{{workYear}}" placeholder-style='color:#AEAEAE'></input>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="2" value="{{styleIndex}}" range="{{payStyle}}">
-          <text hidden='{{styleHide}}'>{{payType}}</text>
-          <text hidden='{{!styleHide}}'>{{payStyle[styleIndex]}}</text>
+          <input disabled='true' placeholder='薪资结算方式' value="{{payType}}" placeholder-style='color:#AEAEAE'></input>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="3" value="{{payIndex}}" range="{{payData}}">
-          <text hidden='{{payHide}}'>{{pay}}</text>
-          <text hidden='{{!payHide}}'>{{payData[payIndex]}}</text>
+          <input disabled='true' placeholder='薪资范围' value="{{pay}}" placeholder-style='color:#AEAEAE'></input>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="4" value="{{heightIndex}}" range="{{heightData}}">
-          <text hidden='{{heightHide}}'>{{height}}</text>
-          <text hidden='{{!heightHide}}'>{{heightData[heightIndex]}}</text>
+          <input disabled='true' placeholder='身高要求' value="{{height}}" placeholder-style='color:#AEAEAE'></input>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="5" value="{{sexIndex}}" range="{{sexData}}">
-          <text hidden='{{sexHide}}'>{{sex}}</text>
-          <text hidden='{{!sexHide}}'>{{sexData[sexIndex]}}</text>
+          <input disabled='true' placeholder='性别要求' value="{{sex}}" placeholder-style='color:#AEAEAE'></input>        
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
@@ -71,6 +63,18 @@
       </view>
     </view>
 
+    
+     <view class='post-job-wealf'>
+      <view class='post-job-wealf-tit'>福利待遇:</view>
+      <view class='post-job-wealf-cont'>
+        <view class='post-job-wealf-item'>
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox wx:for='{{welfareData}}' value='{{item}}' checked='{{welfarr[index]}}'>{{item}}</checkbox>
+          </checkbox-group>
+        </view>
+      </view>
+    </view>
+    
     <view class='post-job-type'>
       <view class='post-job-type-item'>
         <text>职位属性:</text>
@@ -89,24 +93,13 @@
       </view>
     </view>
 
-     <view class='post-job-wealf'>
-      <view class='post-job-wealf-tit'>福利待遇:</view>
-      <view class='post-job-wealf-cont'>
-        <view class='post-job-wealf-item'>
-          <checkbox-group bindchange="checkboxChange">
-            <checkbox wx:for='{{welfareData}}' value='{{item}}'>{{item}}</checkbox>
-          </checkbox-group>
-        </view>
-      </view>
-    </view>
-
     <view class='post-job-area'>
       <view class='choose-place'>
         <!-- <text>请选择工作地点:</text> -->
         <navigator hover-class='none' url='/page/common/city/city?type=postfulltime'>
           <view class='choose-region'>
             <view class='choose-region-item'>
-              <text>{{city}}</text>
+              <input disabled='true' placeholder='选择工作地点' value="{{city}}" placeholder-style='color:#AEAEAE'></input>
               <image src='/image/index/return.png'></image>
             </view>
           </view>
@@ -120,7 +113,7 @@
     <view class='choose-place last'>
       <text>职位描述:</text>
       <textarea data-idx='5' value='{{duty}}' bindblur='getValue' placeholder='请输入岗位职责:' placeholder-style='color:#AEAEAE'></textarea>
-      <textarea data-idx='6' value='{{tag}}' bindblur='getValue' placeholder='请输入职位要求:' placeholder-style='color:#AEAEAE'></textarea>
+      <textarea data-idx='6' value='{{tag}}' bindinput='getValue' placeholder='请输入职位要求:' placeholder-style='color:#AEAEAE'></textarea>
     </view>
   </view>
 

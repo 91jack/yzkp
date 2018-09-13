@@ -12,27 +12,27 @@ Page({
     jobSeekerList: [
       {
         url: '/page/resume/index/index',
-        src: '/image/index/office.png',
+        src: '/image/mine/manage.png',
         text: '我的简历'
       },
       {
         url: '/page/resume/index/index?id=apply',
-        src: '/image/index/office.png',
+        src: '/image/mine/record.png',
         text: '我的申请'
       },
       {
         url: '/page/common/course/myenroll/myenroll',
-        src: '/image/index/office.png',
+        src: '/image/mine/study.png',
         text: '我的报名'
       },
       {
         url: '/page/company/renzheng/renzheng',
-        src: '/image/index/office.png',
+        src: '/image/mine/find.png',
         text: '我要招聘'
       },
       {
         url: '/page/employee/contract/step1/step1',
-        src: '/image/index/office.png',
+        src: '/image/mine/emp.png',
         text: '成为员工'
       }
     ],
@@ -40,39 +40,39 @@ Page({
     employeeList: [
       {
         url: '/page/resume/index/index',
-        src: '/image/index/office.png',
+        src: '/image/mine/manage.png',
         text: '我的简历'
       },
       {
         url: '/page/resume/index/index?id=apply',
-        src: '/image/index/office.png',
+        src: '/image/mine/record.png',
         text: '我的申请'
       },
       {
         url: '/page/common/course/myenroll/myenroll',
-        src: '/image/index/office.png',
+        src: '/image/mine/study.png',
         text: '我的报名'
       },
       {
         url: '/page/employee/contract/index/index',
-        src: '/image/index/office.png',
+        src: '/image/mine/manage.png',
         text: '我的合同'
       },
       {
         url: '/page/employee/payment/index/index',
-        src: '/image/index/office.png',
+        src: '/image/mine/info.png',
         text: '我的薪酬'
       }
     ],
     // 企业列表
     companyList: [{
       url: '/page/company/jobmanage/jobmanage',
-      src: '/image/index/office.png',
+      src: '/image/mine/return.png',
       text: '职位管理'
     },
       {
         url: '/page/company/jianlimanage/jianlimanage',
-        src: '/image/index/office.png',
+        src: '/image/mine/findpro.png',
         text: '简历管理'
       }
     ]

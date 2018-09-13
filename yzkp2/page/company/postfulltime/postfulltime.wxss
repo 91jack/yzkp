@@ -3,7 +3,6 @@ page{
   background: #fff;
 }
 .page{
-  /* margin-bottom: 200rpx; */
   overflow: auto
 }
 .btn{
@@ -20,3 +19,10 @@ page{
 .choose-place.add{
   margin-bottom: 20rpx;
 }
+.post-job-wealf-tit{
+  font-size:26rpx;
+  color:#868686;
+  padding-bottom:17rpx;
+  margin-top: 24rpx;
+}
+

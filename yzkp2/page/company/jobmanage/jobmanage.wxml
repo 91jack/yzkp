@@ -36,7 +36,7 @@
               <text>{{item.height}}</text>
             </view>
           </view>
-          <view class='det-right'>{{item.pay}}元/{{item.payUnit}}</view>
+          <view class='det-right'>{{item.pay}}元/{{item.payUnit==""?"月":item.payUnit}}</view>
         </view>
         <!-- 兼职 -->
         <view class='cont-detail' wx:if="{{item.type==1}}">
@@ -59,13 +59,24 @@
 
       </navigator>
       <view class='company-btn'>
-        <view class='company-btn-item'>
-          <image src='/image/index/refresh.png'></image>
-          <text bindtap='refreshJob' data-jobId="{{item.id}}">刷新</text>
+        <view class='poststate'>
+          <text class='unpass' hidden='{{item.status!=2}}'>审核失败</text>
+          <text class='pass' hidden='{{item.status!=1}}'>审核通过</text>          
+          <text class='pass' hidden='{{item.status!=0}}'>审核中</text>          
         </view>
-        <view class='company-btn-item'>
-          <image src='/image/index/delete.png'></image>
-          <text bindtap='delJob' data-jobId="{{item.id}}">删除</text>
+        <view class='btn-cont'>
+          <view class='company-btn-item'>
+            <image src='/image/index/managejobedit.png'></image>
+            <text bindtap='editJob' data-jobId="{{item.id}}" data-jobtype='{{item.type}}'>编辑</text>
+          </view>
+          <view class='company-btn-item'>
+            <image src='/image/index/refresh.png'></image>
+            <text bindtap='refreshJob' data-jobId="{{item.id}}">刷新</text>
+          </view>
+          <view class='company-btn-item'>
+            <image src='/image/index/delete.png'></image>
+            <text bindtap='delJob' data-jobId="{{item.id}}">删除</text>
+          </view>
         </view>
       </view>
     </view>

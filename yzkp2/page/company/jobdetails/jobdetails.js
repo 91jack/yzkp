@@ -18,7 +18,8 @@ Page({
     modalShow: true,
     modalData: [true, true, true],
     resumeId: '',
-    footerShow:true
+    footerShow:true,
+    welfare:[]
   },
 
   /**
@@ -156,12 +157,20 @@ Page({
         id: that.data.id
       },
       success: function (res) {
-        that.setData({
-          jobDetails: res.data.obj,
-          id: res.data.obj.id,
-          companyId: res.data.obj.companyId,
-          linkPhone: res.data.obj.linkPhone,
-        })
+        if(res.data.status==0){
+          var w = [];
+          if (res.data.obj.welfare!=''){
+            w = JSON.parse(res.data.obj.welfare)
+          }
+          that.setData({
+            jobDetails: res.data.obj,
+            id: res.data.obj.id,
+            companyId: res.data.obj.companyId,
+            linkPhone: res.data.obj.linkPhone,
+            welfare: w
+          })
+          console.log(that.data.welfare)
+        }
       }
     })
   },

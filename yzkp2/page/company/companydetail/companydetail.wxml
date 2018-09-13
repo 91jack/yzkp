@@ -14,12 +14,7 @@
       <text class='industry'>行业: {{companyInfo.industry}}</text>
 
     </view>
-    <view class='welfare'>
-      <text class='welfare-tit'>福利: </text>
-      <view class='welfare-detail'>
-        <view wx:for="{{welfare}}" class='welfare-item'>{{item}}</view>
-      </view>
-    </view>
+    
     <view class='company-intro'>
       <view class='company-name'>
         <image src='/image/index/companyintro.png'></image>

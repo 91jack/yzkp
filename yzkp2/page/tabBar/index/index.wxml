@@ -1,11 +1,8 @@
-<!--pages/index/index.wxml-->
-<!-- <import src="/template/topsearch/topsearch.wxml" /> -->
+
 <import src="/template/joblist/joblist.wxml" />
 
 
-<!-- <navigator hover-class="none" url='/page/company/joblist/joblist?index=index'>
-  <template is="topsearch" />
-</navigator> -->
+
 
 <view class='top' hidden='{{role!=0}}'>
   <view class='serach'>

@@ -1,6 +1,6 @@
 <!--page/job/newwork/jobdetails/jobdetails.wxml-->
 <import src ="/template/jobinfo/jobinfo.wxml"/>
-<template is="jobinfo" data="{{jobDetails}}"/>
+<template is="jobinfo" data="{{jobDetails,welfare}}"/>
 
 
 <!--职位描述  -->

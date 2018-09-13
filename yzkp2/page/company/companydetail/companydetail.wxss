@@ -90,38 +90,7 @@ color: transparent;
   color: #868686;
   font-size: 26rpx;
 }
-.welfare{
-  padding-top: 17rpx;
-  display: flex;
-  background: #fff;
-  margin-bottom: 11rpx;
-  padding-left: 25rpx;  
-  padding-bottom: 10rpx;
-  flex-wrap: wrap;
-}
-.welfare .welfare-tit{
-  color: #868686;
-  font-size: 26rpx;
-  display: inline-block;
-}
-.welfare .welfare-detail{
-  margin-left: 22rpx;
-  display: flex;
-  flex-wrap: wrap;
-  width: 640rpx;
-}
-.welfare .welfare-detail .welfare-item{
-  width: 136rpx;
-  height: 40rpx;
-  border-radius: 20rpx;
-  background: #EAE9FC;
-  font-size: 20rpx;
-  color: #868686;
-  line-height: 40rpx;
-  margin-right: 21rpx;
-  text-align: center;
-  margin-bottom: 14rpx;
-}
+
 
 
 /* 公司详细介绍 */

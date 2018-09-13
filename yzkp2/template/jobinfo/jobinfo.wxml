@@ -3,7 +3,7 @@
   <view class='tit'>
     <view class='tit-name'>
       <text class='work-name'>{{jobDetails.name}}</text>
-      <text class='work-price'>{{jobDetails.pay}}元/{{item.payUnit}}/{{jobDetails.payType}}</text>
+      <text class='work-price'>{{jobDetails.pay}}元/{{jobDetails.payUnit==""?"月":jobDetails.payUnit}}/{{jobDetails.payType}}</text>
     </view>
 
     <view class='tit-request'>
@@ -31,6 +31,15 @@
         <view class='request-item'>
           <image  src='/image/index/height.png'></image>
           <text>{{jobDetails.height}}</text>
+        </view>
+        
+      </block>
+      <block wx:if="{{jobDetails.type==0}}">
+        <view class='welfare'>
+          <view class='welfare-tit'>福利: </view>
+          <view class='welfare-detail'>
+            <view wx:for="{{welfare}}" class='welfare-item'>{{item}}</view>
+          </view>
         </view>
       </block>
       <!-- 兼职岗位 -->

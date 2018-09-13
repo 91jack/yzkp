@@ -6,7 +6,7 @@
         <navigator hover-class='none' url='/page/common/industry/industry?type=postparttime'>
           <view class='choose-region'>
             <view class='choose-region-item'>
-              <text>{{industry}}</text>
+              <input disabled='true' placeholder='请选择岗位' value="{{industry}}" placeholder-style='color:#AEAEAE'></input>
               <image src='/image/index/return.png'></image>
             </view>
           </view>
@@ -22,15 +22,17 @@
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange"  data-idx="0" value="{{sexIndex}}" range="{{sexData}}">
-          <text hidden='{{sexHide}}'>{{sex}}</text>
-          <text hidden='{{!sexHide}}'>{{sexData[sexIndex]}}</text>
+          <input disabled='true' placeholder='请选择性别' value="{{sex}}" placeholder-style='color:#AEAEAE'></input>
+          <!-- <text hidden='{{sexHide}}'>{{sex}}</text>
+          <text hidden='{{!sexHide}}'>{{sexData[sexIndex]}}</text> -->
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="1" value="{{heightIndex}}" range="{{heightData}}">
-          <text hidden='{{heightHide}}'>{{height}}</text>
-          <text hidden='{{!heightHide}}'>{{heightData[heightIndex]}}</text>
+          <input disabled='true' placeholder='请选择身高' value="{{height}}" placeholder-style='color:#AEAEAE'></input>
+          <!-- <text hidden='{{heightHide}}'>{{height}}</text>
+          <text hidden='{{!heightHide}}'>{{heightData[heightIndex]}}</text> -->
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
@@ -44,8 +46,7 @@
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="3" value="{{styleIndex}}" range="{{payStyle}}">
-          <text hidden='{{styleHide}}'>{{payType}}</text>
-          <text hidden='{{!styleHide}}'>{{payStyle[styleIndex]}}</text>
+          <input disabled='true' placeholder='薪资结算方式' value="{{payType}}" placeholder-style='color:#AEAEAE'></input>
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
@@ -86,7 +87,7 @@
         <navigator hover-class='none' url='/page/common/city/city?type=postparttime'>
           <view class='choose-region'>
             <view class='choose-region-item'>
-              <text>{{city}}</text>
+              <input disabled='true' placeholder='选择工作地点' value="{{city}}" placeholder-style='color:#AEAEAE'></input>
               <image src='/image/index/return.png'></image>
             </view>
           </view>

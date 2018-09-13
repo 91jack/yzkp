@@ -1,7 +1,10 @@
 // page/job/postfulltime/postfulltime.js
 // 发布全职招聘
 const addjobUrl = require('../../../config').addjobUrl;
-
+// 获取职位列表
+const jobListUrl = require('../../../config').jobListUrl;
+// 编辑岗位
+const editjobUrl = require('../../../config').editjobUrl;
 Page({
   /**
    * 页面的初始数据
@@ -9,21 +12,22 @@ Page({
   data: {
     name: '',
     num: '',
-    educationLevel: '学历要求',
-    workYear: '经验要求',
-    payType: '薪资结算方式',
-    pay: '薪资范围',
-    height: '身高要求',
-    sex: '性别要求',
+    educationLevel: '',
+    workYear: '',
+    payType: '',
+    pay: '',
+    height: '',
+    sex: '',
     linkMan: '',
     linkPhone: '',
-    attr: '普通职位',
+    attr: '',
     welfare: '',
-    city: '选择城市',
+    city: '',
     address: '',
-    industry:'请选择岗位',
+    industry:'',
     duty: '',
     tag: '',
+    id:'',
     // 职位属性控制
     attrData:[false,false,false],
     // 福利
@@ -47,6 +51,7 @@ Page({
     exerciseIndex:0,
     welfareData: [],
     welfare: [],
+    welfarr:[]
   },
   bindPickerChange:function(e){
     var i = Number(e.currentTarget.dataset.idx);
@@ -118,6 +123,83 @@ Page({
   // 获取缓存数据
   onLoad: function (options) {
     console.log(options)
+    if(options.id){
+      var _this = this;
+      var companyId = '';
+      wx.getStorage({
+        key: 'companyId',
+        success: function (res) {
+          companyId = res.data;
+          wx.request({
+            url: jobListUrl,
+            data: {
+              token: getApp().globalData.token,
+              companyId: companyId
+            },
+            success: function (res) {
+              console.log(res)
+              if (res.data.status == 0) {
+                for(var i=0;i<res.data.list.length;i++){
+                  if(options.id==res.data.list[i].id){
+                    _this.setData({
+                      name: res.data.list[i].name,
+                      num: res.data.list[i].num,
+                      educationLevel: res.data.list[i].educationLevel,
+                      workYear: res.data.list[i].workYear,
+                      payType: res.data.list[i].payType,
+                      pay: res.data.list[i].pay,
+                      height: res.data.list[i].height,
+                      sex: res.data.list[i].sex,
+                      linkMan: res.data.list[i].linkMan,
+                      linkPhone: res.data.list[i].linkPhone,
+                      welfare: res.data.list[i].welfare,
+                      city: res.data.list[i].city,
+                      address: res.data.list[i].address,
+                      duty: res.data.list[i].duty,
+                      tag: res.data.list[i].tag,
+                      industry: res.data.list[i].industry,
+                      id: res.data.list[i].id,
+                      attr: res.data.list[i].attr
+                    })
+                    // 设置checkbox的checked
+                    var newWelfare = JSON.parse(_this.data.welfare);
+                    var welfarr = _this.data.welfarr;
+                    for (var z = 0; z < _this.data.welfareData.length;z++){
+                      welfarr.push(false)
+                      for (var k = 0; k < newWelfare.length;k++){
+                        if (_this.data.welfareData[z] == newWelfare[k]){
+                          welfarr[z]=true;
+                        }
+                      }
+                    }
+                    _this.setData({
+                      welfarr: welfarr
+                    })
+                    if (res.data.list[i].attr=='普通职位'){
+                      var attr = 'attrData[0]';
+                      _this.setData({
+                        [attr]:true
+                      })
+                    } else if (res.data.list[i].attr == '招聘外包') {
+                      var attr = 'attrData[1]';
+                      _this.setData({
+                        [attr]: true
+                      })
+                    } else if (res.data.list[i].attr == '劳务派遣') {
+                      var attr = 'attrData[2]';
+                      _this.setData({
+                        [attr]: true
+                      })
+                    }
+                  }
+                }
+              }
+            }
+          })
+        },
+      })
+    }
+
     var that = this;
     if (options.city){
       that.setData({
@@ -288,6 +370,12 @@ Page({
       },
     })
   },
+  // checkbox选择
+  checkboxChange: function (e) {
+    this.setData({
+      welfare: e.detail.value
+    })
+  },
   // 职位属性
   chooseStyle:function(e){
     console.log(e)
@@ -404,121 +492,101 @@ Page({
   },
   postBtn:function(){
     var _this = this;
-    wx.request({
-      url: addjobUrl,
-      data: {
-        token: getApp().globalData.token,
-        type:0,
-        name: _this.data.name,
-        num: _this.data.num,
-        educationLevel: _this.data.educationLevel,
-        workYear: _this.data.workYear,
-        payType: _this.data.payType,
-        pay: _this.data.pay,
-        height: _this.data.height,
-        sex: _this.data.sex,
-        linkMan: _this.data.linkMan,
-        linkPhone: _this.data.linkPhone,
-        attr: _this.data.attr,
-        welfare: _this.data.welfare,
-        city: _this.data.city,
-        address: _this.data.address,
-        duty: _this.data.duty,
-        tag: _this.data.tag,
-        industry:_this.data.industry
-      },
-      success: function (res) {
-        console.log(res)
-        if(res.data.status==0){
-          wx.showToast({
-            title: '职位发布成功',
-            icon: 'success',
-            duration: 2000,
-            success:function(){
-              setTimeout(function(){
-                wx.navigateBack({
-                  delta: 1
-                })
-              },2000)
-            }
-          })
-          
-          wx.removeStorage({
-            key: 'sex',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'industry',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'adreess',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'name',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'num',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'linkMan',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'linkPhone',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'duty',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'tag',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'educationLevel',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'workYear',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'payType',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'city',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'pay',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'attr',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'height',
-            success: function (res) { },
-          })
-          wx.removeStorage({
-            key: 'address',
-            success: function (res) { },
-          })
-        }else{
-          wx.showToast({
-            title: res.data.msg,
-            icon:'none',
-            duration:1000
-          })
+    if(_this.data.id!=''){
+      wx.request({
+        url: editjobUrl,
+        data: {
+          token: getApp().globalData.token,
+          type: 0,
+          name: _this.data.name,
+          num: _this.data.num,
+          educationLevel: _this.data.educationLevel,
+          workYear: _this.data.workYear,
+          payType: _this.data.payType,
+          pay: _this.data.pay,
+          height: _this.data.height,
+          sex: _this.data.sex,
+          linkMan: _this.data.linkMan,
+          linkPhone: _this.data.linkPhone,
+          attr: _this.data.attr,
+          welfare: _this.data.welfare,
+          city: _this.data.city,
+          address: _this.data.address,
+          duty: _this.data.duty,
+          tag: _this.data.tag,
+          industry: _this.data.industry,
+          id:_this.data.id
+        },
+        success: function (res) {
+          if (res.data.status == 0) {
+            wx.showToast({
+              title: '职位修改成功',
+              icon: 'success',
+              duration: 2000,
+              success: function () {
+                setTimeout(function () {
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                }, 2000)
+              }
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
+          }
         }
-      }
-    })
+      })
+    }else{
+      wx.request({
+        url: addjobUrl,
+        data: {
+          token: getApp().globalData.token,
+          type: 0,
+          name: _this.data.name,
+          num: _this.data.num,
+          educationLevel: _this.data.educationLevel,
+          workYear: _this.data.workYear,
+          payType: _this.data.payType,
+          pay: _this.data.pay,
+          height: _this.data.height,
+          sex: _this.data.sex,
+          linkMan: _this.data.linkMan,
+          linkPhone: _this.data.linkPhone,
+          attr: _this.data.attr,
+          welfare: _this.data.welfare,
+          city: _this.data.city,
+          address: _this.data.address,
+          duty: _this.data.duty,
+          tag: _this.data.tag,
+          industry: _this.data.industry
+        },
+        success: function (res) {
+          if (res.data.status == 0) {
+            wx.showToast({
+              title: '职位发布成功',
+              icon: 'success',
+              duration: 2000,
+              success: function () {
+                setTimeout(function () {
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                }, 2000)
+              }
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
+          }
+        }
+      })
+    }
   }
 })

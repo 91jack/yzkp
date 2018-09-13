@@ -334,6 +334,82 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.removeStorage({
+      key: 'attr',
+      success: function (res) {},
+    })
+    wx.removeStorage({
+      key: 'sex',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'industry',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'adreess',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'name',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'num',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'linkMan',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'linkPhone',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'duty',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'tag',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'educationLevel',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'workYear',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'payType',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'city',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'pay',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'height',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'address',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'tm',
+      success: function (res) { },
+    })
+    wx.removeStorage({
+      key: 'payUnit',
+      success: function (res) { },
+    })
     this.setData({
       getHide: getApp().globalData.getHide
     })

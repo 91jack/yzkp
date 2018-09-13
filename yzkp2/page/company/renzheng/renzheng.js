@@ -89,12 +89,7 @@ Page({
   onReady: function () {
   
   },
-  // checkbox选择
-  checkboxChange: function (e) {
-    this.setData({
-      welfare: e.detail.value
-    })
-  },
+
   /**
    * 生命周期函数--监听页面显示
    */
@@ -211,8 +206,7 @@ Page({
         attr: _this.data.companyNature,
         size: _this.data.companyScale,
         industry: _this.data.ind,
-        tag: _this.data.postIntro,
-        welfare: _this.data.welfare
+        tag: _this.data.postIntro
       },
       success: function (res) {
         if(res.data.status==0){

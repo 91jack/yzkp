@@ -488,6 +488,14 @@ checkbox{
   line-height: 80rpx;
   margin-left: 26rpx;
 }
+.choose-region-item input{
+  box-sizing:border-box;
+  padding:20rpx 0 20rpx 25rpx;
+  line-height:80rpx;
+  font-size:28rpx;
+  display:block;
+  height:80rpx;
+}
 .choose-region-item image{
   position: absolute;
   width: 24rpx;

@@ -68,6 +68,20 @@ Page({
   onReachBottom: function () {
 
   },
+  // 编辑职位
+  editJob:function(e){
+    var id = e.currentTarget.dataset.jobid;
+    var type = Number(e.currentTarget.dataset.jobtype);//0为全职，1为兼职
+    if(type==0){
+      wx.navigateTo({
+        url: '/page/company/postfulltime/postfulltime?id='+id,
+      })
+    }else if(type==1){
+      wx.navigateTo({
+        url: '/page/company/postparttime/postparttime?id=' + id,
+      })
+    }
+  },
   /**
    * 删除职位
    */
@@ -147,6 +161,7 @@ Page({
             companyId: companyId
           },
           success: function (res) {
+            console.log(res)
             if (res.data.status == 0) {
 
               _this.setData({
