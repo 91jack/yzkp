@@ -8,8 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    welfareData:[],
-    welfare: [],
+  
     rzType:['个人','企业','其他'],
     rzIndex:null,
     postName:"",
@@ -80,14 +79,7 @@ Page({
         })
       },
     })
-    wx.getStorage({
-      key: 'welfareArr',
-      success: function (res) {
-        that.setData({
-          welfareData: res.data
-        })
-      },
-    })
+    
     console.log(this.data.industryArr)
   },
 

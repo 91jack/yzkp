@@ -21,8 +21,10 @@
       </view>
       <view class='header-item'>
         <picker bindchange="bindPickerChange" data-idx="0" value="{{eduIndex}}" range="{{eduData}}">
-          <text hidden='{{eduHide}}'>{{educationLevel}}</text>
-          <text hidden='{{!eduHide}}'>{{eduData[eduIndex]}}</text>
+           <input disabled='true' placeholder='请选择学历' value="{{eduData[eduIndex]}}" placeholder-style='color:#AEAEAE'></input>
+
+          <!-- <text hidden='{{eduHide}}'>{{educationLevel}}</text>
+          <text hidden='{{!eduHide}}'></text> -->
           <image src='/image/index/return.png'></image>
         </picker>
       </view>
@@ -84,6 +86,17 @@
       <view class='post-job-type-item' data-idx='2' bindtap='chooseStyle'>
         <image src='{{attrData[2]?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
         <text>劳务派遣</text>
+      </view>
+    </view>
+
+     <view class='post-job-wealf'>
+      <view class='post-job-wealf-tit'>福利待遇:</view>
+      <view class='post-job-wealf-cont'>
+        <view class='post-job-wealf-item'>
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox wx:for='{{welfareData}}' value='{{item}}'>{{item}}</checkbox>
+          </checkbox-group>
+        </view>
       </view>
     </view>
 

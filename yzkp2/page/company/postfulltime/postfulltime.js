@@ -33,7 +33,7 @@ Page({
     payData:[],
     payHide:false,
     payIndex:0,
-    sexData:["男","女",'不限'],
+    sexData: ['不限',"男","女"],
     sexHide:false,
     sexIndex:0,
     payStyle:['日结','周结','月结'],
@@ -44,7 +44,9 @@ Page({
     heightIndex:0,
     exerciseData:[],
     exerciseHide:false,
-    exerciseIndex:0
+    exerciseIndex:0,
+    welfareData: [],
+    welfare: [],
   },
   bindPickerChange:function(e){
     var i = Number(e.currentTarget.dataset.idx);
@@ -273,6 +275,15 @@ Page({
         var attr = "attrData[" + res.data[1]+"]";
         that.setData({
           [attr]: res.data[0]
+        })
+      },
+    })
+
+    wx.getStorage({
+      key: 'welfareArr',
+      success: function (res) {
+        that.setData({
+          welfareData: res.data
         })
       },
     })
