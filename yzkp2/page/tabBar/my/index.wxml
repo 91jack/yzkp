@@ -14,7 +14,7 @@
 <view class="personal-list">
   <block wx:for="{{currentList}}">
     <navigator hover-class='none' url="{{item.url}}">
-      <view class='box sec'>
+      <view class='box'>
         <view class='left'>
           <image src='{{item.src}}'></image>
           <text>{{item.text}}</text>
@@ -27,7 +27,7 @@
   </block>
 
   <navigator hover-class='none' url='/page/common/opinion/opinion'>
-    <view class='box sec'>
+    <view class='box'>
       <view class='left'>
         <image src='/image/mine/record.png'></image>
         <text>意见反馈</text>

@@ -64,7 +64,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
+    console.log(this.data.navBar)
+    this.getList();
   },
 
   // 初次加载
@@ -107,7 +108,6 @@ Page({
         navBar: 1
       })
     }
-    // var nowType = "navBar["+i+"]";
     for (var j = 0; j < this.data.navShow.length;j++){
       var yetType = "navShow["+j+"]";
       this.setData({
@@ -116,12 +116,13 @@ Page({
     }
     var nowShow = "navShow["+i+"]"
     this.setData({
-      // navShow:i,
       [nowShow]:false
     });
+    this.getList()
+  },
 
+  getList:function(){
     var that = this;
-
     wx.request({
       url: companyResumeUrl,
       data: {

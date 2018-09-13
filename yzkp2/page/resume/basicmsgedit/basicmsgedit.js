@@ -275,7 +275,6 @@ Page({
           address: that.address,
           mobile: that.mobile,
           email: that.email,
-          educationLevel: '11',
           height: that.height
         },
         success: function (res) {

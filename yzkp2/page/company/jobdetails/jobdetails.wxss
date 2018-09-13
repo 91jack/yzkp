@@ -3,7 +3,8 @@
 page{
   background: #F5F5F5;
   width: 100%;
-  height: 100%
+  overflow: auto;
+  padding-bottom: 117rpx;
 }
 
 
@@ -176,7 +177,6 @@ page{
   display: flex;
   background: #fff;
   margin-bottom: 11rpx;
-  padding-left: 25rpx;  
   padding-bottom: 10rpx;
 }
 .welfare .welfare-tit{
@@ -189,7 +189,7 @@ page{
   margin-left: 22rpx;
   display: flex;
   flex-wrap: wrap;
-  width: 640rpx;
+  width: 600rpx;
 }
 .welfare .welfare-detail .welfare-item{
   width: 136rpx;

@@ -17,11 +17,11 @@ page{
   display: flex;
 }
 .box .left image{
-  width: 35rpx;
-  height: 31rpx;
+  width: 41rpx;
+  height: 41rpx;
   display: inline-block;
-  margin-right: 30rpx;
-  padding-top: 25rpx;  
+  margin-right: 27rpx;
+  padding-top: 20rpx;  
 }
 .box .left text{
   color: #6B6B6B;
@@ -43,53 +43,6 @@ page{
   color: #9B9B9B;
   font-size: 24rpx;
   display: inline-block  
-}
-.first{
-  margin-bottom: 1rpx;
-}
-/* .sec{
-  margin-bottom: 11rpx;
-} */
-.box.sec .left image{
-  width: 29rpx;
-  height: 34rpx;
-  margin-right: 36rpx;
-}
-.box.third .left image{
-  width: 39rpx;
-  height: 40rpx;
-  margin-right: 26rpx;
-  padding-top: 20rpx;
-}
-.third{
-  margin-bottom: 12rpx;
-}
-.box .left image.wantyou{
-  width: 39rpx;
-  height: 35rpx;
-  margin-right: 26rpx;
-  padding-top: 23rpx;
-}
-.forth{
-  margin-bottom: 11rpx;
-}
-.fifth{
-  margin-bottom: 2rpx;
-}
-.box.fifth .left image{
-  width: 35rpx;
-  height: 33rpx;
-  margin-right: 30rpx;
-  padding-top: 24rpx;
-}
-.box.last .left image{
-  width: 38rpx;
-  height: 37rpx;
-  margin-right: 27rpx;
-  padding-top: 21rpx;
-}
-.last{
-  margin-bottom: 30rpx;
 }
 
 .btn{

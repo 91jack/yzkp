@@ -637,28 +637,12 @@ checkbox{
   display: block;
   width:100%;
   text-align: center;
+  padding-bottom: 20rpx;
 }
-/* .header .company-pic{
-  width: 113rpx;
-  height: 113rpx;
-  background: red;
-  margin-left: 29rpx;
-  margin-top: 40rpx;
-  border-radius: 50%  
-} */
 .header-intro {
   margin-left: 33rpx;
   line-height: 192rpx;
 }
-/* .header-intro>text{
-  display: block;
-}
-.header-intro .name{
-  font-size: 32rpx;
-  color: #353535;
-  margin-top: 54rpx;
-  margin-bottom: 25rpx;
-} */
 .header-intro .intro-cont{
   height: 26rpx;
   line-height: 26rpx;
