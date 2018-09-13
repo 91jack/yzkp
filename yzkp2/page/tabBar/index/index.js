@@ -22,7 +22,7 @@ Page({
     jianliList:[],
     index: 0,//选择的下拉列表下标
     id:'',
-    key:'',
+    searchkey:'',
     getHide:false,
     isRefresh: false, //onshow时是否刷新
 

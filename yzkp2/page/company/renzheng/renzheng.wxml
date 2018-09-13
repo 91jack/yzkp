@@ -31,7 +31,7 @@
     <view class='rz-item-cont'>
       <text>发布者联系方式:</text>
       <view class='re-item-input'>
-        <input placeholder='请输入发布者联系方式' data-idx="3" bindblur='getValue' placeholder-style='color:#AEAEAE'></input>
+        <input placeholder='请输入发布者联系方式' data-idx="3" bindblur='getValue' maxlength='11' placeholder-style='color:#AEAEAE'></input>
       </view>
     </view>
     <view class='rz-item-cont'>

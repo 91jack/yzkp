@@ -31,7 +31,7 @@ Page({
         console.log(res)
         _this.setData({
           companyInfo: res.data.obj,
-          welfare: JSON.parse(res.data.obj.welfare)
+          //welfare: JSON.parse(res.data.obj.welfare)
         })
       }
     })

@@ -198,8 +198,11 @@ page{
   background: #EAE9FC;
   font-size: 20rpx;
   color: #868686;
-  line-height: 40rpx;
+  /* line-height: 40rpx; */
   margin-right: 21rpx;
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

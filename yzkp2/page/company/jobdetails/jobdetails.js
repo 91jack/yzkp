@@ -162,6 +162,7 @@ Page({
           if (res.data.obj.welfare!=''){
             w = JSON.parse(res.data.obj.welfare)
           }
+          console.log(res.data.obj.welfare)
           that.setData({
             jobDetails: res.data.obj,
             id: res.data.obj.id,
