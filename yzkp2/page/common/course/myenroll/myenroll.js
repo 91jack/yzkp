@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    courseList:null
+    courseList:[],
+    show:true
   },
 
   /**
@@ -24,9 +25,18 @@ Page({
       success: function (res) {
        console.log(res)
         if (res.data.status == 0) {
-          _this.setData({
-            courseList: res.data.list
-          })
+          if(res.data.list.length>0){
+            _this.setData({
+              courseList: res.data.list,
+              show:true
+            })
+          }else{
+            _this.setData({
+              show: false
+            })
+
+          }
+        
         }
 
       }

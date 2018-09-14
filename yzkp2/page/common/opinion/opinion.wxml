@@ -1,6 +1,6 @@
 
 <view class='cont'>
-  <textarea placeholder='请输入你的问题' bindtap='getTextarea'></textarea>
+  <textarea placeholder='请输入你的意见或问题' bindtap='getTextarea'></textarea>
 </view>
 
 <view class='btn'>

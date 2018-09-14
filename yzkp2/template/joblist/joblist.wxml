@@ -14,7 +14,7 @@
             <view class='company-info det-left'>
               <view class='company-name'>{{item.companyName}}</view>
             </view>
-            <view class='det-right'>{{item.pay}}元/{{item.payType}}</view>
+            <view class='det-right'>{{item.pay}}元/月</view>
           </view>
 
           <view class='cont-detail'>
@@ -54,7 +54,7 @@
             <view class='company-info det-left'>
               <view class='company-name'>{{item.companyName}}</view>
             </view>
-            <view class='det-right'>{{item.pay}}元/{{item.payUnit}}/{{item.payType}}</view>
+            <view class='det-right'>{{item.pay}}元/{{item.payUnit}}</view>
           </view>
 
           <view class='cont-detail'>

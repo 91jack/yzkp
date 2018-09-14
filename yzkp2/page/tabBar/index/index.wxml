@@ -127,7 +127,7 @@
           </view>
         </view>
         <view class='left-item pay'>
-          <text>{{item.monthPay}}</text>
+          <text>{{item.monthPay}}元/月</text>
         </view>
       </view>
     </navigator>

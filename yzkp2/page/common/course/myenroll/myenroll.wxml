@@ -14,7 +14,7 @@
       </view>
     </navigator>
   </block>
-  <view hidden="{{courseList}}">
+  <view hidden="{{show}}">
     <image class='none-show' src='/image/mine/bigbg.png'></image>
   </view>
 </view>

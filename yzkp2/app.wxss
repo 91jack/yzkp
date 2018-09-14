@@ -88,7 +88,7 @@ page {
   display: inline-block;
   width: 173rpx;
   height: 165rpx;
-  background: red;
+  background: #ccc;
   margin: 37rpx 33rpx 0 27rpx;
 }
 .ability-cont .ability-cont-item view{
