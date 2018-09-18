@@ -23,6 +23,15 @@ page{
   font-size:26rpx;
   color:#868686;
   padding-bottom:17rpx;
-  margin-top: 24rpx;
+  /* margin-top: 24rpx; */
+}
+.post-job-type.link{
+  justify-content: flex-start;
+}
+.post-job-type.link .post-job-type-item:first-of-type{
+  margin-left: 20rpx;
+}
+.post-job-type.link .post-job-type-item image{
+  margin-left: 50rpx;
 }
 

@@ -30,6 +30,8 @@ Page({
     id:'',
     // 职位属性控制
     attrData:[false,false,false],
+    // 是否显示联系人电话控制
+    linkPhoneAttr:[false,false],
     // 福利
     eduData:[],
     eduIndex:0,
@@ -374,6 +376,36 @@ Page({
   checkboxChange: function (e) {
     this.setData({
       welfare: e.detail.value
+    })
+  },
+  // 是否隐藏联系人方式
+  chooseLinkHide:function(e){
+    console.log(e)
+    var that = this;
+    var i = Number(e.currentTarget.dataset.idx);
+    var nowAttr = "linkPhoneAttr[" + i + "]";
+    console.log(nowAttr)
+    for (var j = 0; j < 2; j++) {
+      var changeAttr = "linkPhoneAttr[" + j + "]";
+      this.setData({
+        [changeAttr]: false
+      });
+    }
+    this.setData({
+      [nowAttr]: true
+    })
+    if (i == 0) {
+      this.setData({
+        attr: "是",
+      })
+    } else if (i == 1) {
+      this.setData({
+        attr: "否"
+      })
+    }
+    wx.setStorage({
+      key: 'linkphoneattr',
+      data: [that.data.linkPhoneAttr[i], i],
     })
   },
   // 职位属性

@@ -63,15 +63,17 @@
       </view>
     </view>
 
-    
-     <view class='post-job-wealf'>
-      <view class='post-job-wealf-tit'>福利待遇:</view>
-      <view class='post-job-wealf-cont'>
-        <view class='post-job-wealf-item'>
-          <checkbox-group bindchange="checkboxChange">
-            <checkbox wx:for='{{welfareData}}' value='{{item}}' checked='{{welfarr[index]}}'>{{item}}</checkbox>
-          </checkbox-group>
-        </view>
+    <view class='post-job-type link'>
+      <view class='post-job-type-item'>
+        <text>是否隐藏招聘人联系电话:</text>
+      </view>
+      <view class='post-job-type-item' data-idx='0' bindtap='chooseLinkHide'>
+        <image src='{{linkPhoneAttr[0]?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+        <text>是</text>
+      </view>
+      <view class='post-job-type-item' data-idx='1' bindtap='chooseLinkHide'>
+        <image src='{{linkPhoneAttr[1]?"/image/mine/checkon.png":"/image/mine/uncheck.png"}}'></image>
+        <text>否</text>
       </view>
     </view>
     
@@ -92,6 +94,21 @@
         <text>劳务派遣</text>
       </view>
     </view>
+
+     <view class='post-job-wealf'>
+      <view class='post-job-wealf-tit'>福利待遇:</view>
+      <view class='post-job-wealf-cont'>
+        <view class='post-job-wealf-item'>
+          <checkbox-group bindchange="checkboxChange">
+            <checkbox wx:for='{{welfareData}}' value='{{item}}' checked='{{welfarr[index]}}'>{{item}}</checkbox>
+          </checkbox-group>
+        </view>
+      </view>
+    </view>
+    
+
+
+    
 
     <view class='post-job-area'>
       <view class='choose-place'>

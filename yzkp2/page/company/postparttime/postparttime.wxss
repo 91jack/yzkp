@@ -70,3 +70,12 @@ page{
 .choose-place.add{
   margin-bottom: 20rpx;
 }
+.post-job-type.link{
+  justify-content: flex-start;
+}
+.post-job-type.link .post-job-type-item:first-of-type{
+  margin-left: 20rpx;
+}
+.post-job-type.link .post-job-type-item image{
+  margin-left: 50rpx;
+}
