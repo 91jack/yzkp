@@ -79,8 +79,6 @@ Page({
         })
       },
     })
-    
-    console.log(this.data.industryArr)
   },
 
   /**
@@ -98,8 +96,6 @@ Page({
   },
   // 选择发布者类型
   changeType:function(e){
-    // console.log(this.data.industryArr)
-    console.log(e);
     var i = Number(e.currentTarget.dataset.idx);
     this.setData({
       rzIndex:i
@@ -107,7 +103,6 @@ Page({
   },
   // 获取输入框值
   getValue:function(e){
-    console.log(e);
     var i = Number(e.currentTarget.dataset.idx);
     if(i==0){    //发布者/企业名称
       this.setData({
@@ -154,24 +149,19 @@ Page({
       this.setData({
         companyIndustry:''
       })
-      console.log(e);
       var ind0 = e.detail.value[0];
       var ind1 = e.detail.value[1];
       var pic0 = this.data.pickIndustryArr[0];
       var pic1 = this.data.pickIndustryArr[1];
-      // var ind1 = this.data.pickIndustryArr[1];
       this.setData({
-        // industryIndex: e.detail.value,
         industryHide: true,
         companyIndustry: pic0[ind0] + '-' + pic1[ind1],
         ind: pic1[ind1]
       })
-      console.log(this.data.companyIndustry)
     }
   },
   // 多列选择器
   bindMultiPickerColumnChange:function(e){
-    console.log(e);
     var value = Number(e.detail.value);
     var column = Number(e.detail.column);
     var data = {
@@ -186,8 +176,6 @@ Page({
     } else if(column==1){
       data.industryIndex[1] = value;
     }
-    console.log(this.data.industryIndex)
-    console.log(data.industryIndex)
     this.setData(data)
   },
   // 立即认证

@@ -31,7 +31,8 @@ Page({
     // 职位属性控制
     attrData:[false,false,false],
     // 是否显示联系人电话控制
-    linkPhoneAttr:[false,false],
+    linkPhoneAttr:[false,true], //是否公开电话号码
+    showPhone:1,  //1显示，0不显示
     // 福利
     eduData:[],
     eduIndex:0,
@@ -161,7 +162,8 @@ Page({
                       tag: res.data.list[i].tag,
                       industry: res.data.list[i].industry,
                       id: res.data.list[i].id,
-                      attr: res.data.list[i].attr
+                      attr: res.data.list[i].attr,
+                      showPhone:res.data.list[i].showPhone
                     })
                     // 设置checkbox的checked
                     var newWelfare = JSON.parse(_this.data.welfare);
@@ -193,6 +195,16 @@ Page({
                         [attr]: true
                       })
                     }
+                    var phoneAttr = "linkPhoneAttr["+res.data.list[i].showPhone+"]";
+                    for (var z = 0; z < 2; z++) {
+                      var newarr = "linkPhoneAttr[" + z + "]";
+                      that.setData({
+                        [newarr]: false
+                      })
+                    }
+                    _this.setData({
+                      [phoneAttr]:true
+                    })
                   }
                 }
               }
@@ -362,7 +374,16 @@ Page({
         })
       },
     })
-
+    wx.getStorage({
+      key: 'linkphoneattr',
+      success: function(res) {
+        var linkPhone = "linkphoneattr["+res.data+"]";
+        that.setData({
+          [linkPhone]:true,
+          showPhone:res.data
+        })
+      },
+    })
     wx.getStorage({
       key: 'welfareArr',
       success: function (res) {
@@ -384,7 +405,6 @@ Page({
     var that = this;
     var i = Number(e.currentTarget.dataset.idx);
     var nowAttr = "linkPhoneAttr[" + i + "]";
-    console.log(nowAttr)
     for (var j = 0; j < 2; j++) {
       var changeAttr = "linkPhoneAttr[" + j + "]";
       this.setData({
@@ -392,29 +412,19 @@ Page({
       });
     }
     this.setData({
-      [nowAttr]: true
+      [nowAttr]: true,
+      showPhone:i
     })
-    if (i == 0) {
-      this.setData({
-        attr: "是",
-      })
-    } else if (i == 1) {
-      this.setData({
-        attr: "否"
-      })
-    }
     wx.setStorage({
       key: 'linkphoneattr',
-      data: [that.data.linkPhoneAttr[i], i],
-    })
+      data:  i,
+    })  
   },
   // 职位属性
   chooseStyle:function(e){
-    console.log(e)
     var that = this;
     var i = Number(e.currentTarget.dataset.idx);
     var nowAttr = "attrData["+i+"]";
-    console.log(nowAttr)
     for(var j = 0;j<=3;j++){
       var changeAttr = "attrData[" + j + "]";
       this.setData({
@@ -445,7 +455,6 @@ Page({
   // 获取input框的值
   getValue:function(e){
     var i = Number(e.currentTarget.dataset.idx);
-    console.log(e);
     if(i==0){ //职位名称
       this.setData({
         name:e.detail.value
@@ -547,7 +556,8 @@ Page({
           duty: _this.data.duty,
           tag: _this.data.tag,
           industry: _this.data.industry,
-          id:_this.data.id
+          id:_this.data.id,
+          showPhone:_this.data.showPhone
         },
         success: function (res) {
           if (res.data.status == 0) {
@@ -594,7 +604,8 @@ Page({
           address: _this.data.address,
           duty: _this.data.duty,
           tag: _this.data.tag,
-          industry: _this.data.industry
+          industry: _this.data.industry,
+          showPhone: _this.data.showPhone
         },
         success: function (res) {
           if (res.data.status == 0) {

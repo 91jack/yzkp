@@ -57,12 +57,22 @@ Page({
 
   // 模态框显示与否
   call: function(e) {
+    console.log(e.currentTarget.dataset.phone);
     var i = Number(e.currentTarget.dataset.id)
-    var show = "modalData[" + i + "]"
-    this.setData({
-      modalShow: false,
-      [show]: false
-    })
+    var j = Number(e.currentTarget.dataset.phone)
+    if(j==1){
+      var show = "modalData[" + i + "]"
+      this.setData({
+        modalShow: false,
+        [show]: false
+      })
+    } else {
+      wx.showToast({
+        title: '请直接投递简历',
+        icon: 'none',
+        duration: 1500
+      })
+    }
   },
 
   // 显示具体的模态框
@@ -133,7 +143,7 @@ Page({
     })
   },
   //打电话
-  callnumber: function() {
+  callnumber: function(e) {
     wx.makePhoneCall({
       phoneNumber: this.data.linkPhone
     })
@@ -215,6 +225,5 @@ Page({
     wx.navigateTo({
       url: '/page/common/msgdetail/msgdetail?msgType=2&resumeId=' + _this.data.resumeId + '&companyId=' + _this.data.companyId,
     })
-
   }
 })

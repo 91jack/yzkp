@@ -339,6 +339,10 @@ Page({
       success: function (res) {},
     })
     wx.removeStorage({
+      key: 'linkphoneattr',
+      success: function(res) {},
+    })
+    wx.removeStorage({
       key: 'sex',
       success: function (res) { },
     })
