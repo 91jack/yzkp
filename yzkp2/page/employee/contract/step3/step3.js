@@ -8,7 +8,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    urlData: ['', '', '', '', '', '', '', '',''],
+    id_no_img1: '',
+    id_no_img2: '',
+    head_img: '',
+    account_img1: '',
+    account_img2: '',
+    account_img3: '',
+    leave_img: '',
+    education_img: '',
+    other_img: '',
     id:''
   },
 
@@ -43,16 +51,14 @@ Page({
   // 上传照片
   uploadPic:function(e){
     var that = this;
-    var i = Number(e.currentTarget.dataset.idx);
-    var currentUrl = "urlData[" + i +"]";
+    var i = e.currentTarget.dataset.idx;
+
     getApp().globalData.reLogin = false;
     wx.chooseImage({
       success: function (res) {      
         getApp().globalData.reLogin = true;
         var tempFilePaths = res.tempFilePaths[0];
-        that.setData({
-          [currentUrl]: tempFilePaths
-        })
+
         wx.uploadFile({
           url: uploadImgUrl, 
           filePath: tempFilePaths,
@@ -64,9 +70,43 @@ Page({
           success: function (result) {
             var imgData = JSON.parse(result.data);
             if (imgData.status==0){
-              that.setData({
-                [currentUrl]: imgData.obj
-              })
+              if (i == 'head_img') {
+                that.setData({
+                  head_img: imgData.obj
+                })
+              } else if (i == 'id_no_img1') {
+                that.setData({
+                  id_no_img1: imgData.obj
+                })
+              } else if (i == 'id_no_img2') {
+                that.setData({
+                  id_no_img2: imgData.obj
+                })
+              } else if (i == 'account_img1') {
+                that.setData({
+                  account_img1: imgData.obj
+                })
+              } else if (i == 'account_img2') {
+                that.setData({
+                  account_img2: imgData.obj
+                })
+              } else if (i == 'account_img3') {
+                that.setData({
+                  account_img3: imgData.obj
+                })
+              } else if (i == 'leave_img') {
+                that.setData({
+                  leave_img: imgData.obj
+                })
+              } else if (i == 'education_img') {
+                that.setData({
+                  education_img: imgData.obj
+                })
+              } else if (i == 'other_img') {
+                that.setData({
+                  other_img: imgData.obj
+                })
+              }
             }
           }
         })
@@ -81,15 +121,15 @@ Page({
       data: {
         token: getApp().globalData.token,
         id: this.data.id,
-        head_img: this.data.urlData[0],
-        id_no_img1: this.data.urlData[1],
-        id_no_img2: this.data.urlData[2],
-        account_img1: this.data.urlData[3],
-        account_img2: this.data.urlData[4],
-        account_img3: this.data.urlData[5],
-        education_img: this.data.urlData[6],
-        leave_img: this.data.urlData[7],
-        other_img: this.data.urlData[8]
+        head_img: this.data.head_img,
+        id_no_img1: this.data.id_no_img1,
+        id_no_img2: this.data.id_no_img2,
+        account_img1: this.data.account_img1,
+        account_img2: this.data.account_img2,
+        account_img3: this.data.account_img3,
+        education_img: this.data.education_img,
+        leave_img: this.data.leave_img,
+        other_img: this.data.other_img
       },
       success: function (res) {
         if (res.data.status == 0) {

@@ -51,8 +51,15 @@
     </view>
     <view class='header-item'>
       <picker mode="date" value="{{indate}}" start="" end="" bindchange="bindDateChange">
-        <text hidden='{{inHide}}'>请选择入职时间</text>
+        <text hidden='{{inHide}}'>请选择开始时间</text>
         <text hidden='{{!inHide}}'>{{indate}}</text>
+        <image src='/image/index/return.png'></image>
+      </picker>
+    </view>
+     <view class='header-item'>
+      <picker mode="date" value="{{outdate}}" start="" end="" bindchange="bindDateChange2">
+        <text hidden='{{inHide}}'>请选择到期时间</text>
+        <text hidden='{{!inHide}}'>{{outdate}}</text>
         <image src='/image/index/return.png'></image>
       </picker>
     </view>

@@ -1,4 +1,25 @@
 <view class='pictures'>
+<!-- 身份证 -->
+  <view class="post-job">
+    <view class='tip'>
+      <view></view>
+      <text>身份证（必传）</text>
+    </view>
+    <view class='picture sfz active'>
+      <image src='{{id_no_img1}}'></image>
+      <view class='upload-btn' data-idx="id_no_img1" bindtap='uploadPic'>
+        <image src='/image/mine/add.png'></image>
+        <text>身份证正面</text>
+      </view>
+    </view>
+    <view class='picture sfz'>
+      <image src='{{id_no_img2}}'></image>
+      <view class='upload-btn' data-idx="id_no_img2" bindtap='uploadPic'>
+        <image src='/image/mine/add.png'></image>
+        <text>身份证返面</text>
+      </view>
+    </view>
+  </view>
   <!-- 寸照 -->
   <view class="post-job">
     <view class='tip'>
@@ -6,8 +27,8 @@
       <text>寸照</text>
     </view>
     <view class='picture cunzhao'>
-      <image src='{{urlData[0]}}' ></image>
-      <view class='upload-btn' data-idx="0"  bindtap='uploadPic'>
+      <image src='{{head_img}}' ></image>
+      <view class='upload-btn' data-idx="head_img"  bindtap='uploadPic'>
         <image src='/image/mine/add.png'></image>
         <text>寸照</text>
       </view>
@@ -21,59 +42,24 @@
       <text>户口簿</text>
     </view>
     <view class='picture hukou active'>
-      <image src='{{urlData[1]}}'></image>
-      <view class='upload-btn' data-idx="1" bindtap='uploadPic'>
+      <image src='{{account_img1}}'></image>
+      <view class='upload-btn' data-idx="account_img1" bindtap='uploadPic'>
         <image src='/image/mine/add.png'></image>
         <text>户口簿-主页</text>
       </view>
     </view>
     <view class='picture hukou'>
-      <image src='{{urlData[2]}}'></image>
-      <view class='upload-btn' data-idx="2" bindtap='uploadPic'>
+      <image src='{{account_img2}}'></image>
+      <view class='upload-btn' data-idx="account_img2" bindtap='uploadPic'>
         <image src='/image/mine/add.png'></image>
         <text>户口簿-增减页</text>
       </view>
     </view>
     <view class='picture hukou'>
-      <image src='{{urlData[3]}}'></image>
-      <view class='upload-btn' data-idx="3" bindtap='uploadPic'>
+      <image src='{{account_img3}}'></image>
+      <view class='upload-btn' data-idx="account_img3" bindtap='uploadPic'>
         <image src='/image/mine/add.png'></image>
         <text>户口簿-本人页</text>
-      </view>
-    </view>
-  </view>
-  <!-- 身份证 -->
-  <view class="post-job">
-    <view class='tip'>
-      <view></view>
-      <text>身份证</text>
-    </view>
-    <view class='picture sfz active'>
-      <image src='{{urlData[4]}}'></image>
-      <view class='upload-btn' data-idx="4" bindtap='uploadPic'>
-        <image src='/image/mine/add.png'></image>
-        <text>身份证正面</text>
-      </view>
-    </view>
-    <view class='picture sfz'>
-      <image src='{{urlData[5]}}'></image>
-      <view class='upload-btn' data-idx="5" bindtap='uploadPic'>
-        <image src='/image/mine/add.png'></image>
-        <text>身份证返面</text>
-      </view>
-    </view>
-  </view>
-  <!-- 学历证明 -->
-  <view class="post-job">
-    <view class='tip'>
-      <view></view>
-      <text>学历证明</text>
-    </view>
-    <view class='picture xueli'>
-      <image src='{{urlData[6]}}'></image>
-      <view class='upload-btn' data-idx="6" bindtap='uploadPic'>
-        <image src='/image/mine/add.png'></image>
-        <text>学历证明证书</text>
       </view>
     </view>
   </view>
@@ -84,13 +70,28 @@
       <text>离职证明</text>
     </view>
     <view class='picture lizhi'>
-      <image src='{{urlData[7]}}'></image>
-      <view class='upload-btn' data-idx="7" bindtap='uploadPic'>
+      <image src='{{leave_img}}'></image>
+      <view class='upload-btn' data-idx="leave_img" bindtap='uploadPic'>
         <image src='/image/mine/add.png'></image>
         <text>离职证明材料</text>
       </view>
     </view>
   </view>
+  <!-- 学历证明 -->
+  <view class="post-job">
+    <view class='tip'>
+      <view></view>
+      <text>学历证明</text>
+    </view>
+    <view class='picture xueli'>
+      <image src='{{education_img}}'></image>
+      <view class='upload-btn' data-idx="education_img" bindtap='uploadPic'>
+        <image src='/image/mine/add.png'></image>
+        <text>学历证明证书</text>
+      </view>
+    </view>
+  </view>
+
   <!-- 其它资格/职称证明 -->
   <view class="post-job active">
     <view class='tip'>
@@ -98,8 +99,8 @@
       <text>其它资格/职称证明</text>
     </view>
     <view class='picture other'>
-      <image src='{{urlData[8]}}'></image>
-      <view class='upload-btn' data-idx="8" bindtap='uploadPic'>
+      <image src='{{other_img}}'></image>
+      <view class='upload-btn' data-idx="other_img" bindtap='uploadPic'>
         <image src='/image/mine/add.png'></image>
         <text>其它资格/职称证明</text>
       </view>

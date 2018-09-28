@@ -27,6 +27,19 @@
   <view class='confirm-basicmsg active'>
     <view class='confirm-basicmsg-tit'>证明材料</view>
     <view class='pictures'>
+     <!-- 身份证 -->
+      <view class="post-job">
+        <view class='tip'>
+          <view></view>
+          <text>身份证</text>
+        </view>
+        <view class='picture sfz active'>
+          <image src='{{infoData.id_no_img1}}'></image>
+        </view>
+        <view class='picture sfz'>
+          <image src='{{infoData.id_no_img2}}'></image>
+        </view>
+      </view>
       <!-- 寸照 -->
       <view class="post-job">
         <view class='tip'>
@@ -54,19 +67,7 @@
           <image src='{{infoData.account_img3}}'></image>
         </view>
       </view>
-      <!-- 身份证 -->
-      <view class="post-job">
-        <view class='tip'>
-          <view></view>
-          <text>身份证</text>
-        </view>
-        <view class='picture sfz active'>
-          <image src='{{infoData.id_no_img1}}'></image>
-        </view>
-        <view class='picture sfz'>
-          <image src='{{infoData.id_no_img2}}'></image>
-        </view>
-      </view>
+     
       <!-- 学历证明 -->
       <view class="post-job">
         <view class='tip'>
@@ -187,7 +188,7 @@
         </view>
       </view>
     </view>
-    <view class='confirm-contract-company'>《渐臻科技入职合同》</view>
+    <view class='confirm-contract-company'>《劳动合同书》</view>
     <view class='confirm-contract-yzcode'>
       <input placeholder='请输入验证码' bindblur='getIncode' value="{{yzcode}}"></input>
       <view bindtap='getCode'>{{timerData}}</view>

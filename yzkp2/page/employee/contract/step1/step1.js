@@ -25,6 +25,7 @@ Page({
     educationHide:false,
     modalShow:false,
     indate:'',   //入职时间
+    outdate: '',   //离职时间
     inHide:false
   },
 
@@ -73,10 +74,6 @@ Page({
       this.setData({
         position: e.detail.value
       })     
-    } else if (i == "7") {// 获取入职时间
-      this.setData({
-        in_date: e.detail.value
-      })    
     }
   },
   
@@ -131,7 +128,8 @@ Page({
         address: this.data.address,
         department: this.data.department,
         position: this.data.position,
-        in_date: this.data.indate
+        in_date: this.data.indate,
+        out_date: this.data.outdate,
       },
       success: function (res) {
         if (res.data.status == 0) {
@@ -181,10 +179,17 @@ Page({
   // 选择入职时间
   bindDateChange:function(e){
     var value = e.detail.value;
-    console.log(value)
     this.setData({
       indate:value,
       inHide:true
+    })
+  },
+  // 选择到期时间
+  bindDateChange2: function (e) {
+    var value = e.detail.value;
+    this.setData({
+      outdate: value,
+      inHide: true
     })
   }
 })

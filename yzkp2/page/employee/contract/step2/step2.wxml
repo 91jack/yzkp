@@ -2,13 +2,13 @@
   <text>欢迎 </text>
   <text class='name'>{{name}} </text>
   <text>{{sex}}</text>
-  <text>士成为渐臻科技公司一员,在开始入职前,请准备好以下入职资料:</text>
+  <text>士成为本公司一员,在开始入职前,请准备好以下入职资料:</text>
 </view>
 <view class='list'>
   <text>1.请准备好入职所需身份证件,学历证件,照片,银行卡请准备好入职所需身份证件,学历证件,照片,银行卡;</text>
   <text>2.社保文件材料;</text>
   <text>3.离职证明：避免双重劳动关系和商业间谍;</text>
-  <text>4.如过对以上条件有疑问,请致电666666详询.</text>
+  <text>4.如过对以上条件有疑问,请致电023-62325790详询.</text>
 </view>
 <navigator hover-class='none' url='/page/employee/contract/step3/step3'>
   <view class='btn'>开始入职</view>
